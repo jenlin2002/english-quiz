@@ -621,26 +621,80 @@ const speakDots = document.getElementById('speakDots');
 
 const speechSupported = typeof window.speechSynthesis !== 'undefined';
 
+// ---------- Voice loading (fixes "shows playing but silent" on freshly-loaded HTTPS pages) ----------
+// 部分瀏覽器（尤其 Chrome/Edge）在頁面剛載入、語音清單(voices)還沒準備好時呼叫 speak()，
+// 會出現「事件正常觸發、畫面顯示播放中，但實際上沒有聲音」的狀況。
+// 這裡確保語音清單載入完成後才真正播放，並明確指定語音，避免瀏覽器選到空的/無聲的語音。
+let cachedVoices = [];
+function refreshVoiceCache(){
+  if(speechSupported) cachedVoices = window.speechSynthesis.getVoices();
+}
+if(speechSupported){
+  refreshVoiceCache();
+  window.speechSynthesis.onvoiceschanged = refreshVoiceCache;
+}
+
+function pickVoice(lang){
+  if(!cachedVoices.length) refreshVoiceCache();
+  const exact = cachedVoices.find(v => v.lang === lang);
+  if(exact) return exact;
+  const prefix = lang.split('-')[0];
+  const partial = cachedVoices.find(v => v.lang && v.lang.startsWith(prefix));
+  return partial || null;
+}
+
+function whenVoicesReady(callback){
+  if(cachedVoices.length > 0){ callback(); return; }
+  refreshVoiceCache();
+  if(cachedVoices.length > 0){ callback(); return; }
+  let done = false;
+  const finish = () => { if(done) return; done = true; callback(); };
+  window.speechSynthesis.onvoiceschanged = () => { refreshVoiceCache(); finish(); };
+  setTimeout(finish, 400); // fallback，避免某些瀏覽器不觸發 voiceschanged 導致卡住不出聲
+}
+
+// 首次互動時「暖機」一次語音引擎（部分瀏覽器第一次呼叫 speak() 容易無聲，暖機可大幅降低機率）
+let speechWarmedUp = false;
+function warmUpSpeech(){
+  if(speechWarmedUp || !speechSupported) return;
+  speechWarmedUp = true;
+  try{
+    const warm = new SpeechSynthesisUtterance(' ');
+    warm.volume = 0;
+    warm.rate = 10;
+    window.speechSynthesis.speak(warm);
+  }catch(e){}
+}
+document.addEventListener('click', warmUpSpeech, { once: true, capture: true });
+
 function speak(text, btnEl, onEnd){
   if(!speechSupported){ if(onEnd) onEnd(); return; }
-  window.speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'en-US';
-  utter.rate = 0.75;
-  attachSpeechHandlers(utter, btnEl, onEnd);
-  currentUtterance = utter;
-  window.speechSynthesis.speak(utter);
+  whenVoicesReady(() => {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-US';
+    utter.rate = 0.75;
+    const v = pickVoice('en-US');
+    if(v) utter.voice = v;
+    attachSpeechHandlers(utter, btnEl, onEnd);
+    currentUtterance = utter;
+    window.speechSynthesis.speak(utter);
+  });
 }
 
 function speakZh(text, btnEl, onEnd){
   if(!speechSupported){ if(onEnd) onEnd(); return; }
-  window.speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'zh-TW';
-  utter.rate = 0.88;
-  attachSpeechHandlers(utter, btnEl, onEnd);
-  currentUtterance = utter;
-  window.speechSynthesis.speak(utter);
+  whenVoicesReady(() => {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'zh-TW';
+    utter.rate = 0.88;
+    const v = pickVoice('zh-TW');
+    if(v) utter.voice = v;
+    attachSpeechHandlers(utter, btnEl, onEnd);
+    currentUtterance = utter;
+    window.speechSynthesis.speak(utter);
+  });
 }
 
 function attachSpeechHandlers(utter, btnEl, onEnd){
