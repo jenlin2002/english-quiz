@@ -189,6 +189,11 @@
   .listening-image-box img{ width:100%; height:auto; display:block; border-radius:10px; background:var(--paper); min-height:120px; }
   .listening-image-credit{ font-size:10px; color:var(--ink-soft); opacity:0.7; margin-top:6px; text-align:right; font-family:'Space Mono',monospace; }
   .listening-image-error{ padding:14px; color:var(--chalk-red); font-size:13px; text-align:center; }
+  .listening-video-box{
+    position:relative; width:100%; max-width:560px; padding-bottom:56.25%; height:0;
+    border-radius:14px; overflow:hidden; margin-bottom:6px; background:#000;
+  }
+  .listening-video-box iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
   .listening-audio-row{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:22px; }
   .listening-audio-row .record-btn{ background:var(--chalk-green); }
 
@@ -543,6 +548,42 @@ const LISTENING_QUESTIONS = [
     options: ["Because he doesn't like playing outside.", "Because it is raining today.", "Because he played outside yesterday."],
     answer: 1,
     note: "這題比較難：題目關鍵字是 today，要選出跟「今天」這個時間點合理相關的原因，只有 (B) it is raining today 符合邏輯，所以答案是 (B)。"
+  },
+  {
+    type: "影片理解",
+    text: "According to the video, the present progressive tense is mainly used to describe actions that are ___.",
+    videoId: "_9FE20lMbo8",
+    videoCredit: "VOA Learning English – Everyday Grammar: Present Progressive Tense",
+    options: ["happening right now", "done every single day without exception", "already finished in the past"],
+    answer: 0,
+    note: "影片說明現在進行式主要用來描述「此刻正在發生」的動作，所以答案是 (A)。"
+  },
+  {
+    type: "影片理解",
+    text: "According to the video, when a sentence uses \"every time\", which tense usually follows?",
+    videoId: "03S22a4K18I",
+    videoCredit: "VOA Learning English – Everyday Grammar: 'Every Time' and the Simple Present",
+    options: ["the present continuous tense", "the simple present tense", "the simple past tense"],
+    answer: 1,
+    note: "影片說明 \"every time\" 這類表示習慣、重複發生的用語，後面通常搭配現在簡單式，所以答案是 (B)。"
+  },
+  {
+    type: "影片理解",
+    text: "According to the video, which frequency adverb describes something that happens 100% of the time?",
+    videoId: "1ufv53leV5E",
+    videoCredit: "VOA Learning English – Everyday Grammar: Frequency Adverbs",
+    options: ["sometimes", "always", "never"],
+    answer: 1,
+    note: "影片說明 always 表示「每一次都會發生」，是頻率副詞裡程度最高的，所以答案是 (B)。"
+  },
+  {
+    type: "影片理解",
+    text: "According to the video, stative verbs like \"know\" and \"like\" are usually NOT used in which tense?",
+    videoId: "G_ZREL9sxis",
+    videoCredit: "VOA Learning English – Everyday Grammar: Stative Verbs",
+    options: ["the simple present tense", "the present progressive tense", "the simple past tense"],
+    answer: 1,
+    note: "影片說明狀態動詞（如 know、like）描述的是穩定不變的狀態，通常不會用在現在進行式，所以答案是 (B)。"
   }
 ];
 
@@ -974,6 +1015,14 @@ function renderQuestion(){
       </div>
     ` : ''}
     ${isListening ? `
+      ${q.videoId ? `
+        <div class="listening-video-box">
+          <iframe src="https://www.youtube.com/embed/${q.videoId}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <div class="listening-image-credit" style="margin-bottom:16px;">${q.videoCredit}</div>
+      ` : ''}
       ${q.image ? `
         <div class="listening-image-box">
           <img src="${q.image}" alt="${q.audioQuestion}"
@@ -981,15 +1030,17 @@ function renderQuestion(){
           <div class="listening-image-credit">${q.imageCredit}</div>
         </div>
       ` : ''}
-      <div class="listening-audio-row">
-        <button class="record-btn" id="playAllBtn" style="background:var(--chalk-green);"><span id="playAllIcon">🔊</span><span>播放題目與選項 A／B／C</span></button>
-      </div>
+      ${q.audioQuestion ? `
+        <div class="listening-audio-row">
+          <button class="record-btn" id="playAllBtn" style="background:var(--chalk-green);"><span id="playAllIcon">🔊</span><span>播放題目與選項 A／B／C</span></button>
+        </div>
+      ` : ''}
     ` : ''}
     <p class="question-text">${q.text}</p>
     <div class="options" id="optionsWrap">
       ${q.options.map((opt,i)=>{
         const label = `<b style="margin-right:8px;">${String.fromCharCode(65+i)}.</b>`;
-        const content = (isListening && !answered) ? '' : opt;
+        const content = (isListening && q.audioQuestion && !answered) ? '' : opt;
         return `<button class="option-btn" data-i="${i}">${label}${content}</button>`;
       }).join('')}
     </div>
@@ -1032,11 +1083,13 @@ function renderQuestion(){
   }
   if(isListening){
     const playAllBtn = document.getElementById('playAllBtn');
-    playAllBtn.addEventListener('click', ()=>{
-      playAllBtn.classList.add('recording');
-      const sequence = [q.audioQuestion, ...q.options.map((opt,i)=> `${String.fromCharCode(65+i)}. ${opt}`)];
-      speakSequence(sequence, ()=> playAllBtn.classList.remove('recording'));
-    });
+    if(playAllBtn){
+      playAllBtn.addEventListener('click', ()=>{
+        playAllBtn.classList.add('recording');
+        const sequence = [q.audioQuestion, ...q.options.map((opt,i)=> `${String.fromCharCode(65+i)}. ${opt}`)];
+        speakSequence(sequence, ()=> playAllBtn.classList.remove('recording'));
+      });
+    }
   }
 }
 
@@ -1077,7 +1130,7 @@ function handleAnswer(i){
   const q = questions[current];
   const isCorrect = i === q.answer;
   if(isCorrect){ correctCount++; } else { wrongCount++; }
-  const historyQ = mode === 'listening' ? q.audioQuestion : q.text.replace(/<[^>]+>/g,'___');
+  const historyQ = mode === 'listening' ? (q.audioQuestion || q.text.replace(/<[^>]+>/g,'___')) : q.text.replace(/<[^>]+>/g,'___');
   history.push({q: historyQ, picked: q.options[i], correct: q.options[q.answer], isCorrect});
   renderTally();
 
@@ -1453,7 +1506,7 @@ const MODE_CONFIG = {
   reading: { questions: READING_QUESTIONS, title: READING_PASSAGE.title, sub: (n)=> `閱讀測驗．共 ${n} 題（閱讀理解＋文意選填）．請先閱讀短文再作答`, syncLabel: '閱讀測驗' },
   cloze: { questions: CLOZE_QUESTIONS, title: CLOZE_PASSAGE.title, sub: (n)=> `克漏字．共 ${n} 題．請先閱讀短文，選出最適合填入空格的字`, syncLabel: '克漏字測驗' },
   vocab: { questions: VOCAB_QUESTIONS, title: '國中單字測驗', sub: (n)=> `單字測驗．共 ${n} 題．選出最接近的中文意思`, syncLabel: '單字測驗' },
-  listening: { questions: LISTENING_QUESTIONS, title: '聽力測驗', sub: (n)=> `聽力測驗．共 ${n} 題（看圖辨義＋情境問答）．聽題目與選項，選出正確答案`, syncLabel: '聽力測驗' }
+  listening: { questions: LISTENING_QUESTIONS, title: '聽力測驗', sub: (n)=> `聽力測驗．共 ${n} 題（看圖辨義＋情境問答＋影片理解）．聽題目或看影片，選出正確答案`, syncLabel: '聽力測驗' }
 };
 
 function switchMode(newMode){
