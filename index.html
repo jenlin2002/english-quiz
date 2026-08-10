@@ -636,9 +636,15 @@ if(speechSupported){
 
 function pickVoice(lang){
   if(!cachedVoices.length) refreshVoiceCache();
+  const prefix = lang.split('-')[0];
+  // 優先順序：完全符合語言代碼且是「本機內建」的語音 > 本機內建的同語系語音 > 完全符合但雲端的 > 同語系但雲端的
+  // 本機內建(localService===true)比較不會有「語音清單裡有、但實際語音包還沒下載完成」導致無聲的問題（Edge常見）
+  const exactLocal = cachedVoices.find(v => v.lang === lang && v.localService === true);
+  if(exactLocal) return exactLocal;
+  const prefixLocal = cachedVoices.find(v => v.lang && v.lang.startsWith(prefix) && v.localService === true);
+  if(prefixLocal) return prefixLocal;
   const exact = cachedVoices.find(v => v.lang === lang);
   if(exact) return exact;
-  const prefix = lang.split('-')[0];
   const partial = cachedVoices.find(v => v.lang && v.lang.startsWith(prefix));
   return partial || null;
 }
@@ -671,6 +677,7 @@ function speak(text, btnEl, onEnd){
   if(!speechSupported){ if(onEnd) onEnd(); return; }
   whenVoicesReady(() => {
     window.speechSynthesis.cancel();
+    window.speechSynthesis.resume(); // Edge/Chromium 偶爾會卡在暫停狀態，播放前先確保是恢復狀態
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = 'en-US';
     utter.rate = 0.75;
@@ -686,6 +693,7 @@ function speakZh(text, btnEl, onEnd){
   if(!speechSupported){ if(onEnd) onEnd(); return; }
   whenVoicesReady(() => {
     window.speechSynthesis.cancel();
+    window.speechSynthesis.resume();
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = 'zh-TW';
     utter.rate = 0.88;
