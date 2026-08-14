@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>英文測驗系統｜第一週：現在簡單式 vs 現在進行式</title>
+<title>英文測驗系統｜第二週：過去簡單式 vs 過去進行式</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -326,8 +326,8 @@
 <body>
 
 <div class="board-header">
-  <div class="eyebrow">Week 1 · Test System</div>
-  <h1 class="board-title" id="mainTitle">現在簡單式 vs 現在進行式</h1>
+  <div class="eyebrow">Week 2 · Test System</div>
+  <h1 class="board-title" id="mainTitle">過去簡單式 vs 過去進行式</h1>
   <div class="board-sub" id="subTitle">文法測驗．共 20 題．每題點選答案後立即顯示對錯與說明</div>
 
   <div class="id-row">
@@ -376,237 +376,228 @@
 // ================== 題庫區（之後每週只要替換這個區塊即可重複使用整套系統） ==================
 
 const GRAMMAR_QUESTIONS = [
-  { text:"My sister <span class='blank'>______</span> books every night.", options:["read","reads","is reading","readding"], answer:1, note:"習慣性動作用現在簡單式，主詞是第三人稱單數 sister，動詞要加 s → reads。" },
-  { text:"Look! The dog <span class='blank'>______</span> in the park right now.", options:["runs","run","is running","was running"], answer:2, note:"right now 表示當下正在發生的動作，用現在進行式 is running。" },
-  { text:"He <span class='blank'>______</span> coffee. He thinks it's too bitter.", options:["is not liking","not likes","doesn't like","don't likes"], answer:2, note:"like 是狀態動詞，不可用進行式，且主詞 he 用 doesn't。" },
-  { text:"選出正確的頻率副詞位置：", options:["He goes always to school by bus.","He always goes to school by bus.","Always he goes to school by bus.","He goes to always school by bus."], answer:1, note:"一般動詞的頻率副詞要放在動詞「前面」：He always goes...。" },
-  { text:"We <span class='blank'>______</span> English right now in class.", options:["study","studies","are studying","studied"], answer:2, note:"right now + in class 表示當下正在做，用現在進行式 are studying。" },
-  { text:"選出正確句子：", options:["She is always late for school.","She always is late for school.","Always she is late for school.","She late is always for school."], answer:0, note:"be動詞的頻率副詞要放在be動詞「後面」：She is always late。" },
-  { text:"Listen! Someone <span class='blank'>______</span> in the next room.", options:["sings","sing","is singing","sang"], answer:2, note:"Listen! 提示當下正在發生，用現在進行式 is singing。" },
-  { text:"I <span class='blank'>______</span> this math question. Can you help me?", options:["am not understanding","don't understand","not understand","doesn't understand"], answer:1, note:"understand 是狀態動詞，不可用進行式，主詞 I 用 don't。" },
-  { text:"What <span class='blank'>______</span> your brother usually do on weekends?", options:["is","does","do","are"], answer:1, note:"usually 表示習慣性動作，用現在簡單式疑問句，主詞第三人稱單數用 does。" },
-  { text:"The earth <span class='blank'>______</span> around the sun.", options:["go","goes","is going","went"], answer:1, note:"永恆的科學事實一律用現在簡單式：The earth goes around the sun。" },
-  { text:"She usually cooks dinner, but tonight she <span class='blank'>______</span> pizza.", options:["orders","order","is ordering","ordered"], answer:2, note:"今晚是「例外情況」，正在做的臨時動作，用現在進行式 is ordering。" },
-  { text:"Water <span class='blank'>______</span> at 100°C.", options:["boils","boil","is boiling","boiled"], answer:0, note:"科學事實用現在簡單式，主詞 Water 視為單數 → boils。" },
-  { text:"Shh! The baby <span class='blank'>______</span> now.", options:["sleeps","sleep","is sleeping","slept"], answer:2, note:"Shh! 提示當下正在發生的動作，用現在進行式 is sleeping。" },
-  { text:"Do you <span class='blank'>______</span> the answer to this question?", options:["know","are knowing","knows","knew"], answer:0, note:"know 是狀態動詞，一律用現在簡單式，不可用進行式。" },
-  { text:"My parents <span class='blank'>______</span> today; it's a national holiday.", options:["don't work","doesn't work","aren't working","isn't working"], answer:2, note:"today 表示今天這個臨時狀態，用現在進行式的否定 aren't working。" },
-  { text:"He never <span class='blank'>______</span> breakfast before school.", options:["eats","eat","is eating","ate"], answer:0, note:"never 是頻率副詞，描述習慣，用現在簡單式，主詞 he 動詞加 s → eats。" },
-  { text:"What time <span class='blank'>______</span> the movie start tonight?", options:["is","does","do","are"], answer:1, note:"描述表定行程（時刻表）也用現在簡單式，疑問句用 does。" },
-  { text:"I can't talk right now — I <span class='blank'>______</span> breakfast.", options:["have","has","am having","was having"], answer:2, note:"have 表示「擁有」是狀態動詞，但表示「吃/正在進行的動作」時可用進行式，此處 am having 表示正在吃早餐。" },
-  { text:"This bike <span class='blank'>______</span> to my brother, not to me.", options:["belongs","belong","is belonging","belonged"], answer:0, note:"belong（屬於）是狀態動詞，不可用進行式，主詞 this bike 動詞加 s → belongs。" },
-  { text:"選出正確句子：", options:["Does she usually walks to school?","Does she usually walk to school?","Is she usually walk to school?","Do she usually walk to school?"], answer:1, note:"現在簡單式疑問句：Does + 主詞 + 原形動詞，助動詞已經表示第三人稱單數，動詞不再加s。" }
+  { text:"I <span class='blank'>______</span> TV when the phone rang.", options:["watch","watched","was watching","am watching"], answer:2, note:"電話響起（過去簡單式 rang）打斷了正在進行的動作，用過去進行式 was watching。" },
+  { text:"Yesterday, she <span class='blank'>______</span> to the park with her dog.", options:["go","goes","went","was going"], answer:2, note:"yesterday 是過去某時間點發生並結束的動作，用過去簡單式 went。" },
+  { text:"While he <span class='blank'>______</span> , his sister was playing games.", options:["study","studies","was studying","studied"], answer:2, note:"while 引導的子句表示「當...的時候」，兩個動作同時進行，用過去進行式 was studying。" },
+  { text:"They <span class='blank'>______</span> the movie last week.", options:["don't see","didn't see","weren't seeing","doesn't see"], answer:1, note:"last week 表示明確的過去時間點，用過去簡單式的否定 didn't see。" },
+  { text:"What <span class='blank'>______</span> you doing at 8pm last night?", options:["did","were","was","are"], answer:1, note:"過去進行式疑問句：What + were + 主詞 + Ving，主詞 you 用 were。" },
+  { text:"When the teacher came in, the students <span class='blank'>______</span> .", options:["talk","talked","were talking","are talking"], answer:2, note:"老師進來（過去簡單式 came）時，學生正在做的動作用過去進行式 were talking。" },
+  { text:"I <span class='blank'>______</span> my homework before I ate dinner last night.", options:["finish","finished","was finishing","am finishing"], answer:1, note:"兩個過去式動作依序發生（先寫完作業，再吃晚餐），用過去簡單式 finished，不是同時進行。" },
+  { text:"She <span class='blank'>______</span> dinner when the fire alarm went off.", options:["cooks","cooked","was cooking","cook"], answer:2, note:"火災警報響起（過去簡單式）時，她正在做的動作用過去進行式 was cooking。" },
+  { text:"He <span class='blank'>______</span> to bed early last night because he was tired.", options:["go","goes","went","was going"], answer:2, note:"last night 是明確過去時間點，描述單一發生並結束的動作，用過去簡單式 went。" },
+  { text:"While I <span class='blank'>______</span> home, it started to rain.", options:["walk","walked","was walking","am walking"], answer:2, note:"while 引導「正在做的背景動作」，用過去進行式 was walking，之後才被 it started to rain 這個過去簡單式動作打斷。" },
+  { text:"They <span class='blank'>______</span> soccer all afternoon yesterday.", options:["play","played","were playing","are playing"], answer:1, note:"描述整個過去時段內完整發生的動作（all afternoon），用過去簡單式 played。" },
+  { text:"What were you doing when I <span class='blank'>______</span> you?", options:["call","calls","called","was calling"], answer:2, note:"「我打電話」是打斷對方正在做的事的那個瞬間動作，用過去簡單式 called。" },
+  { text:"My parents <span class='blank'>______</span> home when I arrived.", options:["don't be","aren't","weren't","wasn't"], answer:2, note:"主詞 my parents 是複數，過去式be動詞用 were，否定為 weren't。" },
+  { text:"I saw Tom while I <span class='blank'>______</span> to work.", options:["drive","drove","was driving","am driving"], answer:2, note:"while 引導正在進行的背景動作，用過去進行式 was driving。" },
+  { text:"Did you <span class='blank'>______</span> your homework last night?", options:["finish","finished","were finishing","finishing"], answer:0, note:"Did 開頭的過去簡單式疑問句，助動詞已表示過去式，後面動詞用原形 finish。" },
+  { text:"She <span class='blank'>______</span> TV; she was reading a book instead.", options:["doesn't watch","didn't watch","wasn't watching","isn't watching"], answer:2, note:"描述過去某時刻「正在做的事」的否定，用過去進行式的否定 wasn't watching。" },
+  { text:"We <span class='blank'>______</span> a great time at the party last weekend.", options:["have","has","had","were having"], answer:2, note:"last weekend 是明確過去時間點，描述整體發生並結束的經驗，用過去簡單式 had。" },
+  { text:"He was sleeping when the earthquake <span class='blank'>______</span> .", options:["happens","happened","was happening","happen"], answer:1, note:"地震發生是打斷「正在睡覺」這個背景動作的瞬間事件，用過去簡單式 happened。" },
+  { text:"選出正確句子：", options:["I was cooking dinner when my phone was ringing.","I cooked dinner when my phone rang.","I was cooking dinner when my phone rang.","I cook dinner when my phone rang."], answer:2, note:"「正在煮飯」是背景動作用過去進行式 was cooking，「電話響」是打斷的瞬間動作用過去簡單式 rang，兩者搭配才正確。" },
+  { text:"選出正確句子：", options:["When I was young, I am living in Taipei.","When I was young, I lived in Taipei.","When I young, I lived in Taipei.","When I was young, I was living in Taipei for one day."], answer:1, note:"描述過去長期存在的狀態，用過去簡單式 lived，When I was young 是正確的時間子句。" }
 ];
 
 const READING_PASSAGE = {
-  title:"A Day in Lisa's Life",
-  html:`Lisa is a seventh grader. She usually gets up at six thirty and eats breakfast with her family. After breakfast, she walks to school with her best friend, Amy. Lisa likes math, but she doesn't like science very much because it has too many hard words.<br><br>
-Right now, it's Saturday afternoon, and Lisa is doing something different from her usual routine. She is sitting in the living room with her brother. They are watching a nature documentary about the ocean. Lisa is really enjoying it because she loves animals. Her brother, on the other hand, is playing a video game on his phone at the same time — he isn't watching the documentary very carefully.<br><br>
-Every Saturday evening, Lisa's family eats dinner together at seven o'clock. Tonight, though, they are going to eat a little later because Lisa's mom is still cooking.`
+  title:"A Trip I Will Never Forget",
+  html:`Last summer, my family went on a camping trip to the mountains. We packed our tent, sleeping bags, and a lot of snacks, and we drove for three hours to get there.<br><br>
+When we arrived at the campsite, the sun was shining and birds were singing everywhere. My dad started setting up the tent while my mom was preparing lunch. My little sister and I explored the area near the river.<br><br>
+Suddenly, while we were walking along the river, it started to rain very heavily. We ran back to the tent as fast as we could. By the time we got there, we were all completely wet! We laughed so hard about it. That night, we sat around a small fire and told funny stories. It was one of the best trips we ever had.`
 };
 
 const READING_QUESTIONS = [
-  { type:"閱讀理解", text:"What time does Lisa usually get up on school days?", options:["6:00","6:30","7:00","7:30"], answer:1, note:"文章第一句提到 She usually gets up at six thirty。" },
-  { type:"閱讀理解", text:"Why doesn't Lisa like science very much?", options:["It's too easy.","It has too many hard words.","Her teacher is strict.","She doesn't like her classmates."], answer:1, note:"文章提到 science...because it has too many hard words。" },
-  { type:"閱讀理解", text:"What is Lisa doing right now?", options:["Walking to school","Eating breakfast","Watching a documentary","Doing homework"], answer:2, note:"文章提到 Right now...she is sitting in the living room...watching a nature documentary。" },
-  { type:"閱讀理解", text:"What is Lisa's brother doing while the documentary plays?", options:["He is sleeping.","He is cooking dinner.","He is playing a video game on his phone.","He is doing his homework."], answer:2, note:"文章提到 her brother...is playing a video game on his phone at the same time。" },
-  { type:"閱讀理解", text:"Why will the family eat dinner a little later tonight?", options:["They are not hungry.","Lisa's mom is still cooking.","They are watching a movie.","Lisa's dad is not home yet."], answer:1, note:"文章最後提到 they are going to eat a little later because Lisa's mom is still cooking。" },
-  { type:"文意選填", text:"Every Saturday evening, Lisa's family ______ dinner together at seven o'clock.（選出最適合填入文中空格的字）", options:["eats","is eating","ate","eating"], answer:0, note:"Every Saturday evening 表示習慣性動作，用現在簡單式 eats。" },
-  { type:"文意選填", text:"根據文章語氣，下列哪一句最適合放在文章開頭來介紹 Lisa？", options:["Lisa hates her family.","Lisa is a seventh grader.","Lisa never goes to school.","Lisa doesn't have any friends."], answer:1, note:"文章開頭就是用一句話介紹人物身份，Lisa is a seventh grader 最符合文意選填的邏輯開頭句。" },
-  { type:"文意選填", text:"依文意，下列哪個字最適合形容 Lisa 對紀錄片的感覺？", options:["bored","enjoying","angry","confused"], answer:1, note:"文章提到 Lisa is really enjoying it because she loves animals。" },
-  { type:"文意選填", text:"依文意判斷，Lisa 的弟弟對紀錄片的態度最適合用哪個詞描述？", options:["carefully","carelessly","angrily","sadly"], answer:1, note:"文章提到 he isn't watching the documentary very carefully，反義詞概念判斷他是漫不經心的（carelessly）。" },
-  { type:"文意選填", text:"整篇文章主要描述的是：", options:["Lisa 的一個特別的週末下午","Lisa 的數學考試","Lisa 和 Amy 吵架的經過","Lisa 家的搬家計畫"], answer:0, note:"全文以 Lisa 平常作息開頭，接著描述「今天週六下午」發生的不同尋常的事，主旨是描述她特別的週末下午。" }
+  { type:"閱讀理解", text:"Where did the family go last summer?", options:["To the beach","To the mountains","To a hotel","To a museum"], answer:1, note:"文章第一句提到 my family went on a camping trip to the mountains。" },
+  { type:"閱讀理解", text:"How long did they drive to get to the campsite?", options:["One hour","Two hours","Three hours","Four hours"], answer:2, note:"文章提到 we drove for three hours to get there。" },
+  { type:"閱讀理解", text:"What was the dad doing when they arrived?", options:["Cooking lunch","Setting up the tent","Sleeping","Swimming in the river"], answer:1, note:"文章提到 My dad started setting up the tent while my mom was preparing lunch。" },
+  { type:"閱讀理解", text:"What were the writer and their sister doing near the river?", options:["Fishing","Swimming","Exploring the area","Sleeping"], answer:2, note:"文章提到 My little sister and I explored the area near the river。" },
+  { type:"閱讀理解", text:"What happened while they were walking along the river?", options:["They saw a bear.","It started to rain heavily.","They got lost.","They found some money."], answer:1, note:"文章提到 while we were walking along the river, it started to rain very heavily。" },
+  { type:"文意選填", text:"When we arrived at the campsite, the sun ______ and birds were singing everywhere.（選出最適合填入文中空格的字）", options:["shines","is shining","was shining","shone brightly today"], answer:2, note:"描述抵達當下正在發生的背景畫面，用過去進行式 was shining，與後面 birds were singing 對應。" },
+  { type:"文意選填", text:"依文意，下列哪個詞最適合形容全家人淋雨後的反應？", options:["angry","laughed","cried","worried"], answer:1, note:"文章提到 We laughed so hard about it，描述他們淋濕後反而覺得好笑。" },
+  { type:"文意選填", text:"根據文章語氣，下列哪一句最適合放在文章結尾總結這趟旅行？", options:["It was a terrible trip.","It was one of the best trips we ever had.","We will never go camping again.","Nobody enjoyed the trip."], answer:1, note:"文章最後一句就是 It was one of the best trips we ever had，是最適合的結尾總結句。" },
+  { type:"文意選填", text:"依文意判斷，全家人跑回帳篷時的狀態最適合用哪個詞描述？", options:["dry","wet","cold","hungry"], answer:1, note:"文章提到 we were all completely wet，描述他們被雨淋濕的狀態。" },
+  { type:"文意選填", text:"整篇文章主要描述的是：", options:["一次失敗的露營經驗","一趟令人難忘的家庭露營之旅","一場家庭爭吵","一次學校旅行"], answer:1, note:"全文描述一家人去露營，途中下雨但仍然玩得很開心，標題也呼應 A Trip I Will Never Forget，主旨是一趟令人難忘的家庭旅行。" }
 ];
 
 const CLOZE_PASSAGE = {
-  title:"A Busy Morning",
-  html:`Every morning, Ben (1)<span class='blank'>____</span> up early and gets ready for school. He always eats a big breakfast because he believes breakfast is the most (2)<span class='blank'>____</span> meal of the day.<br><br>
-This morning, however, is a little different. Right now, Ben is running around the house because he (3)<span class='blank'>____</span> find his math homework. His mother is helping him look for it. "Don't worry," she says, "we still have ten minutes before the bus comes."<br><br>
-Ben finally finds his homework under his bed. He (4)<span class='blank'>____</span> a deep breath and runs out the door just in time.`
+  title:"An Unexpected Visitor",
+  html:`Last Friday night, Emma (1)<span class='blank'>____</span> her homework at her desk when she heard a strange noise outside. At first, she (2)<span class='blank'>____</span> too scared to look, so she just sat still and listened carefully.<br><br>
+A few minutes later, the noise got louder. Emma finally walked to the window and looked outside. She (3)<span class='blank'>____</span> a small cat sitting on the porch, meowing loudly.<br><br>
+Emma opened the door slowly. The cat looked hungry, so she (4)<span class='blank'>____</span> it some milk. From that night on, the little cat became part of Emma's family.`
 };
 
 const CLOZE_QUESTIONS = [
-  { type:"克漏字 (1)", text:"選出最適合填入空格 (1) 的字：", options:["wake","wakes","is waking","woke"], answer:1, note:"every morning 表示習慣性動作，主詞 Ben 是第三人稱單數，用現在簡單式 wakes。" },
-  { type:"克漏字 (2)", text:"選出最適合填入空格 (2) 的字：", options:["important","importantly","importance","more important"], answer:0, note:"空格前面是 the most，後面要接原級形容詞修飾 meal，most + important 是最高級用法，故選 important。" },
-  { type:"克漏字 (3)", text:"選出最適合填入空格 (3) 的字：", options:["can't","couldn't","doesn't","isn't"], answer:0, note:"文章描述的是「現在」正在發生的狀況（Right now, Ben is running...），所以用現在式的 can't，表示他現在找不到作業。" },
-  { type:"克漏字 (4)", text:"選出最適合填入空格 (4) 的字：", options:["take","takes","is taking","took"], answer:1, note:"這裡延續前面的敘述現在式語氣（narrative present），主詞 He 第三人稱單數用 takes，take a deep breath 是固定用法「深吸一口氣」。" }
+  { type:"克漏字 (1)", text:"選出最適合填入空格 (1) 的字：", options:["does","did","was doing","is doing"], answer:2, note:"聽到怪聲（過去簡單式 heard）當下正在做的背景動作，用過去進行式 was doing。" },
+  { type:"克漏字 (2)", text:"選出最適合填入空格 (2) 的字：", options:["is","was","were","be"], answer:1, note:"主詞 she 為第三人稱單數，過去式be動詞用 was。" },
+  { type:"克漏字 (3)", text:"選出最適合填入空格 (3) 的字：", options:["sees","saw","was seeing","is seeing"], answer:1, note:"看到貓是一個瞬間發生並結束的動作，用過去簡單式 saw。" },
+  { type:"克漏字 (4)", text:"選出最適合填入空格 (4) 的字：", options:["give","gave","was giving","gives"], answer:1, note:"承接前面過去式的敘事語氣，主詞 she 用過去簡單式 gave。" }
 ];
 
 const LISTENING_QUESTIONS = [
   {
-    type: "看圖辨義",
-    text: "請看照片，點按鈕聽題目與三個選項，選出正確答案。",
-    audioQuestion: "What is the boy doing?",
-    image: "https://images.unsplash.com/photo-1566728060299-ad216d6fa3c1?w=700&q=80&auto=format&fit=crop",
-    imageCredit: "Photo by Markus Spiske on Unsplash",
-    options: ["He is riding a bicycle.", "He is playing basketball.", "He is reading a book."],
-    answer: 0,
-    note: "照片中男孩正在騎腳踏車，用現在進行式 is riding a bicycle 描述他此刻正在做的動作，所以答案是 (A)。"
-  },
-  {
-    type: "看圖辨義",
-    text: "請看照片，點按鈕聽題目與三個選項，選出正確答案。",
-    audioQuestion: "What are the kids doing?",
-    image: "https://images.unsplash.com/photo-1651614158095-b98b6c1da74b?w=700&q=80&auto=format&fit=crop",
-    imageCredit: "Photo by Kevin Paes on Unsplash",
-    options: ["They are doing homework.", "They are swimming in the pool.", "They are eating dinner."],
+    type: "問答理解",
+    text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
+    audioQuestion: "What did you do last weekend?",
+    options: ["I go to the beach.", "I went to the beach.", "I am going to the beach."],
     answer: 1,
-    note: "照片中孩子們正在泳池裡，用現在進行式 are swimming 描述正在進行的動作，所以答案是 (B)。"
+    note: "last weekend 是明確過去時間點，回答要用過去簡單式，所以答案是 (B) I went to the beach。"
   },
   {
-    type: "看圖辨義",
-    text: "請看照片，點按鈕聽題目與三個選項，選出正確答案。",
-    audioQuestion: "What is the woman doing?",
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=700&q=80&auto=format&fit=crop",
-    imageCredit: "Photo by Jason Briscoe on Unsplash",
-    options: ["She is cleaning the room.", "She is watching TV.", "She is cooking in the kitchen."],
-    answer: 2,
-    note: "照片中女子正在廚房裡料理食物，用現在進行式 is cooking 描述正在進行的動作，所以答案是 (C)。"
-  },
-  {
-    type: "看圖辨義",
-    text: "請看照片，點按鈕聽題目與三個選項，選出正確答案。",
-    audioQuestion: "What is the boy doing?",
-    image: "https://images.unsplash.com/photo-1758612898181-d7c92f0e21d5?w=700&q=80&auto=format&fit=crop",
-    imageCredit: "Photo by Vitaly Gariev on Unsplash",
-    options: ["He is riding a bike.", "He is doing his homework.", "He is playing a video game."],
+    type: "問答理解",
+    text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
+    audioQuestion: "Where were you at eight pm last night?",
+    options: ["I am at home.", "I was at home.", "I will be at home."],
     answer: 1,
-    note: "照片中男孩坐在書桌前寫作業，用現在進行式 is doing his homework 描述正在進行的動作，所以答案是 (B)。"
-  },
-  {
-    type: "看圖辨義",
-    text: "請看照片，點按鈕聽題目與三個選項，選出正確答案。",
-    audioQuestion: "What is the woman doing?",
-    image: "https://images.unsplash.com/photo-1698522279590-06b2d5a0ac98?w=700&q=80&auto=format&fit=crop",
-    imageCredit: "Photo by Megan Dujardin on Unsplash",
-    options: ["She is walking her dog.", "She is riding a bicycle.", "She is swimming."],
-    answer: 0,
-    note: "照片中女子正牽著狗散步，用現在進行式 is walking her dog 描述正在進行的動作，所以答案是 (A)。"
+    note: "問過去某時間點的狀態，用過去簡單式be動詞回答，所以答案是 (B) I was at home。"
   },
   {
     type: "問答理解",
     text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "Where is your brother?",
-    options: ["He is fine.", "He is in his room.", "He is ten years old."],
+    audioQuestion: "What was she doing when you called her?",
+    options: ["She cooks dinner.", "She was cooking dinner.", "She cooked dinner."],
     answer: 1,
-    note: "Where 問的是地點，只有 (B) He is in his room. 回答了地點，所以答案是 (B)。"
+    note: "問「打電話當下正在做的事」，用過去進行式回答，所以答案是 (B) She was cooking dinner。"
   },
   {
     type: "問答理解",
     text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "Does she like pizza?",
-    options: ["Yes, she does.", "Yes, she is.", "Yes, she can."],
-    answer: 0,
-    note: "Does 開頭的疑問句，回答要用 does，所以答案是 (A) Yes, she does。"
-  },
-  {
-    type: "問答理解",
-    text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "What are you doing?",
-    options: ["I do my homework every day.", "I am watching TV.", "I watched TV yesterday."],
+    audioQuestion: "Did you finish your homework?",
+    options: ["Yes, I do.", "Yes, I did.", "Yes, I am."],
     answer: 1,
-    note: "What are you doing 問的是現在正在做的事，要用現在進行式回答，所以答案是 (B) I am watching TV。"
+    note: "Did 開頭的疑問句，回答要用 did，所以答案是 (B) Yes, I did。"
   },
   {
     type: "問答理解",
     text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "How often do you play basketball?",
-    options: ["I play basketball every weekend.", "I am playing basketball now.", "I played basketball yesterday."],
+    audioQuestion: "Why was he late for school?",
+    options: ["Because he missed the bus.", "Because he misses the bus.", "Because he will miss the bus."],
     answer: 0,
-    note: "How often 問的是頻率，要用現在簡單式回答習慣，所以答案是 (A) I play basketball every weekend。"
+    note: "問過去發生的原因，用過去簡單式回答，所以答案是 (A) Because he missed the bus。"
   },
   {
     type: "問答理解",
     text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "What time does the movie start?",
-    options: ["It starts at seven.", "It is starting now.", "It started an hour ago."],
+    audioQuestion: "What happened at the party last night?",
+    options: ["We had a great time.", "We have a great time.", "We are having a great time."],
     answer: 0,
-    note: "問表定時刻用現在簡單式回答，所以答案是 (A) It starts at seven。"
+    note: "last night 是明確過去時間點，用過去簡單式回答，所以答案是 (A) We had a great time。"
   },
   {
     type: "問答理解",
     text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "Is it raining outside?",
-    options: ["Yes, it is.", "Yes, it does.", "Yes, it can."],
+    audioQuestion: "Were you sleeping when the earthquake happened?",
+    options: ["Yes, I was.", "Yes, I do.", "Yes, I am."],
     answer: 0,
-    note: "Is 開頭的疑問句，回答要用 is，所以答案是 (A) Yes, it is。"
+    note: "Were 開頭的過去進行式疑問句，回答要用 was，所以答案是 (A) Yes, I was。"
   },
   {
     type: "問答理解",
     text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
-    audioQuestion: "What does your father do?",
-    options: ["He is a teacher.", "He is teaching now.", "He taught yesterday."],
-    answer: 0,
-    note: "What does...do 問的是職業，用現在簡單式回答身份，所以答案是 (A) He is a teacher。"
+    audioQuestion: "How did you get to school yesterday?",
+    options: ["I walk to school.", "I walked to school.", "I am walking to school."],
+    answer: 1,
+    note: "yesterday 是明確過去時間點，用過去簡單式回答，所以答案是 (B) I walked to school。"
+  },
+  {
+    type: "問答理解",
+    text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
+    audioQuestion: "What were they doing when it started to rain?",
+    options: ["They play soccer.", "They were playing soccer.", "They played soccer."],
+    answer: 1,
+    note: "問「開始下雨那一刻正在做的事」，用過去進行式回答，所以答案是 (B) They were playing soccer。"
+  },
+  {
+    type: "問答理解",
+    text: "請點按鈕聽題目與三個選項，選出最適合的回答。",
+    audioQuestion: "Did she call you last night?",
+    options: ["No, she doesn't.", "No, she didn't.", "No, she isn't."],
+    answer: 1,
+    note: "Did 開頭的疑問句，否定回答要用 didn't，所以答案是 (B) No, she didn't。"
   },
   {
     type: "問答理解",
     text: "（進階）請點按鈕聽題目與三個選項，選出最合理的回答。",
-    audioQuestion: "Why is Tom running so fast?",
-    options: ["Because he usually runs fast.", "Because he is late for school.", "Because he ran yesterday."],
-    answer: 1,
-    note: "這題比較難：Why...running（現在進行式）問的是「此刻」奔跑的原因，只有 (B) 提到符合現在情境的合理原因（快遲到了），所以答案是 (B)。"
+    audioQuestion: "Why didn't Tom answer his phone this morning?",
+    options: ["Because he was sleeping.", "Because he sleeps.", "Because he will sleep."],
+    answer: 0,
+    note: "這題比較難：問過去某時刻沒接電話的合理原因，要用過去進行式描述當時正在做的事，所以答案是 (A) Because he was sleeping。"
   },
   {
     type: "問答理解",
     text: "（進階）請點按鈕聽題目與三個選項，選出最合理的回答。",
-    audioQuestion: "What does Lily do every morning before school?",
-    options: ["She is eating breakfast.", "She eats breakfast and brushes her teeth.", "She ate breakfast today."],
+    audioQuestion: "What was happening in the classroom when the teacher walked in?",
+    options: ["The students talk loudly.", "The students were talking loudly.", "The students talked loudly for one hour."],
     answer: 1,
-    note: "這題比較難：every morning 表示習慣性動作，要用現在簡單式且描述完整習慣，(B) eats and brushes 才是正確的現在簡單式描述，所以答案是 (B)。"
+    note: "這題比較難：問「老師走進來那一刻」教室裡正在發生的背景動作，用過去進行式，所以答案是 (B) The students were talking loudly。"
   },
   {
     type: "問答理解",
     text: "（進階）請點按鈕聽題目與三個選項，選出最合理的回答。",
-    audioQuestion: "Why isn't Jack playing outside with his friends today?",
-    options: ["Because he doesn't like playing outside.", "Because it is raining today.", "Because he played outside yesterday."],
-    answer: 1,
-    note: "這題比較難：題目關鍵字是 today，要選出跟「今天」這個時間點合理相關的原因，只有 (B) it is raining today 符合邏輯，所以答案是 (B)。"
+    audioQuestion: "Why was the ground wet this morning?",
+    options: ["Because it rained last night.", "Because it rains every night.", "Because it is raining now."],
+    answer: 0,
+    note: "這題比較難：問「今天早上」地面濕的原因，要選出跟前一晚（過去）相關的合理原因，所以答案是 (A) Because it rained last night。"
+  },
+  {
+    type: "問答理解",
+    text: "（進階）請點按鈕聽題目與三個選項，選出最合理的回答。",
+    audioQuestion: "What did you do while you were waiting for the bus?",
+    options: ["I read a book.", "I am reading a book.", "I read books every day."],
+    answer: 0,
+    note: "這題比較難：等公車是背景進行式，但問「做了什麼事」要用過去簡單式描述完成的動作，所以答案是 (A) I read a book。"
+  },
+  {
+    type: "問答理解",
+    text: "（進階）請點按鈕聽題目與三個選項，選出最合理的回答。",
+    audioQuestion: "Was your sister watching TV when you got home?",
+    options: ["Yes, she was.", "Yes, she is.", "Yes, she does."],
+    answer: 0,
+    note: "這題比較難：Was 開頭的過去進行式疑問句，回答要用 was，所以答案是 (A) Yes, she was。"
   }
 ];
 
 const VOCAB_QUESTIONS = [
-  { word:"journey", text:"journey 這個字的中文意思最接近：", options:["旅程","工作","朋友","食物"], answer:0, note:"journey (n.) 旅程、旅行。",
-    example:"We went on a long journey across the country.", exampleZh:"我們展開了一趟橫越全國的長途旅程。",
-    scrambleSentence:"Our journey began early in the morning.", zh:"我們的旅程一大早就開始了。" },
-  { word:"comfortable", text:"comfortable 這個字的中文意思最接近：", options:["緊張的","舒適的","憤怒的","無聊的"], answer:1, note:"comfortable (adj.) 舒適的。",
-    example:"This sofa is very comfortable to sit on.", exampleZh:"這張沙發坐起來非常舒適。",
-    scrambleSentence:"I feel comfortable in this room.", zh:"我在這個房間裡感覺很舒適。" },
-  { word:"achieve", text:"achieve 這個字的中文意思最接近：", options:["放棄","忘記","達成","借用"], answer:2, note:"achieve (v.) 達成、達到。",
-    example:"She worked hard to achieve her dream.", exampleZh:"她努力工作以達成她的夢想。",
-    scrambleSentence:"He finally achieved his goal.", zh:"他終於達成了他的目標。" },
-  { word:"environment", text:"environment 這個字的中文意思最接近：", options:["環境","歷史","數學","音樂"], answer:0, note:"environment (n.) 環境。",
-    example:"We should protect the environment for future generations.", exampleZh:"我們應該為了下一代保護環境。",
-    scrambleSentence:"The environment is getting worse every year.", zh:"環境一年比一年更糟。" },
-  { word:"imagine", text:"imagine 這個字的中文意思最接近：", options:["購買","清潔","修理","想像"], answer:3, note:"imagine (v.) 想像。",
-    example:"Can you imagine living on the moon?", exampleZh:"你能想像住在月球上嗎？",
-    scrambleSentence:"I can't imagine my life without music.", zh:"我無法想像沒有音樂的生活。" },
-  { word:"situation", text:"situation 這個字的中文意思最接近：", options:["情況","顏色","形狀","聲音"], answer:0, note:"situation (n.) 情況、狀況。",
-    example:"He stayed calm in a difficult situation.", exampleZh:"他在困難的情況下保持冷靜。",
-    scrambleSentence:"The situation is under control now.", zh:"情況現在已經控制住了。" },
-  { word:"similar", text:"similar 這個字的中文意思最接近：", options:["危險的","便宜的","相似的","乾淨的"], answer:2, note:"similar (adj.) 相似的。",
-    example:"My sister and I have similar interests.", exampleZh:"我姊姊和我有相似的興趣。",
-    scrambleSentence:"These two shirts look very similar.", zh:"這兩件襯衫看起來非常相似。" },
-  { word:"industry", text:"industry 這個字的中文意思最接近：", options:["產業","森林","河流","山脈"], answer:0, note:"industry (n.) 產業、工業。",
-    example:"The tourism industry is very important in Taiwan.", exampleZh:"觀光產業在台灣非常重要。",
-    scrambleSentence:"My father works in the food industry.", zh:"我爸爸在食品產業工作。" },
-  { word:"prepare", text:"prepare 這個字的中文意思最接近：", options:["慶祝","拒絕","道歉","準備"], answer:3, note:"prepare (v.) 準備。",
-    example:"You should prepare for the exam early.", exampleZh:"你應該提早準備考試。",
-    scrambleSentence:"We need to prepare dinner for the guests.", zh:"我們需要為客人準備晚餐。" },
-  { word:"various", text:"various 這個字的中文意思最接近：", options:["各式各樣的","唯一的","簡單的","困難的"], answer:0, note:"various (adj.) 各式各樣的。",
-    example:"The store sells various kinds of snacks.", exampleZh:"這家店賣各式各樣的零食。",
-    scrambleSentence:"There are various ways to solve this problem.", zh:"有各種方法可以解決這個問題。" }
+  { word:"adventure", text:"adventure 這個字的中文意思最接近：", options:["冒險","考試","作業","會議"], answer:0, note:"adventure (n.) 冒險、奇遇。",
+    example:"Our trip to the mountains was a real adventure.", exampleZh:"我們的山區之旅是一場真正的冒險。",
+    scrambleSentence:"They had an amazing adventure in the forest.", zh:"他們在森林裡經歷了一場精彩的冒險。" },
+  { word:"suddenly", text:"suddenly 這個字的中文意思最接近：", options:["突然地","慢慢地","小心地","安靜地"], answer:0, note:"suddenly (adv.) 突然地。",
+    example:"Suddenly, it started to rain very hard.", exampleZh:"突然間，開始下起了大雨。",
+    scrambleSentence:"The dog suddenly ran across the street.", zh:"那隻狗突然跑過了馬路。" },
+  { word:"exciting", text:"exciting 這個字的中文意思最接近：", options:["無聊的","令人興奮的","令人害怕的","令人難過的"], answer:1, note:"exciting (adj.) 令人興奮的。",
+    example:"The camping trip was really exciting for us.", exampleZh:"這趟露營之旅對我們來說真的很令人興奮。",
+    scrambleSentence:"We watched an exciting soccer game last night.", zh:"我們昨晚看了一場令人興奮的足球賽。" },
+  { word:"nervous", text:"nervous 這個字的中文意思最接近：", options:["緊張的","放鬆的","開心的","生氣的"], answer:0, note:"nervous (adj.) 緊張的。",
+    example:"I felt nervous before the exam started.", exampleZh:"考試開始前我覺得很緊張。",
+    scrambleSentence:"She was nervous during her speech yesterday.", zh:"她昨天演講的時候很緊張。" },
+  { word:"arrive", text:"arrive 這個字的中文意思最接近：", options:["離開","到達","出發","迷路"], answer:1, note:"arrive (v.) 到達。",
+    example:"We arrived at the campsite before noon.", exampleZh:"我們中午前就到達了露營地。",
+    scrambleSentence:"The train arrived ten minutes late yesterday.", zh:"火車昨天晚了十分鐘到達。" },
+  { word:"forget", text:"forget 這個字的中文意思最接近：", options:["記得","忘記","發現","相信"], answer:1, note:"forget (v.) 忘記，過去式為 forgot。",
+    example:"I forgot my umbrella at school yesterday.", exampleZh:"我昨天把雨傘忘在學校了。",
+    scrambleSentence:"He forgot to call his mom last night.", zh:"他昨晚忘記打電話給媽媽了。" },
+  { word:"remember", text:"remember 這個字的中文意思最接近：", options:["忘記","記得","發生","消失"], answer:1, note:"remember (v.) 記得。",
+    example:"Do you remember what happened last summer?", exampleZh:"你還記得去年夏天發生的事嗎？",
+    scrambleSentence:"I still remember my first day at school.", zh:"我還記得我上學的第一天。" },
+  { word:"happen", text:"happen 這個字的中文意思最接近：", options:["發生","購買","修理","打掃"], answer:0, note:"happen (v.) 發生。",
+    example:"Nobody knew what was going to happen next.", exampleZh:"沒有人知道接下來會發生什麼事。",
+    scrambleSentence:"A strange thing happened at the park yesterday.", zh:"昨天公園裡發生了一件奇怪的事。" },
+  { word:"discover", text:"discover 這個字的中文意思最接近：", options:["發現","隱藏","丟失","購買"], answer:0, note:"discover (v.) 發現。",
+    example:"Scientists discovered a new type of fish last year.", exampleZh:"科學家去年發現了一種新魚類。",
+    scrambleSentence:"We discovered a small cave near the river.", zh:"我們在河邊發現了一個小山洞。" },
+  { word:"disappear", text:"disappear 這個字的中文意思最接近：", options:["出現","消失","增加","改變"], answer:1, note:"disappear (v.) 消失。",
+    example:"The cat suddenly disappeared behind the tree.", exampleZh:"那隻貓突然消失在樹後面。",
+    scrambleSentence:"My keys disappeared from my bag this morning.", zh:"我的鑰匙今天早上從包包裡消失了。" }
 ];
 
 const SPEAKING_QUESTIONS = [
-  { en:"What do you usually do after school?", hint:"用現在簡單式完整回答", sample:"I usually do my homework first, and then I play basketball with my friends near my house.", sampleZh:"我通常會先寫作業，然後跟我家附近的朋友打籃球。", checkType:"simple" },
-  { en:"What are you doing right now?", hint:"用現在進行式完整回答", sample:"I am sitting at my desk and practicing English speaking with my teacher.", sampleZh:"我正坐在書桌前，和老師一起練習英文口說。", checkType:"continuous" },
-  { en:"Does your family eat dinner together every night?", hint:"練習 does 開頭的疑問句與回答", sample:"Yes, we usually eat dinner together at seven o'clock every night.", sampleZh:"是的，我們通常每天晚上七點一起吃晚餐。", checkType:"yesno" },
-  { en:"What do you usually do on weekends?", hint:"練習 usually / often 等頻率副詞", sample:"I usually watch movies at home, and sometimes I go to the park with my family.", sampleZh:"我通常在家看電影，有時候會跟家人去公園。", checkType:"simple" },
-  { en:"Look outside. What is the weather like right now?", hint:"練習用現在進行式描述當下天氣", sample:"It is raining right now, so I am staying inside and reading a book.", sampleZh:"現在正在下雨，所以我待在室內看書。", checkType:"continuous" }
+  { en:"What did you do last weekend?", hint:"用過去簡單式完整回答", sample:"I went to the night market with my family and ate a lot of delicious food.", sampleZh:"我跟家人去了夜市，吃了很多好吃的東西。", checkType:"pastSimple" },
+  { en:"What were you doing at seven o'clock last night?", hint:"用過去進行式完整回答", sample:"I was having dinner with my family at home.", sampleZh:"我當時正在家跟家人吃晚餐。", checkType:"pastContinuous" },
+  { en:"Did you watch TV last night?", hint:"練習 did 開頭的疑問句與回答", sample:"No, I didn't. I read a book instead.", sampleZh:"沒有，我沒有看電視，我改看書了。", checkType:"yesno" },
+  { en:"What was the weather like yesterday?", hint:"用過去簡單式描述天氣", sample:"It was sunny and warm all day.", sampleZh:"昨天整天都陽光普照又溫暖。", checkType:"pastSimple" },
+  { en:"What were you doing when your phone rang this morning?", hint:"練習過去進行式描述背景動作", sample:"I was brushing my teeth when my phone rang.", sampleZh:"我手機響的時候正在刷牙。", checkType:"pastContinuous" }
 ];
 
 // =====================================================================================
+
 
 let mode = "grammar";
 let questions = GRAMMAR_QUESTIONS;
@@ -747,7 +738,7 @@ function speakSequence(textList, onAllDone){
 }
 
 // ---------- Student identity + cloud sync ----------
-const WEEK_LABEL = "Week 1";
+const WEEK_LABEL = "Week 2";
 const DEFAULT_SYNC_URL = "https://script.google.com/macros/s/AKfycbwqd9cr_3MfXK8hzs8Y-YPQQUqOH5vKtW_vMav1nMAAt9VkBCP_5WP6Q1TDngIlr51U/exec";
 
 // 有些環境（例如 iPad/iPhone「檔案」App 的預覽模式）會封鎖 localStorage 存取，
@@ -1219,29 +1210,44 @@ function analyzeSpeaking(q, transcript){
     return;
   }
   const lower = t.toLowerCase();
-  const hasContinuous = /\b(am|is|are)\s+\w+ing\b/.test(lower);
+  const hasPresentContinuous = /\b(am|is|are)\s+\w+ing\b/.test(lower);
+  const hasPastContinuous = /\b(was|were)\s+\w+ing\b/.test(lower);
   let ok = true;
   let msg = '';
 
   if(q.checkType === 'simple'){
-    if(hasContinuous){
+    if(hasPresentContinuous){
       ok = false;
       msg = '偵測到你的回答用了「be動詞＋Ving」的進行式結構，但這一題要練習的是現在簡單式（習慣性動作），可以再試著用像 "I usually..." 這樣的句型回答一次。';
     } else {
       msg = '沒有偵測到誤用進行式，聽起來符合這題要練習的現在簡單式句型！';
     }
   } else if(q.checkType === 'continuous'){
-    if(!hasContinuous){
+    if(!hasPresentContinuous){
       ok = false;
       msg = '這一題要練習現在進行式（am/is/are + Ving），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I am ...ing" 這樣的句型回答一次。';
     } else {
       msg = '偵測到你用了「be動詞＋Ving」的進行式結構，符合這題要練習的文法重點！';
     }
+  } else if(q.checkType === 'pastSimple'){
+    if(hasPastContinuous){
+      ok = false;
+      msg = '偵測到你的回答用了「was/were＋Ving」的過去進行式結構，但這一題要練習的是過去簡單式（描述已完成的動作），可以再試著用像 "I went..." 這樣的句型回答一次。';
+    } else {
+      msg = '沒有偵測到誤用過去進行式，聽起來符合這題要練習的過去簡單式句型！';
+    }
+  } else if(q.checkType === 'pastContinuous'){
+    if(!hasPastContinuous){
+      ok = false;
+      msg = '這一題要練習過去進行式（was/were + Ving），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I was ...ing" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了「was/were＋Ving」的過去進行式結構，符合這題要練習的文法重點！';
+    }
   } else if(q.checkType === 'yesno'){
     const hasYesNo = /\b(yes|no)\b/.test(lower);
     if(!hasYesNo){
       ok = false;
-      msg = '這一題是 Does...? 的疑問句，習慣上回答要先說 Yes 或 No，例如 "Yes, we do."，你的回答裡沒有偵測到 yes/no 開頭喔。';
+      msg = '這一題是疑問句，習慣上回答要先說 Yes 或 No，你的回答裡沒有偵測到 yes/no 開頭喔。';
     } else {
       msg = '偵測到你的回答有用 Yes/No 開頭來回應疑問句，符合這題的練習重點！';
     }
@@ -1480,11 +1486,11 @@ function renderSpeaking(){
 
 // ---------- Mode switching ----------
 const MODE_CONFIG = {
-  grammar: { questions: GRAMMAR_QUESTIONS, title: '現在簡單式 vs 現在進行式', sub: (n)=> `文法測驗．共 ${n} 題．每題點選答案後立即顯示對錯與說明`, syncLabel: '文法測驗' },
+  grammar: { questions: GRAMMAR_QUESTIONS, title: '過去簡單式 vs 過去進行式', sub: (n)=> `文法測驗．共 ${n} 題．每題點選答案後立即顯示對錯與說明`, syncLabel: '文法測驗' },
   reading: { questions: READING_QUESTIONS, title: READING_PASSAGE.title, sub: (n)=> `閱讀測驗．共 ${n} 題（閱讀理解＋文意選填）．請先閱讀短文再作答`, syncLabel: '閱讀測驗' },
   cloze: { questions: CLOZE_QUESTIONS, title: CLOZE_PASSAGE.title, sub: (n)=> `克漏字．共 ${n} 題．請先閱讀短文，選出最適合填入空格的字`, syncLabel: '克漏字測驗' },
   vocab: { questions: VOCAB_QUESTIONS, title: '國中單字測驗', sub: (n)=> `單字測驗．共 ${n} 題．選出最接近的中文意思`, syncLabel: '單字測驗' },
-  listening: { questions: LISTENING_QUESTIONS, title: '聽力測驗', sub: (n)=> `聽力測驗．共 ${n} 題（看圖辨義＋情境問答）．聽題目與選項，選出正確答案`, syncLabel: '聽力測驗' }
+  listening: { questions: LISTENING_QUESTIONS, title: '聽力測驗', sub: (n)=> `聽力測驗．共 ${n} 題（情境問答）．聽題目與選項，選出正確答案`, syncLabel: '聽力測驗' }
 };
 
 function switchMode(newMode){
