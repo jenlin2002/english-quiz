@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英文測驗系統｜第九週：不定詞 to-V vs 動名詞 V-ing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --chalk-bg: #1B3A2F;
+    --paper: #F7F3E8;
+    --paper-2: #EFE9D8;
+    --chalk-yellow: #E8B94A;
+    --chalk-red: #D97A6C;
+    --chalk-green: #7FB69A;
+    --ink: #2B2B2B;
+    --ink-soft: #5B5B52;
+    --line: #D8D0BA;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html, body{ overflow-x:hidden; width:100%; }
+  body{
+    margin:0; min-height:100vh;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(255,255,255,0.03) 0, transparent 40%),
+      radial-gradient(circle at 80% 85%, rgba(255,255,255,0.03) 0, transparent 40%),
+      var(--chalk-bg);
+    font-family:'Noto Sans TC', sans-serif;
+    color:var(--ink);
+    display:flex; flex-direction:column; align-items:center;
+    padding:32px 16px 60px;
+    -webkit-text-size-adjust:100%;
+  }
+  button{ touch-action:manipulation; }
+
+  .board-header{ width:100%; max-width:780px; text-align:center; margin-bottom:22px; }
+  .eyebrow{
+    font-family:'Space Mono', monospace; letter-spacing:0.2em; font-size:12px;
+    color:var(--chalk-yellow); text-transform:uppercase; opacity:0.85; margin-bottom:10px;
+  }
+  .board-title{
+    font-family:'Kalam', cursive; font-weight:700; font-size:clamp(26px, 5vw, 40px);
+    color:var(--paper); margin:0 0 6px;
+  }
+  .board-sub{ font-size:14px; color:rgba(247,243,232,0.65); }
+
+  .mode-tabs{ display:flex; justify-content:center; gap:10px; margin-top:22px; flex-wrap:wrap; }
+  .mode-btn{
+    font-family:'Noto Sans TC', sans-serif; font-weight:700; font-size:14px;
+    padding:12px 22px; min-height:44px; border-radius:999px; border:2px solid rgba(247,243,232,0.25);
+    background:transparent; color:rgba(247,243,232,0.75); cursor:pointer;
+    transition: all 0.15s ease;
+  }
+  .mode-btn.active{ background:var(--chalk-yellow); border-color:var(--chalk-yellow); color:#1B3A2F; }
+  .mode-btn:hover:not(.active){ border-color:var(--chalk-yellow); color:var(--paper); }
+
+  .tally-wrap{ display:flex; align-items:flex-end; justify-content:center; gap:26px; margin-top:20px; flex-wrap:wrap; }
+  .tally-wrap.hidden{ display:none; }
+  .tally-group{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .tally-label{ font-size:11px; color:rgba(247,243,232,0.55); font-family:'Space Mono',monospace; letter-spacing:0.1em; }
+  .tally-chars{ display:flex; gap:6px; }
+  .tally-char{ width:34px; height:42px; stroke-width:5; fill:none; stroke-linecap:round; }
+  .tally-char path{ opacity:0.15; transition: opacity 0.3s ease; }
+  .tally-char path.on{ opacity:1; }
+  .tally-char.correct path.on{ stroke:var(--chalk-green); }
+  .tally-char.wrong path.on{ stroke:var(--chalk-red); }
+
+  .speak-progress{ display:none; margin-top:18px; }
+  .speak-progress.show{ display:block; }
+  .dots{ display:flex; justify-content:center; gap:8px; }
+  .dot-item{ width:10px; height:10px; border-radius:50%; background:rgba(247,243,232,0.25); transition:all .2s ease; }
+  .dot-item.done{ background:var(--chalk-green); }
+  .dot-item.active{ background:var(--chalk-yellow); transform:scale(1.3); }
+
+  .quiz-card{
+    width:100%; max-width:780px; background:var(--paper); border-radius:18px;
+    padding:34px 32px 28px; box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    position:relative; border:1px solid rgba(0,0,0,0.04); margin-top:26px;
+  }
+  .quiz-card::before{ content:""; position:absolute; top:0; left:28px; right:28px; height:1px; background:var(--line); }
+  @media (max-width:480px){
+    .quiz-card{ padding:24px 18px 22px; border-radius:14px; }
+    body{ padding:22px 10px 44px; }
+  }
+
+  .passage-box{
+    background:var(--paper-2); border-radius:12px; padding:22px 24px;
+    margin-bottom:24px; font-size:19px; line-height:1.95; border:1px solid var(--line);
+  }
+  .passage-box h3{ margin:0 0 12px; font-family:'Kalam',cursive; font-size:23px; color:var(--ink); }
+
+  .qnum-row{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px; }
+  .qnum{ font-family:'Kalam', cursive; font-weight:700; font-size:24px; color:var(--ink-soft); }
+  .qnum b{ font-size:38px; color:var(--ink); }
+  .qtag{
+    font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.08em;
+    padding:7px 14px; border-radius:999px; background:var(--paper-2); color:var(--ink-soft);
+    border:1px solid var(--line);
+  }
+
+  .question-text{ font-size:clamp(24px, 3.6vw, 30px); line-height:1.6; font-weight:500; margin:0 0 28px; }
+  .question-text .blank{ display:inline-block; min-width:100px; border-bottom:2px solid var(--ink); text-align:center; }
+
+  .options{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:560px){ .options{ grid-template-columns:1fr; } }
+
+  .option-btn{
+    font-family:'Noto Sans TC', sans-serif; font-size:21px; font-weight:500; text-align:left;
+    padding:18px 20px; border-radius:12px; border:2px solid var(--line); background:#fff;
+    cursor:pointer; transition: all 0.15s ease; color:var(--ink);
+  }
+  .option-btn:hover:not(:disabled){ border-color:var(--ink); transform:translateY(-1px); }
+  .option-btn:disabled{ cursor:default; }
+  .option-btn.correct{ background:rgba(127,182,154,0.18); border-color:var(--chalk-green); color:#1F5E43; font-weight:700; }
+  .option-btn.wrong{ background:rgba(217,122,108,0.14); border-color:var(--chalk-red); color:#9C3B2C; }
+
+  .feedback{ margin-top:20px; padding:18px 20px; border-radius:12px; font-size:18px; line-height:1.75; display:none; }
+  .feedback.show{ display:block; }
+  .feedback.correct{ background:rgba(127,182,154,0.15); color:#1F5E43; }
+  .feedback.wrong{ background:rgba(217,122,108,0.12); color:#9C3B2C; }
+
+  .footer-row{ display:flex; justify-content:flex-end; margin-top:24px; gap:10px; flex-wrap:wrap; }
+  .footer-row.split{ justify-content:space-between; }
+  .next-btn, .nav-btn{
+    font-family:'Noto Sans TC', sans-serif; font-weight:700; font-size:15px; padding:14px 26px;
+    border-radius:999px; border:none; background:var(--ink); color:var(--paper); cursor:pointer;
+    transition: opacity 0.2s ease, background 0.2s ease; min-height:44px;
+  }
+  .next-btn{ opacity:0.3; pointer-events:none; }
+  .next-btn.active{ opacity:1; pointer-events:auto; }
+  .next-btn:hover.active{ background:#000; }
+  .nav-btn.ghost{ background:transparent; border:2px solid var(--ink); color:var(--ink); }
+  .nav-btn:disabled{ opacity:0.25; pointer-events:none; }
+
+  /* Speaking mode */
+  .speak-card-inner{ text-align:left; }
+  .speak-eyebrow{ font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--ink-soft); margin-bottom:8px; }
+  .speak-en-row{ display:flex; align-items:center; gap:14px; margin-bottom:10px; flex-wrap:wrap; }
+  .speak-en{ font-size:clamp(19px,2.8vw,26px); font-weight:600; line-height:1.5; flex:1; min-width:200px; }
+  .speak-btn{
+    flex-shrink:0; width:50px; height:50px; min-width:50px; border-radius:50%; border:none;
+    background:var(--chalk-green); color:#fff; font-size:20px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; transition: transform .15s ease, background .15s ease;
+  }
+  .speak-btn:hover{ transform:scale(1.08); background:#6BA085; }
+  .speak-btn.playing{ animation: pulse 1s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(127,182,154,0.5);} 70%{box-shadow:0 0 0 12px rgba(127,182,154,0);} 100%{box-shadow:0 0 0 0 rgba(127,182,154,0);} }
+  .speak-hint{ font-size:13px; color:var(--ink-soft); font-style:italic; margin-bottom:22px; }
+
+  .record-box{
+    margin-top:20px; background:var(--paper-2); border-radius:12px; padding:18px 20px; border:1px solid var(--line);
+  }
+  .record-box-label{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:var(--ink-soft); margin-bottom:12px; }
+  .record-controls{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .record-btn{
+    display:flex; align-items:center; gap:10px; font-family:'Noto Sans TC'; font-weight:700; font-size:15px;
+    padding:12px 22px; min-height:44px; border-radius:999px; border:none; background:var(--chalk-red); color:#fff; cursor:pointer;
+    transition: all .15s ease;
+  }
+  .record-btn:hover{ opacity:0.9; }
+  .record-btn.recording{ background:#9C3B2C; animation: recPulse 1.1s infinite; }
+  @keyframes recPulse{ 0%{box-shadow:0 0 0 0 rgba(156,59,44,0.5);} 70%{box-shadow:0 0 0 14px rgba(156,59,44,0);} 100%{box-shadow:0 0 0 0 rgba(156,59,44,0);} }
+  .record-dot{ width:10px; height:10px; border-radius:50%; background:#fff; }
+  .record-status{ font-size:13px; color:var(--ink-soft); font-family:'Space Mono',monospace; }
+  .record-playback{ margin-top:14px; }
+  .record-playback audio{ width:100%; }
+  .record-transcript{
+    margin-top:14px; background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 14px;
+    font-size:16px; line-height:1.6; color:var(--ink);
+  }
+  .record-transcript-label{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:var(--ink-soft); margin-bottom:6px; }
+  .record-submit-btn{
+    margin-top:14px; font-family:'Noto Sans TC'; font-weight:700; font-size:15px; padding:12px 26px; min-height:44px;
+    border-radius:999px; border:none; background:var(--ink); color:var(--paper); cursor:pointer;
+  }
+  .record-submit-btn:disabled{ opacity:0.3; pointer-events:none; }
+  .record-result{ margin-top:14px; padding:14px 16px; border-radius:10px; font-size:15px; line-height:1.7; display:none; }
+  .record-result.show{ display:block; }
+  .record-result.ok{ background:rgba(127,182,154,0.15); color:#1F5E43; }
+  .record-result.err{ background:rgba(217,122,108,0.12); color:#9C3B2C; }
+  .record-unsupported{ font-size:13px; color:var(--chalk-red); }
+
+  .listening-image-box{
+    background:var(--paper-2); border-radius:14px; padding:14px; margin-bottom:18px;
+    border:1px solid var(--line); max-width:420px;
+  }
+  .listening-image-box svg{ width:100%; height:auto; display:block; }
+  .listening-image-box img{ width:100%; height:auto; display:block; border-radius:10px; background:var(--paper); min-height:120px; }
+  .listening-image-credit{ font-size:10px; color:var(--ink-soft); opacity:0.7; margin-top:6px; text-align:right; font-family:'Space Mono',monospace; }
+  .listening-image-error{ padding:14px; color:var(--chalk-red); font-size:13px; text-align:center; }
+  .listening-video-box{
+    display:block; position:relative; width:100%; max-width:480px; border-radius:14px;
+    overflow:hidden; margin-bottom:6px; background:#000; text-decoration:none; border:1px solid var(--line);
+  }
+  .listening-video-box img{ width:100%; height:auto; display:block; opacity:0.85; }
+  .listening-video-play{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:64px; height:64px; border-radius:50%; background:rgba(216,48,40,0.92);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.4);
+  }
+  .listening-video-play::after{
+    content:""; width:0; height:0; margin-left:5px;
+    border-top:13px solid transparent; border-bottom:13px solid transparent; border-left:22px solid #fff;
+  }
+  .listening-video-label{
+    position:absolute; bottom:0; left:0; right:0; padding:10px 14px;
+    background:linear-gradient(transparent, rgba(0,0,0,0.75));
+    color:#fff; font-family:'Noto Sans TC'; font-size:13px; font-weight:700;
+  }
+  .listening-audio-row{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:22px; }
+  .listening-audio-row .record-btn{ background:var(--chalk-green); }
+
+  .reveal-btn{
+    font-family:'Noto Sans TC'; font-weight:700; font-size:14px; padding:11px 22px;
+    border-radius:999px; border:2px dashed var(--chalk-yellow); background:rgba(232,185,74,0.12);
+    color:#8A6410; cursor:pointer; transition:all .15s ease;
+  }
+  .reveal-btn:hover{ background:rgba(232,185,74,0.25); }
+
+  .sample-box{
+    display:none; margin-top:18px; background:var(--paper-2); border-radius:12px;
+    padding:16px 18px; border:1px solid var(--line);
+  }
+  .sample-box.show{ display:block; }
+  .sample-box-label{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:var(--ink-soft); margin-bottom:8px; }
+  .sample-row{ display:flex; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+  .sample-text{ font-size:19px; line-height:1.75; color:var(--ink); flex:1; min-width:200px; }
+  .sample-speak-btn{
+    flex-shrink:0; width:40px; height:40px; min-width:40px; border-radius:50%; border:none;
+    background:var(--chalk-yellow); color:#1B3A2F; font-size:15px; cursor:pointer;
+  }
+  .sample-speak-btn:hover{ opacity:0.85; }
+  .example-zh-text{ margin-top:8px; font-size:17px; color:var(--ink-soft); line-height:1.75; }
+
+  .cloze-audio-row{ display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap; }
+  .cloze-audio-status{ font-family:'Space Mono',monospace; font-size:12px; color:var(--ink-soft); }
+  .cloze-audio-status.done{ color:#1F5E43; }
+
+  .result-wrap{ text-align:center; padding:16px 10px; }
+  .result-score{ font-family:'Kalam', cursive; font-weight:700; font-size:52px; margin:10px 0 4px; }
+  .result-msg{ font-size:15px; color:var(--ink-soft); margin-bottom:26px; }
+  .restart-btn{
+    font-family:'Noto Sans TC', sans-serif; font-weight:700; font-size:15px; padding:12px 28px;
+    border-radius:999px; border:2px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer;
+  }
+  .restart-btn:hover{ background:var(--ink); color:var(--paper); }
+
+  .review-list{ text-align:left; margin-top:24px; border-top:1px solid var(--line); padding-top:20px; max-height:340px; overflow-y:auto; }
+  .review-item{ font-size:13px; padding:8px 0; border-bottom:1px dashed var(--line); color:var(--ink-soft); }
+  .review-item b{ color:var(--ink); }
+
+  .no-speech-note{ font-size:12px; color:var(--chalk-red); margin-top:10px; display:none; }
+  .no-speech-note.show{ display:block; }
+
+  .scramble-box{ margin-top:18px; background:var(--paper-2); border-radius:12px; padding:16px 18px; border:1px solid var(--line); display:none; }
+  .scramble-box.show{ display:block; }
+  .scramble-label{ font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:var(--ink-soft); margin-bottom:8px; }
+  .scramble-zh{ font-size:19px; color:var(--ink); margin-bottom:16px; line-height:1.75; font-weight:500; }
+  .scramble-answer-row{
+    display:flex; flex-wrap:wrap; align-items:center; gap:8px; min-height:48px; padding:10px;
+    background:#fff; border:2px dashed var(--line); border-radius:10px; margin-bottom:12px; transition:border-color .15s ease;
+  }
+  .scramble-answer-row.correct{ border-color:var(--chalk-green); border-style:solid; background:rgba(127,182,154,0.08); }
+  .scramble-answer-row.wrong-shake{ border-color:var(--chalk-red); animation: scrambleShake .3s; }
+  @keyframes scrambleShake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+  .scramble-placeholder{ color:var(--ink-soft); font-size:13px; }
+  .scramble-tile{
+    padding:12px 18px; min-height:46px; border-radius:8px; background:var(--paper); border:1px solid var(--line);
+    font-family:'Noto Sans TC'; font-size:18px; cursor:pointer; transition:all .15s ease;
+  }
+  .scramble-tile:hover{ border-color:var(--ink); transform:translateY(-1px); }
+  .scramble-tile.placed{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .scramble-tile:disabled{ cursor:default; opacity:0.85; }
+  .scramble-pool{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .scramble-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .scramble-check-btn{
+    font-family:'Noto Sans TC'; font-weight:700; font-size:14px; padding:11px 24px; min-height:42px;
+    border-radius:999px; border:none; background:var(--ink); color:var(--paper); cursor:pointer;
+  }
+  .scramble-check-btn:disabled{ opacity:0.3; pointer-events:none; }
+  .scramble-reset-btn{
+    font-family:'Noto Sans TC'; font-weight:600; font-size:13px; padding:10px 18px; min-height:42px;
+    border-radius:999px; border:2px solid var(--line); background:transparent; color:var(--ink-soft); cursor:pointer;
+  }
+  .scramble-reset-btn:disabled{ opacity:0.3; pointer-events:none; }
+  .scramble-msg{ font-size:13px; font-family:'Space Mono',monospace; }
+  .scramble-msg.ok{ color:#1F5E43; }
+  .scramble-msg.err{ color:#9C3B2C; }
+
+  .id-row{ display:flex; justify-content:center; gap:10px; margin-top:16px; flex-wrap:wrap; align-items:center; }
+  .id-btn{
+    font-family:'Noto Sans TC'; font-weight:700; font-size:13px; padding:9px 18px; min-height:40px;
+    border-radius:999px; border:2px solid rgba(247,243,232,0.2); background:rgba(255,255,255,0.04);
+    color:rgba(247,243,232,0.7); cursor:pointer; transition:all .15s ease;
+  }
+  .id-btn.active{ background:var(--chalk-green); border-color:var(--chalk-green); color:#0F2A20; }
+  .settings-toggle{
+    font-family:'Space Mono',monospace; font-size:11px; padding:8px 14px; min-height:40px;
+    border-radius:999px; border:1px solid rgba(247,243,232,0.2); background:transparent;
+    color:rgba(247,243,232,0.55); cursor:pointer;
+  }
+  .settings-panel{
+    display:none; margin:14px auto 0; max-width:520px; background:rgba(0,0,0,0.2);
+    border-radius:12px; padding:14px 16px; text-align:left;
+  }
+  .settings-panel.show{ display:block; }
+  .settings-panel label{ font-size:11px; color:rgba(247,243,232,0.6); font-family:'Space Mono',monospace; display:block; margin-bottom:6px; }
+  .settings-row{ display:flex; gap:8px; }
+  .settings-row input{
+    flex:1; padding:9px 10px; border-radius:8px; border:1px solid rgba(247,243,232,0.25);
+    background:rgba(255,255,255,0.06); color:var(--paper); font-family:'Space Mono',monospace; font-size:12px;
+  }
+  .settings-row input::placeholder{ color:rgba(247,243,232,0.35); }
+  .settings-save{
+    font-family:'Noto Sans TC'; font-weight:700; font-size:12px; padding:0 16px; border-radius:8px;
+    border:none; background:var(--chalk-yellow); color:#1B3A2F; cursor:pointer;
+  }
+  .settings-status{ font-size:11px; margin-top:8px; color:rgba(247,243,232,0.5); font-family:'Space Mono',monospace; }
+  .sync-status{ margin-top:10px; font-size:12px; font-family:'Space Mono',monospace; }
+  .sync-status.ok{ color:#1F5E43; }
+  .sync-status.pending{ color:var(--ink-soft); }
+  .sync-status.off{ color:var(--chalk-red); }
+</style>
+</head>
+<body>
+
+<div class="board-header">
+  <div class="eyebrow">Week 9 · Test System</div>
+  <h1 class="board-title" id="mainTitle">不定詞 to-V vs 動名詞 V-ing</h1>
+  <div class="board-sub" id="subTitle">文法測驗．共 20 題．每題點選答案後立即顯示對錯與說明</div>
+
+  <div class="id-row">
+    <span style="font-size:11px;color:rgba(247,243,232,0.5);font-family:'Space Mono',monospace;">目前是誰在測驗：</span>
+    <button class="id-btn" id="idBig">BRANDEN</button>
+    <button class="id-btn" id="idSmall">MELISSA</button>
+    <button class="settings-toggle" id="settingsToggle">☁️ 同步設定</button>
+  </div>
+  <div class="settings-panel" id="settingsPanel">
+    <label>Google試算表同步網址（Apps Script Web App URL）</label>
+    <div class="settings-row">
+      <input type="text" id="syncUrlInput" placeholder="https://script.google.com/macros/s/xxxx/exec">
+      <button class="settings-save" id="syncUrlSave">儲存</button>
+    </div>
+    <div class="settings-status" id="settingsStatus">尚未設定，測驗結果暫時不會自動回傳</div>
+  </div>
+
+  <div class="mode-tabs">
+    <button class="mode-btn active" id="tabGrammar">📘 文法測驗</button>
+    <button class="mode-btn" id="tabReading">📖 閱讀測驗</button>
+    <button class="mode-btn" id="tabCloze">✏️ 克漏字</button>
+    <button class="mode-btn" id="tabVocab">🔤 單字測驗</button>
+    <button class="mode-btn" id="tabListening">🎧 聽力測驗</button>
+    <button class="mode-btn" id="tabSpeaking">🎤 口說練習</button>
+  </div>
+
+  <div class="tally-wrap" id="tallyWrap">
+    <div class="tally-group">
+      <div class="tally-chars" id="tallyCorrect"></div>
+      <div class="tally-label">答對</div>
+    </div>
+    <div class="tally-group">
+      <div class="tally-chars" id="tallyWrong"></div>
+      <div class="tally-label">答錯</div>
+    </div>
+  </div>
+
+  <div class="speak-progress" id="speakProgress">
+    <div class="dots" id="speakDots"></div>
+  </div>
+</div>
+
+<div class="quiz-card" id="quizCard"></div>
+
+<script>
+// ================== 題庫區（之後每週只要替換這個區塊即可重複使用整套系統） ==================
+
+const GRAMMAR_QUESTIONS = [
+  { text:"I want <span class='blank'>______</span> home.", options:["go","to go","going","goes"], answer:1, note:"want後面接to-V，所以答案是 to go。" },
+  { text:"She enjoys <span class='blank'>______</span> books.", options:["read","to read","reading","reads"], answer:2, note:"enjoy後面接V-ing，所以答案是 reading。" },
+  { text:"He finished <span class='blank'>______</span> his homework.", options:["do","to do","doing","does"], answer:2, note:"finish後面接V-ing，所以答案是 doing。" },
+  { text:"They decided <span class='blank'>______</span> to the movies.", options:["go","to go","going","goes"], answer:1, note:"decide後面接to-V，所以答案是 to go。" },
+  { text:"Would you mind <span class='blank'>______</span> the window?", options:["open","to open","opening","opens"], answer:2, note:"mind後面接V-ing，所以答案是 opening。" },
+  { text:"I hope <span class='blank'>______</span> you soon.", options:["see","to see","seeing","saw"], answer:1, note:"hope後面接to-V，所以答案是 to see。" },
+  { text:"He stopped <span class='blank'>______</span> a rest because he was tired.", options:["take","to take","taking","takes"], answer:1, note:"stop to V表示「停下來去做另一件事」，這裡是停下來去休息，所以答案是 to take。" },
+  { text:"He stopped <span class='blank'>______</span> because his leg hurt.", options:["run","to run","running","runs"], answer:2, note:"stop Ving表示「停止做某事」，這裡是停止跑步（因為腳痛），所以答案是 running。" },
+  { text:"I avoid <span class='blank'>______</span> junk food.", options:["eat","to eat","eating","eats"], answer:2, note:"avoid後面接V-ing，所以答案是 eating。" },
+  { text:"She plans <span class='blank'>______</span> a new language.", options:["learn","to learn","learning","learns"], answer:1, note:"plan後面接to-V，所以答案是 to learn。" },
+  { text:"We enjoy <span class='blank'>______</span> soccer every weekend.", options:["play","to play","playing","plays"], answer:2, note:"enjoy後面接V-ing，所以答案是 playing。" },
+  { text:"I need <span class='blank'>______</span> some money.", options:["borrow","to borrow","borrowing","borrows"], answer:1, note:"need後面接to-V，所以答案是 to borrow。" },
+  { text:"He practices <span class='blank'>______</span> English every day.", options:["speak","to speak","speaking","speaks"], answer:2, note:"practice後面接V-ing，所以答案是 speaking。" },
+  { text:"They want <span class='blank'>______</span> a new house.", options:["buy","to buy","buying","buys"], answer:1, note:"want後面接to-V，所以答案是 to buy。" },
+  { text:"I can't imagine <span class='blank'>______</span> without a phone.", options:["live","to live","living","lives"], answer:2, note:"imagine後面接V-ing，所以答案是 living。" },
+  { text:"選出正確句子：", options:["I enjoy to swim in the summer.","I enjoy swim in the summer.","I enjoy swimming in the summer.","I enjoy swims in the summer."], answer:2, note:"enjoy後面一定接V-ing，所以答案是第三句。" },
+  { text:"選出正確句子：", options:["She hopes visiting Japan next year.","She hopes to visit Japan next year.","She hopes visit Japan next year.","She hopes visits Japan next year."], answer:1, note:"hope後面一定接to-V，所以答案是第二句。" },
+  { text:"We finished <span class='blank'>______</span> the project last night.", options:["write","to write","writing","wrote"], answer:2, note:"finish後面接V-ing，所以答案是 writing。" },
+  { text:"He suddenly stopped <span class='blank'>______</span> when he saw his friend.", options:["walk","to walk","walking","walks"], answer:2, note:"stop Ving表示「停止走路」，這裡是停止走路的動作，所以答案是 walking。" },
+  { text:"選出正確句子：", options:["I decided joining the club.","I decided to join the club.","I decided join the club.","I decided joins the club."], answer:1, note:"decide後面一定接to-V，所以答案是第二句。" }
+];
+
+const READING_PASSAGE = {
+  title:"My New Hobby",
+  html:`Last month, I decided to try a new hobby. I chose to learn how to play the guitar. At first, I found it difficult to hold the guitar correctly, but I kept practicing.<br><br>
+Now, I enjoy playing simple songs every day after school. I avoid skipping practice because I want to improve quickly. My teacher suggested watching online videos to learn new techniques.<br><br>
+I hope to perform a song for my family soon. I plan to keep practicing until I finish learning my favorite song. Learning to play an instrument takes time, but I really enjoy the process!`
+};
+
+const READING_QUESTIONS = [
+  { type:"閱讀理解", text:"What hobby did the writer decide to try?", options:["Painting","Playing the guitar","Singing","Dancing"], answer:1, note:"文章提到 I chose to learn how to play the guitar。" },
+  { type:"閱讀理解", text:"What did the writer find difficult at first?", options:["Reading music","Holding the guitar correctly","Finding time to practice","Buying a guitar"], answer:1, note:"文章提到 I found it difficult to hold the guitar correctly。" },
+  { type:"閱讀理解", text:"What did the teacher suggest?", options:["Taking a break","Watching online videos","Buying a new guitar","Joining a band"], answer:1, note:"文章提到 My teacher suggested watching online videos。" },
+  { type:"文意選填", text:"I avoid ______ practice because I want to improve quickly.（選出最適合填入文中空格的字）", options:["skip","to skip","skipping","skips"], answer:2, note:"avoid後面接V-ing，所以答案是 skipping。" },
+  { type:"文意選填", text:"依文意判斷，寫作者對學吉他這件事的態度最適合用哪句話描述？", options:["感到很無聊","雖然一開始困難，但很享受學習過程","已經放棄了","覺得沒有意義"], answer:1, note:"文章結尾提到 Learning to play an instrument takes time, but I really enjoy the process，顯示雖然一開始困難，但很享受學習過程。" }
+];
+
+const CLOZE_PASSAGE = {
+  title:"Planning a Healthy Life",
+  html:`My New Year's resolution is to become healthier. I decided (1)<span class='blank'>____</span> exercise every morning before school. At first, it was hard to wake up early, but I kept trying.<br><br>
+I also enjoy (2)<span class='blank'>____</span> fruits and vegetables instead of junk food. My mom suggested (3)<span class='blank'>____</span> more water every day, so I always carry a water bottle now.<br><br>
+I hope (4)<span class='blank'>____</span> these healthy habits for the rest of the year. It's not always easy, but I feel much better already!`
+};
+
+const CLOZE_QUESTIONS = [
+  { type:"克漏字 (1)", text:"選出最適合填入空格 (1) 的字：", options:["exercise","to exercise","exercising","exercises"], answer:1, note:"decide後面接to-V，所以答案是 to exercise。" },
+  { type:"克漏字 (2)", text:"選出最適合填入空格 (2) 的字：", options:["eat","to eat","eating","eats"], answer:2, note:"enjoy後面接V-ing，所以答案是 eating。" },
+  { type:"克漏字 (3)", text:"選出最適合填入空格 (3) 的字：", options:["drink","to drink","drinking","drinks"], answer:2, note:"suggest後面接V-ing，所以答案是 drinking。" },
+  { type:"克漏字 (4)", text:"選出最適合填入空格 (4) 的字：", options:["keep","to keep","keeping","keeps"], answer:1, note:"hope後面接to-V，所以答案是 to keep。" }
+];
+
+const LISTENING_QUESTIONS = [
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you want to do this weekend?", options:["I want to go to the park.","I want going to the park.","I want go to the park."], answer:0, note:"want後面接to-V，所以答案是(A)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you enjoy doing after school?", options:["I enjoy to play basketball.","I enjoy playing basketball.","I enjoy play basketball."], answer:1, note:"enjoy後面接V-ing，所以答案是(B)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"Did you finish doing your homework?", options:["Yes, I finished to do it.","Yes, I finished doing it.","Yes, I finished do it."], answer:1, note:"finish後面接V-ing，所以答案是(B)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What did you decide to do this summer?", options:["I decided to travel with my family.","I decided traveling with my family.","I decided travel with my family."], answer:0, note:"decide後面接to-V，所以答案是(A)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"Would you mind closing the door?", options:["Sure, I don't mind.","Sure, I don't mind to close.","Sure, I don't mind closes."], answer:0, note:"回應請求，自然的回答方式，所以答案是(A)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you hope to achieve this year?", options:["I hope to improve my English.","I hope improving my English.","I hope improve my English."], answer:0, note:"hope後面接to-V，所以答案是(A)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you avoid eating?", options:["I avoid to eat junk food.","I avoid eating junk food.","I avoid eat junk food."], answer:1, note:"avoid後面接V-ing，所以答案是(B)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you practice every day?", options:["I practice to speak English.","I practice speaking English.","I practice speak English."], answer:1, note:"practice後面接V-ing，所以答案是(B)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you need to do before dinner?", options:["I need to finish my homework.","I need finishing my homework.","I need finish my homework."], answer:0, note:"need後面接to-V，所以答案是(A)。" },
+  { type:"問答理解", text:"請點按鈕聽題目與三個選項，選出最適合的回答。", audioQuestion:"What do you plan to do next year?", options:["I plan to study abroad.","I plan studying abroad.","I plan study abroad."], answer:0, note:"plan後面接to-V，所以答案是(A)。" },
+  { type:"問答理解", text:"（進階）請點按鈕聽題目與三個選項，選出最合理的回答。", audioQuestion:"Why did the runner stop during the race?", options:["He stopped to tie his shoes.","He stopped tying his shoes.","He stops to tie his shoes."], answer:0, note:"這題比較難：stop to V表示「停下來去做另一件事」（停下來綁鞋帶），所以答案是(A)。" },
+  { type:"問答理解", text:"（進階）請點按鈕聽題目與三個選項，選出最合理的回答。", audioQuestion:"Why did he stop smoking?", options:["Because it was bad for his health.","Because he stopped to smoke.","Because he stops smoking."], answer:0, note:"這題比較難：stop smoking表示「停止吸菸這個習慣」，題目問原因，所以答案是(A)。" },
+  { type:"問答理解", text:"（進階）請點按鈕聽題目與三個選項，選出最合理的回答。", audioQuestion:"What made you decide to learn a new instrument?", options:["I wanted to try something new and challenging.","I decided learning something new.","I decide to learn new."], answer:0, note:"這題比較難：decide後面接to-V，回答的句子也要符合完整的邏輯，所以答案是(A)。" },
+  { type:"問答理解", text:"（進階）請點按鈕聽題目與三個選項，選出最合理的回答。", audioQuestion:"Why do you keep practicing even though it's hard?", options:["Because I really enjoy learning new skills.","Because I enjoy to learn new skills.","Because I enjoys learning new skills."], answer:0, note:"這題比較難：enjoy後面接V-ing，且主詞I動詞不加s，所以答案是(A)。" },
+  { type:"問答理解", text:"（進階）請點按鈕聽題目與三個選項，選出最合理的回答。", audioQuestion:"What do you suggest doing to stay healthy?", options:["I suggest exercising every day.","I suggest to exercise every day.","I suggest exercise every day."], answer:0, note:"這題比較難：suggest後面接V-ing，所以答案是(A)。" }
+];
+
+const VOCAB_QUESTIONS = [
+  { word:"hobby", text:"hobby 這個字的中文意思最接近：", options:["嗜好","工作","作業","責任"], answer:0, note:"hobby (n.) 嗜好。",
+    example:"Playing the guitar is my new hobby.", exampleZh:"彈吉他是我的新嗜好。",
+    scrambleSentence:"What is your favorite hobby?", zh:"你最喜歡的嗜好是什麼？" },
+  { word:"improve", text:"improve 這個字的中文意思最接近：", options:["改善","惡化","停止","開始"], answer:0, note:"improve (v.) 改善、進步。",
+    example:"I want to improve my English.", exampleZh:"我想要改善我的英文。",
+    scrambleSentence:"Practice helps you improve quickly.", zh:"練習能幫助你快速進步。" },
+  { word:"technique", text:"technique 這個字的中文意思最接近：", options:["技巧","規則","計畫","態度"], answer:0, note:"technique (n.) 技巧、技術。",
+    example:"I learned a new technique from the video.", exampleZh:"我從影片中學到一個新技巧。",
+    scrambleSentence:"This technique makes cooking easier.", zh:"這個技巧讓烹飪變得更簡單。" },
+  { word:"perform", text:"perform 這個字的中文意思最接近：", options:["表演","練習","觀看","購買"], answer:0, note:"perform (v.) 表演、演出。",
+    example:"She will perform a song at the concert.", exampleZh:"她將在音樂會上表演一首歌。",
+    scrambleSentence:"I want to perform in front of my family.", zh:"我想要在我家人面前表演。" },
+  { word:"resolution", text:"resolution 這個字的中文意思最接近：", options:["決心／新年新希望","失敗","放棄","懷疑"], answer:0, note:"resolution (n.) 決心、（新年）新希望。",
+    example:"My New Year's resolution is to exercise more.", exampleZh:"我的新年新希望是多運動。",
+    scrambleSentence:"He made a resolution to read more books.", zh:"他下定決心要多讀書。" },
+  { word:"habit", text:"habit 這個字的中文意思最接近：", options:["習慣","意外","計畫","規則"], answer:0, note:"habit (n.) 習慣。",
+    example:"I want to keep healthy habits.", exampleZh:"我想要保持健康的習慣。",
+    scrambleSentence:"It takes time to build a good habit.", zh:"養成一個好習慣需要時間。" },
+  { word:"challenging", text:"challenging 這個字的中文意思最接近：", options:["有挑戰性的","簡單的","無聊的","危險的"], answer:0, note:"challenging (adj.) 有挑戰性的。",
+    example:"Learning a new instrument is challenging.", exampleZh:"學習新樂器是有挑戰性的。",
+    scrambleSentence:"This project is very challenging for me.", zh:"這個專案對我來說非常有挑戰性。" },
+  { word:"skill", text:"skill 這個字的中文意思最接近：", options:["技能","規則","計畫","習慣"], answer:0, note:"skill (n.) 技能。",
+    example:"I enjoy learning new skills.", exampleZh:"我喜歡學習新技能。",
+    scrambleSentence:"Cooking is an important life skill.", zh:"烹飪是一項重要的生活技能。" },
+  { word:"instrument", text:"instrument 這個字的中文意思最接近：", options:["樂器","工具","武器","玩具"], answer:0, note:"instrument (n.) 樂器（也可指工具）。",
+    example:"The guitar is a popular instrument.", exampleZh:"吉他是一種很受歡迎的樂器。",
+    scrambleSentence:"I want to learn a musical instrument.", zh:"我想學一種樂器。" },
+  { word:"process", text:"process 這個字的中文意思最接近：", options:["過程","結果","原因","開始"], answer:0, note:"process (n.) 過程。",
+    example:"I enjoy the process of learning.", exampleZh:"我享受學習的過程。",
+    scrambleSentence:"The whole process took three months.", zh:"整個過程花了三個月。" }
+];
+
+const SPEAKING_QUESTIONS = [
+  { en:"What do you want to do this weekend?", hint:"用want to完整回答", sample:"I want to go to the park with my friends.", sampleZh:"我想跟朋友去公園。", checkType:"wantTo" },
+  { en:"What do you enjoy doing after school?", hint:"用enjoy+Ving完整回答", sample:"I enjoy playing basketball with my classmates.", sampleZh:"我喜歡跟同學打籃球。", checkType:"enjoyIng" },
+  { en:"What did you decide to do this summer?", hint:"用decide to完整回答", sample:"I decided to learn how to swim this summer.", sampleZh:"我決定今年暑假學游泳。", checkType:"decideTo" },
+  { en:"What do you hope to achieve this year?", hint:"用hope to完整回答", sample:"I hope to improve my English speaking skills.", sampleZh:"我希望能改善我的英文口說能力。", checkType:"hopeTo" },
+  { en:"What do you avoid eating for a healthy life?", hint:"用avoid+Ving完整回答", sample:"I avoid eating too much junk food.", sampleZh:"我避免吃太多垃圾食物。", checkType:"avoidIng" }
+];
+
+// =====================================================================================
+
+
+let mode = "grammar";
+let questions = GRAMMAR_QUESTIONS;
+let current = 0;
+let correctCount = 0;
+let wrongCount = 0;
+let answered = false;
+let history = [];
+
+let speakIndex = 0;
+let speakRevealed = SPEAKING_QUESTIONS.map(()=>false);
+let mediaRecorder = null;
+let recordedChunks = [];
+let sttRecognition = null;
+let liveTranscript = '';
+let micStream = null;
+let currentUtterance = null;
+
+const card = document.getElementById('quizCard');
+const tabGrammar = document.getElementById('tabGrammar');
+const tabReading = document.getElementById('tabReading');
+const tabCloze = document.getElementById('tabCloze');
+const tabVocab = document.getElementById('tabVocab');
+const tabListening = document.getElementById('tabListening');
+const tabSpeaking = document.getElementById('tabSpeaking');
+const mainTitle = document.getElementById('mainTitle');
+const subTitle = document.getElementById('subTitle');
+const tallyWrap = document.getElementById('tallyWrap');
+const speakProgress = document.getElementById('speakProgress');
+const speakDots = document.getElementById('speakDots');
+
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+
+// ---------- Voice loading (fixes "shows playing but silent" on freshly-loaded HTTPS pages) ----------
+// 部分瀏覽器（尤其 Chrome/Edge）在頁面剛載入、語音清單(voices)還沒準備好時呼叫 speak()，
+// 會出現「事件正常觸發、畫面顯示播放中，但實際上沒有聲音」的狀況。
+// 這裡確保語音清單載入完成後才真正播放，並明確指定語音，避免瀏覽器選到空的/無聲的語音。
+let cachedVoices = [];
+function refreshVoiceCache(){
+  if(speechSupported) cachedVoices = window.speechSynthesis.getVoices();
+}
+if(speechSupported){
+  refreshVoiceCache();
+  window.speechSynthesis.onvoiceschanged = refreshVoiceCache;
+}
+
+function pickVoice(lang){
+  if(!cachedVoices.length) refreshVoiceCache();
+  const prefix = lang.split('-')[0];
+  // 優先順序：完全符合語言代碼且是「本機內建」的語音 > 本機內建的同語系語音 > 完全符合但雲端的 > 同語系但雲端的
+  // 本機內建(localService===true)比較不會有「語音清單裡有、但實際語音包還沒下載完成」導致無聲的問題（Edge常見）
+  const exactLocal = cachedVoices.find(v => v.lang === lang && v.localService === true);
+  if(exactLocal) return exactLocal;
+  const prefixLocal = cachedVoices.find(v => v.lang && v.lang.startsWith(prefix) && v.localService === true);
+  if(prefixLocal) return prefixLocal;
+  const exact = cachedVoices.find(v => v.lang === lang);
+  if(exact) return exact;
+  const partial = cachedVoices.find(v => v.lang && v.lang.startsWith(prefix));
+  return partial || null;
+}
+
+function whenVoicesReady(callback){
+  if(cachedVoices.length > 0){ callback(); return; }
+  refreshVoiceCache();
+  if(cachedVoices.length > 0){ callback(); return; }
+  let done = false;
+  const finish = () => { if(done) return; done = true; callback(); };
+  window.speechSynthesis.onvoiceschanged = () => { refreshVoiceCache(); finish(); };
+  setTimeout(finish, 400); // fallback，避免某些瀏覽器不觸發 voiceschanged 導致卡住不出聲
+}
+
+// 首次互動時「暖機」一次語音引擎（部分瀏覽器第一次呼叫 speak() 容易無聲，暖機可大幅降低機率）
+let speechWarmedUp = false;
+function warmUpSpeech(){
+  if(speechWarmedUp || !speechSupported) return;
+  speechWarmedUp = true;
+  try{
+    const warm = new SpeechSynthesisUtterance(' ');
+    warm.volume = 0;
+    warm.rate = 10;
+    window.speechSynthesis.speak(warm);
+  }catch(e){}
+}
+document.addEventListener('click', warmUpSpeech, { once: true, capture: true });
+
+function speak(text, btnEl, onEnd){
+  if(!speechSupported){ if(onEnd) onEnd(); return; }
+  whenVoicesReady(() => {
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.resume(); // Edge/Chromium 偶爾會卡在暫停狀態，播放前先確保是恢復狀態
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'en-US';
+    utter.rate = 0.75;
+    const v = pickVoice('en-US');
+    if(v) utter.voice = v;
+    attachSpeechHandlers(utter, btnEl, onEnd);
+    currentUtterance = utter;
+    window.speechSynthesis.speak(utter);
+  });
+}
+
+function speakZh(text, btnEl, onEnd){
+  if(!speechSupported){ if(onEnd) onEnd(); return; }
+  whenVoicesReady(() => {
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.resume();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'zh-TW';
+    utter.rate = 0.88;
+    const v = pickVoice('zh-TW');
+    if(v) utter.voice = v;
+    attachSpeechHandlers(utter, btnEl, onEnd);
+    currentUtterance = utter;
+    window.speechSynthesis.speak(utter);
+  });
+}
+
+function attachSpeechHandlers(utter, btnEl, onEnd){
+  if(btnEl){
+    btnEl.classList.add('playing');
+    utter.onend = () => { btnEl.classList.remove('playing'); if(onEnd) onEnd(); };
+    utter.onerror = () => { btnEl.classList.remove('playing'); if(onEnd) onEnd(); };
+  } else {
+    utter.onend = () => { if(onEnd) onEnd(); };
+    utter.onerror = () => { if(onEnd) onEnd(); };
+  }
+}
+
+function speakSequence(textList, onAllDone){
+  let i = 0;
+  function playNext(){
+    if(i >= textList.length){ if(onAllDone) onAllDone(); return; }
+    const text = textList[i];
+    i++;
+    speak(text, null, () => setTimeout(playNext, 550));
+  }
+  playNext();
+}
+
+// ---------- Student identity + cloud sync ----------
+const WEEK_LABEL = "Week 9";
+const DEFAULT_SYNC_URL = "https://script.google.com/macros/s/AKfycbwqd9cr_3MfXK8hzs8Y-YPQQUqOH5vKtW_vMav1nMAAt9VkBCP_5WP6Q1TDngIlr51U/exec";
+
+// 有些環境（例如 iPad/iPhone「檔案」App 的預覽模式）會封鎖 localStorage 存取，
+// 直接呼叫會丟出例外導致整支程式停止執行、按什麼都沒反應。
+// 這裡用 try/catch 包起來，封鎖時改用記憶體暫存，確保測驗一定能正常作答（只是不會記住上次設定）。
+const memoryStore = {};
+function safeGet(key){
+  try{ return localStorage.getItem(key); }catch(e){ return (key in memoryStore) ? memoryStore[key] : null; }
+}
+function safeSet(key, value){
+  try{ localStorage.setItem(key, value); }catch(e){ memoryStore[key] = value; }
+}
+
+let studentName = safeGet('quizStudentName') || '';
+let syncUrl = safeGet('quizSyncUrl') || DEFAULT_SYNC_URL;
+
+const idBig = document.getElementById('idBig');
+const idSmall = document.getElementById('idSmall');
+const settingsToggle = document.getElementById('settingsToggle');
+const settingsPanel = document.getElementById('settingsPanel');
+const syncUrlInput = document.getElementById('syncUrlInput');
+const syncUrlSave = document.getElementById('syncUrlSave');
+const settingsStatus = document.getElementById('settingsStatus');
+
+function refreshIdButtons(){
+  idBig.classList.toggle('active', studentName === 'BRANDEN');
+  idSmall.classList.toggle('active', studentName === 'MELISSA');
+}
+idBig.addEventListener('click', ()=>{ studentName='BRANDEN'; safeSet('quizStudentName','BRANDEN'); refreshIdButtons(); });
+idSmall.addEventListener('click', ()=>{ studentName='MELISSA'; safeSet('quizStudentName','MELISSA'); refreshIdButtons(); });
+refreshIdButtons();
+
+function refreshSettingsStatus(){
+  if(syncUrl){
+    settingsStatus.textContent = '已設定同步網址，測驗結果會自動回傳';
+    syncUrlInput.value = syncUrl;
+  } else {
+    settingsStatus.textContent = '尚未設定，測驗結果暫時不會自動回傳';
+  }
+}
+settingsToggle.addEventListener('click', ()=>{
+  settingsPanel.classList.toggle('show');
+});
+syncUrlSave.addEventListener('click', ()=>{
+  const val = syncUrlInput.value.trim();
+  syncUrl = val;
+  safeSet('quizSyncUrl', val);
+  refreshSettingsStatus();
+});
+refreshSettingsStatus();
+
+
+async function syncResult(modeLabel, score, total, details){
+  const statusEl = document.getElementById('syncStatusEl');
+  if(!syncUrl){
+    if(statusEl){ statusEl.textContent = '☁️ 尚未設定同步網址，成績未回傳（點上方「同步設定」）'; statusEl.className = 'sync-status off'; }
+    return;
+  }
+  if(!studentName){
+    if(statusEl){ statusEl.textContent = '☁️ 尚未選擇是 BRANDEN 還是 MELISSA，成績未回傳'; statusEl.className = 'sync-status off'; }
+    return;
+  }
+  if(statusEl){ statusEl.textContent = '☁️ 同步中...'; statusEl.className = 'sync-status pending'; }
+  const payload = {
+    name: studentName, week: WEEK_LABEL, mode: modeLabel,
+    score: score, total: total, percent: Math.round((score/total)*100),
+    details: (details || []).map(h => ({ q: h.q, picked: h.picked, correct: h.correct, isCorrect: h.isCorrect }))
+  };
+  try{
+    await fetch(syncUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    if(statusEl){ statusEl.textContent = '☁️ 已送出同步（含每題明細，因瀏覽器限制無法確認送達，可到試算表確認）'; statusEl.className = 'sync-status ok'; }
+  }catch(e){
+    if(statusEl){ statusEl.textContent = '☁️ 同步失敗，請檢查網路連線'; statusEl.className = 'sync-status off'; }
+  }
+}
+
+// ---------- Tally (grammar / reading) ----------
+function buildTallyChar(){
+  return `<svg class="tally-char" viewBox="0 0 44 52" xmlns="http://www.w3.org/2000/svg">
+    <path class="stroke1" d="M6 8 L6 44"/>
+    <path class="stroke2" d="M6 8 L26 8"/>
+    <path class="stroke3" d="M6 26 L26 26"/>
+    <path class="stroke4" d="M6 44 L26 44"/>
+    <path class="stroke5" d="M2 4 L34 48"/>
+  </svg>`;
+}
+function renderTallyGroup(containerId, count, cls){
+  const el = document.getElementById(containerId);
+  const groups = Math.max(1, Math.ceil(count / 5));
+  let html = '';
+  for(let g=0; g<groups; g++) html += buildTallyChar();
+  el.innerHTML = html;
+  el.querySelectorAll('.tally-char').forEach((svg, gi)=>{
+    svg.classList.add(cls);
+    const strokesOn = Math.max(0, Math.min(5, count - gi*5));
+    ['stroke1','stroke2','stroke3','stroke4','stroke5'].forEach((s, i)=>{
+      svg.querySelector('.'+s).classList.toggle('on', i < strokesOn);
+    });
+  });
+}
+function renderTally(){
+  renderTallyGroup('tallyCorrect', correctCount, 'correct');
+  renderTallyGroup('tallyWrong', wrongCount, 'wrong');
+}
+
+// ---------- Grammar / Reading quiz ----------
+// ---------- Vocab sentence-scramble exercise ----------
+let scramblePool = [];
+let scrambleAnswer = [];
+let scrambleSolved = false;
+
+function tokenizeSentence(sentence){
+  return sentence.split(' ').map((text, id) => ({ id, text }));
+}
+
+function shuffleTokens(tokens){
+  const arr = tokens.slice();
+  for(let i = arr.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function initScramble(q){
+  const tokens = tokenizeSentence(q.scrambleSentence);
+  let pool = shuffleTokens(tokens);
+  if(pool.length > 1){
+    let attempts = 0;
+    while(pool.every((t, i) => t.id === i) && attempts < 10){
+      pool = shuffleTokens(tokens);
+      attempts++;
+    }
+  }
+  scramblePool = pool;
+  scrambleAnswer = [];
+  scrambleSolved = false;
+}
+
+function renderScramble(q){
+  const box = document.getElementById('scrambleSection');
+  if(!box) return;
+
+  box.innerHTML = `
+    <div class="scramble-label">SENTENCE ORDER · 句子重組</div>
+    <div class="scramble-zh">${q.zh}</div>
+    <div class="scramble-answer-row ${scrambleSolved ? 'correct' : ''}" id="scrambleAnswerRow">
+      ${scrambleAnswer.length === 0
+        ? `<span class="scramble-placeholder">點選下方單字，依序組成正確的英文句子</span>`
+        : scrambleAnswer.map(t => `<button class="scramble-tile placed" data-id="${t.id}" ${scrambleSolved ? 'disabled' : ''}>${t.text}</button>`).join('')}
+      ${scrambleSolved ? `<button class="sample-speak-btn" id="scrambleReplayBtn" title="播放句子語音" style="margin-left:6px;">🔊</button>` : ''}
+    </div>
+    <div class="scramble-pool" id="scramblePool">
+      ${scramblePool.map(t => `<button class="scramble-tile" data-id="${t.id}">${t.text}</button>`).join('')}
+    </div>
+    <div class="scramble-actions">
+      <button class="scramble-check-btn" id="scrambleCheckBtn" ${(scrambleAnswer.length === 0 || scrambleSolved) ? 'disabled' : ''}>檢查</button>
+      <button class="scramble-reset-btn" id="scrambleResetBtn" ${scrambleSolved ? 'disabled' : ''}>清除重來</button>
+      <div class="scramble-msg" id="scrambleMsg"></div>
+    </div>
+  `;
+
+  if(scrambleSolved){
+    const msg = document.getElementById('scrambleMsg');
+    if(msg){ msg.textContent = '✓ 完全正確！可以進行下一題了'; msg.className = 'scramble-msg ok'; }
+    const replayBtn = document.getElementById('scrambleReplayBtn');
+    if(replayBtn) replayBtn.addEventListener('click', (e) => speak(q.scrambleSentence, e.currentTarget));
+    return;
+  }
+
+  box.querySelectorAll('#scramblePool .scramble-tile').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.id);
+      const idx = scramblePool.findIndex(t => t.id === id);
+      if(idx > -1){
+        const [tok] = scramblePool.splice(idx, 1);
+        scrambleAnswer.push(tok);
+        renderScramble(q);
+      }
+    });
+  });
+
+  box.querySelectorAll('#scrambleAnswerRow .scramble-tile').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.id);
+      const idx = scrambleAnswer.findIndex(t => t.id === id);
+      if(idx > -1){
+        const [tok] = scrambleAnswer.splice(idx, 1);
+        scramblePool.push(tok);
+        renderScramble(q);
+      }
+    });
+  });
+
+  document.getElementById('scrambleCheckBtn').addEventListener('click', () => {
+    const correctTokens = tokenizeSentence(q.scrambleSentence);
+    const isRight = scrambleAnswer.length === correctTokens.length && scrambleAnswer.every((t, i) => t.id === i);
+    const msg = document.getElementById('scrambleMsg');
+    const row = document.getElementById('scrambleAnswerRow');
+    if(isRight){
+      scrambleSolved = true;
+      const nextBtn = document.getElementById('nextBtn');
+      if(nextBtn) nextBtn.classList.add('active');
+      renderScramble(q);
+      speak(q.scrambleSentence, document.getElementById('scrambleReplayBtn'));
+    } else {
+      msg.textContent = '✕ 順序不對，再試一次';
+      msg.className = 'scramble-msg err';
+      row.classList.add('wrong-shake');
+      setTimeout(() => row.classList.remove('wrong-shake'), 300);
+    }
+  });
+
+  document.getElementById('scrambleResetBtn').addEventListener('click', () => {
+    initScramble(q);
+    renderScramble(q);
+  });
+}
+
+function renderQuestion(){
+  answered = false;
+  if(current >= questions.length){ renderResult(); return; }
+  const q = questions[current];
+  const passageMap = { reading: READING_PASSAGE, cloze: CLOZE_PASSAGE };
+  const activePassage = passageMap[mode];
+  const isVocab = mode === 'vocab';
+  const isListening = mode === 'listening';
+  card.innerHTML = `
+    ${activePassage ? `<div class="passage-box"><h3>${activePassage.title}</h3>${activePassage.html}</div>` : ''}
+    <div class="qnum-row">
+      <div class="qnum">Q<b>${current+1}</b> / ${questions.length}</div>
+      <div class="qtag">${q.type ? q.type : '單選'}</div>
+    </div>
+    ${isVocab ? `
+      <div class="speak-en-row" style="margin-bottom:6px;">
+        <button class="speak-btn" id="vocabWordBtn" title="播放單字發音">🔊</button>
+        <div class="speak-en" style="font-size:clamp(22px,3vw,28px);">${q.word}</div>
+      </div>
+    ` : ''}
+    ${isListening ? `
+      ${q.videoId ? `
+        <a class="listening-video-box" href="https://www.youtube.com/watch?v=${q.videoId}" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/${q.videoId}/hqdefault.jpg" alt="${q.videoCredit}">
+          <div class="listening-video-play"></div>
+          <div class="listening-video-label">▶ 點擊在 YouTube 開新分頁觀看影片</div>
+        </a>
+        <div class="listening-image-credit" style="margin-bottom:16px;">${q.videoCredit}</div>
+      ` : ''}
+      ${q.image ? `
+        <div class="listening-image-box">
+          <img src="${q.image}" alt="${q.audioQuestion}"
+               onerror="this.outerHTML='&lt;div class=&quot;listening-image-error&quot;&gt;⚠️ 圖片載入失敗，請檢查網路連線後重新整理頁面&lt;/div&gt;'">
+          <div class="listening-image-credit">${q.imageCredit}</div>
+        </div>
+      ` : ''}
+      ${q.audioQuestion ? `
+        <div class="listening-audio-row">
+          <button class="record-btn" id="playAllBtn" style="background:var(--chalk-green);"><span id="playAllIcon">🔊</span><span>播放題目與選項 A／B／C</span></button>
+        </div>
+      ` : ''}
+    ` : ''}
+    <p class="question-text">${q.text}</p>
+    <div class="options" id="optionsWrap">
+      ${q.options.map((opt,i)=>{
+        const label = `<b style="margin-right:8px;">${String.fromCharCode(65+i)}.</b>`;
+        const content = (isListening && q.audioQuestion && !answered) ? '' : opt;
+        return `<button class="option-btn" data-i="${i}">${label}${content}</button>`;
+      }).join('')}
+    </div>
+    <div class="feedback" id="feedback"></div>
+    ${isVocab ? `
+      <div class="sample-box" id="vocabExampleBox">
+        <div class="sample-box-label">EXAMPLE SENTENCE</div>
+        <div class="sample-row">
+          <div class="sample-text">${q.example}</div>
+          <button class="sample-speak-btn" id="vocabExampleBtn" title="播放例句語音">🔊</button>
+        </div>
+        <button class="reveal-btn" id="exampleZhToggleBtn" style="margin-top:12px;">🇹🇼 顯示中文翻譯</button>
+        <div class="example-zh-text" id="exampleZhText" style="display:none;">${q.exampleZh}</div>
+      </div>
+      <div class="scramble-box" id="scrambleSection"></div>
+    ` : ''}
+    <div class="footer-row">
+      <button class="next-btn" id="nextBtn">${current === questions.length-1 ? '看結果' : '下一題'}</button>
+    </div>
+  `;
+  document.querySelectorAll('.option-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=> handleAnswer(parseInt(btn.dataset.i)));
+  });
+  document.getElementById('nextBtn').addEventListener('click', ()=>{
+    current++;
+    renderQuestion();
+  });
+  if(isVocab){
+    document.getElementById('vocabWordBtn').addEventListener('click', (e)=> speak(q.word, e.currentTarget));
+    document.getElementById('vocabExampleBtn').addEventListener('click', (e)=> speak(q.example, e.currentTarget));
+    const zhToggleBtn = document.getElementById('exampleZhToggleBtn');
+    const zhText = document.getElementById('exampleZhText');
+    zhToggleBtn.addEventListener('click', ()=>{
+      const showing = zhText.style.display !== 'none';
+      zhText.style.display = showing ? 'none' : 'block';
+      zhToggleBtn.textContent = showing ? '🇹🇼 顯示中文翻譯' : '🇹🇼 隱藏中文翻譯';
+    });
+    initScramble(q);
+    renderScramble(q);
+  }
+  if(isListening){
+    const playAllBtn = document.getElementById('playAllBtn');
+    if(playAllBtn){
+      playAllBtn.addEventListener('click', ()=>{
+        playAllBtn.classList.add('recording');
+        const sequence = [q.audioQuestion, ...q.options.map((opt,i)=> `${String.fromCharCode(65+i)}. ${opt}`)];
+        speakSequence(sequence, ()=> playAllBtn.classList.remove('recording'));
+      });
+    }
+  }
+}
+
+function renderAudioGatedFeedback(fb, q, isCorrect){
+  if(isCorrect){
+    fb.innerHTML = `<div>✓ 答對了！</div><div style="margin-top:6px;">${q.note}</div>`;
+    document.getElementById('nextBtn').classList.add('active');
+  } else {
+    const isLetterOnlyMode = mode === 'cloze';
+    const answerLabel = isLetterOnlyMode
+      ? ` ${String.fromCharCode(65 + q.answer)}`
+      : ` ${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}`;
+    fb.innerHTML = `
+      <div>✕ 答錯了，正確答案是${answerLabel}。</div>
+      <div style="margin-top:6px;">${q.note}</div>
+      <div class="cloze-audio-row" id="clozeAudioRow">
+        <span class="cloze-audio-status" id="clozeAudioStatus">🔊 正在播放中文解說語音，請聽完才能繼續...</span>
+        <button class="sample-speak-btn" id="clozeReplayBtn" title="重新播放解說語音">🔊</button>
+      </div>
+    `;
+    const statusEl = document.getElementById('clozeAudioStatus');
+    const replayBtn = document.getElementById('clozeReplayBtn');
+    const unlockNext = () => {
+      if(statusEl){ statusEl.textContent = '✓ 已聽完解說，可以按下一題了'; statusEl.classList.add('done'); }
+      const nextBtn = document.getElementById('nextBtn');
+      if(nextBtn) nextBtn.classList.add('active');
+    };
+    speakZh(q.note, null, unlockNext);
+    if(replayBtn){
+      replayBtn.addEventListener('click', (e) => speakZh(q.note, e.currentTarget));
+    }
+  }
+}
+
+function handleAnswer(i){
+  if(answered) return;
+  answered = true;
+  const q = questions[current];
+  const isCorrect = i === q.answer;
+  if(isCorrect){ correctCount++; } else { wrongCount++; }
+  const historyQ = mode === 'listening' ? (q.audioQuestion || q.text.replace(/<[^>]+>/g,'___')) : q.text.replace(/<[^>]+>/g,'___');
+  history.push({q: historyQ, picked: q.options[i], correct: q.options[q.answer], isCorrect});
+  renderTally();
+
+  document.querySelectorAll('.option-btn').forEach((btn, idx)=>{
+    btn.disabled = true;
+    if(mode === 'listening'){
+      btn.innerHTML = `<b style="margin-right:8px;">${String.fromCharCode(65+idx)}.</b>${q.options[idx]}`;
+    }
+    if(idx === q.answer) btn.classList.add('correct');
+    if(idx === i && !isCorrect) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('feedback');
+  fb.classList.add('show', isCorrect ? 'correct' : 'wrong');
+
+  const exampleBox = document.getElementById('vocabExampleBox');
+  if(exampleBox) exampleBox.classList.add('show');
+
+  const scrambleBox = document.getElementById('scrambleSection');
+  if(scrambleBox){
+    fb.innerHTML = (isCorrect ? '✓ 答對了！　' : '✕ 再想想～　') + q.note;
+    scrambleBox.classList.add('show');
+    // 單字模式：要先完成句子重組才能進下一題，不在這裡啟用 nextBtn
+  } else if(mode === 'cloze' || mode === 'grammar' || mode === 'reading' || mode === 'listening'){
+    renderAudioGatedFeedback(fb, q, isCorrect);
+  } else {
+    fb.innerHTML = (isCorrect ? '✓ 答對了！　' : '✕ 再想想～　') + q.note;
+    document.getElementById('nextBtn').classList.add('active');
+  }
+}
+
+function renderResult(){
+  const total = questions.length;
+  const pct = Math.round((correctCount/total)*100);
+  let msg = '';
+  if(pct >= 90) msg = '太厲害了，這部分你已經完全掌握！';
+  else if(pct >= 70) msg = '不錯喔，再複習一下答錯的題目就更穩了。';
+  else msg = '這部分還需要多練習，建議跟老師再複習一次。';
+
+  card.innerHTML = `
+    <div class="result-wrap">
+      <div class="eyebrow" style="color:var(--ink-soft)">RESULT</div>
+      <div class="result-score">${correctCount} / ${total}</div>
+      <div class="result-msg">${msg}（正確率 ${pct}%）</div>
+      <div class="sync-status pending" id="syncStatusEl">☁️ 準備同步...</div>
+      <button class="restart-btn" id="restartBtn" style="margin-top:14px;">重新測驗一次</button>
+      <div class="review-list">
+        ${history.map((h,idx)=>`
+          <div class="review-item">
+            <b>Q${idx+1}.</b> ${h.q}　
+            你選：<b style="color:${h.isCorrect?'#1F5E43':'#9C3B2C'}">${h.picked}</b>
+            ${h.isCorrect ? '' : `　正解：<b style="color:#1F5E43">${h.correct}</b>`}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  document.getElementById('restartBtn').addEventListener('click', resetQuiz);
+  syncResult(MODE_CONFIG[mode] ? MODE_CONFIG[mode].syncLabel : mode, correctCount, total, history);
+}
+
+
+function resetQuiz(){
+  current = 0; correctCount = 0; wrongCount = 0; history = [];
+  renderTally();
+  renderQuestion();
+}
+
+// ---------- Speaking practice ----------
+function renderSpeakDots(){
+  speakDots.innerHTML = SPEAKING_QUESTIONS.map((_,i)=>{
+    let cls = 'dot-item';
+    if(i === speakIndex) cls += ' active';
+    else if(speakRevealed[i]) cls += ' done';
+    return `<div class="${cls}"></div>`;
+  }).join('');
+}
+
+function cleanupRecording(){
+  try{
+    if(sttRecognition){
+      sttRecognition.onresult = null;
+      sttRecognition.onerror = null;
+      sttRecognition.onend = null;
+      sttRecognition.stop();
+    }
+  }catch(e){}
+  sttRecognition = null;
+  try{
+    if(mediaRecorder && mediaRecorder.state !== 'inactive'){ mediaRecorder.stop(); }
+  }catch(e){}
+  mediaRecorder = null;
+  if(micStream){
+    try{ micStream.getTracks().forEach(t => t.stop()); }catch(e){}
+    micStream = null;
+  }
+  recordedChunks = [];
+  liveTranscript = '';
+}
+
+function analyzeSpeaking(q, transcript){
+  const resultEl = document.getElementById('recordResult');
+  if(!resultEl) return;
+  const t = (transcript || '').trim();
+  if(!t){
+    resultEl.innerHTML = '沒有偵測到語音內容，請重新錄音一次，錄音時請對著麥克風清楚說出完整句子。';
+    resultEl.className = 'record-result show err';
+    return;
+  }
+  const lower = t.toLowerCase();
+  const hasPresentContinuous = /\b(am|is|are)\s+\w+ing\b/.test(lower);
+  const hasPastContinuous = /\b(was|were)\s+\w+ing\b/.test(lower);
+  let ok = true;
+  let msg = '';
+
+  if(q.checkType === 'simple'){
+    if(hasPresentContinuous){
+      ok = false;
+      msg = '偵測到你的回答用了「be動詞＋Ving」的進行式結構，但這一題要練習的是現在簡單式（習慣性動作），可以再試著用像 "I usually..." 這樣的句型回答一次。';
+    } else {
+      msg = '沒有偵測到誤用進行式，聽起來符合這題要練習的現在簡單式句型！';
+    }
+  } else if(q.checkType === 'continuous'){
+    if(!hasPresentContinuous){
+      ok = false;
+      msg = '這一題要練習現在進行式（am/is/are + Ving），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I am ...ing" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了「be動詞＋Ving」的進行式結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'pastSimple'){
+    if(hasPastContinuous){
+      ok = false;
+      msg = '偵測到你的回答用了「was/were＋Ving」的過去進行式結構，但這一題要練習的是過去簡單式（描述已完成的動作），可以再試著用像 "I went..." 這樣的句型回答一次。';
+    } else {
+      msg = '沒有偵測到誤用過去進行式，聽起來符合這題要練習的過去簡單式句型！';
+    }
+  } else if(q.checkType === 'pastContinuous'){
+    if(!hasPastContinuous){
+      ok = false;
+      msg = '這一題要練習過去進行式（was/were + Ving），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I was ...ing" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了「was/were＋Ving」的過去進行式結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'yesno'){
+    const hasYesNo = /\b(yes|no)\b/.test(lower);
+    if(!hasYesNo){
+      ok = false;
+      msg = '這一題是疑問句，習慣上回答要先說 Yes 或 No，你的回答裡沒有偵測到 yes/no 開頭喔。';
+    } else {
+      msg = '偵測到你的回答有用 Yes/No 開頭來回應疑問句，符合這題的練習重點！';
+    }
+  } else if(q.checkType === 'goingTo'){
+    const hasGoingTo = /\b(am|is|are)\s+going\s+to\b/.test(lower);
+    if(!hasGoingTo){
+      ok = false;
+      msg = '這一題要練習 be going to（表示已經計畫好的事），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I am going to..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了「be going to」的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'will'){
+    const hasWill = /\b(will|'ll)\b/.test(lower);
+    if(!hasWill){
+      ok = false;
+      msg = '這一題適合用 will 表達預測或臨時決定，但你的回答裡沒有偵測到 will，可以再試著用像 "I think it will..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 will，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'comparative'){
+    const hasComparative = /\b\w+er\s+than\b|\bmore\s+\w+\s+than\b|\b(better|worse|farther|further)\s+than\b/.test(lower);
+    if(!hasComparative){
+      ok = false;
+      msg = '這一題要練習比較級（...er than / more...than），但你的回答裡沒有偵測到這個結構，可以再試著用像 "X is more...than Y" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了比較級 than 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'superlative'){
+    const hasSuperlative = /\bthe\s+\w*est\b|\bthe\s+most\s+\w+\b|\bthe\s+(best|worst)\b/.test(lower);
+    if(!hasSuperlative){
+      ok = false;
+      msg = '這一題要練習最高級（the...est / the most...），但你的回答裡沒有偵測到這個結構，可以再試著用像 "X is the...est" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了「the + 最高級」的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'asas'){
+    const hasAsAs = /\bas\s+\w+\s+as\b/.test(lower);
+    if(!hasAsAs){
+      ok = false;
+      msg = '這一題要練習 as...as（跟...一樣）的句型，但你的回答裡沒有偵測到這個結構，可以再試著用像 "X is as...as Y" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 as...as 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'should'){
+    const hasShould = /\bshould\b/.test(lower);
+    if(!hasShould){
+      ok = false;
+      msg = '這一題要練習 should（建議），但你的回答裡沒有偵測到 should，可以再試著用像 "You should..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 should，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'haveTo'){
+    const hasHaveTo = /\b(have to|has to)\b/.test(lower);
+    if(!hasHaveTo){
+      ok = false;
+      msg = '這一題要練習 have to（外在規定的義務），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I have to..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 have to，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'can'){
+    const hasCan = /\bcan\b/.test(lower);
+    if(!hasCan){
+      ok = false;
+      msg = '這一題要練習 can（能力），但你的回答裡沒有偵測到 can，可以再試著用像 "I can..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 can，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'must'){
+    const hasMust = /\bmust\b/.test(lower);
+    if(!hasMust){
+      ok = false;
+      msg = '這一題要練習 must（強烈的義務），但你的回答裡沒有偵測到 must，可以再試著用像 "I must..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 must，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'could'){
+    const hasCould = /\bcould\b/.test(lower);
+    if(!hasCould){
+      ok = false;
+      msg = '這一題要練習 could（過去的能力），但你的回答裡沒有偵測到 could，可以再試著用像 "I could..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 could，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'thereIsAre'){
+    const hasThereIsAre = /\bthere\s+(is|are|isn't|aren't|is not|are not)\b/.test(lower);
+    if(!hasThereIsAre){
+      ok = false;
+      msg = '這一題要練習 There is/are 的句型，但你的回答裡沒有偵測到這個結構，可以再試著用像 "There is/are..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 There is/are 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'many'){
+    const hasMany = /\bmany\b/.test(lower);
+    if(!hasMany){
+      ok = false;
+      msg = '這一題要練習 many（可數名詞的數量），但你的回答裡沒有偵測到 many，可以再試著用像 "I have many..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 many，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'much'){
+    const hasMuch = /\b(much|a lot of|lots of)\b/.test(lower);
+    if(!hasMuch){
+      ok = false;
+      msg = '這一題要練習 much / a lot of（不可數名詞的數量），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I drink a lot of..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了表達不可數名詞數量的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'any'){
+    const hasAny = /\bany\b/.test(lower);
+    if(!hasAny){
+      ok = false;
+      msg = '這一題要練習 any（否定句/疑問句），但你的回答裡沒有偵測到 any，可以再試著用像 "I do not have any..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 any，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'because'){
+    const hasBecause = /\bbecause\b/.test(lower);
+    if(!hasBecause){
+      ok = false;
+      msg = '這一題要練習 because（回答原因），但你的回答裡沒有偵測到 because，可以再試著用像 "...because..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 because，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'before'){
+    const hasBefore = /\bbefore\b/.test(lower);
+    if(!hasBefore){
+      ok = false;
+      msg = '這一題要練習 before（描述先後順序），但你的回答裡沒有偵測到 before，可以再試著用像 "...before..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 before，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'after'){
+    const hasAfter = /\bafter\b/.test(lower);
+    if(!hasAfter){
+      ok = false;
+      msg = '這一題要練習 after（描述先後順序），但你的回答裡沒有偵測到 after，可以再試著用像 "...after..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 after，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'although'){
+    const hasAlthough = /\balthough\b/.test(lower);
+    if(!hasAlthough){
+      ok = false;
+      msg = '這一題要練習 although（表達讓步），但你的回答裡沒有偵測到 although，可以再試著用像 "Although..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 although，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'when'){
+    const hasWhen = /\bwhen\b/.test(lower);
+    if(!hasWhen){
+      ok = false;
+      msg = '這一題要練習 when（描述某情況發生時），但你的回答裡沒有偵測到 when，可以再試著用像 "When..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 when，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'wantTo'){
+    const hasWantTo = /\bwant(s)?\s+to\b/.test(lower);
+    if(!hasWantTo){
+      ok = false;
+      msg = '這一題要練習 want + to-V，但你的回答裡沒有偵測到這個結構，可以再試著用像 "I want to..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 want to 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'enjoyIng'){
+    const hasEnjoyIng = /\benjoy(s)?\s+\w+ing\b/.test(lower);
+    if(!hasEnjoyIng){
+      ok = false;
+      msg = '這一題要練習 enjoy + Ving，但你的回答裡沒有偵測到這個結構，可以再試著用像 "I enjoy ...ing" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 enjoy + Ving 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'decideTo'){
+    const hasDecideTo = /\bdecide(d)?\s+to\b/.test(lower);
+    if(!hasDecideTo){
+      ok = false;
+      msg = '這一題要練習 decide + to-V，但你的回答裡沒有偵測到這個結構，可以再試著用像 "I decided to..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 decide to 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'hopeTo'){
+    const hasHopeTo = /\bhope(s)?\s+to\b/.test(lower);
+    if(!hasHopeTo){
+      ok = false;
+      msg = '這一題要練習 hope + to-V，但你的回答裡沒有偵測到這個結構，可以再試著用像 "I hope to..." 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 hope to 的結構，符合這題要練習的文法重點！';
+    }
+  } else if(q.checkType === 'avoidIng'){
+    const hasAvoidIng = /\bavoid(s)?\s+\w+ing\b/.test(lower);
+    if(!hasAvoidIng){
+      ok = false;
+      msg = '這一題要練習 avoid + Ving，但你的回答裡沒有偵測到這個結構，可以再試著用像 "I avoid ...ing" 這樣的句型回答一次。';
+    } else {
+      msg = '偵測到你用了 avoid + Ving 的結構，符合這題要練習的文法重點！';
+    }
+  }
+
+  resultEl.innerHTML = `
+    <div>${ok ? '✓ 文法重點檢查通過' : '✕ 文法重點需要再加強'}</div>
+    <div style="margin-top:6px;">${msg}</div>
+    <div style="margin-top:10px;font-size:12px;color:var(--ink-soft);">※ 這是針對本題文法重點所做的語音辨識檢查（非完整發音或內容評分），僅供練習參考，實際口說仍建議請老師再確認一次。</div>
+  `;
+  resultEl.className = 'record-result show ' + (ok ? 'ok' : 'err');
+}
+
+function initRecordUI(q){
+  cleanupRecording();
+  const recordBtn = document.getElementById('recordBtn');
+  const recordBtnText = document.getElementById('recordBtnText');
+  const recordStatus = document.getElementById('recordStatus');
+  const playbackBox = document.getElementById('recordPlayback');
+  const transcriptBox = document.getElementById('recordTranscriptBox');
+  const transcriptText = document.getElementById('recordTranscriptText');
+  const submitBtn = document.getElementById('recordSubmitBtn');
+  const resultEl = document.getElementById('recordResult');
+  if(!recordBtn) return;
+
+  playbackBox.innerHTML = '';
+  transcriptBox.style.display = 'none';
+  transcriptText.textContent = '';
+  resultEl.classList.remove('show');
+  submitBtn.disabled = true;
+
+  const hasMediaSupport = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  const SpeechRecCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if(!hasMediaSupport){
+    recordBtn.disabled = true;
+    recordBtnText.textContent = '不支援錄音';
+    recordStatus.textContent = location.protocol === 'file:'
+      ? '此瀏覽器在本機開啟檔案時不支援錄音，請改用「上傳到雲端硬碟後用瀏覽器開啟連結」的方式使用，或改用電腦版 Chrome。'
+      : '此瀏覽器不支援錄音功能，建議改用電腦版 Chrome。';
+    recordStatus.classList.add('record-unsupported');
+    return;
+  }
+
+  let isRecording = false;
+  let isBusy = false; // 避免在取得麥克風權限的過程中重複點擊
+
+  async function ensureMicStream(){
+    if(micStream && micStream.getTracks().some(t => t.readyState === 'live')){
+      return micStream;
+    }
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    return micStream;
+  }
+
+  function startNewRecognition(){
+    if(!SpeechRecCtor) return;
+    try{
+      sttRecognition = new SpeechRecCtor();
+      sttRecognition.lang = 'en-US';
+      sttRecognition.continuous = true;
+      sttRecognition.interimResults = true;
+      sttRecognition.onresult = (event) => {
+        let finalText = '';
+        for(let i = 0; i < event.results.length; i++){
+          finalText += event.results[i][0].transcript;
+        }
+        liveTranscript = finalText;
+        transcriptBox.style.display = 'block';
+        transcriptText.textContent = liveTranscript;
+      };
+      sttRecognition.onerror = () => {};
+      sttRecognition.start();
+    }catch(e){}
+  }
+
+  recordBtn.addEventListener('click', async () => {
+    if(isBusy) return;
+
+    if(!isRecording){
+      isBusy = true;
+      recordStatus.classList.remove('record-unsupported');
+      recordStatus.textContent = '正在啟動麥克風...';
+      try{
+        await ensureMicStream();
+      }catch(err){
+        recordStatus.textContent = '無法取得麥克風權限（' + (err && err.message ? err.message : err) + '），請允許瀏覽器使用麥克風後再試一次。';
+        isBusy = false;
+        return;
+      }
+
+      recordedChunks = [];
+      liveTranscript = '';
+      playbackBox.innerHTML = '';
+      transcriptBox.style.display = 'none';
+      resultEl.classList.remove('show');
+      submitBtn.disabled = true;
+
+      try{
+        mediaRecorder = new MediaRecorder(micStream);
+      }catch(err){
+        recordStatus.textContent = '無法啟動錄音功能（' + (err && err.message ? err.message : err) + '）。';
+        isBusy = false;
+        return;
+      }
+
+      mediaRecorder.ondataavailable = (e) => { if(e.data.size > 0) recordedChunks.push(e.data); };
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: 'audio/webm' });
+        const url = URL.createObjectURL(blob);
+        playbackBox.innerHTML = `<audio controls src="${url}"></audio>`;
+
+        isRecording = false;
+        recordBtn.classList.remove('recording');
+        recordBtnText.textContent = '🔁 重新錄音';
+        isBusy = false;
+
+        if(SpeechRecCtor){
+          submitBtn.disabled = false;
+          recordStatus.textContent = '錄音完成，可以播放確認，不滿意可按「🔁 重新錄音」，滿意再按「送出分析」';
+        } else {
+          recordStatus.textContent = '錄音完成（此瀏覽器不支援自動語音辨識分析，可播放錄音自行確認，或按「🔁 重新錄音」重錄）';
+        }
+      };
+
+      mediaRecorder.start();
+      startNewRecognition();
+
+      isRecording = true;
+      isBusy = false;
+      recordBtn.classList.add('recording');
+      recordBtnText.textContent = '⏹ 停止錄音';
+      recordStatus.textContent = SpeechRecCtor ? '錄音中... 請清楚說出完整句子' : '錄音中...（此瀏覽器不支援自動語音辨識）';
+    } else {
+      // 停止錄音：狀態更新交給 mediaRecorder.onstop 統一處理，避免時序錯亂
+      if(sttRecognition){ try{ sttRecognition.stop(); }catch(e){} }
+      if(mediaRecorder && mediaRecorder.state !== 'inactive'){
+        mediaRecorder.stop();
+      }
+      recordStatus.textContent = '處理錄音中...';
+    }
+  });
+
+  submitBtn.addEventListener('click', () => {
+    analyzeSpeaking(q, liveTranscript);
+  });
+}
+
+function renderSpeaking(){
+  const q = SPEAKING_QUESTIONS[speakIndex];
+  const revealed = speakRevealed[speakIndex];
+  renderSpeakDots();
+
+  card.innerHTML = `
+    <div class="speak-card-inner">
+      <div class="qnum-row">
+        <div class="qnum">Q<b>${speakIndex+1}</b> / ${SPEAKING_QUESTIONS.length}</div>
+        <div class="qtag">口說題</div>
+      </div>
+      <div class="speak-en-row">
+        <button class="speak-btn" id="speakBtn" title="播放題目語音">🔊</button>
+        <div class="speak-en">${q.en}</div>
+      </div>
+      <div class="speak-hint">→ ${q.hint}</div>
+      <div class="no-speech-note" id="noSpeechNote">這個瀏覽器不支援語音播放，可以請老師直接唸出題目。</div>
+
+      ${revealed ? `
+        <div class="sample-box show">
+          <div class="sample-box-label">SAMPLE ANSWER</div>
+          <div class="sample-row">
+            <div class="sample-text">${q.sample}</div>
+            <button class="sample-speak-btn" id="sampleSpeakBtn" title="播放範例答案語音">🔊</button>
+          </div>
+          <button class="reveal-btn" id="sampleZhToggleBtn" style="margin-top:12px;">🇹🇼 顯示中文翻譯</button>
+          <div class="example-zh-text" id="sampleZhText" style="display:none;">${q.sampleZh}</div>
+        </div>
+      ` : `
+        <button class="reveal-btn" id="revealBtn">💡 顯示範例答案</button>
+      `}
+
+      <div class="record-box" id="recordBox">
+        <div class="record-box-label">🎙️ 錄下你的回答，確認後送出分析文法重點</div>
+        <div class="record-controls">
+          <button class="record-btn" id="recordBtn"><span class="record-dot"></span><span id="recordBtnText">開始錄音</span></button>
+          <span class="record-status" id="recordStatus"></span>
+        </div>
+        <div class="record-playback" id="recordPlayback"></div>
+        <div class="record-transcript" id="recordTranscriptBox" style="display:none;">
+          <div class="record-transcript-label">辨識結果（語音辨識，可能不完全準確）</div>
+          <div id="recordTranscriptText"></div>
+        </div>
+        <button class="record-submit-btn" id="recordSubmitBtn" disabled>送出分析</button>
+        <div class="record-result" id="recordResult"></div>
+      </div>
+
+      <div class="footer-row split">
+        <button class="nav-btn ghost" id="prevBtn" ${speakIndex===0?'disabled':''}>← 上一題</button>
+        <button class="nav-btn" id="nextSpeakBtn" ${speakIndex===SPEAKING_QUESTIONS.length-1?'disabled':''}>下一題 →</button>
+      </div>
+    </div>
+  `;
+
+  if(!speechSupported){
+    document.getElementById('noSpeechNote').classList.add('show');
+  }
+
+  document.getElementById('speakBtn').addEventListener('click', (e)=> speak(q.en, e.currentTarget));
+  const revealBtn = document.getElementById('revealBtn');
+  if(revealBtn){
+    revealBtn.addEventListener('click', ()=>{
+      speakRevealed[speakIndex] = true;
+      renderSpeaking();
+    });
+  }
+  const sampleBtn = document.getElementById('sampleSpeakBtn');
+  if(sampleBtn){
+    sampleBtn.addEventListener('click', (e)=> speak(q.sample, e.currentTarget));
+  }
+  const sampleZhToggleBtn = document.getElementById('sampleZhToggleBtn');
+  if(sampleZhToggleBtn){
+    const sampleZhText = document.getElementById('sampleZhText');
+    sampleZhToggleBtn.addEventListener('click', ()=>{
+      const showing = sampleZhText.style.display !== 'none';
+      sampleZhText.style.display = showing ? 'none' : 'block';
+      sampleZhToggleBtn.textContent = showing ? '🇹🇼 顯示中文翻譯' : '🇹🇼 隱藏中文翻譯';
+    });
+  }
+  document.getElementById('prevBtn').addEventListener('click', ()=>{
+    if(speakIndex > 0){ speakIndex--; renderSpeaking(); }
+  });
+  document.getElementById('nextSpeakBtn').addEventListener('click', ()=>{
+    if(speakIndex < SPEAKING_QUESTIONS.length-1){ speakIndex++; renderSpeaking(); }
+  });
+  initRecordUI(q);
+}
+
+// ---------- Mode switching ----------
+const MODE_CONFIG = {
+  grammar: { questions: GRAMMAR_QUESTIONS, title: '不定詞 to-V vs 動名詞 V-ing', sub: (n)=> `文法測驗．共 ${n} 題．每題點選答案後立即顯示對錯與說明`, syncLabel: '文法測驗' },
+  reading: { questions: READING_QUESTIONS, title: READING_PASSAGE.title, sub: (n)=> `閱讀測驗．共 ${n} 題（閱讀理解＋文意選填）．請先閱讀短文再作答`, syncLabel: '閱讀測驗' },
+  cloze: { questions: CLOZE_QUESTIONS, title: CLOZE_PASSAGE.title, sub: (n)=> `克漏字．共 ${n} 題．請先閱讀短文，選出最適合填入空格的字`, syncLabel: '克漏字測驗' },
+  vocab: { questions: VOCAB_QUESTIONS, title: '國中單字測驗', sub: (n)=> `單字測驗．共 ${n} 題．選出最接近的中文意思`, syncLabel: '單字測驗' },
+  listening: { questions: LISTENING_QUESTIONS, title: '聽力測驗', sub: (n)=> `聽力測驗．共 ${n} 題（情境問答）．聽題目與選項，選出正確答案`, syncLabel: '聽力測驗' }
+};
+
+function switchMode(newMode){
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  cleanupRecording();
+  mode = newMode;
+  tabGrammar.classList.toggle('active', mode === 'grammar');
+  tabReading.classList.toggle('active', mode === 'reading');
+  tabCloze.classList.toggle('active', mode === 'cloze');
+  tabVocab.classList.toggle('active', mode === 'vocab');
+  tabListening.classList.toggle('active', mode === 'listening');
+  tabSpeaking.classList.toggle('active', mode === 'speaking');
+
+  if(mode === 'speaking'){
+    tallyWrap.classList.add('hidden');
+    speakProgress.classList.add('show');
+    mainTitle.textContent = '口說練習';
+    subTitle.textContent = `共 ${SPEAKING_QUESTIONS.length} 題．點🔊聽題目發音，回答完再看範例答案`;
+    speakIndex = 0;
+    renderSpeaking();
+  } else {
+    tallyWrap.classList.remove('hidden');
+    speakProgress.classList.remove('show');
+    const cfg = MODE_CONFIG[mode];
+    questions = cfg.questions;
+    mainTitle.textContent = cfg.title;
+    subTitle.textContent = cfg.sub(cfg.questions.length);
+    resetQuiz();
+  }
+}
+
+tabGrammar.addEventListener('click', ()=> switchMode('grammar'));
+tabReading.addEventListener('click', ()=> switchMode('reading'));
+tabCloze.addEventListener('click', ()=> switchMode('cloze'));
+tabVocab.addEventListener('click', ()=> switchMode('vocab'));
+tabListening.addEventListener('click', ()=> switchMode('listening'));
+tabSpeaking.addEventListener('click', ()=> switchMode('speaking'));
+
+try{
+  renderTally();
+  renderQuestion();
+}catch(e){
+  card.innerHTML = `<div style="padding:20px;text-align:center;color:var(--chalk-red);">
+    ⚠️ 頁面初始化時發生錯誤，請嘗試：<br>1. 用 Safari 開啟此檔案（不要用 App 內建瀏覽器或預覽模式）<br>2. 重新整理頁面<br><br>
+    <span style="font-size:11px;color:var(--ink-soft);">錯誤訊息：${e.message}</span>
+  </div>`;
+}
+</script>
+</body>
+</html>
