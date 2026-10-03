@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 9 投影片｜動名詞與不定詞進階</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 9 · SLIDES</div>
+    <h1 class="page">動名詞與不定詞進階</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 9 · GRAMMAR</div><h1 class="big">動名詞與不定詞進階</h1><div class="en-sub">Gerunds &amp; Infinitives</div><div class="venn"><span class="c1">enjoy V-ing</span><span class="c2">decide to V</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>分辨只接 V-ing 與只接 to V 的動詞</li><li>搞懂 stop、remember、forget、try、regret 後面接 V-ing 或 to V 意思不同</li><li>用 to have p.p. 與 to be p.p. 表達「已經」與「被」</li><li>分辨 be used to V-ing 與 used to V</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I enjoy ____ music. (listen to / listening to)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>listening to</span></div><div class="qa"><span class="n">2</span><span class="q">He decided ____ abroad. (study / to study)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to study</span></div><div class="qa"><span class="n">3</span><span class="q">I look forward to ____ you. (see / seeing)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>seeing</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第 8 週的假設語氣</h2><p class="lead">上週學的 wish 之後，這週繼續用動詞形式說「想做的事」。</p><div class="cards n2"><div class="card g"><h3>wish 回顧</h3><div class="ex g"><div class="en">I wish I <b>were</b> taller. <button class="sentence-btn" type="button" data-say="I wish I were taller." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 現在的願望</div></div><div class="ex o"><div class="en">I wish I <i>had practiced</i> more. <button class="sentence-btn" type="button" data-say="I wish I had practiced more." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 過去的遺憾</div></div></div><div class="card o"><h3>本週延伸</h3><div class="ex g"><div class="en">I enjoy <b>playing</b> basketball. <button class="sentence-btn" type="button" data-say="I enjoy playing basketball." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我喜歡打籃球（動名詞）</div></div><div class="ex o"><div class="en">I hope <i>to play</i> in the school team. <button class="sentence-btn" type="button" data-say="I hope to play in the school team." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我希望能加入校隊（不定詞）</div></div></div></div></section>
+<section class="s paper"><h2>只接 V-ing 的動詞</h2><div class="cards n2"><div class="card g"><h3>後面一定接 V-ing</h3><p class="row"><b>口訣：</b>mind finish enjoy avoid consider practice keep give up suggest miss imagine</p><p class="row"><b>特色：</b>不能接 to V</p><div class="ex g"><div class="en">I enjoy <b>swimming</b> in summer. <button class="sentence-btn" type="button" data-say="I enjoy swimming in summer." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我喜歡夏天游泳</div></div><div class="ex g"><div class="en">She avoided <b>talking</b> to him. <button class="sentence-btn" type="button" data-say="She avoided talking to him." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她避免跟他說話</div></div></div><div class="card o"><h3>更多例句</h3><div class="ex o"><div class="en">Do you mind <i>opening</i> the window? <button class="sentence-btn" type="button" data-say="Do you mind opening the window?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你介意開一下窗戶嗎？</div></div><div class="ex o"><div class="en">He finished <i>doing</i> his homework. <button class="sentence-btn" type="button" data-say="He finished doing his homework." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他寫完功課了</div></div><div class="ex o"><div class="en">They are considering <i>moving</i> to Taipei. <button class="sentence-btn" type="button" data-say="They are considering moving to Taipei." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他們正在考慮搬到台北</div></div></div></div></section>
+<section class="s paper"><h2>只接 to V 的動詞</h2><div class="cards n2"><div class="card g"><h3>後面一定接 to V</h3><p class="row"><b>口訣：</b>decide plan hope want expect promise manage refuse agree offer afford learn</p><p class="row"><b>特色：</b>不能接 V-ing</p><div class="ex g"><div class="en">He decided <b>to study</b> abroad. <button class="sentence-btn" type="button" data-say="He decided to study abroad." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他決定出國讀書</div></div><div class="ex g"><div class="en">I can't afford <b>to buy</b> a new phone. <button class="sentence-btn" type="button" data-say="I can&#x27;t afford to buy a new phone." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我買不起新手機</div></div></div><div class="card o"><h3>更多例句</h3><div class="ex o"><div class="en">She refused <i>to answer</i> the question. <button class="sentence-btn" type="button" data-say="She refused to answer the question." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她拒絕回答問題</div></div><div class="ex o"><div class="en">We managed <i>to catch</i> the last bus. <button class="sentence-btn" type="button" data-say="We managed to catch the last bus." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我們設法趕上了末班車</div></div><div class="ex o"><div class="en">He promised <i>to call</i> me. <button class="sentence-btn" type="button" data-say="He promised to call me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他答應打電話給我</div></div></div></div></section>
+<section class="s paper"><h2>兩種都能接，意思幾乎一樣</h2><table class="t"><thead><tr><th>動詞</th><th>例句</th><th>意思</th></tr></thead><tbody><tr><td>like / love / hate</td><td><div>I like <b>to swim</b> / <b>swimming</b>. <button class="sentence-btn" type="button" data-say="I like to swim / swimming." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我喜歡游泳）</span></div></td><td>差別很小</td></tr><tr><td>start / begin / continue</td><td><div>It started <b>to rain</b> / <b>raining</b>. <button class="sentence-btn" type="button" data-say="It started to rain / raining." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（開始下雨了）</span></div></td><td>兩種都可以</td></tr><tr><td>prefer</td><td><div>I prefer <b>to walk</b> / <b>walking</b>. <button class="sentence-btn" type="button" data-say="I prefer to walk / walking." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我比較喜歡走路）</span></div></td><td>兩種都可以</td></tr></tbody></table><div class="note">這些動詞兩種都對，選哪個都不會被扣分；但 stop、remember、forget、try、regret 就不一樣了。</div></section>
+<section class="s paper"><h2>stop、remember、forget：接 V-ing 與 to V 意思不同</h2><table class="t"><thead><tr><th>動詞</th><th>接 V-ing</th><th>接 to V</th></tr></thead><tbody><tr><td>stop</td><td><div>He stopped <b>smoking</b>. <button class="sentence-btn" type="button" data-say="He stopped smoking." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他戒菸了（停止做））</span></div></td><td><div>He stopped <i>to smoke</i>. <button class="sentence-btn" type="button" data-say="He stopped to smoke." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他停下來去抽菸（停下來做））</span></div></td></tr><tr><td>remember</td><td><div>I remember <b>locking</b> the door. <button class="sentence-btn" type="button" data-say="I remember locking the door." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我記得鎖過門（做過了））</span></div></td><td><div>Remember <i>to lock</i> the door. <button class="sentence-btn" type="button" data-say="Remember to lock the door." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（記得要鎖門（還沒做））</span></div></td></tr><tr><td>forget</td><td><div>I forgot <b>meeting</b> her. <button class="sentence-btn" type="button" data-say="I forgot meeting her." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我忘了見過她（做過））</span></div></td><td><div>I forgot <i>to meet</i> her. <button class="sentence-btn" type="button" data-say="I forgot to meet her." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我忘了去見她（還沒做））</span></div></td></tr></tbody></table><div class="note">口訣：V-ing 是「已經做過」，to V 是「接下來要做」。</div></section>
+<section class="s paper"><h2>try、regret、mean：意思也不同</h2><table class="t"><thead><tr><th>動詞</th><th>接 V-ing</th><th>接 to V</th></tr></thead><tbody><tr><td>try</td><td><div>Try <b>adding</b> some salt. <button class="sentence-btn" type="button" data-say="Try adding some salt." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（試試看加點鹽（嘗試方法））</span></div></td><td><div>I tried <i>to open</i> the door. <button class="sentence-btn" type="button" data-say="I tried to open the door." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我努力想開門（盡力去做））</span></div></td></tr><tr><td>regret</td><td><div>I regret <b>saying</b> that. <button class="sentence-btn" type="button" data-say="I regret saying that." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我後悔說了那句話（做過））</span></div></td><td><div>I regret <i>to tell</i> you. <button class="sentence-btn" type="button" data-say="I regret to tell you." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我很遺憾要告訴你（現在要說））</span></div></td></tr><tr><td>mean</td><td><div>This means <b>waiting</b> longer. <button class="sentence-btn" type="button" data-say="This means waiting longer." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這意味著要等更久）</span></div></td><td><div>I meant <i>to call</i> you. <button class="sentence-btn" type="button" data-say="I meant to call you." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我本來想打電話給你）</span></div></td></tr></tbody></table></section>
+<section class="s paper"><h2>完成式不定詞與被動不定詞</h2><div class="cards n2"><div class="card g"><h3>to have p.p.</h3><div class="sub">表示比主要動詞更早發生</div><p class="row"><b>意思：</b>已經做過（常表示遺憾或推測）</p><div class="ex g"><div class="en">He seems <b>to have forgotten</b> my name. <button class="sentence-btn" type="button" data-say="He seems to have forgotten my name." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他似乎已經忘了我的名字</div></div><div class="ex g"><div class="en">I'd like <b>to have gone</b> with you. <button class="sentence-btn" type="button" data-say="I&#x27;d like to have gone with you." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我本來想跟你一起去（可惜沒去）</div></div></div><div class="card o"><h3>to be p.p.</h3><div class="sub">表示「被」</div><p class="row"><b>意思：</b>主詞是承受動作的人或事</p><div class="ex o"><div class="en">The letter needs <i>to be sent</i> today. <button class="sentence-btn" type="button" data-say="The letter needs to be sent today." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 這封信今天需要被寄出</div></div><div class="ex o"><div class="en">She hopes <i>to be chosen</i> for the team. <button class="sentence-btn" type="button" data-say="She hopes to be chosen for the team." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她希望能被選進校隊</div></div></div></div></section>
+<section class="s paper"><h2>介系詞 to 後面接 V-ing</h2><table class="t"><thead><tr><th>片語</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>look forward to</td><td>期待</td><td><div>I look forward to <b>seeing</b> you. <button class="sentence-btn" type="button" data-say="I look forward to seeing you." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我期待見到你）</span></div></td></tr><tr><td>be used to</td><td>習慣於</td><td><div>I am used to <b>getting up</b> early. <button class="sentence-btn" type="button" data-say="I am used to getting up early." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我習慣早起）</span></div></td></tr><tr><td>get used to</td><td>逐漸習慣</td><td><div>She got used to <b>living</b> alone. <button class="sentence-btn" type="button" data-say="She got used to living alone." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（她漸漸習慣獨居）</span></div></td></tr><tr><td>object to</td><td>反對</td><td><div>He objected to <b>paying</b> extra. <button class="sentence-btn" type="button" data-say="He objected to paying extra." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他反對多付錢）</span></div></td></tr></tbody></table><div class="note">這裡的 to 是介系詞，所以後面接 V-ing；要判斷 to 是不是介系詞，可以試著在後面放名詞：look forward to the party。</div></section>
+<section class="s paper"><h2>be used to V-ing 與 used to V</h2><div class="cards n2"><div class="card g"><h3>be used to V-ing</h3><div class="sub">習慣於</div><p class="row"><b>be 動詞：</b>會隨主詞和時態變化</p><div class="ex g"><div class="en">I <b>am used to</b> <b>waking</b> up early. <button class="sentence-btn" type="button" data-say="I am used to waking up early." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我習慣早起</div></div><div class="ex g"><div class="en">He <b>wasn't used to</b> <b>living</b> in a big city. <button class="sentence-btn" type="button" data-say="He wasn&#x27;t used to living in a big city." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他當時不習慣住大城市</div></div></div><div class="card o"><h3>used to V</h3><div class="sub">過去常常（現在不了）</div><p class="row"><b>特色：</b>用 did 構成問句與否定，used to 後面接原形</p><div class="ex o"><div class="en">I <i>used to</i> <i>play</i> basketball. <button class="sentence-btn" type="button" data-say="I used to play basketball." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我以前常打籃球（現在不打了）</div></div><div class="ex o"><div class="en">Did you <i>use to</i> live here? <button class="sentence-btn" type="button" data-say="Did you use to live here?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你以前住在這裡嗎？</div></div></div></div></section>
+<section class="s paper"><h2>對比頁：容易搞混的四組</h2><div class="two tight"><div class="card g"><h3>stop V-ing 與 stop to V</h3><div class="ex g"><div class="en">He stopped <b>talking</b>. <button class="sentence-btn" type="button" data-say="He stopped talking." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他停止說話</div></div><div class="ex o"><div class="en">He stopped <i>to talk</i> to her. <button class="sentence-btn" type="button" data-say="He stopped to talk to her." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他停下來跟她說話</div></div></div><div class="card o"><h3>remember V-ing 與 to V</h3><div class="ex g"><div class="en">I remember <b>meeting</b> him. <button class="sentence-btn" type="button" data-say="I remember meeting him." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 記得見過他</div></div><div class="ex o"><div class="en">Remember <i>to meet</i> him. <button class="sentence-btn" type="button" data-say="Remember to meet him." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 記得去見他</div></div></div><div class="card g"><h3>to 是 to V 還是介系詞</h3><div class="ex g"><div class="en">I want <b>to go</b>. <button class="sentence-btn" type="button" data-say="I want to go." aria-label="播放這個句子">🔊</button></div><div class="zh">→ to + 原形</div></div><div class="ex o"><div class="en">I look forward <i>to going</i>. <button class="sentence-btn" type="button" data-say="I look forward to going." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 介系詞 to + V-ing</div></div></div><div class="card o"><h3>used to 與 be used to</h3><div class="ex g"><div class="en">I <b>used to</b> swim. <button class="sentence-btn" type="button" data-say="I used to swim." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 以前常游泳</div></div><div class="ex o"><div class="en">I <i>am used to</i> swimming. <button class="sentence-btn" type="button" data-say="I am used to swimming." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 習慣游泳</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">I enjoy to swim.</span> → <span class="good">I enjoy swimming.</span></div><div class="why">enjoy 後面一定接 V-ing，不能接 to V。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">He decided going abroad.</span> → <span class="good">He decided to go abroad.</span></div><div class="why">decide 後面一定接 to V。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">I look forward to see you.</span> → <span class="good">I look forward to seeing you.</span></div><div class="why">look forward to 的 to 是介系詞，後面接 V-ing。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">I stopped to smoke last year. (戒菸)</span> → <span class="good">I stopped smoking last year.</span></div><div class="why">停止做某件事，用 stop V-ing。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">I am used to get up early.</span> → <span class="good">I am used to getting up early.</span></div><div class="why">be used to 的 to 是介系詞，後面接 V-ing。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">She avoided ____ to him. (talk / talking)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>talking</span></div><div class="qa"><span class="n">2</span><span class="q">We can't afford ____ a car. (buy / to buy)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to buy</span></div><div class="qa"><span class="n">3</span><span class="q">He stopped ____ (戒菸). (smoking / to smoke)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>smoking</span></div><div class="qa"><span class="n">4</span><span class="q">Remember ____ the door. (lock / to lock)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to lock</span></div><div class="qa"><span class="n">5</span><span class="q">I forgot ____ her yesterday (沒見到). (meeting / to meet)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to meet</span></div><div class="qa"><span class="n">6</span><span class="q">He seems ____ forgotten my name. (to have / having)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to have</span></div><div class="qa"><span class="n">7</span><span class="q">I am used to ____ early. (get up / getting up)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>getting up</span></div><div class="qa"><span class="n">8</span><span class="q">I ____ play baseball when I was young. (used to / am used to)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>used to</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I finished to do my homework.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to do → doing</span></div><div class="qa"><span class="n">2</span><span class="q">She refused answering the question.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>answering → to answer</span></div><div class="qa"><span class="n">3</span><span class="q">I'm looking forward to meet you.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>meet → meeting</span></div></div></div><div><p class="lead">轉換</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I like swimming.（改用 to V）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I like to swim.</span></div><div class="qa"><span class="n">2</span><span class="q">I regret that I said that.（用 regret + V-ing）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I regret saying that.</span></div><div class="qa"><span class="n">3</span><span class="q">The letter must be sent.（用 needs）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>The letter needs to be sent.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en">Ben used to <span class="hl">eat</span> junk food every day. Last year, he decided <span class="hl">to change</span> his habits. He stopped <span class="hl2">drinking</span> soda and started <span class="hl">to exercise</span>. “I look forward to <span class="hl2">feeling</span> healthier,” he said. “I am used to <span class="hl2">waking up</span> early now.”<button class="sentence-btn" type="button" data-say="Ben used to eat junk food every day. Last year, he decided to change his habits. He stopped drinking soda and started to exercise. I look forward to feeling healthier, he said. I am used to waking up early now." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>看到 decide、refuse、manage，後面接 to V</li><li>看到 enjoy、avoid、finish，後面接 V-ing</li><li>stop、remember 後面的形式會改變意思</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 stopped smoking，是已經戒菸</li><li>聽到 look forward to，後面的動詞會加 -ing</li><li>聽到 used to，說的是過去的習慣</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的習慣。</p><div class="two"><div><div class="ex g"><div class="en">I enjoy <b>playing</b> video games. <button class="sentence-btn" type="button" data-say="I enjoy playing video games." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 只接 V-ing</div></div><div class="ex g"><div class="en">I decided <b>to study</b> harder. <button class="sentence-btn" type="button" data-say="I decided to study harder." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 只接 to V</div></div><div class="ex g"><div class="en">I stopped <b>eating</b> junk food. <button class="sentence-btn" type="button" data-say="I stopped eating junk food." aria-label="播放這個句子">🔊</button></div><div class="zh">→ stop + V-ing</div></div></div><div><div class="ex o"><div class="en">I look forward to <i>seeing</i> you. <button class="sentence-btn" type="button" data-say="I look forward to seeing you." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 介系詞 to</div></div><div class="ex o"><div class="en">I <i>used to</i> play baseball. <button class="sentence-btn" type="button" data-say="I used to play baseball." aria-label="播放這個句子">🔊</button></div><div class="zh">→ used to V</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>類型</th><th>重點</th></tr></thead><tbody><tr><td>enjoy 類</td><td>只接 V-ing</td></tr><tr><td>decide 類</td><td>只接 to V</td></tr><tr><td>stop / remember / forget</td><td>V-ing 做過了；to V 要去做</td></tr><tr><td>to have p.p. / to be p.p.</td><td>已經發生／被</td></tr><tr><td>look forward to / be used to</td><td>to 是介系詞，接 V-ing</td></tr></tbody></table><div class="note">口訣：mind finish enjoy avoid consider 接 V-ing；decide plan hope want 接 to V；介系詞 to 後面接 V-ing。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 8 週假設語氣</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>用 enjoy、avoid、finish 各寫一句（接 V-ing）。</li><li>用 decide、hope、plan 各寫一句（接 to V）。</li><li>寫兩句：你戒掉或開始的一個習慣。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

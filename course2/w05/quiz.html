@@ -1321,6 +1321,70 @@ function analyzeSpeaking(q, transcript){
   } else if(q.checkType === 'getpp'){
     if(!/\b(?:get|gets|got|getting)\s+(?:lost|hurt|married|tired|wet|angry|surprised|stuck|excited|worried|scared|injured|fired|[a-z]+ed)\b/.test(lower)){ ok = false; msg = '這一題要練習 get + 過去分詞，但沒有偵測到，可以再試著用像 "I got lost in the city." 或 "I got hurt." 這樣的句型回答一次。'; }
     else { msg = '偵測到「get + 過去分詞」，符合這題要練習的重點！它常用來說明意外或變化。'; }
+  } else if(q.checkType === 'pastdeduce'){
+    const okPD = (() => { const re9 = /\b(?:must|may|might|could|can't|cannot|couldn't)\s+have\s+([a-z]+)/g; let m9; while((m9 = re9.exec(lower))){ if(m9[1] === 'been' || IRREG.has(m9[1]) || /ed$/.test(m9[1])) return true; } return false; })();
+    if(!okPD){ ok = false; msg = '這一題要練習推測過去的事（must / may / might / can\'t + have + 過去分詞），但沒有偵測到，可以再試著說像 "He might have caught a cold." 這樣的句子。'; }
+    else { msg = '偵測到「modal + have + 過去分詞」，符合這題要練習的過去推測！'; }
+  } else if(q.checkType === 'presdeduce'){
+    if(!/\b(?:must|may|might|could|can't|cannot)\s+be\b/.test(lower)){ ok = false; msg = '這一題要練習推測現在的事（must / may / might / can\'t + be），但沒有偵測到，可以再試著說像 "She must be teaching." 這樣的句子。'; }
+    else { msg = '偵測到「modal + be」，符合這題要練習的現在推測！'; }
+  } else if(q.checkType === 'shouldhave'){
+    const okSH = (() => { const re10 = /\b(?:should|shouldn't|needn't|ought to)\s+have\s+([a-z]+)/g; let m10; while((m10 = re10.exec(lower))){ if(m10[1] === 'been' || IRREG.has(m10[1]) || /ed$/.test(m10[1])) return true; } return false; })();
+    if(!okSH){ ok = false; msg = '這一題要練習 should have + 過去分詞，但沒有偵測到，可以再試著說像 "I should have gone to bed earlier." 這樣的句子。'; }
+    else { msg = '偵測到「should / needn\'t have + 過去分詞」，符合這題要練習的後悔與批評！'; }
+  } else if(q.checkType === 'wouldrather'){
+    if(!/\b(would rather|'d rather|had better|'d better)\b/.test(lower)){ ok = false; msg = '這一題要練習 would rather，但沒有偵測到，可以再試著說像 "I would rather stay home." 這樣的句子。'; }
+    else { msg = '偵測到 would rather（或 had better），符合這題要練習的偏好表達！後面接原形動詞。'; }
+  } else if(q.checkType === 'supposed'){
+    if(!/\b(?:am|is|are|was|were)\s+(?:not\s+)?supposed to\b|\bhad better\b/.test(lower)){ ok = false; msg = '這一題要練習 be supposed to 或 had better，但沒有偵測到，可以再試著說像 "Students are supposed to arrive early." 這樣的句子。'; }
+    else { msg = '偵測到 be supposed to 或 had better，符合這題要練習的責任與勸告！'; }
+  } else if(q.checkType === 'cond2'){
+    const ifPast = /\bif\s+(?:i|we|you|he|she|they|it|[a-z]+)\s+(?:were|was|had|did|could|[a-z]+ed|won|went|knew|saw|took|got|made|came|gave|found|said|thought|bought|ran|ate|spoke|met|lived)\b/.test(lower);
+    const hasWould = /\b(?:would|'d)\s+(?:not\s+)?[a-z]+/.test(lower) && !/\bwould have\b/.test(lower);
+    if(!ifPast || !hasWould){ ok = false; msg = '這一題要練習第二類條件句（If + 過去式，would + 原形），但沒有完整偵測到，可以再試著說像 "If I won a million dollars, I would travel." 這樣的句子。'; }
+    else { msg = '偵測到「If + 過去式，would + 原形」的第二類條件句，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'cond3'){
+    const ifHad = /\bif\b[^.?!]*\bhad\s+(?:not\s+)?([a-z]+)/.test(lower) && (() => { const re11 = /\bhad\s+(?:not\s+)?([a-z]+)/g; let m11; while((m11 = re11.exec(lower))){ if(m11[1] === 'been' || IRREG.has(m11[1]) || /ed$/.test(m11[1])) return true; } return false; })();
+    const wouldHave = /\bwould(?:n't)?\s+have\s+([a-z]+)/.test(lower) || /\b(?:'d)\s+have\s+([a-z]+)/.test(lower);
+    if(!ifHad || !wouldHave){ ok = false; msg = '這一題要練習第三類條件句（If + had + 過去分詞，would have + 過去分詞），但沒有完整偵測到，可以再試著說像 "If I had studied harder, I would have passed." 這樣的句子。'; }
+    else { msg = '偵測到「If + had p.p.，would have p.p.」的第三類條件句，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'condword'){
+    if(!/\b(unless|in case|as long as|provided that|otherwise)\b/.test(lower)){ ok = false; msg = '這一題要練習 unless、in case、as long as 或 otherwise，但沒有偵測到，可以再試著說像 "I take an umbrella in case it rains." 這樣的句子。'; }
+    else { msg = '偵測到條件連接詞，符合這題要練習的重點！unless 除非、in case 以防萬一、as long as 只要、otherwise 否則。'; }
+  } else if(q.checkType === 'wish'){
+    if(!/\b(?:wish|wished|if only)\b[^.?!]*\b(?:were|had|could|would|[a-z]+ed|knew|spoke|lived|went|saw|took|came|gave)\b/.test(lower)){ ok = false; msg = '這一題要練習 I wish + 過去式，但沒有偵測到，可以再試著說像 "I wish I were taller." 這樣的句子。'; }
+    else { msg = '偵測到 wish（或 if only）加過去式，符合這題要練習的重點！記得 be 動詞用 were。'; }
+  } else if(q.checkType === 'wishperf'){
+    const okWP = /\b(?:wish|wished|if only)\b[^.?!]*\bhad\s+(?:not\s+|never\s+)?([a-z]+)/.test(lower) && (() => { const re12 = /\bhad\s+(?:not\s+|never\s+)?([a-z]+)/g; let m12; while((m12 = re12.exec(lower))){ if(m12[1] === 'been' || IRREG.has(m12[1]) || /ed$/.test(m12[1])) return true; } return false; })();
+    if(!okWP){ ok = false; msg = '這一題要練習 I wish + had + 過去分詞（過去的遺憾），但沒有偵測到，可以再試著說像 "I wish I had studied harder." 這樣的句子。'; }
+    else { msg = '偵測到「wish + had + 過去分詞」，符合這題要練習的過去遺憾！'; }
+  } else if(q.checkType === 'asif'){
+    if(!/\bas (?:if|though)\b/.test(lower)){ ok = false; msg = '這一題要練習 as if 或 as though，但沒有偵測到，可以再試著說像 "He talks as if he knew everything." 這樣的句子。'; }
+    else { msg = '偵測到 as if / as though，符合這題要練習的重點！與事實不符時，後面用過去式（be 用 were）。'; }
+  } else if(q.checkType === 'hightime'){
+    if(!/\b(?:it's|it is)\s+(?:high\s+|about\s+)?time\b/.test(lower)){ ok = false; msg = '這一題要練習 It\'s (high) time + 過去式，但沒有偵測到，可以再試著說像 "It\'s high time I went to bed." 這樣的句子。'; }
+    else { msg = '偵測到 It\'s (high) time，符合這題要練習的重點！後面接過去式，表示「早該做了」。'; }
+  } else if(q.checkType === 'suggestthat'){
+    if(!/\b(?:suggest|suggests|suggested|recommend|recommends|recommended|insist|insists|insisted|demand|demands|demanded|require|requires|required)\b[^.?!]*\bthat\b/.test(lower)){ ok = false; msg = '這一題要練習 suggest / recommend that + 原形，但沒有偵測到，可以再試著說像 "My teacher suggests that I read every day." 這樣的句子。'; }
+    else { msg = '偵測到 suggest / recommend 加 that 子句，符合這題要練習的重點！that 子句裡的動詞用原形。'; }
+  } else if(q.checkType === 'gerund'){
+    const okG = /\b(?:enjoy|enjoys|enjoyed|avoid|avoids|avoided|finish|finishes|finished|mind|minds|practice|practices|practiced|keep|keeps|kept|consider|considers|considered|give up|gave up|miss|misses|missed|imagine|imagines|imagined|suggest|suggests|suggested)\s+(?:[a-z]+\s+)?[a-z]+ing\b/.test(lower);
+    if(!okG){ ok = false; msg = '這一題要練習 enjoy / avoid / finish / practice 後面接 V-ing，但沒有偵測到，可以再試著說像 "I enjoy reading books." 這樣的句子。'; }
+    else { msg = '偵測到「enjoy 類動詞 + V-ing」，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'infinitive'){
+    const okI = /\b(?:decide|decides|decided|plan|plans|planned|hope|hopes|hoped|want|wants|wanted|expect|expects|expected|promise|promises|promised|manage|manages|managed|refuse|refuses|refused|agree|agrees|agreed|offer|offers|offered|learn|learns|learned|afford|affords|afforded|need|needs|needed|would like|'d like)\s+to\s+[a-z]+/.test(lower);
+    if(!okI){ ok = false; msg = '這一題要練習 decide / plan / hope / want 後面接 to V，但沒有偵測到，可以再試著說像 "I decided to study harder." 這樣的句子。'; }
+    else { msg = '偵測到「decide 類動詞 + to V」，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'stopto'){
+    const okS = /\b(?:stop|stops|stopped|quit|quits|give up|gave up|start|starts|started|begin|begins|began|remember|remembers|remembered|forget|forgets|forgot|try|tries|tried|regret|regrets|regretted)\s+(?:to\s+[a-z]+|[a-z]+ing)\b/.test(lower);
+    if(!okS){ ok = false; msg = '這一題要練習 stop / start / remember / try 後面接 V-ing 或 to V，但沒有偵測到，可以再試著說像 "I stopped drinking soda." 這樣的句子。'; }
+    else { msg = '偵測到 stop / start / remember 這一類動詞接 V-ing 或 to V，符合這題的重點！記得 stop V-ing 是戒掉、stop to V 是停下來去做。'; }
+  } else if(q.checkType === 'lookfwd'){
+    if(!/\blook(?:s|ed|ing)?\s+forward\s+to\s+(?:[a-z]+\s+)?[a-z]+ing\b/.test(lower)){ ok = false; msg = '這一題要練習 look forward to + V-ing，但沒有偵測到，可以再試著說像 "I am looking forward to going on a trip." 這樣的句子。'; }
+    else { msg = '偵測到 look forward to + V-ing，符合這題要練習的重點！這裡的 to 是介系詞，所以接 V-ing。'; }
+  } else if(q.checkType === 'usedto'){
+    if(!/\bused to\s+[a-z]+/.test(lower)){ ok = false; msg = '這一題要練習 used to + 原形，或 be used to + V-ing，但沒有偵測到，可以再試著說像 "I used to play baseball." 這樣的句子。'; }
+    else { msg = '偵測到 used to 句型，符合這題要練習的重點！used to + 原形是過去常常，be used to + V-ing 是習慣於。'; }
   } else if(q.checkType === 'perfect'){
     if(!hasPerfect){ ok = false; msg = '這一題要練習現在完成式（have / has + 過去分詞），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I have been to ..." 或 "I have already ..." 這樣的句型回答一次。'; }
     else { msg = '偵測到你用了「have / has + 過去分詞」的現在完成式結構，符合這題要練習的文法重點！'; }

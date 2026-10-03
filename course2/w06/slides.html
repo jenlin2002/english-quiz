@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 6 投影片｜情態助動詞進階：推測與責任</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 6 · SLIDES</div>
+    <h1 class="page">情態助動詞進階：推測與責任</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 6 · GRAMMAR</div><h1 class="big">情態助動詞進階：推測與責任</h1><div class="en-sub">Modals of Deduction &amp; Regret</div><div class="venn"><span class="c1">must have p.p.</span><span class="c2">should have p.p.</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>用 must、may、might、could、can't 推測現在與過去的事</li><li>用 should have p.p.、needn't have p.p. 說明後悔與批評</li><li>用 would rather、had better、be supposed to 表達偏好、勸告與責任</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Her coat is gone. She ____ have left already. (must / should)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>must</span></div><div class="qa"><span class="n">2</span><span class="q">I forgot my homework. I ____ have checked my bag. (should / must)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>should</span></div><div class="qa"><span class="n">3</span><span class="q">You ____ take an umbrella. It may rain. (had better / would rather)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>had better</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第一期的現在推測</h2><p class="lead">第一期學過：must be 是「一定是」，can't be 是「不可能是」。這週往前走兩步：加上可能性的強弱，再把推測用在過去。</p><div class="cards n2"><div class="card g"><h3>must be</h3><div class="sub">一定是</div><div class="ex g"><div class="en">He <b>must be</b> tired. He worked all night. <button class="sentence-btn" type="button" data-say="He must be tired. He worked all night." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他一定很累，他工作了整晚</div></div></div><div class="card o"><h3>can't be</h3><div class="sub">不可能是</div><div class="ex o"><div class="en">That <i>can't be</i> true. <button class="sentence-btn" type="button" data-say="That can&#x27;t be true." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 那不可能是真的</div></div></div></div></section>
+<section class="s paper"><h2>推測的強弱：這件事有多確定？</h2><div class="chips"><span class="chip">must be　幾乎確定</span><span class="arrow">→</span><span class="chip">may / might / could be　有可能</span><span class="arrow">→</span><span class="chip">can't be　幾乎不可能</span></div><div class="cards n3 tight"><div class="card g"><h3>很確定</h3><div class="ex g"><div class="en">She <b>must be</b> at home. Her light is on. <button class="sentence-btn" type="button" data-say="She must be at home. Her light is on." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她一定在家，她的燈是亮的</div></div></div><div class="card o"><h3>有可能</h3><div class="ex o"><div class="en">He <b>might be</b> sick. He looks pale. <button class="sentence-btn" type="button" data-say="He might be sick. He looks pale." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他可能生病了，他臉色蒼白</div></div></div><div class="card g"><h3>不可能</h3><div class="ex g"><div class="en">It <b>can't be</b> Tom. He is in Japan. <button class="sentence-btn" type="button" data-say="It can&#x27;t be Tom. He is in Japan." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 不可能是 Tom，他在日本</div></div></div></div></section>
+<section class="s paper"><h2>推測過去的事：modal + have p.p.</h2><div class="cards n2"><div class="card g"><h3>公式</h3><p class="row"><b>must have p.p.：</b>過去一定做了／發生了</p><p class="row"><b>may / might / could have p.p.：</b>過去可能做了</p><p class="row"><b>can't / couldn't have p.p.：</b>過去不可能做</p><div class="ex g"><div class="en">The street is wet. It <b>must have rained</b>. <button class="sentence-btn" type="button" data-say="The street is wet. It must have rained." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 街道是濕的，一定下過雨</div></div><div class="ex g"><div class="en">He <b>might have missed</b> the bus. <button class="sentence-btn" type="button" data-say="He might have missed the bus." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他可能錯過公車了</div></div></div><div class="card o"><h3>更多例句</h3><div class="ex g"><div class="en">The cake is gone. Someone <b>must have eaten</b> it. <button class="sentence-btn" type="button" data-say="The cake is gone. Someone must have eaten it." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 蛋糕不見了，一定有人吃掉了</div></div><div class="ex o"><div class="en">He <i>can't have known</i> the answer. He is only five. <button class="sentence-btn" type="button" data-say="He can&#x27;t have known the answer. He is only five." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他不可能知道答案，他才五歲</div></div></div></div></section>
+<section class="s paper"><h2>後悔與批評：should have、needn't have</h2><div class="cards n2"><div class="card g"><h3>should have p.p.</h3><div class="sub">應該做卻沒做</div><p class="row"><b>shouldn't have p.p.：</b>不應該做卻做了</p><div class="ex g"><div class="en">I failed the test. I <b>should have studied</b> harder. <button class="sentence-btn" type="button" data-say="I failed the test. I should have studied harder." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我考試不及格，我應該更用功的</div></div><div class="ex g"><div class="en">You <b>shouldn't have said</b> that. <button class="sentence-btn" type="button" data-say="You shouldn&#x27;t have said that." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你不該說那句話</div></div></div><div class="card o"><h3>needn't have p.p.</h3><div class="sub">做了，但其實沒必要</div><p class="row"><b>對比：</b>didn't need to 是沒做；needn't have 是已經做了</p><div class="ex o"><div class="en">I <i>needn't have hurried</i>. The train was late. <button class="sentence-btn" type="button" data-say="I needn&#x27;t have hurried. The train was late." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我不必那麼趕的，火車誤點了</div></div><div class="ex o"><div class="en">You <i>needn't have bought</i> a gift. <button class="sentence-btn" type="button" data-say="You needn&#x27;t have bought a gift." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你不必買禮物的</div></div></div></div></section>
+<section class="s paper"><h2>偏好、勸告與責任：would rather、had better、be supposed to</h2><table class="t"><thead><tr><th>句型</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>would rather + 原形</td><td>寧願</td><td><div>I <b>would rather stay</b> home than go out. <button class="sentence-btn" type="button" data-say="I would rather stay home than go out." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我寧願待在家也不要出門）</span></div></td></tr><tr><td>had better + 原形</td><td>最好（不然有後果）</td><td><div>You <b>had better take</b> an umbrella. <button class="sentence-btn" type="button" data-say="You had better take an umbrella." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（你最好帶把傘）</span></div></td></tr><tr><td>be supposed to + 原形</td><td>應該（規定或預期）</td><td><div>Students <b>are supposed to arrive</b> by eight. <button class="sentence-btn" type="button" data-say="Students are supposed to arrive by eight." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（學生應該八點前到校）</span></div></td></tr></tbody></table><div class="note">had better 的否定是 had better <b>not</b> + 原形：You had better not be late.</div></section>
+<section class="s paper"><h2>對比頁：容易搞混的兩組</h2><div class="two tight"><div class="card g"><h3>must have been 與 can't have been</h3><div class="ex g"><div class="en">It <b>must have been</b> Tom. <button class="sentence-btn" type="button" data-say="It must have been Tom." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一定是 Tom（肯定的推測）</div></div><div class="ex o"><div class="en">It <i>can't have been</i> Tom. <button class="sentence-btn" type="button" data-say="It can&#x27;t have been Tom." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 不可能是 Tom（否定的推測）</div></div></div><div class="card o"><h3>should have 與 needn't have</h3><div class="ex g"><div class="en">I <b>should have called</b> you. <button class="sentence-btn" type="button" data-say="I should have called you." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我應該打給你的（沒打）</div></div><div class="ex o"><div class="en">I <i>needn't have called</i> you. <button class="sentence-btn" type="button" data-say="I needn&#x27;t have called you." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我不必打給你的（打了，白打）</div></div></div><div class="card g"><h3>現在推測與過去推測</h3><div class="ex g"><div class="en">He <b>must be</b> tired. <button class="sentence-btn" type="button" data-say="He must be tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他現在一定很累</div></div><div class="ex o"><div class="en">He <i>must have been</i> tired. <button class="sentence-btn" type="button" data-say="He must have been tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他當時一定很累</div></div></div><div class="card o"><h3>had better 與 would rather</h3><div class="ex g"><div class="en">You <b>had better go</b>. <button class="sentence-btn" type="button" data-say="You had better go." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你最好去（勸告）</div></div><div class="ex o"><div class="en">I <i>would rather go</i>. <button class="sentence-btn" type="button" data-say="I would rather go." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我寧願去（偏好）</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">She must has left early.</span> → <span class="good">She must have left early.</span></div><div class="why">modal 後面一律接原形，要用 have，不是 has 或 had。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">He can't have known, so he must have told us.</span> → <span class="good">He can't have known, so he couldn't have told us.</span></div><div class="why">前後的推測要一致，不能一句說不可能，一句又說一定。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">I should studied harder.</span> → <span class="good">I should have studied harder.</span></div><div class="why">should 後面要接 have + 過去分詞，才能表示過去應該做的事。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">You had better to go now.</span> → <span class="good">You had better go now.</span></div><div class="why">had better 後面接原形，不加 to。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">She supposed to come at eight.</span> → <span class="good">She is supposed to come at eight.</span></div><div class="why">be supposed to 要有 be 動詞，不能少。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">The street is wet. It ____ last night. (must have rained / must rain)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>must have rained</span></div><div class="qa"><span class="n">2</span><span class="q">He ____ be at home. I just saw him at the station. (can't / must)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>can't</span></div><div class="qa"><span class="n">3</span><span class="q">She isn't answering. She ____ be sleeping. (might / needn't)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>might</span></div><div class="qa"><span class="n">4</span><span class="q">I failed. I ____ harder. (should have studied / must have studied)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>should have studied</span></div><div class="qa"><span class="n">5</span><span class="q">I ____ hurried. The train was late. (needn't have / can't have)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>needn't have</span></div><div class="qa"><span class="n">6</span><span class="q">You ____ go now, or you'll be late. (had better / would better)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>had better</span></div><div class="qa"><span class="n">7</span><span class="q">I ____ stay home than go out. (would rather / had better)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>would rather</span></div><div class="qa"><span class="n">8</span><span class="q">Students ____ arrive by eight. (are supposed to / supposed to)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>are supposed to</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">She must had left early.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>had → have</span></div><div class="qa"><span class="n">2</span><span class="q">You had better to take a coat.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>刪掉 to</span></div><div class="qa"><span class="n">3</span><span class="q">I should called him yesterday.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>should called → should have called</span></div></div></div><div><p class="lead">轉換</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I'm sure he left. （用 must）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He must have left.</span></div><div class="qa"><span class="n">2</span><span class="q">It's impossible that she lied. （用 can't）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>She can't have lied.</span></div><div class="qa"><span class="n">3</span><span class="q">I didn't study, and I regret it. （用 should）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I should have studied.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en">“The thief <span class="hl">must have come</span> in through the window,” she said. The guard shook his head. “It <span class="hl2">can't have been</span> the window. I stood beside it all night.” “I <span class="hl">should have locked</span> that door,” he said sadly.<button class="sentence-btn" type="button" data-say="The thief must have come in through the window, she said. The guard shook his head. It can&#x27;t have been the window. I stood beside it all night. I should have locked that door, he said sadly." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>看到 must have、can't have，找出推測的線索（because 後面）</li><li>should have 表示說話的人後悔或批評</li><li>題目問「作者怎麼想」，看推測的強弱</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 must 與 can't 相反，判斷說話者的立場</li><li>聽到 should have，表示事情沒做</li><li>needn't have 表示做了但沒必要</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的事。</p><div class="two"><div><div class="ex g"><div class="en">He <b>might have caught</b> a cold. <button class="sentence-btn" type="button" data-say="He might have caught a cold." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 可能的推測</div></div><div class="ex g"><div class="en">She <b>must be teaching</b> another class. <button class="sentence-btn" type="button" data-say="She must be teaching another class." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 現在的推測</div></div><div class="ex g"><div class="en">I <b>should have gone</b> to bed earlier. <button class="sentence-btn" type="button" data-say="I should have gone to bed earlier." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 後悔</div></div></div><div><div class="ex o"><div class="en">I <i>would rather stay</i> home and read a book. <button class="sentence-btn" type="button" data-say="I would rather stay home and read a book." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 偏好</div></div><div class="ex o"><div class="en">Students <i>are supposed to arrive</i> before eight. <button class="sentence-btn" type="button" data-say="Students are supposed to arrive before eight." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 責任</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>句型</th><th>意思</th></tr></thead><tbody><tr><td>must / may / might / can't + 原形</td><td>推測現在</td></tr><tr><td>must / may / might / can't + have p.p.</td><td>推測過去</td></tr><tr><td>should / shouldn't have p.p.</td><td>過去該做沒做／不該做卻做</td></tr><tr><td>needn't have p.p.</td><td>做了但沒必要</td></tr><tr><td>would rather / had better / be supposed to</td><td>偏好／勸告／責任</td></tr></tbody></table><div class="note">口訣：現在推測接原形，過去推測接 have p.p.；後悔用 should have，白做用 needn't have。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 4 週被動</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>用 must have p.p. 寫三句，推測家裡昨天發生了什麼事。</li><li>用 should have p.p. 寫兩句，說說你後悔的事。</li><li>把這週錯題各抄一次，寫下錯的原因。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>
