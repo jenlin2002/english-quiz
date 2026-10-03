@@ -51,11 +51,18 @@
 
 1. **第三期內容**：還沒開始。下一步從「先修 1：長句拆解」做起，格式比照第二期。
    第五階段是寫作，現在的測驗系統沒有寫作題，要討論怎麼做。
-2. **學習點數換電腦時間／零用錢**（等使用者決定）：
-   - 要決定：兌換比例（例如答對 1 題 = 1 點、10 點 = 15 分鐘）、兌換項目（電腦時間、零用錢）、每日上限、
-     並把 Google 試算表的 Apps Script 程式碼貼給 Claude 修改（加「點數存摺」與寄 email 通知）。
-   - 建議做法：第一階段＝點數存摺＋孩子按「兌換」後寄 email 給家長，家長在 Microsoft Family Safety App
-     核准孩子的「要求更多時間」。第二階段（選擇性）＝Home Assistant＋非官方 HAFamilySafety 自動核准。
-   - 微軟沒有公開 Family Safety 的 API，無法直接用程式加時間。
-   - 防刷分：同一測驗每天只算第一次、每日點數上限、連續學習獎勵。
-   - 點數系統要同時用在 english-quiz 和美式生活館（兩邊都已經用同一個試算表網址同步成績）。
+2. **學習點數存摺（2026-10-03 已做好程式，等使用者部署後端並貼網址）**：
+   - 規則（使用者定案）：答對 1 題 = 1 點；同一份測驗每天只算第一次；每人每天最多賺 50 點；
+     10 點 = 15 分鐘電腦時間（每人每天最多換 75 分鐘）；100 點 = NT$50（不限次數）；
+     兌換後馬上扣點、記存摺、寄 email 通知使用者的 Gmail。微軟沒有公開 Family Safety API，
+     所以**不能自動加時間**，由家長收到信後手動加。
+   - 前端 `points.js`（根目錄，各專案各一份、內容相同；`POINTS_URL` 空白時整個功能不啟用）。
+     測驗頁在 `syncResult()` 開頭呼叫 `Points.earn()`，頁尾載入 `../../points.js`；已用 `patch_quiz_points.py`
+     補上 59 頁（course1 的 `第N週…測驗.html`、course2 的 pre1/pre2/pretest/w01–w20）。
+   - 後端 `Code.gs` 和完整部署步驟在私人專案 english-quiz-plan 的 `points/`（`README-點數存摺.md`）。
+     **使用者要新建一份 Google 試算表、貼上 Code.gs、部署網頁應用程式後，把 `/exec` 網址交給 Claude 填進
+     各專案的 `points.js`（`POINTS_URL`）再 Push。** 在那之前線上完全沒有變化。
+   - 網站首頁（jenlin2002.github.io）有「點數存摺」橫幅；美式生活館場景頁／單元頁也會加點。
+   - 英文測驗頁模板 `tools/templates/tpl-quiz.html`（plan repo）已含點數；`deploy_site.py` 會複製 `points.js`。
+     之後手機端新做的週次（W21 起）要從更新後的模板建，或執行 `patch_quiz_points.py`。
+   - 還沒接的：exam-bank（段考題庫）的 `sync.js`；使用者沒提，沒做。

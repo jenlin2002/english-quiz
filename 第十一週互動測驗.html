@@ -681,6 +681,7 @@ refreshSettingsStatus();
 
 
 async function syncResult(modeLabel, score, total, details){
+  if(window.Points) Points.earn({ name: studentName, label: WEEK_LABEL, mode: modeLabel, correct: score, total: total });
   const statusEl = document.getElementById('syncStatusEl');
   if(!syncUrl){
     if(statusEl){ statusEl.textContent = '☁️ 尚未設定同步網址，成績未回傳（點上方「同步設定」）'; statusEl.className = 'sync-status off'; }
@@ -1644,5 +1645,7 @@ try{
   </div>`;
 }
 </script>
+<script src="points.js"></script>
+<script>if(window.Points) Points.setNameGetter(function(){ return studentName; });</script>
 </body>
 </html>
