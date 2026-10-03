@@ -78,185 +78,66 @@
     transition:background 0.15s, color 0.15s;
   }
   .home-link:hover{ background:var(--chalk-yellow); color:var(--chalk-bg); }
+
+  .period{ display:block; background:#163026; border:1px solid #2A4A3C; border-radius:16px; padding:22px 24px; color:var(--paper); text-decoration:none; transition:transform .15s, border-color .15s; }
+  a.period:hover{ transform:translateY(-3px); border-color:var(--chalk-yellow); }
+  .period .p-no{ font-family:'Space Mono',monospace; font-size:12px; letter-spacing:3px; color:var(--chalk-green); margin-bottom:8px; }
+  .period .p-title{ font-family:'Kalam',cursive; font-size:24px; font-weight:700; margin-bottom:6px; }
+  .period .p-sub{ font-size:14px; color:#9AA89C; margin-bottom:14px; line-height:1.7; }
+  .period ul{ list-style:none; font-size:13.5px; color:#C9D3CB; margin-bottom:16px; line-height:1.9; }
+  .period ul li::before{ content:'▸ '; color:var(--chalk-yellow); }
+  .period .p-go{ display:inline-block; font-weight:700; font-size:14px; padding:9px 20px; border-radius:12px; background:var(--chalk-yellow); color:var(--chalk-bg); }
+  .period.soon{ opacity:.55; border-style:dashed; }
+  .period.soon .p-go{ background:#2A4A3C; color:var(--chalk-green); border:1px solid var(--chalk-green); }
+  .stack{ display:grid; gap:16px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <a class="home-link" href="https://jenlin2002.github.io/">🏠 回總目錄</a>
+  <a class="home-link" href="https://jenlin2002.github.io/">🏠 回網站首頁</a>
   <div class="eyebrow">ENGLISH QUIZ SYSTEM</div>
   <h1>英文測驗系統．總目錄</h1>
-  <div class="subtitle">點擊任一週次，直接進入該週的完整測驗（文法／閱讀／克漏字／單字／聽力／口說）</div>
+  <div class="subtitle">選擇學習階段，進入該期的總目錄；每期再分成幾個階段，每週有投影片與完整測驗（文法／閱讀／克漏字／單字／聽力／口說）</div>
 
-  <div class="section-title">第二期（進階）</div>
-  <div class="grid">
-    <a class="card review-card" href="course2/index.html">
-      <div class="card-week">COURSE II · 第二期</div>
-      <div class="card-title">進階文法課程（先修 2 週＋第 1–20 週）</div>
-      <div class="card-sub">國三到高一，英檢初級升中級。目前已完成先修與第 1–5 週。</div>
+  <div class="stack">
+    <a class="period" href="course1.html">
+      <div class="p-no">PERIOD 1 · 第一期</div>
+      <div class="p-title">基礎期</div>
+      <div class="p-sub">國一到國二，英檢初級。已全部完成。</div>
+      <ul>
+        <li>第一階段（第 1–5 週）：現在式、過去式、未來式、比較級</li>
+        <li>第二階段（第 6–10 週）：情態助動詞、There is/are、連接詞、不定詞與動名詞</li>
+        <li>第三階段（第 11–18 週）：現在完成式、被動、關代、條件句、間接引語、模擬考</li>
+      </ul>
+      <span class="p-go">進入第一期 →</span>
     </a>
-  </div>
 
-  <div class="section-title">第一階段（第1-5週）</div>
-  <div class="grid">
-    <div class="card">
-      <div class="card-week">WEEK 1</div>
-      <div class="card-title">現在簡單式 vs 現在進行式</div>
-      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第一週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第一週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 2</div>
-      <div class="card-title">過去簡單式 vs 過去進行式</div>
-      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第二週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第二週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 3</div>
-      <div class="card-title">未來式：will vs be going to</div>
-      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第三週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第三週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 4</div>
-      <div class="card-title">比較級與最高級</div>
-      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第四週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第四週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <a class="card review-card" href="第五週複習測驗.html">
-      <div class="card-week">WEEK 5 · 複習週</div>
-      <div class="card-title">統整第1-4週（銜接第一次段考）</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
+    <a class="period" href="course2/index.html">
+      <div class="p-no">PERIOD 2 · 第二期</div>
+      <div class="p-title">進階期</div>
+      <div class="p-sub">國三到高一，英檢初級升中級。先修 2 週加 20 週，目前已完成先修與第 1–5 週，其餘持續製作中。</div>
+      <ul>
+        <li>先修：八大詞類、五大句型，附前測與結業檢測</li>
+        <li>第一階段（第 1–5 週）：形容詞副詞進階、完成進行式、未來式與時態一致、被動進階</li>
+        <li>第二到第四階段（第 6–20 週）：條件句與假設語氣、關代進階、名詞子句、分詞構句、比較與倒裝、英檢模擬</li>
+      </ul>
+      <span class="p-go">進入第二期 →</span>
     </a>
-  </div>
 
-  <div class="section-title">第二階段（第6-10週）</div>
-  <div class="grid">
-    <div class="card">
-      <div class="card-week">WEEK 6</div>
-      <div class="card-title">情態助動詞：can/could/must/have to/should</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第六週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第六週互動測驗.html">📝 測驗</a>
-      </div>
+    <div class="period soon">
+      <div class="p-no">PERIOD 3 · 第三期</div>
+      <div class="p-title">中高階期</div>
+      <div class="p-sub">高二到高三，英檢中高級與大學入學考試。規劃中，約 30 週。</div>
+      <ul>
+        <li>句法深化、語意與銜接、詞彙深化</li>
+        <li>大考閱讀題型、中譯英與作文、學測與英檢雙軌模擬</li>
+      </ul>
+      <span class="p-go">即將推出</span>
     </div>
-    <div class="card">
-      <div class="card-week">WEEK 7</div>
-      <div class="card-title">There is/are ＋ 數量詞</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第七週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第七週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 8</div>
-      <div class="card-title">連接詞：because/so/although/when/before/after</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第八週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第八週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 9</div>
-      <div class="card-title">不定詞 to-V vs 動名詞 V-ing</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第九週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第九週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <a class="card review-card" href="第十週複習測驗.html">
-      <div class="card-week">WEEK 10 · 複習週</div>
-      <div class="card-title">統整第6-9週（銜接第二次段考）</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-    </a>
-  </div>
-
-  <div class="section-title">第三階段（第11-18週）</div>
-  <div class="grid">
-    <div class="card">
-      <div class="card-week">WEEK 11 · 加強週</div>
-      <div class="card-title">現在完成式</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第十一週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第十一週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 12</div>
-      <div class="card-title">被動語態</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第十二週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第十二週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 13</div>
-      <div class="card-title">關係代名詞</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第十三週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第十三週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 14</div>
-      <div class="card-title">假設語氣：零/第一條件式</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第十四週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第十四週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 15</div>
-      <div class="card-title">疑問詞總複習＋間接問句</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第十五週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第十五週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-week">WEEK 16</div>
-      <div class="card-title">間接引語基礎</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-      <div class="card-links">
-        <a class="link-slides" href="第十六週投影片.html">📊 投影片</a>
-        <a class="link-quiz" href="第十六週互動測驗.html">📝 測驗</a>
-      </div>
-    </div>
-    <a class="card review-card" href="第十七週會考模擬考測驗.html">
-      <div class="card-week">WEEK 17 · 模擬考</div>
-      <div class="card-title">會考全真模擬考（統整第1-16週）</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-    </a>
-    <a class="card review-card" href="第十八週期末複習測驗.html">
-      <div class="card-week">WEEK 18 · 期末複習</div>
-      <div class="card-title">期末總複習（統整全18週）</div>
-      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
-    </a>
   </div>
 
   <div class="footer-note">
-    每週測驗結果會自動同步到 Google 試算表，可以在教學追蹤系統裡查看歷史紀錄。<br>
-    全18週教材已全部完成！
+    每週測驗結果會自動同步到 Google 試算表，可以在教學追蹤系統裡查看歷史紀錄。
   </div>
 </div>
 </body>
