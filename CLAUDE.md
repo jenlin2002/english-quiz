@@ -62,6 +62,7 @@
    - 後端 `Code.gs` 和完整部署步驟在私人專案 english-quiz-plan 的 `points/`（`README-點數存摺.md`）。
      **使用者要新建一份 Google 試算表、貼上 Code.gs、部署網頁應用程式後，把 `/exec` 網址交給 Claude 填進
      各專案的 `points.js`（`POINTS_URL`）再 Push。** 在那之前線上完全沒有變化。
+   - **PIN 版（2026-10-03，本機已做好、尚未部署）**：每台裝置第一次進頁面要先選名字、設定／輸入 4 位數 PIN，後端驗證憑證；部署順序（先更新 Apps Script 並設好 PIN，再 Push）寫在 plan repo points/README-點數存摺.md 最後一節，順序錯了網站會卡在關卡。
    - 網站首頁（jenlin2002.github.io）有「點數存摺」橫幅；美式生活館場景頁／單元頁也會加點。
    - 英文測驗頁模板 `tools/templates/tpl-quiz.html`（plan repo）已含點數；`deploy_site.py` 會複製 `points.js`。
      之後手機端新做的週次（W21 起）要從更新後的模板建，或執行 `patch_quiz_points.py`。
