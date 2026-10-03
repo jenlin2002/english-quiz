@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 13 投影片｜名詞子句與轉述疑問句、命令</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 13 · SLIDES</div>
+    <h1 class="page">名詞子句與轉述疑問句、命令</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 13 · GRAMMAR</div><h1 class="big">名詞子句與轉述疑問句、命令</h1><div class="en-sub">Noun Clauses &amp; Reported Speech</div><div class="venn"><span class="c1">whether…</span><span class="c2">told me to…</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>用 that、if、whether、疑問詞引導名詞子句，當主詞、受詞、補語</li><li>轉述 yes/no 問句和 wh- 問句，轉述命令和請求</li><li>用附加問句和感嘆句</li><li>認得 the fact that 這類同位語</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">She asked me ____ I liked coffee. (if / that)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>if</span></div><div class="qa"><span class="n">2</span><span class="q">The teacher told us ____ quiet. (be / to be)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to be</span></div><div class="qa"><span class="n">3</span><span class="q">You haven't finished, ____? (have you / haven't you)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>have you</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第一期的間接引語與第 12 週</h2><p class="lead">第一期學過把直接引語改成間接引語（時態往後退一格）；這週補上問句、命令與名詞子句。</p><div class="cards n2"><div class="card g"><h3>第一期回顧</h3><p class="row"><b>陳述句：</b>said that + 主詞 + 動詞（時態倒退）</p><p class="row"><b>例：</b>will → would、am → was</p><div class="ex g"><div class="en">“I am tired,” he said. <button class="sentence-btn" type="button" data-say="“I am tired,” he said." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 直接引語</div></div><div class="ex g"><div class="en">He said that he <b>was</b> tired. <button class="sentence-btn" type="button" data-say="He said that he was tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他說他很累（間接引語）</div></div></div><div class="card o"><h3>第 12 週回收</h3><div class="ex o"><div class="en"><i>What</i> I need is a rest. <button class="sentence-btn" type="button" data-say="What I need is a rest." aria-label="播放這個句子">🔊</button></div><div class="zh">→ what 子句當主詞（名詞子句）</div></div><div class="ex o"><div class="en">The news <i>that</i> he won surprised us. <button class="sentence-btn" type="button" data-say="The news that he won surprised us." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 同位語 that 子句</div></div></div></div></section>
+<section class="s paper"><h2>that 子句：當主詞、受詞、補語</h2><div class="cards n2"><div class="card g"><h3>名詞子句 = 當名詞用的一個句子</h3><p class="row"><b>主詞：</b>That he is honest is clear.</p><p class="row"><b>受詞：</b>I know that he is honest.</p><p class="row"><b>補語：</b>The problem is that we have no time.</p><div class="ex g"><div class="en"><b>That</b> he is honest is clear. <button class="sentence-btn" type="button" data-say="That he is honest is clear." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他很誠實是很清楚的</div></div><div class="ex g"><div class="en">I think <b>that</b> she is right. <button class="sentence-btn" type="button" data-say="I think that she is right." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我認為她是對的（受詞，that 可省略）</div></div></div><div class="card o"><h3>the fact that</h3><div class="sub">that 子句說明前面名詞的內容（同位語）</div><p class="row"><b>常見名詞：</b>fact、news、idea、belief、hope</p><div class="ex o"><div class="en">I was surprised at <i>the fact that</i> he refused. <button class="sentence-btn" type="button" data-say="I was surprised at the fact that he refused." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他拒絕了這個事實讓我很驚訝</div></div><div class="ex o"><div class="en"><i>The fact that</i> she lied made me angry. <button class="sentence-btn" type="button" data-say="The fact that she lied made me angry." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她說謊這件事讓我很生氣</div></div></div></div></section>
+<section class="s paper"><h2>if 與 whether 子句：是不是…</h2><div class="cards n2"><div class="card g"><h3>if / whether</h3><div class="sub">引導 yes/no 問句改成的子句</div><p class="row"><b>意思：</b>是不是…、會不會…</p><p class="row"><b>or not：</b>只能和 whether 連用</p><div class="ex g"><div class="en">I don't know <b>if</b> he will come. <button class="sentence-btn" type="button" data-say="I don&#x27;t know if he will come." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我不知道他會不會來</div></div><div class="ex g"><div class="en"><b>Whether</b> he will come or not doesn't matter. <button class="sentence-btn" type="button" data-say="Whether he will come or not doesn&#x27;t matter." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他來不來都沒關係</div></div></div><div class="card o"><h3>只能用 whether 的情況</h3><p class="row"><b>1.</b>放在句首當主詞</p><p class="row"><b>2.</b>放在介系詞後面</p><p class="row"><b>3.</b>後面直接接 or not 或 to V</p><div class="ex o"><div class="en">I'm not sure about <i>whether</i> he will agree. <button class="sentence-btn" type="button" data-say="I&#x27;m not sure about whether he will agree." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 介系詞後面只用 whether</div></div><div class="ex o"><div class="en">I can't decide <i>whether</i> to go. <button class="sentence-btn" type="button" data-say="I can&#x27;t decide whether to go." aria-label="播放這個句子">🔊</button></div><div class="zh">→ whether + to V</div></div></div></div></section>
+<section class="s paper"><h2>疑問詞 + 主詞 + 動詞：間接問句</h2><div class="cards n2"><div class="card g"><h3>規則</h3><div class="sub">問句放進句子裡，要改成「直述句」的語序</div><p class="row"><b>不倒裝：</b>疑問詞 + 主詞 + 動詞</p><p class="row"><b>不加助動詞：</b>do、does、did 都要拿掉</p><div class="ex g"><div class="en"><span class='bad'>Do you know where does he live?</span> <button class="sentence-btn" type="button" data-say="Do you know where does he live?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ ×  不能倒裝</div></div><div class="ex g"><div class="en">Do you know <b>where he lives</b>? <button class="sentence-btn" type="button" data-say="Do you know where he lives?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你知道他住哪裡嗎？</div></div></div><div class="card o"><h3>更多例句</h3><div class="ex o"><div class="en">Please tell me <i>what time the train leaves</i>. <button class="sentence-btn" type="button" data-say="Please tell me what time the train leaves." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 請告訴我火車幾點開</div></div><div class="ex o"><div class="en">I wonder <i>who she is</i>. <button class="sentence-btn" type="button" data-say="I wonder who she is." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我想知道她是誰</div></div><div class="ex o"><div class="en">I don't remember <i>how I got here</i>. <button class="sentence-btn" type="button" data-say="I don&#x27;t remember how I got here." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我不記得我怎麼到這裡的</div></div></div></div></section>
+<section class="s paper"><h2>轉述疑問句：ask if / whether、ask + 疑問詞</h2><table class="t"><thead><tr><th>直接問句</th><th>轉述</th><th>重點</th></tr></thead><tbody><tr><td><div>“Do you like coffee?” she asked me. <button class="sentence-btn" type="button" data-say="“Do you like coffee?” she asked me." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（直接）</span></div></td><td><div>She asked me <b>if / whether</b> I liked coffee. <button class="sentence-btn" type="button" data-say="She asked me if / whether I liked coffee." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（轉述）</span></div></td><td>yes/no 問句用 if / whether</td></tr><tr><td><div>“Where have you been?” he asked. <button class="sentence-btn" type="button" data-say="“Where have you been?” he asked." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（直接）</span></div></td><td><div>He asked me <b>where</b> I <b>had been</b>. <button class="sentence-btn" type="button" data-say="He asked me where I had been." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（轉述）</span></div></td><td>疑問詞留下，用直述語序</td></tr><tr><td><div>“What are you doing?” she asked. <button class="sentence-btn" type="button" data-say="“What are you doing?” she asked." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（直接）</span></div></td><td><div>She asked me <b>what</b> I <b>was doing</b>. <button class="sentence-btn" type="button" data-say="She asked me what I was doing." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（轉述）</span></div></td><td>時態往後退一格</td></tr></tbody></table><div class="note">轉述問句：不用 that，不加 do / does / did，語序改成直述句；問號改成句號，時態和人稱也要跟著改。</div></section>
+<section class="s paper"><h2>轉述命令與請求：tell / ask / order + 人 + to V</h2><div class="cards n2"><div class="card g"><h3>命令與請求</h3><div class="sub">不用 that 子句，改用 to V</div><p class="row"><b>公式：</b>tell / ask / order + 人 + to V</p><p class="row"><b>否定：</b>not to V</p><div class="ex g"><div class="en">“Be quiet,” the teacher said. <button class="sentence-btn" type="button" data-say="“Be quiet,” the teacher said." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 直接</div></div><div class="ex g"><div class="en">The teacher told us <b>to be</b> quiet. <button class="sentence-btn" type="button" data-say="The teacher told us to be quiet." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 老師叫我們安靜</div></div></div><div class="card o"><h3>請求、否定與強度</h3><div class="ex o"><div class="en">“Could you help me?” she said to him. <button class="sentence-btn" type="button" data-say="“Could you help me?” she said to him." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 請求</div></div><div class="ex o"><div class="en">She asked him <i>to help</i> her. <button class="sentence-btn" type="button" data-say="She asked him to help her." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她請他幫她</div></div><div class="ex o"><div class="en">“Don't close the door,” she said. <button class="sentence-btn" type="button" data-say="“Don&#x27;t close the door,” she said." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 否定命令</div></div><div class="ex o"><div class="en">She told him <i>not to close</i> the door. <button class="sentence-btn" type="button" data-say="She told him not to close the door." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她叫他不要關門</div></div></div></div></section>
+<section class="s paper"><h2>附加問句</h2><div class="cards n2"><div class="card g"><h3>規則</h3><div class="sub">前面肯定 → 後面否定；前面否定 → 後面肯定</div><p class="row"><b>助動詞：</b>和前面句子的 be、助動詞、情態動詞一致</p><p class="row"><b>主詞：</b>用代名詞</p><div class="ex g"><div class="en">You are a student, <b>aren't you</b>? <button class="sentence-btn" type="button" data-say="You are a student, aren&#x27;t you?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你是學生，對不對？</div></div><div class="ex g"><div class="en">You haven't finished, <b>have you</b>? <button class="sentence-btn" type="button" data-say="You haven&#x27;t finished, have you?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你還沒完成，對不對？</div></div></div><div class="card o"><h3>特殊情況</h3><p class="row"><b>Let's …,</b>shall we?</p><p class="row"><b>命令句，</b>will you?</p><p class="row"><b>I am …,</b>aren't I?</p><p class="row"><b>everyone / nobody,</b>they</p><div class="ex o"><div class="en">Let's go, <i>shall we</i>? <button class="sentence-btn" type="button" data-say="Let&#x27;s go, shall we?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我們走吧，好嗎？</div></div><div class="ex o"><div class="en">Open the door, <i>will you</i>? <button class="sentence-btn" type="button" data-say="Open the door, will you?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 把門打開，好嗎？</div></div></div></div></section>
+<section class="s paper"><h2>感嘆句：What 與 How</h2><table class="t"><thead><tr><th>句型</th><th>公式</th><th>例句</th></tr></thead><tbody><tr><td>What 開頭</td><td>What + a / an + 形容詞 + 名詞 + (主詞 + 動詞)!</td><td><div><b>What a</b> beautiful day it is! <button class="sentence-btn" type="button" data-say="What a beautiful day it is!" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（多麼美好的一天！）</span></div></td></tr><tr><td>What + 複數／不可數</td><td>What + 形容詞 + 複數名詞!</td><td><div><b>What</b> beautiful flowers they are! <button class="sentence-btn" type="button" data-say="What beautiful flowers they are!" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（多麼漂亮的花！）</span></div></td></tr><tr><td>How 開頭</td><td>How + 形容詞／副詞 + (主詞 + 動詞)!</td><td><div><b>How</b> beautiful the day is! <button class="sentence-btn" type="button" data-say="How beautiful the day is!" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這一天多美啊！）</span></div></td></tr></tbody></table><div class="note">判斷：後面有名詞用 What（What a nice day），沒有名詞只有形容詞用 How（How nice）。</div></section>
+<section class="s paper"><h2>對比頁：容易搞混的四組</h2><div class="two tight"><div class="card g"><h3>if 與 whether</h3><div class="ex g"><div class="en">I wonder <b>if</b> he will come. <button class="sentence-btn" type="button" data-say="I wonder if he will come." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一般情況兩者都可以</div></div><div class="ex o"><div class="en"><i>Whether</i> he comes or not, I'll go. <button class="sentence-btn" type="button" data-say="Whether he comes or not, I&#x27;ll go." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 句首只能 whether</div></div></div><div class="card o"><h3>that 與 what 子句</h3><div class="ex g"><div class="en"><b>That</b> he lied is true. <button class="sentence-btn" type="button" data-say="That he lied is true." aria-label="播放這個句子">🔊</button></div><div class="zh">→ that 沒有意思，只連接</div></div><div class="ex o"><div class="en"><i>What</i> he said is true. <button class="sentence-btn" type="button" data-say="What he said is true." aria-label="播放這個句子">🔊</button></div><div class="zh">→ what 有意思，是「…的事」</div></div></div><div class="card g"><h3>tell 與 say</h3><div class="ex g"><div class="en">She <b>told</b> me to wait. <button class="sentence-btn" type="button" data-say="She told me to wait." aria-label="播放這個句子">🔊</button></div><div class="zh">→ tell 後面接人</div></div><div class="ex o"><div class="en">She <i>said</i> that she was tired. <button class="sentence-btn" type="button" data-say="She said that she was tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ say 後面直接接內容</div></div></div><div class="card o"><h3>What 與 How 感嘆句</h3><div class="ex g"><div class="en"><b>What</b> a nice day! <button class="sentence-btn" type="button" data-say="What a nice day!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 有名詞</div></div><div class="ex o"><div class="en"><i>How</i> nice! <button class="sentence-btn" type="button" data-say="How nice!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 沒有名詞</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">Do you know where does he live?</span> → <span class="good">Do you know where he lives?</span></div><div class="why">間接問句要用直述語序，不加 does。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">She asked me that I liked coffee.</span> → <span class="good">She asked me if I liked coffee.</span></div><div class="why">轉述 yes/no 問句要用 if 或 whether。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">The teacher told us be quiet.</span> → <span class="good">The teacher told us to be quiet.</span></div><div class="why">轉述命令用 tell + 人 + to V。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">You haven't finished, haven't you?</span> → <span class="good">You haven't finished, have you?</span></div><div class="why">前面否定，後面要用肯定的附加問句。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">How a nice day it is!</span> → <span class="good">What a nice day it is!</span></div><div class="why">後面有名詞 day，要用 What。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">____ he is honest is clear. (That / What)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>That</span></div><div class="qa"><span class="n">2</span><span class="q">I'm not sure about ____ he will agree. (if / whether)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whether</span></div><div class="qa"><span class="n">3</span><span class="q">Please tell me what time ____. (the train leaves / does the train leave)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>the train leaves</span></div><div class="qa"><span class="n">4</span><span class="q">She asked me ____ I liked coffee. (if / that)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>if</span></div><div class="qa"><span class="n">5</span><span class="q">He asked me where ____. (I had been / had I been)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I had been</span></div><div class="qa"><span class="n">6</span><span class="q">The teacher told us ____ quiet. (be / to be)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to be</span></div><div class="qa"><span class="n">7</span><span class="q">She asked him ____ the door. (not to close / don't close)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>not to close</span></div><div class="qa"><span class="n">8</span><span class="q">____ a beautiful day it is! (What / How)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>What</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I wonder where is the station.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>where is → where the station is</span></div><div class="qa"><span class="n">2</span><span class="q">She told me that open the window.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>改成 told me to open</span></div><div class="qa"><span class="n">3</span><span class="q">Everyone is here, isn't he?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>isn't he → aren't they</span></div></div></div><div><p class="lead">轉述成間接引語</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">“Do you like pizza?” he asked me.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He asked me if I liked pizza.</span></div><div class="qa"><span class="n">2</span><span class="q">“Where do you live?” she asked him.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>She asked him where he lived.</span></div><div class="qa"><span class="n">3</span><span class="q">“Please wait here,” the nurse said to me.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>The nurse asked me to wait there.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en">A reporter asked Amy <span class="hl">whether</span> she had expected to win. “<span class="hl2">That</span> I won is still hard to believe,” Amy said. The reporter asked her <span class="hl">what her secret was</span>. Amy said her teacher had told her <span class="hl2">not to give up</span>. “<span class="hl">The fact that</span> my mom believed in me helped a lot.”<button class="sentence-btn" type="button" data-say="A reporter asked Amy whether she had expected to win. That I won is still hard to believe, Amy said. The reporter asked her what her secret was. Amy said her teacher had told her not to give up. The fact that my mom believed in me helped a lot." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>看到 asked 加 if、whether、疑問詞，是在轉述別人問了什麼</li><li>told / asked + 人 + to V，是轉述命令或請求</li><li>看到 the fact that，後面的 that 子句是事實內容</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 asked me if，後面是 yes/no 問題</li><li>聽到 told me to，後面是對方的指示</li><li>聽到句尾的 ... aren't you?，表示確認，答案看事實</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的情境。</p><div class="two"><div><div class="ex g"><div class="en">The fact <b>that</b> I won surprised me. <button class="sentence-btn" type="button" data-say="The fact that I won surprised me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ the fact that</div></div><div class="ex g"><div class="en">My friend asked me <b>whether</b> I wanted to join. <button class="sentence-btn" type="button" data-say="My friend asked me whether I wanted to join." aria-label="播放這個句子">🔊</button></div><div class="zh">→ ask whether</div></div><div class="ex g"><div class="en">My teacher asked me <b>where</b> I had put my homework. <button class="sentence-btn" type="button" data-say="My teacher asked me where I had put my homework." aria-label="播放這個句子">🔊</button></div><div class="zh">→ ask + wh-</div></div></div><div><div class="ex o"><div class="en">My mother told me <i>to clean</i> my room. <button class="sentence-btn" type="button" data-say="My mother told me to clean my room." aria-label="播放這個句子">🔊</button></div><div class="zh">→ tell + 人 + to V</div></div><div class="ex o"><div class="en"><i>What a</i> beautiful day it is! <button class="sentence-btn" type="button" data-say="What a beautiful day it is!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 感嘆句</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>重點</th><th>規則</th></tr></thead><tbody><tr><td>that 子句</td><td>當主詞、受詞、補語；the fact that 是同位語</td></tr><tr><td>if / whether</td><td>是不是；句首、介系詞後只用 whether</td></tr><tr><td>間接問句</td><td>疑問詞 + 主詞 + 動詞，不倒裝</td></tr><tr><td>轉述命令</td><td>tell / ask / order + 人 + (not) to V</td></tr><tr><td>附加問句</td><td>肯定 → 否定；否定 → 肯定</td></tr></tbody></table><div class="note">口訣：問句變子句，語序要直述；yes/no 用 if，命令用 to V。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 12 週縮減子句與複合關代</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>把三個你今天被問的問題，轉述成間接引語。</li><li>寫三句 tell / ask + 人 + to V，轉述父母的指示。</li><li>用 What a… 寫兩個感嘆句。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

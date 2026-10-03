@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 11 投影片｜關係代名詞進階</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 11 · SLIDES</div>
+    <h1 class="page">關係代名詞進階</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 11 · GRAMMAR</div><h1 class="big">關係代名詞進階</h1><div class="en-sub">Relative Pronouns, Level Up</div><div class="venn"><span class="c1">whom…</span><span class="c2">which…</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>用 whom 與「介系詞 + 關代」：in which、with whom</li><li>分辨有逗號與沒有逗號的關係子句，意思差在哪裡</li><li>用 which 指前面整句話</li><li>知道哪些情況只能用 that，以及什麼時候關代可以省略</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">The woman to ____ I spoke is my teacher. (who / whom)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whom</span></div><div class="qa"><span class="n">2</span><span class="q">This is the house in ____ I was born. (that / which)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>which</span></div><div class="qa"><span class="n">3</span><span class="q">The girl ____ bag is red is my friend. (who / whose)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whose</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第一期的關係代名詞</h2><p class="lead">第一期學過 who、which、that、whose、where、why，這週補上進階用法。</p><div class="cards n2"><div class="card g"><h3>第一期回顧</h3><p class="row"><b>who：</b>指人，當主詞</p><p class="row"><b>which：</b>指物</p><p class="row"><b>that：</b>人或物都可以</p><p class="row"><b>whose：</b>所有格，後面接名詞</p><div class="ex g"><div class="en">The boy <b>who</b> lives next door is Tom. <button class="sentence-btn" type="button" data-say="The boy who lives next door is Tom." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 住隔壁的男孩是 Tom</div></div><div class="ex g"><div class="en">The bag <b>which</b> I bought is red. <button class="sentence-btn" type="button" data-say="The bag which I bought is red." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我買的包包是紅色的</div></div></div><div class="card o"><h3>第 9 週回收</h3><div class="ex o"><div class="en">I enjoy <i>reading</i> books <i>which</i> teach me something. <button class="sentence-btn" type="button" data-say="I enjoy reading books which teach me something." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我喜歡讀能教我東西的書（enjoy + V-ing）</div></div><div class="ex o"><div class="en">He decided <i>to thank</i> the teacher <i>who</i> helped him. <button class="sentence-btn" type="button" data-say="He decided to thank the teacher who helped him." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他決定感謝幫助他的老師（decide + to V）</div></div></div></div></section>
+<section class="s paper"><h2>whom 與「介系詞 + 關代」</h2><div class="cards n2"><div class="card g"><h3>whom：關代當受詞（指人）</h3><p class="row"><b>口語：</b>常用 who 或直接省略</p><p class="row"><b>考試：</b>介系詞後面一定用 whom</p><div class="ex g"><div class="en">The man <b>whom</b> I met is a doctor. <button class="sentence-btn" type="button" data-say="The man whom I met is a doctor." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我遇到的那個人是醫生</div></div><div class="ex g"><div class="en">The woman <b>to whom</b> I spoke is my teacher. <button class="sentence-btn" type="button" data-say="The woman to whom I spoke is my teacher." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我說話的那位女士是我的老師</div></div></div><div class="card o"><h3>介系詞 + which / whom</h3><div class="sub">介系詞放在關代前面</div><p class="row"><b>規則：</b>介系詞後面不能用 that、who</p><div class="ex o"><div class="en">This is the house <i>in which</i> I was born. <button class="sentence-btn" type="button" data-say="This is the house in which I was born." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 這是我出生的房子（= where I was born）</div></div><div class="ex o"><div class="en">The friend <i>with whom</i> I traveled lives in Japan. <button class="sentence-btn" type="button" data-say="The friend with whom I traveled lives in Japan." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 跟我一起旅行的朋友住在日本</div></div></div></div></section>
+<section class="s paper"><h2>介系詞可以放前面，也可以放句尾</h2><table class="t"><thead><tr><th>寫法</th><th>例句</th><th>語氣</th></tr></thead><tbody><tr><td>介系詞 + whom / which</td><td><div>The man <b>with whom</b> I work is kind. <button class="sentence-btn" type="button" data-say="The man with whom I work is kind." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（和我共事的人很和善）</span></div></td><td>正式、書面</td></tr><tr><td>介系詞放句尾（省略關代）</td><td><div>The man I work <b>with</b> is kind. <button class="sentence-btn" type="button" data-say="The man I work with is kind." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（和我共事的人很和善）</span></div></td><td>口語、自然</td></tr><tr><td>介系詞放句尾 + who / that</td><td><div>The man <b>who</b> I work with is kind. <button class="sentence-btn" type="button" data-say="The man who I work with is kind." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（和我共事的人很和善）</span></div></td><td>口語</td></tr></tbody></table><div class="note">介系詞放前面時，關代一定要用 whom（人）或 which（物），不能用 that；放到句尾時，關代可以省略。</div></section>
+<section class="s paper"><h2>限定用法與非限定用法</h2><div class="cards n2"><div class="card g"><h3>沒有逗號：限定用法</h3><div class="sub">不可少的資訊，用來指出「是哪一個」</div><p class="row"><b>可用：</b>who、which、that</p><p class="row"><b>特色：</b>拿掉會讓句子意思不清楚</p><div class="ex g"><div class="en">My sister <b>who lives in Paris</b> is a nurse. <button class="sentence-btn" type="button" data-say="My sister who lives in Paris is a nurse." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我那位住在巴黎的姊姊是護士（我有不只一個姊姊）</div></div></div><div class="card o"><h3>有逗號：非限定用法</h3><div class="sub">補充說明，不影響指的是誰</div><p class="row"><b>可用：</b>who、which（不能用 that）</p><p class="row"><b>特色：</b>拿掉也不影響句子的主要意思</p><div class="ex o"><div class="en">My sister<b>, who lives in Paris,</b> is a nurse. <button class="sentence-btn" type="button" data-say="My sister, who lives in Paris, is a nurse." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我姊姊（她住在巴黎）是護士（我只有一個姊姊）</div></div></div></div></section>
+<section class="s paper"><h2>非限定用法的更多例句</h2><div class="cards n2"><div class="card g"><h3>專有名詞後面</h3><div class="sub">專有名詞已經很明確，用逗號補充</div><p class="row"><b>例子：</b>人名、地名、獨一無二的東西</p><div class="ex g"><div class="en">Taipei 101<b>, which</b> is 508 meters tall, attracts many tourists. <button class="sentence-btn" type="button" data-say="Taipei 101, which is 508 meters tall, attracts many tourists." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 台北 101 高 508 公尺，吸引許多觀光客</div></div><div class="ex g"><div class="en">Ms. Lin<b>, who</b> teaches English, is my aunt. <button class="sentence-btn" type="button" data-say="Ms. Lin, who teaches English, is my aunt." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 林老師教英文，她是我阿姨</div></div></div><div class="card o"><h3>重點提醒</h3><div class="note">非限定關代不能用 that，也不能省略。前後用逗號隔開，唸的時候中間要稍微停頓。</div><div class="ex o"><div class="en"><span class='bad'>Taipei 101, that is very tall, …</span> <button class="sentence-btn" type="button" data-say="Taipei 101, that is very tall, …" aria-label="播放這個句子">🔊</button></div><div class="zh">→ × 逗號後面不能用 that</div></div></div></div></section>
+<section class="s paper"><h2>which 可以指前面整句話</h2><div class="cards n2"><div class="card g"><h3>逗號 + which</h3><div class="sub">which 代替「前面那件事」</div><p class="row"><b>公式：</b>句子，which + 動詞…</p><p class="row"><b>意思：</b>這件事…</p><div class="ex g"><div class="en">He passed the exam<b>, which</b> surprised everyone. <button class="sentence-btn" type="button" data-say="He passed the exam, which surprised everyone." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他通過了考試，這件事讓大家很驚訝</div></div><div class="ex g"><div class="en">She was late again<b>, which</b> made her boss angry. <button class="sentence-btn" type="button" data-say="She was late again, which made her boss angry." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她又遲到了，這讓她老闆很生氣</div></div></div><div class="card o"><h3>注意</h3><div class="note">which 代替的是整件事，所以後面的動詞用單數；不能用 that 或 what 代替。</div><div class="ex o"><div class="en"><span class='bad'>He passed the exam, that surprised everyone.</span> <button class="sentence-btn" type="button" data-say="He passed the exam, that surprised everyone." aria-label="播放這個句子">🔊</button></div><div class="zh">→ ×  不能用 that</div></div></div></div></section>
+<section class="s paper"><h2>只能用 that 的情況</h2><table class="t"><thead><tr><th>情況</th><th>例句</th><th>意思</th></tr></thead><tbody><tr><td>先行詞是 all、everything、nothing、anything</td><td><div>I'll give you <b>all that</b> I have. <button class="sentence-btn" type="button" data-say="I&#x27;ll give you all that I have." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我會把我擁有的一切都給你）</span></div></td><td>不定代名詞</td></tr><tr><td>先行詞有 the only、the first、the last、the very</td><td><div>This is <b>the only thing that</b> I can do. <button class="sentence-btn" type="button" data-say="This is the only thing that I can do." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這是我唯一能做的事）</span></div></td><td>唯一、序數</td></tr><tr><td>先行詞有最高級</td><td><div>It's <b>the best movie that</b> I've ever seen. <button class="sentence-btn" type="button" data-say="It&#x27;s the best movie that I&#x27;ve ever seen." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這是我看過最好的電影）</span></div></td><td>最高級</td></tr><tr><td>先行詞同時有人和物</td><td><div>He talked about <b>the people and places that</b> he had visited. <button class="sentence-btn" type="button" data-say="He talked about the people and places that he had visited." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他談到他去過的人和地方）</span></div></td><td>人與物並列</td></tr></tbody></table><div class="note">這些情況用 that 最自然；如果先行詞是人又有 the only，用 who 也可以接受，但考試選項裡有 that 就選 that。</div></section>
+<section class="s paper"><h2>關代什麼時候可以省略</h2><div class="cards n2"><div class="card g"><h3>可以省略：關代當受詞</h3><p class="row"><b>判斷：</b>關代後面緊接著「主詞 + 動詞」</p><p class="row"><b>例子：</b>whom、which、that 當受詞時</p><div class="ex g"><div class="en">The book (<b>that</b>) I bought is great. <button class="sentence-btn" type="button" data-say="The book (that) I bought is great." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我買的那本書很棒</div></div><div class="ex g"><div class="en">The man (<b>whom</b>) I met is a doctor. <button class="sentence-btn" type="button" data-say="The man (whom) I met is a doctor." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我遇到的男人是醫生</div></div></div><div class="card o"><h3>不能省略：關代當主詞</h3><p class="row"><b>判斷：</b>關代後面直接接動詞</p><div class="ex o"><div class="en">The man <i>who</i> lives here is kind. <button class="sentence-btn" type="button" data-say="The man who lives here is kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 住這裡的男人很和善（who 當主詞，不能省）</div></div><div class="ex o"><div class="en"><span class='bad'>The man lives here is kind.</span> <button class="sentence-btn" type="button" data-say="The man lives here is kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ ×  不能省略</div></div></div></div></section>
+<section class="s paper"><h2>whose 與 both of whom、some of which</h2><div class="cards n2"><div class="card g"><h3>whose + 名詞</h3><p class="row"><b>公式：</b>先行詞，whose + 名詞 + 動詞…</p><p class="row"><b>意思：</b>某人（某物）的…</p><div class="ex g"><div class="en">I have a friend <b>whose</b> father is a pilot. <button class="sentence-btn" type="button" data-say="I have a friend whose father is a pilot." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我有一個朋友，他爸爸是飛行員</div></div><div class="ex g"><div class="en">The house <b>whose</b> roof is red is mine. <button class="sentence-btn" type="button" data-say="The house whose roof is red is mine." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 屋頂是紅色的那間房子是我的</div></div></div><div class="card o"><h3>數量 + of whom / which</h3><div class="sub">非限定用法的進階句型</div><p class="row"><b>可用：</b>both of、some of、many of、none of、all of</p><div class="ex o"><div class="en">She has two sons<b>, both of whom</b> are doctors. <button class="sentence-btn" type="button" data-say="She has two sons, both of whom are doctors." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她有兩個兒子，兩個都是醫生</div></div><div class="ex o"><div class="en">He bought ten books<b>, some of which</b> were old. <button class="sentence-btn" type="button" data-say="He bought ten books, some of which were old." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他買了十本書，其中一些很舊</div></div></div></div></section>
+<section class="s paper"><h2>對比頁：容易搞混的四組</h2><div class="two tight"><div class="card g"><h3>who 與 whom</h3><div class="ex g"><div class="en">The man <b>who</b> called is Tom. <button class="sentence-btn" type="button" data-say="The man who called is Tom." aria-label="播放這個句子">🔊</button></div><div class="zh">→ who 當主詞</div></div><div class="ex o"><div class="en">The man <i>whom</i> I called is Tom. <button class="sentence-btn" type="button" data-say="The man whom I called is Tom." aria-label="播放這個句子">🔊</button></div><div class="zh">→ whom 當受詞</div></div></div><div class="card o"><h3>that 與 which</h3><div class="ex g"><div class="en">The book <b>that</b> I read is good. <button class="sentence-btn" type="button" data-say="The book that I read is good." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 限定用法兩者都可以</div></div><div class="ex o"><div class="en">Tom's book<i>, which</i> I read, is good. <button class="sentence-btn" type="button" data-say="Tom&#x27;s book, which I read, is good." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 有逗號只能用 which</div></div></div><div class="card g"><h3>whose 與 who's</h3><div class="ex g"><div class="en">The girl <b>whose</b> bag is red. <button class="sentence-btn" type="button" data-say="The girl whose bag is red." aria-label="播放這個句子">🔊</button></div><div class="zh">→ whose = 所有格</div></div><div class="ex o"><div class="en">The girl <i>who's</i> (who is) running. <button class="sentence-btn" type="button" data-say="The girl who&#x27;s (who is) running." aria-label="播放這個句子">🔊</button></div><div class="zh">→ who's = who is</div></div></div><div class="card o"><h3>in which 與 where</h3><div class="ex g"><div class="en">The town <b>in which</b> I grew up. <button class="sentence-btn" type="button" data-say="The town in which I grew up." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 介系詞 + which</div></div><div class="ex o"><div class="en">The town <i>where</i> I grew up. <button class="sentence-btn" type="button" data-say="The town where I grew up." aria-label="播放這個句子">🔊</button></div><div class="zh">→ where = in which</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">The woman to who I spoke is my teacher.</span> → <span class="good">The woman to whom I spoke is my teacher.</span></div><div class="why">介系詞後面的關代要用 whom，不能用 who。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">This is the house in that I was born.</span> → <span class="good">This is the house in which I was born.</span></div><div class="why">介系詞後面不能用 that，要用 which。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">My brother, that lives in Tokyo, is a chef.</span> → <span class="good">My brother, who lives in Tokyo, is a chef.</span></div><div class="why">有逗號的非限定用法不能用 that。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">He passed the exam, that surprised everyone.</span> → <span class="good">He passed the exam, which surprised everyone.</span></div><div class="why">指前面整件事，要用逗號加 which。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">The man I talked to him is my uncle.</span> → <span class="good">The man I talked to is my uncle.</span></div><div class="why">關代已經代替 him，不能重複。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">The friend with ____ I traveled lives in Japan. (who / whom)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whom</span></div><div class="qa"><span class="n">2</span><span class="q">Taipei 101, ____ is 508 meters tall, is famous. (which / that)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>which</span></div><div class="qa"><span class="n">3</span><span class="q">She was late again, ____ made her boss angry. (that / which)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>which</span></div><div class="qa"><span class="n">4</span><span class="q">I'll give you all ____ I have. (that / what)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>that</span></div><div class="qa"><span class="n">5</span><span class="q">This is the only thing ____ I can do. (which / that)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>that</span></div><div class="qa"><span class="n">6</span><span class="q">The book ____ I bought is great. (關代可省略嗎？)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>可以（受詞）</span></div><div class="qa"><span class="n">7</span><span class="q">I have a friend ____ father is a pilot. (who / whose)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whose</span></div><div class="qa"><span class="n">8</span><span class="q">She has two sons, both of ____ are doctors. (whom / which)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whom</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型合併</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">The man who I talked to him is my uncle.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>刪掉 him</span></div><div class="qa"><span class="n">2</span><span class="q">The girl whom bag is red is my friend.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whom → whose</span></div><div class="qa"><span class="n">3</span><span class="q">He passed the test, that surprised us.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>that → which</span></div></div></div><div><p class="lead">合併成一句</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">This is the pen. I wrote the letter with it.（用 with which）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>This is the pen with which I wrote the letter.</span></div><div class="qa"><span class="n">2</span><span class="q">My uncle lives in Tokyo. He is a chef.（用非限定）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>My uncle, who lives in Tokyo, is a chef.</span></div><div class="qa"><span class="n">3</span><span class="q">He won the game. It surprised everyone.（用 which）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He won the game, which surprised everyone.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en">Ms. Lin<span class="hl">, who</span> founded the company in 2010, is a person <span class="hl2">whom</span> everyone respects. She built an organization <span class="hl2">in which</span> workers can learn new skills, <span class="hl">which</span> made the company famous. “All <span class="hl">that</span> I want is to help people,” she said.<button class="sentence-btn" type="button" data-say="Ms. Lin, who founded the company in 2010, is a person whom everyone respects. She built an organization in which workers can learn new skills, which made the company famous. All that I want is to help people, she said." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>看到逗號加 who、which，是補充資訊，可以先跳過再回頭看</li><li>看到 in which、with whom，把它想成「在…、和…」</li><li>逗號加 which 常常在總結前面整句話</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到停頓加 who、which，後面是補充說明</li><li>聽到 the only、the first，後面常接 that</li><li>聽到 whose，後面接名詞，表示「誰的」</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己認識的人。</p><div class="two"><div><div class="ex g"><div class="en">My teacher, <b>who</b> teaches English, is very kind. <button class="sentence-btn" type="button" data-say="My teacher, who teaches English, is very kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 非限定 who</div></div><div class="ex g"><div class="en">I have a friend <b>whose</b> father is a pilot. <button class="sentence-btn" type="button" data-say="I have a friend whose father is a pilot." aria-label="播放這個句子">🔊</button></div><div class="zh">→ whose</div></div><div class="ex g"><div class="en">This is the school <b>in which</b> I study. <button class="sentence-btn" type="button" data-say="This is the school in which I study." aria-label="播放這個句子">🔊</button></div><div class="zh">→ in which</div></div></div><div><div class="ex o"><div class="en">He passed the test, <i>which</i> surprised everyone. <button class="sentence-btn" type="button" data-say="He passed the test, which surprised everyone." aria-label="播放這個句子">🔊</button></div><div class="zh">→ which 指整句</div></div><div class="ex o"><div class="en">It is the best movie <i>that</i> I have ever seen. <button class="sentence-btn" type="button" data-say="It is the best movie that I have ever seen." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 最高級用 that</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>重點</th><th>規則</th></tr></thead><tbody><tr><td>介系詞 + 關代</td><td>人用 whom，物用 which，不用 that</td></tr><tr><td>有逗號</td><td>補充說明，只能用 who、which</td></tr><tr><td>, which</td><td>指前面整件事</td></tr><tr><td>all / the only / 最高級</td><td>用 that</td></tr><tr><td>關代當受詞</td><td>可以省略</td></tr></tbody></table><div class="note">口訣：介系詞後用 whom / which；有逗號不用 that；all、only、最高級用 that；當受詞才能省。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 9 週動名詞與不定詞</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>用 who、which、whose 各寫一句介紹你的家人或朋友。</li><li>用 in which、with whom 各寫一句。</li><li>用 , which 寫一句「某件事讓你開心或難過」。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

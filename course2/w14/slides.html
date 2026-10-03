@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 14 投影片｜分詞構句、連接詞與轉折語</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 14 · SLIDES</div>
+    <h1 class="page">分詞構句、連接詞與轉折語</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 14 · GRAMMAR</div><h1 class="big">分詞構句、連接詞與轉折語</h1><div class="en-sub">Participle Clauses &amp; Linking Words</div><div class="venn"><span class="c1">Having finished…</span><span class="c2">however…</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>把副詞子句改成分詞構句：V-ing、p.p.、having p.p.</li><li>分辨 although、though、even though、whereas、while</li><li>分辨 despite、in spite of 和 although，以及 so that、in order to</li><li>用 however、therefore、moreover、otherwise 連接兩句話</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">____ the news, she cried. (Hearing / Heard)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Hearing</span></div><div class="qa"><span class="n">2</span><span class="q">____ it was raining, we went out. (Although / Despite)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Although</span></div><div class="qa"><span class="n">3</span><span class="q">It was late; ____, we went home. (therefore / however)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>therefore</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第 13 週的名詞子句與轉述</h2><p class="lead">這週把「兩個句子」變成「一個更有層次的句子」。</p><div class="cards n2"><div class="card g"><h3>第 13 週回顧</h3><div class="ex g"><div class="en">She asked me <b>whether</b> I had finished. <button class="sentence-btn" type="button" data-say="She asked me whether I had finished." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 名詞子句：轉述問句</div></div><div class="ex o"><div class="en">The teacher told us <i>to be</i> quiet. <button class="sentence-btn" type="button" data-say="The teacher told us to be quiet." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 轉述命令：tell + 人 + to V</div></div></div><div class="card o"><h3>這週的延伸</h3><div class="ex g"><div class="en"><b>Having finished</b> my homework, I went out. <button class="sentence-btn" type="button" data-say="Having finished my homework, I went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 分詞構句：省略連接詞與主詞</div></div><div class="ex o"><div class="en">I was tired; <i>however</i>, I kept working. <button class="sentence-btn" type="button" data-say="I was tired; however, I kept working." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 轉折語：連接兩個完整句子</div></div></div></div></section>
+<section class="s paper"><h2>分詞構句：V-ing（主動）</h2><div class="cards n2"><div class="card g"><h3>改寫步驟</h3><div class="sub">副詞子句 → 分詞構句</div><p class="row"><b>1.</b>去掉連接詞（when、while、because、after…）</p><p class="row"><b>2.</b>主詞和主句相同 → 去掉主詞</p><p class="row"><b>3.</b>動詞改成 V-ing</p><div class="ex g"><div class="en"><b>While I was walking</b> down the street, I saw an accident. <button class="sentence-btn" type="button" data-say="While I was walking down the street, I saw an accident." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 完整版</div></div><div class="ex g"><div class="en"><b>Walking</b> down the street, I saw an accident. <button class="sentence-btn" type="button" data-say="Walking down the street, I saw an accident." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 分詞構句：走在街上時，我看到一場意外</div></div></div><div class="card o"><h3>更多例句</h3><div class="ex o"><div class="en"><i>Hearing</i> the news, she burst into tears. <button class="sentence-btn" type="button" data-say="Hearing the news, she burst into tears." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 聽到消息，她哭了出來（= When she heard…）</div></div><div class="ex o"><div class="en"><i>Feeling</i> tired, he went to bed early. <button class="sentence-btn" type="button" data-say="Feeling tired, he went to bed early." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 覺得累，他很早就睡了（= Because he felt…）</div></div></div></div></section>
+<section class="s paper"><h2>分詞構句：p.p.（被動）與 being 的省略</h2><div class="cards n2"><div class="card g"><h3>被動：p.p.</h3><div class="sub">主詞是被動作的對象</div><p class="row"><b>公式：</b>(Being) + 過去分詞</p><p class="row"><b>being：</b>常常省略</p><div class="ex g"><div class="en"><b>Written</b> in simple English, the book is easy to read. <button class="sentence-btn" type="button" data-say="Written in simple English, the book is easy to read." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 用簡單英文寫成，這本書很容易讀（= Because it is written…）</div></div><div class="ex g"><div class="en"><b>Surprised</b> by the noise, he jumped up. <button class="sentence-btn" type="button" data-say="Surprised by the noise, he jumped up." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 被噪音嚇到，他跳了起來</div></div></div><div class="card o"><h3>being 保留的情況</h3><div class="ex o"><div class="en"><i>Being</i> a doctor, she knows a lot about health. <button class="sentence-btn" type="button" data-say="Being a doctor, she knows a lot about health." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 身為醫生，她懂很多健康知識（名詞要保留 being）</div></div><div class="ex o"><div class="en"><i>Being</i> tired, he went to bed. <button class="sentence-btn" type="button" data-say="Being tired, he went to bed." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 累了，他去睡了（形容詞可省略 being）</div></div></div></div></section>
+<section class="s paper"><h2>完成式分詞構句與否定</h2><div class="cards n2"><div class="card g"><h3>having p.p.</h3><div class="sub">比主句動詞更早發生</div><p class="row"><b>公式：</b>Having + 過去分詞</p><p class="row"><b>意思：</b>「已經…之後」</p><div class="ex g"><div class="en"><b>Having finished</b> his homework, he went out to play. <button class="sentence-btn" type="button" data-say="Having finished his homework, he went out to play." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 寫完功課後，他出去玩（= After he had finished…）</div></div><div class="ex g"><div class="en"><b>Having lived</b> here for ten years, she knows the town well. <button class="sentence-btn" type="button" data-say="Having lived here for ten years, she knows the town well." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 住在這裡十年了，她很了解這個小鎮</div></div></div><div class="card o"><h3>否定：not 放前面</h3><p class="row"><b>公式：</b>Not + V-ing / Not having p.p.</p><div class="ex o"><div class="en"><i>Not knowing</i> the answer, he kept silent. <button class="sentence-btn" type="button" data-say="Not knowing the answer, he kept silent." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 不知道答案，他保持沉默</div></div><div class="ex o"><div class="en"><i>Not having studied</i>, he failed the test. <button class="sentence-btn" type="button" data-say="Not having studied, he failed the test." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 沒有念書，他考試沒過</div></div></div></div></section>
+<section class="s paper"><h2>分詞構句的陷阱：主詞要一致</h2><div class="cards n2"><div class="card g"><h3>規則</h3><div class="sub">分詞構句的意思上的主詞 = 主句的主詞</div><p class="row"><b>檢查：</b>問「誰在做這個動作？」</p><div class="ex g"><div class="en"><span class='bad'>Walking down the street, a dog bit me.</span> <button class="sentence-btn" type="button" data-say="Walking down the street, a dog bit me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ ×  走在街上的是我，不是狗</div></div><div class="ex g"><div class="en">Walking down the street, <b>I</b> was bitten by a dog. <button class="sentence-btn" type="button" data-say="Walking down the street, I was bitten by a dog." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 走在街上，我被狗咬了</div></div></div><div class="card o"><h3>主詞不同時</h3><div class="note">主詞不同時，要保留自己的主詞，這叫獨立分詞構句，考試較少考。</div><div class="ex o"><div class="en">The rain <i>having stopped</i>, we went out. <button class="sentence-btn" type="button" data-say="The rain having stopped, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 雨停了，我們就出去了（兩個主詞不同）</div></div></div></div></section>
+<section class="s paper"><h2>although、though、even though、whereas、while</h2><table class="t"><thead><tr><th>連接詞</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>although / though</td><td>雖然（後面接子句）</td><td><div><b>Although</b> it was raining, we went out. <button class="sentence-btn" type="button" data-say="Although it was raining, we went out." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（雖然下雨，我們還是出去了）</span></div></td></tr><tr><td>even though</td><td>即使、儘管（語氣更強）</td><td><div>He bought it <b>even though</b> he had little money. <button class="sentence-btn" type="button" data-say="He bought it even though he had little money." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（即使沒什麼錢，他還是買了）</span></div></td></tr><tr><td>whereas / while</td><td>然而、相對於（對比兩件事）</td><td><div>I like tea, <b>whereas</b> my sister prefers coffee. <button class="sentence-btn" type="button" data-say="I like tea, whereas my sister prefers coffee." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我喜歡茶，而我妹妹喜歡咖啡）</span></div></td></tr></tbody></table><div class="note">although 後面不能再接 but：Although it was raining, but … 是錯的，用了 although 就不用 but。</div></section>
+<section class="s paper"><h2>despite、in spite of：後面接名詞</h2><div class="cards n2"><div class="card g"><h3>despite / in spite of</h3><div class="sub">後面接名詞、V-ing、the fact that</div><p class="row"><b>意思：</b>儘管…</p><p class="row"><b>注意：</b>不能直接接子句</p><div class="ex g"><div class="en"><b>Despite</b> the rain, we went out. <button class="sentence-btn" type="button" data-say="Despite the rain, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 儘管下雨，我們還是出去了</div></div><div class="ex g"><div class="en"><b>In spite of</b> being tired, he kept working. <button class="sentence-btn" type="button" data-say="In spite of being tired, he kept working." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 儘管很累，他還是繼續工作</div></div></div><div class="card o"><h3>改寫對照</h3><div class="ex o"><div class="en"><i>Although</i> it was raining, we went out. (子句) <button class="sentence-btn" type="button" data-say="Although it was raining, we went out. (子句)" aria-label="播放這個句子">🔊</button></div><div class="zh">→ although + 子句</div></div><div class="ex o"><div class="en"><i>Despite</i> the fact that it was raining, we went out. <button class="sentence-btn" type="button" data-say="Despite the fact that it was raining, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ despite + the fact that + 子句</div></div><div class="ex o"><div class="en"><span class='bad'>Despite it was raining, we went out.</span> <button class="sentence-btn" type="button" data-say="Despite it was raining, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ ×  despite 後面不能接子句</div></div></div></div></section>
+<section class="s paper"><h2>表示目的：so that 與 in order to</h2><div class="cards n2"><div class="card g"><h3>so that + 子句</h3><div class="sub">主詞可以相同或不同</div><p class="row"><b>子句裡：</b>常有 can、could、will、would</p><p class="row"><b>意思：</b>為了…</p><div class="ex g"><div class="en">He spoke slowly <b>so that</b> everyone could understand. <button class="sentence-btn" type="button" data-say="He spoke slowly so that everyone could understand." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他說得很慢，讓大家都聽得懂</div></div><div class="ex g"><div class="en">I took an umbrella <b>so that</b> I wouldn't get wet. <button class="sentence-btn" type="button" data-say="I took an umbrella so that I wouldn&#x27;t get wet." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我帶了傘，這樣才不會淋溼</div></div></div><div class="card o"><h3>in order to + 原形</h3><div class="sub">主詞必須相同</div><p class="row"><b>否定：</b>in order not to V</p><div class="ex o"><div class="en">She saved money <i>in order to</i> buy a new bike. <button class="sentence-btn" type="button" data-say="She saved money in order to buy a new bike." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她存錢為了買新腳踏車</div></div><div class="ex o"><div class="en">He left early <i>in order not to</i> be late. <button class="sentence-btn" type="button" data-say="He left early in order not to be late." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他提早離開，為了不要遲到</div></div></div></div></section>
+<section class="s paper"><h2>轉折語：however、therefore、moreover、otherwise</h2><table class="t"><thead><tr><th>轉折語</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>however</td><td>然而（轉折）</td><td><div>It was late; <b>however</b>, we kept working. <button class="sentence-btn" type="button" data-say="It was late; however, we kept working." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（很晚了，然而我們繼續工作）</span></div></td></tr><tr><td>therefore</td><td>因此（結果）</td><td><div>It rained; <b>therefore</b>, the game was cancelled. <button class="sentence-btn" type="button" data-say="It rained; therefore, the game was cancelled." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（下雨了，因此比賽取消）</span></div></td></tr><tr><td>moreover</td><td>而且（補充）</td><td><div>The room is small; <b>moreover</b>, it is dirty. <button class="sentence-btn" type="button" data-say="The room is small; moreover, it is dirty." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（房間很小，而且很髒）</span></div></td></tr><tr><td>otherwise</td><td>否則</td><td><div>Hurry up; <b>otherwise</b>, you'll be late. <button class="sentence-btn" type="button" data-say="Hurry up; otherwise, you&#x27;ll be late." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（快一點，否則你會遲到）</span></div></td></tr></tbody></table><div class="note">這些是副詞，不是連接詞：前面要用分號或句號分開，不能只用逗號把兩個句子接起來。</div></section>
+<section class="s paper"><h2>對比頁：容易搞混的四組</h2><div class="two tight"><div class="card g"><h3>although 與 despite</h3><div class="ex g"><div class="en"><b>Although</b> it rained, we went out. <button class="sentence-btn" type="button" data-say="Although it rained, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 後面接子句</div></div><div class="ex o"><div class="en"><i>Despite</i> the rain, we went out. <button class="sentence-btn" type="button" data-say="Despite the rain, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 後面接名詞</div></div></div><div class="card o"><h3>so that 與 in order to</h3><div class="ex g"><div class="en">He studied <b>so that</b> he could pass. <button class="sentence-btn" type="button" data-say="He studied so that he could pass." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 子句，主詞可不同</div></div><div class="ex o"><div class="en">He studied <i>in order to</i> pass. <button class="sentence-btn" type="button" data-say="He studied in order to pass." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 後面接原形，主詞相同</div></div></div><div class="card g"><h3>however 與 although</h3><div class="ex g"><div class="en">It rained; <b>however</b>, we went out. <button class="sentence-btn" type="button" data-say="It rained; however, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ however 是副詞，前面用分號</div></div><div class="ex o"><div class="en"><i>Although</i> it rained, we went out. <button class="sentence-btn" type="button" data-say="Although it rained, we went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ although 是連接詞，連接兩個子句</div></div></div><div class="card o"><h3>Having p.p. 與 V-ing</h3><div class="ex g"><div class="en"><b>Having eaten</b>, he left. <button class="sentence-btn" type="button" data-say="Having eaten, he left." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 吃完之後才離開（較早）</div></div><div class="ex o"><div class="en"><i>Eating</i> lunch, he read. <button class="sentence-btn" type="button" data-say="Eating lunch, he read." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 邊吃邊讀（同時）</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">Although it rained, but we went out.</span> → <span class="good">Although it rained, we went out.</span></div><div class="why">although 和 but 不能同時用。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">Despite it was raining, we went out.</span> → <span class="good">Despite the rain, we went out.</span></div><div class="why">despite 後面要接名詞或 V-ing，不能接子句。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">Walking down the street, a dog bit me.</span> → <span class="good">Walking down the street, I was bitten by a dog.</span></div><div class="why">分詞構句的主詞要和主句主詞相同。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">It was late, however we kept working.</span> → <span class="good">It was late; however, we kept working.</span></div><div class="why">however 前面要用分號或句號。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">She saved money in order she can buy a bike.</span> → <span class="good">She saved money in order to buy a bike.</span></div><div class="why">in order 後面接 to V，不接子句。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">____ the news, she burst into tears. (Hearing / Heard)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Hearing</span></div><div class="qa"><span class="n">2</span><span class="q">____ in simple English, the book is easy to read. (Writing / Written)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Written</span></div><div class="qa"><span class="n">3</span><span class="q">____ his homework, he went out. (Finishing / Having finished)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Having finished</span></div><div class="qa"><span class="n">4</span><span class="q">____ it was raining, we went out. (Although / Despite)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Although</span></div><div class="qa"><span class="n">5</span><span class="q">____ the rain, we went out. (Although / Despite)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Despite</span></div><div class="qa"><span class="n">6</span><span class="q">I like tea, ____ my sister prefers coffee. (whereas / so that)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>whereas</span></div><div class="qa"><span class="n">7</span><span class="q">He spoke slowly ____ everyone could understand. (so that / in order to)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>so that</span></div><div class="qa"><span class="n">8</span><span class="q">Hurry up; ____, you'll be late. (otherwise / moreover)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>otherwise</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Although he was tired, but he kept working.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>刪掉 but</span></div><div class="qa"><span class="n">2</span><span class="q">In spite of he was sick, he went to school.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>he was sick → being sick / his illness</span></div><div class="qa"><span class="n">3</span><span class="q">It rained all day, however we stayed home.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>however 前面改分號或句號</span></div></div></div><div><p class="lead">改寫成分詞構句</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">When she heard the news, she cried.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Hearing the news, she cried.</span></div><div class="qa"><span class="n">2</span><span class="q">After he had finished his homework, he went out.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Having finished his homework, he went out.</span></div><div class="qa"><span class="n">3</span><span class="q">Because he didn't know the answer, he kept silent.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Not knowing the answer, he kept silent.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en"><span class="hl">Although</span> many students dislike uniforms, supporters say they save money; <span class="hl">moreover</span>, students feel equal. <span class="hl2">Having worn</span> uniforms for years, many graduates miss the simple morning. Critics, <span class="hl">however</span>, say uniforms limit self-expression. <span class="hl2">Despite</span> the low cost, some families complain.<button class="sentence-btn" type="button" data-say="Although many students dislike uniforms, supporters say they save money; moreover, students feel equal. Having worn uniforms for years, many graduates miss the simple morning. Critics, however, say uniforms limit self-expression. Despite the low cost, some families complain." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>however、but 之後常是作者或另一方的重點</li><li>moreover、therefore 是在加強或總結前一句</li><li>句首的 V-ing 或 p.p. 是分詞構句，要先找主句主詞</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 however，後面常和前面意思相反</li><li>聽到 although、despite，後面才是重點</li><li>聽到 therefore，後面是結果</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的句子。</p><div class="two"><div><div class="ex g"><div class="en"><b>Having finished</b> my homework, I watched TV. <button class="sentence-btn" type="button" data-say="Having finished my homework, I watched TV." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 分詞構句</div></div><div class="ex g"><div class="en"><b>Although</b> it was difficult, I finished the project. <button class="sentence-btn" type="button" data-say="Although it was difficult, I finished the project." aria-label="播放這個句子">🔊</button></div><div class="zh">→ although</div></div><div class="ex g"><div class="en"><b>Despite</b> the rain, we went to the park. <button class="sentence-btn" type="button" data-say="Despite the rain, we went to the park." aria-label="播放這個句子">🔊</button></div><div class="zh">→ despite</div></div></div><div><div class="ex o"><div class="en">I study English <i>in order to</i> travel around the world. <button class="sentence-btn" type="button" data-say="I study English in order to travel around the world." aria-label="播放這個句子">🔊</button></div><div class="zh">→ in order to</div></div><div class="ex o"><div class="en">Homework is useful; <i>however</i>, it takes too much time. <button class="sentence-btn" type="button" data-say="Homework is useful; however, it takes too much time." aria-label="播放這個句子">🔊</button></div><div class="zh">→ however</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>重點</th><th>規則</th></tr></thead><tbody><tr><td>分詞構句</td><td>去連接詞與相同主詞：V-ing、p.p.、having p.p.</td></tr><tr><td>although / even though</td><td>接子句；不和 but 同時用</td></tr><tr><td>despite / in spite of</td><td>接名詞或 V-ing</td></tr><tr><td>so that / in order to</td><td>so that + 子句；in order to + 原形</td></tr><tr><td>however / therefore</td><td>副詞，前面用分號或句號</td></tr></tbody></table><div class="note">口訣：連接詞接子句，despite 接名詞；however 前面要分號；分詞的主詞要跟主句一樣。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 13 週名詞子句與轉述</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>把三個「When / Because / After…」的句子改寫成分詞構句。</li><li>用 although 和 despite 各寫一句，說明同一件事。</li><li>用 however、therefore 各寫一句，記得用分號。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

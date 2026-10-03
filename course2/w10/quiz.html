@@ -1376,6 +1376,69 @@ function analyzeSpeaking(q, transcript){
   } else if(q.checkType === 'usedto'){
     if(!/\bused to\s+[a-z]+/.test(lower)){ ok = false; msg = '這一題要練習 used to + 原形，或 be used to + V-ing，但沒有偵測到，可以再試著說像 "I used to play baseball." 這樣的句子。'; }
     else { msg = '偵測到 used to 句型，符合這題要練習的重點！used to + 原形是過去常常，be used to + V-ing 是習慣於。'; }
+  } else if(q.checkType === 'relwho'){
+    if(!/\b[a-z]+\s+(?:who|whom|that)\s+[a-z]+/.test(lower)){ ok = false; msg = '這一題要練習用 who 引導關係子句介紹一個人，但沒有偵測到，可以再試著說像 "My friend is a girl who loves music." 這樣的句子。'; }
+    else { msg = '偵測到 who（或 that）引導的關係子句，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'relwhose'){
+    if(!/\bwhose\s+[a-z]+/.test(lower)){ ok = false; msg = '這一題要練習 whose + 名詞，但沒有偵測到，可以再試著說像 "I have a friend whose father is a pilot." 這樣的句子。'; }
+    else { msg = '偵測到 whose + 名詞，符合這題要練習的重點！whose 表示「某人的」。'; }
+  } else if(q.checkType === 'relprep'){
+    if(!/\b(?:in|on|at|with|to|for|from|about|of|by|under|through)\s+(?:whom|which)\b/.test(lower)){ ok = false; msg = '這一題要練習「介系詞 + which / whom」，但沒有偵測到，可以再試著說像 "This is the school in which I study English." 這樣的句子。'; }
+    else { msg = '偵測到「介系詞 + which / whom」，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'relwhich'){
+    if(!/\bwhich\s+(?:made|makes|surprised|surprises|was|is|means|helped|helps|caused|causes|let|lets|gave|gives|[a-z]+ed)\b/.test(lower)){ ok = false; msg = '這一題要練習用 which 指前面整件事（, which made me …），但沒有偵測到，可以再試著說像 "I passed the test, which made me happy." 這樣的句子。'; }
+    else { msg = '偵測到 which 指前面整件事，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'relthat'){
+    if(!/\b(?:best|only|first|last|worst|most [a-z]+|[a-z]+est|all|everything|nothing|anything)\s+(?:[a-z]+\s+)?that\b/.test(lower)){ ok = false; msg = '這一題要練習在最高級、the only、all、everything 後面用 that，但沒有偵測到，可以再試著說像 "It is the best movie that I have ever seen." 這樣的句子。'; }
+    else { msg = '偵測到最高級（或 the only、all）後面用 that，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'redpart'){
+    if(!/\b(?:the|a|an|this|that|these|those|my|your|his|her|our|their)\s+[a-z]+\s+(?:[a-z]+ing|[a-z]+ed|spoken|written|made|taken|built|known|given|eaten|driven|seen|done|broken|sold|held|found|called)\s+(?:by|in|on|at|near|with|to|from|under|over|around|there|here|next)\b/.test(lower)){ ok = false; msg = '這一題要練習縮減的關係子句（名詞 + V-ing 或 p.p.），但沒有偵測到，可以再試著說像 "The boy standing near the window is my friend." 這樣的句子。'; }
+    else { msg = '偵測到「名詞 + V-ing / p.p. + 地點或介系詞」的縮減子句，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'whatc'){
+    if(!/\bwhat\s+(?:i|we|he|she|they|you|my|our|the|[a-z]+)\s+[a-z]+/.test(lower) || !/\bwhat\b/.test(lower)){ ok = false; msg = '這一題要練習用 What 開頭的名詞子句，但沒有偵測到，可以再試著說像 "What I like most is the food." 這樣的句子。'; }
+    else { msg = '偵測到 what 引導的名詞子句，符合這題要練習的重點！what 本身就包含先行詞。'; }
+  } else if(q.checkType === 'whoever'){
+    if(!/\b(?:whoever|whatever|whichever|whenever|wherever)\b/.test(lower)){ ok = false; msg = '這一題要練習 whoever、whatever 或 whichever，但沒有偵測到，可以再試著說像 "Whoever finishes first can choose a prize." 這樣的句子。'; }
+    else { msg = '偵測到 whoever / whatever / whichever，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'relcircum'){
+    if(!/\b(?:year|day|time|reason|place|moment|month|week)\s+(?:when|why|where)\b|\b(?:that|this)(?:'s|\s+is)\s+how\b/.test(lower)){ ok = false; msg = '這一題要練習 the year when、the reason why 或 where、how，但沒有偵測到，可以再試著說像 "2020 was the year when I started learning English." 這樣的句子。'; }
+    else { msg = '偵測到關係副詞（when、why、where 或 how），符合這題要練習的重點！'; }
+  } else if(q.checkType === 'appos'){
+    if(!/,\s*(?:a|an|the)\s+[a-z]+|\b(?!is\b|are\b|was\b|were\b|am\b|be\b|been\b|as\b|like\b|for\b|in\b|on\b|at\b|of\b|with\b|to\b|and\b|but\b|has\b|have\b|had\b|became\b|become\b)[a-z]+\s+(?:a|an|the)\s+(?:(?:very|really|quite|so|well-known|most)\s+)?(?:famous|kind|young|old|big|small|popular|beautiful|great|capital|city|writer|singer|teacher|doctor|actor|leader)\b/.test(lower)){ ok = false; msg = '這一題要練習同位語（名詞後面再放一個名詞補充說明），但沒有偵測到，可以再試著說像 "Taipei, the capital of Taiwan, is a big city." 這樣的句子。'; }
+    else { msg = '偵測到同位語（名詞 + a / the + 名詞片語），符合這題要練習的重點！'; }
+  } else if(q.checkType === 'thatclause'){
+    if(!/\bthe (?:fact|news|idea|belief|hope|rumor|truth) that\b|\b(?:know|think|thought|believe|believed|hope|hoped|said|say|realize|realized|heard|hear|surprised|learned|found)\s+that\b|\bthat\s+(?:i|we|he|she|they|it|you)\s+[a-z]+\s+(?:is|was|surprised|made|means)\b/.test(lower)){ ok = false; msg = '這一題要練習 that 子句或 the fact that，但沒有偵測到，可以再試著說像 "The fact that I won the game surprised me." 這樣的句子。'; }
+    else { msg = '偵測到 that 子句（或 the fact that），符合這題要練習的重點！'; }
+  } else if(q.checkType === 'askif'){
+    if(!/\b(?:asked|ask|asks|wondered|wonder|wants to know|wanted to know)\b[^.?!]*\b(?:if|whether)\b/.test(lower)){ ok = false; msg = '這一題要練習用 asked + if / whether 轉述 yes/no 問句，但沒有偵測到，可以再試著說像 "My friend asked me whether I wanted to join." 這樣的句子。'; }
+    else { msg = '偵測到 asked + if / whether，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'askwh'){
+    if(!/\b(?:asked|ask|asks|wondered|wonder|wants to know|wanted to know)\s+(?:(?:me|him|her|us|them|[a-z]+)\s+)?(?:what|where|when|why|how|who|which)\s+(?!did\b|do\b|does\b|are\b|is\b|was\b|were\b)[a-z]+\s+[a-z]+/.test(lower)){ ok = false; msg = '這一題要練習 asked + 疑問詞 + 主詞 + 動詞（不倒裝），但沒有偵測到，可以再試著說像 "My teacher asked me where I had put my homework." 這樣的句子。'; }
+    else { msg = '偵測到 asked + 疑問詞 + 主詞 + 動詞，符合這題要練習的重點！記得語序不倒裝。'; }
+  } else if(q.checkType === 'tellto'){
+    if(!/\b(?:told|tell|tells|asked|ask|asks|ordered|order|orders|advised|advise|advises|wanted|want|wants)\s+(?:me|him|her|us|them|[a-z]+)\s+(?:not\s+)?to\s+[a-z]+/.test(lower)){ ok = false; msg = '這一題要練習 told / asked + 人 + to V，但沒有偵測到，可以再試著說像 "My mother told me to clean my room." 這樣的句子。'; }
+    else { msg = '偵測到 tell / ask + 人 + to V，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'exclam'){
+    if(!/\bwhat\s+(?:a|an)\s+[a-z]+|\bwhat\s+[a-z]+\s+[a-z]+s\b|\bhow\s+(?:beautiful|nice|wonderful|lovely|amazing|delicious|cute|funny|interesting|exciting|great|pretty|kind|cool)\b/.test(lower)){ ok = false; msg = '這一題要練習感嘆句，但沒有偵測到，可以再試著說像 "What a beautiful day it is!" 或 "How nice it is!" 這樣的句子。'; }
+    else { msg = '偵測到感嘆句（What a… 或 How…），符合這題要練習的重點！'; }
+  } else if(q.checkType === 'partic'){
+    const okPa = /(?:^|[.!?]\s*|,\s*)(?:having\s+(?:not\s+)?[a-z]+|being\s+[a-z]+|not\s+[a-z]+ing|(?!morning|evening|during|nothing|something|anything|everything|thing|king|spring|sing|bring)[a-z]+ing|[a-z]+ed)\s+[a-z' ,]+?\b(?:i|he|she|we|they)\s+[a-z]+/.test(lower);
+    if(!okPa){ ok = false; msg = '這一題要練習分詞構句（句首用 V-ing、p.p. 或 having p.p. 代替連接詞和主詞），但沒有偵測到，可以再試著說像 "Having finished my homework, I watched TV." 這樣的句子。'; }
+    else { msg = '偵測到句首的分詞構句，符合這題要練習的重點！記得分詞的主詞要和主句主詞相同。'; }
+  } else if(q.checkType === 'although'){
+    if(!/\b(?:although|though|even though|whereas)\b/.test(lower)){ ok = false; msg = '這一題要練習 although、though 或 even though，但沒有偵測到，可以再試著說像 "Although it was difficult, I finished the project." 這樣的句子。'; }
+    else if(/\b(?:although|even though)\b[^.?!]*\bbut\b/.test(lower)){ ok = false; msg = '偵測到 although 和 but 同時出現。用了 although 就不用 but，可以再說一次。'; }
+    else { msg = '偵測到 although / though / even though，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'despite'){
+    if(!/\b(?:despite|in spite of)\s+(?:the|my|his|her|our|their|a|an|this|that|[a-z]+ing|being)\b/.test(lower)){ ok = false; msg = '這一題要練習 despite 或 in spite of + 名詞，但沒有偵測到，可以再試著說像 "Despite the rain, we went to the park." 這樣的句子。'; }
+    else if(/\b(?:despite|in spite of)\s+(?:i|we|he|she|they|it|you)\s+(?:am|is|are|was|were|have|had|did|do|[a-z]+ed)\b/.test(lower)){ ok = false; msg = 'despite 和 in spite of 後面要接名詞或 V-ing，不能接「主詞 + 動詞」的子句，可以改說一次。'; }
+    else { msg = '偵測到 despite / in spite of + 名詞，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'purpose'){
+    if(!/\b(?:so that|in order to|in order that|in order not to)\b/.test(lower)){ ok = false; msg = '這一題要練習 in order to 或 so that，但沒有偵測到，可以再試著說像 "I study English in order to travel around the world." 這樣的句子。'; }
+    else { msg = '偵測到 in order to / so that，符合這題要練習的重點！'; }
+  } else if(q.checkType === 'linker'){
+    if(!/\b(?:however|therefore|moreover|otherwise|furthermore|nevertheless|besides)\b/.test(lower)){ ok = false; msg = '這一題要練習 however、therefore、moreover 或 otherwise，但沒有偵測到，可以再試著說像 "Homework is useful; however, it takes too much time." 這樣的句子。'; }
+    else { msg = '偵測到轉折語，符合這題要練習的重點！寫的時候，前面要用分號或句號。'; }
   } else if(q.checkType === 'perfect'){
     if(!hasPerfect){ ok = false; msg = '這一題要練習現在完成式（have / has + 過去分詞），但你的回答裡沒有偵測到這個結構，可以再試著用像 "I have been to ..." 或 "I have already ..." 這樣的句型回答一次。'; }
     else { msg = '偵測到你用了「have / has + 過去分詞」的現在完成式結構，符合這題要練習的文法重點！'; }
