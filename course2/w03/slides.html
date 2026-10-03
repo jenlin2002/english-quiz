@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 3 投影片｜未來進行式、未來完成式與時態一致</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 3 · SLIDES</div>
+    <h1 class="page">未來進行式、未來完成式與時態一致</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 3 · GRAMMAR</div><h1 class="big">未來進行式、未來完成式與時態一致</h1><div class="en-sub">Future Continuous, Future Perfect &amp; Tense Agreement</div><div class="venn"><span class="c1">will be V-ing</span><span class="c2">will have p.p.</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>用 will be V-ing 說明未來某一刻正在做的事</li><li>用 will have p.p. 說明到某個時間之前會完成的事</li><li>when、if 等子句裡用現在式代替未來式</li><li>主句是過去式時，子句的時態怎麼配合</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">This time tomorrow, I ____ on a beach. (will lie / will be lying)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>will be lying</span></div><div class="qa"><span class="n">2</span><span class="q">By next June, she ____ her degree. (will finish / will have finished)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>will have finished</span></div><div class="qa"><span class="n">3</span><span class="q">I will call you when I ____ home. (get / will get)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>get</span></div></div></div></div></section>
+<section class="s paper"><h2>三個「未來」的時間軸</h2><p class="lead">will V 是一個點；will be V-ing 是「那一刻正在做」；will have p.p. 是「那一刻之前已經做完」。</p><div class="cards n3 tight"><div class="card g"><h3>will V</h3><div class="sub">Simple future</div><svg class="tl" viewBox="0 0 360 120" role="img" aria-label="時間軸：未來的一個時間點上，做一件事"><line class="ax" x1="12" y1="70" x2="338" y2="70"/><polygon class="axh" points="336,64 348,70 336,76"/><line class="nowl" x1="70" y1="48" x2="70" y2="88"/><text class="nowt" x="70" y="106" text-anchor="middle">現在</text><text class="mut" x="346" y="98" text-anchor="end">未來</text><circle class="dp" cx="215" cy="70" r="6"/><text class="tp" x="215" y="52" text-anchor="middle">will call</text><text class="mut" x="215" y="92" text-anchor="middle">明天</text></svg><div class="ex g"><div class="en">I <b>will call</b> you tomorrow. <button class="sentence-btn" type="button" data-say="I will call you tomorrow." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我明天會打給你</div></div></div><div class="card o"><h3>will be V-ing</h3><div class="sub">Future continuous</div><svg class="tl" viewBox="0 0 360 120" role="img" aria-label="時間軸：在未來的某一個時間點，動作正在進行中（色帶包住那個時間點）"><line class="ax" x1="12" y1="70" x2="338" y2="70"/><polygon class="axh" points="336,64 348,70 336,76"/><line class="nowl" x1="70" y1="48" x2="70" y2="88"/><text class="nowt" x="70" y="106" text-anchor="middle">現在</text><text class="mut" x="346" y="98" text-anchor="end">未來</text><line class="dead" x1="225" y1="50" x2="225" y2="90"/><rect class="bc" x="185" y="63" width="80" height="14" rx="4"/><text class="tc" x="225" y="44" text-anchor="middle">will be studying</text><text class="mut" x="225" y="106" text-anchor="middle">明天晚上八點</text></svg><div class="ex g"><div class="en">I <b>will be studying</b> at 8 p.m. <button class="sentence-btn" type="button" data-say="I will be studying at 8 p.m." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 明天晚上八點，我會正在讀書</div></div></div><div class="card g"><h3>will have p.p.</h3><div class="sub">Future perfect</div><svg class="tl" viewBox="0 0 360 120" role="img" aria-label="時間軸：到未來的某個期限之前，事情已經完成"><line class="ax" x1="12" y1="70" x2="338" y2="70"/><polygon class="axh" points="336,64 348,70 336,76"/><line class="nowl" x1="70" y1="48" x2="70" y2="88"/><text class="nowt" x="70" y="106" text-anchor="middle">現在</text><text class="mut" x="346" y="98" text-anchor="end">未來</text><line class="dead" x1="270" y1="50" x2="270" y2="90"/><circle class="dc" cx="205" cy="70" r="6"/><path class="ck" d="M199 70 L204 75 L212 64"/><path class="arc" d="M210 62 Q240 30 266 60"/><polygon class="arh" points="271,66 259,62 267,52"/><text class="tc" x="205" y="36" text-anchor="middle">will have finished</text><text class="mut" x="270" y="106" text-anchor="middle">明年六月</text><text class="mut" x="205" y="92" text-anchor="middle" style="font-size:10.5px">到期限前已完成</text></svg><div class="ex g"><div class="en">I <b>will have finished</b> by June. <button class="sentence-btn" type="button" data-say="I will have finished by June." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 到六月之前，我就會完成了</div></div></div></div></section>
+<section class="s paper"><h2>未來進行式：will be V-ing</h2><div class="cards n2"><div class="card g"><h3>意思</h3><div class="sub">Future Continuous</div><p class="row"><b>強調：</b>未來某個時間點，動作正在進行</p><p class="row"><b>常搭配：</b>this time tomorrow、at 8 p.m. tonight、this time next week</p><svg class="tl" viewBox="0 0 360 120" role="img" aria-label="時間軸：在未來的某一個時間點，動作正在進行中（色帶包住那個時間點）"><line class="ax" x1="12" y1="70" x2="338" y2="70"/><polygon class="axh" points="336,64 348,70 336,76"/><line class="nowl" x1="70" y1="48" x2="70" y2="88"/><text class="nowt" x="70" y="106" text-anchor="middle">現在</text><text class="mut" x="346" y="98" text-anchor="end">未來</text><line class="dead" x1="225" y1="50" x2="225" y2="90"/><rect class="bc" x="185" y="63" width="80" height="14" rx="4"/><text class="tc" x="225" y="44" text-anchor="middle">will be lying</text><text class="mut" x="225" y="106" text-anchor="middle">this time tomorrow</text></svg></div><div class="card o"><h3>例句</h3><div class="ex g"><div class="en">This time tomorrow, I <b>will be lying</b> on a beach. <button class="sentence-btn" type="button" data-say="This time tomorrow, I will be lying on a beach." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 明天這個時候，我會正躺在海灘上</div></div><div class="ex g"><div class="en">At 8 p.m. tonight, we <b>will be eating</b> dinner. <button class="sentence-btn" type="button" data-say="At 8 p.m. tonight, we will be eating dinner." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 今晚八點，我們會正在吃晚餐</div></div><div class="ex g"><div class="en">Don't call me at nine. I <b>will be sleeping</b>. <button class="sentence-btn" type="button" data-say="Don&#x27;t call me at nine. I will be sleeping." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 九點別打給我，我會在睡覺</div></div></div></div></section>
+<section class="s paper"><h2>未來完成式：will have p.p.</h2><div class="cards n2"><div class="card g"><h3>意思</h3><div class="sub">Future Perfect</div><p class="row"><b>強調：</b>到未來某個時間之前，已經完成</p><p class="row"><b>常搭配：</b>by + 未來時間、by the time + 現在式</p><svg class="tl" viewBox="0 0 360 120" role="img" aria-label="時間軸：到未來的某個期限之前，事情已經完成"><line class="ax" x1="12" y1="70" x2="338" y2="70"/><polygon class="axh" points="336,64 348,70 336,76"/><line class="nowl" x1="70" y1="48" x2="70" y2="88"/><text class="nowt" x="70" y="106" text-anchor="middle">現在</text><text class="mut" x="346" y="98" text-anchor="end">未來</text><line class="dead" x1="270" y1="50" x2="270" y2="90"/><circle class="dc" cx="205" cy="70" r="6"/><path class="ck" d="M199 70 L204 75 L212 64"/><path class="arc" d="M210 62 Q240 30 266 60"/><polygon class="arh" points="271,66 259,62 267,52"/><text class="tc" x="205" y="36" text-anchor="middle">will have finished</text><text class="mut" x="270" y="106" text-anchor="middle">by next June</text><text class="mut" x="205" y="92" text-anchor="middle" style="font-size:10.5px">到期限前已完成</text></svg></div><div class="card o"><h3>例句</h3><div class="ex g"><div class="en">By next June, she <b>will have finished</b> her degree. <button class="sentence-btn" type="button" data-say="By next June, she will have finished her degree." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 到明年六月，她就會拿到學位了</div></div><div class="ex g"><div class="en">By the time you arrive, I <b>will have finished</b> cleaning. <button class="sentence-btn" type="button" data-say="By the time you arrive, I will have finished cleaning." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你到的時候，我已經打掃完了</div></div><div class="ex g"><div class="en">Next year, he <b>will have worked</b> here for ten years. <button class="sentence-btn" type="button" data-say="Next year, he will have worked here for ten years." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 明年，他就在這裡工作滿十年了</div></div></div></div></section>
+<section class="s paper"><h2>時間與條件副詞子句：用現在式代替未來式</h2><table class="t"><thead><tr><th>連接詞</th><th>子句裡用現在式</th><th>主要子句</th></tr></thead><tbody><tr><td>when / as soon as</td><td><div class="ex g"><div class="en">When I <b>get</b> home, <button class="sentence-btn" type="button" data-say="When I get home," aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我到家的時候</div></div></td><td>I will call you.</td></tr><tr><td>before / after / until</td><td><div class="ex g"><div class="en">She will wait until you <b>come</b>. <button class="sentence-btn" type="button" data-say="She will wait until you come." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她會等到你來</div></div></td><td>（until 後面用現在式）</td></tr><tr><td>if / unless</td><td><div class="ex g"><div class="en">If it <b>rains</b> tomorrow, <button class="sentence-btn" type="button" data-say="If it rains tomorrow," aria-label="播放這個句子">🔊</button></div><div class="zh">→ 如果明天下雨</div></div></td><td>we will stay home.</td></tr></tbody></table><div class="note">不能在 when、if 的子句裡用 will：<span class='bad'>When I will get home</span> → <span class='good'>When I get home</span></div></section>
+<section class="s paper"><h2>時態一致：主句是過去式</h2><div class="cards n2"><div class="card g"><h3>規則</h3><div class="sub">Sequence of tenses</div><p class="row"><b>主句是過去式：</b>後面的子句也要往過去推一格</p><p class="row"><b>現在 → 過去：</b>is → was、can → could、will → would</p><div class="ex g"><div class="en">He says he <b>is</b> tired. <button class="sentence-btn" type="button" data-say="He says he is tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他說他累了（說的當下）</div></div><div class="ex g"><div class="en">He said he <b>was</b> tired. <button class="sentence-btn" type="button" data-say="He said he was tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他說他累了（過去說的）</div></div></div><div class="card o"><h3>更多例句</h3><div class="ex g"><div class="en">I thought you <b>were</b> at home. <button class="sentence-btn" type="button" data-say="I thought you were at home." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我以為你在家</div></div><div class="ex g"><div class="en">She told me she <b>would buy</b> a new bike. <button class="sentence-btn" type="button" data-say="She told me she would buy a new bike." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她告訴我她會買一輛新腳踏車</div></div><div class="ex g"><div class="en">They said they <b>could</b> come. <button class="sentence-btn" type="button" data-say="They said they could come." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他們說他們可以來</div></div></div></div></section>
+<section class="s paper"><h2>時態一致的例外：事實與諺語</h2><div class="cards n2"><div class="card g"><h3>永遠成立的事實</h3><p class="row"><b>不用往後推：</b>科學事實、自然現象、諺語、現在仍然成立的事</p><div class="ex g"><div class="en">The teacher said that the earth <b>goes</b> around the sun. <button class="sentence-btn" type="button" data-say="The teacher said that the earth goes around the sun." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 老師說地球繞著太陽轉</div></div><div class="ex g"><div class="en">He told me that he <b>lives</b> in Taipei. <button class="sentence-btn" type="button" data-say="He told me that he lives in Taipei." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他告訴我他住在台北（現在還住）</div></div></div><div class="card o"><h3>對比</h3><div class="ex g"><div class="en">She said she <b>was</b> tired. <button class="sentence-btn" type="button" data-say="She said she was tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她說她累了（當時的狀態）</div></div><div class="ex o"><div class="en">She said that water <i>boils</i> at 100°C. <button class="sentence-btn" type="button" data-say="She said that water boils at 100°C." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她說水在攝氏一百度沸騰（永遠成立）</div></div></div></div></section>
+<section class="s paper"><h2>對比頁：容易搞混的三組</h2><div class="two tight"><div class="card g"><h3>will V 與 will be V-ing</h3><div class="ex g"><div class="en">I <b>will call</b> you at 8. <button class="sentence-btn" type="button" data-say="I will call you at 8." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 八點我會打給你（做一件事）</div></div><div class="ex o"><div class="en">I <i>will be calling</i> clients at 8. <button class="sentence-btn" type="button" data-say="I will be calling clients at 8." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 八點我會正在打電話給客戶（動作進行中）</div></div></div><div class="card o"><h3>will be V-ing 與 will have p.p.</h3><div class="ex g"><div class="en">At 5, I <b>will be working</b>. <button class="sentence-btn" type="button" data-say="At 5, I will be working." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 五點時我正在工作</div></div><div class="ex o"><div class="en">By 5, I <i>will have finished</i>. <button class="sentence-btn" type="button" data-say="By 5, I will have finished." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 五點之前我就完成了</div></div></div><div class="card g"><h3>when 子句</h3><div class="ex g"><div class="en">I will call when I <b>arrive</b>. <button class="sentence-btn" type="button" data-say="I will call when I arrive." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我到了就會打給你</div></div><div class="ex g"><div class="en"><span class='bad'>when I will arrive</span> <button class="sentence-btn" type="button" data-say="when I will arrive" aria-label="播放這個句子">🔊</button></div><div class="zh">→ ×  子句裡不用 will</div></div></div><div class="card o"><h3>says 與 said</h3><div class="ex g"><div class="en">He <b>says</b> he <b>is</b> tired. <button class="sentence-btn" type="button" data-say="He says he is tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 現在說，現在累</div></div><div class="ex o"><div class="en">He <i>said</i> he <i>was</i> tired. <button class="sentence-btn" type="button" data-say="He said he was tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 當時說，當時累</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">I will call you when I will arrive.</span> → <span class="good">I will call you when I arrive.</span></div><div class="why">時間副詞子句裡用現在式，不用 will。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">If it will rain tomorrow, we stay home.</span> → <span class="good">If it rains tomorrow, we will stay home.</span></div><div class="why">if 子句用現在式，主要子句才用 will。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">By next June, she will finish her degree.</span> → <span class="good">By next June, she will have finished her degree.</span></div><div class="why">by 加未來時間，表示到那之前已完成，用 will have p.p.。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">He said that he is tired.</span> → <span class="good">He said that he was tired.</span></div><div class="why">主句 said 是過去式，子句也要往過去推成 was。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">The teacher said the earth went around the sun.</span> → <span class="good">The teacher said the earth goes around the sun.</span></div><div class="why">永遠成立的事實，不用往後推。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">At 8 tonight, I ____ TV. (will watch / will be watching)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>will be watching</span></div><div class="qa"><span class="n">2</span><span class="q">By 2030, we ____ the project. (will finish / will have finished)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>will have finished</span></div><div class="qa"><span class="n">3</span><span class="q">When she ____ here, I'll tell her. (arrives / will arrive)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>arrives</span></div><div class="qa"><span class="n">4</span><span class="q">If you ____ hard, you will pass. (study / will study)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>study</span></div><div class="qa"><span class="n">5</span><span class="q">He said he ____ tired. (is / was)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>was</span></div><div class="qa"><span class="n">6</span><span class="q">She said that she ____ a new bike. (will buy / would buy)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>would buy</span></div><div class="qa"><span class="n">7</span><span class="q">The teacher said that water ____ at 100°C. (boiled / boils)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>boils</span></div><div class="qa"><span class="n">8</span><span class="q">As soon as he ____ the news, he'll tell us. (hears / will hear)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>hears</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I will visit you when I will have time.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>when I will have → when I have</span></div><div class="qa"><span class="n">2</span><span class="q">By next year, he will work here for ten years.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>will work → will have worked</span></div><div class="qa"><span class="n">3</span><span class="q">She said that she will come.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>will → would</span></div></div></div><div><p class="lead">轉換</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I will study at nine tomorrow.（強調那時正在做）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I will be studying at nine tomorrow.</span></div><div class="qa"><span class="n">2</span><span class="q">She finishes the work before five.（用 will have p.p.）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>She will have finished the work before five.</span></div><div class="qa"><span class="n">3</span><span class="q">"I am tired," he said.（轉述）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He said that he was tired.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en">By 2040, scientists <span class="hl">will have invented</span> cars that drive themselves. Many people <span class="hl2">will be working</span> from home. <span class="hl2">When you get</span> into the car, it will take you to work.<button class="sentence-btn" type="button" data-say="By 2040, scientists will have invented cars that drive themselves. Many people will be working from home. When you get into the car, it will take you to work." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>看到 by + 年份，想 will have p.p.</li><li>看到 at this time、at 8 p.m.，想 will be V-ing</li><li>when、if 後面是現在式，但意思是未來</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 will be 加 -ing，表示那個時間正在做</li><li>聽到 by 加時間，答案常是「在那之前已完成」</li><li>聽到 said that，注意後面的時態往後推了</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的計畫。</p><div class="two"><div><div class="ex g"><div class="en">This time tomorrow, I <b>will be studying</b> English. <button class="sentence-btn" type="button" data-say="This time tomorrow, I will be studying English." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 未來進行式</div></div><div class="ex g"><div class="en">In ten years, I <b>will be working</b> as a doctor. <button class="sentence-btn" type="button" data-say="In ten years, I will be working as a doctor." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 十年後的自己</div></div><div class="ex g"><div class="en">By the end of this year, I <b>will have finished</b> my book. <button class="sentence-btn" type="button" data-say="By the end of this year, I will have finished my book." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 未來完成式</div></div></div><div><div class="ex o"><div class="en">When I <i>get</i> home, I will do my homework. <button class="sentence-btn" type="button" data-say="When I get home, I will do my homework." aria-label="播放這個句子">🔊</button></div><div class="zh">→ when 子句用現在式</div></div><div class="ex o"><div class="en">My teacher said that she <i>was</i> very proud of us. <button class="sentence-btn" type="button" data-say="My teacher said that she was very proud of us." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 時態一致</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>句型</th><th>公式</th><th>重點</th></tr></thead><tbody><tr><td>未來進行式</td><td>will be + V-ing</td><td>未來某一刻正在做</td></tr><tr><td>未來完成式</td><td>will have + p.p.</td><td>到某時之前已完成</td></tr><tr><td>時間、條件子句</td><td>when / if + 現在式</td><td>不用 will</td></tr><tr><td>時態一致</td><td>said + 過去式</td><td>事實不用往後推</td></tr></tbody></table><div class="note">口訣：那一刻正在做用 will be V-ing，那之前已做完用 will have p.p.；when 與 if 後面不放 will。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 2 週</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>用 will be V-ing 寫三句：明天這個時候你會在做什麼。</li><li>用 will have p.p. 寫兩句：到這學期結束，你會完成什麼。</li><li>把這週錯題各抄一次，寫下錯的原因。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

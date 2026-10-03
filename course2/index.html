@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英文測驗系統｜第二期總目錄</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --chalk-bg: #1B3A2F;
+    --paper: #F7F3E8;
+    --paper-2: #EFE9D8;
+    --chalk-yellow: #E8B94A;
+    --chalk-red: #D97A6C;
+    --chalk-green: #7FB69A;
+    --ink: #2B2B2B;
+    --ink-soft: #5B5B52;
+    --line: #D8D0BA;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--chalk-bg);
+    font-family:'Noto Sans TC', sans-serif;
+    color:var(--paper);
+    min-height:100vh;
+    padding:40px 20px 80px;
+  }
+  .wrap{ max-width:900px; margin:0 auto; }
+  .eyebrow{
+    font-family:'Space Mono', monospace; font-size:13px; letter-spacing:3px;
+    color:var(--chalk-yellow); font-weight:700; text-align:center; margin-bottom:10px;
+  }
+  h1{
+    font-family:'Kalam', cursive; font-size:clamp(28px,5vw,42px); text-align:center;
+    margin-bottom:8px; color:var(--paper);
+  }
+  .subtitle{ text-align:center; color:#9AA89C; font-size:14px; margin-bottom:40px; }
+  .section-title{
+    font-family:'Kalam', cursive; font-size:18px; color:var(--chalk-yellow);
+    margin:32px 0 14px; padding-left:4px; border-left:4px solid var(--chalk-yellow);
+    padding-left:10px;
+  }
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+    gap:14px;
+  }
+  .card{
+    display:block; background:#163026; border:1px solid #2A4A3C; border-radius:14px;
+    padding:18px 20px; color:var(--paper); text-decoration:none;
+  }
+  .card-week{
+    font-family:'Space Mono', monospace; font-size:11px; color:var(--chalk-green);
+    letter-spacing:2px; margin-bottom:6px;
+  }
+  .card-title{ font-size:16px; font-weight:700; margin-bottom:4px; }
+  .card-sub{ font-size:12px; color:#9AA89C; margin-bottom:14px; }
+  .card-links{ display:flex; gap:8px; flex-wrap:wrap; }
+  .card-links a, .card-links span{
+    flex:1; text-align:center; font-size:13px; font-weight:700; text-decoration:none;
+    padding:8px 10px; border-radius:10px; transition:transform 0.15s, opacity 0.15s;
+    white-space:nowrap;
+  }
+  .card-links a:hover{ transform:translateY(-2px); opacity:0.9; }
+  .link-slides{ background:#2A4A3C; color:var(--chalk-green); border:1px solid var(--chalk-green); }
+  .link-quiz{ background:var(--chalk-yellow); color:var(--chalk-bg); }
+  .review-card{ border-color:#5A4A2A; }
+  .review-card .card-week{ color:var(--chalk-yellow); }
+  .off{ opacity:0.35; pointer-events:none; }
+  .footer-note{
+    text-align:center; color:#6B7D72; font-size:12px; margin-top:50px; line-height:1.8;
+  }
+  .home-link{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'Noto Sans TC'; font-size:13px; font-weight:700;
+    color:var(--chalk-yellow); text-decoration:none;
+    border:1.5px solid var(--chalk-yellow); border-radius:20px;
+    padding:7px 16px; margin-bottom:24px;
+    transition:background 0.15s, color 0.15s;
+  }
+  .home-link:hover{ background:var(--chalk-yellow); color:var(--chalk-bg); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="home-link" href="https://jenlin2002.github.io/">🏠 回總目錄</a>
+  <a class="home-link" href="https://jenlin2002.github.io/english-quiz/" style="margin-left:8px">← 第一期總目錄</a>
+  <div class="eyebrow">ENGLISH QUIZ SYSTEM</div>
+  <h1>英文測驗系統．第二期總目錄</h1>
+  <div class="subtitle">點擊任一週次，進入該週的投影片，或直接進入完整測驗（文法／閱讀／克漏字／單字／聽力／口說）</div>
+
+  <div class="section-title">先修階段（先修 1-2）</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-week">先修 1</div>
+      <div class="card-title">八大詞類</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <a class="link-slides" href="pre1/slides.html">📊 投影片</a>
+        <a class="link-quiz" href="pre1/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">先修 2</div>
+      <div class="card-title">五大句型</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <a class="link-slides" href="pre2/slides.html">📊 投影片</a>
+        <a class="link-quiz" href="pre2/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">先修前測</div>
+      <div class="card-title">先修前測與結業檢測</div>
+      <div class="card-sub">八大詞類 8．五大句型 7（共 15 題）</div>
+      <div class="card-links">
+        <a class="link-quiz" href="pretest/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">第一階段（第1-5週）</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-week">WEEK 1</div>
+      <div class="card-title">形容詞與副詞進階</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <a class="link-slides" href="w01/slides.html">📊 投影片</a>
+        <a class="link-quiz" href="w01/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 2</div>
+      <div class="card-title">現在完成進行式與過去完成式</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <a class="link-slides" href="w02/slides.html">📊 投影片</a>
+        <a class="link-quiz" href="w02/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 3</div>
+      <div class="card-title">未來進行式、未來完成式與時態一致</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <a class="link-slides" href="w03/slides.html">📊 投影片</a>
+        <a class="link-quiz" href="w03/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 4</div>
+      <div class="card-title">被動語態進階與使役動詞</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <a class="link-slides" href="w04/slides.html">📊 投影片</a>
+        <a class="link-quiz" href="w04/quiz.html">📝 測驗</a>
+      </div>
+    </div>
+    <a class="card review-card" href="w05/quiz.html">
+      <div class="card-week">WEEK 5 · 複習週</div>
+      <div class="card-title">統整第 1–4 週（銜接第一次段考）</div>
+      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
+    </a>
+  </div>
+
+  <div class="section-title">第二階段（第6-10週）</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-week">WEEK 6 · 即將推出</div>
+      <div class="card-title">情態助動詞進階：推測與責任</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 7 · 即將推出</div>
+      <div class="card-title">條件句進階：第二、三類與混合</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 8 · 即將推出</div>
+      <div class="card-title">假設語氣：wish、if only、as if</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 9 · 即將推出</div>
+      <div class="card-title">動名詞與不定詞進階</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card review-card off">
+      <div class="card-week">WEEK 10 · 複習週 · 即將推出</div>
+      <div class="card-title">統整第 6–9 週（銜接第二次段考）</div>
+      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
+    </div>
+  </div>
+
+  <div class="section-title">第三階段（第11-15週）</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-week">WEEK 11 · 即將推出</div>
+      <div class="card-title">關係代名詞進階</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 12 · 即將推出</div>
+      <div class="card-title">縮減子句與複合關代</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 13 · 即將推出</div>
+      <div class="card-title">名詞子句與轉述疑問句、命令</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 14 · 即將推出</div>
+      <div class="card-title">分詞構句、連接詞與轉折語</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card review-card off">
+      <div class="card-week">WEEK 15 · 複習週 · 即將推出</div>
+      <div class="card-title">統整第 11–14 週（銜接第三次段考）</div>
+      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
+    </div>
+  </div>
+
+  <div class="section-title">第四階段（第16-20週）</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-week">WEEK 16 · 即將推出</div>
+      <div class="card-title">比較結構與平行對等</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 17 · 即將推出</div>
+      <div class="card-title">倒裝句與強調句（中高級入門）</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 18 · 即將推出</div>
+      <div class="card-title">主詞動詞一致、代名詞與限定詞</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-week">WEEK 19 · 即將推出</div>
+      <div class="card-title">句型整合與英檢題型診斷</div>
+      <div class="card-sub">文法20．閱讀10．克漏字4．單字10．聽力15．口說5</div>
+      <div class="card-links">
+        <span class="link-slides off">📊 投影片</span>
+        <span class="link-quiz off">📝 測驗</span>
+      </div>
+    </div>
+    <div class="card review-card off">
+      <div class="card-week">WEEK 20 · 複習週 · 即將推出</div>
+      <div class="card-title">全期總驗收與英檢模擬（第 1–19 週）</div>
+      <div class="card-sub">文法20．閱讀5．克漏字4．單字10．聽力15．口說5</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    每週測驗結果會自動同步到 Google 試算表，可以在教學追蹤系統裡查看歷史紀錄。<br>
+    先修 2 週不佔第 1-20 週的編號。變淡的按鈕是還沒做好的週次。
+  </div>
+</div>
+</body>
+</html>

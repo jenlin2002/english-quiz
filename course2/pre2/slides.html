@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 先修 2 投影片｜五大句型</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">先修 2 · SLIDES</div>
+    <h1 class="page">五大句型</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">先修 2 · GRAMMAR</div><h1 class="big">五大句型</h1><div class="en-sub">The Five Basic Sentence Patterns</div><div class="venn"><span class="c1">S + V</span><span class="c2">S + V + O</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><p class="row"><b></b></p><ul class="b"><li>說出五大句型：S+V、S+V+C、S+V+O、S+V+O+O、S+V+O+C</li><li>分辨補語與受詞：looks happy 和 looks at me 不一樣</li><li>避開陷阱：arrive at、listen to、discuss 不加 about</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">He looks happy. happy 是補語還是受詞？</span><button class="rv" type="button">看答案</button><span class="ans" hidden>補語（說明主詞 He）</span></div><div class="qa"><span class="n">2</span><span class="q">Mom bought me a bag. 有幾個受詞？</span><button class="rv" type="button">看答案</button><span class="ans" hidden>兩個：me 和 a bag</span></div><div class="qa"><span class="n">3</span><span class="q">I listen ____ music. (to / 不加)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>to</span></div></div></div></div></section>
+<section class="s paper"><h2>在真實英文裡找句型</h2><p class="lead">新聞標題、廣告、對話各一句。</p><div class="cards n3"><div class="card g"><h3>新聞標題</h3><div class="ex g"><div class="en"><span class="sg S">Students<sub>S</sub></span> <span class="sg V">love<sub>V</sub></span> <span class="sg O">the new cafeteria<sub>O</sub></span> <button class="sentence-btn" type="button" data-say="Students love the new cafeteria" aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+O　學生們喜愛新餐廳</div></div></div><div class="card o"><h3>廣告</h3><div class="ex g"><div class="en"><span class="sg S">We<sub>S</sub></span> <span class="sg V">give<sub>V</sub></span> <span class="sg IO">every customer<sub>O&#8321;</sub></span> <span class="sg DO">a free gift<sub>O&#8322;</sub></span>! <button class="sentence-btn" type="button" data-say="We give every customer a free gift!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+O+O　送每位客人一份禮物</div></div></div><div class="card g"><h3>對話</h3><div class="ex g"><div class="en">A: <span class="sg S">You<sub>S</sub></span> <span class="sg V">look<sub>V</sub></span> <span class="sg C">tired<sub>C</sub></span>.<br>B: <span class="sg S">The test<sub>S</sub></span> <span class="sg V">made<sub>V</sub></span> <span class="sg O">me<sub>O</sub></span> <span class="sg C">tired<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="You look tired. The test made me tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+C 與 S+V+O+C</div></div></div></div><div class="legend"><span><span class="sg S">S<sub>S</sub></span> 主詞</span><span><span class="sg V">V<sub>V</sub></span> 動詞</span><span><span class="sg O">O<sub>O</sub></span> 受詞</span><span><span class="sg C">C<sub>C</sub></span> 補語</span><span><span class="sg IO">O<sub>O&#8321;</sub></span> 間接受詞</span><span><span class="sg DO">O<sub>O&#8322;</sub></span> 直接受詞</span></div></section>
+<section class="s paper"><h2>五大句型總表</h2><table class="t"><thead><tr><th>句型</th><th>例句</th><th>重點</th></tr></thead><tbody><tr><td><b>S + V</b></td><td>Birds fly.</td><td>動詞後面不需要別的成分</td></tr><tr><td><b>S + V + C</b></td><td>She is a nurse. / The soup smells good.</td><td>補語說明主詞；連綴動詞 be、look、smell、taste、sound、feel、become</td></tr><tr><td><b>S + V + O</b></td><td>I like music.</td><td>受詞是動作的對象，不等於主詞</td></tr><tr><td><b>S + V + O + O</b></td><td>He gave me a gift.</td><td>give、send、show、buy、make、teach：先給誰，再什麼</td></tr><tr><td><b>S + V + O + C</b></td><td>The news made me sad.</td><td>補語說明受詞；make、find、call、keep</td></tr></tbody></table><div class="note">時間、地點、方式的字（修飾語）不算在句型裡，例如 The baby sleeps <u>quietly</u> 仍是 S + V。</div></section>
+<section class="s paper"><h2>前三種句型：S+V、S+V+C、S+V+O</h2><div class="cards n3 tight"><div class="card g"><h3>S + V</h3><p class="row"><b>特色：</b>動詞自己就完整；後面可加修飾語</p><div class="ex g"><div class="en"><span class="sg S">Birds<sub>S</sub></span> <span class="sg V">fly<sub>V</sub></span>. <button class="sentence-btn" type="button" data-say="Birds fly." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">The baby<sub>S</sub></span> <span class="sg V">sleeps<sub>V</sub></span> quietly. <button class="sentence-btn" type="button" data-say="The baby sleeps quietly." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">We<sub>S</sub></span> <span class="sg V">arrived<sub>V</sub></span> at six. <button class="sentence-btn" type="button" data-say="We arrived at six." aria-label="播放這個句子">🔊</button></div></div></div><div class="card o"><h3>S + V + C</h3><p class="row"><b>特色：</b>連綴動詞後面接補語</p><div class="ex g"><div class="en"><span class="sg S">She<sub>S</sub></span> <span class="sg V">is<sub>V</sub></span> <span class="sg C">a teacher<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="She is a teacher." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">The soup<sub>S</sub></span> <span class="sg V">smells<sub>V</sub></span> <span class="sg C">good<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="The soup smells good." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">He<sub>S</sub></span> <span class="sg V">became<sub>V</sub></span> <span class="sg C">angry<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="He became angry." aria-label="播放這個句子">🔊</button></div></div></div><div class="card g"><h3>S + V + O</h3><p class="row"><b>特色：</b>及物動詞後面直接接受詞</p><div class="ex g"><div class="en"><span class="sg S">I<sub>S</sub></span> <span class="sg V">like<sub>V</sub></span> <span class="sg O">music<sub>O</sub></span>. <button class="sentence-btn" type="button" data-say="I like music." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">She<sub>S</sub></span> <span class="sg V">reads<sub>V</sub></span> <span class="sg O">books<sub>O</sub></span>. <button class="sentence-btn" type="button" data-say="She reads books." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">They<sub>S</sub></span> <span class="sg V">built<sub>V</sub></span> <span class="sg O">a house<sub>O</sub></span>. <button class="sentence-btn" type="button" data-say="They built a house." aria-label="播放這個句子">🔊</button></div></div></div></div></section>
+<section class="s paper"><h2>後兩種句型：S+V+O+O、S+V+O+C</h2><div class="cards n2"><div class="card g"><h3>S + V + O + O</h3><div class="sub">先「給誰」，再「什麼」</div><p class="row"><b>改寫：</b>give 用 to，buy、make 用 for</p><div class="ex g"><div class="en"><span class="sg S">He<sub>S</sub></span> <span class="sg V">gave<sub>V</sub></span> <span class="sg IO">me<sub>O&#8321;</sub></span> <span class="sg DO">a gift<sub>O&#8322;</sub></span>. <button class="sentence-btn" type="button" data-say="He gave me a gift." aria-label="播放這個句子">🔊</button></div><div class="zh">→ = He gave a gift to me.</div></div><div class="ex g"><div class="en"><span class="sg S">Mom<sub>S</sub></span> <span class="sg V">bought<sub>V</sub></span> <span class="sg IO">me<sub>O&#8321;</sub></span> <span class="sg DO">a bag<sub>O&#8322;</sub></span>. <button class="sentence-btn" type="button" data-say="Mom bought me a bag." aria-label="播放這個句子">🔊</button></div><div class="zh">→ = Mom bought a bag for me.</div></div></div><div class="card o"><h3>S + V + O + C</h3><div class="sub">補語說明「受詞」</div><p class="row"><b>常用動詞：</b>make、find、call、keep</p><div class="ex g"><div class="en"><span class="sg S">The news<sub>S</sub></span> <span class="sg V">made<sub>V</sub></span> <span class="sg O">me<sub>O</sub></span> <span class="sg C">sad<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="The news made me sad." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">I<sub>S</sub></span> <span class="sg V">found<sub>V</sub></span> <span class="sg O">the book<sub>O</sub></span> <span class="sg C">interesting<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="I found the book interesting." aria-label="播放這個句子">🔊</button></div></div><div class="ex g"><div class="en"><span class="sg S">We<sub>S</sub></span> <span class="sg V">call<sub>V</sub></span> <span class="sg O">the dog<sub>O</sub></span> <span class="sg C">Lucky<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="We call the dog Lucky." aria-label="播放這個句子">🔊</button></div></div></div></div></section>
+<section class="s paper"><h2>對比頁：補語 vs 受詞，及物 vs 不及物</h2><p class="lead">問自己：後面那個字，是在說明主詞（補語），還是動作的對象（受詞）？</p><div class="two tight"><div class="card g"><h3>補語　說明主詞</h3><div class="ex g"><div class="en">He looks <span class="sg C">happy<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="He looks happy." aria-label="播放這個句子">🔊</button></div><div class="zh">→ He = happy　他看起來開心</div></div><div class="ex g"><div class="en">She is <span class="sg C">a nurse<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="She is a nurse." aria-label="播放這個句子">🔊</button></div><div class="zh">→ She = a nurse</div></div></div><div class="card o"><h3>受詞　動作的對象</h3><div class="ex g"><div class="en">He looks at <span class="sg O">me<sub>O</sub></span>. <button class="sentence-btn" type="button" data-say="He looks at me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ He ≠ me　他看著我</div></div><div class="ex g"><div class="en">I like <span class="sg O">music<sub>O</sub></span>. <button class="sentence-btn" type="button" data-say="I like music." aria-label="播放這個句子">🔊</button></div><div class="zh">→ I ≠ music</div></div></div><div class="card g"><h3>不及物動詞：要加介系詞</h3><div class="ex g"><div class="en">arrive <b>at</b> the station　listen <b>to</b> music <button class="sentence-btn" type="button" data-say="arrive at the station　listen to music" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 到達車站；聽音樂</div></div><div class="ex g"><div class="en">look <b>at</b> the board　wait <b>for</b> the bus <button class="sentence-btn" type="button" data-say="look at the board　wait for the bus" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 看黑板；等公車</div></div></div><div class="card o"><h3>及物動詞：不要多加字</h3><div class="ex g"><div class="en">discuss <b>the plan</b>（×discuss about） <button class="sentence-btn" type="button" data-say="discuss the plan（×discuss about）" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 討論計畫</div></div><div class="ex g"><div class="en">enter <b>the room</b>（×enter into） <button class="sentence-btn" type="button" data-say="enter the room（×enter into）" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 進入房間</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">She looks happily.</span> → <span class="good">She looks happy.</span></div><div class="why">look 是連綴動詞，後面接形容詞當補語，不接副詞。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">We discussed about the plan.</span> → <span class="good">We discussed the plan.</span></div><div class="why">discuss 是及物動詞，直接接受詞，不加 about。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">I listen music.</span> → <span class="good">I listen to music.</span></div><div class="why">listen 是不及物動詞，要加 to 才能接受詞。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">He gave to me a book.</span> → <span class="good">He gave me a book.</span></div><div class="why">兩個受詞緊接在動詞後面時不用 to；用 to 時，「什麼」要放前面。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">The news made me sadly.</span> → <span class="good">The news made me sad.</span></div><div class="why">受詞補語說明受詞的狀態，用形容詞。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答：這是哪一種句型？</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Birds fly.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V</span></div><div class="qa"><span class="n">2</span><span class="q">She is a nurse.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V + C</span></div><div class="qa"><span class="n">3</span><span class="q">I like music.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V + O</span></div><div class="qa"><span class="n">4</span><span class="q">He gave me a gift.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V + O + O</span></div><div class="qa"><span class="n">5</span><span class="q">The song made her happy.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V + O + C</span></div><div class="qa"><span class="n">6</span><span class="q">The soup smells good.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V + C</span></div><div class="qa"><span class="n">7</span><span class="q">We arrived at six.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V（at six 是修飾語）</span></div><div class="qa"><span class="n">8</span><span class="q">They call the dog Lucky.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>S + V + O + C</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">She looks beautifully.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>beautifully → beautiful</span></div><div class="qa"><span class="n">2</span><span class="q">We discussed about the plan.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>刪掉 about</span></div><div class="qa"><span class="n">3</span><span class="q">He gave to me a book.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He gave me a book. 或 He gave a book to me.</span></div></div></div><div><p class="lead">轉換</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">He gave a gift to me.（改成 S+V+O+O）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He gave me a gift.</span></div><div class="qa"><span class="n">2</span><span class="q">I bought my mom a bag.（改用 for）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I bought a bag for my mom.</span></div><div class="qa"><span class="n">3</span><span class="q">The gift is nice. It makes him happy.（S+V+O+C）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>The gift made him happy.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en"><span class="sg S">His mother<sub>S</sub></span> <span class="sg V">made<sub>V</sub></span> <span class="sg IO">him<sub>O&#8321;</sub></span> <span class="sg DO">a big chocolate cake<sub>O&#8322;</sub></span>. <span class="sg S">The cake<sub>S</sub></span> <span class="sg V">tasted<sub>V</sub></span> <span class="sg C">delicious<sub>C</sub></span>. <span class="sg S">Tom<sub>S</sub></span> <span class="sg V">was<sub>V</sub></span> <span class="sg C">tired<sub>C</sub></span>, but <span class="sg S">he<sub>S</sub></span> <span class="sg V">was<sub>V</sub></span> <span class="sg C">very happy<sub>C</sub></span>.<button class="sentence-btn" type="button" data-say="His mother made him a big chocolate cake. The cake tasted delicious. Tom was tired, but he was very happy." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>先找動詞，再看動詞後面接什麼，就知道句型</li><li>動詞是 look、taste、feel 時，後面的形容詞說明主詞</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 gave me、bought me，後面接的是「什麼東西」</li><li>聽到 made me，後面常接感受：sad、happy、tired</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的詞。</p><div class="two"><div><div class="ex g"><div class="en"><span class="sg S">The baby<sub>S</sub></span> <span class="sg V">sleeps<sub>V</sub></span> quietly. <button class="sentence-btn" type="button" data-say="The baby sleeps quietly." aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V</div></div><div class="ex g"><div class="en"><span class="sg S">The soup<sub>S</sub></span> <span class="sg V">tastes<sub>V</sub></span> <span class="sg C">delicious<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="The soup tastes delicious." aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+C</div></div><div class="ex g"><div class="en"><span class="sg S">I<sub>S</sub></span> <span class="sg V">like<sub>V</sub></span> <span class="sg O">English<sub>O</sub></span>. <button class="sentence-btn" type="button" data-say="I like English." aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+O</div></div></div><div><div class="ex o"><div class="en"><span class="sg S">My mom<sub>S</sub></span> <span class="sg V">bought<sub>V</sub></span> <span class="sg IO">me<sub>O&#8321;</sub></span> <span class="sg DO">a new bag<sub>O&#8322;</sub></span>. <button class="sentence-btn" type="button" data-say="My mom bought me a new bag." aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+O+O</div></div><div class="ex o"><div class="en"><span class="sg S">The news<sub>S</sub></span> <span class="sg V">made<sub>V</sub></span> <span class="sg O">us<sub>O</sub></span> <span class="sg C">happy<sub>C</sub></span>. <button class="sentence-btn" type="button" data-say="The news made us happy." aria-label="播放這個句子">🔊</button></div><div class="zh">→ S+V+O+C</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>句型</th><th>怎麼認</th></tr></thead><tbody><tr><td>S + V</td><td>動詞後面沒有別的成分</td></tr><tr><td>S + V + C</td><td>連綴動詞後接形容詞或名詞，說明主詞</td></tr><tr><td>S + V + O</td><td>動詞後面接受詞</td></tr><tr><td>S + V + O + O</td><td>give、send、buy：先給誰、再什麼</td></tr><tr><td>S + V + O + C</td><td>make、find、call：補語說明受詞</td></tr></tbody></table><div class="note">口訣：連綴動詞接形容詞；不及物動詞加介系詞；及物動詞直接接受詞；兩個受詞中間不加 to。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收先修 1</li></ul></div><div class="card g"><h3>先修結業檢測</h3><p>先修 1 和先修 2 都上完，請再做一次先修前測，和第一次比較。答對 12 題以上就可以進入第 1 週。</p></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>找 5 個英文句子，標出 S、V、O、C。</li><li>用五種句型各寫一句關於自己的句子。</li><li>把這週錯題各抄一次。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>
