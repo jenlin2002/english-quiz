@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 17 投影片｜倒裝句與強調句（中高級入門）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 17 · SLIDES</div>
+    <h1 class="page">倒裝句與強調句（中高級入門）</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 17 · GRAMMAR</div><h1 class="big">倒裝句與強調句（中高級入門）</h1><div class="en-sub">Inversion &amp; Emphasis</div><div class="venn"><span class="c1">Never have I…</span><span class="c2">It is…that…</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><ul class="b"><li>認識倒裝：否定副詞放句首 → 助動詞搬到主詞前面</li><li>會用 So do I、Neither can she 回應別人</li><li>會用 Not until…、Only then…、No sooner…than、Hardly…when</li><li>條件句省略 if 的倒裝：Had I known、Should you need、Were I you</li><li>強調句 It is…that…、What I need is…、助動詞 do / did 加強語氣</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Never ____ such a big dog. (I have seen / have I seen)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>have I seen</span></div><div class="qa"><span class="n">2</span><span class="q">A: I like pizza. B: So ____ I. (am / do)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>do</span></div><div class="qa"><span class="n">3</span><span class="q">It was Tom ____ broke the window. (that / what)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>that</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第 16 週的比較與平行結構</h2><p class="lead">上週學「比」和「並排」；這週學把重點「搬到前面」或「特別強調」。</p><div class="cards n2"><div class="card g"><h3>第 16 週回顧</h3><div class="ex g"><div class="en"><b>The more</b> you practice, <b>the better</b> you get. <button class="sentence-btn" type="button" data-say="The more you practice, the better you get." aria-label="播放這個句子">🔊</button></div><div class="zh">→ the 比較級, the 比較級</div></div><div class="ex o"><div class="en">She is <i>not only</i> smart <i>but also</i> kind. <button class="sentence-btn" type="button" data-say="She is not only smart but also kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ not only…but also</div></div></div><div class="card o"><h3>這週的延伸</h3><div class="ex g"><div class="en"><b>Not only</b> is she smart, <b>but</b> she is also kind. <button class="sentence-btn" type="button" data-say="Not only is she smart, but she is also kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ Not only 放句首要倒裝</div></div><div class="ex o"><div class="en"><i>It is</i> practice <i>that</i> makes you better. <button class="sentence-btn" type="button" data-say="It is practice that makes you better." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 強調句：強調 practice</div></div></div></div></section>
+<section class="s paper"><h2>什麼是倒裝？否定副詞放句首</h2><div class="cards n2 tight"><div class="card g"><h3>倒裝的規則</h3><div class="sub">Negative Inversion</div><p class="row"><b>一般：</b>主詞 + 助動詞 + 動詞</p><p class="row"><b>倒裝：</b>否定副詞 + 助動詞 + 主詞 + 動詞</p><p class="row"><b>沒有助動詞：</b>借 do / does / did</p><div class="ex g"><div class="en">I have <b>never</b> seen such a big dog. <button class="sentence-btn" type="button" data-say="I have never seen such a big dog." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一般語序</div></div><div class="ex g"><div class="en"><b>Never have I seen</b> such a big dog. <button class="sentence-btn" type="button" data-say="Never have I seen such a big dog." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 倒裝：我從來沒看過這麼大的狗</div></div><div class="ex g"><div class="en"><b>Seldom does he</b> eat breakfast. <button class="sentence-btn" type="button" data-say="Seldom does he eat breakfast." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 借 does：他很少吃早餐</div></div></div><div class="card o"><h3>常見的否定副詞</h3><div class="sub">放句首就要倒裝</div><p class="row"><b>never：</b>從不</p><p class="row"><b>seldom / rarely：</b>很少</p><p class="row"><b>little：</b>一點也不（Little did I know…）</p><div class="ex o"><div class="en"><i>Rarely do we</i> see snow in Taipei. <button class="sentence-btn" type="button" data-say="Rarely do we see snow in Taipei." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 台北很少下雪</div></div><div class="ex o"><div class="en"><i>Little did I know</i> that he was the boss. <button class="sentence-btn" type="button" data-say="Little did I know that he was the boss." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我一點也不知道他是老闆</div></div><div class="note">倒裝像疑問句的語序：Have I…? Does he…? Did I…?</div></div></div></section>
+<section class="s paper"><h2>So / Neither / Nor + 助動詞 + 主詞</h2><div class="cards n2"><div class="card g"><h3>So：我也是（肯定）</h3><div class="sub">前面是肯定句</div><p class="row"><b>公式：</b>So + 助動詞 / be + 主詞</p><div class="ex g"><div class="en">A: I like pizza. B: <b>So do I</b>. <button class="sentence-btn" type="button" data-say="A: I like pizza. B: So do I." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我也喜歡（like 是一般動詞 → do）</div></div><div class="ex g"><div class="en">A: She is tired. B: <b>So am I</b>. <button class="sentence-btn" type="button" data-say="A: She is tired. B: So am I." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我也累（is → am）</div></div><div class="ex g"><div class="en">A: Tom has finished. B: <b>So has Amy</b>. <button class="sentence-btn" type="button" data-say="A: Tom has finished. B: So has Amy." aria-label="播放這個句子">🔊</button></div><div class="zh">→ Amy 也做完了（has → has）</div></div></div><div class="card o"><h3>Neither / Nor：我也不（否定）</h3><div class="sub">前面是否定句</div><p class="row"><b>公式：</b>Neither / Nor + 助動詞 / be + 主詞</p><div class="ex o"><div class="en">A: I can't swim. B: <i>Neither can I</i>. <button class="sentence-btn" type="button" data-say="A: I can&#x27;t swim. B: Neither can I." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我也不會</div></div><div class="ex o"><div class="en">A: He didn't go. B: <i>Nor did she</i>. <button class="sentence-btn" type="button" data-say="A: He didn&#x27;t go. B: Nor did she." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她也沒去</div></div><div class="ex o"><div class="en"><span class="bad">So I do.</span> → <span class="good">So do I.</span></div><div class="zh">→ So I do 是「我確實如此」，意思不一樣</div></div></div></div><div class="note">助動詞要跟著前一句：前一句用 can → can；用 is → am / is / are；用一般動詞過去式 → did。</div></section>
+<section class="s paper"><h2>Not until、Only、No sooner、Hardly</h2><table class="t"><thead><tr><th>句型</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>Not until + 時間 / 子句 + 倒裝</td><td>直到…才</td><td><div><b>Not until</b> midnight <b>did he</b> go to bed. <button class="sentence-btn" type="button" data-say="Not until midnight did he go to bed." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他直到半夜才去睡）</span></div></td></tr><tr><td>Only + 副詞 / 介系詞片語 + 倒裝</td><td>只有…才</td><td><div><b>Only then did I</b> understand the problem. <button class="sentence-btn" type="button" data-say="Only then did I understand the problem." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（那時我才明白這個問題）</span></div></td></tr><tr><td>Only when / if + 子句 + 倒裝</td><td>只有當…才</td><td><div><b>Only when</b> you work hard <b>will you</b> succeed. <button class="sentence-btn" type="button" data-say="Only when you work hard will you succeed." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（只有努力才會成功）</span></div></td></tr><tr><td>No sooner + had + S + p.p. + than</td><td>一…就…</td><td><div><b>No sooner had I</b> arrived <b>than</b> it began to rain. <button class="sentence-btn" type="button" data-say="No sooner had I arrived than it began to rain." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我一到就開始下雨）</span></div></td></tr><tr><td>Hardly / Scarcely + had + S + p.p. + when</td><td>一…就…</td><td><div><b>Hardly had she</b> sat down <b>when</b> the phone rang. <button class="sentence-btn" type="button" data-say="Hardly had she sat down when the phone rang." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（她一坐下電話就響了）</span></div></td></tr></tbody></table><div class="note">Not until 和 Only 的句子，倒裝放在「主要子句」：Not until he came <b>did we</b> start（不是 did he come）。</div></section>
+<section class="s paper"><h2>Not only 句首倒裝與地方副詞倒裝</h2><div class="cards n2"><div class="card g"><h3>Not only…but (also)…</h3><div class="sub">只有前半句倒裝</div><p class="row"><b>一般：</b>She is not only smart but also kind.</p><p class="row"><b>倒裝：</b>Not only + 助動詞 + 主詞…, but + 主詞 + also…</p><div class="ex g"><div class="en"><b>Not only is she</b> smart, but she is also kind. <button class="sentence-btn" type="button" data-say="Not only is she smart, but she is also kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她不但聰明，而且善良</div></div><div class="ex g"><div class="en"><b>Not only did he</b> win, but he also broke the record. <button class="sentence-btn" type="button" data-say="Not only did he win, but he also broke the record." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他不但贏了，還破了紀錄</div></div></div><div class="card o"><h3>地方副詞放句首</h3><div class="sub">Here / There / On the hill…</div><p class="row"><b>公式：</b>地方副詞 + 動詞 + 名詞主詞</p><p class="row"><b>注意：</b>主詞是代名詞時「不」倒裝</p><div class="ex o"><div class="en"><i>Here comes</i> the bus! <button class="sentence-btn" type="button" data-say="Here comes the bus!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 公車來了！</div></div><div class="ex o"><div class="en"><i>On the hill stands</i> an old temple. <button class="sentence-btn" type="button" data-say="On the hill stands an old temple." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 山丘上矗立著一座老廟</div></div><div class="ex o"><div class="en"><i>Here it comes</i>! <button class="sentence-btn" type="button" data-say="Here it comes!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 代名詞 it 不倒裝</div></div></div></div></section>
+<section class="s paper"><h2>條件句的倒裝：省略 if</h2><table class="t"><thead><tr><th>原句</th><th>倒裝（省略 if）</th><th>例句</th></tr></thead><tbody><tr><td>If I had known…</td><td>Had I known…</td><td><div><b>Had I known</b> the truth, I would have told you. <button class="sentence-btn" type="button" data-say="Had I known the truth, I would have told you." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（如果我早知道真相，我就會告訴你了）</span></div></td></tr><tr><td>If I were you…</td><td>Were I you…</td><td><div><b>Were I</b> you, I would take the job. <button class="sentence-btn" type="button" data-say="Were I you, I would take the job." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（如果我是你，我會接受這份工作）</span></div></td></tr><tr><td>If you should need…</td><td>Should you need…</td><td><div><b>Should you need</b> help, please call me. <button class="sentence-btn" type="button" data-say="Should you need help, please call me." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（萬一你需要幫忙，請打給我）</span></div></td></tr></tbody></table><div class="note">第 7、8 週學過條件句與假設語氣；把 if 拿掉後，had、were、should 就要搬到主詞前面。這種寫法在英檢中級閱讀很常見。</div></section>
+<section class="s paper"><h2>強調句：It is / was … that …</h2><div class="cards n2"><div class="card g"><h3>把要強調的部分放進 It is…that</h3><div class="sub">Cleft Sentence</div><p class="row"><b>原句：</b>Tom broke the window yesterday.</p><div class="ex g"><div class="en"><b>It was Tom that</b> broke the window yesterday. <button class="sentence-btn" type="button" data-say="It was Tom that broke the window yesterday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 強調人：是 Tom 打破的</div></div><div class="ex g"><div class="en"><b>It was the window that</b> Tom broke yesterday. <button class="sentence-btn" type="button" data-say="It was the window that Tom broke yesterday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 強調物：打破的是窗戶</div></div><div class="ex g"><div class="en"><b>It was yesterday that</b> Tom broke the window. <button class="sentence-btn" type="button" data-say="It was yesterday that Tom broke the window." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 強調時間：是昨天打破的</div></div></div><div class="card o"><h3>小提醒</h3><div class="sub">that / who</div><p class="row"><b>人：</b>可以用 who 代替 that</p><p class="row"><b>時態：</b>現在用 It is，過去用 It was</p><p class="row"><b>怎麼檢查：</b>拿掉 It is / was 和 that，句子還要完整</p><div class="ex o"><div class="en"><i>It is</i> my mother <i>who</i> cooks dinner every day. <button class="sentence-btn" type="button" data-say="It is my mother who cooks dinner every day." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 每天煮晚餐的是我媽媽</div></div><div class="ex o"><div class="en"><i>It was</i> in 2020 <i>that</i> we moved here. <button class="sentence-btn" type="button" data-say="It was in 2020 that we moved here." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我們是在 2020 年搬來的</div></div></div></div></section>
+<section class="s paper"><h2>What 強調句與助動詞 do 加強語氣</h2><div class="cards n2"><div class="card g"><h3>What…is…</h3><div class="sub">第 12 週的複合關代 what</div><p class="row"><b>公式：</b>What + S + V + is / was + 重點</p><div class="ex g"><div class="en"><b>What I need is</b> a good rest. <button class="sentence-btn" type="button" data-say="What I need is a good rest." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我需要的是好好休息</div></div><div class="ex g"><div class="en"><b>What he said was</b> true. <button class="sentence-btn" type="button" data-say="What he said was true." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他說的是真的</div></div><div class="ex g"><div class="en"><b>All I want is</b> a cup of coffee. <button class="sentence-btn" type="button" data-say="All I want is a cup of coffee." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我只想要一杯咖啡</div></div></div><div class="card o"><h3>do / does / did + 原形</h3><div class="sub">後面一定接原形</div><p class="row"><b>用途：</b>加強語氣「真的、確實」</p><div class="ex o"><div class="en">I <i>do</i> like your new hairstyle. <button class="sentence-btn" type="button" data-say="I do like your new hairstyle." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我真的很喜歡你的新髮型</div></div><div class="ex o"><div class="en">She <i>does</i> work hard. <button class="sentence-btn" type="button" data-say="She does work hard." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她確實很努力</div></div><div class="ex o"><div class="en">He <i>did</i> call you yesterday. <button class="sentence-btn" type="button" data-say="He did call you yesterday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他昨天真的有打給你</div></div></div></div></section>
+<section class="s paper"><h2>對比頁：容易搞混的四組</h2><div class="two tight"><div class="card g"><h3>So do I 與 So I do</h3><div class="ex g"><div class="en">A: I love music. B: <b>So do I</b>. <button class="sentence-btn" type="button" data-say="A: I love music. B: So do I." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我也是</div></div><div class="ex o"><div class="en">A: You love music! B: Yes, <i>so I do</i>. <button class="sentence-btn" type="button" data-say="A: You love music! B: Yes, so I do." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我確實是（同意對方說的）</div></div></div><div class="card o"><h3>一般語序與倒裝</h3><div class="ex g"><div class="en">I <b>have never</b> seen it. <button class="sentence-btn" type="button" data-say="I have never seen it." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 否定副詞在中間，不倒裝</div></div><div class="ex o"><div class="en"><i>Never have I</i> seen it. <button class="sentence-btn" type="button" data-say="Never have I seen it." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 否定副詞在句首，要倒裝</div></div></div></div><div class="two tight"><div class="card g"><h3>Here comes he 與 Here he comes</h3><div class="ex g"><div class="en"><b>Here comes</b> the teacher. <button class="sentence-btn" type="button" data-say="Here comes the teacher." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 名詞主詞要倒裝</div></div><div class="ex o"><div class="en"><i>Here he comes</i>. <button class="sentence-btn" type="button" data-say="Here he comes." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 代名詞主詞不倒裝</div></div></div><div class="card o"><h3>It is…that 與 It is…to V</h3><div class="ex g"><div class="en"><b>It is</b> Amy <b>that</b> won the prize. <button class="sentence-btn" type="button" data-say="It is Amy that won the prize." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 強調句，拿掉後句子完整</div></div><div class="ex o"><div class="en"><i>It is</i> important <i>to</i> exercise. <button class="sentence-btn" type="button" data-say="It is important to exercise." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 虛主詞 it，不是強調句</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">Never I have seen such a thing.</span> → <span class="good">Never have I seen such a thing.</span></div><div class="why">否定副詞放句首，助動詞要放到主詞前面。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">Seldom he eats breakfast.</span> → <span class="good">Seldom does he eat breakfast.</span></div><div class="why">沒有助動詞時要借 does，動詞改回原形。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">A: I can't swim. B: So can't I.</span> → <span class="good">A: I can't swim. B: Neither can I.</span></div><div class="why">否定句的「我也不」用 Neither / Nor。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">Not until he came home he started dinner.</span> → <span class="good">Not until he came home did he start dinner.</span></div><div class="why">Not until 放句首，主要子句要倒裝。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">It was Tom what broke the window.</span> → <span class="good">It was Tom that broke the window.</span></div><div class="why">強調句是 It is / was…that（人也可用 who）。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Rarely ____ late for school. (he is / is he)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>is he</span></div><div class="qa"><span class="n">2</span><span class="q">Little ____ that it was a trick. (I knew / did I know)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>did I know</span></div><div class="qa"><span class="n">3</span><span class="q">A: I am hungry. B: So ____ I. (do / am)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>am</span></div><div class="qa"><span class="n">4</span><span class="q">A: She didn't come. B: Neither ____ I. (did / was)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>did</span></div><div class="qa"><span class="n">5</span><span class="q">Not until ten ____ home. (did he get / he got)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>did he get</span></div><div class="qa"><span class="n">6</span><span class="q">No sooner had I left ____ it rained. (when / than)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>than</span></div><div class="qa"><span class="n">7</span><span class="q">____ I you, I would say sorry. (Were / Was)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Were</span></div><div class="qa"><span class="n">8</span><span class="q">____ I need is more time. (What / That)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>What</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Only then I understood the lesson.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I understood → did I understand</span></div><div class="qa"><span class="n">2</span><span class="q">Hardly had he sat down than the bell rang.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>than → when</span></div><div class="qa"><span class="n">3</span><span class="q">Here comes it!</span><button class="rv" type="button">看答案</button><span class="ans" hidden>改成 Here it comes!</span></div></div></div><div><p class="lead">改寫成指定句型</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I have never been so happy.（用 Never 開頭）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Never have I been so happy.</span></div><div class="qa"><span class="n">2</span><span class="q">If I had known, I would have come.（省略 if）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Had I known, I would have come.</span></div><div class="qa"><span class="n">3</span><span class="q">My dad fixed the bike.（強調 my dad）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>It was my dad that / who fixed the bike.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en"><span class="hl">Never had</span> the village <span class="hl">seen</span> so much snow. <span class="hl">Not until</span> noon <span class="hl">did</span> the roads open again. <span class="hl2">It was</span> an old farmer <span class="hl2">who</span> cleared the main road first. <span class="hl">Hardly had</span> he finished <span class="hl">when</span> the children ran out to play. <span class="hl2">What</span> the village needed <span class="hl2">was</span> a hero, and he was one.<button class="sentence-btn" type="button" data-say="Never had the village seen so much snow. Not until noon did the roads open again. It was an old farmer who cleared the main road first. Hardly had he finished when the children ran out to play. What the village needed was a hero, and he was one." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>句首看到 Never、Not until、Hardly，主詞在助動詞後面，要往後找</li><li>It was…who / that 中間夾的就是作者要強調的重點</li><li>What…was… 後半部才是答案的關鍵</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 So do I、Neither can I，表示說話者「也一樣」</li><li>Not until… 表示「直到那時才」，題目常考時間</li><li>No sooner…than、Hardly…when 表示兩件事緊接著發生</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的句子。</p><div class="two"><div><div class="ex g"><div class="en"><b>Never have I</b> seen such a beautiful sunset. <button class="sentence-btn" type="button" data-say="Never have I seen such a beautiful sunset." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 否定副詞倒裝</div></div><div class="ex g"><div class="en">A: I love bubble tea. B: <b>So do I</b>! <button class="sentence-btn" type="button" data-say="A: I love bubble tea. B: So do I!" aria-label="播放這個句子">🔊</button></div><div class="zh">→ So + 助動詞 + 主詞</div></div><div class="ex g"><div class="en"><b>Not until</b> I got home <b>did I</b> notice my phone was gone. <button class="sentence-btn" type="button" data-say="Not until I got home did I notice my phone was gone." aria-label="播放這個句子">🔊</button></div><div class="zh">→ Not until 倒裝</div></div></div><div><div class="ex o"><div class="en"><i>It was</i> my grandmother <i>who</i> taught me to cook. <button class="sentence-btn" type="button" data-say="It was my grandmother who taught me to cook." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 強調句</div></div><div class="ex o"><div class="en"><i>What I need</i> most <i>is</i> a long holiday. <button class="sentence-btn" type="button" data-say="What I need most is a long holiday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ What 強調句</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>重點</th><th>規則</th></tr></thead><tbody><tr><td>否定副詞倒裝</td><td>Never / Seldom / Little + 助動詞 + 主詞</td></tr><tr><td>So / Neither</td><td>So do I（肯定）、Neither can I（否定）</td></tr><tr><td>Not until / Only</td><td>主要子句倒裝</td></tr><tr><td>No sooner / Hardly</td><td>had + S + p.p. + than / when</td></tr><tr><td>條件句倒裝</td><td>Had I…、Were I…、Should you…</td></tr><tr><td>強調句</td><td>It is / was…that（who）、What…is…、do + 原形</td></tr></tbody></table><div class="note">口訣：否定放前頭，助動詞往前走；So 肯定 Neither 否；強調句拿掉 It is 和 that，句子還完整。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 16 週比較與平行結構</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>用 Never have I… 寫一句你沒做過的事。</li><li>和家人練習三組 So do I / Neither can I 的對話。</li><li>用 It was…who… 寫一句感謝某個人的話。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

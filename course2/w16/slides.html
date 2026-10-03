@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第二期 WEEK 16 投影片｜比較結構與平行對等</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">WEEK 16 · SLIDES</div>
+    <h1 class="page">比較結構與平行對等</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">🏠 回總目錄</a>
+    <a class="quiz-link" href="quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">WEEK 16 · GRAMMAR</div><h1 class="big">比較結構與平行對等</h1><div class="en-sub">Comparisons &amp; Parallel Structure</div><div class="venn"><span class="c1">as…as</span><span class="c2">not only…but also</span></div></section>
+<section class="s paper"><h2>本週目標與暖身</h2><div class="cards n2"><div class="card g"><h3>本週目標</h3><ul class="b"><li>用 as…as、not as / so…as 做同級比較，會說倍數（twice as…as）</li><li>會用 the 比較級…, the 比較級… 和 比較級 and 比較級</li><li>用比較級說出最高級：than any other、no other</li><li>用 both…and、either…or、neither…nor、not only…but also，動詞和誰一致</li><li>平行結構：and、or、but 前後的形式要一樣</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">My bag is as ____ as yours. (heavy / heavier)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>heavy</span></div><div class="qa"><span class="n">2</span><span class="q">The more you practice, the ____ you get. (better / best)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>better</span></div><div class="qa"><span class="n">3</span><span class="q">Neither Tom nor his sisters ____ here. (is / are)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>are</span></div></div></div></div></section>
+<section class="s paper"><h2>回收：第 14 週的分詞構句與連接詞</h2><p class="lead">上週把兩個句子接起來；這週把兩樣東西「拿來比」或「並排放」。</p><div class="cards n2"><div class="card g"><h3>第 14 週回顧</h3><div class="ex g"><div class="en"><b>Having finished</b> my homework, I went out. <button class="sentence-btn" type="button" data-say="Having finished my homework, I went out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 分詞構句：比主句更早發生</div></div><div class="ex o"><div class="en"><i>Despite</i> the rain, we went to the park. <button class="sentence-btn" type="button" data-say="Despite the rain, we went to the park." aria-label="播放這個句子">🔊</button></div><div class="zh">→ despite + 名詞</div></div></div><div class="card o"><h3>這週的延伸</h3><div class="ex g"><div class="en">My room is <b>twice as big as</b> yours. <button class="sentence-btn" type="button" data-say="My room is twice as big as yours." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 倍數 + as…as</div></div><div class="ex o"><div class="en">She is <i>not only</i> smart <i>but also</i> kind. <button class="sentence-btn" type="button" data-say="She is not only smart but also kind." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 對等連接詞：前後形式一致</div></div></div></div></section>
+<section class="s paper"><h2>同級比較：as…as 與 not as / so…as</h2><div class="cards n2"><div class="card g"><h3>as + 原級 + as</h3><div class="sub">一樣…</div><p class="row"><b>公式：</b>A + be/V + as + 形容詞/副詞原級 + as + B</p><p class="row"><b>意思：</b>「A 和 B 一樣…」</p><div class="ex g"><div class="en">Tom is <b>as tall as</b> his father. <button class="sentence-btn" type="button" data-say="Tom is as tall as his father." aria-label="播放這個句子">🔊</button></div><div class="zh">→ Tom 和他爸爸一樣高</div></div><div class="ex g"><div class="en">She runs <b>as fast as</b> her brother. <button class="sentence-btn" type="button" data-say="She runs as fast as her brother." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 修飾動詞 runs，用副詞 fast</div></div></div><div class="card o"><h3>not as / so + 原級 + as</h3><div class="sub">沒有那麼…</div><p class="row"><b>公式：</b>A + not + as / so + 原級 + as + B</p><p class="row"><b>意思：</b>「A 沒有 B 那麼…」= A 比 B 更不…</p><div class="ex o"><div class="en">This test is <i>not as difficult as</i> the last one. <button class="sentence-btn" type="button" data-say="This test is not as difficult as the last one." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 這次考試沒有上次那麼難</div></div><div class="ex o"><div class="en">I can't swim <i>so well as</i> you. <button class="sentence-btn" type="button" data-say="I can&#x27;t swim so well as you." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 否定句才可以用 so…as</div></div></div></div><div class="note">as…as 中間一定是「原級」：as taller as、as tallest as 都是錯的。也可以說 as many books as、as much money as。</div></section>
+<section class="s paper"><h2>倍數與比較級的修飾語</h2><div class="cards n2 tight"><div class="card g"><h3>倍數的兩種說法</h3><div class="sub">twice、three times、half</div><p class="row"><b>公式 1：</b>倍數 + as + 原級 + as</p><p class="row"><b>公式 2：</b>倍數 + 比較級 + than（三倍以上較常用）</p><div class="ex g"><div class="en">My room is <b>twice as big as</b> yours. <button class="sentence-btn" type="button" data-say="My room is twice as big as yours." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我的房間是你的兩倍大</div></div><div class="ex g"><div class="en">This bag costs <b>three times as much as</b> that one. <button class="sentence-btn" type="button" data-say="This bag costs three times as much as that one." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 這個包包的價錢是那個的三倍</div></div><div class="ex g"><div class="en">The new road is <b>three times longer than</b> the old one. <button class="sentence-btn" type="button" data-say="The new road is three times longer than the old one." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 新路比舊路長三倍</div></div></div><div class="card o"><h3>強調比較級：much、far、even、a lot</h3><div class="sub">「…得多」</div><p class="row"><b>可以用：</b>much、far、even、a lot、still</p><p class="row"><b>不能用：</b><span class="bad">very</span> + 比較級</p><div class="ex o"><div class="en">This phone is <i>much cheaper</i> than that one. <button class="sentence-btn" type="button" data-say="This phone is much cheaper than that one." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 便宜得多</div></div><div class="ex o"><div class="en">Today is <i>even hotter</i> than yesterday. <button class="sentence-btn" type="button" data-say="Today is even hotter than yesterday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 今天比昨天還要熱</div></div><div class="ex o"><div class="en">She is <i>far better</i> at math than I am. <button class="sentence-btn" type="button" data-say="She is far better at math than I am." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她數學好得多</div></div></div></div></section>
+<section class="s paper"><h2>the 比較級…, the 比較級… 與 比較級 and 比較級</h2><div class="cards n2"><div class="card g"><h3>越…就越…</h3><div class="sub">the + 比較級，兩邊都要有 the</div><p class="row"><b>公式：</b>The + 比較級 + S + V, the + 比較級 + S + V</p><div class="ex g"><div class="en"><b>The more</b> you practice, <b>the better</b> you get. <button class="sentence-btn" type="button" data-say="The more you practice, the better you get." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你練習越多，就變得越好</div></div><div class="ex g"><div class="en"><b>The older</b> he gets, <b>the wiser</b> he becomes. <button class="sentence-btn" type="button" data-say="The older he gets, the wiser he becomes." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 他年紀越大，就越有智慧</div></div><div class="ex g"><div class="en"><b>The sooner</b>, <b>the better</b>. <button class="sentence-btn" type="button" data-say="The sooner, the better." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 越快越好（慣用語，可省略主詞動詞）</div></div></div><div class="card o"><h3>越來越…</h3><div class="sub">get / become / grow + 比較級 and 比較級</div><p class="row"><b>公式：</b>比較級 + and + 比較級 / more and more + 原級</p><div class="ex o"><div class="en">It is getting <i>colder and colder</i>. <button class="sentence-btn" type="button" data-say="It is getting colder and colder." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 天氣越來越冷</div></div><div class="ex o"><div class="en">English is becoming <i>more and more</i> important. <button class="sentence-btn" type="button" data-say="English is becoming more and more important." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 英文變得越來越重要</div></div><div class="ex o"><div class="en"><i>Fewer and fewer</i> people write letters now. <button class="sentence-btn" type="button" data-say="Fewer and fewer people write letters now." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 越來越少人寫信了</div></div></div></div></section>
+<section class="s paper"><h2>用比較級說出最高級</h2><table class="t"><thead><tr><th>句型</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>than any other + 單數名詞</td><td>比其他任何…都</td><td><div>Mount Jade is higher <b>than any other mountain</b> in Taiwan. <button class="sentence-btn" type="button" data-say="Mount Jade is higher than any other mountain in Taiwan." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（玉山比台灣其他任何一座山都高）</span></div></td></tr><tr><td>No other + 單數名詞 + 比較級 + than</td><td>沒有其他…比…更</td><td><div><b>No other</b> mountain in Taiwan <b>is higher than</b> Mount Jade. <button class="sentence-btn" type="button" data-say="No other mountain in Taiwan is higher than Mount Jade." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（台灣沒有別的山比玉山高）</span></div></td></tr><tr><td>one of the + 最高級 + 複數名詞</td><td>最…的之一</td><td><div>She is <b>one of the best students</b> in our class. <button class="sentence-btn" type="button" data-say="She is one of the best students in our class." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（她是我們班最好的學生之一）</span></div></td></tr><tr><td>最高級 + (that) S + have ever p.p.</td><td>我…過最…的</td><td><div>This is <b>the funniest movie I have ever seen</b>. <button class="sentence-btn" type="button" data-say="This is the funniest movie I have ever seen." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這是我看過最好笑的電影）</span></div></td></tr></tbody></table><div class="note">than any other 後面接「單數名詞」，而且要有 other（不能和自己比）；one of the 後面接「複數名詞」。</div></section>
+<section class="s paper"><h2>比較的對象要一致，與不用 than 的比較</h2><div class="cards n2"><div class="card g"><h3>比較對象要對等</h3><div class="sub">that / those / 所有格</div><p class="row"><b>規則：</b>拿「東西」比「東西」，不能拿「東西」比「人」</p><div class="ex g"><div class="en">The weather in Taipei is hotter than <b>that</b> in Tokyo. <button class="sentence-btn" type="button" data-say="The weather in Taipei is hotter than that in Tokyo." aria-label="播放這個句子">🔊</button></div><div class="zh">→ that = the weather（單數）</div></div><div class="ex g"><div class="en">The prices here are higher than <b>those</b> in my town. <button class="sentence-btn" type="button" data-say="The prices here are higher than those in my town." aria-label="播放這個句子">🔊</button></div><div class="zh">→ those = the prices（複數）</div></div><div class="ex g"><div class="en">My bike is newer than <b>my brother's</b>. <button class="sentence-btn" type="button" data-say="My bike is newer than my brother&#x27;s." aria-label="播放這個句子">🔊</button></div><div class="zh">→ my brother's = my brother's bike</div></div></div><div class="card o"><h3>不用 than 的比較</h3><div class="sub">to / than 的特別用法</div><p class="row"><b>superior / inferior to：</b>比…優秀／差</p><p class="row"><b>prefer A to B：</b>比起 B 更喜歡 A</p><p class="row"><b>would rather A than B：</b>寧願 A 也不要 B（接原形）</p><div class="ex o"><div class="en">This phone is <i>superior to</i> that one. <button class="sentence-btn" type="button" data-say="This phone is superior to that one." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 這支手機比那支好</div></div><div class="ex o"><div class="en">I <i>prefer</i> tea <i>to</i> coffee. <button class="sentence-btn" type="button" data-say="I prefer tea to coffee." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 比起咖啡我更喜歡茶</div></div><div class="ex o"><div class="en">I would <i>rather</i> stay home <i>than</i> go out. <button class="sentence-btn" type="button" data-say="I would rather stay home than go out." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我寧願待在家也不要出門</div></div></div></div></section>
+<section class="s paper"><h2>對等相關連接詞：both、either、neither、not only</h2><table class="t"><thead><tr><th>句型</th><th>意思</th><th>動詞跟誰</th><th>例句</th></tr></thead><tbody><tr><td>both A and B</td><td>A 和 B 都</td><td>複數</td><td><div><b>Both</b> Tom <b>and</b> Amy <b>are</b> students. <button class="sentence-btn" type="button" data-say="Both Tom and Amy are students." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（Tom 和 Amy 都是學生）</span></div></td></tr><tr><td>either A or B</td><td>不是 A 就是 B</td><td>靠近的 B</td><td><div><b>Either</b> you <b>or</b> he <b>has</b> to go. <button class="sentence-btn" type="button" data-say="Either you or he has to go." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（不是你就是他得去）</span></div></td></tr><tr><td>neither A nor B</td><td>A 和 B 都不</td><td>靠近的 B</td><td><div><b>Neither</b> Tom <b>nor</b> his sisters <b>are</b> here. <button class="sentence-btn" type="button" data-say="Neither Tom nor his sisters are here." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（Tom 和他姊妹都不在）</span></div></td></tr><tr><td>not only A but also B</td><td>不但 A 而且 B</td><td>靠近的 B</td><td><div><b>Not only</b> the students <b>but also</b> the teacher <b>was</b> late. <button class="sentence-btn" type="button" data-say="Not only the students but also the teacher was late." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（不但學生，連老師也遲到了）</span></div></td></tr><tr><td>not A but B</td><td>不是 A 而是 B</td><td>B</td><td><div>He is <b>not</b> a doctor <b>but</b> a nurse. <button class="sentence-btn" type="button" data-say="He is not a doctor but a nurse." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他不是醫生，而是護理師）</span></div></td></tr></tbody></table><div class="note">口訣：both 一定用複數；either…or、neither…nor、not only…but also 都是「就近原則」，動詞看最靠近的那個主詞。</div></section>
+<section class="s paper"><h2>平行結構：and、or、but 前後要一樣</h2><div class="cards n2"><div class="card g"><h3>形式要一致</h3><div class="sub">Parallel Structure</div><p class="row"><b>名詞 & 名詞：</b>reading, music, and sports</p><p class="row"><b>V-ing & V-ing：</b>I like reading and swimming.</p><p class="row"><b>to V & to V：</b>I want to learn and (to) grow.</p><p class="row"><b>形容詞 & 形容詞：</b>smart, kind, and funny</p><div class="ex g"><div class="en">She likes <b>reading</b>, <b>swimming</b>, and <b>dancing</b>. <button class="sentence-btn" type="button" data-say="She likes reading, swimming, and dancing." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 三個都是 V-ing</div></div><div class="ex g"><div class="en">He is <b>smart</b>, <b>kind</b>, and <b>funny</b>. <button class="sentence-btn" type="button" data-say="He is smart, kind, and funny." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 三個都是形容詞</div></div></div><div class="card o"><h3>相關連接詞也要平行</h3><div class="sub">前後對稱</div><p class="row"><b>規則：</b>both、either、neither、not only 後面接的東西，要和 and、or、nor、but also 後面的形式一樣</p><div class="ex o"><div class="en">She is <i>not only</i> smart <i>but also</i> hardworking. <button class="sentence-btn" type="button" data-say="She is not only smart but also hardworking." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 形容詞對形容詞</div></div><div class="ex o"><div class="en">You can <i>either</i> walk <i>or</i> take the bus. <button class="sentence-btn" type="button" data-say="You can either walk or take the bus." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 原形對原形</div></div><div class="ex o"><div class="en"><span class="bad">She likes to swim and dancing.</span></div><div class="zh">→ to swim 和 dancing 不平行，要改成 swimming and dancing</div></div></div></div></section>
+<section class="s paper"><h2>對比頁：容易搞混的四組</h2><div class="two tight"><div class="card g"><h3>as…as 與 than</h3><div class="ex g"><div class="en">He is <b>as tall as</b> me. <button class="sentence-btn" type="button" data-say="He is as tall as me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一樣高，中間用原級</div></div><div class="ex o"><div class="en">He is <i>taller than</i> me. <button class="sentence-btn" type="button" data-say="He is taller than me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 比較高，用比較級 + than</div></div></div><div class="card o"><h3>much taller 與 very tall</h3><div class="ex g"><div class="en">He is <b>much taller</b> than me. <button class="sentence-btn" type="button" data-say="He is much taller than me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 比較級用 much 加強</div></div><div class="ex o"><div class="en">He is <i>very tall</i>. <button class="sentence-btn" type="button" data-say="He is very tall." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 原級才用 very</div></div></div></div><div class="two tight"><div class="card g"><h3>both…and 與 either…or</h3><div class="ex g"><div class="en"><b>Both</b> he <b>and</b> I <b>are</b> ready. <button class="sentence-btn" type="button" data-say="Both he and I are ready." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 兩個都，動詞用複數</div></div><div class="ex o"><div class="en"><i>Either</i> he <i>or</i> I <i>am</i> wrong. <button class="sentence-btn" type="button" data-say="Either he or I am wrong." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 其中一個，動詞看 I</div></div></div><div class="card o"><h3>prefer A to B 與 would rather A than B</h3><div class="ex g"><div class="en">I <b>prefer</b> walking <b>to</b> driving. <button class="sentence-btn" type="button" data-say="I prefer walking to driving." aria-label="播放這個句子">🔊</button></div><div class="zh">→ to 是介系詞，接 V-ing</div></div><div class="ex o"><div class="en">I would <i>rather</i> walk <i>than</i> drive. <button class="sentence-btn" type="button" data-say="I would rather walk than drive." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 接原形動詞</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">He is as taller as his father.</span> → <span class="good">He is as tall as his father.</span></div><div class="why">as…as 中間用原級。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">This book is very better than that one.</span> → <span class="good">This book is much better than that one.</span></div><div class="why">比較級要用 much、far、even 加強，不能用 very。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">Mount Jade is higher than any mountain in Taiwan.</span> → <span class="good">Mount Jade is higher than any other mountain in Taiwan.</span></div><div class="why">玉山本身就在台灣，要加 other，不能和自己比。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">Neither my brother nor I are hungry.</span> → <span class="good">Neither my brother nor I am hungry.</span></div><div class="why">neither…nor 動詞看最靠近的主詞 I。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">I like swimming, to read, and play games.</span> → <span class="good">I like swimming, reading, and playing games.</span></div><div class="why">並列的東西形式要一樣（平行結構）。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">She is as ____ as her mother. (beautiful / more beautiful)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>beautiful</span></div><div class="qa"><span class="n">2</span><span class="q">This box is ____ heavier than that one. (very / much)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>much</span></div><div class="qa"><span class="n">3</span><span class="q">My room is ____ as big as yours. (two times / twice)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>twice</span></div><div class="qa"><span class="n">4</span><span class="q">The harder you work, ____ you will be. (the more successful / more successful)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>the more successful</span></div><div class="qa"><span class="n">5</span><span class="q">It is getting ____. (warmer and warmer / warm and warm)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>warmer and warmer</span></div><div class="qa"><span class="n">6</span><span class="q">She is one of the best ____ in our school. (singer / singers)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>singers</span></div><div class="qa"><span class="n">7</span><span class="q">Both my father and my mother ____ teachers. (is / are)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>are</span></div><div class="qa"><span class="n">8</span><span class="q">Either you or Tom ____ to clean the room. (has / have)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>has</span></div></div></section>
+<section class="s paper"><h2>挑錯練習與句型轉換</h2><div class="two"><div><p class="lead">挑錯：每句有一個錯</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">The weather in Taipei is hotter than Tokyo.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Tokyo → that in Tokyo</span></div><div class="qa"><span class="n">2</span><span class="q">She is not only kind but also she is smart.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>改成 not only kind but also smart</span></div><div class="qa"><span class="n">3</span><span class="q">I prefer tea than coffee.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>than → to</span></div></div></div><div><p class="lead">改寫成指定句型</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Tom is taller than any other boy in his class.（用 No other）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>No other boy in his class is taller than Tom.</span></div><div class="qa"><span class="n">2</span><span class="q">You eat more; you get fatter.（用 The…, the…）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>The more you eat, the fatter you get.</span></div><div class="qa"><span class="n">3</span><span class="q">Tom is not here. Mary is not here.（用 Neither…nor）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Neither Tom nor Mary is here.</span></div></div></div></div></section>
+<section class="s paper"><h2>在閱讀與聽力裡找到它</h2><div class="card"><div class="ex"><div class="en">Is city life <span class="hl">better than</span> country life? In the city, buses come <span class="hl">much more often</span>, and shops stay open <span class="hl">later</span>. However, rent in the city can be <span class="hl">twice as high as</span> it is in the country. <span class="hl2">The bigger</span> a city grows, <span class="hl2">the busier</span> its streets become. Country life is <span class="hl2">not only</span> quiet <span class="hl2">but also</span> healthy.<button class="sentence-btn" type="button" data-say="Is city life better than country life? In the city, buses come much more often, and shops stay open later. However, rent in the city can be twice as high as it is in the country. The bigger a city grows, the busier its streets become. Country life is not only quiet but also healthy." aria-label="播放這個句子">🔊</button></div></div></div><div class="cards n2"><div class="card g"><h3>閱讀怎麼用</h3><ul class="b"><li>看到 than、as…as，先找「誰和誰比」</li><li>the + 比較級, the + 比較級：前面是條件，後面是結果</li><li>not only A but also B：B 通常是作者要強調的新資訊</li></ul></div><div class="card o"><h3>聽力怎麼用</h3><ul class="b"><li>聽到 twice、three times，題目常考倍數或價錢</li><li>聽到 not as…as，代表前者「比較不…」</li><li>聽到 neither…nor，表示兩個都沒有</li></ul></div></div></section>
+<section class="s paper"><h2>口說句型跟讀</h2><p class="lead">先按 🔊 聽，再跟著大聲念，最後換成自己的句子。</p><div class="two"><div><div class="ex g"><div class="en">My sister is <b>not as tall as</b> I am. <button class="sentence-btn" type="button" data-say="My sister is not as tall as I am." aria-label="播放這個句子">🔊</button></div><div class="zh">→ not as…as</div></div><div class="ex g"><div class="en"><b>The more</b> I read, <b>the more</b> I learn. <button class="sentence-btn" type="button" data-say="The more I read, the more I learn." aria-label="播放這個句子">🔊</button></div><div class="zh">→ the 比較級, the 比較級</div></div><div class="ex g"><div class="en">Taipei 101 is taller <b>than any other building</b> in Taiwan. <button class="sentence-btn" type="button" data-say="Taipei 101 is taller than any other building in Taiwan." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 比較級表最高級</div></div></div><div><div class="ex o"><div class="en">I like <i>both</i> basketball <i>and</i> swimming. <button class="sentence-btn" type="button" data-say="I like both basketball and swimming." aria-label="播放這個句子">🔊</button></div><div class="zh">→ both…and</div></div><div class="ex o"><div class="en">My best friend is <i>not only</i> funny <i>but also</i> helpful. <button class="sentence-btn" type="button" data-say="My best friend is not only funny but also helpful." aria-label="播放這個句子">🔊</button></div><div class="zh">→ not only…but also</div></div></div></div></section>
+<section class="s paper"><h2>重點整理與測驗說明</h2><div class="two"><div><table class="t"><thead><tr><th>重點</th><th>規則</th></tr></thead><tbody><tr><td>as…as</td><td>中間用原級；否定 not as / so…as</td></tr><tr><td>倍數</td><td>twice / three times + as…as 或 + 比較級 than</td></tr><tr><td>the 比較級, the 比較級</td><td>越…就越…，兩邊都要 the</td></tr><tr><td>than any other</td><td>後面接單數名詞，要有 other</td></tr><tr><td>neither…nor / either…or</td><td>動詞看最靠近的主詞</td></tr><tr><td>平行結構</td><td>and、or、but 前後形式相同</td></tr></tbody></table><div class="note">口訣：as 中間放原級，比較加強用 much；both 複數、either 就近；並排的東西要長得一樣。</div></div><div><div class="card o"><h3>本週測驗：64 題</h3><p class="row"><b>題型：</b>文法 20．閱讀 10．克漏字 4．單字 10．聽力 15．口說 5</p><ul class="b"><li>文法 20 題中，16 題是本週新教，4 題回收第 14 週分詞構句與連接詞</li></ul></div><div class="card g"><h3>回家作業</h3><ol class="b"><li>用 as…as 和 not as…as 各寫一句比較你和家人。</li><li>用 The more…, the more… 寫一句學習心得。</li><li>用 not only…but also 介紹你的好朋友，注意平行結構。</li></ol></div></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>
