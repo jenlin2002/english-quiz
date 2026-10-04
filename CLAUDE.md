@@ -67,3 +67,11 @@
    - 英文測驗頁模板 `tools/templates/tpl-quiz.html`（plan repo）已含點數；`deploy_site.py` 會複製 `points.js`。
      之後手機端新做的週次（W21 起）要從更新後的模板建，或執行 `patch_quiz_points.py`。
    - 還沒接的：exam-bank（段考題庫）的 `sync.js`；使用者沒提，沒做。
+   - **訪客模式（2026-10-04，手機雲端版加的）**：「你是誰？」關卡多了「我是訪客（不用 PIN，不計點數）」，輸入名字就能用；
+     存在 localStorage `pointsGuest`，`quizStudentName` 設成「訪客 名字」（成績照樣同步到試算表，但 `Points.earn()` 只認 BRANDEN／MELISSA／PARENT，所以不會加點）。
+     有人用 PIN 登入（`setToken`）或按「離開訪客模式」就結束訪客模式。三個 repo 的 `points.js` 已同步更新；
+     **plan repo（english-quiz-plan）的主檔 `points/points.js` 還沒同步，回家電腦要把這份複製回去**（雲端版沒有那個私人 repo 的權限）。
+     同時修了手機寬度下點數橫幅名字被截斷（BR…）的問題。
+3. **B&M 學習 App（2026-10-04）**：放在網站首頁 repo（jenlin2002.github.io）的 `/app/`，可「加入主畫面」的網頁 App（PWA），
+   一個入口放英文測驗系統＋美式生活館；登入就是 points.js 的 PIN 關卡（同一個網域，登入一次所有網站都認得）。
+   檔案：`app/index.html`、`app/manifest.webmanifest`（scope 是 `/`）、`app/icon-*.png`、根目錄 `sw.js`（只處理 `/app/` 底下）。
