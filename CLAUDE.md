@@ -75,3 +75,10 @@
 3. **B&M 學習 App（2026-10-04）**：放在網站首頁 repo（jenlin2002.github.io）的 `/app/`，可「加入主畫面」的網頁 App（PWA），
    一個入口放英文測驗系統＋美式生活館；登入就是 points.js 的 PIN 關卡（同一個網域，登入一次所有網站都認得）。
    檔案：`app/index.html`、`app/manifest.webmanifest`（scope 是 `/`）、`app/icon-*.png`、根目錄 `sw.js`（只處理 `/app/` 底下）。
+
+## 2026-10-04 手機雲端版的工作紀錄
+
+- 已合併 english-quiz PR #6（訪客模式＋手機版點數橫幅）；網站首頁 PR #1 新增 B&M 學習 App（`jenlin2002.github.io/app/`）。
+- 還沒在真的手機上驗證 App 安裝與 PIN 登入（雲端環境連不到網站與點數後端）。
+- **回家電腦第一件事**：把 `points.js` 複製回 english-quiz-plan 的 `points/points.js`（主檔），三份公開副本已一致。
+- 詳細說明見網站首頁 repo（jenlin2002.github.io）的 CLAUDE.md。
