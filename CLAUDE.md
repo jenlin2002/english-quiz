@@ -102,7 +102,7 @@
 - **成長學習館各單元有測驗的地方，作答、送出、計分、訂正方式一律以國中英語段考題庫（exam-bank `sync.js`）為準**（使用者已測試驗證 OK）：
   送出成績（全部作答才送）→ 馬上對答案（綠對紅錯＋正解）→ 有錯題時上方「✏️ 訂正錯誤」＋「錯誤全部訂正完畢再另加補送 1 點」（答對的鎖住、錯題清空重答）→「送出訂正」直到全對 → 補送 1 點（`Points.earn` `kind:'fix-bonus'`）；
   沒訂正完不能離開這一頁（擋連結、關分頁跳確認）；測試帳號 TEST、家長 PARENT 有「🚪 立即離開」；試算表每次訂正 mode／單元名稱註明「【第 N 次訂正】」、完成記「【全部訂正完成】補送 1 點」；點數只算第一次作答；「💾 暫存」＋自動暫存接續作答。
-- 各站的做法：段考題庫 `sync.js`；圖解單字 `topic.html`；國家地理閱讀 `fixkit.js`（`points-glue.js` 載入）；英文測驗系統 `eqfix.js`；美式生活館 `engine.js`／`index.html`。
+- 各站的做法：段考題庫 `sync.js`；圖解單字 `topic.html`；國家地理閱讀 `fixkit.js`（`points-glue.js` 載入）；英文測驗系統 `eqfix.js`；美式生活館 `lifefix.js`（engine.js、index.html 用）。
   英文測驗系統、美式生活館是「一題一題做、答完看解說」的形式，使用者選擇保留，只把結果頁改成訂正規則（只重做錯題、直到全對）。
 - 這個 repo：`eqfix.js`（根目錄），course2 的 23 個 `quiz.html` 與 course1 的 18 個 `第N週…測驗.html` 在 `</body>` 前載入它（在 points.js 後面）。它包住頁面的 `renderResult`／`syncResult`／`switchMode`／`handleAnswer`／`resetQuiz`／`renderQuestion`：成績頁上方「✏️ 訂正錯誤」只重做錯題（一題一題、一樣有解說），訂正中不能換分頁、不能重新測驗、不能離開；每答一題自動暫存（`eqDraft:頁面:登入者`），下次打開或切回該測驗從下一題接著做。**新做的週次（W21 起）也要在 `</body>` 前加 `<script src="../../eqfix.js"></script>`**（plan repo 的模板 `tpl-quiz.html` 已加）。口說練習不適用。
 
