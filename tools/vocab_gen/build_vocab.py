@@ -42,7 +42,7 @@ CARDS_TPL = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../grammar2/grammar.css?v=20261102">
-<link rel="stylesheet" href="../vocab.css?v=20261103">
+<link rel="stylesheet" href="../vocab.css?v=20261103b">
 </head>
 <body>
 <div class="wrap">
@@ -82,7 +82,8 @@ CARDS_TPL = '''<!DOCTYPE html>
 def card_html(i, w, tag):
     n = '%02d' % (i + 1)
     noteh = '<div class="vc-note">%s</div>' % E(w['note']) if w.get('note') else ''
-    return ('    <div class="vc-card">\n'
+    pic = '<span class="vc-pic" aria-hidden="true">%s</span>' % w['pic'] if w.get('pic') else ''
+    return ('    <div class="vc-card">%s\n'
             '      <div class="vc-head"><span class="vc-num">%d</span>'
             '<span class="vc-word">%s</span>'
             '<button class="vc-say" type="button" data-src="audio/%s/w-%s.mp3" data-say="%s" aria-label="唸單字">🔊</button>'
@@ -91,7 +92,7 @@ def card_html(i, w, tag):
             '      <div class="vc-ex"><span class="vc-en">%s</span>'
             '<button class="vc-say sm" type="button" data-src="audio/%s/e-%s.mp3" data-say="%s" aria-label="唸例句">🔊</button>'
             '<span class="vc-exzh">%s</span></div>\n'
-            '    </div>' % (i + 1, E(w['w']), tag, n, E(w['w'], quote=True), E(w['pos']), E(w['zh']), noteh,
+            '    </div>' % (pic, i + 1, E(w['w']), tag, n, E(w['w'], quote=True), E(w['pos']), E(w['zh']), noteh,
                            E(w['ex']), tag, n, E(w['ex'], quote=True), E(w['exzh'])))
 
 
@@ -108,6 +109,31 @@ def focus_html(u):
 
 
 # ---------------- 投影片 ----------------
+PIC_CSS = '''
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*1.2)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.8) calc(var(--u)*1.1);display:flex;flex-direction:column;gap:calc(var(--u)*.3)}
+.pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.2);font-weight:700;color:var(--deep);text-align:center}
+.pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
+.pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
+.pc .pe{font-size:calc(var(--u)*1.2);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+'''
+
+
+def pic_grid(grp):
+    """每個字一張圖卡：大圖示、單字 🔊、詞性中文、例句 🔊。"""
+    from sl import btn, _say
+    out = []
+    for w in grp:
+        out.append('<div class="pc"><div class="pp">%s</div><div class="pw">%s %s</div>'
+                   '<div class="pz">%s<small>%s</small></div>'
+                   '<div class="pe">%s %s<br>%s</div></div>'
+                   % (w.get('pic', ''), E(w['w']), btn(w['w']), E(w['zh']), E(w['pos']),
+                      E(w['ex']), btn(_say(E(w['ex']))), E(w['exzh'])))
+    return '<div class="pg">%s</div>' % ''.join(out)
+
+
 def slides(u, tag, book_name):
     ws = u['words']
     S = []
@@ -117,9 +143,7 @@ def slides(u, tag, book_name):
     per = 6
     for k in range(0, len(ws), per):
         grp = ws[k:k + per]
-        S.append(section('單字 %d–%d' % (k + 1, k + len(grp)), table(['單字', '詞性', '中文', '例句'], [
-            [ '<b>%s</b>' % E(w['w']), E(w['pos']), E(w['zh']), (E(w['ex']), E(w['exzh'])) ] for w in grp
-        ], audio_col=3)))
+        S.append(section('單字 %d–%d' % (k + 1, k + len(grp)), pic_grid(grp)))
     for title, pairs in u.get('focus', []):
         S.append(section(title, table(['單數', '複數', '例句'], [
             [a, '<b>%s</b>' % b, ('two %s' % b, '%s 的複數' % a)] for a, b in pairs
@@ -145,6 +169,7 @@ def slides(u, tag, book_name):
     for a, b in reps:
         assert a in head, a
         head = head.replace(a, b)
+    head = head.replace('</style>', PIC_CSS + '</style>', 1)
     tail = tail.replace("new Audio('audio/slide-'", "new Audio('audio/%s/slide-'" % tag)
     title = ('<section class="s dark title"><div class="week">UNIT %d · VOCABULARY</div><h1 class="big">%s</h1>'
              '<div class="en-sub">%s</div><div class="venn"><span class="c1">%d 個單字</span><span class="c2">聽・唸・用</span></div></section>'
