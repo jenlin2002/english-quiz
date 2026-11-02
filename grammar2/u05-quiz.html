@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 5 特殊動詞句型 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u05.html">← Unit 5 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 5</div>
+  <h1>特殊動詞句型．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U5',
+  title: '國中文法 Unit 5 特殊動詞句型',
+  back: 'u05.html',
+  sections: [
+    { title: '① 選擇題：認出正確的形式', items: [
+      { type:'mc', q:'The flowers smell ______.', opts:['sweet','sweetly','sweetness','to sweet'], answer:0,
+        exp:'smell 是連綴動詞，後面接形容詞 → sweet。' },
+      { type:'mc', q:'We watched the kids ______ soccer in the park.', opts:['to play','playing','played','plays'], answer:1,
+        exp:'看到孩子們「正在踢球」→ 感官動詞 + 受詞 + V-ing。' },
+      { type:'mc', q:'The story was so ______ that I fell asleep.', opts:['bored','boring','bore','bores'], answer:1,
+        exp:'故事「令人」無聊 → boring。' },
+      { type:'mc', q:'Grandma was ______ at the price of the bag.', opts:['surprising','surprised','surprise','surprises'], answer:1,
+        exp:'奶奶「感到」驚訝 → be surprised at。' },
+      { type:'mc', q:'The teacher had us ______ the poem aloud.', opts:['read','to read','reading','reads'], answer:0,
+        exp:'have + 人 + 原形 → had us read。' },
+      { type:'mc', q:'My parents won\'t let me ______ out after ten.', opts:['go','to go','going','went'], answer:0,
+        exp:'let + 人 + 原形 → let me go。' },
+      { type:'mc', q:'I finally got Tom ______ the truth.', opts:['tell','to tell','telling','told'], answer:1,
+        exp:'get + 人 + to V＝說服某人去做 → got Tom to tell。' },
+      { type:'mc', q:'Your idea sounds ______.', opts:['greatly','great','like great','as great'], answer:1,
+        exp:'sound 是連綴動詞，後面直接接形容詞 → sounds great。like 後面要接名詞，不能接形容詞。' },
+      { type:'mc', q:'Kevin looks ______ a famous singer.', opts:['as','like','similar','alike'], answer:1,
+        exp:'後面是名詞 a famous singer → look like + 名詞。' },
+      { type:'mc', q:'I had my watch ______ at the shop.', opts:['repair','to repair','repairing','repaired'], answer:3,
+        exp:'手錶是「被修」，請人處理 → have + 物 + p.p. → had my watch repaired。' }
+    ]},
+    { title: '② 填空：用括號裡字的正確形式', note:'想一想：原形、to V、V-ing、p.p.，還是 -ed／-ing 形容詞？', items: [
+      { q:'The news made everyone {0} (feel) sad.', blanks:[['feel']],
+        exp:'make + 人 + 原形 → made everyone feel。' },
+      { q:'I felt something {0} (crawl) up my arm. It was a bug!', blanks:[['crawling','crawl']],
+        exp:'感官動詞 feel + 受詞 + V-ing（正在爬）→ crawling；用原形 crawl 也可以。' },
+      { q:'Are you {0} (interest) in joining the school band?', blanks:[['interested']],
+        exp:'人「感到」有興趣 → interested。' },
+      { q:'Riding a roller coaster is really {0} (excite).', blanks:[['exciting']],
+        exp:'坐雲霄飛車這件事「令人」興奮 → exciting。' },
+      { q:'Mom had me {0} (buy) some milk on my way home.', blanks:[['buy']],
+        exp:'have + 人 + 原形 → had me buy。' },
+      { q:'I got my sister {0} (lend) me her bike.', blanks:[['to lend']],
+        exp:'get + 人 + to V → got my sister to lend。' },
+      { q:'Ella got her hair {0} (cut) short last weekend.', blanks:[['cut']],
+        exp:'頭髮「被剪」→ get + 物 + p.p.；cut 的 p.p. 還是 cut。' },
+      { q:'The milk tastes {0} (sour). Don\'t drink it.', blanks:[['sour']],
+        exp:'taste 是連綴動詞，接形容詞 → sour（本身就是形容詞，不用改）。' },
+      { q:'We were made {0} (stay) after school.', blanks:[['to stay']],
+        exp:'make 的被動要補 to → were made to stay。' },
+      { q:'After the long hike, we all felt very {0} (tire).', blanks:[['tired']],
+        exp:'人「感到」疲倦 → tired。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'I saw a cat to jump onto the roof.<br>錯：{0} → 改：{1}', blanks:[['to jump'],['jump','jumping']],
+        exp:'主動的感官動詞後面接原形或 V-ing，不接 to V → saw a cat jump／jumping。' },
+      { q:'The movie was so excited that nobody left.<br>錯：{0} → 改：{1}', blanks:[['excited'],['exciting']],
+        exp:'電影「令人」興奮 → exciting。' },
+      { q:'The coach made the players to run ten laps.<br>錯：{0} → 改：{1}', blanks:[['to run'],['run']],
+        exp:'make + 人 + 原形，主動句不加 to → made the players run。' },
+      { q:'You look happily today. What happened?<br>錯：{0} → 改：{1}', blanks:[['happily'],['happy']],
+        exp:'look 當「看起來」是連綴動詞，接形容詞 → look happy。' },
+      { q:'This candle smells a rose.<br>錯：{0} → 改：{1}', blanks:[['smells'],['smells like']],
+        exp:'後面是名詞 a rose，要加 like → smells like a rose。' },
+      { q:'I\'m going to have my car wash tomorrow.<br>錯：{0} → 改：{1}', blanks:[['wash'],['washed']],
+        exp:'車子「被洗」→ have + 物 + p.p. → have my car washed。' }
+    ]},
+    { title: '④-1 句子改寫與合併', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）Science interests me.<br>→ I am {0} {1} science.', blanks:[['interested'],['in']],
+        exp:'人「感到」有興趣 → I am interested in science。' },
+      { q:'（合併）I saw Leo. He was dancing on the stage.<br>→ I saw Leo {0} on the stage.', blanks:[['dancing']],
+        exp:'看到 Leo「正在跳舞」→ 感官動詞 + 受詞 + V-ing → saw Leo dancing。' },
+      { q:'（改成被動）The teacher made Ben stand in the hallway.<br>→ Ben {0} in the hallway.', blanks:[['was made to stand']],
+        exp:'make 的被動：be made + to V → was made to stand。' },
+      { q:'（同義改寫）My mom let me use her phone.<br>→ I {0} use my mom\'s phone.', blanks:[['was allowed to']],
+        exp:'let 通常不用被動，改用 be allowed to → was allowed to use。' },
+      { q:'（同義改寫）A barber cut my hair this morning.<br>→ I {0} my hair {1} this morning.', blanks:[['had','got'],['cut']],
+        exp:'請別人剪頭髮 → have / get + 物 + p.p. → had my hair cut。' }
+    ]},
+    { title: '④-2 短文填空：用括號裡字的正確形式', note:'<span class="passage">（有兩個字可選的，選出正確的那一個寫上去）<br>Last Saturday, I went to a cooking class. At first, I felt <b>(1)</b>____ (nervous / nervously) because I had never cooked before. The teacher made us <b>(2)</b>____ (wash) our hands first. Then I watched her <b>(3)</b>____ (cut) the vegetables very quickly. When the soup was ready, it smelled <b>(4)</b>____ (wonderful / wonderfully). The class was really <b>(5)</b>____ (interest), and I got my mom <b>(6)</b>____ (sign) me up for the next one.</span>', items: [
+      { q:'(1) {0} (nervous / nervously)', blanks:[['nervous']],
+        exp:'feel 是連綴動詞，接形容詞不接副詞 → nervous。' },
+      { q:'(2) {0} (wash)', blanks:[['wash']],
+        exp:'make + 人 + 原形 → made us wash。' },
+      { q:'(3) {0} (cut)', blanks:[['cut','cutting']],
+        exp:'感官動詞 watch + 受詞 + 原形或 V-ing → cut／cutting（cut 的原形和過去式同形，這裡是原形）。' },
+      { q:'(4) {0} (wonderful / wonderfully)', blanks:[['wonderful']],
+        exp:'smell 是連綴動詞，接形容詞不接副詞 → wonderful。' },
+      { q:'(5) {0} (interest)', blanks:[['interesting']],
+        exp:'課程「令人」感興趣 → interesting。' },
+      { q:'(6) {0} (sign)', blanks:[['to sign']],
+        exp:'get + 人 + to V → got my mom to sign。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
