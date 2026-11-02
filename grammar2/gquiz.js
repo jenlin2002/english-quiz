@@ -1,4 +1,4 @@
-// 國二文法單元測驗（共用）。作答、送出、計分、訂正方式照段考題庫 sync.js 的規則：
+// 國中文法單元測驗（共用）。作答、送出、計分、訂正方式照段考題庫 sync.js 的規則：
 //   全部作答才能送出 → 馬上對答案（綠對紅錯＋正解＋詳解）→ Points.earn ＋ 同步試算表
 //   → 有錯題：「✏️ 訂正錯誤」（答對的鎖住、錯題清空重答）→「送出訂正」直到全對 → 補送 1 點（kind:'fix-bonus'）
 //   訂正完成前不能離開（擋連結、關分頁跳確認）；TEST／PARENT 有「🚪 立即離開」；「💾 暫存」＋自動暫存接續作答。
@@ -127,7 +127,7 @@
         '<br><span class="gq-rv-a">正解：' + esc(rightAns(items[i])) + '</span><br><span class="gq-rv-e">' + items[i].exp + '</span></div>').join('') + '</div>';
   }
   function doneLinks(){
-    return '<div class="gq-links"><a class="btn" href="' + (CFG.back || 'index.html') + '">← 回單元講解</a> <a class="btn" href="index.html">國二文法目錄</a> <button class="btn" data-act="restart">↺ 重新測驗</button></div>';
+    return '<div class="gq-links"><a class="btn" href="' + (CFG.back || 'index.html') + '">← 回單元講解</a> <a class="btn" href="index.html">國中文法目錄</a> <button class="btn" data-act="restart">↺ 重新測驗</button></div>';
   }
   function flash(t){ const f = document.getElementById('gqFlash'); if(f){ f.textContent = t; clearTimeout(flash.t); flash.t = setTimeout(() => f.textContent = '', 4000); } }
 

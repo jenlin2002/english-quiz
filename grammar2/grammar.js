@@ -1,4 +1,4 @@
-// 國二文法分科區：單元頁練習題（點選即對答、顯示詳解；不計點數、不同步試算表）
+// 國中文法分科區：單元頁練習題（點選即對答、顯示詳解；不計點數、不同步試算表）
 // 每頁用 window.PRACTICE = [{ level, q, opts:[...], answer: 正確選項索引, exp }] 提供題目
 (function(){
   const box = document.getElementById('practice');

@@ -1,4 +1,4 @@
-"""產生國二文法分科區的投影片 grammar2/uNN-slides.html，並輸出要錄音的句子清單 audio_jobs.json。
+"""產生國中文法分科區的投影片 grammar2/uNN-slides.html，並輸出要錄音的句子清單 audio_jobs.json。
 
 沿用第二期 tools/course2_gen 的投影片樣式（slides_head.html、slides_tail.html）與小工具 sl.py。
 執行：python tools/grammar2_gen/build_slides.py
@@ -37,11 +37,11 @@ def build(unit):
     head = read(os.path.join(C2, 'slides_head.html'))
     tail = read(os.path.join(C2, 'slides_tail.html'))
     reps = [
-        ('第二期 WEEK 14 投影片｜分詞構句、連接詞與轉折語', '國二文法 Unit %d 投影片｜%s' % (no, zh)),
+        ('第二期 WEEK 14 投影片｜分詞構句、連接詞與轉折語', '國中文法 Unit %d 投影片｜%s' % (no, zh)),
         ('<div class="eyebrow">WEEK 14 · SLIDES</div>', '<div class="eyebrow">GRAMMAR UNIT %d · SLIDES</div>' % no),
         ('<h1 class="page">分詞構句、連接詞與轉折語</h1>', '<h1 class="page">%s</h1>' % zh),
         ('<a class="home-link" href="../index.html">🏠 回總目錄</a>',
-         '<a class="home-link" href="index.html">← 國二文法目錄</a>\n    <a class="home-link" href="%s.html">📘 講解</a>' % tag),
+         '<a class="home-link" href="index.html">← 國中文法目錄</a>\n    <a class="home-link" href="%s.html">📘 講解</a>' % tag),
         ('<a class="quiz-link" href="quiz.html">📝 前往測驗</a>', '<a class="quiz-link" href="%s-quiz.html">📝 前往測驗</a>' % tag),
     ]
     for a, b in reps:
