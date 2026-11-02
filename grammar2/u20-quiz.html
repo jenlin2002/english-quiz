@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 20 假設語氣 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u20.html">← Unit 20 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 20</div>
+  <h1>假設語氣．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U20',
+  title: '國中文法 Unit 20 假設語氣',
+  back: 'u20.html',
+  sections: [
+    { title: '① 選擇題：判斷是哪一種假設', items: [
+      { type:'mc', q:'If you ______ now, you will catch the train.', opts:['leave','will leave','left','had left'], answer:0,
+        exp:'可能成真 → if 子句用現在式 → leave。' },
+      { type:'mc', q:'If water reaches 100°C, it ______.', opts:['boils','will boiled','boiled','would boil'], answer:0,
+        exp:'科學事實 → 兩邊都用現在式。' },
+      { type:'mc', q:'If I ______ a bird, I would fly over the mountains.', opts:['am','was','were','had been'], answer:2,
+        exp:'與現在相反 → were。' },
+      { type:'mc', q:'If Lily had more time, she ______ learn to cook.', opts:['will','would','would have','had'], answer:1,
+        exp:'If + 過去式（現在沒時間）→ would + 原形。' },
+      { type:'mc', q:'If I ______ the news, I would have called you.', opts:['heard','had heard','hear','would hear'], answer:1,
+        exp:'與過去相反 → had + p.p.。' },
+      { type:'mc', q:'If we had left earlier, we ______ the bus.', opts:['won\'t miss','wouldn\'t miss','wouldn\'t have missed','didn\'t miss'], answer:2,
+        exp:'與過去相反 → wouldn\'t have + p.p.。' },
+      { type:'mc', q:'I wish I ______ taller. I can\'t reach the top shelf.', opts:['am','were','will be','had been'], answer:1,
+        exp:'wish（現在）→ were。' },
+      { type:'mc', q:'I wish I ______ my homework last night. Now the teacher is angry.', opts:['did','had done','do','would do'], answer:1,
+        exp:'wish（過去）→ had + p.p. → had done。' },
+      { type:'mc', q:'If it ______ rain, the game will be moved indoors.', opts:['should','would','were','had'], answer:0,
+        exp:'萬一 → If + should + V。' },
+      { type:'mc', q:'I ______ you feel better soon.', opts:['wish','hope','would','had'], answer:1,
+        exp:'真的有可能 → hope。' }
+    ]},
+    { title: '② 填空：寫出括號裡動詞的正確形式', note:'先判斷是可能成真、與現在相反，還是與過去相反。', items: [
+      { q:'If it {0} (be) sunny tomorrow, we will go hiking.', blanks:[['is']],
+        exp:'可能成真、if 子句現在代未來 → is。' },
+      { q:'If I {0} (be) you, I would take the job.', blanks:[['were']],
+        exp:'與現在相反（給建議）→ were。' },
+      { q:'If Ben {0} (have) a bike, he would ride to school.', blanks:[['had']],
+        exp:'與現在相反（他現在沒有腳踏車）→ 過去式 had。' },
+      { q:'If I knew the answer, I {0} (tell) you.', blanks:[['would tell']],
+        exp:'If + 過去式 → would + 原形 → would tell。' },
+      { q:'If she {0} (study) harder, she would have passed the test.', blanks:[['had studied']],
+        exp:'與過去相反 → had studied。' },
+      { q:'If you had come to the party, you {0} (meet) my cousin.', blanks:[['would have met']],
+        exp:'與過去相反 → would have met。' },
+      { q:'I wish I {0} (can) speak French.', blanks:[['could']],
+        exp:'wish（現在）→ could。' },
+      { q:'I wish I {0} (not eat) so much cake yesterday.', blanks:[['had not eaten','hadn\'t eaten']],
+        exp:'wish（過去）→ hadn\'t eaten。' },
+      { q:'If you {0} (mix) yellow and blue, you get green.', blanks:[['mix']],
+        exp:'事實 → 現在式 mix。' },
+      { q:'If I had slept well last night, I {0} (not be) so tired now.', blanks:[['would not be','wouldn\'t be']],
+        exp:'混合：過去沒睡好 → 現在很累 → wouldn\'t be。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'If it will snow tomorrow, we will build a snowman.<br>錯：{0} → 改：{1}', blanks:[['will snow'],['snows']],
+        exp:'可能成真，if 子句用現在式 → snows。' },
+      { q:'If I am rich, I would buy my mom a car.<br>錯：{0} → 改：{1}', blanks:[['am'],['were']],
+        exp:'與現在相反 → were。' },
+      { q:'If I had wings, I will fly to the moon.<br>錯：{0} → 改：{1}', blanks:[['will'],['would']],
+        exp:'If + 過去式 → 主要子句用 would。' },
+      { q:'If he had told me, I would help him yesterday.<br>錯：{0} → 改：{1}', blanks:[['would help'],['would have helped']],
+        exp:'與過去相反 → would have helped。' },
+      { q:'I wish I can visit Japan this year.<br>錯：{0} → 改：{1}', blanks:[['can'],['could']],
+        exp:'wish 後面往過去退 → could。' },
+      { q:'I wish you will have a happy birthday.<br>錯：{0} → 改：{1}', blanks:[['wish'],['hope']],
+        exp:'真的會發生的祝福 → hope（或改成 I wish you a happy birthday.）。' }
+    ]},
+    { title: '④-1 依事實寫出假設句', note:'把「事實」改成「假設」，寫出空格部分。', items: [
+      { q:'事實：I am not tall, so I can\'t play basketball well.<br>→ If I {0} tall, I {1} play basketball well.', blanks:[['were'],['could']],
+        exp:'事實是現在 → 假設用過去式：were、could。' },
+      { q:'事實：I don\'t have money, so I won\'t buy the game.<br>→ If I {0} money, I {1} buy the game.', blanks:[['had'],['would']],
+        exp:'現在沒錢 → If I had money, I would buy…' },
+      { q:'事實：It rained yesterday, so we didn\'t go out.<br>→ If it {0} rained yesterday, we {1} gone out.', blanks:[['hadn\'t','had not'],['would have']],
+        exp:'事實是過去 → If it hadn\'t rained, we would have gone out。' },
+      { q:'事實：I can\'t sing well. （用 wish）<br>→ I wish I {0} sing well.', blanks:[['could']],
+        exp:'wish + could。' },
+      { q:'事實：I didn\'t bring my jacket. （用 wish）<br>→ I wish I {0} my jacket.', blanks:[['had brought']],
+        exp:'過去沒帶 → wish + had + p.p. → had brought。' }
+    ]},
+    { title: '④-2 短文填空：寫出括號裡動詞的正確形式', note:'<span class="passage">Yesterday was a bad day. I got up late and missed the school bus. If I <b>(1)</b>____ (set) my alarm, I wouldn\'t have been late. Now I\'m really tired. I wish I <b>(2)</b>____ (go) to bed earlier last night! My friend Amy said, "If I <b>(3)</b>____ (be) you, I would put my phone away at night." She\'s right. Tonight, if I <b>(4)</b>____ (finish) my homework early, I <b>(5)</b>____ (go) to bed before ten.</span>', items: [
+      { q:'(1) {0} (set)', blanks:[['had set']],
+        exp:'與過去相反 → had + p.p. → had set（set 三態同形）。' },
+      { q:'(2) {0} (go)', blanks:[['had gone']],
+        exp:'wish（過去 last night）→ had gone。' },
+      { q:'(3) {0} (be)', blanks:[['were']],
+        exp:'If I were you（給建議）→ were。' },
+      { q:'(4) {0} (finish)', blanks:[['finish']],
+        exp:'今晚可能做到 → if 子句用現在式 → finish。' },
+      { q:'(5) {0} (go)', blanks:[['will go']],
+        exp:'可能成真 → 主要子句 will go。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
