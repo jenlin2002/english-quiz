@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 17 形容詞子句 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u17.html">← Unit 17 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 17</div>
+  <h1>形容詞子句．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 合併與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U17',
+  title: '國中文法 Unit 17 形容詞子句',
+  back: 'u17.html',
+  sections: [
+    { title: '① 選擇題：選出正確的關係詞', items: [
+      { type:'mc', q:'The man ______ is talking to Ms. Lee is my uncle.', opts:['who','which','whose','where'], answer:0,
+        exp:'先行詞是人、子句缺主詞 → who。' },
+      { type:'mc', q:'Where is the cake ______ was on the table?', opts:['who','which','whose','what'], answer:1,
+        exp:'先行詞是物、子句缺主詞 → which。' },
+      { type:'mc', q:'I have a friend ______ father is a pilot.', opts:['who','whom','whose','which'], answer:2,
+        exp:'「他的」爸爸，後面接名詞 father → whose。' },
+      { type:'mc', q:'This is the hospital ______ I was born.', opts:['which','where','when','who'], answer:1,
+        exp:'was born 不缺受詞，缺地方 → where。' },
+      { type:'mc', q:'The students who ______ in Class 5 are very friendly.', opts:['is','are','was','be'], answer:1,
+        exp:'子句的動詞跟先行詞 the students（複數）→ are。' },
+      { type:'mc', q:'This is the best pizza ______ I have ever eaten.', opts:['who','which','that','what'], answer:2,
+        exp:'先行詞前面有最高級 → 用 that。' },
+      { type:'mc', q:'The girl to ______ I lent my notes is Lily.', opts:['who','whom','that','which'], answer:1,
+        exp:'介系詞 to 後面、先行詞是人 → whom。' },
+      { type:'mc', q:'Show me ______ you bought at the market.', opts:['that','which','what','the thing what'], answer:2,
+        exp:'沒有先行詞，「你買的東西」→ what。' },
+      { type:'mc', q:'Taipei, ______ is the capital of Taiwan, has great food.', opts:['that','which','where','what'], answer:1,
+        exp:'逗號後面（非限定），先行詞是地方名稱當主詞 → which（不能用 that）。' },
+      { type:'mc', q:'Summer is the season ______ many people go to the beach.', opts:['which','where','when','who'], answer:2,
+        exp:'先行詞是時間、子句不缺主詞受詞 → when。' }
+    ]},
+    { title: '② 填空：寫出正確的關係詞', note:'可以用 who、whom、which、that、whose、what、where、when（有時不只一個答案）。', items: [
+      { q:'The boy {0} won the race is my classmate.', blanks:[['who','that']],
+        exp:'人、主格 → who／that。' },
+      { q:'I like the dress {0} you are wearing.', blanks:[['that','which']],
+        exp:'物、受格 → that／which（也可以省略）。' },
+      { q:'Ken is the boy {0} sister is a famous singer.', blanks:[['whose']],
+        exp:'「他的」姊姊 → whose。' },
+      { q:'This is the room {0} I study every night.', blanks:[['where','in which']],
+        exp:'study 不缺受詞，缺地方 → where（＝ in which）。' },
+      { q:'{0} she told me was a secret.', blanks:[['What']],
+        exp:'沒有先行詞、當主詞 → What（＝ The thing that）。' },
+      { q:'She was the only person {0} helped me.', blanks:[['that','who']],
+        exp:'先行詞前有 the only → 常用 that（who 也可以）。' },
+      { q:'Do you remember the year {0} we moved here?', blanks:[['when','in which']],
+        exp:'先行詞是時間 → when。' },
+      { q:'The teacher with {0} I talked was very patient.', blanks:[['whom']],
+        exp:'介系詞 with 後面、人 → whom。' },
+      { q:'My grandma, {0} is 85, still goes swimming.', blanks:[['who']],
+        exp:'非限定（逗號）、人、主格 → who（不能用 that）。' },
+      { q:'Look at the man and his horse {0} are crossing the river.', blanks:[['that']],
+        exp:'先行詞是人 + 動物 → that。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」；多出來要刪掉的字，右格寫 X。', items: [
+      { q:'The girl which is singing is my sister.<br>錯：{0} → 改：{1}', blanks:[['which'],['who','that']],
+        exp:'先行詞是人 → who／that。' },
+      { q:'The books which is on the desk are mine.<br>錯：{0} → 改：{1}', blanks:[['is'],['are']],
+        exp:'子句的動詞跟先行詞 the books（複數）→ are。' },
+      { q:'The movie that we saw it last night was funny.<br>錯：{0} → 改：{1}', blanks:[['it'],['X','x']],
+        exp:'that 已經代替 it，要刪掉 it。' },
+      { q:'Ken is the boy who his mom is a doctor.<br>錯：{0} → 改：{1}', blanks:[['who his'],['whose']],
+        exp:'「他的」媽媽用 whose → the boy whose mom…' },
+      { q:'This is the shop what sells cheap shoes.<br>錯：{0} → 改：{1}', blanks:[['what'],['that','which']],
+        exp:'有先行詞 the shop，不能用 what → that／which。' },
+      { q:'This is the park which we often have picnics.<br>錯：{0} → 改：{1}', blanks:[['which'],['where','in which']],
+        exp:'have picnics 不缺受詞，缺地方 → where。' }
+    ]},
+    { title: '④-1 合併兩句（寫出關係詞和後面的子句）', note:'用關係詞把兩句合成一句。', items: [
+      { q:'The lady is my aunt. She is wearing a red hat.<br>→ The lady {0} is my aunt.', blanks:[['who is wearing a red hat','that is wearing a red hat']],
+        exp:'人、主格 → who is wearing a red hat。' },
+      { q:'I lost the umbrella. I bought it last week.<br>→ I lost the umbrella {0}.', blanks:[['that I bought last week','which I bought last week','I bought last week']],
+        exp:'物、受格 → that／which I bought last week（it 要拿掉；關代可省略）。' },
+      { q:'I know a boy. His dad is a firefighter.<br>→ I know a boy {0} is a firefighter.', blanks:[['whose dad']],
+        exp:'His dad → whose dad。' },
+      { q:'This is the café. We first met there.<br>→ This is the café {0} we first met.', blanks:[['where','in which']],
+        exp:'there（地方）→ where。' },
+      { q:'The thing that he said made me laugh.<br>→ {0} he said made me laugh.', blanks:[['What']],
+        exp:'The thing that = What。' }
+    ]},
+    { title: '④-2 短文填空：寫出正確的關係詞', note:'<span class="passage">Last weekend, I visited my grandparents, <b>(1)</b>____ live in a small village. The village is a place <b>(2)</b>____ you can see stars at night. My grandpa showed me a photo <b>(3)</b>____ he took 50 years ago. In the photo was a young man <b>(4)</b>____ hair was black and thick—it was Grandpa himself! He told me <b>(5)</b>____ life was like when he was young. It was the most interesting story <b>(6)</b>____ I have ever heard.</span>', items: [
+      { q:'(1) {0}', blanks:[['who']],
+        exp:'非限定（逗號）、人、主格 → who。' },
+      { q:'(2) {0}', blanks:[['where','in which']],
+        exp:'a place + 子句不缺主詞受詞 → where。' },
+      { q:'(3) {0}', blanks:[['that','which']],
+        exp:'物、受格 → that／which。' },
+      { q:'(4) {0}', blanks:[['whose']],
+        exp:'「他的」頭髮 → whose hair。' },
+      { q:'(5) {0}', blanks:[['what']],
+        exp:'告訴我「生活是什麼樣子」，沒有先行詞 → what。' },
+      { q:'(6) {0}', blanks:[['that']],
+        exp:'先行詞前面有最高級（the most interesting）→ that。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
