@@ -119,6 +119,13 @@
 - 投影片 `uNN-slides.html`（2026-11-02 做好 Unit 1、2）：由 `tools/grammar2_gen/build_slides.py` 產生（內容在 `uNN_slides.py`，沿用第二期 `tools/course2_gen` 的樣式與 sl.py），會輸出 `audio_jobs.json`；語音 mp3 放 `grammar2/audio/uNN/slide-NN.mp3`。Unit 1、2 已錄好（103 句）。錄音用 `tools/grammar2_gen/tts_mp3.py`（soundfile 直接寫 mp3，不需要 ffmpeg；已存在的 mp3 會跳過）。公司電腦已裝 kokoro-onnx，模型檔在 `C:\Users\jenlin2002\kokoro-models`（不在 repo 裡），執行前設 `$env:KOKORO_DIR` 指到那裡。
 - 待辦：文法 20 單元已完成 → 下一步單字區（單字2000活用練習＋LaLa Word）→ 克漏字區 → 閱讀區（各自獨立一區，不混進文法區；每區先做 1～2 單元給使用者看）。之後可考慮給題目標考點代號、做 links.js 讓克漏字詳解連到文法單元（2026-11-02 提過，使用者未決定）。
 
+## 國中單字分科區 `vocab/`（2026-11-03 開始，試做中）
+
+- 使用者定案：兩個小區——「主題 2000 字」照翰林《單字2000活用練習》40 單元（`vocab/w2000/`）、「一字多義・易混淆・字首字尾」照《LaLa Word 小單字大視野》18 單元（還沒做）；每單元三頁：`uNN.html` 單字卡、`uNN-slides.html` 投影片、`uNN-quiz.html` 測驗；**不標 KK 音標**，每個字和例句都有 🔊。例句、說明、題目自編，只參考字表與單元。
+- 已試做：主題 2000 字 Unit 1 People（18 字，測驗 29 題），**等使用者看過再往下做**。
+- 產生程式 `tools/vocab_gen/build_vocab.py`，每單元一個資料檔（`w2000_u01.py`：UNIT 字表＋QUIZ），在 `UNITS` 加上；錄音同文法區（`tts_mp3.py tools/vocab_gen/audio_jobs.json`），音檔在 `vocab/w2000/audio/uNN/`（w-NN 單字、e-NN 例句、slide-NN）。單字卡用 `vocab/vocab.css`、`vocab/vocab.js`（遮中文／遮英文自我測驗、全部播放）；樣式與測驗程式共用 `grammar2/grammar.css`、`grammar2/gquiz.js`。測驗 label `Vocab W2000 UN`。
+- 總目錄 `index.html` 第五張卡片「國中單字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
+
 ## 連續學習紅利＋稱讚畫面（2026-10-18）
 
 - 送出測驗後跳出稱讚卡（得幾點、連續第幾天、還差幾點到 100 點）；每跨過 100 點跳出大的恭喜兌換畫面。

@@ -89,13 +89,16 @@
   .period .p-go{ display:inline-block; font-weight:700; font-size:14px; padding:9px 20px; border-radius:12px; background:var(--chalk-yellow); color:var(--chalk-bg); }
   .period.soon{ opacity:.55; border-style:dashed; }
   .period.soon .p-go{ background:#2A4A3C; color:var(--chalk-green); border:1px solid var(--chalk-green); }
-  .wrap{ max-width:1360px; }
-  .stack{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:18px; align-items:stretch; }
+  .wrap{ max-width:1500px; }
+  .stack{ display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:16px; align-items:stretch; }
   .period{ display:flex; flex-direction:column; align-items:flex-start; min-height:420px; }
   .period ul{ flex:1; }
   .period.subject{ border-color:#5A4A2A; }
   .period.subject .p-no{ color:var(--chalk-yellow); }
-  @media (max-width:1180px){
+  @media (max-width:1300px){
+    .stack{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width:900px){
     .stack{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width:700px){
@@ -163,6 +166,18 @@
         <li>句型（Unit 14–20）：附加問句、倒裝、關代、間接問句、假設語氣</li>
       </ul>
       <span class="p-go">進入國中文法 →</span>
+    </a>
+
+    <a class="period subject" href="vocab/index.html">
+      <div class="p-no">VOCABULARY · 分科</div>
+      <div class="p-title">國中單字．分科練習</div>
+      <div class="p-sub">依主題背國中 2000 字，再學一字多義、易混淆字、字首字尾。試做中。</div>
+      <ul>
+        <li>每單元：📗 單字卡（每個字和例句都能聽發音）．📊 投影片．📝 測驗</li>
+        <li>主題 2000 字（Unit 1–40）：人物、家庭、身體、食物、學校…</li>
+        <li>一字多義．易混淆字．字首字尾（Unit 1–18）</li>
+      </ul>
+      <span class="p-go">進入單字區 →</span>
     </a>
   </div>
 
