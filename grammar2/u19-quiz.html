@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 19 直接問句與間接問句 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u19.html">← Unit 19 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 19</div>
+  <h1>直接問句與間接問句．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與轉述。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U19',
+  title: '國中文法 Unit 19 直接問句與間接問句',
+  back: 'u19.html',
+  sections: [
+    { title: '① 選擇題：選出正確的間接問句', items: [
+      { type:'mc', q:'Excuse me. Can you tell me where ______?', opts:['is the bus stop','the bus stop is','does the bus stop','the bus stop does'], answer:1,
+        exp:'間接問句用「主詞 + 動詞」→ where the bus stop is。' },
+      { type:'mc', q:'I don\'t know what ______.', opts:['is his name','his name is','does his name','his name does'], answer:1,
+        exp:'what his name is。' },
+      { type:'mc', q:'Do you know when the movie ______?', opts:['starts','does start','start','is start'], answer:0,
+        exp:'When does the movie start? → when the movie starts。' },
+      { type:'mc', q:'I wonder ______ she likes my gift.', opts:['what','that','if','who'], answer:2,
+        exp:'Yes／No 問句（Does she like…?）→ if。' },
+      { type:'mc', q:'Please tell me what you ______ yesterday.', opts:['do','did','does','done'], answer:1,
+        exp:'What did you do yesterday? → what you did。' },
+      { type:'mc', q:'Nobody knows who ______ the cake.', opts:['ate','did eat','does eat','eats it'], answer:0,
+        exp:'Who ate the cake? 疑問詞是主詞 → who ate。' },
+      { type:'mc', q:'Could you tell me how I ______ get to the museum?', opts:['can','do','am','did'], answer:0,
+        exp:'How can I get…? → how I can get。' },
+      { type:'mc', q:'Which sentence is correct?', opts:['I don\'t know where does she work.','Do you know what time is it?','I\'m not sure whether he will come.','Tell me who is he.'], answer:2,
+        exp:'whether + 主詞 + 動詞 ✓。其他應為 where she works、what time it is、who he is。' },
+      { type:'mc', q:'Leo asked me where I ______.', opts:['go','went','am going','goes'], answer:1,
+        exp:'主要句子 asked 是過去式 → went。' },
+      { type:'mc', q:'Amy said, "I like cats." → Amy said that ______ cats.', opts:['I like','she likes','she liked','I liked'], answer:2,
+        exp:'轉述：I → she；like → liked（時態退一格）。' }
+    ]},
+    { title: '② 填空：把括號裡的直接問句改成間接問句', note:'寫出疑問詞（或 if）後面的部分，例如 the station is。', items: [
+      { q:'(Where is the station?) → Do you know where {0}?', blanks:[['the station is']],
+        exp:'主詞 the station + 動詞 is。' },
+      { q:'(Who is that girl?) → I don\'t know who {0}.', blanks:[['that girl is']],
+        exp:'that girl is。' },
+      { q:'(Where does Ben live?) → Can you tell me where {0}?', blanks:[['Ben lives']],
+        exp:'拿掉 does，動詞加 -s → Ben lives。' },
+      { q:'(What did Lisa buy?) → I wonder what {0}.', blanks:[['Lisa bought']],
+        exp:'拿掉 did，動詞改過去式 → Lisa bought。' },
+      { q:'(When will the train leave?) → Please tell me when {0}.', blanks:[['the train will leave']],
+        exp:'助動詞 will 放回主詞後面 → the train will leave。' },
+      { q:'(Is Tom sick?) → I\'m not sure {0}.', blanks:[['if Tom is sick','whether Tom is sick']],
+        exp:'Yes／No 問句 → if／whether + Tom is sick。' },
+      { q:'(Did they win?) → Do you know {0}?', blanks:[['if they won','whether they won']],
+        exp:'if + they won（拿掉 did，改過去式）。' },
+      { q:'(How old is your teacher?) → May I ask how old {0}?', blanks:[['your teacher is']],
+        exp:'how old + your teacher is。' },
+      { q:'(Who broke the vase?) → Does anyone know who {0} the vase?', blanks:[['broke']],
+        exp:'疑問詞是主詞，語序不變 → who broke the vase。' },
+      { q:'(What time does the shop open?) → I don\'t know what time {0}.', blanks:[['the shop opens']],
+        exp:'拿掉 does，動詞加 -s → the shop opens。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Do you know where is the restroom?<br>錯：{0} → 改：{1}', blanks:[['is the restroom'],['the restroom is']],
+        exp:'間接問句語序 → where the restroom is。' },
+      { q:'I don\'t know what does he want.<br>錯：{0} → 改：{1}', blanks:[['does he want'],['he wants']],
+        exp:'拿掉 does，動詞加 -s → what he wants。' },
+      { q:'Can you tell me when did Amy arrive?<br>錯：{0} → 改：{1}', blanks:[['did Amy arrive'],['Amy arrived']],
+        exp:'拿掉 did，動詞改過去式 → when Amy arrived。' },
+      { q:'I wonder is Ken at school today.<br>錯：{0} → 改：{1}', blanks:[['is Ken'],['if Ken is','whether Ken is']],
+        exp:'Yes／No 問句要加 if／whether → if Ken is at school。' },
+      { q:'She asked me how old am I.<br>錯：{0} → 改：{1}', blanks:[['am I'],['I was']],
+        exp:'語序改成主詞 + 動詞；asked 是過去式 → how old I was。' },
+      { q:'Yesterday Tom said that he is busy.<br>錯：{0} → 改：{1}', blanks:[['is'],['was']],
+        exp:'轉述過去說的話 → was。' }
+    ]},
+    { title: '④ 轉述別人說的話', note:'把引號裡的話改成轉述句，寫出空格部分。', items: [
+      { q:'Lily said, "I am happy."<br>→ Lily said that {0} happy.', blanks:[['she was']],
+        exp:'I → she；am → was。' },
+      { q:'Ken said to me, "I can help you."<br>→ Ken told me that he {0} help {1}.', blanks:[['could'],['me']],
+        exp:'can → could；you → me。' },
+      { q:'Mom asked me, "Do you want some milk?"<br>→ Mom asked me {0} some milk.', blanks:[['if I wanted','whether I wanted']],
+        exp:'Yes／No 問句 → asked if + I wanted（時態退一格）。' },
+      { q:'The man asked, "Where is the post office?"<br>→ The man asked where the post office {0}.', blanks:[['was']],
+        exp:'間接問句語序；is → was。' },
+      { q:'The teacher said to us, "Don\'t run."<br>→ The teacher told us {0}.', blanks:[['not to run']],
+        exp:'否定祈使句 → told + 人 + not to V。' },
+      { q:'Ben asked me, "What are you doing?"<br>→ Ben asked me what {0} doing.', blanks:[['I was']],
+        exp:'you → I；are → was；語序改成主詞 + 動詞。' },
+      { q:'Amy said, "My dad is a cook."<br>→ Amy said that {0} dad was a cook.', blanks:[['her']],
+        exp:'My → her（Amy 的爸爸）。' },
+      { q:'Jay asked, "Can I sit here?"<br>→ Jay asked {0} sit there.', blanks:[['if he could','whether he could']],
+        exp:'Yes／No 問句 → asked if he could（I → he；can → could）。' },
+      { q:'The girl said, "I will call you later."<br>→ The girl said that she {0} call me later.', blanks:[['would']],
+        exp:'will → would。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>

@@ -32,7 +32,8 @@ from u15_slides import UNIT as U15  # noqa: E402
 from u16_slides import UNIT as U16  # noqa: E402
 from u17_slides import UNIT as U17  # noqa: E402
 from u18_slides import UNIT as U18  # noqa: E402
-UNITS = (U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15, U16, U17, U18)   # 新單元做好後加在這裡
+from u19_slides import UNIT as U19  # noqa: E402
+UNITS = (U01, U02, U03, U04, U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15, U16, U17, U18, U19)   # 新單元做好後加在這裡
 
 OUT = os.path.join(REPO, 'grammar2')
 
