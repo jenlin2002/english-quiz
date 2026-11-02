@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 8 名詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u08.html">← Unit 8 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 8</div>
+  <h1>名詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U8',
+  title: '國中文法 Unit 8 名詞',
+  back: 'u08.html',
+  sections: [
+    { title: '① 選擇題：可數、不可數與單複數', items: [
+      { type:'mc', q:'Look at those two ______ on the grass.', opts:['sheep','sheeps','sheepes','a sheep'], answer:0,
+        exp:'sheep 單複數同形 → two sheep。' },
+      { type:'mc', q:'I don\'t have ______ money with me.', opts:['many','much','a few','few'], answer:1,
+        exp:'money 不可數；否定句「不多」→ much。' },
+      { type:'mc', q:'There ______ three boxes under the bed.', opts:['is','are','was','has'], answer:1,
+        exp:'後面是複數 three boxes → There are。' },
+      { type:'mc', q:'The teacher gave us a lot of ______.', opts:['homework','homeworks','homework\'s','a homework'], answer:0,
+        exp:'homework 不可數，沒有複數 → a lot of homework。' },
+      { type:'mc', q:'Mathematics ______ my favorite subject.', opts:['is','are','were','have'], answer:0,
+        exp:'mathematics 字尾有 s，但是單數 → is。' },
+      { type:'mc', q:'There are five ______ waiting in line.', opts:['person','persons','people','peoples'], answer:2,
+        exp:'「人們」的複數一般用 people。peoples 是「各民族」。' },
+      { type:'mc', q:'Could I have a ______ of cake?', opts:['cup','piece','glass','pair'], answer:1,
+        exp:'一塊蛋糕 → a piece of cake。' },
+      { type:'mc', q:'This is the ______ toy box.', opts:['children','childrens\'','children\'s','childs\''], answer:2,
+        exp:'children 本身是複數、字尾沒有 s → 加 \'s → children\'s。' },
+      { type:'mc', q:'Are there ______ eggs in the fridge?', opts:['some','any','much','a little'], answer:1,
+        exp:'問句用 any；eggs 可數。' },
+      { type:'mc', q:'My shorts ______ dirty. I need to wash them.', opts:['is','are','was','be'], answer:1,
+        exp:'shorts（短褲）常用複數，動詞也用複數 → are。' }
+    ]},
+    { title: '② 填空：寫出括號裡名詞的正確形式（單數、複數或所有格）', note:'有些字不用改，照原樣寫。', items: [
+      { q:'There are many {0} (leaf) on the ground in fall.', blanks:[['leaves']],
+        exp:'f 結尾去 f 加 -ves → leaves。' },
+      { q:'We bought some {0} (tomato) and two {1} (potato).', blanks:[['tomatoes'],['potatoes']],
+        exp:'子音 + o 多半加 -es → tomatoes、potatoes。' },
+      { q:'Grandpa has only a few {0} (tooth) left.', blanks:[['teeth']],
+        exp:'tooth 的不規則複數是 teeth。' },
+      { q:'Two {0} (city) in Taiwan are famous for night markets.', blanks:[['cities']],
+        exp:'子音 + y → 去 y 加 -ies → cities。' },
+      { q:'Please give me two glasses of {0} (water).', blanks:[['water']],
+        exp:'不可數名詞不變，變複數的是單位 glasses → water 不改。' },
+      { q:'This is {0} (Amy) notebook.', blanks:[['Amy\'s']],
+        exp:'單數名詞的所有格加 \'s → Amy\'s。' },
+      { q:'My {0} (parent) room is next to mine.（爸媽的）', blanks:[['parents\'']],
+        exp:'爸媽兩個人 → parents，字尾有 s 的複數只加 \' → parents\'。' },
+      { q:'I read about it in {0} (today) newspaper.', blanks:[['today\'s']],
+        exp:'時間名詞的所有格加 \'s → today\'s newspaper。' },
+      { q:'Ms. Lin has two {0} (child).', blanks:[['children']],
+        exp:'child 的不規則複數是 children。' },
+      { q:'I need a new pair of {0} (shoe).', blanks:[['shoes']],
+        exp:'a pair of 後面接複數 → shoes。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Can you give me some informations about the museum?<br>錯：{0} → 改：{1}', blanks:[['informations'],['information']],
+        exp:'information 不可數，沒有複數。' },
+      { q:'The news are on TV at seven.<br>錯：{0} → 改：{1}', blanks:[['are'],['is']],
+        exp:'news 不可數，用單數動詞 → is。' },
+      { q:'How many sugar do you want in your tea?<br>錯：{0} → 改：{1}', blanks:[['many'],['much']],
+        exp:'sugar 不可數 → How much。' },
+      { q:'There is many cars on the road today.<br>錯：{0} → 改：{1}', blanks:[['is'],['are']],
+        exp:'後面是複數 many cars → There are。' },
+      { q:'I\'d like three cups of coffees.<br>錯：{0} → 改：{1}', blanks:[['coffees'],['coffee']],
+        exp:'變複數的是單位 cups，coffee 不變。' },
+      { q:'These are the womens\' bags.<br>錯：{0} → 改：{1}', blanks:[['womens\''],['women\'s']],
+        exp:'women 本身是複數、字尾沒有 s → women\'s。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（改成複數）There is a knife on the table.<br>→ There {0} three {1} on the table.', blanks:[['are'],['knives']],
+        exp:'複數用 There are；knife → knives（fe 去掉加 -ves）。' },
+      { q:'（改成問句）There is some milk in the cup.<br>→ {0} there {1} milk in the cup?', blanks:[['Is'],['any']],
+        exp:'There is 的問句把 is 移到前面；問句的 some 改成 any。' },
+      { q:'（問數量）She drinks <u>two glasses of</u> water a day.<br>→ How {0} water does she drink a day?', blanks:[['much']],
+        exp:'water 不可數 → How much。' },
+      { q:'（問數量）I have <u>three</u> cousins.<br>→ How {0} cousins do you have?', blanks:[['many']],
+        exp:'cousins 可數 → How many。' },
+      { q:'（同義改寫）He has almost no money.<br>→ He has {0} money.', blanks:[['little']],
+        exp:'不可數 + 「幾乎沒有」→ little。' }
+    ]},
+    { title: '④-2 短文填空：寫出括號裡字的正確形式', note:'<span class="passage">Tomorrow is my sister\'s birthday, so Mom and I went shopping. We bought two <b>(1)</b>____ (box) of cookies, three <b>(2)</b>____ (bottle) of juice, and some <b>(3)</b>____ (bread). There <b>(4)</b>____ (be) a lot of people in the store. Mom also bought a pair of <b>(5)</b>____ (sock) for my sister. Then we went to <b>(6)</b>____ (Grandma) house to pick up the cake.</span>', items: [
+      { q:'(1) {0} (box)', blanks:[['boxes']],
+        exp:'x 結尾加 -es → boxes（單位變複數）。' },
+      { q:'(2) {0} (bottle)', blanks:[['bottles']],
+        exp:'單位變複數 → three bottles of juice。' },
+      { q:'(3) {0} (bread)', blanks:[['bread']],
+        exp:'bread 不可數，不加 -s。' },
+      { q:'(4) {0} (be)', blanks:[['were']],
+        exp:'過去的事（went）+ 複數 people → There were。' },
+      { q:'(5) {0} (sock)', blanks:[['socks']],
+        exp:'a pair of 後面接複數 → socks。' },
+      { q:'(6) {0} (Grandma)', blanks:[['Grandma\'s']],
+        exp:'所有格加 \'s → Grandma\'s house。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
