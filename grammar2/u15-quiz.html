@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 15 附和句 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u15.html">← Unit 15 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 15</div>
+  <h1>附和句．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與對話填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U15',
+  title: '國中文法 Unit 15 附和句',
+  back: 'u15.html',
+  sections: [
+    { title: '① 選擇題：選出正確的附和句', items: [
+      { type:'mc', q:'— I love summer. — ______.', opts:['So am I','So do I','Neither do I','So I do'], answer:1,
+        exp:'肯定、一般動詞 love → So do I。' },
+      { type:'mc', q:'— I\'m not good at math. — ______.', opts:['So am I','Neither am I','Neither do I','I am, too'], answer:1,
+        exp:'否定、be 動詞 am → Neither am I。' },
+      { type:'mc', q:'Ella can play the violin, and ______.', opts:['so can Lily','so does Lily','Lily can, either','neither can Lily'], answer:0,
+        exp:'肯定、助動詞 can → so can Lily。' },
+      { type:'mc', q:'I didn\'t go to the party, and Ben didn\'t, ______.', opts:['too','either','so','neither'], answer:1,
+        exp:'否定句的「也不」→ either。' },
+      { type:'mc', q:'My mom was busy yesterday, and so ______ my dad.', opts:['is','was','did','does'], answer:1,
+        exp:'be 動詞過去式 was → so was my dad。' },
+      { type:'mc', q:'Jay has a pet rabbit, and so ______ Mia.', opts:['has','does','is','have'], answer:1,
+        exp:'has（擁有）是一般動詞 → so does Mia。' },
+      { type:'mc', q:'They have never been to Kenting, and ______ I.', opts:['so have','neither have','neither has','so do'], answer:1,
+        exp:'never 是否定；完成式、新主詞 I → neither have I。' },
+      { type:'mc', q:'Kevin won\'t come tomorrow, and ______ Tom.', opts:['so will','neither will','neither won\'t','either will'], answer:1,
+        exp:'否定、助動詞 will → neither will Tom。' },
+      { type:'mc', q:'— I enjoyed the trip. — ______. It was great!', opts:['So did I','So was I','Neither did I','So do I'], answer:0,
+        exp:'enjoyed 是過去式 → So did I。' },
+      { type:'mc', q:'My brothers like soccer, and so ______ my sister.', opts:['do','does','is','are'], answer:1,
+        exp:'單複數看新主詞 my sister（單數）→ does。' }
+    ]},
+    { title: '② 填空：寫出附和句的部分', note:'看提示寫出兩個字，例如 so do、neither can。', items: [
+      { q:'Amy is from Taipei, and {0} I.（我也是）', blanks:[['so am']],
+        exp:'肯定、be 動詞、新主詞 I → so am I。' },
+      { q:'Ken likes basketball, and {0} his dad.（他爸也是）', blanks:[['so does']],
+        exp:'肯定、一般動詞、新主詞單數 → so does。' },
+      { q:'I can\'t speak Japanese, and {0} Lisa.（Lisa 也不會）', blanks:[['neither can','nor can']],
+        exp:'否定、can → neither can。' },
+      { q:'We watched the game, and {0} they.（他們也是）', blanks:[['so did']],
+        exp:'過去式 → so did。' },
+      { q:'She doesn\'t eat beef, and {0} I.（我也不）', blanks:[['neither do','nor do']],
+        exp:'否定、現在式一般動詞、新主詞 I → neither do I。' },
+      { q:'Tom has finished the test, and {0} I.（我也是）', blanks:[['so have']],
+        exp:'完成式、新主詞 I → so have I。' },
+      { q:'The bus wasn\'t late, and {0} the train.（火車也沒有）', blanks:[['neither was','nor was']],
+        exp:'否定、be 動詞過去式、新主詞單數 → neither was。' },
+      { q:'Leo will go camping, and Ben {0}, too.（Ben 也會）', blanks:[['will']],
+        exp:'too 的寫法：主詞 + 助動詞, too → Ben will, too。' },
+      { q:'I don\'t like snakes, and my mom {0}, either.（媽媽也不）', blanks:[['doesn\'t']],
+        exp:'either 的寫法：主詞 + 助動詞 + not, either → my mom doesn\'t, either。' },
+      { q:'My sister never cries, and {0} my brother.（弟弟也不）', blanks:[['neither does','nor does']],
+        exp:'never 是否定 → neither does。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Lily likes cats, and so am I.<br>錯：{0} → 改：{1}', blanks:[['am'],['do']],
+        exp:'likes 是一般動詞 → so do I。' },
+      { q:'I don\'t have a bike, and Sam doesn\'t, too.<br>錯：{0} → 改：{1}', blanks:[['too'],['either']],
+        exp:'否定句用 either。' },
+      { q:'He can\'t cook, and neither can\'t I.<br>錯：{0} → 改：{1}', blanks:[['can\'t I'],['can I']],
+        exp:'neither 已經是否定 → neither can I。' },
+      { q:'Ella went to Hualien, and so does her cousin.<br>錯：{0} → 改：{1}', blanks:[['does'],['did']],
+        exp:'went 是過去式 → so did。' },
+      { q:'My friends love pizza, and so do my sister.<br>錯：{0} → 改：{1}', blanks:[['do'],['does']],
+        exp:'新主詞 my sister 是單數 → so does。' },
+      { q:'Amy likes music, and so I do.<br>錯：{0} → 改：{1}', blanks:[['so I do'],['so do I']],
+        exp:'so 後面要倒裝：so + 助動詞 + 主詞 → so do I。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示改寫，在空格寫出正確的字。', items: [
+      { q:'（用 so 改寫）Ken is tall, and I am, too.<br>→ Ken is tall, and {0} {1} I.', blanks:[['so'],['am']],
+        exp:'and I am, too = and so am I。' },
+      { q:'（用 neither 改寫）Amy can\'t swim, and Ben can\'t, either.<br>→ Amy can\'t swim, and {0} {1} Ben.', blanks:[['neither'],['can']],
+        exp:'and Ben can\'t, either = and neither can Ben。' },
+      { q:'（用 so 改寫）Both my mom and I like cooking.<br>→ My mom likes cooking, and {0} {1} I.', blanks:[['so'],['do']],
+        exp:'兩人都喜歡 → My mom likes…, and so do I。' },
+      { q:'（用 neither 改寫）Neither Tom nor Jay went to school yesterday.<br>→ Tom didn\'t go to school yesterday, and {0} {1} Jay.', blanks:[['neither'],['did']],
+        exp:'兩人都沒去 → and neither did Jay。' },
+      { q:'（用 either 改寫）I haven\'t seen the movie, and neither has Lisa.<br>→ I haven\'t seen the movie, and Lisa {0}, either.', blanks:[['hasn\'t']],
+        exp:'neither has Lisa = Lisa hasn\'t, either。' }
+    ]},
+    { title: '④-2 對話填空：寫出附和或不同意的回應', note:'<span class="passage">Mia: I love rainy days.<br>Leo: <b>(1)</b>____ ____ I! I like the sound of rain.<br>Mia: But I don\'t like getting wet.<br>Leo: <b>(2)</b>____ ____ I. That\'s why I always bring an umbrella.<br>Mia: I went to the library yesterday.<br>Leo: <b>(3)</b>____ ____ I! I didn\'t see you there.<br>Mia: I can\'t find the book I want.<br>Leo: <b>(4)</b>____ ____ I. Let\'s ask the librarian.</span>', items: [
+      { q:'(1) {0} {1} I（我也是）', blanks:[['So'],['do']],
+        exp:'對方肯定、一般動詞 love → So do I。' },
+      { q:'(2) {0} {1} I（我也不）', blanks:[['Neither','Nor'],['do']],
+        exp:'對方否定 don\'t like → Neither do I。' },
+      { q:'(3) {0} {1} I（我也是）', blanks:[['So'],['did']],
+        exp:'went 是過去式 → So did I。' },
+      { q:'(4) {0} {1} I（我也不）', blanks:[['Neither','Nor'],['can']],
+        exp:'can\'t → Neither can I。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
