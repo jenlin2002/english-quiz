@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 13 連接詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u13.html">← Unit 13 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 13</div>
+  <h1>連接詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U13',
+  title: '國中文法 Unit 13 連接詞',
+  back: 'u13.html',
+  sections: [
+    { title: '① 選擇題：選出正確的連接詞', items: [
+      { type:'mc', q:'Ken likes drawing ______ singing. He does both every day.', opts:['and','or','so','because'], answer:0,
+        exp:'兩件事都喜歡（並列）→ and。' },
+      { type:'mc', q:'It\'s late, ______ let\'s go home.', opts:['but','or','so','because'], answer:2,
+        exp:'很晚了（原因）→ 回家吧（結果）→ so。' },
+      { type:'mc', q:'Mia studied hard, ______ she didn\'t pass the test.', opts:['and','so','but','or'], answer:2,
+        exp:'用功卻沒過，意思相反 → but。' },
+      { type:'mc', q:'Take an umbrella, ______ you\'ll get wet.', opts:['and','or','so','but'], answer:1,
+        exp:'祈使句 + or ＝ 否則。' },
+      { type:'mc', q:'Ken was absent ______ he had a fever.', opts:['so','because','although','but'], answer:1,
+        exp:'發燒是缺席的原因 → because。' },
+      { type:'mc', q:'______ he is only ten, he can speak three languages.', opts:['Because','Although','If','So'], answer:1,
+        exp:'才十歲「卻」會三種語言 → Although。' },
+      { type:'mc', q:'Please wait here ______ I come back.', opts:['until','unless','because','so'], answer:0,
+        exp:'等到我回來 → until。' },
+      { type:'mc', q:'We stayed inside ______ the typhoon.', opts:['because','because of','although','so that'], answer:1,
+        exp:'後面是名詞 the typhoon → because of。' },
+      { type:'mc', q:'Either you or Amy ______ to clean the room.', opts:['have','has','are','were'], answer:1,
+        exp:'either…or 動詞看靠近的 Amy（單數）→ has。' },
+      { type:'mc', q:'If it ______ tomorrow, the picnic will be canceled.', opts:['rains','will rain','rained','is raining'], answer:0,
+        exp:'條件子句用現在式代替未來式 → rains。' }
+    ]},
+    { title: '② 填空：寫出正確的連接詞或動詞形式', note:'看中文提示寫連接詞；括號是動詞時寫出正確形式。', items: [
+      { q:'{0}（雖然）it was raining, we played soccer.', blanks:[['Although','Though','Even though']],
+        exp:'雖然 → Although／Though。' },
+      { q:'Turn off the lights {0}（在…之前）you leave.', blanks:[['before']],
+        exp:'在…之前 → before。' },
+      { q:'Text me {0} {1} {2}（一…就）you get home.', blanks:[['as'],['soon'],['as']],
+        exp:'一…就… → as soon as。' },
+      { q:'You can borrow my bike {0} {1} {2}（只要）you return it today.', blanks:[['as'],['long'],['as']],
+        exp:'只要 → as long as。' },
+      { q:'You won\'t get better {0}（除非）you take the medicine.', blanks:[['unless']],
+        exp:'除非 → unless（＝ if…not）。' },
+      { q:'{0}（當…期間）I was cooking, the doorbell rang.', blanks:[['While','When']],
+        exp:'在煮飯的期間（進行中）→ While（When 也可以）。' },
+      { q:'I\'ll tell her the news when she {0} (come) back.', blanks:[['comes']],
+        exp:'時間子句用現在式代替未來式；she 是第三人稱單數 → comes。' },
+      { q:'Both Kevin and Ben {0} (be) in my class.', blanks:[['are']],
+        exp:'both A and B 用複數 → are。' },
+      { q:'Neither the students nor the teacher {0} (be) ready.', blanks:[['is']],
+        exp:'neither…nor 看靠近的 the teacher（單數）→ is。' },
+      { q:'He saved money {0} {1}（為了）he could buy a new phone.', blanks:[['so'],['that']],
+        exp:'為了…（目的）→ so that。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。要刪掉的字，右格寫 X。', items: [
+      { q:'Because the weather was bad, so we didn\'t go hiking.<br>錯：{0} → 改：{1}', blanks:[['so'],['X','x']],
+        exp:'because 和 so 只能用一個，刪掉 so。' },
+      { q:'Although Sam is young, but he is very smart.<br>錯：{0} → 改：{1}', blanks:[['but'],['X','x']],
+        exp:'although 和 but 只能用一個，刪掉 but。' },
+      { q:'The flight was late because the bad weather.<br>錯：{0} → 改：{1}', blanks:[['because'],['because of']],
+        exp:'後面是名詞片語 → because of。' },
+      { q:'I\'ll give you a call after I will finish dinner.<br>錯：{0} → 改：{1}', blanks:[['will finish'],['finish']],
+        exp:'時間子句用現在式代替未來式 → after I finish。' },
+      { q:'Unless you don\'t leave now, you\'ll be late.<br>錯：{0} → 改：{1}', blanks:[['don\'t leave'],['leave']],
+        exp:'unless 本身就是「如果不」→ Unless you leave now…（或改成 If you don\'t leave now）。' },
+      { q:'Neither my sister nor I are good at math.<br>錯：{0} → 改：{1}', blanks:[['are'],['am']],
+        exp:'neither…nor 看靠近的 I → am。' }
+    ]},
+    { title: '④-1 句子改寫與合併', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（合併：because）He missed the bus. He got up late.<br>→ He missed the bus {0} he got up late.', blanks:[['because']],
+        exp:'晚起床是錯過公車的原因 → because。' },
+      { q:'（同義改寫）Because it was noisy, I couldn\'t sleep.<br>→ It was noisy, {0} I couldn\'t sleep.', blanks:[['so']],
+        exp:'Because…, … ＝ …, so …（只用一個）。' },
+      { q:'（同義改寫）If you don\'t hurry, you\'ll be late.<br>→ Hurry, {0} you\'ll be late.', blanks:[['or']],
+        exp:'If you don\'t… ＝ 祈使句 + or（否則）。' },
+      { q:'（同義改寫）If you don\'t study, you won\'t pass.<br>→ {0} you study, you won\'t pass.', blanks:[['Unless']],
+        exp:'if…not ＝ unless。' },
+      { q:'（同義改寫）He went to bed at midnight. Before that, he was doing homework.<br>→ He {0} go to bed {1} midnight.', blanks:[['didn\'t','did not'],['until']],
+        exp:'直到半夜才睡 → didn\'t…until midnight。' }
+    ]},
+    { title: '④-2 短文填空：寫出正確的連接詞', note:'<span class="passage">Last Friday, I wanted to go to the night market, <b>(1)</b>____ it started to rain. My mom said, "Bring an umbrella, <b>(2)</b>____ you\'ll get wet." <b>(3)</b>____ it was raining, the market was still crowded. I bought some stinky tofu <b>(4)</b>____ it\'s my favorite snack. I didn\'t get home <b>(5)</b>____ ten o\'clock. Next time, I\'ll check the weather <b>(6)</b>____ I go out.</span>', items: [
+      { q:'(1) {0}', blanks:[['but']],
+        exp:'想去卻下雨了 → but。' },
+      { q:'(2) {0}', blanks:[['or']],
+        exp:'祈使句 + or ＝ 否則。' },
+      { q:'(3) {0}', blanks:[['Although','Though','Even though']],
+        exp:'雖然下雨，夜市還是很多人 → Although。' },
+      { q:'(4) {0}', blanks:[['because','since','as']],
+        exp:'因為是我最愛的小吃 → because。' },
+      { q:'(5) {0}', blanks:[['until','till']],
+        exp:'didn\'t…until＝直到十點才到家。' },
+      { q:'(6) {0}', blanks:[['before']],
+        exp:'出門「之前」先查天氣 → before。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
