@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 12 介系詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u12.html">← Unit 12 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 12</div>
+  <h1>介系詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U12',
+  title: '國中文法 Unit 12 介系詞',
+  back: 'u12.html',
+  sections: [
+    { title: '① 選擇題：選出正確的介系詞', items: [
+      { type:'mc', q:'School starts ______ September.', opts:['at','on','in','by'], answer:2,
+        exp:'月份用 in。' },
+      { type:'mc', q:'I have a piano lesson ______ Wednesday.', opts:['at','on','in','for'], answer:1,
+        exp:'星期幾用 on。' },
+      { type:'mc', q:'Dinner will be ready ______ six o\'clock.', opts:['at','on','in','during'], answer:0,
+        exp:'時刻用 at。' },
+      { type:'mc', q:'Your keys are ______ the table.', opts:['in','on','at','into'], answer:1,
+        exp:'放在桌面上 → on。' },
+      { type:'mc', q:'My uncle lives ______ Kaohsiung.', opts:['in','on','at','to'], answer:0,
+        exp:'城市是一個範圍 → in。' },
+      { type:'mc', q:'Sara walks to school. She goes ______ foot.', opts:['by','on','in','with'], answer:1,
+        exp:'走路 → on foot。' },
+      { type:'mc', q:'The museum is ______ the park. Just cross the street.', opts:['across from','between','among','into'], answer:0,
+        exp:'過個馬路就到 → 在對面 across from。' },
+      { type:'mc', q:'No talking ______ the exam, please.', opts:['since','during','until','by'], answer:1,
+        exp:'在考試期間 → during。' },
+      { type:'mc', q:'He ran ______ the classroom because he was late.', opts:['in','into','at','on'], answer:1,
+        exp:'跑「進」教室（移動）→ into。' },
+      { type:'mc', q:'We\'ll go camping ______.', opts:['on this weekend','this weekend','at this weekend','in this weekend'], answer:1,
+        exp:'this、next、last、every 前面不加介系詞。' }
+    ]},
+    { title: '② 填空：寫出正確的介系詞', note:'每格寫一個介系詞（例如 at、on、in、for）。不需要介系詞的寫 X。', items: [
+      { q:'I was born {0} 2013.', blanks:[['in']],
+        exp:'年份用 in。' },
+      { q:'Let\'s meet {0} noon.', blanks:[['at']],
+        exp:'noon（中午十二點）是一個時間點 → at。' },
+      { q:'We exchange gifts {0} Christmas Day.', blanks:[['on']],
+        exp:'特定的一天 → on Christmas Day。' },
+      { q:'I usually do homework {0} the evening.', blanks:[['in']],
+        exp:'早上／下午／晚上 → in the evening。' },
+      { q:'She has lived here {0} 2020.', blanks:[['since']],
+        exp:'起點 2020 → since。' },
+      { q:'I\'ve waited {0} two hours!', blanks:[['for']],
+        exp:'一段時間 → for。' },
+      { q:'Please write your answers {0} English.', blanks:[['in']],
+        exp:'用某種語言 → in English。' },
+      { q:'Thank you {0} helping me.', blanks:[['for']],
+        exp:'thank + 人 + for + V-ing。' },
+      { q:'The man {0} glasses is my teacher.', blanks:[['with']],
+        exp:'有…特徵（戴眼鏡）→ with glasses。' },
+      { q:'It\'s late. Let\'s go {0} home.', blanks:[['X','x']],
+        exp:'go home 不加介系詞 → 寫 X。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。如果要刪掉介系詞，右格寫 X。', items: [
+      { q:'My birthday is on August.<br>錯：{0} → 改：{1}', blanks:[['on'],['in']],
+        exp:'只有月份用 in → in August（有日期才用 on：on August 8）。' },
+      { q:'I go to school by a bike.<br>錯：{0} → 改：{1}', blanks:[['by a bike'],['by bike']],
+        exp:'by + 交通工具，不加 a / the。' },
+      { q:'We met in last Sunday.<br>錯：{0} → 改：{1}', blanks:[['in'],['X','x']],
+        exp:'last Sunday 前面不加介系詞，要刪掉 in。' },
+      { q:'Please sit between Amy and I.<br>錯：{0} → 改：{1}', blanks:[['I'],['me']],
+        exp:'介系詞 between 後面用受格 → me。' },
+      { q:'You must hand in the report until Monday.<br>錯：{0} → 改：{1}', blanks:[['until'],['by']],
+        exp:'最晚期限用 by；until 是「一直持續到」。' },
+      { q:'The kids jumped in the pool with a big splash.<br>錯：{0} → 改：{1}', blanks:[['in'],['into']],
+        exp:'跳「進」水裡（移動）→ into。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）I walk to school every day.<br>→ I go to school {0} {1} every day.', blanks:[['on'],['foot']],
+        exp:'walk to school = go to school on foot。' },
+      { q:'（同義改寫）Ken takes the MRT to work.<br>→ Ken goes to work {0} MRT.', blanks:[['by']],
+        exp:'take + 交通工具 = by + 交通工具。' },
+      { q:'（同義改寫）The bank is opposite the hospital.<br>→ The bank is {0} {1} the hospital.', blanks:[['across'],['from']],
+        exp:'opposite = across from（在對面）。' },
+      { q:'（同義改寫）Lily is next to Tom. Tom is next to Ben. Lily and Ben are not next to each other.<br>→ Tom is {0} Lily and Ben.', blanks:[['between']],
+        exp:'在兩人中間 → between A and B。' },
+      { q:'（同義改寫）I started living here three years ago, and I still live here.<br>→ I have lived here {0} three years.', blanks:[['for']],
+        exp:'一段時間（three years）→ for。' }
+    ]},
+    { title: '④-2 短文填空：寫出正確的介系詞', note:'<span class="passage">Last summer, my family went to Hualien <b>(1)</b>____ train. We left <b>(2)</b>____ Saturday morning and arrived <b>(3)</b>____ noon. Our hotel was right <b>(4)</b>____ the beach, so we could hear the waves at night. We stayed there <b>(5)</b>____ three days. On the last day, we walked <b>(6)</b>____（沿著）the river and took lots of photos.</span>', items: [
+      { q:'(1) {0}', blanks:[['by']],
+        exp:'搭火車 → by train。' },
+      { q:'(2) {0}', blanks:[['on']],
+        exp:'指定某一天的早上 → on Saturday morning。' },
+      { q:'(3) {0}', blanks:[['at']],
+        exp:'中午這個時間點 → at noon。' },
+      { q:'(4) {0}', blanks:[['on','near','by']],
+        exp:'飯店在海灘上／海邊 → on the beach（near、by 也可以）。' },
+      { q:'(5) {0}', blanks:[['for']],
+        exp:'一段時間（three days）→ for。' },
+      { q:'(6) {0}（沿著）', blanks:[['along']],
+        exp:'沿著河走 → along the river。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>

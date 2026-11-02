@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法 Unit 12 投影片｜介系詞</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">GRAMMAR UNIT 12 · SLIDES</div>
+    <h1 class="page">介系詞</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="index.html">← 國中文法目錄</a>
+    <a class="home-link" href="u12.html">📘 講解</a>
+    <a class="quiz-link" href="u12-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 12 · GRAMMAR</div><h1 class="big">介系詞</h1><div class="en-sub">Prepositions</div><div class="venn"><span class="c1">地方</span><span class="c2">時間</span></div></section>
+<section class="s paper"><h2>本單元目標與暖身</h2><div class="cards n2"><div class="card g"><h3>學完這個單元，你會</h3><ul class="b"><li>用 in、at、on 表示地方和時間</li><li>用 in front of、between、across from 等說位置</li><li>分清楚 for / since、until / by、in / into</li><li>說交通方式：by bus、on foot</li><li>記住片語裡的介系詞</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I get up ____ 6:30. (at / on)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>at</span></div><div class="qa"><span class="n">2</span><span class="q">My birthday is ____ May. (on / in)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>in</span></div><div class="qa"><span class="n">3</span><span class="q">I go to school ____ bus. (by / on)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>by</span></div></div></div></div></section>
+<section class="s paper"><h2>地方：in、at、on</h2><table class="t"><thead><tr><th>介系詞</th><th>想像成</th><th>例句</th></tr></thead><tbody><tr><td>in</td><td>空間、範圍裡面</td><td><div>The kids are playing <b>in</b> the park. <button class="sentence-btn" type="button" data-say="The kids are playing in the park." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（孩子們在公園裡玩）</span></div></td></tr><tr><td>at</td><td>一個點、地址</td><td><div>I'll meet you <b>at</b> the bus stop. <button class="sentence-btn" type="button" data-say="I&#x27;ll meet you at the bus stop." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我在公車站跟你碰面）</span></div></td></tr><tr><td>on</td><td>一個面、一條線</td><td><div>There's a picture <b>on</b> the wall. <button class="sentence-btn" type="button" data-say="There&#x27;s a picture on the wall." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（牆上有一幅畫）</span></div></td></tr><tr><td>on</td><td>大型交通工具</td><td><div>I saw Amy <b>on</b> the bus. <button class="sentence-btn" type="button" data-say="I saw Amy on the bus." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我在公車上看到 Amy）</span></div></td></tr></tbody></table><div class="note">go home、come here、go downtown 不加介系詞；但 at home 要用 at。</div></section>
+<section class="s paper"><h2>位置與方向</h2><div class="cards n2 tight"><div class="card g"><h3>位置</h3><div class="sub">where?</div><table class="t"><thead><tr><th>介系詞</th><th>意思</th></tr></thead><tbody><tr><td>in front of / behind</td><td>前面／後面</td></tr><tr><td>next to / beside</td><td>旁邊</td></tr><tr><td>between A and B</td><td>兩者之間</td></tr><tr><td>among</td><td>三者以上之中</td></tr><tr><td>across from</td><td>對面</td></tr><tr><td>under / above</td><td>下面／上方</td></tr></tbody></table></div><div class="card o"><h3>方向、移動</h3><div class="sub">in 是狀態，into 是移動</div><div class="ex o"><div class="en">He ran <i>into</i> the room. <button class="sentence-btn" type="button" data-say="He ran into the room." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 進入（移動）</div></div><div class="ex o"><div class="en">She got <i>out of</i> the car. <button class="sentence-btn" type="button" data-say="She got out of the car." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 從…出來</div></div><div class="ex o"><div class="en">Walk <i>across</i> the street. <button class="sentence-btn" type="button" data-say="Walk across the street." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 橫越</div></div><div class="ex o"><div class="en">We walked <i>along</i> the river. <button class="sentence-btn" type="button" data-say="We walked along the river." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 沿著</div></div></div></div></section>
+<section class="s paper"><h2>時間：at、on、in</h2><table class="t"><thead><tr><th>介系詞</th><th>用在</th><th>例句</th></tr></thead><tbody><tr><td>at</td><td>時刻、noon、night、節日</td><td><div>The movie starts <b>at</b> 7:30. <button class="sentence-btn" type="button" data-say="The movie starts at 7:30." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（電影七點半開始）</span></div></td></tr><tr><td>on</td><td>星期幾、日期、某一天</td><td><div>We have P.E. <b>on</b> Monday. <button class="sentence-btn" type="button" data-say="We have P.E. on Monday." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我們星期一有體育課）</span></div></td></tr><tr><td>in</td><td>月、季節、年、早上／晚上</td><td><div>I was born <b>in</b> 2013. <button class="sentence-btn" type="button" data-say="I was born in 2013." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我 2013 年出生）</span></div></td></tr><tr><td>on</td><td>指定某天的早上</td><td><div>We left <b>on</b> Sunday morning. <button class="sentence-btn" type="button" data-say="We left on Sunday morning." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我們星期天早上出發）</span></div></td></tr></tbody></table><div class="note">口訣：at 點、on 天、in 長。this、next、last、every 前面不加介系詞：next week（不說 in next week）。</div></section>
+<section class="s paper"><h2>for、since、until、by、during</h2><div class="cards n2"><div class="card g"><h3>持續多久</h3><div class="sub">for / since / during</div><div class="ex g"><div class="en">I've lived here <b>for</b> five years. <button class="sentence-btn" type="button" data-say="I&#x27;ve lived here for five years." aria-label="播放這個句子">🔊</button></div><div class="zh">→ for + 一段時間</div></div><div class="ex g"><div class="en">I've lived here <b>since</b> 2021. <button class="sentence-btn" type="button" data-say="I&#x27;ve lived here since 2021." aria-label="播放這個句子">🔊</button></div><div class="zh">→ since + 起點</div></div><div class="ex g"><div class="en">Don't talk <b>during</b> the test. <button class="sentence-btn" type="button" data-say="Don&#x27;t talk during the test." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 在…期間</div></div></div><div class="card o"><h3>until 和 by</h3><div class="sub">持續 vs 期限</div><div class="ex o"><div class="en">I'll stay here <i>until</i> five. <button class="sentence-btn" type="button" data-say="I&#x27;ll stay here until five." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一直待到五點</div></div><div class="ex o"><div class="en">I'll be back <i>by</i> five. <button class="sentence-btn" type="button" data-say="I&#x27;ll be back by five." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 五點前（最晚）會回來</div></div><div class="ex o"><div class="en">Hand in your report <i>by</i> Friday. <button class="sentence-btn" type="button" data-say="Hand in your report by Friday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 最晚期限</div></div></div></div></section>
+<section class="s paper"><h2>by、with、in、for、about</h2><table class="t"><thead><tr><th>介系詞</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>by + 交通工具</td><td>搭乘（不加 a / the）</td><td><div>I go to school <b>by bus</b>. <button class="sentence-btn" type="button" data-say="I go to school by bus." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我搭公車上學）</span></div></td></tr><tr><td>on foot</td><td>走路</td><td><div>She goes to school <b>on foot</b>. <button class="sentence-btn" type="button" data-say="She goes to school on foot." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（她走路上學）</span></div></td></tr><tr><td>with</td><td>和…一起；有…特徵</td><td><div>I live <b>with</b> my grandparents. <button class="sentence-btn" type="button" data-say="I live with my grandparents." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我和爺爺奶奶住）</span></div></td></tr><tr><td>in</td><td>穿著；用（語言）</td><td><div>Who is the man <b>in</b> the black coat? <button class="sentence-btn" type="button" data-say="Who is the man in the black coat?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（穿黑外套的人是誰？）</span></div></td></tr><tr><td>about</td><td>關於</td><td><div>This is a book <b>about</b> dinosaurs. <button class="sentence-btn" type="button" data-say="This is a book about dinosaurs." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這是一本關於恐龍的書）</span></div></td></tr></tbody></table></section>
+<section class="s paper"><h2>片語中的介系詞</h2><table class="t"><thead><tr><th>介系詞</th><th>常見片語</th></tr></thead><tbody><tr><td>to</td><td>be kind to、listen to、belong to</td></tr><tr><td>for</td><td>be ready for、be late for、wait for、thank … for</td></tr><tr><td>with</td><td>be angry with、be patient with、What's wrong with you?</td></tr><tr><td>of</td><td>be afraid of、be full of、be proud of、take care of</td></tr><tr><td>about / at</td><td>be worried about、talk about / be good at、look at</td></tr><tr><td>in / on</td><td>be interested in、in time（及時）/ on time（準時）、on sale</td></tr></tbody></table><div class="note">介系詞後面接名詞、受格（with me）或 V-ing（before eating）。</div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">I was born on 2012.</span> → <span class="good">I was born in 2012.</span></div><div class="why">年份用 in。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">See you in next week.</span> → <span class="good">See you next week.</span></div><div class="why">next 前面不加介系詞。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">I go to school by a bus.</span> → <span class="good">I go to school by bus.</span></div><div class="why">by + 交通工具不加 a。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">Let's go to home.</span> → <span class="good">Let's go home.</span></div><div class="why">go home 不加 to。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">Please finish it until Friday.</span> → <span class="good">Please finish it by Friday.</span></div><div class="why">最晚期限用 by。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">____ Monday (in / on)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>on</span></div><div class="qa"><span class="n">2</span><span class="q">____ the morning (in / on)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>in</span></div><div class="qa"><span class="n">3</span><span class="q">____ midnight (at / in)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>at</span></div><div class="qa"><span class="n">4</span><span class="q">____ summer (on / in)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>in</span></div><div class="qa"><span class="n">5</span><span class="q">____ foot (by / on)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>on</span></div><div class="qa"><span class="n">6</span><span class="q">for / since ____ 2019</span><button class="rv" type="button">看答案</button><span class="ans" hidden>since</span></div><div class="qa"><span class="n">7</span><span class="q">The cat ran ____ the house. (in / into)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>into</span></div><div class="qa"><span class="n">8</span><span class="q">Sit between Ken and ____. (I / me)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>me</span></div></div></section>
+<section class="s paper"><h2>改寫練習與下一步</h2><div class="two"><div><p class="lead">同義改寫</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I walk to school.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I go to school on foot.</span></div><div class="qa"><span class="n">2</span><span class="q">He takes the MRT to work.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He goes to work by MRT.</span></div><div class="qa"><span class="n">3</span><span class="q">The bank is opposite the park.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>The bank is across from the park.</span></div><div class="qa"><span class="n">4</span><span class="q">I started living here in 2021.（現在還住）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I have lived here since 2021.</span></div></div></div><div class="card o"><h3>學完了！接下來</h3><ul class="b"><li>回到「📘 講解」頁看完整的介系詞表</li><li>做講解頁最後的自我練習（不計點數）</li><li>準備好了就按右上角「📝 前往測驗」</li><li>介系詞後接 V-ing 可以回 Unit 3 複習</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/u12/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>
