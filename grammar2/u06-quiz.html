@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 6 助動詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u06.html">← Unit 6 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 6</div>
+  <h1>助動詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U6',
+  title: '國中文法 Unit 6 助動詞',
+  back: 'u06.html',
+  sections: [
+    { title: '① 選擇題：選出意思和形式都對的助動詞', items: [
+      { type:'mc', q:'Leo can ______ very fast.', opts:['runs','run','running','to run'], answer:1,
+        exp:'助動詞 can 後面接原形 → run。' },
+      { type:'mc', q:'You ______ smoke in the hospital. It\'s not allowed.', opts:['mustn\'t','don\'t have to','needn\'t','might not'], answer:0,
+        exp:'不准、禁止 → mustn\'t。' },
+      { type:'mc', q:'We have plenty of time. We ______ hurry.', opts:['mustn\'t','don\'t have to','can\'t','had better'], answer:1,
+        exp:'時間很多，「不必」趕 → don\'t have to。' },
+      { type:'mc', q:'______ you please turn down the TV? I\'m studying.', opts:['Must','Would','Should','May'], answer:1,
+        exp:'客氣地請別人做事 → Would you please…?（May I 是請求自己被允許做）' },
+      { type:'mc', q:'Take an umbrella. It ______ rain later.', opts:['may','must','can\'t','should have'], answer:0,
+        exp:'不確定、有可能 → may。' },
+      { type:'mc', q:'Amy ______ play the piano when she was six.', opts:['can','could','is able to','will be able to'], answer:1,
+        exp:'when she was six 是過去 → 過去的能力 could。' },
+      { type:'mc', q:'You look sick. You ______ see a doctor.', opts:['had better','had better not','mustn\'t','needn\'t'], answer:0,
+        exp:'給強烈建議「最好」→ had better see a doctor。' },
+      { type:'mc', q:'The lights are off. They ______ be asleep.', opts:['must','can\'t','mustn\'t','needn\'t'], answer:0,
+        exp:'根據證據非常確定「是」→ must be。' },
+      { type:'mc', q:'That ______ be Mr. Chen. He\'s in Japan this week.', opts:['must','may','can\'t','should'], answer:2,
+        exp:'非常確定「不是」→ can\'t be。' },
+      { type:'mc', q:'My grandpa ______ go fishing every Sunday, but now he doesn\'t.', opts:['used to','is used to','uses to','was used to'], answer:0,
+        exp:'以前常常、現在不會了 → used to + 原形。' }
+    ]},
+    { title: '② 填空：寫出正確的助動詞或動詞形式', note:'看括號裡的提示。縮寫或完整寫法都可以。', items: [
+      { q:'She should {0} (drink) more water.', blanks:[['drink']],
+        exp:'should 後面接原形 → drink。' },
+      { q:'I {0} (必須，過去式) walk home because I missed the bus.', blanks:[['had to']],
+        exp:'must 沒有過去式，「過去必須」用 had to。' },
+      { q:'Next year, Ben {0} (能夠) drive a car.', blanks:[['will be able to']],
+        exp:'未來的能力：will 和 can 不能連用 → will be able to。' },
+      { q:'You {0} (最好不要) eat so much candy.', blanks:[['had better not','\'d better not']],
+        exp:'had better not + 原形 → had better not eat。' },
+      { q:'{0} I open the window? It\'s hot in here. (提議：要不要我…)', blanks:[['Shall']],
+        exp:'Shall I…? 用來提議「要不要我…」。' },
+      { q:'You {0} (不必) bring anything. We have everything.', blanks:[['don\'t have to','do not have to','needn\'t','need not','don\'t need to','do not need to']],
+        exp:'「不必」→ don\'t have to／needn\'t（不能用 mustn\'t）。' },
+      { q:'Tom {0} (應該) have told us the truth.', blanks:[['should']],
+        exp:'should have + p.p.＝過去本來應該做卻沒做。' },
+      { q:'Ella {0} (以前常常) live in Tainan.', blanks:[['used to']],
+        exp:'以前常常、現在不是了 → used to + 原形。' },
+      { q:'Did you {0} (以前常常) play outside after school?', blanks:[['use to']],
+        exp:'問句借助 did，used to 變成 use to → Did you use to…?' },
+      { q:'The street is wet. It {0} (一定，推測) have rained.', blanks:[['must']],
+        exp:'推測過去的事，非常確定 → must have + p.p.' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Kevin can plays the guitar.<br>錯：{0} → 改：{1}', blanks:[['plays'],['play']],
+        exp:'can 後面接原形 → can play。' },
+      { q:'You should to go to bed earlier.<br>錯：{0} → 改：{1}', blanks:[['should to'],['should']],
+        exp:'should 後面直接接原形，不加 to → should go。' },
+      { q:'I will can help you tomorrow.<br>錯：{0} → 改：{1}', blanks:[['can'],['be able to']],
+        exp:'兩個助動詞不能連用 → will be able to help。' },
+      { q:'Must she wears a uniform at school?<br>錯：{0} → 改：{1}', blanks:[['wears'],['wear']],
+        exp:'助動詞移到句首的問句，後面的動詞還是原形 → Must she wear…?' },
+      { q:'You had not better tell anyone.<br>錯：{0} → 改：{1}', blanks:[['had not better'],['had better not']],
+        exp:'not 放在 had better 後面 → had better not tell。' },
+      { q:'He just ate two burgers. He mustn\'t be hungry.<br>錯：{0} → 改：{1}', blanks:[['mustn\'t','must not'],['can\'t','cannot']],
+        exp:'推測「一定不是」用 can\'t → He can\'t be hungry。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）Sam can speak Japanese.<br>→ Sam {0} speak Japanese.', blanks:[['is able to']],
+        exp:'can = be able to；主詞 Sam → is able to。' },
+      { q:'（同義改寫）You should be careful.<br>→ You {0} be careful.', blanks:[['ought to']],
+        exp:'should = ought to（ought 後面要加 to）。' },
+      { q:'（同義改寫）Maybe Lily is at the gym.<br>→ Lily {0} at the gym.', blanks:[['may be','might be']],
+        exp:'Maybe（副詞）+ is = may be（助動詞 + be）。' },
+      { q:'（改成問句並回答「不必」）You must leave now.<br>→ {0} I leave now? — No, you {1}.', blanks:[['Must'],['don\'t have to','needn\'t','do not have to','need not']],
+        exp:'Must 移到句首；否定回答「不必」用 don\'t have to／needn\'t，不用 mustn\'t。' },
+      { q:'（同義改寫）I\'m sure he is the new teacher.<br>→ He {0} the new teacher.', blanks:[['must be']],
+        exp:'「我確定他是」→ 推測的 must be。' }
+    ]},
+    { title: '④-2 短文填空：選出正確的助動詞', note:'<span class="passage">（每格從括號裡選一個寫上去）<br>Our school trip is tomorrow. Everyone <b>(1)</b>____ (must / mustn\'t) be at school by 7:00, so I <b>(2)</b>____ (have to / had to) get up early. We <b>(3)</b>____ (don\'t have to / mustn\'t) bring lunch because the school will give us sandwiches. But we <b>(4)</b>____ (mustn\'t / don\'t have to) leave the group during the trip. The weather report says it <b>(5)</b>____ (may / must) rain, so I <b>(6)</b>____ (had better / had better not) pack a raincoat.</span>', items: [
+      { q:'(1) {0} (must / mustn\'t)', blanks:[['must']],
+        exp:'規定要在七點前到 → must。' },
+      { q:'(2) {0} (have to / had to)', blanks:[['have to']],
+        exp:'說的是明天（未來）的事，不是過去 → have to。' },
+      { q:'(3) {0} (don\'t have to / mustn\'t)', blanks:[['don\'t have to']],
+        exp:'學校會給三明治，所以「不必」帶 → don\'t have to。' },
+      { q:'(4) {0} (mustn\'t / don\'t have to)', blanks:[['mustn\'t']],
+        exp:'不准離開隊伍（禁止）→ mustn\'t。' },
+      { q:'(5) {0} (may / must)', blanks:[['may']],
+        exp:'天氣預報說「可能」下雨，不是確定 → may。' },
+      { q:'(6) {0} (had better / had better not)', blanks:[['had better']],
+        exp:'可能下雨，所以「最好」帶雨衣 → had better。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
