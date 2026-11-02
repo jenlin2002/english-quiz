@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 10 形容詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u10.html">← Unit 10 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 10</div>
+  <h1>形容詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U10',
+  title: '國中文法 Unit 10 形容詞',
+  back: 'u10.html',
+  sections: [
+    { title: '① 選擇題：位置與比較', items: [
+      { type:'mc', q:'Is there ______ in today\'s newspaper?', opts:['anything new','new anything','something news','new something'], answer:0,
+        exp:'形容詞放在 anything 後面；問句用 anything → anything new。' },
+      { type:'mc', q:'My brother is ______ than me.', opts:['old','older','oldest','more old'], answer:1,
+        exp:'兩個比 + than → 比較級 older。' },
+      { type:'mc', q:'Mount Everest is the ______ mountain in the world.', opts:['high','higher','highest','most high'], answer:2,
+        exp:'the + 最高級 + in the world → highest。' },
+      { type:'mc', q:'This dress is not as ______ as that one.', opts:['expensive','more expensive','most expensive','expensiver'], answer:0,
+        exp:'not as…as 中間用原級 → expensive。' },
+      { type:'mc', q:'Which is ______, the sun or the moon?', opts:['big','bigger','biggest','the biggest'], answer:1,
+        exp:'兩個之中選 → 比較級 bigger。' },
+      { type:'mc', q:'Leo is ______ student in our class.', opts:['a smartest','smarter','the smartest','the smarter'], answer:2,
+        exp:'全班（三人以上）中最… → the smartest。' },
+      { type:'mc', q:'My cold is ______ today. I can go to school.', opts:['bad','good','better','best'], answer:2,
+        exp:'感冒比之前好了 → better（well/good 的比較級）。' },
+      { type:'mc', q:'The bus is ______ faster than walking.', opts:['very','much','more','most'], answer:1,
+        exp:'修飾比較級用 much（very 只能修飾原級）。' },
+      { type:'mc', q:'Grandma has a ______ dog.', opts:['two-years-old','two-year-old','two years old','two-year-olds'], answer:1,
+        exp:'數字 + 名詞當形容詞，名詞用單數 → two-year-old。' },
+      { type:'mc', q:'It was careless ______ you to leave the door open.', opts:['for','of','to','with'], answer:1,
+        exp:'careless 描述「人」的個性（You were careless.）→ of。' }
+    ]},
+    { title: '② 填空：寫出括號裡形容詞的正確形式', note:'原級、比較級（-er / more）、最高級（-est / most）？', items: [
+      { q:'Today is {0} (warm) than yesterday.', blanks:[['warmer']],
+        exp:'than → 比較級 warmer。' },
+      { q:'This is the {0} (easy) question on the test.', blanks:[['easiest']],
+        exp:'the + 最高級；子音 + y → 去 y 加 -iest → easiest。' },
+      { q:'Science is {0} (interesting) than history for me.', blanks:[['more interesting']],
+        exp:'多音節形容詞 → more interesting。' },
+      { q:'That was the {0} (bad) movie I\'ve ever seen.', blanks:[['worst']],
+        exp:'bad 的最高級是不規則的 worst。' },
+      { q:'Your room is {0} (big) than mine.', blanks:[['bigger']],
+        exp:'big 短母音 + 單子音，重複 g → bigger。' },
+      { q:'Tina is as {0} (busy) as her mom.', blanks:[['busy']],
+        exp:'as…as 中間用原級 → busy。' },
+      { q:'He is one of the {0} (famous) singers in Asia.', blanks:[['most famous']],
+        exp:'one of the + 最高級 + 複數名詞 → most famous。' },
+      { q:'It\'s getting {0} (dark) and {1} (dark).', blanks:[['darker'],['darker']],
+        exp:'比較級 and 比較級＝越來越… → darker and darker。' },
+      { q:'Who is the {0} (young) of the three kids?', blanks:[['youngest']],
+        exp:'三個之中最… → the youngest of the three。' },
+      { q:'I have {0} (few) toys than my cousin.', blanks:[['fewer']],
+        exp:'toys 可數，「比較少」→ fewer。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'My sister is more prettier than me.<br>錯：{0} → 改：{1}', blanks:[['more prettier'],['prettier']],
+        exp:'-er 和 more 不能同時用 → prettier。' },
+      { q:'This cake is gooder than that one.<br>錯：{0} → 改：{1}', blanks:[['gooder'],['better']],
+        exp:'good 的比較級是 better。' },
+      { q:'Ken runs as faster as Tom.<br>錯：{0} → 改：{1}', blanks:[['faster'],['fast']],
+        exp:'as…as 中間用原級 → as fast as。' },
+      { q:'It\'s very colder today than yesterday.<br>錯：{0} → 改：{1}', blanks:[['very'],['much','far','a lot','even']],
+        exp:'修飾比較級用 much／far／a lot／even，不用 very。' },
+      { q:'Kelly is taller than any girl in her class.<br>錯：{0} → 改：{1}', blanks:[['any girl'],['any other girl']],
+        exp:'Kelly 也在班上，不能和自己比 → any other girl。' },
+      { q:'Jay is one of the best student in our school.<br>錯：{0} → 改：{1}', blanks:[['student'],['students']],
+        exp:'one of the + 最高級 + 複數名詞 → students。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）Tom is shorter than Ben.<br>→ Ben is {0} than Tom.', blanks:[['taller']],
+        exp:'Tom 比 Ben 矮 ＝ Ben 比 Tom 高 → taller。' },
+      { q:'（同義改寫）Amy is not as tall as Lily.<br>→ Lily is {0} than Amy.', blanks:[['taller']],
+        exp:'Amy 沒有 Lily 高 ＝ Lily 比 Amy 高 → taller。' },
+      { q:'（同義改寫）Jade Mountain is the highest mountain in Taiwan.<br>→ Jade Mountain is higher than {0} mountain in Taiwan.', blanks:[['any other']],
+        exp:'最高級 ＝ 比較級 + than any other + 單數名詞。' },
+      { q:'（同義改寫）He is the fastest runner on the team.<br>→ No {0} runner on the team is {1} than he.', blanks:[['other'],['faster']],
+        exp:'No other + 單數名詞 + is + 比較級 + than → No other runner… is faster than he。' },
+      { q:'（合併）You practice more. You get better.<br>→ The {0} you practice, the {1} you get.', blanks:[['more'],['better']],
+        exp:'越…越… → The + 比較級…, the + 比較級…' }
+    ]},
+    { title: '④-2 短文填空：寫出括號裡形容詞的正確形式', note:'<span class="passage">My family has three pets. Max, our dog, is the <b>(1)</b>____ (big) of the three. Our cat, Coco, is <b>(2)</b>____ (small) than Max, but she is much <b>(3)</b>____ (clever). Our rabbit, Bun, is as <b>(4)</b>____ (cute) as Coco. Bun is the <b>(5)</b>____ (young) pet in our family—he is only a <b>(6)</b>____ (one year old) rabbit!</span>', items: [
+      { q:'(1) {0} (big)', blanks:[['biggest']],
+        exp:'三個之中最… → the biggest。' },
+      { q:'(2) {0} (small)', blanks:[['smaller']],
+        exp:'than → 比較級 smaller。' },
+      { q:'(3) {0} (clever)', blanks:[['cleverer','more clever']],
+        exp:'much + 比較級 → cleverer（more clever 也可以）。' },
+      { q:'(4) {0} (cute)', blanks:[['cute']],
+        exp:'as…as 中間用原級 → cute。' },
+      { q:'(5) {0} (young)', blanks:[['youngest']],
+        exp:'the + 最高級 + in our family → youngest。' },
+      { q:'(6) {0} (one year old)', blanks:[['one-year-old']],
+        exp:'數字 + 名詞當形容詞放在名詞前，要加連字號、名詞單數 → one-year-old。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法 Unit 10 投影片｜形容詞</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">GRAMMAR UNIT 10 · SLIDES</div>
+    <h1 class="page">形容詞</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="index.html">← 國中文法目錄</a>
+    <a class="home-link" href="u10.html">📘 講解</a>
+    <a class="quiz-link" href="u10-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 10 · GRAMMAR</div><h1 class="big">形容詞</h1><div class="en-sub">Adjectives</div><div class="venn"><span class="c1">比較級</span><span class="c2">最高級</span></div></section>
+<section class="s paper"><h2>本單元目標與暖身</h2><div class="cards n2"><div class="card g"><h3>學完這個單元，你會</h3><ul class="b"><li>把形容詞放在正確的位置（something cold、a ten-year-old boy）</li><li>寫出比較級和最高級（含不規則變化）</li><li>用 as…as、比較級 than、the 最高級 in / of</li><li>用 than any other、one of the 最高級 表達「最…」</li><li>用 much 修飾比較級、說「越來越…」「越…越…」</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">A cat is ____ than a mouse. (big / bigger)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>bigger</span></div><div class="qa"><span class="n">2</span><span class="q">He is the ____ in his class. (tallest / taller)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>tallest</span></div><div class="qa"><span class="n">3</span><span class="q">I want something ____. (hot / hotly)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>hot</span></div></div></div></div></section>
+<section class="s paper"><h2>形容詞的位置</h2><div class="cards n2"><div class="card g"><h3>三個位置</h3><div class="sub">position</div><p class="row"><b>① 名詞前面</b></p><div class="ex g"><div class="en">This is an <b>easy</b> question. <button class="sentence-btn" type="button" data-say="This is an easy question." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 最常見</div></div><p class="row"><b>② be、連綴動詞後面</b></p><div class="ex g"><div class="en">You look <b>tired</b>. <button class="sentence-btn" type="button" data-say="You look tired." aria-label="播放這個句子">🔊</button></div><div class="zh">→ look、feel、get…</div></div><p class="row"><b>③ something、anything 後面</b></p><div class="ex g"><div class="en">I want something <b>cold</b>. <button class="sentence-btn" type="button" data-say="I want something cold." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 不說 cold something</div></div></div><div class="card o"><h3>數字 + 名詞當形容詞</h3><div class="sub">a ten-year-old boy</div><p class="row"><b>名詞用單數、加連字號</b></p><div class="ex o"><div class="en">a <i>ten-year-old</i> boy <button class="sentence-btn" type="button" data-say="a ten-year-old boy" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 不說 ten-years-old</div></div><div class="ex o"><div class="en">a <i>two-week</i> vacation <button class="sentence-btn" type="button" data-say="a two-week vacation" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 兩週的假期</div></div><div class="ex o"><div class="en">The boy is <i>ten years old</i>. <button class="sentence-btn" type="button" data-say="The boy is ten years old." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 放在後面才用複數</div></div></div></div></section>
+<section class="s paper"><h2>分詞當形容詞與形容詞片語</h2><div class="cards n2 tight"><div class="card g"><h3>V-ing 和 p.p.</h3><div class="sub">participles</div><p class="row"><b>V-ing：</b>主動、正在…</p><p class="row"><b>p.p.：</b>被動、已經…</p><div class="ex g"><div class="en">a <b>crying</b> baby <button class="sentence-btn" type="button" data-say="a crying baby" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 正在哭的寶寶</div></div><div class="ex g"><div class="en">a <b>broken</b> window <button class="sentence-btn" type="button" data-say="a broken window" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 被打破的窗戶</div></div><div class="ex g"><div class="en">The girl <b>playing the piano</b> is my sister. <button class="sentence-btn" type="button" data-say="The girl playing the piano is my sister." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 分詞片語放名詞後面</div></div></div><div class="card o"><h3>be + 形容詞 + 介系詞</h3><div class="sub">常考片語</div><table class="t"><thead><tr><th>片語</th><th>意思</th></tr></thead><tbody><tr><td>be proud of</td><td>以…為傲</td></tr><tr><td>be famous for</td><td>以…聞名</td></tr><tr><td>be late for</td><td>…遲到</td></tr><tr><td>be different from</td><td>和…不同</td></tr><tr><td>be full of</td><td>充滿</td></tr><tr><td>be kind to</td><td>對…好</td></tr></tbody></table></div></div></section>
+<section class="s paper"><h2>原級、比較級、最高級</h2><div class="cards n2 tight"><div class="card g"><h3>規則變化</h3><div class="sub">regular</div><table class="t"><thead><tr><th>規則</th><th>例子</th></tr></thead><tbody><tr><td>加 -er / -est</td><td>tall → taller → tallest</td></tr><tr><td>e 結尾加 -r / -st</td><td>nice → nicer → nicest</td></tr><tr><td>子音 + y → -ier / -iest</td><td>easy → easier → easiest</td></tr><tr><td>重複字尾</td><td>big → bigger → biggest</td></tr><tr><td>多音節 more / most</td><td>beautiful → more beautiful</td></tr></tbody></table></div><div class="card o"><h3>不規則變化</h3><div class="sub">一定要背</div><table class="t"><thead><tr><th>原級</th><th>比較級</th><th>最高級</th></tr></thead><tbody><tr><td>good / well</td><td>better</td><td>best</td></tr><tr><td>bad</td><td>worse</td><td>worst</td></tr><tr><td>many / much</td><td>more</td><td>most</td></tr><tr><td>little</td><td>less</td><td>least</td></tr><tr><td>far</td><td>farther</td><td>farthest</td></tr></tbody></table></div></div></section>
+<section class="s paper"><h2>原級與比較級</h2><div class="cards n2"><div class="card g"><h3>as … as：一樣</h3><div class="sub">中間用原級</div><div class="ex g"><div class="en">Ken is <b>as tall as</b> his father. <button class="sentence-btn" type="button" data-say="Ken is as tall as his father." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一樣高</div></div><div class="ex g"><div class="en">This test is <b>not as hard as</b> the last one. <button class="sentence-btn" type="button" data-say="This test is not as hard as the last one." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 沒有那麼難</div></div><div class="ex g"><div class="en">My room is <b>twice as big as</b> yours. <button class="sentence-btn" type="button" data-say="My room is twice as big as yours." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 倍數放 as 前面</div></div></div><div class="card o"><h3>比較級 than：兩個比</h3><div class="sub">comparative</div><div class="ex o"><div class="en">Tom is <i>taller than</i> Ben. <button class="sentence-btn" type="button" data-say="Tom is taller than Ben." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 比較高</div></div><div class="ex o"><div class="en">Math is <i>more difficult than</i> English. <button class="sentence-btn" type="button" data-say="Math is more difficult than English." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 多音節用 more</div></div><div class="ex o"><div class="en">Amy is <i>the taller of the two</i>. <button class="sentence-btn" type="button" data-say="Amy is the taller of the two." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 兩者中比較高的</div></div><div class="ex o"><div class="en">Taipei is hotter than <i>that</i> in Tokyo. <button class="sentence-btn" type="button" data-say="Taipei is hotter than that in Tokyo." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 比同類：that = the weather</div></div></div></div></section>
+<section class="s paper"><h2>最高級的各種說法</h2><table class="t"><thead><tr><th>句型</th><th>例句</th></tr></thead><tbody><tr><td>the + 最高級 + in / of</td><td><div>Jade Mountain is <b>the highest</b> mountain <b>in</b> Taiwan. <button class="sentence-btn" type="button" data-say="Jade Mountain is the highest mountain in Taiwan." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（玉山是台灣最高的山）</span></div></td></tr><tr><td>比較級 + than any other + 單數</td><td><div>He is <b>taller than any other boy</b> in our class. <button class="sentence-btn" type="button" data-say="He is taller than any other boy in our class." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他比班上其他男生都高）</span></div></td></tr><tr><td>No other + 單數 + 比較級 + than</td><td><div><b>No other boy</b> in our class <b>is taller than</b> he. <button class="sentence-btn" type="button" data-say="No other boy in our class is taller than he." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（班上沒有男生比他高）</span></div></td></tr><tr><td>one of the + 最高級 + 複數</td><td><div>She is <b>one of the best singers</b> in Taiwan. <button class="sentence-btn" type="button" data-say="She is one of the best singers in Taiwan." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（她是台灣最棒的歌手之一）</span></div></td></tr></tbody></table><div class="note">than any other 後面接單數名詞，而且一定要有 other（不能和自己比）。</div></section>
+<section class="s paper"><h2>修飾比較級、越來越、越…越…</h2><div class="cards n2"><div class="card g"><h3>much / far / a lot + 比較級</h3><div class="sub">…得多</div><div class="ex g"><div class="en">Today is <b>much colder</b> than yesterday. <button class="sentence-btn" type="button" data-say="Today is much colder than yesterday." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 冷得多</div></div><div class="ex g"><div class="en">I feel <b>a little better</b> now. <button class="sentence-btn" type="button" data-say="I feel a little better now." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 好一點</div></div><p class="row"><b>注意：</b>very 只能修飾原級：very cold ✓　very colder ✗</p></div><div class="card o"><h3>越來越、越…越…</h3><div class="sub">比較級 and 比較級</div><div class="ex o"><div class="en">It's getting <i>colder and colder</i>. <button class="sentence-btn" type="button" data-say="It&#x27;s getting colder and colder." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 越來越冷</div></div><div class="ex o"><div class="en">English is <i>more and more</i> important. <button class="sentence-btn" type="button" data-say="English is more and more important." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 越來越重要</div></div><div class="ex o"><div class="en"><i>The more</i> you practice, <i>the better</i> you get. <button class="sentence-btn" type="button" data-say="The more you practice, the better you get." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 越練越好</div></div></div></div></section>
+<section class="s paper"><h2>It is + 形容詞 + of / for + 人 + to V</h2><table class="t"><thead><tr><th>介系詞</th><th>形容詞描述</th><th>例句</th></tr></thead><tbody><tr><td>of</td><td>人的個性：kind、nice、polite、careless</td><td><div>It is <b>kind of you</b> to help me. <button class="sentence-btn" type="button" data-say="It is kind of you to help me." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（你真好心幫我）</span></div></td></tr><tr><td>for</td><td>事情的性質：easy、hard、important</td><td><div>It is <b>hard for me</b> to wake up early. <button class="sentence-btn" type="button" data-say="It is hard for me to wake up early." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（對我來說早起很難）</span></div></td></tr></tbody></table><div class="note">判斷方法：You are kind. 說得通 → of；I am hard. 說不通 → for。</div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">She is more taller than me.</span> → <span class="good">She is taller than me.</span></div><div class="why">-er 和 more 不能一起用。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">He is as taller as his brother.</span> → <span class="good">He is as tall as his brother.</span></div><div class="why">as…as 中間用原級。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">Today is very hotter than yesterday.</span> → <span class="good">Today is much hotter than yesterday.</span></div><div class="why">比較級用 much 修飾。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">He is taller than any boy in his class.</span> → <span class="good">He is taller than any other boy in his class.</span></div><div class="why">要加 other。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">She is one of the best singer.</span> → <span class="good">She is one of the best singers.</span></div><div class="why">one of the 最高級 + 複數。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">This box is ____ than that one. (heavy / heavier)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>heavier</span></div><div class="qa"><span class="n">2</span><span class="q">She is the ____ girl in her class. (prettier / prettiest)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>prettiest</span></div><div class="qa"><span class="n">3</span><span class="q">My score is ____ than yours. (good / better)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>better</span></div><div class="qa"><span class="n">4</span><span class="q">He is as ____ as me. (busy / busier)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>busy</span></div><div class="qa"><span class="n">5</span><span class="q">It's ____ warmer today. (very / much)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>much</span></div><div class="qa"><span class="n">6</span><span class="q">a ____ girl (five-years-old / five-year-old)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>five-year-old</span></div><div class="qa"><span class="n">7</span><span class="q">It's nice ____ you to come. (of / for)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>of</span></div><div class="qa"><span class="n">8</span><span class="q">The ____ you eat, the fatter you get. (more / most)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>more</span></div></div></section>
+<section class="s paper"><h2>改寫練習與下一步</h2><div class="two"><div><p class="lead">同義改寫</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Tom is shorter than Ben.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Ben is taller than Tom.</span></div><div class="qa"><span class="n">2</span><span class="q">Amy is not as tall as Lily.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Lily is taller than Amy.</span></div><div class="qa"><span class="n">3</span><span class="q">He is the fastest on the team.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>He is faster than any other player on the team.</span></div><div class="qa"><span class="n">4</span><span class="q">You practice more. You get better.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>The more you practice, the better you get.</span></div></div></div><div class="card o"><h3>學完了！接下來</h3><ul class="b"><li>回到「📘 講解」頁看完整的比較句型表</li><li>做講解頁最後的自我練習（不計點數）</li><li>準備好了就按右上角「📝 前往測驗」</li><li>第一期 Week 4 的週測驗可以當綜合練習</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/u10/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

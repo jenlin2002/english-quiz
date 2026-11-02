@@ -23,7 +23,8 @@ from u06_slides import UNIT as U06  # noqa: E402
 from u07_slides import UNIT as U07  # noqa: E402
 from u08_slides import UNIT as U08  # noqa: E402
 from u09_slides import UNIT as U09  # noqa: E402
-UNITS = (U01, U02, U03, U04, U05, U06, U07, U08, U09)   # 新單元做好後加在這裡
+from u10_slides import UNIT as U10  # noqa: E402
+UNITS = (U01, U02, U03, U04, U05, U06, U07, U08, U09, U10)   # 新單元做好後加在這裡
 
 OUT = os.path.join(REPO, 'grammar2')
 
