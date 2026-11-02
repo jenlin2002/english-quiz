@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國二文法｜Unit 2 被動語態 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u02.html">← Unit 2 講解</a>
+    <a class="home-link" href="index.html">國二文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 2</div>
+  <h1>被動語態．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U2',
+  title: '國二文法 Unit 2 被動語態',
+  back: 'u02.html',
+  sections: [
+    { title: '① 選擇題：認出正確的被動形式', items: [
+      { type:'mc', q:'The classroom ______ by the students every day.', opts:['cleans','is cleaned','is cleaning','cleaned'], answer:1,
+        exp:'教室是「被打掃」→ 被動；every day → 現在簡單式 → is cleaned。' },
+      { type:'mc', q:'These photos ______ by my uncle last year.', opts:['took','were taken','was taken','are taken'], answer:1,
+        exp:'照片是「被拍」；last year → 過去式；these photos 複數 → were taken。' },
+      { type:'mc', q:'A new park ______ near our school next year.', opts:['will build','will be built','is built','builds'], answer:1,
+        exp:'公園是「被蓋」；next year → 未來式的被動 will be built。' },
+      { type:'mc', q:'The bridge ______ now, so we have to take another road.', opts:['is repairing','is repaired','is being repaired','repairs'], answer:2,
+        exp:'now → 現在進行式；橋是「被修」→ 進行式的被動 is being repaired。' },
+      { type:'mc', q:'All the money ______ already ______.', opts:['has, spent','has, been spent','is, spending','was, spend'], answer:1,
+        exp:'already → 現在完成式；錢是「被花掉」→ has been spent。' },
+      { type:'mc', q:'Your homework should ______ before Friday.', opts:['hand in','be handed in','handed in','be handing in'], answer:1,
+        exp:'助動詞 should 後面接原形 be，再接 p.p. → should be handed in。' },
+      { type:'mc', q:'The earthquake ______ at midnight.', opts:['happened','was happened','is happened','happens'], answer:0,
+        exp:'happen 是不及物動詞（後面沒有受詞），沒有被動 → happened。' },
+      { type:'mc', q:'Grandpa is interested ______ old movies.', opts:['at','in','with','by'], answer:1,
+        exp:'be interested in（對…有興趣）是固定片語，不用 by。' }
+    ]},
+    { title: '② 填空：寫出括號裡動詞的被動形式', note:'注意時間線索，決定 be 動詞的時態和單複數。', items: [
+      { q:'English {0} (teach) by Ms. Chen at our school.', blanks:[['is taught']],
+        exp:'說的是平常的事實 → 現在式被動；English 單數 → is taught（teach-taught-taught）。' },
+      { q:'My bike {0} (steal) last night.', blanks:[['was stolen']],
+        exp:'last night → 過去式被動 was stolen（steal-stole-stolen）。' },
+      { q:'The test results {0} (announce) tomorrow.', blanks:[['will be announced','are going to be announced']],
+        exp:'tomorrow → 未來式被動 will be announced。' },
+      { q:'The dishes {0} (wash) by Dad right now.', blanks:[['are being washed']],
+        exp:'right now → 現在進行式被動；the dishes 複數 → are being washed。' },
+      { q:'The concert tickets {0} (sell) out already.', blanks:[['have been sold']],
+        exp:'already → 現在完成式被動；tickets 複數 → have been sold。' },
+      { q:'The cake {0} (eat) before we arrived.', blanks:[['had been eaten']],
+        exp:'蛋糕被吃掉 比 我們到達 更早 → 過去完成式被動 had been eaten。' },
+      { q:'We were made {0} (wait) outside for an hour.', blanks:[['to wait']],
+        exp:'使役動詞 make 改被動，原形前面要補 to → were made to wait。' },
+      { q:'The top of the mountain is covered {0} (介系詞) snow.', blanks:[['with']],
+        exp:'be covered with（被…覆蓋）是固定片語，不用 by。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'The letters was sent to Grandma yesterday.<br>錯：{0} → 改：{1}', blanks:[['was'],['were']],
+        exp:'be 動詞的單複數看新主詞 the letters（複數）→ were sent。' },
+      { q:'The window was break by Tom.<br>錯：{0} → 改：{1}', blanks:[['break'],['broken']],
+        exp:'被動是 be ＋ 過去分詞 → was broken（break-broke-broken）。' },
+      { q:'This book was written by he.<br>錯：{0} → 改：{1}', blanks:[['he'],['him']],
+        exp:'by 是介系詞，後面的代名詞用受格 → by him。' },
+      { q:'The new gym is building now.<br>錯：{0} → 改：{1}', blanks:[['is building'],['is being built']],
+        exp:'體育館是「被蓋」，現在進行式的被動 → is being built。' },
+      { q:'I was surprising at the news.<br>錯：{0} → 改：{1}', blanks:[['surprising'],['surprised']],
+        exp:'人「感到」驚訝用 -ed → be surprised at。-ing 是「令人」驚訝。' }
+    ]},
+    { title: '④-1 句子改寫：主動改被動', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'Mr. Lin teaches math.<br>→ Math {0} by Mr. Lin.', blanks:[['is taught']],
+        exp:'原句是現在式 → is；math 單數 → is taught。' },
+      { q:'Did your sister make this card?<br>→ {0} this card {1} by your sister?', blanks:[['Was'],['made']],
+        exp:'原句是過去式疑問句 → 被動的 be 動詞 Was 放句首，動詞改 p.p. made。' },
+      { q:'Grandma gave me a scarf.<br>→ A scarf {0} {1} me by Grandma.', blanks:[['was given'],['to']],
+        exp:'授與動詞用「東西」當主詞時，人前面要補 to → was given to me。' },
+      { q:'The teacher made us read the story twice.<br>→ We {0} the story twice by the teacher.', blanks:[['were made to read']],
+        exp:'使役動詞 make 改被動，原形 read 前面要補 to → were made to read。' },
+      { q:'Somebody has stolen my umbrella.<br>→ My umbrella {0}.', blanks:[['has been stolen']],
+        exp:'原句是現在完成式 → has been ＋ p.p.；做動作的人是 somebody（不知道是誰），by 省略。' }
+    ]},
+    { title: '④-2 短文填空：用括號裡動詞的正確形式（主動或被動自己判斷）', note:'<span class="passage">Taipei 101 <b>(1)</b>____ (build) between 1999 and 2004. It <b>(2)</b>____ (know) for its fireworks show on New Year\'s Eve. Every year, the show <b>(3)</b>____ (watch) by thousands of people. Right now, the building <b>(4)</b>____ (light) up in pink for a special event. More events <b>(5)</b>____ (hold) there next year.</span>', items: [
+      { q:'(1) {0} (build)', blanks:[['was built']],
+        exp:'大樓是「被蓋」；1999–2004 是過去 → was built。' },
+      { q:'(2) {0} (know)', blanks:[['is known']],
+        exp:'be known for（因…而有名）；說的是現在的事實 → is known。' },
+      { q:'(3) {0} (watch)', blanks:[['is watched']],
+        exp:'every year → 現在式；the show 是「被觀看」，單數 → is watched。' },
+      { q:'(4) {0} (light)', blanks:[['is being lit','is being lighted']],
+        exp:'Right now → 現在進行式被動 is being lit（light-lit-lit）。' },
+      { q:'(5) {0} (hold)', blanks:[['will be held','are going to be held']],
+        exp:'next year → 未來式；活動是「被舉辦」，events 複數 → will be held（hold-held-held）。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>

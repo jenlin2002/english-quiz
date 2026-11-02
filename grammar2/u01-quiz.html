@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國二文法｜Unit 1 時態 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u01.html">← Unit 1 講解</a>
+    <a class="home-link" href="index.html">國二文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 1</div>
+  <h1>時態．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U1',
+  title: '國二文法 Unit 1 時態',
+  back: 'u01.html',
+  sections: [
+    { title: '① 選擇題：認出正確的時態', items: [
+      { type:'mc', q:'My parents ______ dinner at Grandma\'s house every Sunday.', opts:['has','have','are having','had'], answer:1,
+        exp:'every Sunday 是固定習慣 → 現在簡單式；my parents 是複數 → have。' },
+      { type:'mc', q:'Be quiet! The baby ______.', opts:['sleeps','is sleeping','slept','has slept'], answer:1,
+        exp:'Be quiet! 表示「此刻」正在睡 → 現在進行式 is sleeping。' },
+      { type:'mc', q:'Ben ______ his wallet two days ago.', opts:['loses','has lost','lost','is losing'], answer:2,
+        exp:'two days ago 是明確的過去時間 → 過去簡單式 lost，不能用現在完成式。' },
+      { type:'mc', q:'______ you ever ______ a horse?', opts:['Did, ride','Have, ridden','Do, ride','Are, riding'], answer:1,
+        exp:'ever 問「到現在為止有沒有過的經驗」→ 現在完成式 Have you ever ridden…?' },
+      { type:'mc', q:'It ______ hard when I left school yesterday afternoon.', opts:['rains','is raining','was raining','has rained'], answer:2,
+        exp:'我離開學校的那一刻，雨「正在下」→ 過去進行式 was raining；left 是短暫動作用過去式。' },
+      { type:'mc', q:'I ______ Ms. Lin since I was in grade 7.', opts:['know','knew','have known','am knowing'], answer:2,
+        exp:'since + 起點，從過去持續到現在 → 現在完成式 have known。know 不用進行式。' },
+      { type:'mc', q:'Please wait here until your mom ______.', opts:['comes','will come','came','is come'], answer:0,
+        exp:'until 帶出的時間子句用現在式代替未來式 → comes。' },
+      { type:'mc', q:'My brother ______ in Taichung for three years. Now he lives in Taipei.', opts:['lives','has lived','lived','is living'], answer:2,
+        exp:'Now he lives in Taipei 表示他已經不住台中了，「住台中三年」是過去結束的事 → 過去簡單式 lived。has lived 表示現在還住在那裡。' },
+      { type:'mc', q:'By the time the police arrived, the thief ______.', opts:['ran away','has run away','had run away','runs away'], answer:2,
+        exp:'小偷逃走 比 警察到達 更早 → 過去的過去用過去完成式 had run away。' },
+      { type:'mc', q:'— Where\'s Dad? — He ______ to the post office. He\'ll be back in ten minutes.', opts:['has been','has gone','have gone','had gone'], answer:1,
+        exp:'爸爸現在不在、人去了郵局還沒回來 → has gone to；has been to 是「去過、已經回來」。主詞 he → has。' }
+    ]},
+    { title: '② 填空：把括號裡的動詞改成正確的形式', note:'縮寫或完整寫法都可以（例如 didn\'t 或 did not）。', items: [
+      { q:'My cat always {0} (sleep) on the sofa.', blanks:[['sleeps']],
+        exp:'always 表示習慣 → 現在簡單式；my cat 是第三人稱單數 → sleeps。' },
+      { q:'Look! Two birds {0} (sit) on the roof.', blanks:[['are sitting']],
+        exp:'Look! → 現在進行式；two birds 複數 → are；sit 是短母音＋單一子音，重複 t → sitting。' },
+      { q:'We {0} (not see) Kevin at the party last night.', blanks:[['didn\'t see','did not see']],
+        exp:'last night → 過去式；否定用 didn\'t ＋ 原形 see。' },
+      { q:'{0} Tina {1} (study) for the test now?', blanks:[['Is'],['studying']],
+        exp:'now → 現在進行式；問句把 be 動詞 Is 放前面，後面 studying。' },
+      { q:'I {0} (write) three emails so far today.', blanks:[['have written']],
+        exp:'so far（到目前為止）→ 現在完成式 have written；write 的過去分詞是 written（重複 t）。' },
+      { q:'While I {0} (cook), my sister was setting the table.', blanks:[['was cooking']],
+        exp:'while 連接兩件同時在進行的過去動作 → 兩邊都用過去進行式 was cooking。' },
+      { q:'If you {0} (finish) your work early, we will go to the movies.', blanks:[['finish']],
+        exp:'if 條件子句用現在式代替未來式；主詞 you → finish。' },
+      { q:'The movie {0} (already start) when we got to the theater.', blanks:[['had already started']],
+        exp:'電影開演 比 我們到達 更早 → 過去完成式；already 放在 had 和 p.p. 中間 → had already started。' },
+      { q:'Ted {0} (not finish) his science project yet.', blanks:[['hasn\'t finished','has not finished']],
+        exp:'yet 用在否定句 → 現在完成式；Ted 是第三人稱單數 → hasn\'t finished。' },
+      { q:'Look at the dark clouds. It {0} (rain) soon.', blanks:[['is going to rain']],
+        exp:'眼前有明顯跡象（烏雲）的預測 → be going to → is going to rain。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。錯的是動詞時，要把整個動詞部分寫出來（例如 have moved）。', items: [
+      { q:'My brother don\'t eat breakfast on weekdays.<br>錯：{0} → 改：{1}', blanks:[['don\'t'],['doesn\'t','does not']],
+        exp:'主詞 my brother 是第三人稱單數，助動詞要用 does → doesn\'t eat。' },
+      { q:'Did you watched the game last night?<br>錯：{0} → 改：{1}', blanks:[['watched'],['watch']],
+        exp:'有了 did，後面的動詞用原形 → Did you watch…?' },
+      { q:'I will text you as soon as I will arrive.<br>錯：{0} → 改：{1}', blanks:[['will arrive'],['arrive']],
+        exp:'as soon as 帶出的時間子句用現在式代替未來式 → as soon as I arrive。' },
+      { q:'Amy is wanting a new bike for her birthday.<br>錯：{0} → 改：{1}', blanks:[['is wanting'],['wants']],
+        exp:'want 是表示心裡想法的狀態動詞，不用進行式 → Amy wants…' },
+      { q:'We have moved to Tainan two years ago.<br>錯：{0} → 改：{1}', blanks:[['have moved'],['moved']],
+        exp:'two years ago 是明確的過去時間，不能和現在完成式一起用 → moved。' },
+      { q:'Mr. Wu has worked here since ten years.<br>錯：{0} → 改：{1}', blanks:[['since'],['for']],
+        exp:'ten years 是「一段時間」→ 用 for；since 後面接起點（since 2016）。' }
+    ]},
+    { title: '④-1 句子改寫與合併', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（合併）I was reading a comic book. My mom came into my room.<br>→ My mom {0} into my room while I {1} a comic book.', blanks:[['came'],['was reading']],
+        exp:'媽媽進來是短暫、突然的動作 → 過去簡單式 came；while 後面接「正在進行」的動作 → was reading。' },
+      { q:'（改成否定句）Jenny went to the night market last night.<br>→ Jenny {0} to the night market last night.', blanks:[['didn\'t go','did not go']],
+        exp:'過去式的否定借助 did：didn\'t ＋ 原形 go（went 要變回 go）。' },
+      { q:'（改成問句）They have already cleaned the classroom.<br>→ {0} they cleaned the classroom {1}?', blanks:[['Have'],['yet']],
+        exp:'現在完成式的問句把 have 移到句首；already 在問句裡要改成 yet，放句尾。' },
+      { q:'（同義改寫）Ken started to learn the guitar three years ago. He is still learning it now.<br>→ Ken {0} the guitar {1} three years.', blanks:[['has learned','has learnt','has been learning'],['for']],
+        exp:'從三年前一直持續到現在 → 現在完成式 has learned；「三年」是一段時間 → for。' },
+      { q:'（合併）Dad cooked dinner. After that, we got home.<br>→ When we got home, Dad {0} dinner.', blanks:[['had cooked','had already cooked']],
+        exp:'煮晚餐 比 我們到家 更早 → 過去完成式 had cooked。' }
+    ]},
+    { title: '④-2 短文填空：用括號裡動詞的正確形式', note:'<span class="passage">Hi, I\'m Leo. I <b>(1)</b>____ (live) in Hsinchu now, but I <b>(2)</b>____ (be) born in Hualien. My family <b>(3)</b>____ (move) here in 2022, so we <b>(4)</b>____ (live) here for four years. Right now I <b>(5)</b>____ (write) this email in my room. Next summer, I <b>(6)</b>____ (visit) my grandparents in Hualien.</span>', items: [
+      { q:'(1) {0} (live)', blanks:[['live']],
+        exp:'now 說的是現在的狀態 → 現在簡單式；主詞 I → live。' },
+      { q:'(2) {0} (be)', blanks:[['was']],
+        exp:'「出生」是過去的事 → was born。' },
+      { q:'(3) {0} (move)', blanks:[['moved']],
+        exp:'in 2022 是明確的過去時間 → 過去簡單式 moved。' },
+      { q:'(4) {0} (live)', blanks:[['have lived','have been living']],
+        exp:'for four years，從 2022 年一直住到現在 → 現在完成式 have lived。' },
+      { q:'(5) {0} (write)', blanks:[['am writing']],
+        exp:'Right now → 現在進行式 am writing（write 去 e 加 -ing）。' },
+      { q:'(6) {0} (visit)', blanks:[['will visit','am going to visit','am visiting']],
+        exp:'Next summer → 未來式 will visit（或 am going to visit）。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
