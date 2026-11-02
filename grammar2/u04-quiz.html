@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 4 不定詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u04.html">← Unit 4 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 4</div>
+  <h1>不定詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U4',
+  title: '國中文法 Unit 4 不定詞',
+  back: 'u04.html',
+  sections: [
+    { title: '① 選擇題：認出不定詞的用法', items: [
+      { type:'mc', q:'Jason hopes ______ a basketball player.', opts:['become','to become','becoming','became'], answer:1,
+        exp:'hope 後面接 to V → to become。' },
+      { type:'mc', q:'I have a lot of homework ______ tonight.', opts:['do','doing','to do','did'], answer:2,
+        exp:'homework to do＝要做的功課，不定詞當形容詞放在名詞後面。' },
+      { type:'mc', q:'Grandma went to the market ______ some fruit.', opts:['buy','to buy','buying','bought'], answer:1,
+        exp:'去市場「為了」買水果 → 表目的的 to buy。' },
+      { type:'mc', q:'It is important ______ enough sleep.', opts:['get','getting','to get','got'], answer:2,
+        exp:'It is + 形容詞 + to V → It is important to get…' },
+      { type:'mc', q:'The teacher asked us ______ quiet.', opts:['be','being','to be','are'], answer:2,
+        exp:'ask + 人 + to V → asked us to be quiet。' },
+      { type:'mc', q:'I didn\'t know ______ to do, so I called my dad.', opts:['what','why','that','if'], answer:0,
+        exp:'what to do＝該做什麼。why 不能接 to V。' },
+      { type:'mc', q:'Leo is ______ to lift that heavy box.', opts:['enough strong','strong enough','too strong','so strong'], answer:1,
+        exp:'形容詞 + enough + to V＝夠…可以… → strong enough to lift。' },
+      { type:'mc', q:'It\'s too cold ______ swimming today.', opts:['go','to go','going','for go'], answer:1,
+        exp:'too + 形容詞 + to V＝太…而不能… → too cold to go。' },
+      { type:'mc', q:'My phone screen is broken. It needs ______.', opts:['repair','to repair','repairing','repaired'], answer:2,
+        exp:'主詞是東西，need + V-ing＝需要被修 → needs repairing（= needs to be repaired）。' },
+      { type:'mc', q:'Which verb can NOT be followed by "to go"?', opts:['want','decide','enjoy','plan'], answer:2,
+        exp:'enjoy 只能接 V-ing（enjoy going）；want、decide、plan 都接 to V。' }
+    ]},
+    { title: '② 填空：用括號裡動詞的正確形式', note:'想一想：這個位置要 to V、V-ing，還是原形？', items: [
+      { q:'We plan {0} (visit) the night market this weekend.', blanks:[['to visit']],
+        exp:'plan + to V → to visit。' },
+      { q:'Dad promised {0} (take) us to the beach.', blanks:[['to take']],
+        exp:'promise + to V → to take。' },
+      { q:'I\'m looking for a quiet place {0} (study).', blanks:[['to study']],
+        exp:'a place to study＝可以讀書的地方，不定詞當形容詞。' },
+      { q:'Mom told me not {0} (play) games too late.', blanks:[['to play']],
+        exp:'tell + 人 + not to V → not to play。' },
+      { q:'Can you show me how {0} (make) a paper plane?', blanks:[['to make']],
+        exp:'疑問詞 how + to V → how to make。' },
+      { q:'We were glad {0} (hear) that you passed the test.', blanks:[['to hear']],
+        exp:'情緒形容詞 + to V 表示原因 → glad to hear。' },
+      { q:'It is not easy for me {0} (wake) up at six.', blanks:[['to wake']],
+        exp:'It is + 形容詞 + for 人 + to V → for me to wake up。' },
+      { q:'He saved money in order {0} (buy) a new camera.', blanks:[['to buy']],
+        exp:'in order to + 原形＝為了… → to buy。' },
+      { q:'The garden needs {0} (water). = The garden needs to be watered.', blanks:[['watering']],
+        exp:'need + V-ing＝need to be p.p. → watering。' },
+      { q:'The old man seems {0} (be) lost.', blanks:[['to be']],
+        exp:'seem + to V＝似乎… → seems to be lost。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'I would like to ordering a cheeseburger.<br>錯：{0} → 改：{1}', blanks:[['ordering'],['order']],
+        exp:'to 後面一定是原形 → to order。' },
+      { q:'Amy agreed helping me with my project.<br>錯：{0} → 改：{1}', blanks:[['helping'],['to help']],
+        exp:'agree 後面接 to V → agreed to help。' },
+      { q:'The coach made us to run ten laps.<br>錯：{0} → 改：{1}', blanks:[['to run'],['run']],
+        exp:'使役動詞 make + 人 + 原形（主動句不加 to）→ made us run。' },
+      { q:'She is enough old to take the bus alone.<br>錯：{0} → 改：{1}', blanks:[['enough old'],['old enough']],
+        exp:'enough 修飾形容詞時放在後面 → old enough。' },
+      { q:'The waiting room is full. There are no chairs to sit.<br>錯：{0} → 改：{1}', blanks:[['sit'],['sit on']],
+        exp:'「坐在椅子上」是 sit on a chair，不定詞當形容詞時介系詞要保留 → no chairs to sit on。' },
+      { q:'Please tell him to not touch the paint.<br>錯：{0} → 改：{1}', blanks:[['to not'],['not to']],
+        exp:'不定詞的否定，not 放在 to 前面 → not to touch。' }
+    ]},
+    { title: '④-1 句子改寫與合併', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）To ride a bike without a helmet is dangerous.<br>→ {0} is dangerous {1} a bike without a helmet.', blanks:[['It'],['to ride']],
+        exp:'不定詞當主詞時，常用虛主詞 It 放前面，把 to V 移到後面。' },
+      { q:'（同義改寫）I don\'t know what I should wear.<br>→ I don\'t know what {0}.', blanks:[['to wear']],
+        exp:'疑問詞 + 主詞 + should + V = 疑問詞 + to V → what to wear。' },
+      { q:'（同義改寫）The bag is so heavy that I can\'t carry it.<br>→ The bag is {0} heavy for me {1}.', blanks:[['too'],['to carry']],
+        exp:'so…that…can\'t = too…to；不定詞後面不用再加 it → too heavy for me to carry。' },
+      { q:'（同義改寫）Ben is too young to watch this movie.<br>→ Ben is not old {0} {1} this movie.', blanks:[['enough'],['to watch']],
+        exp:'too young to = not old enough to → not old enough to watch。' },
+      { q:'（合併）Mom said to me, "Don\'t forget your umbrella."<br>→ Mom told me {0} forget my umbrella.', blanks:[['not to']],
+        exp:'把命令轉述：tell + 人 + not to V → told me not to forget。' }
+    ]},
+    { title: '④-2 短文填空：用括號裡動詞的正確形式（to V 或 V-ing 自己判斷）', note:'<span class="passage">Last month, my class decided <b>(1)</b>____ (hold) a charity sale. Our teacher asked everyone <b>(2)</b>____ (bring) something to sell. I didn\'t know what <b>(3)</b>____ (bring), so I baked cookies. I really enjoy <b>(4)</b>____ (bake). On the day of the sale, we got to school early <b>(5)</b>____ (set) up the tables. We were very happy <b>(6)</b>____ (raise) over NT$5,000 for the animal shelter.</span>', items: [
+      { q:'(1) {0} (hold)', blanks:[['to hold']],
+        exp:'decide + to V → decided to hold。' },
+      { q:'(2) {0} (bring)', blanks:[['to bring']],
+        exp:'ask + 人 + to V → asked everyone to bring。' },
+      { q:'(3) {0} (bring)', blanks:[['to bring']],
+        exp:'疑問詞 + to V → what to bring。' },
+      { q:'(4) {0} (bake)', blanks:[['baking']],
+        exp:'enjoy 後面接 V-ing → baking（這題考你會不會分辨 Unit 3 的動詞）。' },
+      { q:'(5) {0} (set)', blanks:[['to set']],
+        exp:'早到學校「為了」擺桌子 → 表目的的 to set。' },
+      { q:'(6) {0} (raise)', blanks:[['to raise']],
+        exp:'情緒形容詞 happy + to V 表示原因 → happy to raise。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>

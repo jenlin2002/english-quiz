@@ -113,7 +113,7 @@
       bottom = '<button class="btn alt big" data-act="refix"' + (fixedFilled < need ? ' disabled' : '') + '>📤 送出訂正</button>' +
         (fixedFilled < need ? '<div class="gq-hint">紅框的錯題全部重新作答才能送出訂正。</div>' : '');
     } else {
-      top = whoLine + '<span class="gq-ok">✅ 錯題全部訂正完成！第一次得分 ' + (total - S.firstWrong.length) + ' / ' + total + '</span>';
+      top = whoLine + '<span class="gq-ok">' + (S.firstWrong.length ? '✅ 錯題全部訂正完成！第一次得分 ' : '🎉 全對！得分 ') + (total - S.firstWrong.length) + ' / ' + total + '</span>';
       bottom = reviewList() + doneLinks();
     }
     document.getElementById('gqTop').innerHTML = top;

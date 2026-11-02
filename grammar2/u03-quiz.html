@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 3 動名詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u03.html">← Unit 3 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 3</div>
+  <h1>動名詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U3',
+  title: '國中文法 Unit 3 動名詞',
+  back: 'u03.html',
+  sections: [
+    { title: '① 選擇題：認出要用 V-ing 的地方', items: [
+      { type:'mc', q:'We enjoy ______ in the park on weekends.', opts:['walk','to walk','walking','walked'], answer:2,
+        exp:'enjoy 後面只能接 V-ing → walking。' },
+      { type:'mc', q:'______ vegetables every day keeps you healthy.', opts:['Eat','Eating','Eats','To eating'], answer:1,
+        exp:'主要動詞是 keeps，前面要有「一件事」當主詞 → 動名詞 Eating。' },
+      { type:'mc', q:'Kevin is interested in ______ robots.', opts:['build','to build','building','builds'], answer:2,
+        exp:'介系詞 in 後面接 V-ing → building。' },
+      { type:'mc', q:'My mom finished ______ the house an hour ago.', opts:['clean','cleaning','to clean','cleaned'], answer:1,
+        exp:'finish 後面接 V-ing → cleaning。' },
+      { type:'mc', q:'Swimming in the river ______ dangerous.', opts:['is','are','were','be'], answer:0,
+        exp:'動名詞片語當主詞，視為「一件事」→ 單數動詞 is。' },
+      { type:'mc', q:'Thanks for ______ me with my homework.', opts:['help','to help','helping','helped'], answer:2,
+        exp:'介系詞 for 後面接 V-ing → helping。' },
+      { type:'mc', q:'I don\'t feel like ______ out. It\'s too cold.', opts:['go','to go','going','went'], answer:2,
+        exp:'feel like + V-ing＝想要 → going。' },
+      { type:'mc', q:'Please stop ______ noise. The baby is sleeping.', opts:['make','to make','making','made'], answer:2,
+        exp:'停止「正在做」的事（製造噪音）→ stop making。' },
+      { type:'mc', q:'Lucy used to ______ to school, but now she takes the bus.', opts:['walk','walking','walked','walks'], answer:0,
+        exp:'used to + 原形＝以前常常（現在不會了）→ used to walk。' },
+      { type:'mc', q:'Don\'t forget ______ the door when you leave.', opts:['lock','locking','to lock','locked'], answer:2,
+        exp:'離開時「要去做」的事，還沒做 → forget to lock。' }
+    ]},
+    { title: '② 填空：用括號裡動詞的正確形式', note:'想一想：這個位置要 V-ing、to V，還是原形？', items: [
+      { q:'Ben keeps {0} (ask) the same question.', blanks:[['asking']],
+        exp:'keep + V-ing＝一直… → asking。' },
+      { q:'Would you mind {0} (wait) for a few minutes?', blanks:[['waiting']],
+        exp:'mind + V-ing → waiting。' },
+      { q:'Ella practices {0} (dance) after school.', blanks:[['dancing']],
+        exp:'practice + V-ing → dancing（dance 去 e 加 -ing）。' },
+      { q:'He left the room without {0} (say) a word.', blanks:[['saying']],
+        exp:'介系詞 without 後面接 V-ing → saying。' },
+      { q:'Let\'s go {0} (shop) this afternoon.', blanks:[['shopping']],
+        exp:'go + V-ing 表示去做休閒活動 → shopping（重複 p）。' },
+      { q:'I\'m looking forward to {0} (visit) Japan.', blanks:[['visiting']],
+        exp:'look forward to 的 to 是介系詞 → visiting。' },
+      { q:'Grandpa is used to {0} (get) up at five.', blanks:[['getting']],
+        exp:'be used to + V-ing＝習慣於 → getting（重複 t）。' },
+      { q:'We had a lot of fun {0} (play) in the snow.', blanks:[['playing']],
+        exp:'have fun (in) + V-ing → playing。' },
+      { q:'How about {0} (order) some pizza?', blanks:[['ordering']],
+        exp:'How about + V-ing 用來提議 → ordering。' },
+      { q:'I remember {0} (meet) her at the party last year.', blanks:[['meeting']],
+        exp:'last year 已經發生，是「記得做過」→ remember meeting。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'My sister enjoys to sing karaoke.<br>錯：{0} → 改：{1}', blanks:[['to sing'],['singing']],
+        exp:'enjoy 後面只能接 V-ing → enjoys singing。' },
+      { q:'Collecting stickers are my hobby.<br>錯：{0} → 改：{1}', blanks:[['are'],['is']],
+        exp:'動名詞當主詞視為單數 → is。' },
+      { q:'Are you afraid of fly in a plane?<br>錯：{0} → 改：{1}', blanks:[['fly'],['flying']],
+        exp:'介系詞 of 後面接 V-ing → afraid of flying。' },
+      { q:'He spends two hours a day to play video games.<br>錯：{0} → 改：{1}', blanks:[['to play'],['playing']],
+        exp:'spend + 時間 + (in) V-ing → spends two hours playing。' },
+      { q:'I\'m looking forward to hear from you.<br>錯：{0} → 改：{1}', blanks:[['hear'],['hearing']],
+        exp:'look forward to 的 to 是介系詞 → to hearing。' },
+      { q:'This movie is worth to see.<br>錯：{0} → 改：{1}', blanks:[['to see'],['seeing']],
+        exp:'be worth + V-ing＝值得… → worth seeing。' }
+    ]},
+    { title: '④-1 句子改寫與合併', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）It is fun to ride a bike along the river.<br>→ {0} a bike along the river {1} fun.', blanks:[['Riding'],['is']],
+        exp:'用動名詞當主詞 → Riding a bike…；動名詞主詞用單數動詞 is。' },
+      { q:'（同義改寫）Let\'s take a walk after dinner.<br>→ How {0} {1} a walk after dinner?', blanks:[['about'],['taking']],
+        exp:'Let\'s… = How about + V-ing…? → How about taking a walk…?' },
+      { q:'（同義改寫）I lived in the countryside before. I don\'t live there now.<br>→ I {0} in the countryside.', blanks:[['used to live']],
+        exp:'以前常常、現在不是了 → used to + 原形 → used to live。' },
+      { q:'（同義改寫）Max is a good cook.<br>→ Max is good {0} {1}.', blanks:[['at'],['cooking']],
+        exp:'be good at + V-ing＝擅長… → good at cooking。' },
+      { q:'（合併）Mia was reading a book. She stopped. Then she answered the phone.<br>→ Mia stopped {0} the phone.', blanks:[['to answer']],
+        exp:'停下手邊的事，「去做」另一件事（接電話）→ stopped to answer。' }
+    ]},
+    { title: '④-2 短文填空：用括號裡動詞的正確形式', note:'<span class="passage">Hi, I\'m Joy. I really enjoy <b>(1)</b>____ (cook). Last weekend, my friends and I had fun <b>(2)</b>____ (make) dumplings. At first, I had trouble <b>(3)</b>____ (fold) them, but I kept <b>(4)</b>____ (try). <b>(5)</b>____ (cook) with friends is my favorite thing to do. I\'m looking forward to <b>(6)</b>____ (do) it again next month.</span>', items: [
+      { q:'(1) {0} (cook)', blanks:[['cooking']],
+        exp:'enjoy + V-ing → cooking。' },
+      { q:'(2) {0} (make)', blanks:[['making']],
+        exp:'have fun (in) + V-ing → making。' },
+      { q:'(3) {0} (fold)', blanks:[['folding']],
+        exp:'have trouble (in) + V-ing → folding。' },
+      { q:'(4) {0} (try)', blanks:[['trying']],
+        exp:'keep + V-ing＝一直… → trying。' },
+      { q:'(5) {0} (cook)', blanks:[['Cooking']],
+        exp:'放在句首當主詞，後面是 is → 動名詞 Cooking。' },
+      { q:'(6) {0} (do)', blanks:[['doing']],
+        exp:'look forward to 的 to 是介系詞 → doing。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
