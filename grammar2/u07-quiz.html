@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 7 重要的片語動詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u07.html">← Unit 7 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 7</div>
+  <h1>重要的片語動詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U7',
+  title: '國中文法 Unit 7 重要的片語動詞',
+  back: 'u07.html',
+  sections: [
+    { title: '① 選擇題：選出正確的片語動詞', items: [
+      { type:'mc', q:'It\'s cold outside. ______ your jacket.', opts:['Put on','Take off','Turn on','Give up'], answer:0,
+        exp:'外面冷，要「穿上」外套 → Put on。' },
+      { type:'mc', q:'Please turn ______ the TV. I\'m trying to sleep.', opts:['on','off','up','in'], answer:1,
+        exp:'想睡覺，要「關掉」電視 → turn off。' },
+      { type:'mc', q:'Mom is looking ______ the baby while Dad is cooking.', opts:['for','at','after','up'], answer:2,
+        exp:'look after＝照顧。' },
+      { type:'mc', q:'Listen ______ the teacher carefully.', opts:['at','to','for','up'], answer:1,
+        exp:'listen to + 受詞＝聽…。' },
+      { type:'mc', q:'The game was ______ because of the heavy rain. It won\'t be played at all.', opts:['put off','called off','turned off','handed out'], answer:1,
+        exp:'完全不舉行 → called off（取消）。put off 是延後。' },
+      { type:'mc', q:'Your toys are all over the floor. Please ______.', opts:['pick up them','pick them up','pick them','pick up'], answer:1,
+        exp:'pick up 是副詞型，代名詞 them 要夾在中間 → pick them up。' },
+      { type:'mc', q:'Your room is a mess. Put your clothes ______.', opts:['away','off','out','after'], answer:0,
+        exp:'put away＝收好。' },
+      { type:'mc', q:'I don\'t know this word. I\'ll ______.', opts:['look up it','look it up','look it for','look after it'], answer:1,
+        exp:'look up（查）是副詞型，代名詞夾中間 → look it up。' },
+      { type:'mc', q:'We have run out ______ paper. Can you buy some?', opts:['of','off','with','for'], answer:0,
+        exp:'run out of＝用完。' },
+      { type:'mc', q:'This red bike belongs ______ my cousin.', opts:['for','with','to','of'], answer:2,
+        exp:'belong to＝屬於。' }
+    ]},
+    { title: '② 填空：寫出缺少的副詞或介系詞', note:'每格寫一個字（例如 up、off、for）。', items: [
+      { q:'The teacher handed {0} the test papers to everyone.', blanks:[['out']],
+        exp:'把考卷「發下去」→ hand out。' },
+      { q:'Please hand {0} your reports before Friday.', blanks:[['in']],
+        exp:'把報告「交上去」→ hand in。' },
+      { q:'I\'ll pick you {0} at the station at six.', blanks:[['up']],
+        exp:'pick up 也可以是「接（人）」。' },
+      { q:'Don\'t throw these bottles {0}. We can recycle them.', blanks:[['away']],
+        exp:'throw away＝丟掉。' },
+      { q:'The music is too loud. Can you turn it {0}?', blanks:[['down']],
+        exp:'太大聲，要「關小聲」→ turn it down。' },
+      { q:'We are talking {0} our school trip.', blanks:[['about']],
+        exp:'talk about＝談論。' },
+      { q:'Can I try these jeans {0}?', blanks:[['on']],
+        exp:'try on＝試穿。' },
+      { q:'She came up {0} a great idea for the class party.', blanks:[['with']],
+        exp:'come up with＝想出（點子）。' },
+      { q:'I\'m looking forward {0} seeing my grandparents.', blanks:[['to']],
+        exp:'look forward to + V-ing＝期待。' },
+      { q:'Please give the book {0} to the library by Monday.', blanks:[['back']],
+        exp:'give back＝歸還。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'The light is still on. Please turn off it.<br>錯：{0} → 改：{1}', blanks:[['turn off it'],['turn it off']],
+        exp:'turn off 是副詞型，代名詞要夾在中間 → turn it off。' },
+      { q:'I lost my pen. Can you help me look it for?<br>錯：{0} → 改：{1}', blanks:[['look it for'],['look for it']],
+        exp:'look for 是介系詞型，受詞永遠在後面 → look for it。' },
+      { q:'My brother likes listening rock music.<br>錯：{0} → 改：{1}', blanks:[['listening'],['listening to']],
+        exp:'listen 要加 to 才能接受詞 → listening to rock music。' },
+      { q:'We waited the bus for twenty minutes.<br>錯：{0} → 改：{1}', blanks:[['waited'],['waited for']],
+        exp:'wait for + 受詞 → waited for the bus。' },
+      { q:'Here is your hat. Put on it.<br>錯：{0} → 改：{1}', blanks:[['Put on it'],['Put it on']],
+        exp:'put on 是副詞型，代名詞夾中間 → Put it on。' },
+      { q:'Lily is putting on a blue dress in the photo.<br>錯：{0} → 改：{1}', blanks:[['putting on'],['wearing']],
+        exp:'照片裡「穿著」的狀態用 wear → is wearing。' }
+    ]},
+    { title: '④-1 句子改寫：把名詞換成代名詞', note:'把畫線的名詞換成 it 或 them，寫出整個片語動詞。', items: [
+      { q:'Please turn on <u>the fan</u>.<br>→ Please {0}.', blanks:[['turn it on']],
+        exp:'副詞型片語，代名詞夾中間 → turn it on。' },
+      { q:'He gave up <u>his plan</u>.<br>→ He {0}.', blanks:[['gave it up']],
+        exp:'give up 是副詞型 → gave it up。' },
+      { q:'I\'m looking for <u>my sneakers</u>.<br>→ I\'m {0}.', blanks:[['looking for them']],
+        exp:'look for 是介系詞型，受詞放後面 → looking for them。' },
+      { q:'Pick up <u>the toys</u> on the floor.<br>→ {0}.', blanks:[['Pick them up']],
+        exp:'pick up 是副詞型 → Pick them up。' },
+      { q:'She takes care of <u>her grandma</u>.<br>→ She {0}.', blanks:[['takes care of her']],
+        exp:'take care of 是介系詞型，受詞放後面 → takes care of her。' }
+    ]},
+    { title: '④-2 短文填空：寫出缺少的副詞或介系詞', note:'<span class="passage">This morning, my alarm didn\'t go off, so Mom had to wake me <b>(1)</b>____. I got up quickly and put <b>(2)</b>____ my uniform. At the bus stop, I waited <b>(3)</b>____ the bus for ten minutes. In class, the teacher asked us to hand <b>(4)</b>____ our homework, but I couldn\'t find mine! I looked <b>(5)</b>____ it everywhere in my bag. Then I remembered—I left it on my desk at home. I\'ll never put <b>(6)</b>____ packing my bag until the morning again!</span>', items: [
+      { q:'(1) {0}', blanks:[['up']],
+        exp:'wake up＝叫醒 → wake me up。' },
+      { q:'(2) {0}', blanks:[['on']],
+        exp:'put on＝穿上 → put on my uniform。' },
+      { q:'(3) {0}', blanks:[['for']],
+        exp:'wait for＝等待 → waited for the bus。' },
+      { q:'(4) {0}', blanks:[['in']],
+        exp:'hand in＝繳交 → hand in our homework。' },
+      { q:'(5) {0}', blanks:[['for']],
+        exp:'look for＝尋找 → looked for it。' },
+      { q:'(6) {0}', blanks:[['off']],
+        exp:'put off＝延後（後面接 V-ing）→ put off packing。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
