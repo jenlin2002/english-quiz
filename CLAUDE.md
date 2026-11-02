@@ -115,8 +115,8 @@
 - 測驗只出文法題，四層由易到難：①選擇 ②填空（給原形）③找錯改正 ④改寫／合併＋短文填空。共用程式 `gquiz.js`，流程照段考題庫規則（全部作答才送出、對答案、`Points.earn`、同步試算表 label `G8 Grammar UN`、訂正到全對補送 1 點、訂正中不能離開、暫存 `gqDraft:`）。改了 `gquiz.js`／`grammar.css` 要把各頁的 `?v=` 一起改。
 - 第一期 `course1.html` 的週卡有「📘 詳細講解」連到對應單元（W1/2/3/11 → u01 的 #s1/#s2/#s3/#s6，W12 → u02），之後做出單元再補其他週。
 - 課本：`I:\興雅\英文\115二上翰林\…文法特快車_課本_教用_切割\`，是掃描圖檔，用 PyMuPDF 轉圖片看。
-- 投影片 `uNN-slides.html`（2026-11-02 做好 Unit 1、2）：由 `tools/grammar2_gen/build_slides.py` 產生（內容在 `uNN_slides.py`，沿用第二期 `tools/course2_gen` 的樣式與 sl.py），會輸出 `audio_jobs.json`；語音 mp3 放 `grammar2/audio/uNN/slide-NN.mp3`。**公司電腦沒有 Kokoro／ffmpeg，Unit 1、2 還沒錄 mp3，現在 🔊 用瀏覽器語音**；在有 Kokoro 的電腦執行 `python tools/course2_gen/tts.py tools/grammar2_gen/audio_jobs.json` 就會補上。
-- 待辦：補錄 Unit 1、2 投影片語音；往 Unit 3 做；文法 20 單元做完 → 單字區 → 克漏字區 → 閱讀區（各自獨立一區，不混進文法區）。
+- 投影片 `uNN-slides.html`（2026-11-02 做好 Unit 1、2）：由 `tools/grammar2_gen/build_slides.py` 產生（內容在 `uNN_slides.py`，沿用第二期 `tools/course2_gen` 的樣式與 sl.py），會輸出 `audio_jobs.json`；語音 mp3 放 `grammar2/audio/uNN/slide-NN.mp3`。Unit 1、2 已錄好（103 句）。錄音用 `tools/grammar2_gen/tts_mp3.py`（soundfile 直接寫 mp3，不需要 ffmpeg；已存在的 mp3 會跳過）。公司電腦已裝 kokoro-onnx，模型檔在 `C:\Users\jenlin2002\kokoro-models`（不在 repo 裡），執行前設 `$env:KOKORO_DIR` 指到那裡。
+- 待辦：往 Unit 3 做；文法 20 單元做完 → 單字區 → 克漏字區 → 閱讀區（各自獨立一區，不混進文法區）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）
 
