@@ -76,6 +76,7 @@ a.card:hover{ transform:translateY(-3px); border-color:var(--chalk-yellow); }
 }
 .card-links a:hover{ transform:translateY(-2px); }
 .link-read{ background:var(--paper); color:var(--chalk-bg); }
+.link-slides{ background:var(--chalk-line); color:var(--chalk-green); border:1px solid var(--chalk-green); }
 .link-quiz{ background:var(--chalk-yellow); color:var(--chalk-bg); }
 .footer-note{ text-align:center; color:#6B7D72; font-size:12px; margin-top:50px; line-height:1.8; }
 
