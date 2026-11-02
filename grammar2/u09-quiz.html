@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 9 代名詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u09.html">← Unit 9 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 9</div>
+  <h1>代名詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U9',
+  title: '國中文法 Unit 9 代名詞',
+  back: 'u09.html',
+  sections: [
+    { title: '① 選擇題：選出正確的代名詞', items: [
+      { type:'mc', q:'Is this your jacket? — No, it isn\'t ______.', opts:['my','mine','me','myself'], answer:1,
+        exp:'後面沒有名詞，單獨用 → 所有代名詞 mine。' },
+      { type:'mc', q:'Our teacher told ______ a funny story.', opts:['we','us','our','ours'], answer:1,
+        exp:'動詞 told 後面當受詞 → 受格 us。' },
+      { type:'mc', q:'Be careful with the knife. Don\'t cut ______.', opts:['you','your','yourself','yours'], answer:2,
+        exp:'主詞（you）和受詞是同一人 → yourself。' },
+      { type:'mc', q:'The bird is building ______ nest.', opts:['it\'s','its','it','their'], answer:1,
+        exp:'「它的」→ its（沒有撇號）。' },
+      { type:'mc', q:'Lisa has two cousins. One lives in Tainan, and ______ lives in Taipei.', opts:['another','the other','other','others'], answer:1,
+        exp:'只有兩個，剩下的最後一個 → the other。' },
+      { type:'mc', q:'This shirt is too big. Do you have a smaller ______?', opts:['it','one','ones','another'], answer:1,
+        exp:'同一類的「任何一件」→ one。' },
+      { type:'mc', q:'Both of my parents ______ doctors.', opts:['is','are','was','has'], answer:1,
+        exp:'both 用複數動詞 → are。' },
+      { type:'mc', q:'Some people enjoy hiking, while ______ prefer swimming.', opts:['other','another','others','the other'], answer:2,
+        exp:'一些…另一些（沒說完全部）→ some… others。' },
+      { type:'mc', q:'I asked three classmates, but ______ of them knew the answer.', opts:['neither','either','none','both'], answer:2,
+        exp:'三個人都不知道 → none。（兩個人才用 neither）' },
+      { type:'mc', q:'Each of the rooms ______ a TV.', opts:['have','has','are having','were'], answer:1,
+        exp:'each 是單數 → has。' }
+    ]},
+    { title: '② 填空：寫出括號裡代名詞的正確形式', note:'例如 (I) 可能要寫 me、my、mine 或 myself。', items: [
+      { q:'Can you help {0} (I) with this box?', blanks:[['me']],
+        exp:'help 後面當受詞 → me。' },
+      { q:'These books are {0} (they). Please give them back.', blanks:[['theirs']],
+        exp:'後面沒有名詞 → 所有代名詞 theirs。' },
+      { q:'We really enjoyed {0} (we) at the beach.', blanks:[['ourselves']],
+        exp:'enjoy oneself＝玩得愉快 → ourselves。' },
+      { q:'Ella made the dress {0} (she).', blanks:[['herself']],
+        exp:'強調「自己親自」做 → herself。' },
+      { q:'{0} (he) father is a pilot.', blanks:[['His']],
+        exp:'後面接名詞 father → 所有格 His。' },
+      { q:'Your bag is heavier than {0} (I).', blanks:[['mine']],
+        exp:'包包和包包比 → mine（= my bag）。' },
+      { q:'Sam lives by {0} (he) in a small apartment.', blanks:[['himself']],
+        exp:'by oneself＝獨自 → by himself。' },
+      { q:'Mr. Wu is a good friend of {0} (we).', blanks:[['ours']],
+        exp:'雙重所有格 a friend of + 所有代名詞 → ours。' },
+      { q:'The kids taught {0} (they) how to make a kite.', blanks:[['themselves']],
+        exp:'teach oneself＝自學 → themselves。' },
+      { q:'Is that pen {0} (you) or {1} (he)?', blanks:[['yours'],['his']],
+        exp:'後面沒有名詞 → yours、his（his 的所有格和所有代名詞同形）。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的字」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'This is mine notebook.<br>錯：{0} → 改：{1}', blanks:[['mine'],['my']],
+        exp:'後面有名詞 notebook，要用所有格 my。' },
+      { q:'My computer is newer than her.<br>錯：{0} → 改：{1}', blanks:[['her'],['hers']],
+        exp:'電腦和電腦比 → hers（= her computer）。' },
+      { q:'I have two sisters. One is a nurse, and another is a cook.<br>錯：{0} → 改：{1}', blanks:[['another'],['the other']],
+        exp:'只有兩個，剩下的最後一個 → the other。' },
+      { q:'Neither of the answers are right.<br>錯：{0} → 改：{1}', blanks:[['are'],['is']],
+        exp:'neither 用單數動詞 → is。' },
+      { q:'I lost my cap yesterday, so I bought a new it.<br>錯：{0} → 改：{1}', blanks:[['it'],['one']],
+        exp:'買的是同一類的「另一頂」→ a new one。' },
+      { q:'Kevin taught him to swim.（Kevin 自己學會游泳）<br>錯：{0} → 改：{1}', blanks:[['him'],['himself']],
+        exp:'主詞和受詞是同一人（自學）→ taught himself。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）This is her umbrella.<br>→ This umbrella is {0}.', blanks:[['hers']],
+        exp:'her umbrella = hers。' },
+      { q:'（同義改寫）He went camping alone.<br>→ He went camping by {0}.', blanks:[['himself']],
+        exp:'alone = by oneself → by himself。' },
+      { q:'（同義改寫）Not all the boys like soccer.<br>→ {0} of the boys like soccer, and {1} don\'t.', blanks:[['Some'],['some','others','the others']],
+        exp:'部分否定：不是全部都喜歡＝有些喜歡、有些不喜歡。' },
+      { q:'（合併）I have three hats. The first is red. The second is blue. The last is black.<br>→ One is red, {0} is blue, and {1} is black.', blanks:[['another'],['the other']],
+        exp:'三個：one… another… the other（最後一個）。' },
+      { q:'（同義改寫）Tom isn\'t here. Ben isn\'t here.<br>→ {0} of them is here.', blanks:[['Neither']],
+        exp:'兩個都不在 → Neither of them。' }
+    ]},
+    { title: '④-2 短文填空：從括號裡選出正確的字', note:'<span class="passage">（每格從括號裡選一個寫上去）<br>I have two best friends, Mia and Jay. One is quiet, and <b>(1)</b>____ (another / the other) is very funny. Last Sunday, the three of us made pizza by <b>(2)</b>____ (us / ourselves). Mia brought <b>(3)</b>____ (her / hers) own apron, but Jay forgot <b>(4)</b>____ (his / him). Some of the pizzas were great, but <b>(5)</b>____ (others / the others) were a little burnt. <b>(6)</b>____ (Both / Either) of my friends said it was the best day ever.</span>', items: [
+      { q:'(1) {0}', blanks:[['the other']],
+        exp:'兩個朋友，剩下那一個 → the other。' },
+      { q:'(2) {0}', blanks:[['ourselves']],
+        exp:'by oneself＝自己（沒人幫忙）→ by ourselves。' },
+      { q:'(3) {0}', blanks:[['her']],
+        exp:'後面有名詞 apron → 所有格 her（her own apron）。' },
+      { q:'(4) {0}', blanks:[['his']],
+        exp:'後面沒有名詞 → 所有代名詞 his（= his apron）。' },
+      { q:'(5) {0}', blanks:[['the others']],
+        exp:'我們做的披薩是固定範圍，扣掉 some 之後「其餘全部」→ the others。' },
+      { q:'(6) {0}', blanks:[['Both']],
+        exp:'兩個朋友都說 → Both（後面用複數動詞）。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
