@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 18 疑問句 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u18.html">← Unit 18 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 18</div>
+  <h1>疑問句．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 造問句與對話填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U18',
+  title: '國中文法 Unit 18 疑問句',
+  back: 'u18.html',
+  sections: [
+    { title: '① 選擇題：選出正確的疑問詞或問句', items: [
+      { type:'mc', q:'— ______ did you go last weekend? — To Taichung.', opts:['When','Where','Who','How'], answer:1,
+        exp:'回答地點 → Where。' },
+      { type:'mc', q:'— ______ is that girl? — She\'s my cousin.', opts:['What','Who','Whose','Which'], answer:1,
+        exp:'問身分（是誰）→ Who。' },
+      { type:'mc', q:'— ______ shoes are these? — They\'re Amy\'s.', opts:['Who','Whose','Which','What'], answer:1,
+        exp:'回答「誰的」→ Whose。' },
+      { type:'mc', q:'— ______ do you like better, cats or dogs? — Dogs.', opts:['What','Which','Who','How'], answer:1,
+        exp:'有範圍可選（cats or dogs）→ Which。' },
+      { type:'mc', q:'— ______ students are in your class? — Twenty-eight.', opts:['How much','How many','How old','How often'], answer:1,
+        exp:'students 可數 → How many。' },
+      { type:'mc', q:'— ______ milk do we need? — Two bottles.', opts:['How many','How much','How long','How often'], answer:1,
+        exp:'milk 不可數 → How much。' },
+      { type:'mc', q:'— ______ have you lived in Taipei? — For ten years.', opts:['How often','How long','How soon','When'], answer:1,
+        exp:'for + 一段時間 → How long。' },
+      { type:'mc', q:'— ______ is the weather like today? — It\'s rainy.', opts:['How','What','Which','Why'], answer:1,
+        exp:'固定說法 What is the weather like?' },
+      { type:'mc', q:'______ he playing the guitar right now?', opts:['Is','Does','Do','Can'], answer:0,
+        exp:'現在進行式 is playing，把 be 動詞移到前面 → Is he playing…?' },
+      { type:'mc', q:'— ______ happened to your bike? — Someone took it.', opts:['What','What did','Who','How'], answer:0,
+        exp:'問主詞「什麼事」發生 → What happened…?（不借 did）' }
+    ]},
+    { title: '② 填空：依回答寫出疑問詞', note:'可能是一個字（例如 When）或兩個字（例如 How often）。', items: [
+      { q:'— {0} does the movie start? — At 7:30.', blanks:[['When','What time']],
+        exp:'回答時間 → When／What time。' },
+      { q:'— {0} were you absent yesterday? — Because I had a fever.', blanks:[['Why']],
+        exp:'because → Why。' },
+      { q:'— {0} do you get to school? — By MRT.', blanks:[['How']],
+        exp:'回答交通方式 → How。' },
+      { q:'— {0} do you brush your teeth? — Twice a day.', blanks:[['How often']],
+        exp:'回答頻率 → How often。' },
+      { q:'— {0} is it from your house to the park? — About 500 meters.', blanks:[['How far']],
+        exp:'回答距離 → How far。' },
+      { q:'— {0} can you finish the work? — In two hours.', blanks:[['How soon']],
+        exp:'in + 一段時間（之後）→ How soon。' },
+      { q:'— {0} is your grandpa? — He\'s seventy-five.', blanks:[['How old']],
+        exp:'回答年紀 → How old。' },
+      { q:'— {0} does your father do? — He\'s an engineer.', blanks:[['What']],
+        exp:'問職業 → What does he do?' },
+      { q:'— {0} day is it today? — It\'s Friday.', blanks:[['What']],
+        exp:'問星期幾 → What day…?' },
+      { q:'— {0} wrote this song? — Jay Chou did.', blanks:[['Who']],
+        exp:'問主詞（誰寫的）→ Who wrote…?' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Where you usually have lunch?<br>錯：{0} → 改：{1}', blanks:[['you'],['do you']],
+        exp:'一般動詞 have 要借 do → Where do you usually have lunch?' },
+      { q:'What did Amy bought at the store?<br>錯：{0} → 改：{1}', blanks:[['bought'],['buy']],
+        exp:'借了 did，動詞用原形 → buy。' },
+      { q:'Who did eat my cookies?<br>錯：{0} → 改：{1}', blanks:[['did eat'],['ate']],
+        exp:'問主詞不借 did → Who ate my cookies?' },
+      { q:'How many money do you have?<br>錯：{0} → 改：{1}', blanks:[['many'],['much']],
+        exp:'money 不可數 → How much。' },
+      { q:'— How long do you go to the gym? — Three times a week.<br>錯：{0} → 改：{1}', blanks:[['How long'],['How often']],
+        exp:'回答頻率 → How often。' },
+      { q:'Does your brother can swim?<br>錯：{0} → 改：{1}', blanks:[['Does your brother can'],['Can your brother']],
+        exp:'有助動詞 can 就直接移到前面，不再借 does。' }
+    ]},
+    { title: '④-1 依畫線部分造問句', note:'寫出疑問詞之後的整個問句部分（不含問號）。', items: [
+      { q:'Ken visited his uncle <u>last Sunday</u>.<br>→ When {0}?', blanks:[['did Ken visit his uncle']],
+        exp:'過去式借 did，visited → visit → When did Ken visit his uncle?' },
+      { q:'<u>Lisa</u> cleaned the classroom.<br>→ Who {0} the classroom?', blanks:[['cleaned']],
+        exp:'畫線是主詞 → Who cleaned the classroom?（不借 did）' },
+      { q:'They are playing <u>in the gym</u>.<br>→ Where {0} playing?', blanks:[['are they']],
+        exp:'be 動詞移到主詞前 → Where are they playing?' },
+      { q:'Mia has <u>three</u> brothers.<br>→ How many brothers {0}?', blanks:[['does Mia have']],
+        exp:'has（擁有）是一般動詞 → does Mia have。' },
+      { q:'This umbrella is <u>Tom\'s</u>.<br>→ Whose umbrella {0}?', blanks:[['is this']],
+        exp:'Whose + 名詞 + is this?' }
+    ]},
+    { title: '④-2 對話填空：依回答寫出問句的開頭', note:'<span class="passage">A: <b>(1)</b>____ ____ you going?<br>B: To the bookstore.<br>A: <b>(2)</b>____ ____ you want to buy?<br>B: A comic book for my brother.<br>A: <b>(3)</b>____ ____ is it?<br>B: About NT$150.<br>A: <b>(4)</b>____ ____ does he read comics?<br>B: Almost every day! He loves them.</span>', items: [
+      { q:'(1) {0} {1} you going?', blanks:[['Where'],['are']],
+        exp:'回答地點、現在進行式 → Where are you going?' },
+      { q:'(2) {0} {1} you want to buy?', blanks:[['What'],['do']],
+        exp:'問想買什麼、一般動詞 want → What do you want to buy?' },
+      { q:'(3) {0} {1} is it?', blanks:[['How'],['much']],
+        exp:'問價錢 → How much is it?' },
+      { q:'(4) {0} {1} does he read comics?', blanks:[['How'],['often']],
+        exp:'回答頻率 → How often does he read comics?' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
