@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 11 副詞 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u11.html">← Unit 11 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 11</div>
+  <h1>副詞．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與短文填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U11',
+  title: '國中文法 Unit 11 副詞',
+  back: 'u11.html',
+  sections: [
+    { title: '① 選擇題：形容詞還是副詞？放哪裡？', items: [
+      { type:'mc', q:'The baby is sleeping. Please talk ______.', opts:['quiet','quietly','quieter','quietest'], answer:1,
+        exp:'修飾動詞 talk → 副詞 quietly。' },
+      { type:'mc', q:'Lisa is a ______ dancer.', opts:['beautiful','beautifully','more beautifully','beauty'], answer:0,
+        exp:'修飾名詞 dancer → 形容詞 beautiful。' },
+      { type:'mc', q:'Mr. Lee ______ drinks coffee in the morning.', opts:['usually','is usually','usually is','usual'], answer:0,
+        exp:'頻率副詞放在一般動詞 drinks 前面。' },
+      { type:'mc', q:'My sister can ______ cook. She only makes noodles.', opts:['hard','hardly','harder','hardest'], answer:1,
+        exp:'「幾乎不會」煮飯 → hardly。' },
+      { type:'mc', q:'— ______ do you visit your grandparents? — Once a month.', opts:['How long','How often','How far','How soon'], answer:1,
+        exp:'回答次數 once a month → How often。' },
+      { type:'mc', q:'Ben got up ______ and missed the bus.', opts:['late','lately','later than','latest'], answer:0,
+        exp:'「晚」起床 → late（lately 是「最近」）。' },
+      { type:'mc', q:'Is it ______ raining outside? I want to go out.', opts:['yet','already','still','ever'], answer:2,
+        exp:'「還在」下雨嗎 → still。' },
+      { type:'mc', q:'Leo isn\'t ______ to go to the movie alone.', opts:['old enough','enough old','too old','so old'], answer:0,
+        exp:'形容詞 + enough + to V → old enough。' },
+      { type:'mc', q:'It was ______ a cold day that the kids stayed inside.', opts:['so','such','too','very'], answer:1,
+        exp:'後面有名詞 a cold day → such…that。' },
+      { type:'mc', q:'Of all the students, Kevin writes ______.', opts:['carefully','more carefully','most carefully','the most careful'], answer:2,
+        exp:'所有學生中最… → 最高級 most carefully（副詞最高級可省略 the）。' }
+    ]},
+    { title: '② 填空：寫出括號裡字的正確形式', note:'形容詞要不要改成副詞？要不要用比較級、最高級？', items: [
+      { q:'The kids played {0} (happy) in the park.', blanks:[['happily']],
+        exp:'修飾動詞 played；子音 + y → 去 y 加 -ily → happily。' },
+      { q:'Please read the question {0} (careful).', blanks:[['carefully']],
+        exp:'修飾動詞 read → carefully。' },
+      { q:'Grandpa walks very {0} (slow).', blanks:[['slowly']],
+        exp:'修飾動詞 walks → slowly。' },
+      { q:'She sings really {0} (good).', blanks:[['well']],
+        exp:'good 的副詞是 well。' },
+      { q:'He worked {0} (hard) all day.', blanks:[['hard']],
+        exp:'hard 形容詞副詞同形；努力地 → hard（不是 hardly）。' },
+      { q:'Can you speak a little {0} (loud)? I can\'t hear you.', blanks:[['louder','more loudly']],
+        exp:'a little + 比較級 → louder（more loudly 也可以）。' },
+      { q:'Amy gets up {0} (early) than her brother.', blanks:[['earlier']],
+        exp:'than → 比較級；early → earlier。' },
+      { q:'Please drive {0} (slowly) than usual in the rain.', blanks:[['more slowly']],
+        exp:'than → 比較級；-ly 副詞的比較級用 more → more slowly。' },
+      { q:'Of the three boys, Max runs the {0} (fast).', blanks:[['fastest']],
+        exp:'三個之中最… → fastest。' },
+      { q:'The test was {0} (terrible) difficult.', blanks:[['terribly']],
+        exp:'修飾形容詞 difficult → 副詞；-le 去 e 加 y → terribly。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Tom speaks Japanese very good.<br>錯：{0} → 改：{1}', blanks:[['good'],['well']],
+        exp:'修飾動詞 speaks → 副詞 well。' },
+      { q:'The train goes very fastly.<br>錯：{0} → 改：{1}', blanks:[['fastly'],['fast']],
+        exp:'fast 本身就是副詞，沒有 fastly。' },
+      { q:'She goes often to the library after school.<br>錯：{0} → 改：{1}', blanks:[['goes often'],['often goes']],
+        exp:'頻率副詞放在一般動詞前面 → often goes。' },
+      { q:'I never don\'t watch TV on school nights.<br>錯：{0} → 改：{1}', blanks:[['never don\'t watch'],['never watch']],
+        exp:'never 已經是否定，不再加 not → never watch。' },
+      { q:'It was so a funny joke that everyone laughed.<br>錯：{0} → 改：{1}', blanks:[['so'],['such']],
+        exp:'後面有名詞 a funny joke → such。' },
+      { q:'I studied hardly, so I passed the test.<br>錯：{0} → 改：{1}', blanks:[['hardly'],['hard']],
+        exp:'努力地 → hard；hardly 是「幾乎不」，意思相反。' }
+    ]},
+    { title: '④-1 句子改寫', note:'依照提示，在空格寫出正確的字。', items: [
+      { q:'（同義改寫）He is a careful driver.<br>→ He drives {0}.', blanks:[['carefully']],
+        exp:'形容詞 careful 修飾 driver ＝ 副詞 carefully 修飾 drives。' },
+      { q:'（同義改寫）Ella is a good swimmer.<br>→ Ella swims {0}.', blanks:[['well']],
+        exp:'good swimmer ＝ swims well。' },
+      { q:'（同義改寫）The tea is too hot for me to drink.<br>→ The tea is {0} hot {1} I can\'t drink it.', blanks:[['so'],['that']],
+        exp:'too…to ＝ so…that + can\'t。' },
+      { q:'（同義改寫）She is so smart a girl that everyone likes her.<br>→ She is {0} a smart girl that everyone likes her.', blanks:[['such']],
+        exp:'so + adj. + a + N ＝ such + a + adj. + N。' },
+      { q:'（同義改寫）Leo runs the fastest in his class.<br>→ Leo runs {0} than any other student in his class.', blanks:[['faster']],
+        exp:'最高級 ＝ 比較級 + than any other + 單數名詞。' }
+    ]},
+    { title: '④-2 短文填空：寫出括號裡字的正確形式', note:'<span class="passage">My grandma is 80 years old, but she is <b>(1)</b>____ (still / yet) very healthy. She <b>(2)</b>____ (usual) gets up at five and walks in the park. She walks <b>(3)</b>____ (quick) than many young people! She <b>(4)</b>____ (never / ever) eats junk food. Last week, she cooked <b>(5)</b>____ (such / so) a delicious dinner that we all ate too much. She cooks <b>(6)</b>____ (good) than anyone else in my family.</span>', items: [
+      { q:'(1) {0}', blanks:[['still']],
+        exp:'「仍然」很健康 → still。' },
+      { q:'(2) {0}', blanks:[['usually']],
+        exp:'頻率副詞 usually，放在一般動詞 gets 前面。' },
+      { q:'(3) {0}', blanks:[['more quickly','quicker']],
+        exp:'than → 比較級；quickly → more quickly。' },
+      { q:'(4) {0}', blanks:[['never']],
+        exp:'「從不」吃垃圾食物 → never（肯定句不用 ever）。' },
+      { q:'(5) {0}', blanks:[['such']],
+        exp:'後面有名詞 a delicious dinner → such。' },
+      { q:'(6) {0}', blanks:[['better']],
+        exp:'修飾動詞 cooks + than → well 的比較級 better。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>

@@ -89,11 +89,16 @@
   .period .p-go{ display:inline-block; font-weight:700; font-size:14px; padding:9px 20px; border-radius:12px; background:var(--chalk-yellow); color:var(--chalk-bg); }
   .period.soon{ opacity:.55; border-style:dashed; }
   .period.soon .p-go{ background:#2A4A3C; color:var(--chalk-green); border:1px solid var(--chalk-green); }
-  .wrap{ max-width:1100px; }
-  .stack{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:18px; align-items:stretch; }
+  .wrap{ max-width:1360px; }
+  .stack{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:18px; align-items:stretch; }
   .period{ display:flex; flex-direction:column; align-items:flex-start; min-height:420px; }
   .period ul{ flex:1; }
-  @media (max-width:860px){
+  .period.subject{ border-color:#5A4A2A; }
+  .period.subject .p-no{ color:var(--chalk-yellow); }
+  @media (max-width:1180px){
+    .stack{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width:700px){
     .stack{ grid-template-columns:1fr; }
     .period{ min-height:0; }
   }
@@ -104,7 +109,7 @@
   <a class="home-link" href="https://jenlin2002.github.io/">🏠 回網站首頁</a>
   <div class="eyebrow">ENGLISH QUIZ SYSTEM</div>
   <h1>英文測驗系統．總目錄</h1>
-  <div class="subtitle">選擇學習階段，進入該期的總目錄；每期再分成幾個階段，每週有投影片與完整測驗（文法／閱讀／克漏字／單字／聽力／口說）</div>
+  <div class="subtitle">選擇學習階段，進入該期的總目錄；每期再分成幾個階段，每週有投影片與完整測驗（文法／閱讀／克漏字／單字／聽力／口說）<br>想把某個文法點弄懂，就到「國中文法．分科詳解」。</div>
 
   <div class="stack">
     <a class="period" href="course1.html">
@@ -145,6 +150,19 @@
         <li>第六階段（第 26–30 週）：學測與英檢中高級雙軌模擬</li>
       </ul>
       <span class="p-go">進入第三期 →</span>
+    </a>
+
+    <a class="period subject" href="grammar2/index.html">
+      <div class="p-no">GRAMMAR · 分科</div>
+      <div class="p-title">國中文法．分科詳解</div>
+      <div class="p-sub">依國中文法課本 20 個單元，一個文法點一頁，講得更完整；可當週次課程的詳細講解。</div>
+      <ul>
+        <li>每單元：📘 講解．📊 投影片（附語音）．📝 測驗</li>
+        <li>動詞與時態（Unit 1–7）：時態、被動、動名詞、不定詞、特殊動詞、助動詞、片語動詞</li>
+        <li>詞類（Unit 8–13）：名詞、代名詞、形容詞、副詞、介系詞、連接詞</li>
+        <li>句型（Unit 14–20）：附加問句、倒裝、關代、間接問句、假設語氣</li>
+      </ul>
+      <span class="p-go">進入國中文法 →</span>
     </a>
   </div>
 
