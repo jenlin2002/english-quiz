@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 16 倒裝句 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u16.html">← Unit 16 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 16</div>
+  <h1>倒裝句．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U16',
+  title: '國中文法 Unit 16 倒裝句',
+  back: 'u16.html',
+  sections: [
+    { title: '① 選擇題：選出正確的倒裝', items: [
+      { type:'mc', q:'Here ______ our teacher!', opts:['come','comes','coming','is come'], answer:1,
+        exp:'Here + 動詞 + 名詞；our teacher 單數 → comes。' },
+      { type:'mc', q:'There ______. She\'s leaving now.', opts:['goes she','she goes','she go','go she'], answer:1,
+        exp:'主詞是代名詞，不倒裝 → There she goes。' },
+      { type:'mc', q:'Never ______ rude to others.', opts:['she is','is she','does she','she does'], answer:1,
+        exp:'be 動詞移到主詞前 → Never is she。' },
+      { type:'mc', q:'Seldom ______ breakfast.', opts:['Tom skips','does Tom skip','does Tom skips','skips Tom'], answer:1,
+        exp:'一般動詞借 does，後面原形 → does Tom skip。' },
+      { type:'mc', q:'Never ______ such a funny movie.', opts:['I have watched','have I watched','I watched','did I watched'], answer:1,
+        exp:'完成式：have 移到主詞前 → have I watched。' },
+      { type:'mc', q:'Little ______ that it would snow.', opts:['we thought','did we think','did we thought','thought we'], answer:1,
+        exp:'過去式借 did，thought → think。' },
+      { type:'mc', q:'In the box ______ two puppies.', opts:['is','are','was','has'], answer:1,
+        exp:'動詞看後面的主詞 two puppies（複數）→ are。' },
+      { type:'mc', q:'Hardly ______ hear what she said.', opts:['I could','could I','did I could','I can'], answer:1,
+        exp:'助動詞 could 移到主詞前 → Hardly could I hear。' },
+      { type:'mc', q:'— Your coffee, sir. — Thank you. — ______.', opts:['Here you are','You are welcome here','Here are you','Here is it'], answer:0,
+        exp:'遞東西給別人：Here you are.' },
+      { type:'mc', q:'Next to the school ______ a big park.', opts:['is','are','be','does'], answer:0,
+        exp:'地方片語放句首；主詞 a big park 單數 → is。' }
+    ]},
+    { title: '② 填空：寫出倒裝後的「助動詞（或 be）＋ 主詞」', note:'例如 is he、does Amy、have I。', items: [
+      { q:'He is never on time. → Never {0} on time.', blanks:[['is he']],
+        exp:'be 動詞移到主詞前 → is he。' },
+      { q:'Amy seldom eats junk food. → Seldom {0} eat junk food.', blanks:[['does Amy']],
+        exp:'現在式第三人稱單數借 does → does Amy。' },
+      { q:'I have never been to Europe. → Never {0} been to Europe.', blanks:[['have I']],
+        exp:'完成式：have 移到主詞前 → have I。' },
+      { q:'We rarely went out last winter. → Rarely {0} go out last winter.', blanks:[['did we']],
+        exp:'過去式借 did → did we。' },
+      { q:'I will never give up. → Never {0} give up.', blanks:[['will I']],
+        exp:'助動詞 will 移到主詞前 → will I。' },
+      { q:'She knew little about the plan. → Little {0} know about the plan.', blanks:[['did she']],
+        exp:'過去式 knew → 借 did → did she know。' },
+      { q:'They hardly ever watch TV. → Hardly ever {0} watch TV.', blanks:[['do they']],
+        exp:'現在式、主詞 they → do they。' },
+      { q:'Ken can seldom go to bed early. → Seldom {0} go to bed early.', blanks:[['can Ken']],
+        exp:'助動詞 can 移到主詞前 → can Ken。' },
+      { q:'The train comes here. → Here {0} the train.', blanks:[['comes']],
+        exp:'名詞主詞：Here + 動詞 + 名詞 → Here comes the train。' },
+      { q:'It comes here. → Here {0} {1}.', blanks:[['it'],['comes']],
+        exp:'代名詞主詞不倒裝 → Here it comes。' }
+    ]},
+    { title: '③ 找錯改正：每句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Never she is angry with her students.<br>錯：{0} → 改：{1}', blanks:[['she is'],['is she']],
+        exp:'否定副詞放句首要倒裝 → Never is she。' },
+      { q:'Seldom does my dad drinks coffee.<br>錯：{0} → 改：{1}', blanks:[['drinks'],['drink']],
+        exp:'借了 does，動詞要變回原形 → drink。' },
+      { q:'Never I have seen a real panda.<br>錯：{0} → 改：{1}', blanks:[['I have'],['have I']],
+        exp:'完成式：have 移到主詞前 → Never have I seen。' },
+      { q:'Little did he knew about the plan.<br>錯：{0} → 改：{1}', blanks:[['knew'],['know']],
+        exp:'借了 did，動詞變原形 → know。' },
+      { q:'Look! Here comes she.<br>錯：{0} → 改：{1}', blanks:[['comes she'],['she comes']],
+        exp:'代名詞主詞不倒裝 → Here she comes。' },
+      { q:'On the wall is three paintings.<br>錯：{0} → 改：{1}', blanks:[['is'],['are']],
+        exp:'動詞看後面的主詞 three paintings（複數）→ are。' }
+    ]},
+    { title: '④ 句子改寫：用倒裝句改寫', note:'把畫線的字放到句首，寫出後面的部分。', items: [
+      { q:'My grandpa <u>never</u> forgets my birthday.<br>→ Never {0} forget my birthday.', blanks:[['does my grandpa']],
+        exp:'一般動詞借 does → does my grandpa forget。' },
+      { q:'I <u>have never</u> tasted such sweet mangoes.<br>→ Never {0} such sweet mangoes.', blanks:[['have I tasted']],
+        exp:'完成式 → Never have I tasted。' },
+      { q:'We <u>seldom</u> saw stars in the city.<br>→ Seldom {0} stars in the city.', blanks:[['did we see']],
+        exp:'過去式借 did，saw → see → did we see。' },
+      { q:'A little girl stood <u>at the bus stop</u>.<br>→ At the bus stop {0}.', blanks:[['stood a little girl']],
+        exp:'地方片語放句首，動詞直接移到名詞主詞前 → stood a little girl。' },
+      { q:'Many birds were <u>in the tree</u>.<br>→ In the tree {0}.', blanks:[['were many birds']],
+        exp:'地方片語放句首 → were many birds。' },
+      { q:'He <u>is never</u> afraid of the dark.<br>→ Never {0} afraid of the dark.', blanks:[['is he']],
+        exp:'be 動詞移到主詞前 → is he。' },
+      { q:'She <u>could hardly</u> believe her eyes.<br>→ Hardly {0} believe her eyes.', blanks:[['could she']],
+        exp:'助動詞 could 移到主詞前 → could she。' },
+      { q:'The bus comes <u>here</u>.<br>→ Here {0}.', blanks:[['comes the bus']],
+        exp:'Here + 動詞 + 名詞 → Here comes the bus。' },
+      { q:'They go <u>there</u>.<br>→ There {0}.', blanks:[['they go']],
+        exp:'代名詞主詞不倒裝 → There they go。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
