@@ -111,13 +111,13 @@
 ## 國中文法分科區 `grammar2/`（2026-11-02 開始，公司電腦）
 
 - 照翰林《國中英語文法特快車》20 個單元順序，一個單元三頁：`uNN.html` 講解（觀念 → 句型整理表 → 常見錯誤 → 自我練習，不計點）、`uNN-quiz.html` 單元測驗、（之後）投影片。講解與題目一律自己重寫，不可照抄課本。
-- 已做：Unit 1 時態、Unit 2 被動語態、Unit 3 動名詞、Unit 4 不定詞、Unit 5 特殊動詞句型、Unit 6 助動詞、Unit 7 片語動詞、Unit 8 名詞、Unit 9 代名詞（講解＋投影片＋語音＋測驗）＝課本第 1 份（p1–100）全部做完；Unit 10 起在第 2 份（p101–200）。Unit 10 形容詞、Unit 11 副詞、Unit 12 介系詞、Unit 13 連接詞、Unit 14 附加問句、Unit 15 附和句、Unit 16 倒裝句、Unit 17 形容詞子句、Unit 18 疑問句、Unit 19 直接問句與間接問句（2026-11-03）也做好了，Week 4 的「📘 詳細講解」連到 u10.html#forms，Week 8 連到 u13.html，Week 13 連到 u17.html，Week 15 連到 u18.html，Week 16 連到 u19.html#report（Unit 19 多補了轉述 said that／asked if）。Unit 18 疑問句起在課本第 2 份 p188（hi2 第 88 頁）以後，Unit 20 後半在第 3 份（p201–206）。
+- 已做：Unit 1 時態、Unit 2 被動語態、Unit 3 動名詞、Unit 4 不定詞、Unit 5 特殊動詞句型、Unit 6 助動詞、Unit 7 片語動詞、Unit 8 名詞、Unit 9 代名詞（講解＋投影片＋語音＋測驗）＝課本第 1 份（p1–100）全部做完；Unit 10 起在第 2 份（p101–200）。Unit 10 形容詞、Unit 11 副詞、Unit 12 介系詞、Unit 13 連接詞、Unit 14 附加問句、Unit 15 附和句、Unit 16 倒裝句、Unit 17 形容詞子句、Unit 18 疑問句、Unit 19 直接問句與間接問句、Unit 20 假設語氣（2026-11-03）也做好了＝**20 個單元全部完成**，Week 14 連到 u20.html#real，Week 4 的「📘 詳細講解」連到 u10.html#forms，Week 8 連到 u13.html，Week 13 連到 u17.html，Week 15 連到 u18.html，Week 16 連到 u19.html#report（Unit 19 多補了轉述 said that／asked if）。Unit 18 疑問句起在課本第 2 份 p188（hi2 第 88 頁）以後，Unit 20 後半在第 3 份（p201–206）。
 - 英文測驗系統總目錄 `index.html`（2026-11-03 使用者要求）：「國中文法．分科詳解」當成第四張卡片，和第一、二、三期並排（寬螢幕 4 欄、中等 2 欄、手機 1 欄）。Week 7 的「📘 詳細講解」連到 u08.html#count。Week 6 的「📘 詳細講解」連到 u06.html。Week 9 的「📘 詳細講解」連到 u04.html#compare（to V vs V-ing 比較）。新單元的投影片要在 `build_slides.py` 的 `UNITS` 加上。`index.html` 是 20 單元目錄，沒做的標「製作中」。
 - 測驗只出文法題，四層由易到難：①選擇 ②填空（給原形）③找錯改正 ④改寫／合併＋短文填空。共用程式 `gquiz.js`，流程照段考題庫規則（全部作答才送出、對答案、`Points.earn`、同步試算表 label `G8 Grammar UN`、訂正到全對補送 1 點、訂正中不能離開、暫存 `gqDraft:`）。改了 `gquiz.js`／`grammar.css` 要把各頁的 `?v=` 一起改。
 - 第一期 `course1.html` 的週卡有「📘 詳細講解」連到對應單元（W1/2/3/11 → u01 的 #s1/#s2/#s3/#s6，W12 → u02），之後做出單元再補其他週。
 - 課本：`I:\興雅\英文\115二上翰林\…文法特快車_課本_教用_切割\`，是掃描圖檔，用 PyMuPDF 轉圖片看。
 - 投影片 `uNN-slides.html`（2026-11-02 做好 Unit 1、2）：由 `tools/grammar2_gen/build_slides.py` 產生（內容在 `uNN_slides.py`，沿用第二期 `tools/course2_gen` 的樣式與 sl.py），會輸出 `audio_jobs.json`；語音 mp3 放 `grammar2/audio/uNN/slide-NN.mp3`。Unit 1、2 已錄好（103 句）。錄音用 `tools/grammar2_gen/tts_mp3.py`（soundfile 直接寫 mp3，不需要 ffmpeg；已存在的 mp3 會跳過）。公司電腦已裝 kokoro-onnx，模型檔在 `C:\Users\jenlin2002\kokoro-models`（不在 repo 裡），執行前設 `$env:KOKORO_DIR` 指到那裡。
-- 待辦：往 Unit 3 做；文法 20 單元做完 → 單字區 → 克漏字區 → 閱讀區（各自獨立一區，不混進文法區）。
+- 待辦：文法 20 單元已完成 → 下一步單字區（單字2000活用練習＋LaLa Word）→ 克漏字區 → 閱讀區（各自獨立一區，不混進文法區；每區先做 1～2 單元給使用者看）。之後可考慮給題目標考點代號、做 links.js 讓克漏字詳解連到文法單元（2026-11-02 提過，使用者未決定）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）
 

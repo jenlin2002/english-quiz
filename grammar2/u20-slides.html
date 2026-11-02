@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法 Unit 20 投影片｜假設語氣</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">GRAMMAR UNIT 20 · SLIDES</div>
+    <h1 class="page">假設語氣</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="index.html">← 國中文法目錄</a>
+    <a class="home-link" href="u20.html">📘 講解</a>
+    <a class="quiz-link" href="u20-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 20 · GRAMMAR</div><h1 class="big">假設語氣</h1><div class="en-sub">Conditionals & Wishes</div><div class="venn"><span class="c1">If I were…</span><span class="c2">I wish…</span></div></section>
+<section class="s paper"><h2>本單元目標與暖身</h2><div class="cards n2"><div class="card g"><h3>學完這個單元，你會</h3><ul class="b"><li>分辨「可能成真」和「與事實相反」的假設</li><li>寫出與現在相反（were、would + V）</li><li>寫出與過去相反（had p.p.、would have p.p.）</li><li>用 should 說「萬一」</li><li>用 wish 說「真希望…」，分清楚 wish 和 hope</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">If it ____ tomorrow, I'll stay home. (rains / will rain)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>rains</span></div><div class="qa"><span class="n">2</span><span class="q">If I ____ you, I would rest. (am / were)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>were</span></div><div class="qa"><span class="n">3</span><span class="q">I wish I ____ fly. (can / could)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>could</span></div></div></div></div></section>
+<section class="s paper"><h2>先看全貌：有可能嗎？</h2><table class="t"><thead><tr><th>種類</th><th>if 子句</th><th>主要子句</th><th>例句</th></tr></thead><tbody><tr><td>事實、真理</td><td>現在式</td><td>現在式</td><td><div>If you heat ice, it <b>melts</b>. <button class="sentence-btn" type="button" data-say="If you heat ice, it melts." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（冰加熱就會融化）</span></div></td></tr><tr><td>可能成真</td><td>現在式</td><td>will + V</td><td><div>If it <b>rains</b>, I <b>will stay</b> home. <button class="sentence-btn" type="button" data-say="If it rains, I will stay home." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（下雨的話我就待在家）</span></div></td></tr><tr><td>與現在相反</td><td>過去式（were）</td><td>would + V</td><td><div>If I <b>were</b> rich, I <b>would buy</b> a house. <button class="sentence-btn" type="button" data-say="If I were rich, I would buy a house." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（如果我有錢就會買房子）</span></div></td></tr><tr><td>與過去相反</td><td>had + p.p.</td><td>would have + p.p.</td><td><div>If I <b>had studied</b>, I <b>would have passed</b>. <button class="sentence-btn" type="button" data-say="If I had studied, I would have passed." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（如果我當時用功就會及格）</span></div></td></tr></tbody></table><div class="note">和事實相反時，動詞要往過去退一格。</div></section>
+<section class="s paper"><h2>有可能成真的假設</h2><div class="cards n2"><div class="card g"><h3>事實、真理：兩邊現在式</h3><div class="sub">zero conditional</div><div class="ex g"><div class="en">If you mix red and blue, you <b>get</b> purple. <button class="sentence-btn" type="button" data-say="If you mix red and blue, you get purple." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 永遠如此</div></div><div class="ex g"><div class="en">If I drink coffee at night, I <b>can't</b> sleep. <button class="sentence-btn" type="button" data-say="If I drink coffee at night, I can&#x27;t sleep." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 每次都這樣</div></div></div><div class="card o"><h3>未來可能：if 現在式 + will</h3><div class="sub">first conditional</div><div class="ex o"><div class="en">If it <i>is</i> sunny tomorrow, we <i>will go</i> on a picnic. <button class="sentence-btn" type="button" data-say="If it is sunny tomorrow, we will go on a picnic." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 不是 if it will be</div></div><div class="ex o"><div class="en">If you <i>need</i> help, <i>call</i> me. <button class="sentence-btn" type="button" data-say="If you need help, call me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 也可以接祈使句</div></div></div></div></section>
+<section class="s paper"><h2>與現在事實相反</h2><div class="cards n2"><div class="card g"><h3>If + 過去式, would + V</h3><div class="sub">現在不是這樣</div><div class="ex g"><div class="en">If I <b>had</b> wings, I <b>would fly</b> to Japan. <button class="sentence-btn" type="button" data-say="If I had wings, I would fly to Japan." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 事實：我沒有翅膀</div></div><div class="ex g"><div class="en">If I <b>knew</b> her number, I <b>could call</b> her. <button class="sentence-btn" type="button" data-say="If I knew her number, I could call her." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 事實：我不知道</div></div><div class="ex g"><div class="en">If I <b>were</b> you, I <b>would</b> take a break. <button class="sentence-btn" type="button" data-say="If I were you, I would take a break." aria-label="播放這個句子">🔊</button></div><div class="zh">→ be 一律用 were，常用來給建議</div></div></div><div class="card o"><h3>事實怎麼說</h3><div class="sub">假設 ⇄ 事實</div><div class="ex o"><div class="en">If I were taller, I could reach it. <button class="sentence-btn" type="button" data-say="If I were taller, I could reach it." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 假設</div></div><div class="ex o"><div class="en">= I <i>am not</i> tall enough, so I <i>can't</i> reach it. <button class="sentence-btn" type="button" data-say="= I am not tall enough, so I can&#x27;t reach it." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 事實：現在式、肯否相反</div></div></div></div></section>
+<section class="s paper"><h2>與過去事實相反</h2><div class="cards n2"><div class="card g"><h3>If + had p.p., would have p.p.</h3><div class="sub">過去已經發生</div><div class="ex g"><div class="en">If you <b>had told</b> me, I <b>would have helped</b> you. <button class="sentence-btn" type="button" data-say="If you had told me, I would have helped you." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 你當時沒說</div></div><div class="ex g"><div class="en">If I <b>had left</b> earlier, I <b>wouldn't have missed</b> the bus. <button class="sentence-btn" type="button" data-say="If I had left earlier, I wouldn&#x27;t have missed the bus." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我當時沒早點出門</div></div></div><div class="card o"><h3>事實怎麼說</h3><div class="sub">假設 ⇄ 事實</div><div class="ex o"><div class="en">If he had studied, he would have passed. <button class="sentence-btn" type="button" data-say="If he had studied, he would have passed." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 假設</div></div><div class="ex o"><div class="en">= He <i>didn't study</i>, so he <i>didn't pass</i>. <button class="sentence-btn" type="button" data-say="= He didn&#x27;t study, so he didn&#x27;t pass." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 事實：過去式、肯否相反</div></div></div></div></section>
+<section class="s paper"><h2>混合的假設與「萬一」</h2><div class="cards n2"><div class="card g"><h3>過去沒做，影響現在</h3><div class="sub">mixed</div><p class="row"><b>If + had p.p.（過去）, would + V + now（現在）</b></p><div class="ex g"><div class="en">If I <b>had eaten</b> breakfast, I <b>wouldn't be</b> hungry now. <button class="sentence-btn" type="button" data-say="If I had eaten breakfast, I wouldn&#x27;t be hungry now." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 早上沒吃，現在很餓</div></div><p class="row"><b>看時間線索：</b>if 子句 last week；主要子句 now</p></div><div class="card o"><h3>萬一：If + should + V</h3><div class="sub">should</div><div class="ex o"><div class="en">If it <i>should</i> rain, the game <i>will</i> be canceled. <button class="sentence-btn" type="button" data-say="If it should rain, the game will be canceled." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 萬一下雨</div></div><div class="ex o"><div class="en">If you <i>should</i> see Ken, <i>tell</i> him to call me. <button class="sentence-btn" type="button" data-say="If you should see Ken, tell him to call me." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 萬一看到 Ken</div></div></div></div></section>
+<section class="s paper"><h2>wish：真希望…</h2><table class="t"><thead><tr><th>希望</th><th>公式</th><th>例句</th></tr></thead><tbody><tr><td>現在</td><td>wish + 過去式（were）</td><td><div>I wish I <b>were</b> a bird. <button class="sentence-btn" type="button" data-say="I wish I were a bird." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（真希望我是一隻鳥）</span></div></td></tr><tr><td>現在（能力）</td><td>wish + could + V</td><td><div>I wish I <b>could</b> fly. <button class="sentence-btn" type="button" data-say="I wish I could fly." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（真希望我會飛）</span></div></td></tr><tr><td>過去</td><td>wish + had + p.p.</td><td><div>I wish I <b>had studied</b> harder. <button class="sentence-btn" type="button" data-say="I wish I had studied harder." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（真希望我當時更用功）</span></div></td></tr><tr><td>真的有可能 → hope</td><td>hope + will</td><td><div>I <b>hope</b> it will be sunny tomorrow. <button class="sentence-btn" type="button" data-say="I hope it will be sunny tomorrow." aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（希望明天會放晴）</span></div></td></tr></tbody></table></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">If it will rain tomorrow, we will stay home.</span> → <span class="good">If it rains tomorrow, we will stay home.</span></div><div class="why">if 子句現在代未來。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">If I am you, I would apologize.</span> → <span class="good">If I were you, I would apologize.</span></div><div class="why">與現在相反用 were。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">If I had money, I will buy it.</span> → <span class="good">If I had money, I would buy it.</span></div><div class="why">主要子句用 would。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">If you had called, I would come.（昨天）</span> → <span class="good">If you had called, I would have come.</span></div><div class="why">與過去相反。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">I wish I can fly.</span> → <span class="good">I wish I could fly.</span></div><div class="why">wish 後面退一格。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">If it ____ sunny, we'll go. (is / will be)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>is</span></div><div class="qa"><span class="n">2</span><span class="q">If I ____ you, I'd go. (am / were)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>were</span></div><div class="qa"><span class="n">3</span><span class="q">If I had time, I ____ help. (will / would)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>would</span></div><div class="qa"><span class="n">4</span><span class="q">If I had known, I ____ come. (would / would have)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>would have</span></div><div class="qa"><span class="n">5</span><span class="q">If she ____ studied, she would have passed. (has / had)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>had</span></div><div class="qa"><span class="n">6</span><span class="q">I wish I ____ a cat. (have / had)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>had</span></div><div class="qa"><span class="n">7</span><span class="q">I wish I ____ gone. (have / had)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>had</span></div><div class="qa"><span class="n">8</span><span class="q">I ____ you get well soon. (wish / hope)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>hope</span></div></div></section>
+<section class="s paper"><h2>改寫練習與下一步</h2><div class="two"><div><p class="lead">依事實寫假設</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">I am not rich, so I can't travel.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>If I were rich, I could travel.</span></div><div class="qa"><span class="n">2</span><span class="q">I don't have a dog.（wish）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I wish I had a dog.</span></div><div class="qa"><span class="n">3</span><span class="q">It rained, so we didn't go out.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>If it hadn't rained, we would have gone out.</span></div><div class="qa"><span class="n">4</span><span class="q">I didn't bring my jacket.（wish）</span><button class="rv" type="button">看答案</button><span class="ans" hidden>I wish I had brought my jacket.</span></div></div></div><div class="card o"><h3>恭喜！20 個單元全部學完</h3><ul class="b"><li>回到「📘 講解」頁看完整的整理表</li><li>準備好了就按右上角「📝 前往測驗」</li><li>第一期 Week 14 的週測驗可以當綜合練習</li><li>回國中文法目錄，挑錯最多的單元再複習一次</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/u20/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>
