@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法 Unit 14 投影片｜附加問句</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">GRAMMAR UNIT 14 · SLIDES</div>
+    <h1 class="page">附加問句</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="index.html">← 國中文法目錄</a>
+    <a class="home-link" href="u14.html">📘 講解</a>
+    <a class="quiz-link" href="u14-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 14 · GRAMMAR</div><h1 class="big">附加問句</h1><div class="en-sub">Tag Questions</div><div class="venn"><span class="c1">isn't it?</span><span class="c2">do you?</span></div></section>
+<section class="s paper"><h2>本單元目標與暖身</h2><div class="cards n2"><div class="card g"><h3>學完這個單元，你會</h3><ul class="b"><li>用三個規則寫出附加問句</li><li>依照 be 動詞、一般動詞、助動詞、完成式選對字</li><li>處理 this、there、everyone 等特別的主詞</li><li>never、nothing 句子的附加問句、Let's 和祈使句</li><li>正確回答附加問句（看事實說 Yes / No）</li></ul></div><div class="card o"><h3>暖身 3 題</h3><div class="qas"><div class="qa"><span class="n">1</span><span class="q">It's cold, ____? (isn't it / is it)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>isn't it</span></div><div class="qa"><span class="n">2</span><span class="q">You like music, ____? (aren't you / don't you)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>don't you</span></div><div class="qa"><span class="n">3</span><span class="q">He can't swim, ____? (can he / can't he)</span><button class="rv" type="button">看答案</button><span class="ans" hidden>can he</span></div></div></div></div></section>
+<section class="s paper"><h2>附加問句的三個規則</h2><div class="cards n2"><div class="card g"><h3>規則</h3><div class="sub">rules</div><ul class="b"><li>① 前肯後否、前否後肯</li><li>② 主詞換成代名詞（Ken → he）</li><li>③ 用原句的 be／助動詞；一般動詞借 do / does / did</li><li>④ 否定一律縮寫：isn't、don't、can't</li></ul></div><div class="card o"><h3>例句</h3><div class="sub">examples</div><div class="ex g"><div class="en">Ken is your classmate, <b>isn't he</b>? <button class="sentence-btn" type="button" data-say="Ken is your classmate, isn&#x27;t he?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 前肯後否</div></div><div class="ex o"><div class="en">Amy isn't here, <i>is she</i>? <button class="sentence-btn" type="button" data-say="Amy isn&#x27;t here, is she?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 前否後肯</div></div><div class="ex g"><div class="en">Your parents like fish, <b>don't they</b>? <button class="sentence-btn" type="button" data-say="Your parents like fish, don&#x27;t they?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 一般動詞借 do</div></div><div class="ex o"><div class="en">Ben lost his key, <i>didn't he</i>? <button class="sentence-btn" type="button" data-say="Ben lost his key, didn&#x27;t he?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 過去式借 did</div></div></div></div></section>
+<section class="s paper"><h2>各種時態與助動詞</h2><table class="t"><thead><tr><th>前面的句子</th><th>附加問句</th><th>例句</th></tr></thead><tbody><tr><td>was / were</td><td>同一個 be 動詞</td><td><div>It was cold, <b>wasn't it</b>? <button class="sentence-btn" type="button" data-say="It was cold, wasn&#x27;t it?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（那時很冷，對吧？）</span></div></td></tr><tr><td>現在式一般動詞</td><td>do / does</td><td><div>She plays tennis, <b>doesn't she</b>? <button class="sentence-btn" type="button" data-say="She plays tennis, doesn&#x27;t she?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（她打網球，對吧？）</span></div></td></tr><tr><td>can / will / should</td><td>同一個助動詞</td><td><div>It will rain, <b>won't it</b>? <button class="sentence-btn" type="button" data-say="It will rain, won&#x27;t it?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（會下雨，對吧？）</span></div></td></tr><tr><td>have / has + p.p.</td><td>have / has</td><td><div>They have finished, <b>haven't they</b>? <button class="sentence-btn" type="button" data-say="They have finished, haven&#x27;t they?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（他們做完了，對吧？）</span></div></td></tr><tr><td>have（擁有）</td><td>do / does</td><td><div>You have a dog, <b>don't you</b>? <button class="sentence-btn" type="button" data-say="You have a dog, don&#x27;t you?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（你有養狗，對吧？）</span></div></td></tr><tr><td>I am</td><td>aren't I（較正式 am I not）</td><td><div>I'm late, <b>aren't I</b>? <button class="sentence-btn" type="button" data-say="I&#x27;m late, aren&#x27;t I?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我遲到了，對吧？）</span></div></td></tr></tbody></table></section>
+<section class="s paper"><h2>特別的主詞</h2><table class="t"><thead><tr><th>主詞</th><th>附加問句用</th><th>例句</th></tr></thead><tbody><tr><td>this / that</td><td>it</td><td><div>This is your pen, <b>isn't it</b>? <button class="sentence-btn" type="button" data-say="This is your pen, isn&#x27;t it?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（這是你的筆，對吧？）</span></div></td></tr><tr><td>these / those</td><td>they</td><td><div>Those are your shoes, <b>aren't they</b>? <button class="sentence-btn" type="button" data-say="Those are your shoes, aren&#x27;t they?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（那些是你的鞋，對吧？）</span></div></td></tr><tr><td>everything / nothing</td><td>it</td><td><div>Everything is ready, <b>isn't it</b>? <button class="sentence-btn" type="button" data-say="Everything is ready, isn&#x27;t it?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（都準備好了，對吧？）</span></div></td></tr><tr><td>everyone / nobody</td><td>they</td><td><div>Everyone likes her, <b>don't they</b>? <button class="sentence-btn" type="button" data-say="Everyone likes her, don&#x27;t they?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（大家都喜歡她，對吧？）</span></div></td></tr><tr><td>There is / are</td><td>there</td><td><div>There is a park nearby, <b>isn't there</b>? <button class="sentence-btn" type="button" data-say="There is a park nearby, isn&#x27;t there?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（附近有公園，對吧？）</span></div></td></tr></tbody></table></section>
+<section class="s paper"><h2>句子裡有否定的字</h2><div class="cards n2"><div class="card g"><h3>never、nothing、seldom…</h3><div class="sub">negative words</div><p class="row"><b>雖然沒有 not，句子已經是否定 → 附加問句用肯定</b></p><div class="ex g"><div class="en">She <b>never</b> eats meat, <b>does she</b>? <button class="sentence-btn" type="button" data-say="She never eats meat, does she?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 她從不吃肉，對吧？</div></div><div class="ex g"><div class="en">There is <b>nothing</b> in the box, <b>is there</b>? <button class="sentence-btn" type="button" data-say="There is nothing in the box, is there?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 箱子裡沒東西，對吧？</div></div></div><div class="card o"><h3>字裡面的否定不算</h3><div class="sub">unhappy、dislike</div><div class="ex o"><div class="en">He is <i>unhappy</i>, <i>isn't he</i>? <button class="sentence-btn" type="button" data-say="He is unhappy, isn&#x27;t he?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ unhappy 仍算肯定句</div></div><div class="ex o"><div class="en">Nobody came, <i>did they</i>? <button class="sentence-btn" type="button" data-say="Nobody came, did they?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ nobody 用 they</div></div></div></div></section>
+<section class="s paper"><h2>祈使句與 Let's</h2><table class="t"><thead><tr><th>句型</th><th>附加問句</th><th>例句</th></tr></thead><tbody><tr><td>Let's …</td><td>shall we?</td><td><div>Let's go to the movies, <b>shall we</b>? <button class="sentence-btn" type="button" data-say="Let&#x27;s go to the movies, shall we?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（我們去看電影好嗎？）</span></div></td></tr><tr><td>祈使句（請對方做）</td><td>will you?</td><td><div>Close the door, <b>will you</b>? <button class="sentence-btn" type="button" data-say="Close the door, will you?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（把門關上好嗎？）</span></div></td></tr><tr><td>否定祈使句</td><td>will you?</td><td><div>Don't be late, <b>will you</b>? <button class="sentence-btn" type="button" data-say="Don&#x27;t be late, will you?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（別遲到喔）</span></div></td></tr><tr><td>邀請</td><td>won't you?</td><td><div>Have some cake, <b>won't you</b>? <button class="sentence-btn" type="button" data-say="Have some cake, won&#x27;t you?" aria-label="播放這個句子">🔊</button> <span style="color:var(--ink-soft);font-size:.9em">（吃塊蛋糕吧！）</span></div></td></tr></tbody></table></section>
+<section class="s paper"><h2>含子句的句子與怎麼回答</h2><div class="cards n2"><div class="card g"><h3>跟著主要子句</h3><div class="sub">main clause</div><div class="ex g"><div class="en">You know where he lives, <b>don't you</b>? <button class="sentence-btn" type="button" data-say="You know where he lives, don&#x27;t you?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 主要子句 You know</div></div><div class="ex g"><div class="en">She was sleeping when you called, <b>wasn't she</b>? <button class="sentence-btn" type="button" data-say="She was sleeping when you called, wasn&#x27;t she?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 主要子句 She was sleeping</div></div><p class="row"><b>例外：</b>I think … 跟著後面的子句：I think Ken is right, isn't he?</p></div><div class="card o"><h3>回答：看事實說 Yes / No</h3><div class="sub">和中文的「對／不對」不同</div><div class="ex o"><div class="en">— You aren't hungry, are you? <button class="sentence-btn" type="button" data-say="— You aren&#x27;t hungry, are you?" aria-label="播放這個句子">🔊</button></div><div class="zh">→ 問句</div></div><div class="ex o"><div class="en">— <i>Yes, I am.</i> <button class="sentence-btn" type="button" data-say="— Yes, I am." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我餓（事實是肯定）</div></div><div class="ex o"><div class="en">— <i>No, I'm not.</i> <button class="sentence-btn" type="button" data-say="— No, I&#x27;m not." aria-label="播放這個句子">🔊</button></div><div class="zh">→ 我不餓（事實是否定）</div></div></div></div></section>
+<section class="s paper"><h2>學生最常錯的 5 句</h2><div class="top5"><div class="t5"><span class="rank">1</span><div><div class="en"><span class="bad">Amy is your sister, isn't Amy?</span> → <span class="good">Amy is your sister, isn't she?</span></div><div class="why">主詞換成代名詞。</div></div></div><div class="t5"><span class="rank">2</span><div><div class="en"><span class="bad">You like pizza, aren't you?</span> → <span class="good">You like pizza, don't you?</span></div><div class="why">一般動詞借 do。</div></div></div><div class="t5"><span class="rank">3</span><div><div class="en"><span class="bad">He went home, doesn't he?</span> → <span class="good">He went home, didn't he?</span></div><div class="why">過去式借 did。</div></div></div><div class="t5"><span class="rank">4</span><div><div class="en"><span class="bad">He never lies, doesn't he?</span> → <span class="good">He never lies, does he?</span></div><div class="why">never 是否定 → 後面肯定。</div></div></div><div class="t5"><span class="rank">5</span><div><div class="en"><span class="bad">Let's have lunch, don't we?</span> → <span class="good">Let's have lunch, shall we?</span></div><div class="why">Let's → shall we。</div></div></div></div></section>
+<section class="s paper"><h2>快問快答 8 題</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">She is tall, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>isn't she</span></div><div class="qa"><span class="n">2</span><span class="q">They don't know, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>do they</span></div><div class="qa"><span class="n">3</span><span class="q">You saw it, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>didn't you</span></div><div class="qa"><span class="n">4</span><span class="q">Ken will come, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>won't he</span></div><div class="qa"><span class="n">5</span><span class="q">This is fun, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>isn't it</span></div><div class="qa"><span class="n">6</span><span class="q">There are two cats, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>aren't there</span></div><div class="qa"><span class="n">7</span><span class="q">Let's dance, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>shall we</span></div><div class="qa"><span class="n">8</span><span class="q">He seldom cries, ____?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>does he</span></div></div></section>
+<section class="s paper"><h2>合併練習與下一步</h2><div class="two"><div><p class="lead">改成附加問句</p><div class="qas"><div class="qa"><span class="n">1</span><span class="q">Jay is good at math. Right?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Jay is good at math, isn't he?</span></div><div class="qa"><span class="n">2</span><span class="q">You didn't lock the door. Right?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>You didn't lock the door, did you?</span></div><div class="qa"><span class="n">3</span><span class="q">Close the window, please.</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Close the window, will you?</span></div><div class="qa"><span class="n">4</span><span class="q">Everyone is here. Right?</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Everyone is here, aren't they?</span></div></div></div><div class="card o"><h3>學完了！接下來</h3><ul class="b"><li>回到「📘 講解」頁看完整的整理表</li><li>做講解頁最後的自我練習（不計點數）</li><li>準備好了就按右上角「📝 前往測驗」</li><li>時態和助動詞不熟，可以回 Unit 1、Unit 6 複習</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/u14/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>

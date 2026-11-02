@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中文法｜Unit 14 附加問句 測驗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grammar.css?v=20261102">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="u14.html">← Unit 14 講解</a>
+    <a class="home-link" href="index.html">國中文法目錄</a>
+  </div>
+  <div class="eyebrow">GRAMMAR QUIZ · UNIT 14</div>
+  <h1>附加問句．單元測驗</h1>
+  <div class="subtitle">四個層次由易到難：選擇 → 填空 → 找錯改正 → 改寫與對話填空。全部作答才能送出，錯題要訂正到全對。</div>
+
+  <section class="part">
+    <div id="gquiz"></div>
+  </section>
+</div>
+
+<script>
+window.GQUIZ = {
+  label: 'G8 Grammar U14',
+  title: '國中文法 Unit 14 附加問句',
+  back: 'u14.html',
+  sections: [
+    { title: '① 選擇題：選出正確的附加問句', items: [
+      { type:'mc', q:'Mr. Wang is your math teacher, ______?', opts:['isn\'t he','is he','doesn\'t he','isn\'t Mr. Wang'], answer:0,
+        exp:'前肯後否；主詞換成 he → isn\'t he。' },
+      { type:'mc', q:'Your parents don\'t eat beef, ______?', opts:['don\'t they','do they','are they','aren\'t they'], answer:1,
+        exp:'前否後肯；借 do → do they。' },
+      { type:'mc', q:'Sara sang a song at the party, ______?', opts:['doesn\'t she','didn\'t she','wasn\'t she','did she'], answer:1,
+        exp:'sang 是過去式 → didn\'t she。' },
+      { type:'mc', q:'Kevin can\'t ride a bike, ______?', opts:['can he','can\'t he','does he','is he'], answer:0,
+        exp:'前否後肯；助動詞 can → can he。' },
+      { type:'mc', q:'These are your books, ______?', opts:['aren\'t these','aren\'t they','isn\'t it','don\'t they'], answer:1,
+        exp:'these 在附加問句用 they → aren\'t they。' },
+      { type:'mc', q:'Let\'s play basketball after school, ______?', opts:['will you','shall we','don\'t we','won\'t we'], answer:1,
+        exp:'Let\'s → shall we。' },
+      { type:'mc', q:'Please pass me the salt, ______?', opts:['will you','do you','shall we','aren\'t you'], answer:0,
+        exp:'祈使句（請對方做）→ will you。' },
+      { type:'mc', q:'There was a fire last night, ______?', opts:['wasn\'t it','wasn\'t there','didn\'t it','isn\'t there'], answer:1,
+        exp:'There was → wasn\'t there。' },
+      { type:'mc', q:'She seldom watches TV, ______?', opts:['doesn\'t she','does she','is she','isn\'t she'], answer:1,
+        exp:'seldom 是否定的意思 → 後面用肯定 does she。' },
+      { type:'mc', q:'Everyone is here, ______?', opts:['isn\'t it','aren\'t they','isn\'t everyone','don\'t they'], answer:1,
+        exp:'everyone 在附加問句用 they → aren\'t they。' }
+    ]},
+    { title: '② 填空：寫出附加問句', note:'寫兩個字，例如 isn\'t he。否定要用縮寫。', items: [
+      { q:'It\'s hot today, {0}?', blanks:[['isn\'t it']],
+        exp:'前肯後否；is → isn\'t it。' },
+      { q:'You like K-pop, {0}?', blanks:[['don\'t you']],
+        exp:'一般動詞 like → don\'t you。' },
+      { q:'Ben has a cat, {0}?', blanks:[['doesn\'t he']],
+        exp:'has（擁有）是一般動詞，第三人稱單數 → doesn\'t he。' },
+      { q:'They weren\'t at school yesterday, {0}?', blanks:[['were they']],
+        exp:'前否後肯；were → were they。' },
+      { q:'Amy has visited Japan, {0}?', blanks:[['hasn\'t she']],
+        exp:'現在完成式 has visited → hasn\'t she。' },
+      { q:'You should drink more water, {0}?', blanks:[['shouldn\'t you']],
+        exp:'助動詞 should → shouldn\'t you。' },
+      { q:'That isn\'t your phone, {0}?', blanks:[['is it']],
+        exp:'前否後肯；that 用 it → is it。' },
+      { q:'Don\'t forget your keys, {0}?', blanks:[['will you']],
+        exp:'否定祈使句 → will you。' },
+      { q:'Nobody knows the answer, {0}?', blanks:[['do they']],
+        exp:'nobody 是否定，主詞用 they → do they。' },
+      { q:'I\'m in the right room, {0}?', blanks:[['aren\'t I','am I not']],
+        exp:'I am 的附加問句 → aren\'t I（較正式：am I not）。' }
+    ]},
+    { title: '③ 找錯改正：每句的附加問句有一個錯，寫出錯的部分和改正', note:'左格寫「錯的部分」（照原句抄），右格寫「改成什麼」。', items: [
+      { q:'Lisa is from Kaohsiung, isn\'t Lisa?<br>錯：{0} → 改：{1}', blanks:[['isn\'t Lisa'],['isn\'t she']],
+        exp:'附加問句的主詞要換成代名詞 she。' },
+      { q:'You enjoy cooking, aren\'t you?<br>錯：{0} → 改：{1}', blanks:[['aren\'t you'],['don\'t you']],
+        exp:'enjoy 是一般動詞 → don\'t you。' },
+      { q:'Tom broke the window, doesn\'t he?<br>錯：{0} → 改：{1}', blanks:[['doesn\'t he'],['didn\'t he']],
+        exp:'broke 是過去式 → didn\'t he。' },
+      { q:'He never tells lies, doesn\'t he?<br>錯：{0} → 改：{1}', blanks:[['doesn\'t he'],['does he']],
+        exp:'never 已經是否定 → 後面用肯定 does he。' },
+      { q:'Let\'s go hiking, don\'t we?<br>錯：{0} → 改：{1}', blanks:[['don\'t we'],['shall we']],
+        exp:'Let\'s → shall we。' },
+      { q:'There is a bakery near here, isn\'t it?<br>錯：{0} → 改：{1}', blanks:[['isn\'t it'],['isn\'t there']],
+        exp:'There is → isn\'t there。' }
+    ]},
+    { title: '④-1 合併成附加問句', note:'把兩句合成一句附加問句，寫出附加問句的部分。', items: [
+      { q:'Jay is good at math. Am I right?<br>→ Jay is good at math, {0}?', blanks:[['isn\'t he']],
+        exp:'用附加問句確認 → isn\'t he。' },
+      { q:'You didn\'t lock the door. Am I right?<br>→ You didn\'t lock the door, {0}?', blanks:[['did you']],
+        exp:'前否後肯 → did you。' },
+      { q:'Swimming is good exercise. Right?<br>→ Swimming is good exercise, {0}?', blanks:[['isn\'t it']],
+        exp:'動名詞當主詞 → it → isn\'t it。' },
+      { q:'Close the window, please.<br>→ Close the window, {0}?', blanks:[['will you','won\'t you']],
+        exp:'祈使句請對方做 → will you。' },
+      { q:'You know where Ella lives. Right?<br>→ You know where Ella lives, {0}?', blanks:[['don\'t you']],
+        exp:'跟著主要子句 You know → don\'t you。' }
+    ]},
+    { title: '④-2 對話填空：寫出附加問句或回答', note:'<span class="passage">Amy: You\'re new here, <b>(1)</b>____?<br>Leo: Yes, I just moved from Taichung.<br>Amy: Taichung has great weather, <b>(2)</b>____?<br>Leo: Yes, it does. You haven\'t been there, <b>(3)</b>____?<br>Amy: <b>(4)</b>____, I have! I went there last summer.<br>Leo: Cool. Let\'s have lunch together, <b>(5)</b>____?<br>Amy: Sure. You don\'t eat spicy food, <b>(6)</b>____?<br>Leo: No, I don\'t.</span>', items: [
+      { q:'(1) {0}', blanks:[['aren\'t you']],
+        exp:'You\'re (are) → aren\'t you。' },
+      { q:'(2) {0}', blanks:[['doesn\'t it']],
+        exp:'has（擁有）是一般動詞，Taichung 用 it → doesn\'t it。' },
+      { q:'(3) {0}', blanks:[['have you']],
+        exp:'前否後肯；完成式 haven\'t been → have you。' },
+      { q:'(4) {0}（一個字）', blanks:[['Yes']],
+        exp:'事實是「去過」→ 用 Yes（Yes, I have.），不管問句是否定。' },
+      { q:'(5) {0}', blanks:[['shall we']],
+        exp:'Let\'s → shall we。' },
+      { q:'(6) {0}', blanks:[['do you']],
+        exp:'前否後肯；don\'t eat → do you。' }
+    ]}
+  ]
+};
+</script>
+<script src="gquiz.js?v=20261102"></script>
+<script src="../points.js"></script>
+</body>
+</html>
