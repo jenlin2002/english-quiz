@@ -16,6 +16,9 @@
 .vc-pic{ position:absolute; top:10px; right:12px; font-size:44px; line-height:1; }
 .vc-card .vc-head{ padding-right:56px; }
 .vc-card .vc-pos{ margin-left:0; }
+.vc-photo{ width:100%; aspect-ratio:4/3; height:auto; object-fit:cover; border-radius:10px; display:block; margin-bottom:2px; }
+.vc-photo ~ .vc-head{ padding-right:0; }
+.vc-photo ~ .vc-head .vc-pos{ margin-left:auto; }
 .vc-head{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
 .vc-num{ font-family:'Space Mono', monospace; font-size:12px; color:#8A7A4A; font-weight:700; }
 .vc-word{ font-family:Georgia, 'Times New Roman', serif; font-size:24px; font-weight:700; color:var(--chalk-bg); }

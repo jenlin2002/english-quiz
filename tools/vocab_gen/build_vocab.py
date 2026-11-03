@@ -42,7 +42,7 @@ CARDS_TPL = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../grammar2/grammar.css?v=20261102">
-<link rel="stylesheet" href="../vocab.css?v=20261103b">
+<link rel="stylesheet" href="../vocab.css?v=20261103d">
 </head>
 <body>
 <div class="wrap">
@@ -79,10 +79,23 @@ CARDS_TPL = '''<!DOCTYPE html>
 '''
 
 
+CUR = {}   # build() 設定目前的 book，photo() 用來找照片
+
+
+def photo(tag, w):
+    """有照片（vocab/<book>/img/uNN/<單字>.jpg）就回傳相對路徑，沒有就回傳 None（改用 emoji）。"""
+    rel = 'img/%s/%s.jpg' % (tag, w['w'])
+    return rel if os.path.exists(os.path.join(REPO, 'vocab', CUR['book'], rel)) else None
+
+
 def card_html(i, w, tag):
     n = '%02d' % (i + 1)
     noteh = '<div class="vc-note">%s</div>' % E(w['note']) if w.get('note') else ''
-    pic = '<span class="vc-pic" aria-hidden="true">%s</span>' % w['pic'] if w.get('pic') else ''
+    ph = photo(tag, w)
+    if ph:
+        pic = '<img class="vc-photo" src="%s" alt="%s" loading="lazy">' % (ph, E(w['w'], quote=True))
+    else:
+        pic = '<span class="vc-pic" aria-hidden="true">%s</span>' % w['pic'] if w.get('pic') else ''
     return ('    <div class="vc-card">%s\n'
             '      <div class="vc-head"><span class="vc-num">%d</span>'
             '<span class="vc-word">%s</span>'
@@ -110,26 +123,30 @@ def focus_html(u):
 
 # ---------------- 投影片 ----------------
 PIC_CSS = '''
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*1.2)}
-.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.8) calc(var(--u)*1.1);display:flex;flex-direction:column;gap:calc(var(--u)*.3)}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.1)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.6) calc(var(--u)*.9);display:flex;flex-direction:column;gap:calc(var(--u)*.2)}
 .pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
-.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.2);font-weight:700;color:var(--deep);text-align:center}
+.pc img.pp{width:100%;height:calc(var(--u)*15);object-fit:cover;object-position:50% 35%;border-radius:calc(var(--u)*.6);display:block}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.3);font-weight:700;color:var(--deep);text-align:center}
 .pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
 .pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
-.pc .pe{font-size:calc(var(--u)*1.2);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
-@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+.pc .pe{font-size:calc(var(--u)*1.3);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc img.pp{height:110px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
 '''
 
 
-def pic_grid(grp):
-    """每個字一張圖卡：大圖示、單字 🔊、詞性中文、例句 🔊。"""
+def pic_grid(grp, tag):
+    """每個字一張圖卡：照片（沒有就用 emoji）、單字 🔊、詞性中文、例句 🔊。"""
     from sl import btn, _say
     out = []
     for w in grp:
-        out.append('<div class="pc"><div class="pp">%s</div><div class="pw">%s %s</div>'
+        ph = photo(tag, w)
+        pic = ('<img class="pp" src="%s" alt="%s">' % (ph, E(w['w'], quote=True)) if ph
+               else '<div class="pp">%s</div>' % w.get('pic', ''))
+        out.append('<div class="pc">%s<div class="pw">%s %s</div>'
                    '<div class="pz">%s<small>%s</small></div>'
                    '<div class="pe">%s %s<br>%s</div></div>'
-                   % (w.get('pic', ''), E(w['w']), btn(w['w']), E(w['zh']), E(w['pos']),
+                   % (pic, E(w['w']), btn(w['w']), E(w['zh']), E(w['pos']),
                       E(w['ex']), btn(_say(E(w['ex']))), E(w['exzh'])))
     return '<div class="pg">%s</div>' % ''.join(out)
 
@@ -140,10 +157,10 @@ def slides(u, tag, book_name):
     S.append(section('本單元單字一覽', lead(u['intro']) + '<div class="chips">%s</div>'
                      % ''.join('<span class="chip">%s</span>' % E(w['w']) for w in ws) +
                      note('每個字都有 🔊，先聽發音、跟著唸，再看例句。')))
-    per = 6
+    per = 4
     for k in range(0, len(ws), per):
         grp = ws[k:k + per]
-        S.append(section('單字 %d–%d' % (k + 1, k + len(grp)), pic_grid(grp)))
+        S.append(section('單字 %d–%d' % (k + 1, k + len(grp)), pic_grid(grp, tag)))
     for title, pairs in u.get('focus', []):
         S.append(section(title, table(['單數', '複數', '例句'], [
             [a, '<b>%s</b>' % b, ('two %s' % b, '%s 的複數' % a)] for a, b in pairs
@@ -216,6 +233,7 @@ window.GQUIZ = {data};
 def build(mod):
     u, quiz = mod.UNIT, mod.QUIZ
     book, no = u['book'], u['no']
+    CUR['book'] = book
     tag = 'u%02d' % no
     out = os.path.join(REPO, 'vocab', book)
     book_name = BOOKS[book]
