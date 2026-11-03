@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>單字區 主題 2000 字 Unit 8 投影片｜Time 時間</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.1)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.6) calc(var(--u)*.9);display:flex;flex-direction:column;gap:calc(var(--u)*.2)}
+.pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
+.pc img.pp{width:100%;height:calc(var(--u)*15);object-fit:cover;object-position:50% 35%;border-radius:calc(var(--u)*.6);display:block}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.3);font-weight:700;color:var(--deep);text-align:center}
+.pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
+.pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
+.pc .pe{font-size:calc(var(--u)*1.3);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc img.pp{height:110px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">VOCABULARY UNIT 8 · SLIDES</div>
+    <h1 class="page">Time 時間</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">← 單字區目錄</a>
+    <a class="home-link" href="u08.html">📗 單字卡</a>
+    <a class="quiz-link" href="u08-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 8 · VOCABULARY</div><h1 class="big">時間</h1><div class="en-sub">Time</div><div class="venn"><span class="c1">62 個單字</span><span class="c2">聽・唸・用</span></div></section>
+<section class="s paper"><h2>本單元單字一覽</h2><p class="lead">一天的時段、星期、月份、季節和表示時間的字，共 62 個。注意 at／on／in 的用法，以及幾點幾分的說法。</p><div class="chips"><span class="chip">morning</span><span class="chip">noon</span><span class="chip">afternoon</span><span class="chip">evening</span><span class="chip">night</span><span class="chip">Monday</span><span class="chip">Tuesday</span><span class="chip">Wednesday</span><span class="chip">Thursday</span><span class="chip">Friday</span><span class="chip">Saturday</span><span class="chip">Sunday</span><span class="chip">week</span><span class="chip">weekend</span><span class="chip">month</span><span class="chip">January</span><span class="chip">February</span><span class="chip">March</span><span class="chip">April</span><span class="chip">May</span><span class="chip">June</span><span class="chip">July</span><span class="chip">August</span><span class="chip">September</span><span class="chip">October</span><span class="chip">November</span><span class="chip">December</span><span class="chip">season</span><span class="chip">spring</span><span class="chip">summer</span><span class="chip">autumn</span><span class="chip">winter</span><span class="chip">clock</span><span class="chip">watch</span><span class="chip">a.m.</span><span class="chip">p.m.</span><span class="chip">half</span><span class="chip">hour</span><span class="chip">minute</span><span class="chip">moment</span><span class="chip">o&#x27;clock</span><span class="chip">past</span><span class="chip">quarter</span><span class="chip">second</span><span class="chip">time</span><span class="chip">ago</span><span class="chip">already</span><span class="chip">early</span><span class="chip">last</span><span class="chip">late</span><span class="chip">later</span><span class="chip">next</span><span class="chip">now</span><span class="chip">once</span><span class="chip">future</span><span class="chip">soon</span><span class="chip">today</span><span class="chip">tonight</span><span class="chip">tomorrow</span><span class="chip">year</span><span class="chip">yesterday</span><span class="chip">day</span></div><div class="note">每個字都有 🔊，先聽發音、跟著唸，再看例句。</div></section>
+<section class="s paper"><h2>單字 1–4</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/morning.jpg" alt="morning"><div class="pw">morning <button class="sentence-btn" type="button" data-say="morning" aria-label="播放這個句子">🔊</button></div><div class="pz">早晨；上午<small>n.</small></div><div class="pe">I always get up early in the morning. <button class="sentence-btn" type="button" data-say="I always get up early in the morning." aria-label="播放這個句子">🔊</button><br>我早上總是很早起床。</div></div><div class="pc"><img class="pp" src="img/u08/noon.jpg" alt="noon"><div class="pw">noon <button class="sentence-btn" type="button" data-say="noon" aria-label="播放這個句子">🔊</button></div><div class="pz">中午<small>n.</small></div><div class="pe">We have lunch at noon. <button class="sentence-btn" type="button" data-say="We have lunch at noon." aria-label="播放這個句子">🔊</button><br>我們中午吃午餐。</div></div><div class="pc"><img class="pp" src="img/u08/afternoon.jpg" alt="afternoon"><div class="pw">afternoon <button class="sentence-btn" type="button" data-say="afternoon" aria-label="播放這個句子">🔊</button></div><div class="pz">下午<small>n.</small></div><div class="pe">We play basketball in the afternoon. <button class="sentence-btn" type="button" data-say="We play basketball in the afternoon." aria-label="播放這個句子">🔊</button><br>我們下午打籃球。</div></div><div class="pc"><img class="pp" src="img/u08/evening.jpg" alt="evening"><div class="pw">evening <button class="sentence-btn" type="button" data-say="evening" aria-label="播放這個句子">🔊</button></div><div class="pz">傍晚；晚上<small>n.</small></div><div class="pe">We have dinner together in the evening. <button class="sentence-btn" type="button" data-say="We have dinner together in the evening." aria-label="播放這個句子">🔊</button><br>我們晚上一起吃晚餐。</div></div></div></section>
+<section class="s paper"><h2>單字 5–8</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/night.jpg" alt="night"><div class="pw">night <button class="sentence-btn" type="button" data-say="night" aria-label="播放這個句子">🔊</button></div><div class="pz">夜晚<small>n.</small></div><div class="pe">The stars are bright at night. <button class="sentence-btn" type="button" data-say="The stars are bright at night." aria-label="播放這個句子">🔊</button><br>晚上星星很亮。</div></div><div class="pc"><div class="pp">🎹</div><div class="pw">Monday <button class="sentence-btn" type="button" data-say="Monday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期一<small>n.</small></div><div class="pe">I have a piano lesson on Monday. <button class="sentence-btn" type="button" data-say="I have a piano lesson on Monday." aria-label="播放這個句子">🔊</button><br>我星期一有鋼琴課。</div></div><div class="pc"><div class="pp">🎨</div><div class="pw">Tuesday <button class="sentence-btn" type="button" data-say="Tuesday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期二<small>n.</small></div><div class="pe">We have art class on Tuesday. <button class="sentence-btn" type="button" data-say="We have art class on Tuesday." aria-label="播放這個句子">🔊</button><br>我們星期二有美術課。</div></div><div class="pc"><div class="pp">🐫</div><div class="pw">Wednesday <button class="sentence-btn" type="button" data-say="Wednesday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期三<small>n.</small></div><div class="pe">Wednesday is in the middle of the week. <button class="sentence-btn" type="button" data-say="Wednesday is in the middle of the week." aria-label="播放這個句子">🔊</button><br>星期三在一週的中間。</div></div></div></section>
+<section class="s paper"><h2>單字 9–12</h2><div class="pg"><div class="pc"><div class="pp">5️⃣</div><div class="pw">Thursday <button class="sentence-btn" type="button" data-say="Thursday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期四<small>n.</small></div><div class="pe">Thursday is the fifth day of the week. <button class="sentence-btn" type="button" data-say="Thursday is the fifth day of the week." aria-label="播放這個句子">🔊</button><br>星期四是一週的第五天。</div></div><div class="pc"><div class="pp">🍕</div><div class="pw">Friday <button class="sentence-btn" type="button" data-say="Friday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期五<small>n.</small></div><div class="pe">Our family eats out on Friday. <button class="sentence-btn" type="button" data-say="Our family eats out on Friday." aria-label="播放這個句子">🔊</button><br>我們家星期五會出去吃飯。</div></div><div class="pc"><img class="pp" src="img/u08/saturday.jpg" alt="Saturday"><div class="pw">Saturday <button class="sentence-btn" type="button" data-say="Saturday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期六<small>n.</small></div><div class="pe">Let&#x27;s go to the movies on Saturday. <button class="sentence-btn" type="button" data-say="Let&#x27;s go to the movies on Saturday." aria-label="播放這個句子">🔊</button><br>我們星期六去看電影吧。</div></div><div class="pc"><div class="pp">☀️</div><div class="pw">Sunday <button class="sentence-btn" type="button" data-say="Sunday" aria-label="播放這個句子">🔊</button></div><div class="pz">星期日<small>n.</small></div><div class="pe">Sunday is the first day of the week. <button class="sentence-btn" type="button" data-say="Sunday is the first day of the week." aria-label="播放這個句子">🔊</button><br>星期日是一週的第一天。</div></div></div></section>
+<section class="s paper"><h2>單字 13–16</h2><div class="pg"><div class="pc"><div class="pp">🛒</div><div class="pw">week <button class="sentence-btn" type="button" data-say="week" aria-label="播放這個句子">🔊</button></div><div class="pz">星期；週<small>n.</small></div><div class="pe">My mom goes to the market once a week. <button class="sentence-btn" type="button" data-say="My mom goes to the market once a week." aria-label="播放這個句子">🔊</button><br>我媽媽一週去一次市場。</div></div><div class="pc"><img class="pp" src="img/u08/weekend.jpg" alt="weekend"><div class="pw">weekend <button class="sentence-btn" type="button" data-say="weekend" aria-label="播放這個句子">🔊</button></div><div class="pz">週末<small>n.</small></div><div class="pe">What are you going to do this weekend? <button class="sentence-btn" type="button" data-say="What are you going to do this weekend?" aria-label="播放這個句子">🔊</button><br>你這個週末要做什麼？</div></div><div class="pc"><div class="pp">📅</div><div class="pw">month <button class="sentence-btn" type="button" data-say="month" aria-label="播放這個句子">🔊</button></div><div class="pz">月<small>n.</small></div><div class="pe">My birthday is next month. <button class="sentence-btn" type="button" data-say="My birthday is next month." aria-label="播放這個句子">🔊</button><br>我的生日在下個月。</div></div><div class="pc"><div class="pp">🎍</div><div class="pw">January <button class="sentence-btn" type="button" data-say="January" aria-label="播放這個句子">🔊</button></div><div class="pz">一月<small>n.</small></div><div class="pe">A new year starts in January. <button class="sentence-btn" type="button" data-say="A new year starts in January." aria-label="播放這個句子">🔊</button><br>新的一年從一月開始。</div></div></div></section>
+<section class="s paper"><h2>單字 17–20</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/february.jpg" alt="February"><div class="pw">February <button class="sentence-btn" type="button" data-say="February" aria-label="播放這個句子">🔊</button></div><div class="pz">二月<small>n.</small></div><div class="pe">February is the shortest month of the year. <button class="sentence-btn" type="button" data-say="February is the shortest month of the year." aria-label="播放這個句子">🔊</button><br>二月是一年中最短的月份。</div></div><div class="pc"><div class="pp">🌸</div><div class="pw">March <button class="sentence-btn" type="button" data-say="March" aria-label="播放這個句子">🔊</button></div><div class="pz">三月<small>n.</small></div><div class="pe">Spring starts in March. <button class="sentence-btn" type="button" data-say="Spring starts in March." aria-label="播放這個句子">🔊</button><br>春天從三月開始。</div></div><div class="pc"><div class="pp">🃏</div><div class="pw">April <button class="sentence-btn" type="button" data-say="April" aria-label="播放這個句子">🔊</button></div><div class="pz">四月<small>n.</small></div><div class="pe">April Fools&#x27; Day is on April first. <button class="sentence-btn" type="button" data-say="April Fools&#x27; Day is on April first." aria-label="播放這個句子">🔊</button><br>愚人節是四月一日。</div></div><div class="pc"><img class="pp" src="img/u08/may.jpg" alt="May"><div class="pw">May <button class="sentence-btn" type="button" data-say="May" aria-label="播放這個句子">🔊</button></div><div class="pz">五月<small>n.</small></div><div class="pe">Mother&#x27;s Day is in May. <button class="sentence-btn" type="button" data-say="Mother&#x27;s Day is in May." aria-label="播放這個句子">🔊</button><br>母親節在五月。</div></div></div></section>
+<section class="s paper"><h2>單字 21–24</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/june.jpg" alt="June"><div class="pw">June <button class="sentence-btn" type="button" data-say="June" aria-label="播放這個句子">🔊</button></div><div class="pz">六月<small>n.</small></div><div class="pe">Many people get married in June. <button class="sentence-btn" type="button" data-say="Many people get married in June." aria-label="播放這個句子">🔊</button><br>很多人在六月結婚。</div></div><div class="pc"><div class="pp">🏖️</div><div class="pw">July <button class="sentence-btn" type="button" data-say="July" aria-label="播放這個句子">🔊</button></div><div class="pz">七月<small>n.</small></div><div class="pe">Summer vacation starts in July. <button class="sentence-btn" type="button" data-say="Summer vacation starts in July." aria-label="播放這個句子">🔊</button><br>暑假從七月開始。</div></div><div class="pc"><div class="pp">🥵</div><div class="pw">August <button class="sentence-btn" type="button" data-say="August" aria-label="播放這個句子">🔊</button></div><div class="pz">八月<small>n.</small></div><div class="pe">It is very hot in August. <button class="sentence-btn" type="button" data-say="It is very hot in August." aria-label="播放這個句子">🔊</button><br>八月非常熱。</div></div><div class="pc"><img class="pp" src="img/u08/september.jpg" alt="September"><div class="pw">September <button class="sentence-btn" type="button" data-say="September" aria-label="播放這個句子">🔊</button></div><div class="pz">九月<small>n.</small></div><div class="pe">School begins in September. <button class="sentence-btn" type="button" data-say="School begins in September." aria-label="播放這個句子">🔊</button><br>學校九月開學。</div></div></div></section>
+<section class="s paper"><h2>單字 25–28</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/october.jpg" alt="October"><div class="pw">October <button class="sentence-btn" type="button" data-say="October" aria-label="播放這個句子">🔊</button></div><div class="pz">十月<small>n.</small></div><div class="pe">Halloween is on October thirty-first. <button class="sentence-btn" type="button" data-say="Halloween is on October thirty-first." aria-label="播放這個句子">🔊</button><br>萬聖節是十月三十一日。</div></div><div class="pc"><div class="pp">🍂</div><div class="pw">November <button class="sentence-btn" type="button" data-say="November" aria-label="播放這個句子">🔊</button></div><div class="pz">十一月<small>n.</small></div><div class="pe">It gets colder in November. <button class="sentence-btn" type="button" data-say="It gets colder in November." aria-label="播放這個句子">🔊</button><br>十一月天氣變冷了。</div></div><div class="pc"><img class="pp" src="img/u08/december.jpg" alt="December"><div class="pw">December <button class="sentence-btn" type="button" data-say="December" aria-label="播放這個句子">🔊</button></div><div class="pz">十二月<small>n.</small></div><div class="pe">Christmas is in December. <button class="sentence-btn" type="button" data-say="Christmas is in December." aria-label="播放這個句子">🔊</button><br>聖誕節在十二月。</div></div><div class="pc"><div class="pp">🍁</div><div class="pw">season <button class="sentence-btn" type="button" data-say="season" aria-label="播放這個句子">🔊</button></div><div class="pz">季節<small>n.</small></div><div class="pe">Which season do you like best? <button class="sentence-btn" type="button" data-say="Which season do you like best?" aria-label="播放這個句子">🔊</button><br>你最喜歡哪個季節？</div></div></div></section>
+<section class="s paper"><h2>單字 29–32</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/spring.jpg" alt="spring"><div class="pw">spring <button class="sentence-btn" type="button" data-say="spring" aria-label="播放這個句子">🔊</button></div><div class="pz">春天；泉水；彈簧<small>n.</small></div><div class="pe">Flowers bloom in spring. <button class="sentence-btn" type="button" data-say="Flowers bloom in spring." aria-label="播放這個句子">🔊</button><br>春天花開。</div></div><div class="pc"><img class="pp" src="img/u08/summer.jpg" alt="summer"><div class="pw">summer <button class="sentence-btn" type="button" data-say="summer" aria-label="播放這個句子">🔊</button></div><div class="pz">夏天<small>n.</small></div><div class="pe">We go swimming in summer. <button class="sentence-btn" type="button" data-say="We go swimming in summer." aria-label="播放這個句子">🔊</button><br>我們夏天去游泳。</div></div><div class="pc"><img class="pp" src="img/u08/autumn.jpg" alt="autumn"><div class="pw">autumn <button class="sentence-btn" type="button" data-say="autumn" aria-label="播放這個句子">🔊</button></div><div class="pz">秋天<small>n.</small></div><div class="pe">Leaves turn red in autumn. <button class="sentence-btn" type="button" data-say="Leaves turn red in autumn." aria-label="播放這個句子">🔊</button><br>秋天樹葉變紅。</div></div><div class="pc"><img class="pp" src="img/u08/winter.jpg" alt="winter"><div class="pw">winter <button class="sentence-btn" type="button" data-say="winter" aria-label="播放這個句子">🔊</button></div><div class="pz">冬天<small>n.</small></div><div class="pe">It snows in winter in Japan. <button class="sentence-btn" type="button" data-say="It snows in winter in Japan." aria-label="播放這個句子">🔊</button><br>日本冬天會下雪。</div></div></div></section>
+<section class="s paper"><h2>單字 33–36</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/clock.jpg" alt="clock"><div class="pw">clock <button class="sentence-btn" type="button" data-say="clock" aria-label="播放這個句子">🔊</button></div><div class="pz">時鐘<small>n.</small></div><div class="pe">There is a big clock on the wall. <button class="sentence-btn" type="button" data-say="There is a big clock on the wall." aria-label="播放這個句子">🔊</button><br>牆上有一個大時鐘。</div></div><div class="pc"><img class="pp" src="img/u08/watch.jpg" alt="watch"><div class="pw">watch <button class="sentence-btn" type="button" data-say="watch" aria-label="播放這個句子">🔊</button></div><div class="pz">手錶；看<small>n. / v.</small></div><div class="pe">My aunt gave me a new watch. <button class="sentence-btn" type="button" data-say="My aunt gave me a new watch." aria-label="播放這個句子">🔊</button><br>阿姨送我一支新手錶。</div></div><div class="pc"><div class="pp">🌄</div><div class="pw">a.m. <button class="sentence-btn" type="button" data-say="A M" aria-label="播放這個句子">🔊</button></div><div class="pz">上午<small>adv.</small></div><div class="pe">The store opens at nine a.m. <button class="sentence-btn" type="button" data-say="The store opens at nine A M" aria-label="播放這個句子">🔊</button><br>這家店上午九點開門。</div></div><div class="pc"><div class="pp">🏦</div><div class="pw">p.m. <button class="sentence-btn" type="button" data-say="P M" aria-label="播放這個句子">🔊</button></div><div class="pz">下午；晚上<small>adv.</small></div><div class="pe">The bank closes at three p.m. <button class="sentence-btn" type="button" data-say="The bank closes at three P M" aria-label="播放這個句子">🔊</button><br>銀行下午三點關門。</div></div></div></section>
+<section class="s paper"><h2>單字 37–40</h2><div class="pg"><div class="pc"><div class="pp">🌓</div><div class="pw">half <button class="sentence-btn" type="button" data-say="half" aria-label="播放這個句子">🔊</button></div><div class="pz">一半<small>n.</small></div><div class="pe">I can only eat half of the pizza. <button class="sentence-btn" type="button" data-say="I can only eat half of the pizza." aria-label="播放這個句子">🔊</button><br>我只吃得下半個披薩。</div></div><div class="pc"><div class="pp">⏰</div><div class="pw">hour <button class="sentence-btn" type="button" data-say="hour" aria-label="播放這個句子">🔊</button></div><div class="pz">小時<small>n.</small></div><div class="pe">There are twenty-four hours in a day. <button class="sentence-btn" type="button" data-say="There are twenty-four hours in a day." aria-label="播放這個句子">🔊</button><br>一天有二十四小時。</div></div><div class="pc"><img class="pp" src="img/u08/minute.jpg" alt="minute"><div class="pw">minute <button class="sentence-btn" type="button" data-say="minute" aria-label="播放這個句子">🔊</button></div><div class="pz">分鐘<small>n.</small></div><div class="pe">Dinner will be ready in ten minutes. <button class="sentence-btn" type="button" data-say="Dinner will be ready in ten minutes." aria-label="播放這個句子">🔊</button><br>十分鐘後晚餐就好了。</div></div><div class="pc"><div class="pp">⏳</div><div class="pw">moment <button class="sentence-btn" type="button" data-say="moment" aria-label="播放這個句子">🔊</button></div><div class="pz">片刻；時刻<small>n.</small></div><div class="pe">Wait a moment, please. <button class="sentence-btn" type="button" data-say="Wait a moment, please." aria-label="播放這個句子">🔊</button><br>請稍等一下。</div></div></div></section>
+<section class="s paper"><h2>單字 41–44</h2><div class="pg"><div class="pc"><div class="pp">🕘</div><div class="pw">o&#x27;clock <button class="sentence-btn" type="button" data-say="o&#x27;clock" aria-label="播放這個句子">🔊</button></div><div class="pz">…點鐘<small>adv.</small></div><div class="pe">It&#x27;s nine o&#x27;clock now. <button class="sentence-btn" type="button" data-say="It&#x27;s nine o&#x27;clock now." aria-label="播放這個句子">🔊</button><br>現在九點。</div></div><div class="pc"><div class="pp">🕗</div><div class="pw">past <button class="sentence-btn" type="button" data-say="past" aria-label="播放這個句子">🔊</button></div><div class="pz">超過；（幾點）過<small>prep.</small></div><div class="pe">It&#x27;s ten past eight. <button class="sentence-btn" type="button" data-say="It&#x27;s ten past eight." aria-label="播放這個句子">🔊</button><br>現在八點十分。</div></div><div class="pc"><div class="pp">🕖</div><div class="pw">quarter <button class="sentence-btn" type="button" data-say="quarter" aria-label="播放這個句子">🔊</button></div><div class="pz">四分之一；十五分鐘<small>n.</small></div><div class="pe">It&#x27;s a quarter past seven. <button class="sentence-btn" type="button" data-say="It&#x27;s a quarter past seven." aria-label="播放這個句子">🔊</button><br>現在七點十五分。</div></div><div class="pc"><div class="pp">⏱️</div><div class="pw">second <button class="sentence-btn" type="button" data-say="second" aria-label="播放這個句子">🔊</button></div><div class="pz">秒；片刻<small>n.</small></div><div class="pe">I&#x27;ll be back in a second. <button class="sentence-btn" type="button" data-say="I&#x27;ll be back in a second." aria-label="播放這個句子">🔊</button><br>我馬上回來。</div></div></div></section>
+<section class="s paper"><h2>單字 45–48</h2><div class="pg"><div class="pc"><div class="pp">🕐</div><div class="pw">time <button class="sentence-btn" type="button" data-say="time" aria-label="播放這個句子">🔊</button></div><div class="pz">時間；次數<small>n.</small></div><div class="pe">What time is it now? <button class="sentence-btn" type="button" data-say="What time is it now?" aria-label="播放這個句子">🔊</button><br>現在幾點？</div></div><div class="pc"><div class="pp">⏪</div><div class="pw">ago <button class="sentence-btn" type="button" data-say="ago" aria-label="播放這個句子">🔊</button></div><div class="pz">…以前<small>adv.</small></div><div class="pe">I met him two years ago. <button class="sentence-btn" type="button" data-say="I met him two years ago." aria-label="播放這個句子">🔊</button><br>我兩年前認識他的。</div></div><div class="pc"><div class="pp">✅</div><div class="pw">already <button class="sentence-btn" type="button" data-say="already" aria-label="播放這個句子">🔊</button></div><div class="pz">已經<small>adv.</small></div><div class="pe">I have already finished my homework. <button class="sentence-btn" type="button" data-say="I have already finished my homework." aria-label="播放這個句子">🔊</button><br>我已經寫完功課了。</div></div><div class="pc"><img class="pp" src="img/u08/early.jpg" alt="early"><div class="pw">early <button class="sentence-btn" type="button" data-say="early" aria-label="播放這個句子">🔊</button></div><div class="pz">早的；早地<small>adj. / adv.</small></div><div class="pe">The early bird catches the worm. <button class="sentence-btn" type="button" data-say="The early bird catches the worm." aria-label="播放這個句子">🔊</button><br>早起的鳥兒有蟲吃。</div></div></div></section>
+<section class="s paper"><h2>單字 49–52</h2><div class="pg"><div class="pc"><div class="pp">🎞️</div><div class="pw">last <button class="sentence-btn" type="button" data-say="last" aria-label="播放這個句子">🔊</button></div><div class="pz">上一個的；最後的<small>adj.</small></div><div class="pe">I saw a movie last night. <button class="sentence-btn" type="button" data-say="I saw a movie last night." aria-label="播放這個句子">🔊</button><br>我昨晚看了一部電影。</div></div><div class="pc"><img class="pp" src="img/u08/late.jpg" alt="late"><div class="pw">late <button class="sentence-btn" type="button" data-say="late" aria-label="播放這個句子">🔊</button></div><div class="pz">遲的；晚的<small>adj. / adv.</small></div><div class="pe">Don&#x27;t be late for school. <button class="sentence-btn" type="button" data-say="Don&#x27;t be late for school." aria-label="播放這個句子">🔊</button><br>上學不要遲到。</div></div><div class="pc"><div class="pp">👋</div><div class="pw">later <button class="sentence-btn" type="button" data-say="later" aria-label="播放這個句子">🔊</button></div><div class="pz">後來；稍後<small>adv.</small></div><div class="pe">See you later! <button class="sentence-btn" type="button" data-say="See you later!" aria-label="播放這個句子">🔊</button><br>待會見！</div></div><div class="pc"><div class="pp">⏭️</div><div class="pw">next <button class="sentence-btn" type="button" data-say="next" aria-label="播放這個句子">🔊</button></div><div class="pz">下一個的<small>adj.</small></div><div class="pe">I will be in the ninth grade next year. <button class="sentence-btn" type="button" data-say="I will be in the ninth grade next year." aria-label="播放這個句子">🔊</button><br>我明年就要念國三了。</div></div></div></section>
+<section class="s paper"><h2>單字 53–56</h2><div class="pg"><div class="pc"><div class="pp">☔</div><div class="pw">now <button class="sentence-btn" type="button" data-say="now" aria-label="播放這個句子">🔊</button></div><div class="pz">現在<small>adv.</small></div><div class="pe">It&#x27;s raining now. <button class="sentence-btn" type="button" data-say="It&#x27;s raining now." aria-label="播放這個句子">🔊</button><br>現在正在下雨。</div></div><div class="pc"><div class="pp">1️⃣</div><div class="pw">once <button class="sentence-btn" type="button" data-say="once" aria-label="播放這個句子">🔊</button></div><div class="pz">一次；曾經<small>adv.</small></div><div class="pe">I go swimming once a week. <button class="sentence-btn" type="button" data-say="I go swimming once a week." aria-label="播放這個句子">🔊</button><br>我一週游泳一次。</div></div><div class="pc"><img class="pp" src="img/u08/future.jpg" alt="future"><div class="pw">future <button class="sentence-btn" type="button" data-say="future" aria-label="播放這個句子">🔊</button></div><div class="pz">未來<small>n.</small></div><div class="pe">What do you want to be in the future? <button class="sentence-btn" type="button" data-say="What do you want to be in the future?" aria-label="播放這個句子">🔊</button><br>你將來想做什麼？</div></div><div class="pc"><div class="pp">⌛</div><div class="pw">soon <button class="sentence-btn" type="button" data-say="soon" aria-label="播放這個句子">🔊</button></div><div class="pz">不久；很快<small>adv.</small></div><div class="pe">Summer vacation is coming soon. <button class="sentence-btn" type="button" data-say="Summer vacation is coming soon." aria-label="播放這個句子">🔊</button><br>暑假就快到了。</div></div></div></section>
+<section class="s paper"><h2>單字 57–60</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/today.jpg" alt="today"><div class="pw">today <button class="sentence-btn" type="button" data-say="today" aria-label="播放這個句子">🔊</button></div><div class="pz">今天<small>adv. / n.</small></div><div class="pe">Today is my birthday. <button class="sentence-btn" type="button" data-say="Today is my birthday." aria-label="播放這個句子">🔊</button><br>今天是我的生日。</div></div><div class="pc"><div class="pp">📺</div><div class="pw">tonight <button class="sentence-btn" type="button" data-say="tonight" aria-label="播放這個句子">🔊</button></div><div class="pz">今晚<small>adv. / n.</small></div><div class="pe">What&#x27;s on TV tonight? <button class="sentence-btn" type="button" data-say="What&#x27;s on TV tonight?" aria-label="播放這個句子">🔊</button><br>今晚電視演什麼？</div></div><div class="pc"><div class="pp">🌄</div><div class="pw">tomorrow <button class="sentence-btn" type="button" data-say="tomorrow" aria-label="播放這個句子">🔊</button></div><div class="pz">明天<small>adv. / n.</small></div><div class="pe">See you tomorrow! <button class="sentence-btn" type="button" data-say="See you tomorrow!" aria-label="播放這個句子">🔊</button><br>明天見！</div></div><div class="pc"><div class="pp">🎆</div><div class="pw">year <button class="sentence-btn" type="button" data-say="year" aria-label="播放這個句子">🔊</button></div><div class="pz">年；歲<small>n.</small></div><div class="pe">I have lived here for three years. <button class="sentence-btn" type="button" data-say="I have lived here for three years." aria-label="播放這個句子">🔊</button><br>我住在這裡三年了。</div></div></div></section>
+<section class="s paper"><h2>單字 61–62</h2><div class="pg"><div class="pc"><img class="pp" src="img/u08/yesterday.jpg" alt="yesterday"><div class="pw">yesterday <button class="sentence-btn" type="button" data-say="yesterday" aria-label="播放這個句子">🔊</button></div><div class="pz">昨天<small>adv. / n.</small></div><div class="pe">It rained all day yesterday. <button class="sentence-btn" type="button" data-say="It rained all day yesterday." aria-label="播放這個句子">🔊</button><br>昨天下了一整天的雨。</div></div><div class="pc"><div class="pp">🌞</div><div class="pw">day <button class="sentence-btn" type="button" data-say="day" aria-label="播放這個句子">🔊</button></div><div class="pz">天；白天<small>n.</small></div><div class="pe">Have a nice day! <button class="sentence-btn" type="button" data-say="Have a nice day!" aria-label="播放這個句子">🔊</button><br>祝你有美好的一天！</div></div></div></section>
+<section class="s paper"><h2>時間介系詞 at、on、in</h2><table class="t"><thead><tr><th>介系詞</th><th>用在</th><th>例子</th></tr></thead><tbody><tr><td>at</td><td>幾點、中午、晚上</td><td>at seven o&#x27;clock、at noon、at night</td></tr><tr><td>on</td><td>星期幾、日期</td><td>on Monday、on May 5</td></tr><tr><td>in</td><td>月份、季節、年</td><td>in May、in summer、in 2026</td></tr><tr><td>in</td><td>早上、下午、傍晚</td><td>in the morning、in the afternoon、in the evening</td></tr></tbody></table><div class="note">前面有 this、next、last、every 時不加介系詞：next week、last night、every Sunday。另外 today、tonight、tomorrow、yesterday 前面也不加。</div></section>
+<section class="s paper"><h2>幾點了？時間怎麼說</h2><table class="t"><thead><tr><th>時間</th><th>說法一</th><th>說法二</th></tr></thead><tbody><tr><td>7:00</td><td>seven</td><td>seven o&#x27;clock</td></tr><tr><td>7:10</td><td>seven ten</td><td>ten past seven</td></tr><tr><td>7:15</td><td>seven fifteen</td><td>a quarter past seven</td></tr><tr><td>7:30</td><td>seven thirty</td><td>half past seven</td></tr><tr><td>9:00 a.m.</td><td>nine a.m.</td><td>nine in the morning</td></tr><tr><td>3:00 p.m.</td><td>three p.m.</td><td>three in the afternoon</td></tr></tbody></table><div class="note">past 是「過了幾分」，quarter 是十五分鐘，half 是三十分鐘。o'clock 只用在整點，而且不和 a.m.、p.m. 一起用。</div></section>
+<section class="s paper"><h2>快問快答：中文 → 英文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">星期三</span><button class="rv" type="button">看答案</button><span class="ans" hidden>Wednesday</span></div><div class="qa"><span class="n">2</span><span class="q">二月</span><button class="rv" type="button">看答案</button><span class="ans" hidden>February</span></div><div class="qa"><span class="n">3</span><span class="q">秋天</span><button class="rv" type="button">看答案</button><span class="ans" hidden>autumn／fall</span></div><div class="qa"><span class="n">4</span><span class="q">週末</span><button class="rv" type="button">看答案</button><span class="ans" hidden>weekend</span></div><div class="qa"><span class="n">5</span><span class="q">手錶</span><button class="rv" type="button">看答案</button><span class="ans" hidden>watch</span></div><div class="qa"><span class="n">6</span><span class="q">已經</span><button class="rv" type="button">看答案</button><span class="ans" hidden>already</span></div><div class="qa"><span class="n">7</span><span class="q">未來</span><button class="rv" type="button">看答案</button><span class="ans" hidden>future</span></div><div class="qa"><span class="n">8</span><span class="q">昨天</span><button class="rv" type="button">看答案</button><span class="ans" hidden>yesterday</span></div></div></section>
+<section class="s paper"><h2>快問快答：at、on、in 還是幾點？</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">___ Monday</span><button class="rv" type="button">看答案</button><span class="ans" hidden>on</span></div><div class="qa"><span class="n">2</span><span class="q">___ May</span><button class="rv" type="button">看答案</button><span class="ans" hidden>in</span></div><div class="qa"><span class="n">3</span><span class="q">___ noon</span><button class="rv" type="button">看答案</button><span class="ans" hidden>at</span></div><div class="qa"><span class="n">4</span><span class="q">___ the morning</span><button class="rv" type="button">看答案</button><span class="ans" hidden>in</span></div><div class="qa"><span class="n">5</span><span class="q">___ winter</span><button class="rv" type="button">看答案</button><span class="ans" hidden>in</span></div><div class="qa"><span class="n">6</span><span class="q">___ May 5</span><button class="rv" type="button">看答案</button><span class="ans" hidden>on</span></div><div class="qa"><span class="n">7</span><span class="q">7:15 用 quarter 怎麼說？</span><button class="rv" type="button">看答案</button><span class="ans" hidden>a quarter past seven</span></div><div class="qa"><span class="n">8</span><span class="q">7:30 用 half 怎麼說？</span><button class="rv" type="button">看答案</button><span class="ans" hidden>half past seven</span></div></div></section>
+<section class="s paper"><h2>學完了！接下來</h2><div class="two"><div class="card g"><h3>複習方法</h3><div class="sub">review</div><ul class="b"><li>回到「📗 單字卡」，按「遮中文」自己考自己</li><li>再按「遮英文」，看中文說出英文</li><li>每個例句跟著 🔊 唸一次</li></ul></div><div class="card o"><h3>準備好了</h3><ul class="b"><li>按右上角「📝 前往測驗」</li><li>測驗錯的題目要訂正到全對</li><li>訂正完成補送 1 點</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/u08/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+</body>
+</html>
