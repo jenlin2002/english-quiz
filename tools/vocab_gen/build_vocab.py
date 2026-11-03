@@ -15,7 +15,8 @@ from sl import ex, card, row, ul, cards, two, div, note, lead, qas, table, top5,
 
 sys.path.insert(0, HERE)
 import w2000_u01  # noqa: E402
-UNITS = (w2000_u01,)   # 新單元做好後加在這裡
+import w2000_u02  # noqa: E402
+UNITS = (w2000_u01, w2000_u02)   # 新單元做好後加在這裡
 
 BOOKS = {'w2000': '主題 2000 字'}
 E = html.escape
@@ -109,15 +110,28 @@ def card_html(i, w, tag):
                            E(w['ex']), tag, n, E(w['ex'], quote=True), E(w['exzh'])))
 
 
-def focus_html(u):
-    if not u.get('focus'):
-        return ''
+def focus_items(u):
+    """重點整理：舊格式 (標題, [(單數, 複數)…]) 當成複數表；新格式是 dict(title, head, rows, note)。空白欄位不顯示。"""
     out = []
-    for title, pairs in u['focus']:
-        rows = ''.join('<tr><td class="en">%s</td><td class="en">%s</td></tr>' % (E(a), E(b)) for a, b in pairs)
+    for f in u.get('focus', []):
+        if isinstance(f, tuple):
+            title, pairs = f
+            f = {'title': title, 'head': ('單數', '複數'), 'rows': pairs, 'plural': True,
+                 'note': '不規則複數一定要背；其他字多半加 -s，子音 + y 改 -ies（baby → babies）。'}
+        cols = [i for i, h in enumerate(f['head']) if h]
+        out.append(dict(f, head=[f['head'][i] for i in cols], rows=[[r[i] for i in cols] for r in f['rows']]))
+    return out
+
+
+def focus_html(u):
+    out = []
+    for f in focus_items(u):
+        th = ''.join('<th>%s</th>' % E(h) for h in f['head'])
+        rows = ''.join('<tr>%s</tr>' % ''.join('<td class="en">%s</td>' % E(c) for c in r) for r in f['rows'])
+        nt = '<div class="tip">%s</div>' % E(f['note']) if f.get('note') else ''
         out.append('<section class="part"><div class="part-no">FOCUS</div><h2>%s</h2>'
-                   '<div class="tbl-wrap"><table class="gt"><tr><th>單數</th><th>複數</th></tr>%s</table></div></section>'
-                   % (E(title), rows))
+                   '<div class="tbl-wrap"><table class="gt"><tr>%s</tr>%s</table></div>%s</section>'
+                   % (E(f['title']), th, rows, nt))
     return '\n'.join(out)
 
 
@@ -161,12 +175,17 @@ def slides(u, tag, book_name):
     for k in range(0, len(ws), per):
         grp = ws[k:k + per]
         S.append(section('單字 %d–%d' % (k + 1, k + len(grp)), pic_grid(grp, tag)))
-    for title, pairs in u.get('focus', []):
-        S.append(section(title, table(['單數', '複數', '例句'], [
-            [a, '<b>%s</b>' % b, ('two %s' % b, '%s 的複數' % a)] for a, b in pairs
-        ], audio_col=2) + note('不規則複數一定要背；其他字多半加 -s，子音 + y 改 -ies（baby → babies）。')))
-    S.append(section('快問快答：中文 → 英文', qas([(w['zh'], w['w']) for w in ws[:8]])))
-    S.append(section('快問快答：英文 → 中文', qas([(w['w'], w['zh']) for w in ws[8:16]])))
+    for f in focus_items(u):
+        if f.get('plural'):
+            body = table(f['head'] + ['例句'], [[a, '<b>%s</b>' % b, ('two %s' % b, '%s 的複數' % a)] for a, b in f['rows']],
+                         audio_col=2)
+        else:
+            body = table(f['head'], [[E(c) for c in r] for r in f['rows']])
+        S.append(section(f['title'], body + (note(E(f['note'])) if f.get('note') else '')))
+    step = max(1, len(ws) // 16)
+    sample = ws[::step][:16]   # 字多時平均抽 16 個
+    S.append(section('快問快答：中文 → 英文', qas([(w['zh'], w['w']) for w in sample[:8]])))
+    S.append(section('快問快答：英文 → 中文', qas([(w['w'], w['zh']) for w in sample[8:16]])))
     S.append(section('學完了！接下來', two(card('複習方法', ul([
         '回到「📗 單字卡」，按「遮中文」自己考自己',
         '再按「遮英文」，看中文說出英文',
