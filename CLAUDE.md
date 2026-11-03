@@ -122,7 +122,8 @@
 ## 國中單字分科區 `vocab/`（2026-11-03 開始，試做中）
 
 - 使用者定案：兩個小區——「主題 2000 字」照翰林《單字2000活用練習》40 單元（`vocab/w2000/`）、「一字多義・易混淆・字首字尾」照《LaLa Word 小單字大視野》18 單元（還沒做）；每單元三頁：`uNN.html` 單字卡、`uNN-slides.html` 投影片、`uNN-quiz.html` 測驗；**不標 KK 音標**，每個字和例句都有 🔊。例句、說明、題目自編，只參考字表與單元。
-- 已試做：主題 2000 字 Unit 1 People（18 字，測驗 29 題），**等使用者看過再往下做**。
+- 已做：主題 2000 字 Unit 1 People（18 字，測驗 29 題）、Unit 2 Personal characteristics（51 字，測驗 34 題，45 張照片＋6 個 emoji）。使用者 2026-11-03 看過照片版說「可以，繼續做」。
+- 形容詞 fat／ugly／stupid／poor 這類字不用人的照片（避免標籤化），改用動物、物品；照片不合適的字（抽象字）保留 emoji。資料檔的 `focus` 可用 dict（title／head／rows／note）做比較級、-ed／-ing 等整理表。
 - 圖片（2026-11-03 使用者要求「投影片要有單字圖片」，看過 emoji 後選「換成照片」）：照片放 `vocab/<book>/img/uNN/<單字>.jpg`（Pexels，裁 4:3、640×480，出處在同資料夾 `PHOTO-CREDITS.md`）；`build_vocab.py` 有照片就用照片，沒有才用資料檔的 `'pic'` emoji。投影片每頁 4 張圖卡（照片＋單字🔊＋中文＋例句🔊），單字卡上方是 4:3 照片。選照片時要逐張看過（不要恐怖、暴露、黑白太暗的），在內建瀏覽器用 Pexels 搜尋頁的 fetch 抓候選。改了投影片按鈕順序要先刪掉該單元 `audio/uNN/slide-*.mp3` 再重錄（tts_mp3 會跳過已存在的檔）。
 - 產生程式 `tools/vocab_gen/build_vocab.py`，每單元一個資料檔（`w2000_u01.py`：UNIT 字表＋QUIZ），在 `UNITS` 加上；錄音同文法區（`tts_mp3.py tools/vocab_gen/audio_jobs.json`），音檔在 `vocab/w2000/audio/uNN/`（w-NN 單字、e-NN 例句、slide-NN）。單字卡用 `vocab/vocab.css`、`vocab/vocab.js`（遮中文／遮英文自我測驗、全部播放）；樣式與測驗程式共用 `grammar2/grammar.css`、`grammar2/gquiz.js`。測驗 label `Vocab W2000 UN`。
 - 總目錄 `index.html` 第五張卡片「國中單字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
