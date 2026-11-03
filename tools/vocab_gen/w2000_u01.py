@@ -76,14 +76,14 @@ QUIZ = [
     {'q': 'one baby → two {0}', 'blanks': [['babies']], 'exp': '子音 + y → 去 y 加 -ies → babies。'},
     {'q': 'one person → many {0}', 'blanks': [['people']], 'exp': 'person 的複數通常用 people。'},
   ]},
-  {'title': '⑤ 例句填空：用本單元的單字', 'note': '每格寫一個單字（注意單複數）。', 'items': [
-    {'q': 'Be quiet! The {0} is sleeping in the crib.', 'blanks': [['baby']], 'exp': '在嬰兒床睡覺的是 baby。'},
+  {'title': '⑤ 例句填空：用本單元的單字', 'note': '括號裡是中文提示，每格寫一個單字（注意單複數）。', 'items': [
+    {'q': 'Be quiet! The {0} is sleeping in the crib.（嬰兒）', 'blanks': [['baby']], 'exp': '在嬰兒床睡覺的是 baby。'},
     {'q': 'Don\'t talk to {0} on your way home.（陌生人，複數）', 'blanks': [['strangers']], 'exp': 'strangers（複數）。'},
-    {'q': 'Our {0} next door has a big dog.', 'blanks': [['neighbor']], 'exp': 'neighbor 隔壁鄰居。'},
+    {'q': 'Our {0} next door has a big dog.（鄰居）', 'blanks': [['neighbor']], 'exp': 'neighbor 隔壁鄰居。'},
     {'q': 'There are thirty {0} in my class.（小孩）', 'blanks': [['children', 'kids']], 'exp': '複數 children／kids。'},
     {'q': 'Many {0} come to Taipei 101 every day.（遊客）', 'blanks': [['visitors']], 'exp': 'visitors（複數）。'},
-    {'q': 'My cousin is fifteen. He is a {0}.', 'blanks': [['teenager']], 'exp': '15 歲是 teenager。'},
-    {'q': 'The {0} and the queen live in the castle.', 'blanks': [['king']], 'exp': 'king 和 queen 成對。'},
-    {'q': 'How many {0} are there in your family?', 'blanks': [['people']], 'exp': 'How many people…? 家裡有幾個人。'},
+    {'q': 'My cousin is fifteen. He is a {0}.（青少年）', 'blanks': [['teenager']], 'exp': '15 歲是 teenager。'},
+    {'q': 'The {0} and the queen live in the castle.（國王）', 'blanks': [['king']], 'exp': 'king 和 queen 成對。'},
+    {'q': 'How many {0} are there in your family?（人們）', 'blanks': [['people']], 'exp': 'How many people…? 家裡有幾個人。'},
   ]},
 ]
