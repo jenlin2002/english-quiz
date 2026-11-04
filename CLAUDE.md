@@ -130,7 +130,7 @@
 - **Unit 3–12（2026-11-03 晚上在家裡電腦做的）**：網頁、照片、語音都已上傳；但產生它們的資料檔 `tools/vocab_gen/w2000_u03.py`～`w2000_u12.py` 和 `build_vocab.py` 的 `UNITS` 修改**還在家裡電腦、沒有 Push**，回家要記得補上傳。
 - **Unit 13 Colors 顏色（2026-11-04 公司電腦）**：12 字、測驗 24 題、12 張照片、48 個音檔。資料檔 `w2000_u13.py`。為了不和家裡沒上傳的 `build_vocab.py` 打架，這次**沒有改 `build_vocab.py`**，是用一行指令只產生 Unit 13：`python -c "import sys,json; sys.path.insert(0,'tools/vocab_gen'); import build_vocab as b, w2000_u13 as m; json.dump(b.build(m), open('jobs.json','w',encoding='utf-8'), ensure_ascii=False)"`，再用 `tts_mp3.py jobs.json` 錄音。**家裡把 `build_vocab.py` 上傳時，`UNITS` 要記得加上 `w2000_u13`**。課本 Unit 13 在 `…單字2000活用練習_課本_教用_1of3_p1-93.pdf` 第 37 頁；Unit 14 運動嗜好在第 40 頁、15 房屋第 44 頁、16 學校第 30 頁附近、17 地點第 56 頁（PDF 頁序有點亂，用縮圖找）。
 - **Unit 14 Sports, interests & hobbies 運動、興趣與嗜好（2026-11-04 公司電腦）**：45 字、測驗 34 題、44 張照片（doll 用 emoji）、180 個音檔；重點整理 play + 球類／play the + 樂器、go + V-ing、V-ing 拼法。產生方式同 Unit 13（一行指令只產生這個單元，`build_vocab.py` 沒改），**家裡上傳 `build_vocab.py` 時 `UNITS` 也要加 `w2000_u14`**。Unit 13、14 的測驗都在本機用正確答案作答過，得滿分。
-- 總目錄 `index.html` 第五張卡片「國中單字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
+- 總目錄 `index.html` 第五張卡片「國中2000字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）
 
