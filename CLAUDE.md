@@ -13,8 +13,8 @@
 
 **回家電腦要做的事**
 1. GitHub Desktop：english-quiz、vocab-king 都先 **Pull**。
-2. 昨天（11-03 晚上）在家做 Unit 3–12 時，**`tools/vocab_gen/w2000_u03.py`～`w2000_u12.py` 和 `build_vocab.py` 的 `UNITS` 修改沒有 Push**。Pull 後把這些檔 commit、Push；`build_vocab.py` 的 `UNITS` 要包含 **u01～u16**（公司做的 `w2000_u13.py`～`w2000_u16.py` 已在 repo 裡）。公司這邊 `build_vocab.py` 只改了快取版本字串（`vocab.css?v=20261104c` 等），合併時保留這些新版本號。
-3. 合併後可以重新跑一次 `python tools/vocab_gen/build_vocab.py` 確認 16 個單元都能產生（語音 mp3 已存在會跳過，不必重錄）。
+2. ✅（2026-11-04 晚上家裡電腦已處理）查過家裡電腦：**`w2000_u03.py`～`w2000_u12.py` 從來不存在**——11-03 晚上那次（在 `H:\2000單字` 開的 Claude）是拿 Unit 2 的 HTML 當模板直接做 u03～u12 的網頁，沒有用 `build_vocab.py`。所以 `UNITS` 現在是 u01、u02、u13～u16（快取版本照公司的 `20261104e`），重跑 `build_vocab.py` 6 個單元都能產生，網頁內容和 repo 一致。家裡另外做的一份 Unit 13 以公司版為準，舊的家裡版備份在家裡電腦 `H:\githubdata\english-quiz-本機備份-20261104`（不在 repo）。**u03～u12 之後若要改，直接改 HTML，或另外補資料檔。**
+3. （已做，見上一項）
 4. 下一個單字單元是 **Unit 17 Places & locations**（課本第 1 份 PDF 第 56 頁起）。
 5. 之前就有的：把 `points.js` 複製回 english-quiz-plan 的主檔（見下方待辦）。**11-04 points.js 又改了（Cloudflare 登入），複製最新版。**
 6. Cloudflare 登入（見下一節「登入改成 Cloudflare Access＋Google 帳號」）：使用者照首頁 repo `CLOUDFLARE-SETUP.md` 設後台；第二階段要改 plan repo 的 Code.gs（加 `cfUser_`）。
@@ -150,7 +150,7 @@
 - 單字測驗的「例句填空」（寫單字的題目）**每一題都要附中文提示**，例如 `（鄰居）`；2026-11-03 使用者發現有的有、有的沒有。
 - 圖片（2026-11-03 使用者要求「投影片要有單字圖片」，看過 emoji 後選「換成照片」）：照片放 `vocab/<book>/img/uNN/<單字>.jpg`（Pexels，裁 4:3、640×480，出處在同資料夾 `PHOTO-CREDITS.md`）；`build_vocab.py` 有照片就用照片，沒有才用資料檔的 `'pic'` emoji。投影片每頁 4 張圖卡（照片＋單字🔊＋中文＋例句🔊），單字卡上方是 4:3 照片。選照片時要逐張看過（不要恐怖、暴露、黑白太暗的），在內建瀏覽器用 Pexels 搜尋頁的 fetch 抓候選。改了投影片按鈕順序要先刪掉該單元 `audio/uNN/slide-*.mp3` 再重錄（tts_mp3 會跳過已存在的檔）。
 - 產生程式 `tools/vocab_gen/build_vocab.py`，每單元一個資料檔（`w2000_u01.py`：UNIT 字表＋QUIZ），在 `UNITS` 加上；錄音同文法區（`tts_mp3.py tools/vocab_gen/audio_jobs.json`），音檔在 `vocab/w2000/audio/uNN/`（w-NN 單字、e-NN 例句、slide-NN）。單字卡用 `vocab/vocab.css`、`vocab/vocab.js`（遮中文／遮英文自我測驗、全部播放）；樣式與測驗程式共用 `grammar2/grammar.css`、`grammar2/gquiz.js`。測驗 label `Vocab W2000 UN`。
-- **Unit 3–12（2026-11-03 晚上在家裡電腦做的）**：網頁、照片、語音都已上傳；但產生它們的資料檔 `tools/vocab_gen/w2000_u03.py`～`w2000_u12.py` 和 `build_vocab.py` 的 `UNITS` 修改**還在家裡電腦、沒有 Push**，回家要記得補上傳。
+- **Unit 3–12（2026-11-03 晚上在家裡電腦做的）**：網頁、照片、語音都已上傳；這 10 個單元是拿 Unit 2 的 HTML 當模板直接做的，**沒有 `w2000_u03.py`～`u12.py` 資料檔**（11-04 晚上在家裡電腦確認過），不在 `build_vocab.py` 的 `UNITS` 裡。
 - **Unit 13 Colors 顏色（2026-11-04 公司電腦）**：12 字、測驗 24 題、12 張照片、48 個音檔。資料檔 `w2000_u13.py`。為了不和家裡沒上傳的 `build_vocab.py` 打架，這次**沒有改 `build_vocab.py`**，是用一行指令只產生 Unit 13：`python -c "import sys,json; sys.path.insert(0,'tools/vocab_gen'); import build_vocab as b, w2000_u13 as m; json.dump(b.build(m), open('jobs.json','w',encoding='utf-8'), ensure_ascii=False)"`，再用 `tts_mp3.py jobs.json` 錄音。**家裡把 `build_vocab.py` 上傳時，`UNITS` 要記得加上 `w2000_u13`**。課本 Unit 13 在 `…單字2000活用練習_課本_教用_1of3_p1-93.pdf` 第 37 頁；Unit 14 運動嗜好在第 40 頁、15 房屋第 44 頁、16 學校第 30 頁附近、17 地點第 56 頁（PDF 頁序有點亂，用縮圖找）。
 - **Unit 14 Sports, interests & hobbies 運動、興趣與嗜好（2026-11-04 公司電腦）**：45 字、測驗 34 題、44 張照片（doll 用 emoji）、180 個音檔；重點整理 play + 球類／play the + 樂器、go + V-ing、V-ing 拼法。產生方式同 Unit 13（一行指令只產生這個單元，`build_vocab.py` 沒改），**家裡上傳 `build_vocab.py` 時 `UNITS` 也要加 `w2000_u14`**。Unit 13、14 的測驗都在本機用正確答案作答過，得滿分。
 - **Unit 15 Houses & apartments 房子與公寓（2026-11-04 公司電腦）**：51 字、測驗 32 題、47 張照片（room、yard、bath、umbrella 用 emoji）、204 個音檔；重點整理房間、-y／-ch／-o 複數、go home。產生方式同 Unit 13，**`UNITS` 也要加 `w2000_u15`**。課本 Unit 16 School 在 PDF 第 50 頁附近（縮圖第 49–54 張），17 地點第 56 頁。
