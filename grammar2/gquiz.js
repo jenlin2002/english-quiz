@@ -165,10 +165,32 @@
   function details(idx){
     return idx.map(i => ({ q: (i + 1) + '. ' + items[i].q.replace(/<[^>]+>/g, '').replace(/\{\d+\}/g, '___'), picked: showAns(items[i], S.ans[i]), correct: rightAns(items[i]), isCorrect: S.ok[i] }));
   }
+  // 單字區：第一次作答錯的單字記在這台裝置（依登入者），單字卡頁（vocab.js）會把這些字標紅
+  //   key：vocabWrong:<單字卡頁路徑>:<登入者>；每次第一次送出就覆蓋，下次考對就不再標紅
+  function rememberWrongWords(){
+    if(!/^Vocab/.test(CFG.label || '') || !who()) return;
+    const words = [];
+    S.firstWrong.forEach(i => {
+      const it = items[i];
+      if(it.w) words.push(it.w);
+      if(it.type === 'mc'){
+        if(/^[A-Za-z' -]+$/.test(it.q) && it.q.trim().split(/\s+/).length <= 3) words.push(it.q);   // 看英文選中文：題目就是單字；句子題不算
+        words.push(it.opts[it.answer]);
+      }
+      else {
+        it.blanks.forEach(b => words.push(b[0]));
+        const m = /^\s*([A-Za-z][A-Za-z' -]*?)\s*→/.exec(it.q);   // 「swim → (V-ing) {0}」這種題目，原形也算
+        if(m) words.push(m[1]);
+      }
+    });
+    const page = new URL(CFG.back || location.href, location.href).pathname;
+    set('vocabWrong:' + page + ':' + who().toUpperCase(), JSON.stringify({ words: words, wrong: S.firstWrong.length, total: total, at: Date.now() }));
+  }
   function submit(){
     const all = items.map((_, i) => i);
     grade(all);
     S.firstWrong = all.filter(i => !S.ok[i]);
+    rememberWrongWords();
     const right = total - S.firstWrong.length;
     S.phase = S.firstWrong.length ? 'graded' : 'done';
     if(S.phase === 'done') del(draftKey()); else saveDraft();

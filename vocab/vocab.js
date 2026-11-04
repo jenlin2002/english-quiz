@@ -38,6 +38,35 @@
     play(b, () => setTimeout(next, 500));
   }
 
+  // 上次測驗錯的字標紅（gquiz.js 送出時記在 vocabWrong:<這一頁>:<登入者>，只看這台裝置）
+  function markWrong(){
+    let name = '', rec = null;
+    try{
+      name = (localStorage.getItem('quizStudentName') || '').trim();
+      if(name) rec = JSON.parse(localStorage.getItem('vocabWrong:' + location.pathname + ':' + name.toUpperCase()) || 'null');
+    }catch(e){}
+    const old = document.getElementById('vcWrongNote');
+    if(old) old.remove();
+    grid.querySelectorAll('.vc-card.wrong').forEach(c => c.classList.remove('wrong'));
+    if(!rec || !rec.words || !rec.words.length) return;
+    const cands = rec.words.map(s => String(s || '').toLowerCase().trim()).filter(Boolean);
+    const hit = w => cands.some(c => c === w || c.split(/[^a-z'-]+/).includes(w) ||
+      (w.length >= 3 && c.indexOf(' ') < 0 && c.startsWith(w) && c.length - w.length <= 4));   // stamps、swimming、dishes
+    let n = 0;
+    grid.querySelectorAll('.vc-card').forEach(card => {
+      const el = card.querySelector('.vc-word');
+      if(el && hit(el.textContent.toLowerCase().trim())){ card.classList.add('wrong'); n++; }
+    });
+    if(!n) return;
+    const note = document.createElement('div');
+    note.id = 'vcWrongNote';
+    note.className = 'vc-wrong-note';
+    note.textContent = '🔴 紅色的 ' + n + ' 個字是 ' + name + ' 上次測驗答錯的字（' + new Date(rec.at).toLocaleDateString() + '），再多聽、多唸幾次！';
+    grid.parentNode.insertBefore(note, grid);
+  }
+  markWrong();
+  window.addEventListener('pageshow', markWrong);
+
   document.addEventListener('click', e => {
     const say = e.target.closest('.vc-say');
     if(say){ stop(); play(say); return; }
