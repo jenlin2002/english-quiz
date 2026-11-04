@@ -21,7 +21,17 @@
   .lv .r, .lv2 .r{ background:#FDECEC; color:#C62828; } .lv .g, .lv2 .g{ background:#E6E6E6; color:#555; }
   .lv .n, .lv2 .n{ background:#E8EEF6; color:#3B5B85; }
   .lv span, .lv2 span{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:700; }
-  .az-sum{ margin:8px 0 14px; padding:10px 14px; border-radius:10px; background:#FFF8E6; color:#3A3226; font-weight:700; }
+  .az-sum{ margin:8px 0 14px; padding:12px 16px; border-radius:10px; background:#FFF8E6; color:#3A3226; font-weight:700; }
+  .az-p{ margin-bottom:12px; }
+  .az-name{ font-size:16px; margin-bottom:4px; }
+  .az-bar{ display:flex; height:30px; border-radius:8px; overflow:hidden; background:#EFE6CC; }
+  .az-bar i{ display:flex; align-items:center; justify-content:center; font-style:normal; font-size:13px; font-weight:700; min-width:2px; }
+  .az-bar i.g, .az-leg b.g{ background:#8C8C8C; color:#fff; }
+  .az-bar i.r, .az-leg b.r{ background:#E05252; color:#fff; }
+  .az-bar i.n, .az-leg b.n{ background:#7FA3D1; color:#fff; }
+  .az-bar i.e, .az-leg b.e{ background:#E9E0C6; color:#7A6E58; }
+  .az-leg{ display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; font-size:13px; font-weight:500; }
+  .az-leg b{ display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:5px; vertical-align:-1px; }
 </style>
 </head>
 <body>
@@ -2181,9 +2191,14 @@
       c[s[0]]++;
       tr.querySelector(k ? '.lv2' : '.lv').innerHTML = (people.length > 1 ? '<small>' + p + '</small> ' : '') + '<span class="' + s[0] + '">' + s[1] + '</span>';
     });
-    return p + '：本站答對（已會）' + c.g + ' 個、要複習 ' + c.r + ' 個、WORD UP 熟記待測驗 ' + c.n + ' 個、還沒背 ' + (all.length - c.g - c.r - c.n) + ' 個';
+    // 堆疊柱狀圖：已會（灰）、要複習（紅）、WORD UP 熟記待測驗（藍）、還沒背（淺色）
+    const parts = [['g', '本站答對（已會）', c.g], ['r', '要複習', c.r], ['n', 'WORD UP 熟記待測驗', c.n], ['e', '還沒背', all.length - c.g - c.r - c.n]];
+    return '<div class="az-p"><div class="az-name">' + p + '</div><div class="az-bar">' +
+      parts.filter(x => x[2]).map(x => '<i class="' + x[0] + '" style="flex:' + x[2] + '" title="' + x[1] + ' ' + x[2] + ' 個">' +
+        (x[2] / all.length > 0.06 ? x[2] : '') + '</i>').join('') + '</div><div class="az-leg">' +
+      parts.map(x => '<span><b class="' + x[0] + '"></b>' + x[1] + ' ' + x[2] + ' 個（' + Math.round(x[2] / all.length * 100) + '%）</span>').join('') + '</div></div>';
   });
-  document.getElementById('azSum').innerHTML = sums.join('<br>') + '<br><small>（共 ' + all.length + ' 個字）</small>';
+  document.getElementById('azSum').innerHTML = sums.join('') + '<small>（共 ' + all.length + ' 個字）</small>';
 })();
 </script>
 </body>
