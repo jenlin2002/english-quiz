@@ -95,13 +95,14 @@
       it._words.length ? it._words.some(w => !mastered.has(w)) : !V.retest) })).filter(sec => sec.items.length);
   }
   // 本站答題紀錄 vocabWords:<登入者> = { 小寫單字: 'm'(答對)|'w'(答錯) }，同一個字在每個單元共用；
-  // WORD UP 熟悉度在 vocab/wordup/status.json（家長讀取 WORD UP 後更新），沒答過的字才用它
+  // WORD UP 熟悉度（vocab/wordup/status.json）只當參考：不熟＝'w'（紅、先複習），熟記＝'k'（只標記、照樣要考）。
+  // 只有本站測驗答對（'m'）才算已會、不用再考（2026-11-04 使用者決定以本站測驗為準）。
   async function wordStatus(user){
     const m = new Map();
     try{
       const wu = await (await fetch(new URL('../wordup/status.json', location.href), { cache:'no-cache' })).json();
       const u = (wu.users || {})[user];
-      if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), { s: u.words[w][0] === '熟記' ? 'm' : 'w', src: 'wordup', lv: u.words[w][0] }));
+      if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), { s: u.words[w][0] === '熟記' ? 'k' : 'w', src: 'wordup', lv: u.words[w][0] }));
     }catch(e){}
     try{ const mine = JSON.parse(get('vocabWords:' + user) || '{}'); Object.keys(mine).forEach(w => m.set(w, { s: mine[w], src: 'site' })); }catch(e){}
     return m;
@@ -122,7 +123,7 @@
     const n = V.cards.length, m = V.mastered.size;
     const words = V.cards.map(c => c.w), test = new Set(); items.forEach(it => (it._words || []).forEach(w => test.add(w)));
     return '<div class="gq-hint w100">📊 ' + esc(who()) + ' 這個單元：已答對 <b>' + m + '</b> / ' + n + ' 個字（' + Math.round(m / n * 100) + '%）' +
-      (V.retest || m ? '；這次只考還沒答對的 <b>' + words.filter(w => test.has(w)).length + '</b> 個字' + (V.retest ? '' : '（WORD UP 已熟記的字先不考）') : '；第一次測驗，每個字都會考到') + '。</div>';
+      (V.retest || m ? '；這次只考還沒答對的 <b>' + words.filter(w => test.has(w)).length + '</b> 個字' + (V.retest ? '' : '（在其他單元已經答對的字不用再考）') : '；第一次測驗，每個字都會考到') + '。</div>';
   }
   function allDoneScreen(){
     root.innerHTML = '<div class="gq-top"><span class="gq-ok">🎉 ' + esc(who()) + ' 這個單元 ' + V.cards.length + ' 個字已經全部答對了！單字卡都變成灰色，不用再背了。</span></div>' +

@@ -42,7 +42,8 @@
   //   答錯、還要複習的字 → 紅色；第一次就答對的字 → 暗灰色（不用再背）；全部答對 → 整個單元變灰。
   //   家長 PARENT（和測試帳號 TEST）看 BRANDEN、MELISSA 兩個人的統計，卡片只標紅、不變灰。
   const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  //   每個字的狀態：本站答過的（vocabWords:<登入者>，所有單元共用）優先；沒答過就用 WORD UP 熟悉度（vocab/wordup/status.json）
+  //   每個字的狀態：本站答過的（vocabWords:<登入者>，所有單元共用）優先；沒答過就看 WORD UP 熟悉度（vocab/wordup/status.json）：
+  //   不熟＝'w' 紅色（先複習）、熟記＝'k' 只標小標籤（不變灰、照樣要考）；只有本站答對 'm' 才變灰
   let WU = null;
   async function loadWordUp(){
     if(WU) return WU;
@@ -52,7 +53,7 @@
   function statusOf(p){
     const m = new Map();
     const u = ((WU || {}).users || {})[p];
-    if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), { s: u.words[w][0] === '熟記' ? 'm' : 'w', src: 'wordup', lv: u.words[w][0] }));
+    if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), { s: u.words[w][0] === '熟記' ? 'k' : 'w', src: 'wordup', lv: u.words[w][0] }));
     try{ const mine = JSON.parse(localStorage.getItem('vocabWords:' + p) || '{}'); Object.keys(mine).forEach(w => m.set(w, { s: mine[w], src: 'site' })); }catch(e){}
     return { map: m, updated: u && u.updated };
   }
@@ -63,7 +64,7 @@
     const old = document.getElementById('vcProgress');
     if(old) old.remove();
     const cards = [...grid.querySelectorAll('.vc-card')];
-    cards.forEach(c => { c.classList.remove('wrong', 'mastered'); c.removeAttribute('data-tag'); });
+    cards.forEach(c => { c.classList.remove('wrong', 'mastered', 'wu-known'); c.removeAttribute('data-tag'); });
     grid.classList.remove('all-mastered');
     if(!name) return;
     const parent = /^(PARENT|TEST)$/.test(name);
@@ -84,8 +85,9 @@
       const pct = Math.round(m / n * 100);
       if(!parent) cards.forEach(c => {
         const w = wordOf(c), s = sOf(c);
-        if(ms.has(w)){ c.classList.add('mastered'); tags.set(c, s.src === 'wordup' ? 'WORD UP 熟記' : '已答對'); }
+        if(ms.has(w)){ c.classList.add('mastered'); tags.set(c, '已答對'); }
         else if(wr.has(w)){ c.classList.add('wrong'); tags.set(c, s.src === 'wordup' ? 'WORD UP：' + s.lv : p + ' 答錯'); }
+        else if(s && s.s === 'k'){ c.classList.add('wu-known'); tags.set(c, 'WORD UP 熟記（待測驗）'); }
       });
       else redWords.forEach(w => { const c = cards.find(x => wordOf(x) === w); c.classList.add('wrong'); tags.set(c, (tags.get(c) ? tags.get(c).replace(' 答錯', '') + '、' : '') + p + ' 答錯'); });
       if(m >= n){
@@ -94,7 +96,8 @@
         return;
       }
       rows.push('<div class="vp-row"><b>' + esc(p) + '</b>：答對率 <b>' + pct + '%</b>（答對 ' + m + ' / ' + n + ' 個字），' +
-        '<span class="vp-red">還有 ' + redWords.length + ' 個紅字要複習</span>' + (n - m - redWords.length ? '，' + (n - m - redWords.length) + ' 個還沒考到' : '') +
+        '<span class="vp-red">還有 ' + redWords.length + ' 個紅字要複習</span>' + (n - m - redWords.length ? '，' + (n - m - redWords.length) + ' 個還沒在本站考過' : '') +
+        (cards.filter(c => (sOf(c) || {}).s === 'k').length ? '（其中 ' + cards.filter(c => (sOf(c) || {}).s === 'k').length + ' 個 WORD UP 標熟記，考對才算會）' : '') +
         '<div class="vp-bar"><i style="width:' + pct + '%"></i></div>' +
         (redWords.length ? '<div class="vp-words">要複習：' + redWords.map(esc).join('、') + '</div>' : '') +
         '<div class="vp-tip">複習紅色的字後，再按「📝 單元測驗」——只會考還沒答對的字。（' + new Date(rec.at).toLocaleDateString() + ' 測驗）</div></div>');

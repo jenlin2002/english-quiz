@@ -50,6 +50,7 @@
 .vc-card.mastered:hover{ opacity:.85; }
 .vc-card[data-tag]::after{ content:attr(data-tag); position:absolute; top:8px; left:8px; background:#D64545; color:#fff; font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px; }
 .vc-card.mastered[data-tag]::after{ background:#555; }
+.vc-card.wu-known[data-tag]::after{ background:#E8EEF6; color:#3B5B85; border:1px solid #B9CBE3; }   /* WORD UP 熟記：只是參考，還要本站考對 */
 .vc-card[data-tag]:not(:has(img.vc-photo)){ padding-top:38px; }   /* 沒有照片的卡片：標籤不要蓋住單字 */
 .vc-progress{ margin:0 0 14px; padding:12px 16px; border-radius:12px; background:#FFF8E6; border:1px solid #EBD9A6; color:#3A3226; }
 .vc-progress .vp-title{ font-weight:900; margin-bottom:6px; }

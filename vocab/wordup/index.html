@@ -18,7 +18,9 @@
   .soon{ color:#F6E7B4; opacity:.75; font-weight:400; }
   .lv small, .lv2 small{ color:#8A7D62; margin-right:4px; }
   .lv span{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:700; }
-  .lv .r{ background:#FDECEC; color:#C62828; } .lv .g{ background:#E6E6E6; color:#555; }
+  .lv .r, .lv2 .r{ background:#FDECEC; color:#C62828; } .lv .g, .lv2 .g{ background:#E6E6E6; color:#555; }
+  .lv .n, .lv2 .n{ background:#E8EEF6; color:#3B5B85; }
+  .lv span, .lv2 span{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:700; }
   .az-sum{ margin:8px 0 14px; padding:10px 14px; border-radius:10px; background:#FFF8E6; color:#3A3226; font-weight:700; }
 </style>
 </head>
@@ -28,7 +30,7 @@
   <div class="eyebrow">VOCABULARY · WORD UP</div>
   <h1>WORD UP 單字 A–Z 對照表</h1>
   <div class="subtitle">孩子在 WORD UP（全民英檢初級單字一本通）背的字，對照到本站「主題 2000 字」的單元。<br>
-  熟悉度：本站測驗答過的以本站為準，沒答過的用 WORD UP 的紀錄（家長讀取 WORD UP 時更新）。紅＝要複習、灰＝已會。</div>
+  以本站測驗結果為準：灰＝本站答對（已會）、紅＝要複習（本站答錯或 WORD UP 標不熟）、藍＝WORD UP 自己標熟記，還要本站考對才算會。</div>
   <div class="unit-btns"><a class="btn" href="u01.html">📗 WORD UP A-I</a></div>
   <div class="az-sum" id="azSum">登入後會顯示你的熟悉度。</div>
   <table class="az"><tr class="grp"><td colspan="4">WORD UP 單元 A-I（38 個字）　<a href="u01.html">單字卡</a>．<a href="u01-quiz.html">測驗</a></td></tr>
@@ -2169,16 +2171,17 @@
   const all = document.querySelectorAll('tr[data-w]');
   const sums = people.map((p, k) => {
     const m = new Map(), u = (wu.users || {})[p];
-    if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), u.words[w][0] === '熟記' ? ['g', 'WORD UP 熟記'] : ['r', 'WORD UP：' + u.words[w][0]]));
+    // WORD UP 熟記只是參考（n，藍）；只有本站測驗答對（g，灰）才算已會
+    if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), u.words[w][0] === '熟記' ? ['n', 'WORD UP 熟記（待測驗）'] : ['r', 'WORD UP：' + u.words[w][0]]));
     try{ const mine = JSON.parse(localStorage.getItem('vocabWords:' + p) || '{}'); Object.keys(mine).forEach(w => m.set(w, mine[w] === 'm' ? ['g', '本站答對'] : ['r', '本站答錯'])); }catch(e){}
-    let r = 0, g = 0;
+    const c = { r: 0, g: 0, n: 0 };
     all.forEach(tr => {
       const s = m.get(tr.dataset.w);
       if(!s) return;
-      s[0] === 'r' ? r++ : g++;
+      c[s[0]]++;
       tr.querySelector(k ? '.lv2' : '.lv').innerHTML = (people.length > 1 ? '<small>' + p + '</small> ' : '') + '<span class="' + s[0] + '">' + s[1] + '</span>';
     });
-    return p + '：已會 ' + g + ' 個、要複習 ' + r + ' 個、還沒背 ' + (all.length - g - r) + ' 個';
+    return p + '：本站答對（已會）' + c.g + ' 個、要複習 ' + c.r + ' 個、WORD UP 熟記待測驗 ' + c.n + ' 個、還沒背 ' + (all.length - c.g - c.r - c.n) + ' 個';
   });
   document.getElementById('azSum').innerHTML = sums.join('<br>') + '<br><small>（共 ' + all.length + ' 個字）</small>';
 })();

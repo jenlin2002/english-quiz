@@ -159,7 +159,8 @@
   - 2026-11-04：**兩人全部 53 單元都已讀**。BRANDEN 已背 51 單元（記錄 1989 字：已會 795、要複習 1194）；MELISSA 已背 23 單元 A-I～H-II（記錄 864 字：已會 229、要複習 635）。之後要更新：家長登入該學生的 WORD UP → 讀取 → `build_wordup_status.py 學生=讀取檔` → `build_wordup_index.py`。
   - WORD UP 複習單元（自編內容的單字卡／投影片／測驗）目前只做了 A-I（u01）；其餘 52 個單元還沒做，對照表上標「複習單元製作中」。
   - WORD UP 複習區 `vocab/wordup/uNN.html`（Unit 1＝A-I）：用 `build_vocab.py` 的 book `wordup` 產生（資料檔 `tools/vocab_gen/wordup_u01.py`，中文、例句、題目自編；照片 `vocab/wordup/img/u01/`）。對照表 `vocab/wordup/index.html` 由 `tools/vocab_gen/build_wordup_index.py` 產生（每個字的熟悉度＋在本站哪個主題單元；新做主題單元或新增 WORD UP 單元後重跑）。單字區目錄有「WORD UP 單字複習」一區。
-  - **進度共用**：本站答題紀錄改存 `vocabWords:<登入者>`（小寫單字 → 'm' 答對／'w' 答錯，所有單元共用）；`gquiz.js`／`vocab.js` 判斷每個字：本站答過的優先，沒答過就用 WORD UP（熟記＝灰、其他＝紅，標籤「WORD UP：沒印象」）。WORD UP 熟記的字測驗先不考。主題單元裡同一個字也會一起變紅／灰。快取版本 `gquiz.js`／`vocab.js`／`vocab.css?v=20261104d`。
+  - **進度共用**：本站答題紀錄改存 `vocabWords:<登入者>`（小寫單字 → 'm' 答對／'w' 答錯，所有單元共用）；`gquiz.js`／`vocab.js` 判斷每個字：本站答過的優先，沒答過才看 WORD UP。主題單元裡同一個字也會一起變紅／灰。
+  - **以本站測驗為準（2026-11-04 使用者決定）**：WORD UP 的熟悉度是孩子自己按的，只當參考——WORD UP 不熟（不太熟／很模糊／沒印象）→ 紅色＋「WORD UP：沒印象」標籤，提醒先複習；WORD UP 熟記 → **不變灰**，只標藍色小標籤「WORD UP 熟記（待測驗）」，測驗照樣要考。**只有本站測驗答對才變灰、才算已會**（答對率也只算本站答對）。A–Z 對照表統計分成：本站答對、要複習、WORD UP 熟記待測驗、還沒背。快取版本 `gquiz.js`／`vocab.js`／`vocab.css?v=20261104e`。
 - 總目錄 `index.html` 第五張卡片「國中2000字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）
