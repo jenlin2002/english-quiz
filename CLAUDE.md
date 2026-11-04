@@ -127,6 +127,8 @@
 - 單字測驗的「例句填空」（寫單字的題目）**每一題都要附中文提示**，例如 `（鄰居）`；2026-11-03 使用者發現有的有、有的沒有。
 - 圖片（2026-11-03 使用者要求「投影片要有單字圖片」，看過 emoji 後選「換成照片」）：照片放 `vocab/<book>/img/uNN/<單字>.jpg`（Pexels，裁 4:3、640×480，出處在同資料夾 `PHOTO-CREDITS.md`）；`build_vocab.py` 有照片就用照片，沒有才用資料檔的 `'pic'` emoji。投影片每頁 4 張圖卡（照片＋單字🔊＋中文＋例句🔊），單字卡上方是 4:3 照片。選照片時要逐張看過（不要恐怖、暴露、黑白太暗的），在內建瀏覽器用 Pexels 搜尋頁的 fetch 抓候選。改了投影片按鈕順序要先刪掉該單元 `audio/uNN/slide-*.mp3` 再重錄（tts_mp3 會跳過已存在的檔）。
 - 產生程式 `tools/vocab_gen/build_vocab.py`，每單元一個資料檔（`w2000_u01.py`：UNIT 字表＋QUIZ），在 `UNITS` 加上；錄音同文法區（`tts_mp3.py tools/vocab_gen/audio_jobs.json`），音檔在 `vocab/w2000/audio/uNN/`（w-NN 單字、e-NN 例句、slide-NN）。單字卡用 `vocab/vocab.css`、`vocab/vocab.js`（遮中文／遮英文自我測驗、全部播放）；樣式與測驗程式共用 `grammar2/grammar.css`、`grammar2/gquiz.js`。測驗 label `Vocab W2000 UN`。
+- **Unit 3–12（2026-11-03 晚上在家裡電腦做的）**：網頁、照片、語音都已上傳；但產生它們的資料檔 `tools/vocab_gen/w2000_u03.py`～`w2000_u12.py` 和 `build_vocab.py` 的 `UNITS` 修改**還在家裡電腦、沒有 Push**，回家要記得補上傳。
+- **Unit 13 Colors 顏色（2026-11-04 公司電腦）**：12 字、測驗 24 題、12 張照片、48 個音檔。資料檔 `w2000_u13.py`。為了不和家裡沒上傳的 `build_vocab.py` 打架，這次**沒有改 `build_vocab.py`**，是用一行指令只產生 Unit 13：`python -c "import sys,json; sys.path.insert(0,'tools/vocab_gen'); import build_vocab as b, w2000_u13 as m; json.dump(b.build(m), open('jobs.json','w',encoding='utf-8'), ensure_ascii=False)"`，再用 `tts_mp3.py jobs.json` 錄音。**家裡把 `build_vocab.py` 上傳時，`UNITS` 要記得加上 `w2000_u13`**。課本 Unit 13 在 `…單字2000活用練習_課本_教用_1of3_p1-93.pdf` 第 37 頁；Unit 14 運動嗜好在第 40 頁、15 房屋第 44 頁、16 學校第 30 頁附近、17 地點第 56 頁（PDF 頁序有點亂，用縮圖找）。
 - 總目錄 `index.html` 第五張卡片「國中單字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）
