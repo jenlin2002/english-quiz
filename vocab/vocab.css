@@ -46,5 +46,5 @@
 /* 上次測驗答錯的字（vocab.js markWrong）：紅框、紅字；遮英文時不露出答案 */
 .vc-card.wrong{ border:2px solid #D64545; box-shadow:0 0 0 3px rgba(214,69,69,.15); }
 .vc-grid:not(.hide-en) .vc-card.wrong .vc-word{ color:#C62828; }
-.vc-card.wrong::after{ content:'上次答錯'; position:absolute; top:8px; left:8px; background:#D64545; color:#fff; font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px; }
+.vc-card.wrong::after{ content:attr(data-wrong-by); position:absolute; top:8px; left:8px; background:#D64545; color:#fff; font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px; }
 .vc-wrong-note{ margin:0 0 12px; padding:10px 14px; border-radius:10px; background:#FDECEC; color:#9B1C1C; font-weight:700; border:1px solid #F3B4B4; }
