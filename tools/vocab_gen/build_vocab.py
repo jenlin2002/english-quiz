@@ -18,7 +18,7 @@ import w2000_u01  # noqa: E402
 import w2000_u02  # noqa: E402
 UNITS = (w2000_u01, w2000_u02)   # 新單元做好後加在這裡
 
-BOOKS = {'w2000': '主題 2000 字'}
+BOOKS = {'w2000': '主題 2000 字', 'wordup': 'WORD UP 單字複習'}   # wordup：只用 WORD UP 的英文字表，內容自編
 E = html.escape
 
 
@@ -43,7 +43,7 @@ CARDS_TPL = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../grammar2/grammar.css?v=20261102">
-<link rel="stylesheet" href="../vocab.css?v=20261104c">
+<link rel="stylesheet" href="../vocab.css?v=20261104d">
 </head>
 <body>
 <div class="wrap">
@@ -74,7 +74,7 @@ CARDS_TPL = '''<!DOCTYPE html>
     <a class="next" href="{tag}-quiz.html"><small>NEXT</small>📝 單元測驗 →</a>
   </div>
 </div>
-<script src="../vocab.js?v=20261104c"></script>
+<script src="../vocab.js?v=20261104d"></script>
 </body>
 </html>
 '''
@@ -242,7 +242,7 @@ QUIZ_TPL = '''<!DOCTYPE html>
 <script>
 window.GQUIZ = {data};
 </script>
-<script src="../../grammar2/gquiz.js?v=20261104c"></script>
+<script src="../../grammar2/gquiz.js?v=20261104d"></script>
 <script src="../../points.js"></script>
 </body>
 </html>

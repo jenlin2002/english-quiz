@@ -1,0 +1,21 @@
+{
+ "note": "WORD UP（全民英檢初級單字一本通）各學生的熟悉度快照：只記英文單字、熟悉度、星號；由家長登入後讀取。熟悉度：熟記／不太熟／很模糊／沒印象。",
+ "units": {
+  "u01": {"name": "A-I", "words": ["A.M.", "ability", "able", "abroad", "absent", "accept", "accident", "achieve", "act", "action", "active", "activity", "actor", "actress", "actually", "add", "addition", "address", "admire", "admit", "adopt", "adult", "advance", "advantage", "advertisement", "advice", "advise", "affair", "affect", "afraid", "afternoon", "again", "age", "ago", "agree", "aid", "AIDS", "aim"]}
+ },
+ "users": {
+  "BRANDEN": {
+   "updated": "2026-11-04",
+   "words": {
+    "A.M.": ["不太熟", 1], "ability": ["沒印象", 0], "able": ["沒印象", 0], "abroad": ["沒印象", 0], "absent": ["不太熟", 1],
+    "accept": ["沒印象", 0], "accident": ["不太熟", 1], "achieve": ["沒印象", 0], "act": ["很模糊", 0], "action": ["沒印象", 0],
+    "active": ["沒印象", 0], "activity": ["很模糊", 0], "actor": ["不太熟", 1], "actress": ["不太熟", 1], "actually": ["很模糊", 0],
+    "add": ["沒印象", 0], "addition": ["沒印象", 0], "address": ["熟記", 0], "admire": ["沒印象", 0], "admit": ["沒印象", 0],
+    "adopt": ["沒印象", 0], "adult": ["沒印象", 0], "advance": ["沒印象", 0], "advantage": ["沒印象", 0], "advertisement": ["沒印象", 0],
+    "advice": ["沒印象", 0], "advise": ["沒印象", 0], "affair": ["沒印象", 0], "affect": ["沒印象", 0], "afraid": ["沒印象", 0],
+    "afternoon": ["熟記", 0], "again": ["不太熟", 1], "age": ["不太熟", 1], "ago": ["不太熟", 1], "agree": ["不太熟", 1],
+    "aid": ["不太熟", 1], "AIDS": ["不太熟", 1], "aim": ["沒印象", 0]
+   }
+  }
+ }
+}

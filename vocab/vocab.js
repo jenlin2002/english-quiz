@@ -42,9 +42,24 @@
   //   答錯、還要複習的字 → 紅色；第一次就答對的字 → 暗灰色（不用再背）；全部答對 → 整個單元變灰。
   //   家長 PARENT（和測試帳號 TEST）看 BRANDEN、MELISSA 兩個人的統計，卡片只標紅、不變灰。
   const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  function showProgress(){
+  //   每個字的狀態：本站答過的（vocabWords:<登入者>，所有單元共用）優先；沒答過就用 WORD UP 熟悉度（vocab/wordup/status.json）
+  let WU = null;
+  async function loadWordUp(){
+    if(WU) return WU;
+    try{ WU = await (await fetch(new URL('../wordup/status.json', location.href), { cache:'no-cache' })).json(); }catch(e){ WU = {}; }
+    return WU;
+  }
+  function statusOf(p){
+    const m = new Map();
+    const u = ((WU || {}).users || {})[p];
+    if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), { s: u.words[w][0] === '熟記' ? 'm' : 'w', src: 'wordup', lv: u.words[w][0] }));
+    try{ const mine = JSON.parse(localStorage.getItem('vocabWords:' + p) || '{}'); Object.keys(mine).forEach(w => m.set(w, { s: mine[w], src: 'site' })); }catch(e){}
+    return { map: m, updated: u && u.updated };
+  }
+  async function showProgress(){
     let name = '';
     try{ name = (localStorage.getItem('quizStudentName') || '').trim().toUpperCase(); }catch(e){}
+    await loadWordUp();
     const old = document.getElementById('vcProgress');
     if(old) old.remove();
     const cards = [...grid.querySelectorAll('.vc-card')];
@@ -58,15 +73,19 @@
     people.forEach(p => {
       let rec = null;
       try{ rec = JSON.parse(localStorage.getItem('vocabProgress:' + location.pathname + ':' + p) || 'null'); }catch(e){}
-      if(!rec){ rows.push('<div class="vp-row"><b>' + esc(p) + '</b>：還沒做過這個單元的測驗。按「📝 單元測驗」開始，每個字都會考到。</div>'); return; }
-      const ms = new Set(rec.mastered || []), wr = new Set(rec.wrong || []);
+      const st = statusOf(p);
+      const sOf = c => st.map.get(wordOf(c).toLowerCase());
+      const known = cards.filter(sOf);
+      if(!known.length){ rows.push('<div class="vp-row"><b>' + esc(p) + '</b>：還沒做過這個單元的測驗。按「📝 單元測驗」開始，每個字都會考到。</div>'); return; }
+      if(!rec) rec = { at: st.updated || Date.now() };
+      const ms = new Set(cards.filter(c => sOf(c) && sOf(c).s === 'm').map(wordOf)), wr = new Set(cards.filter(c => sOf(c) && sOf(c).s === 'w').map(wordOf));
       const m = cards.filter(c => ms.has(wordOf(c))).length;
       const redWords = cards.filter(c => wr.has(wordOf(c)) && !ms.has(wordOf(c))).map(wordOf);
       const pct = Math.round(m / n * 100);
       if(!parent) cards.forEach(c => {
-        const w = wordOf(c);
-        if(ms.has(w)){ c.classList.add('mastered'); tags.set(c, '已答對'); }
-        else if(wr.has(w)){ c.classList.add('wrong'); tags.set(c, p + ' 答錯'); }
+        const w = wordOf(c), s = sOf(c);
+        if(ms.has(w)){ c.classList.add('mastered'); tags.set(c, s.src === 'wordup' ? 'WORD UP 熟記' : '已答對'); }
+        else if(wr.has(w)){ c.classList.add('wrong'); tags.set(c, s.src === 'wordup' ? 'WORD UP：' + s.lv : p + ' 答錯'); }
       });
       else redWords.forEach(w => { const c = cards.find(x => wordOf(x) === w); c.classList.add('wrong'); tags.set(c, (tags.get(c) ? tags.get(c).replace(' 答錯', '') + '、' : '') + p + ' 答錯'); });
       if(m >= n){

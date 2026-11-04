@@ -153,6 +153,10 @@
   - 單字卡頁 `vocab.js` 的 `showProgress()`：紅框紅字＝要複習、暗灰色＝已答對、上方「📊 我的學習進度」顯示答對率、答對幾個、還有幾個紅字（列出來）、幾個還沒考到；全部答對整頁變灰。PARENT／TEST 看 BRANDEN、MELISSA 兩人的統計（卡片只標紅）。
   - 單字區目錄 `vocab/index.html` 底部的 script 在各單元卡片顯示「答對率 ％、紅字 N 個」或「✅ 全部答對」，全部答對的單元卡片變灰。
   - 快取版本 `gquiz.js?v=20261104c`、`vocab.css`／`vocab.js?v=20261104c`（`build_vocab.py` 模板已改）。改了這些檔要把所有頁面的 v 一起改。
+- **WORD UP 整合（2026-11-04 試做 A-I）**：孩子另外用付費的 WORD UP（app.wordup.com.tw，教材「全民英檢初級單字一本通」，實詞篇 59 個單元 A-I、A-II…）。WORD UP 沒有匯出、沒有 API；做法是**家長在內建瀏覽器自己登入**後，Claude 讀單元頁的字卡：字卡上方色條＝熟悉度（沒色條＝熟記、`bg-green-500`＝不太熟、`bg-yellow-500`＝很模糊、`bg-peach-500`＝沒印象），星號按鈕 aria-label 以「取消」開頭＝有星號。**只讀英文單字、熟悉度、星號，不抄 WORD UP 的中文、例句、發音**。
+  - 讀到的資料寫在 `vocab/wordup/status.json`（`units`：各單元字表；`users.BRANDEN.words`：單字 → [熟悉度, 星號]）。目前只有 BRANDEN 的 A-I（38 字）；MELISSA 也有 WORD UP，要她登入後再讀。
+  - WORD UP 複習區 `vocab/wordup/uNN.html`（Unit 1＝A-I）：用 `build_vocab.py` 的 book `wordup` 產生（資料檔 `tools/vocab_gen/wordup_u01.py`，中文、例句、題目自編；照片 `vocab/wordup/img/u01/`）。對照表 `vocab/wordup/index.html` 由 `tools/vocab_gen/build_wordup_index.py` 產生（每個字的熟悉度＋在本站哪個主題單元；新做主題單元或新增 WORD UP 單元後重跑）。單字區目錄有「WORD UP 單字複習」一區。
+  - **進度共用**：本站答題紀錄改存 `vocabWords:<登入者>`（小寫單字 → 'm' 答對／'w' 答錯，所有單元共用）；`gquiz.js`／`vocab.js` 判斷每個字：本站答過的優先，沒答過就用 WORD UP（熟記＝灰、其他＝紅，標籤「WORD UP：沒印象」）。WORD UP 熟記的字測驗先不考。主題單元裡同一個字也會一起變紅／灰。快取版本 `gquiz.js`／`vocab.js`／`vocab.css?v=20261104d`。
 - 總目錄 `index.html` 第五張卡片「國中2000字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）

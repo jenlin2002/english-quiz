@@ -67,12 +67,15 @@
     }catch(e){}
     if(!cards.length) return;
     const page = new URL(CFG.back, location.href).pathname;
-    const key = 'vocabProgress:' + page + ':' + who().toUpperCase();
+    const user = who().toUpperCase();
+    const key = 'vocabProgress:' + page + ':' + user;
     let prog = null;
     try{ prog = JSON.parse(get(key) || 'null'); }catch(e){}
     const words = cards.map(c => c.w);
-    const mastered = new Set(prog ? prog.mastered.filter(w => words.includes(w)) : []);
-    V = { key: key, cards: cards, mastered: mastered, wrong: new Set(prog ? prog.wrong : []), retest: !!prog, page: page };
+    // 每個字的狀態：本站答過的（vocabWords，所有單元共用）優先，沒答過就看 WORD UP 熟悉度（熟記＝已會，其他＝要複習）
+    const st = await wordStatus(user);
+    const mastered = new Set(words.filter(w => (st.get(w.toLowerCase()) || {}).s === 'm'));
+    V = { key: key, user: user, cards: cards, mastered: mastered, wrong: new Set(words.filter(w => (st.get(w.toLowerCase()) || {}).s === 'w')), retest: !!prog, page: page };
     const covered = new Set();
     const secs = CFG.sections.map(sec => ({ title: sec.title, note: sec.note, items: sec.items.map(it => {
       const ws = wordsOf(it, words); ws.forEach(w => covered.add(w));
@@ -91,12 +94,27 @@
     CFG.sections = secs.map(sec => Object.assign(sec, { items: sec.items.filter(it =>
       it._words.length ? it._words.some(w => !mastered.has(w)) : !V.retest) })).filter(sec => sec.items.length);
   }
+  // 本站答題紀錄 vocabWords:<登入者> = { 小寫單字: 'm'(答對)|'w'(答錯) }，同一個字在每個單元共用；
+  // WORD UP 熟悉度在 vocab/wordup/status.json（家長讀取 WORD UP 後更新），沒答過的字才用它
+  async function wordStatus(user){
+    const m = new Map();
+    try{
+      const wu = await (await fetch(new URL('../wordup/status.json', location.href), { cache:'no-cache' })).json();
+      const u = (wu.users || {})[user];
+      if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), { s: u.words[w][0] === '熟記' ? 'm' : 'w', src: 'wordup', lv: u.words[w][0] }));
+    }catch(e){}
+    try{ const mine = JSON.parse(get('vocabWords:' + user) || '{}'); Object.keys(mine).forEach(w => m.set(w, { s: mine[w], src: 'site' })); }catch(e){}
+    return m;
+  }
   function saveProgress(){
     if(!V) return;
     const okW = new Set(), badW = new Set();
     items.forEach((it, i) => (it._words || []).forEach(w => (S.ok[i] ? okW : badW).add(w)));
-    okW.forEach(w => { if(!badW.has(w)){ V.mastered.add(w); V.wrong.delete(w); } });
-    badW.forEach(w => { V.mastered.delete(w); V.wrong.add(w); });
+    let mine = {};
+    try{ mine = JSON.parse(get('vocabWords:' + V.user) || '{}'); }catch(e){}
+    okW.forEach(w => { if(!badW.has(w)){ V.mastered.add(w); V.wrong.delete(w); mine[w.toLowerCase()] = 'm'; } });
+    badW.forEach(w => { V.mastered.delete(w); V.wrong.add(w); mine[w.toLowerCase()] = 'w'; });
+    set('vocabWords:' + V.user, JSON.stringify(mine));
     set(V.key, JSON.stringify({ mastered: [...V.mastered], wrong: [...V.wrong], total: V.cards.length, at: Date.now() }));
   }
   function vocabInfo(){
@@ -104,7 +122,7 @@
     const n = V.cards.length, m = V.mastered.size;
     const words = V.cards.map(c => c.w), test = new Set(); items.forEach(it => (it._words || []).forEach(w => test.add(w)));
     return '<div class="gq-hint w100">📊 ' + esc(who()) + ' 這個單元：已答對 <b>' + m + '</b> / ' + n + ' 個字（' + Math.round(m / n * 100) + '%）' +
-      (V.retest ? '；這次只考還沒答對的 <b>' + words.filter(w => test.has(w)).length + '</b> 個字' : '；第一次測驗，每個字都會考到') + '。</div>';
+      (V.retest || m ? '；這次只考還沒答對的 <b>' + words.filter(w => test.has(w)).length + '</b> 個字' + (V.retest ? '' : '（WORD UP 已熟記的字先不考）') : '；第一次測驗，每個字都會考到') + '。</div>';
   }
   function allDoneScreen(){
     root.innerHTML = '<div class="gq-top"><span class="gq-ok">🎉 ' + esc(who()) + ' 這個單元 ' + V.cards.length + ' 個字已經全部答對了！單字卡都變成灰色，不用再背了。</span></div>' +
