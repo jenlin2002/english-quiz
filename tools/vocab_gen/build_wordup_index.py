@@ -20,14 +20,17 @@ for p in sorted(glob.glob(os.path.join(VOC, 'w2000', 'u[0-9][0-9].html'))):
 
 rows, units = [], []
 for tag, u in status['units'].items():
-    units.append('<a class="btn" href="%s.html">📗 WORD UP %s</a>' % (tag, E(u['name'])))
-    rows.append('<tr class="grp"><td colspan="3">WORD UP 單元 %s（%d 個字）　<a href="%s.html">單字卡</a>．<a href="%s-quiz.html">測驗</a></td></tr>'
-                % (E(u['name']), len(u['words']), tag, tag))
+    built = os.path.exists(os.path.join(VOC, 'wordup', tag + '.html'))   # 已做好的 WORD UP 複習單元
+    if built:
+        units.append('<a class="btn" href="%s.html">📗 WORD UP %s</a>' % (tag, E(u['name'])))
+    links = '　<a href="%s.html">單字卡</a>．<a href="%s-quiz.html">測驗</a>' % (tag, tag) if built else '　<span class="soon">（複習單元製作中）</span>'
+    rows.append('<tr class="grp"><td colspan="4">WORD UP 單元 %s（%d 個字）%s</td></tr>' % (E(u['name']), len(u['words']), links))
     for w in u['words']:
         hits = where.get(w.lower(), [])
         ours = '、'.join('<a href="../w2000/u%02d.html">Unit %d %s</a>' % (no, no, E(t.split('．')[-1])) for no, t in hits) \
-            or '<span class="only">只在 WORD UP 複習區</span>'
-        rows.append('<tr data-w="%s"><td class="w"><a href="%s.html">%s</a></td><td class="lv"></td><td>%s</td></tr>' % (E(w.lower(), quote=True), tag, E(w), ours))
+            or '<span class="only">%s</span>' % ('只在 WORD UP 複習區' if built else '本站還沒有')
+        word = '<a href="%s.html">%s</a>' % (tag, E(w)) if built else E(w)
+        rows.append('<tr data-w="%s"><td class="w">%s</td><td class="lv"></td><td class="lv2"></td><td>%s</td></tr>' % (E(w.lower(), quote=True), word, ours))
 
 page = '''<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -46,6 +49,8 @@ page = '''<!DOCTYPE html>
   table.az td.w{ font-family:Georgia,serif; font-size:18px; font-weight:700; }
   table.az td.w a{ color:#1F3A2E; text-decoration:none; }
   .only{ color:#8A7D62; }
+  .soon{ color:#F6E7B4; opacity:.75; font-weight:400; }
+  .lv small, .lv2 small{ color:#8A7D62; margin-right:4px; }
   .lv span{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:700; }
   .lv .r{ background:#FDECEC; color:#C62828; } .lv .g{ background:#E6E6E6; color:#555; }
   .az-sum{ margin:8px 0 14px; padding:10px 14px; border-radius:10px; background:#FFF8E6; color:#3A3226; font-weight:700; }
@@ -64,24 +69,29 @@ page = '''<!DOCTYPE html>
   <div class="footer-note">只使用 WORD UP 的英文字表與孩子的熟悉度紀錄；本站的中文、例句、題目、語音都是自編。</div>
 </div>
 <script>
+// 學生看自己的一欄；家長 PARENT／TEST 看 BRANDEN、MELISSA 兩欄
 (async function(){
   let name = '';
   try{ name = (localStorage.getItem('quizStudentName') || '').trim().toUpperCase(); }catch(e){}
-  if(!name || /^(PARENT|TEST)$/.test(name)) name = name ? 'BRANDEN' : '';
   if(!name) return;
+  const people = /^(PARENT|TEST)$/.test(name) ? ['BRANDEN', 'MELISSA'] : [name];
   let wu = {};
   try{ wu = await (await fetch('status.json', { cache:'no-cache' })).json(); }catch(e){}
-  const m = new Map(), u = (wu.users || {})[name];
-  if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), u.words[w][0] === '熟記' ? ['g', 'WORD UP 熟記'] : ['r', 'WORD UP：' + u.words[w][0]]));
-  try{ const mine = JSON.parse(localStorage.getItem('vocabWords:' + name) || '{}'); Object.keys(mine).forEach(w => m.set(w, mine[w] === 'm' ? ['g', '本站答對'] : ['r', '本站答錯'])); }catch(e){}
-  let r = 0, g = 0;
-  document.querySelectorAll('tr[data-w]').forEach(tr => {
-    const s = m.get(tr.dataset.w);
-    if(!s) return;
-    s[0] === 'r' ? r++ : g++;
-    tr.querySelector('.lv').innerHTML = '<span class="' + s[0] + '">' + s[1] + '</span>';
+  const all = document.querySelectorAll('tr[data-w]');
+  const sums = people.map((p, k) => {
+    const m = new Map(), u = (wu.users || {})[p];
+    if(u) Object.keys(u.words).forEach(w => m.set(w.toLowerCase(), u.words[w][0] === '熟記' ? ['g', 'WORD UP 熟記'] : ['r', 'WORD UP：' + u.words[w][0]]));
+    try{ const mine = JSON.parse(localStorage.getItem('vocabWords:' + p) || '{}'); Object.keys(mine).forEach(w => m.set(w, mine[w] === 'm' ? ['g', '本站答對'] : ['r', '本站答錯'])); }catch(e){}
+    let r = 0, g = 0;
+    all.forEach(tr => {
+      const s = m.get(tr.dataset.w);
+      if(!s) return;
+      s[0] === 'r' ? r++ : g++;
+      tr.querySelector(k ? '.lv2' : '.lv').innerHTML = (people.length > 1 ? '<small>' + p + '</small> ' : '') + '<span class="' + s[0] + '">' + s[1] + '</span>';
+    });
+    return p + '：已會 ' + g + ' 個、要複習 ' + r + ' 個、還沒背 ' + (all.length - g - r) + ' 個';
   });
-  document.getElementById('azSum').textContent = name + '：已會 ' + g + ' 個、要複習 ' + r + ' 個（共 ' + document.querySelectorAll('tr[data-w]').length + ' 個字）';
+  document.getElementById('azSum').innerHTML = sums.join('<br>') + '<br><small>（共 ' + all.length + ' 個字）</small>';
 })();
 </script>
 </body>

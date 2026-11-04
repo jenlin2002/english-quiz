@@ -154,7 +154,9 @@
   - 單字區目錄 `vocab/index.html` 底部的 script 在各單元卡片顯示「答對率 ％、紅字 N 個」或「✅ 全部答對」，全部答對的單元卡片變灰。
   - 快取版本 `gquiz.js?v=20261104c`、`vocab.css`／`vocab.js?v=20261104c`（`build_vocab.py` 模板已改）。改了這些檔要把所有頁面的 v 一起改。
 - **WORD UP 整合（2026-11-04 試做 A-I）**：孩子另外用付費的 WORD UP（app.wordup.com.tw，教材「全民英檢初級單字一本通」，實詞篇 59 個單元 A-I、A-II…）。WORD UP 沒有匯出、沒有 API；做法是**家長在內建瀏覽器自己登入**後，Claude 讀單元頁的字卡：字卡上方色條＝熟悉度（沒色條＝熟記、`bg-green-500`＝不太熟、`bg-yellow-500`＝很模糊、`bg-peach-500`＝沒印象），星號按鈕 aria-label 以「取消」開頭＝有星號。**只讀英文單字、熟悉度、星號，不抄 WORD UP 的中文、例句、發音**。
-  - 讀到的資料寫在 `vocab/wordup/status.json`（`units`：各單元字表；`users.BRANDEN.words`：單字 → [熟悉度, 星號]）。目前只有 BRANDEN 的 A-I（38 字）；MELISSA 也有 WORD UP，要她登入後再讀。
+  - 讀到的資料寫在 `vocab/wordup/status.json`（`units`：53 個單元字表 u01＝A-I … u53＝W+Y+Z-II，共 2071 字；`users.<學生>.words`：單字 → [熟悉度, 星號]）。由 `tools/vocab_gen/build_wordup_status.py 學生=讀取檔` 產生（讀取檔每行一個單元：`單元|熟記/不太熟/很模糊/沒印象|單字~等級[*],…`，還沒開始背的單元 `|U|單字,…`）。**還沒開始背的單元（熟記、不太熟、很模糊都是 0）只記字表、不記熟悉度**，不然整單元都會被標紅。
+  - 讀取方法：在 deck 頁用 JS 抓字卡，按「下一單元」一頁一頁讀，**每讀幾個單元就把結果存出來**（整頁換址會清掉頁面裡的變數）；最後一個單元的「下一單元」會進到 WORD UP 的題目頁，讀到非 /decks/ 網址就退回。每個單元都比對過 WORD UP 側欄的熟悉度統計。
+  - 2026-11-04：**MELISSA 全部 53 單元已讀**（已背 23 單元 A-I～H-II，記錄 864 字：熟記 229、要複習 635）；**BRANDEN 只讀了 A-I**，其他單元要家長用 BRANDEN 登入後再讀（讀完重跑 `build_wordup_status.py BRANDEN=…` 和 `build_wordup_index.py`）。
   - WORD UP 複習區 `vocab/wordup/uNN.html`（Unit 1＝A-I）：用 `build_vocab.py` 的 book `wordup` 產生（資料檔 `tools/vocab_gen/wordup_u01.py`，中文、例句、題目自編；照片 `vocab/wordup/img/u01/`）。對照表 `vocab/wordup/index.html` 由 `tools/vocab_gen/build_wordup_index.py` 產生（每個字的熟悉度＋在本站哪個主題單元；新做主題單元或新增 WORD UP 單元後重跑）。單字區目錄有「WORD UP 單字複習」一區。
   - **進度共用**：本站答題紀錄改存 `vocabWords:<登入者>`（小寫單字 → 'm' 答對／'w' 答錯，所有單元共用）；`gquiz.js`／`vocab.js` 判斷每個字：本站答過的優先，沒答過就用 WORD UP（熟記＝灰、其他＝紅，標籤「WORD UP：沒印象」）。WORD UP 熟記的字測驗先不考。主題單元裡同一個字也會一起變紅／灰。快取版本 `gquiz.js`／`vocab.js`／`vocab.css?v=20261104d`。
 - 總目錄 `index.html` 第五張卡片「國中2000字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
