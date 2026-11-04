@@ -25,10 +25,11 @@ for tag, u in status['units'].items():
         units.append('<a class="btn" href="%s.html">📗 WORD UP %s</a>' % (tag, E(u['name'])))
     links = '　<a href="%s.html">單字卡</a>．<a href="%s-quiz.html">測驗</a>' % (tag, tag) if built else '　<span class="soon">（複習單元製作中）</span>'
     rows.append('<tr class="grp"><td colspan="4">WORD UP 單元 %s（%d 個字）%s</td></tr>' % (E(u['name']), len(u['words']), links))
+    rows.append('<tr class="hd"><td>單字</td><td colspan="2">熟悉度（登入後顯示）</td><td>本站在哪裡複習</td></tr>')
     for w in u['words']:
         hits = where.get(w.lower(), [])
-        ours = '、'.join('<a href="../w2000/u%02d.html">Unit %d %s</a>' % (no, no, E(t.split('．')[-1])) for no, t in hits) \
-            or '<span class="only">%s</span>' % ('只在 WORD UP 複習區' if built else '本站還沒有')
+        wu = '<a href="%s.html">WORD UP %s</a>' % (tag, E(u['name'])) if built else '<span class="only">WORD UP %s（製作中）</span>' % E(u['name'])
+        ours = '、'.join(['<a href="../w2000/u%02d.html">主題 Unit %d %s</a>' % (no, no, E(t.split('．')[-1])) for no, t in hits] + [wu])
         word = '<a href="%s.html">%s</a>' % (tag, E(w)) if built else E(w)
         rows.append('<tr data-w="%s"><td class="w">%s</td><td class="lv"></td><td class="lv2"></td><td>%s</td></tr>' % (E(w.lower(), quote=True), word, ours))
 
@@ -49,6 +50,7 @@ page = '''<!DOCTYPE html>
   table.az td.w{ font-family:Georgia,serif; font-size:18px; font-weight:700; }
   table.az td.w a{ color:#1F3A2E; text-decoration:none; }
   .only{ color:#8A7D62; }
+  table.az tr.hd td{ background:#F3EBD2; color:#6B5E44; font-size:13px; font-weight:700; padding:5px 12px; }
   .soon{ color:#F6E7B4; opacity:.75; font-weight:400; }
   .lv small, .lv2 small{ color:#8A7D62; margin-right:4px; }
   .lv span{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:13px; font-weight:700; }
