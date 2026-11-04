@@ -132,7 +132,12 @@
 - **Unit 14 Sports, interests & hobbies 運動、興趣與嗜好（2026-11-04 公司電腦）**：45 字、測驗 34 題、44 張照片（doll 用 emoji）、180 個音檔；重點整理 play + 球類／play the + 樂器、go + V-ing、V-ing 拼法。產生方式同 Unit 13（一行指令只產生這個單元，`build_vocab.py` 沒改），**家裡上傳 `build_vocab.py` 時 `UNITS` 也要加 `w2000_u14`**。Unit 13、14 的測驗都在本機用正確答案作答過，得滿分。
 - **Unit 15 Houses & apartments 房子與公寓（2026-11-04 公司電腦）**：51 字、測驗 32 題、47 張照片（room、yard、bath、umbrella 用 emoji）、204 個音檔；重點整理房間、-y／-ch／-o 複數、go home。產生方式同 Unit 13，**`UNITS` 也要加 `w2000_u15`**。課本 Unit 16 School 在 PDF 第 50 頁附近（縮圖第 49–54 張），17 地點第 56 頁。
 - **Unit 16 School 學校（2026-11-04 公司電腦）**：76 字、測驗 34 題、49 張照片（抽象動詞、名詞用 emoji）、304 個音檔；重點整理科目不可數、不規則動詞 say／speak／teach／understand／write／read、-ies 複數。**`UNITS` 也要加 `w2000_u16`**。課本 Unit 16 實際在 PDF 第 1 份的第 50–53 頁（PDF 索引 49–52）；Unit 17 Places & locations 從第 56 頁起。
-- **答錯的字標紅（2026-11-04 使用者要求）**：單字區測驗第一次送出時，`gquiz.js` 的 `rememberWrongWords()` 把答錯題目對應的單字存在這台裝置的 localStorage `vocabWrong:<單字卡頁路徑>:<登入者>`（只有 label 開頭是 `Vocab` 的測驗；每次第一次送出就覆蓋，考對就不再標）；單字卡頁 `vocab.js` 的 `markWrong()` 把這些字的卡片加紅框、紅字，左上角標「BRANDEN 答錯」，上方列出答錯的字。學生只看自己的；PARENT／TEST 會同時看到 BRANDEN、MELISSA 的（限同一台裝置，沒有存到雲端）。對應方式：選擇題用正解選項和單字題目、填空用正解、「swim → (V-ing)」這種題目也算原形；比對允許複數／V-ing（字尾差 4 個字母內）。快取版本 `gquiz.js?v=20261104`、`vocab.css`／`vocab.js?v=20261104b`（`build_vocab.py` 模板已改）。
+- **單字學習進度：紅字複習、答對變灰（2026-11-04 使用者要求，取代同一天早先的「答錯標紅」）**：
+  - 每個登入者各自的進度存在這台裝置 localStorage `vocabProgress:<單字卡頁路徑>:<登入者>` = `{mastered:[第一次就答對的字], wrong:[答錯的字], total, at}`（沒有存到雲端）。
+  - `gquiz.js`（label 開頭 `Vocab` 的測驗、有登入時）先 fetch 單字卡頁取得全部單字，`wordsOf()` 找出每題考到哪些字（選擇題看正解與單字題目、填空看正解、「swim → (V-ing)」算原形，允許複數／V-ing）。**第一次測驗每個字都要考到**：課本題目沒考到的字自動補「⑦ 其他單字：看中文選英文」（所以大單元第一次題數多，例如 Unit 16 有 81 題）。之後**只出還有沒答對的字的題目**；對不到單字的題目（the／不填）只在第一次出。只看第一次作答：答對的字變 mastered（灰）、答錯變 wrong（紅），訂正後仍是紅，下次再考。全部答對時測驗頁顯示「全部答對、不用再背」，可「清除紀錄、全部重新測驗」。
+  - 單字卡頁 `vocab.js` 的 `showProgress()`：紅框紅字＝要複習、暗灰色＝已答對、上方「📊 我的學習進度」顯示答對率、答對幾個、還有幾個紅字（列出來）、幾個還沒考到；全部答對整頁變灰。PARENT／TEST 看 BRANDEN、MELISSA 兩人的統計（卡片只標紅）。
+  - 單字區目錄 `vocab/index.html` 底部的 script 在各單元卡片顯示「答對率 ％、紅字 N 個」或「✅ 全部答對」，全部答對的單元卡片變灰。
+  - 快取版本 `gquiz.js?v=20261104c`、`vocab.css`／`vocab.js?v=20261104c`（`build_vocab.py` 模板已改）。改了這些檔要把所有頁面的 v 一起改。
 - 總目錄 `index.html` 第五張卡片「國中2000字．分科練習」（寬螢幕 5 欄、1300px 以下 3 欄、900px 以下 2 欄、手機 1 欄）。
 
 ## 連續學習紅利＋稱讚畫面（2026-10-18）

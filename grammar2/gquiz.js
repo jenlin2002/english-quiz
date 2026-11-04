@@ -17,17 +17,103 @@
   const del = k => { try{ localStorage.removeItem(k); }catch(e){ delete mem[k]; } };
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-  // 題目攤平成一題一題（每題一個分數）
-  const items = [];
-  CFG.sections.forEach((sec, si) => sec.items.forEach(it => items.push(Object.assign({ sec: si }, it))));
-  const total = items.length;
+  const VOCAB = /^Vocab/.test(CFG.label || '');   // 單字區測驗：依登入者的進度出題（見 prepVocab）
+  let V = null;                                    // 單字區：{ key, cards, mastered:Set, wrong:Set, retest }
+
+  // 題目攤平成一題一題（每題一個分數）；單字區要先等 prepVocab() 決定這次考哪些題
+  let items = [], total = 0;
+  function flatten(){
+    items = [];
+    CFG.sections.forEach((sec, si) => sec.items.forEach(it => items.push(Object.assign({ sec: si }, it))));
+    total = items.length;
+  }
 
   const who = () => (get('quizStudentName') || '').trim();
   const draftKey = () => 'gqDraft:' + location.pathname + ':' + (who() || '-');
 
   // ---- 狀態 ----
   // phase: 'answer' 作答中、'graded' 已對答案、'fixing' 訂正中、'done' 全部訂正完成
-  let S = { phase:'answer', ans: items.map(() => null), ok: items.map(() => null), round: 0, firstWrong: [] };
+  let S = null;
+  const freshState = () => ({ phase:'answer', ans: items.map(() => null), ok: items.map(() => null), round: 0, firstWrong: [] });
+
+  // ---- 單字區：每個登入者各自的進度（這台裝置的 localStorage） ----
+  //   vocabProgress:<單字卡頁路徑>:<登入者> = { mastered:[第一次就答對的字], wrong:[答錯、還要複習的字], total, at }
+  //   第一次考全部單字（課本題目沒考到的字，自動補「看中文選英文」）；之後只考還沒答對的字；全部答對就不用再考。
+  function wordsOf(it, cardWords){
+    const c = [];
+    if(it.w) c.push(it.w);
+    if(it.type === 'mc'){
+      if(/^[A-Za-z' .-]+$/.test(it.q) && it.q.trim().split(/\s+/).length <= 3) c.push(it.q);   // 看英文選中文：題目就是單字
+      c.push(it.opts[it.answer]);
+    } else {
+      it.blanks.forEach(b => c.push(b[0]));
+      const m = /^\s*([A-Za-z][A-Za-z' -]*?)\s*→/.exec(it.q);   // 「swim → (V-ing) {0}」：原形也算
+      if(m) c.push(m[1]);
+    }
+    const cands = c.map(s => String(s || '').toLowerCase().trim()).filter(Boolean);
+    return cardWords.filter(w => {
+      const lw = w.toLowerCase();
+      return cands.some(x => x === lw || x.split(/[^a-z'-]+/).includes(lw) ||
+        (lw.length >= 3 && x.indexOf(' ') < 0 && x.startsWith(lw) && x.length - lw.length <= 4));   // stamps、swimming、dishes
+    });
+  }
+  async function prepVocab(){
+    if(!who()) return;   // 沒登入：照原本整份考，不記進度
+    let cards = [];
+    try{
+      const html = await (await fetch(CFG.back, { cache:'no-cache' })).text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      cards = [...doc.querySelectorAll('.vc-card')].map(c => ({ w: c.querySelector('.vc-word').textContent.trim(), zh: (c.querySelector('.vc-zh') || {}).textContent || '' }));
+    }catch(e){}
+    if(!cards.length) return;
+    const page = new URL(CFG.back, location.href).pathname;
+    const key = 'vocabProgress:' + page + ':' + who().toUpperCase();
+    let prog = null;
+    try{ prog = JSON.parse(get(key) || 'null'); }catch(e){}
+    const words = cards.map(c => c.w);
+    const mastered = new Set(prog ? prog.mastered.filter(w => words.includes(w)) : []);
+    V = { key: key, cards: cards, mastered: mastered, wrong: new Set(prog ? prog.wrong : []), retest: !!prog, page: page };
+    const covered = new Set();
+    const secs = CFG.sections.map(sec => ({ title: sec.title, note: sec.note, items: sec.items.map(it => {
+      const ws = wordsOf(it, words); ws.forEach(w => covered.add(w));
+      return Object.assign({}, it, { _words: ws });
+    }) }));
+    // 課本題目沒考到的字：自動出「看中文選英文」（選項用同單元其他字，固定順序）
+    const auto = [];
+    cards.forEach((c, k) => {
+      if(covered.has(c.w)) return;
+      const others = words.map((w, j) => [w, (j * 37 + k * 53) % 101]).filter(x => x[0] !== c.w).sort((a, b) => a[1] - b[1]).map(x => x[0]);
+      const opts = others.slice(0, 3); const pos = k % (opts.length + 1); opts.splice(pos, 0, c.w);
+      auto.push({ type:'mc', q: c.zh.trim() || c.w, opts: opts, answer: pos, exp: c.w + '：' + c.zh.trim() + '。', _words: [c.w] });
+    });
+    if(auto.length) secs.push({ title: '⑦ 其他單字：看中文選英文', note: '本單元其他的字，每個字都要考到。', items: auto });
+    // 複習：只留還有「沒答對的字」的題目；對不到單字的題目（如 the／不填）只在第一次考
+    CFG.sections = secs.map(sec => Object.assign(sec, { items: sec.items.filter(it =>
+      it._words.length ? it._words.some(w => !mastered.has(w)) : !V.retest) })).filter(sec => sec.items.length);
+  }
+  function saveProgress(){
+    if(!V) return;
+    const okW = new Set(), badW = new Set();
+    items.forEach((it, i) => (it._words || []).forEach(w => (S.ok[i] ? okW : badW).add(w)));
+    okW.forEach(w => { if(!badW.has(w)){ V.mastered.add(w); V.wrong.delete(w); } });
+    badW.forEach(w => { V.mastered.delete(w); V.wrong.add(w); });
+    set(V.key, JSON.stringify({ mastered: [...V.mastered], wrong: [...V.wrong], total: V.cards.length, at: Date.now() }));
+  }
+  function vocabInfo(){
+    if(!V) return '';
+    const n = V.cards.length, m = V.mastered.size;
+    const words = V.cards.map(c => c.w), test = new Set(); items.forEach(it => (it._words || []).forEach(w => test.add(w)));
+    return '<div class="gq-hint w100">📊 ' + esc(who()) + ' 這個單元：已答對 <b>' + m + '</b> / ' + n + ' 個字（' + Math.round(m / n * 100) + '%）' +
+      (V.retest ? '；這次只考還沒答對的 <b>' + words.filter(w => test.has(w)).length + '</b> 個字' : '；第一次測驗，每個字都會考到') + '。</div>';
+  }
+  function allDoneScreen(){
+    root.innerHTML = '<div class="gq-top"><span class="gq-ok">🎉 ' + esc(who()) + ' 這個單元 ' + V.cards.length + ' 個字已經全部答對了！單字卡都變成灰色，不用再背了。</span></div>' +
+      '<div class="gq-links"><a class="btn" href="' + CFG.back + '">← 回單字卡</a> <a class="btn" href="../index.html">單字區目錄</a> ' +
+      '<button class="btn" data-act="reset">↺ 清除紀錄、全部重新測驗</button></div>';
+    root.addEventListener('click', e => {
+      if(e.target.closest('[data-act=reset]') && confirm('要清除這個單元的答對紀錄，全部重新測驗嗎？')){ del(V.key); del(draftKey()); location.reload(); }
+    });
+  }
 
   function loadDraft(){
     try{ const d = JSON.parse(get(draftKey()) || 'null'); if(d && d.ans && d.ans.length === total) S = d; }catch(e){}
@@ -98,7 +184,7 @@
     let top = '', bottom = '';
     const whoLine = '<span class="gq-who">作答者：<b>' + esc(who() || '（尚未登入）') + '</b></span>';
     if(S.phase === 'answer'){
-      top = whoLine + '<span>已作答 <b>' + filled + '</b> / ' + total + '</span><span><button class="btn" data-act="save">💾 暫存</button></span>';
+      top = vocabInfo() + whoLine + '<span>已作答 <b>' + filled + '</b> / ' + total + '</span><span><button class="btn" data-act="save">💾 暫存</button></span>';
       bottom = '<button class="btn alt big" data-act="submit"' + (filled < total ? ' disabled' : '') + '>📤 送出成績</button>' +
         (filled < total ? '<div class="gq-hint">還有 ' + (total - filled) + ' 題沒作答，全部作答才能送出。</div>' : '');
     } else if(S.phase === 'graded'){
@@ -127,6 +213,7 @@
         '<br><span class="gq-rv-a">正解：' + esc(rightAns(items[i])) + '</span><br><span class="gq-rv-e">' + items[i].exp + '</span></div>').join('') + '</div>';
   }
   function doneLinks(){
+    if(VOCAB) return '<div class="gq-links"><a class="btn" href="' + (CFG.back || 'index.html') + '">← 回單字卡（看紅色的字）</a> <a class="btn" href="../index.html">單字區目錄</a> <button class="btn" data-act="restart">↺ ' + (V ? '再考還沒答對的字' : '重新測驗') + '</button></div>';
     return '<div class="gq-links"><a class="btn" href="' + (CFG.back || 'index.html') + '">← 回單元講解</a> <a class="btn" href="index.html">國中文法目錄</a> <button class="btn" data-act="restart">↺ 重新測驗</button></div>';
   }
   function flash(t){ const f = document.getElementById('gqFlash'); if(f){ f.textContent = t; clearTimeout(flash.t); flash.t = setTimeout(() => f.textContent = '', 4000); } }
@@ -148,7 +235,7 @@
     else if(act === 'fix') startFix();
     else if(act === 'refix') submitFix();
     else if(act === 'leave'){ S.phase = 'done'; del(draftKey()); location.href = CFG.back || 'index.html'; }
-    else if(act === 'restart'){ if(confirm('要重新測驗嗎？（重新作答的點數依每天規則計算）')){ S = { phase:'answer', ans: items.map(() => null), ok: items.map(() => null), round: 0, firstWrong: [] }; del(draftKey()); render(); scrollTo(0, root.offsetTop - 20); } }
+    else if(act === 'restart'){ if(confirm('要重新測驗嗎？（重新作答的點數依每天規則計算）')){ del(draftKey()); if(V){ location.reload(); return; } S = freshState(); render(); scrollTo(0, root.offsetTop - 20); } }
   });
   root.addEventListener('input', e => {
     const inp = e.target.closest('.gq-blank');
@@ -165,39 +252,19 @@
   function details(idx){
     return idx.map(i => ({ q: (i + 1) + '. ' + items[i].q.replace(/<[^>]+>/g, '').replace(/\{\d+\}/g, '___'), picked: showAns(items[i], S.ans[i]), correct: rightAns(items[i]), isCorrect: S.ok[i] }));
   }
-  // 單字區：第一次作答錯的單字記在這台裝置（依登入者），單字卡頁（vocab.js）會把這些字標紅
-  //   key：vocabWrong:<單字卡頁路徑>:<登入者>；每次第一次送出就覆蓋，下次考對就不再標紅
-  function rememberWrongWords(){
-    if(!/^Vocab/.test(CFG.label || '') || !who()) return;
-    const words = [];
-    S.firstWrong.forEach(i => {
-      const it = items[i];
-      if(it.w) words.push(it.w);
-      if(it.type === 'mc'){
-        if(/^[A-Za-z' -]+$/.test(it.q) && it.q.trim().split(/\s+/).length <= 3) words.push(it.q);   // 看英文選中文：題目就是單字；句子題不算
-        words.push(it.opts[it.answer]);
-      }
-      else {
-        it.blanks.forEach(b => words.push(b[0]));
-        const m = /^\s*([A-Za-z][A-Za-z' -]*?)\s*→/.exec(it.q);   // 「swim → (V-ing) {0}」這種題目，原形也算
-        if(m) words.push(m[1]);
-      }
-    });
-    const page = new URL(CFG.back || location.href, location.href).pathname;
-    set('vocabWrong:' + page + ':' + who().toUpperCase(), JSON.stringify({ words: words, wrong: S.firstWrong.length, total: total, at: Date.now() }));
-  }
   function submit(){
     const all = items.map((_, i) => i);
     grade(all);
     S.firstWrong = all.filter(i => !S.ok[i]);
-    rememberWrongWords();
+    saveProgress();   // 單字區：只看第一次作答，答對的字變灰、答錯的字變紅（訂正後也還是紅，下次再考）
     const right = total - S.firstWrong.length;
     S.phase = S.firstWrong.length ? 'graded' : 'done';
     if(S.phase === 'done') del(draftKey()); else saveDraft();
     render();
     scrollTo(0, root.offsetTop - 20);
-    if(window.Points) Points.earn({ name: who(), label: CFG.label, mode: '文法單元測驗', correct: right, total: total });
-    sync('文法單元測驗', right, total, details(all));
+    const mode = !VOCAB ? '文法單元測驗' : (V && V.retest ? '單字複習測驗（只考沒答對的字）' : '單字測驗');
+    if(window.Points) Points.earn({ name: who(), label: CFG.label, mode: mode, correct: right, total: total });
+    sync(mode, right, total, details(all));
   }
   function startFix(){
     S.phase = 'fixing'; S.round++;
@@ -236,7 +303,7 @@
   }
 
   // ---- 訂正完成前不能離開 ----
-  const mustStay = () => (S.phase === 'graded' || S.phase === 'fixing') && S.ok.some(x => x === false);
+  const mustStay = () => !!S && (S.phase === 'graded' || S.phase === 'fixing') && S.ok.some(x => x === false);
   const isTester = () => /^(TEST|PARENT)$/i.test(who());
   window.addEventListener('beforeunload', e => { if(mustStay()){ e.preventDefault(); e.returnValue = ''; } });
   document.addEventListener('click', e => {
@@ -246,7 +313,14 @@
     alert('錯題還沒訂正完，不能離開這一頁喔！請先按「✏️ 訂正錯誤」把錯題改對。');
   }, true);
 
-  loadDraft();
-  render();
-  if(S.phase !== 'answer' || S.ans.some(a => a != null)) setTimeout(() => flash('📂 已載入上次的暫存，接著做吧！'), 300);
+  async function init(){
+    if(VOCAB){ root.innerHTML = '<p class="gq-note">載入中…</p>'; await prepVocab(); }
+    if(V && V.mastered.size >= V.cards.length){ allDoneScreen(); return; }
+    flatten();
+    S = freshState();
+    loadDraft();
+    render();
+    if(S.phase !== 'answer' || S.ans.some(a => a != null)) setTimeout(() => flash('📂 已載入上次的暫存，接著做吧！'), 300);
+  }
+  init();
 })();

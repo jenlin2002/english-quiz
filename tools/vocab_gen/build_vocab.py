@@ -43,7 +43,7 @@ CARDS_TPL = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../grammar2/grammar.css?v=20261102">
-<link rel="stylesheet" href="../vocab.css?v=20261104b">
+<link rel="stylesheet" href="../vocab.css?v=20261104c">
 </head>
 <body>
 <div class="wrap">
@@ -74,7 +74,7 @@ CARDS_TPL = '''<!DOCTYPE html>
     <a class="next" href="{tag}-quiz.html"><small>NEXT</small>📝 單元測驗 →</a>
   </div>
 </div>
-<script src="../vocab.js?v=20261104b"></script>
+<script src="../vocab.js?v=20261104c"></script>
 </body>
 </html>
 '''
@@ -242,7 +242,7 @@ QUIZ_TPL = '''<!DOCTYPE html>
 <script>
 window.GQUIZ = {data};
 </script>
-<script src="../../grammar2/gquiz.js?v=20261104"></script>
+<script src="../../grammar2/gquiz.js?v=20261104c"></script>
 <script src="../../points.js"></script>
 </body>
 </html>

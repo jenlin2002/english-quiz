@@ -43,8 +43,20 @@
 .hide-en .vc-word, .hide-en .vc-en{ color:transparent; background:#D8D0BA; border-radius:4px; cursor:pointer; }
 .vc-card .peek{ color:inherit !important; background:none !important; }
 @media (max-width:600px){ .vc-word{ font-size:21px; } }
-/* 上次測驗答錯的字（vocab.js markWrong）：紅框、紅字；遮英文時不露出答案 */
+/* 學習進度（vocab.js showProgress）：答錯 → 紅框紅字；已答對 → 暗灰色；遮英文時不露出答案 */
 .vc-card.wrong{ border:2px solid #D64545; box-shadow:0 0 0 3px rgba(214,69,69,.15); }
 .vc-grid:not(.hide-en) .vc-card.wrong .vc-word{ color:#C62828; }
-.vc-card.wrong::after{ content:attr(data-wrong-by); position:absolute; top:8px; left:8px; background:#D64545; color:#fff; font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px; }
-.vc-wrong-note{ margin:0 0 12px; padding:10px 14px; border-radius:10px; background:#FDECEC; color:#9B1C1C; font-weight:700; border:1px solid #F3B4B4; }
+.vc-card.mastered{ background:#CFCFCF; border-color:#AAA; filter:grayscale(1); opacity:.55; }
+.vc-card.mastered:hover{ opacity:.85; }
+.vc-card[data-tag]::after{ content:attr(data-tag); position:absolute; top:8px; left:8px; background:#D64545; color:#fff; font-size:12px; font-weight:700; padding:2px 8px; border-radius:999px; }
+.vc-card.mastered[data-tag]::after{ background:#555; }
+.vc-progress{ margin:0 0 14px; padding:12px 16px; border-radius:12px; background:#FFF8E6; border:1px solid #EBD9A6; color:#3A3226; }
+.vc-progress .vp-title{ font-weight:900; margin-bottom:6px; }
+.vc-progress .vp-row{ padding:6px 0; border-top:1px dashed #E2D3A8; }
+.vc-progress .vp-row:first-of-type{ border-top:0; }
+.vc-progress .vp-red{ color:#C62828; font-weight:700; }
+.vc-progress .vp-done{ color:#2E7D32; font-weight:700; }
+.vc-progress .vp-bar{ height:10px; background:#EEE3C4; border-radius:999px; margin:6px 0; overflow:hidden; }
+.vc-progress .vp-bar i{ display:block; height:100%; background:#4CAF50; border-radius:999px; }
+.vc-progress .vp-words{ color:#9B1C1C; font-size:14px; }
+.vc-progress .vp-tip{ color:#7A6E58; font-size:13px; margin-top:2px; }

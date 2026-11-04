@@ -129,5 +129,38 @@
     測驗會計點數、同步成績，錯題要訂正到全對。
   </div>
 </div>
+<style>
+  .vp-badge{ margin-top:8px; font-size:13px; font-weight:700; padding:4px 10px; border-radius:8px; background:#FDECEC; color:#9B1C1C; }
+  .vp-badge.done{ background:#E3F1E4; color:#2E7D32; }
+  .card.vp-all{ filter:grayscale(.85); opacity:.7; }
+</style>
+<script>
+// 每個登入者在每個單元的進度（vocabProgress，gquiz.js 記在這台裝置）：答對率、紅字數；全部答對的單元變灰
+(function(){
+  let name = '';
+  try{ name = (localStorage.getItem('quizStudentName') || '').trim().toUpperCase(); }catch(e){}
+  if(!name) return;
+  const people = /^(PARENT|TEST)$/.test(name) ? ['BRANDEN', 'MELISSA'] : [name];
+  document.querySelectorAll('.card a.link-read').forEach(a => {
+    const page = new URL(a.getAttribute('href'), location.href).pathname;
+    const card = a.closest('.card');
+    let allDone = true, any = false;
+    const lines = people.map(p => {
+      let rec = null;
+      try{ rec = JSON.parse(localStorage.getItem('vocabProgress:' + page + ':' + p) || 'null'); }catch(e){}
+      if(!rec || !rec.total){ allDone = false; return ''; }
+      any = true;
+      const m = (rec.mastered || []).length, red = (rec.wrong || []).filter(w => !(rec.mastered || []).includes(w)).length;
+      const who = people.length > 1 ? p + '：' : '';
+      if(m >= rec.total) return '<div class="vp-badge done">' + who + '✅ 全部答對，不用再背</div>';
+      allDone = false;
+      return '<div class="vp-badge">' + who + '答對率 ' + Math.round(m / rec.total * 100) + '%（' + m + '/' + rec.total + '），紅字 ' + red + ' 個</div>';
+    }).join('');
+    if(!any) return;
+    card.querySelector('.card-links').insertAdjacentHTML('beforebegin', lines);
+    if(allDone) card.classList.add('vp-all');
+  });
+})();
+</script>
 </body>
 </html>

@@ -38,42 +38,57 @@
     play(b, () => setTimeout(next, 500));
   }
 
-  // 上次測驗錯的字標紅（gquiz.js 送出時記在 vocabWrong:<這一頁>:<登入者>，只看這台裝置）
-  //   學生只看自己的；家長 PARENT（和測試帳號 TEST）會一起看到 BRANDEN、MELISSA 在這台裝置答錯的字
-  function markWrong(){
+  // 每個登入者自己的進度（gquiz.js 記在這台裝置 vocabProgress:<這一頁>:<登入者>）：
+  //   答錯、還要複習的字 → 紅色；第一次就答對的字 → 暗灰色（不用再背）；全部答對 → 整個單元變灰。
+  //   家長 PARENT（和測試帳號 TEST）看 BRANDEN、MELISSA 兩個人的統計，卡片只標紅、不變灰。
+  const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  function showProgress(){
     let name = '';
     try{ name = (localStorage.getItem('quizStudentName') || '').trim().toUpperCase(); }catch(e){}
-    const old = document.getElementById('vcWrongNote');
+    const old = document.getElementById('vcProgress');
     if(old) old.remove();
-    grid.querySelectorAll('.vc-card.wrong').forEach(c => { c.classList.remove('wrong'); c.removeAttribute('data-wrong-by'); });
+    const cards = [...grid.querySelectorAll('.vc-card')];
+    cards.forEach(c => { c.classList.remove('wrong', 'mastered'); c.removeAttribute('data-tag'); });
+    grid.classList.remove('all-mastered');
     if(!name) return;
-    const people = /^(PARENT|TEST)$/.test(name) ? [name, 'BRANDEN', 'MELISSA'] : [name];
-    const by = new Map();   // 卡片 → 答錯的人
-    const lines = [];
+    const parent = /^(PARENT|TEST)$/.test(name);
+    const people = parent ? ['BRANDEN', 'MELISSA'] : [name];
+    const wordOf = c => c.querySelector('.vc-word').textContent.trim();
+    const n = cards.length, tags = new Map(), rows = [];
     people.forEach(p => {
       let rec = null;
-      try{ rec = JSON.parse(localStorage.getItem('vocabWrong:' + location.pathname + ':' + p) || 'null'); }catch(e){}
-      if(!rec || !rec.words || !rec.words.length) return;
-      const cands = rec.words.map(s => String(s || '').toLowerCase().trim()).filter(Boolean);
-      const hit = w => cands.some(c => c === w || c.split(/[^a-z'-]+/).includes(w) ||
-        (w.length >= 3 && c.indexOf(' ') < 0 && c.startsWith(w) && c.length - w.length <= 4));   // stamps、swimming、dishes
-      const words = [];
-      grid.querySelectorAll('.vc-card').forEach(card => {
-        const el = card.querySelector('.vc-word');
-        if(el && hit(el.textContent.toLowerCase().trim())){ by.set(card, (by.get(card) || []).concat(p)); words.push(el.textContent.trim()); }
+      try{ rec = JSON.parse(localStorage.getItem('vocabProgress:' + location.pathname + ':' + p) || 'null'); }catch(e){}
+      if(!rec){ rows.push('<div class="vp-row"><b>' + esc(p) + '</b>：還沒做過這個單元的測驗。按「📝 單元測驗」開始，每個字都會考到。</div>'); return; }
+      const ms = new Set(rec.mastered || []), wr = new Set(rec.wrong || []);
+      const m = cards.filter(c => ms.has(wordOf(c))).length;
+      const redWords = cards.filter(c => wr.has(wordOf(c)) && !ms.has(wordOf(c))).map(wordOf);
+      const pct = Math.round(m / n * 100);
+      if(!parent) cards.forEach(c => {
+        const w = wordOf(c);
+        if(ms.has(w)){ c.classList.add('mastered'); tags.set(c, '已答對'); }
+        else if(wr.has(w)){ c.classList.add('wrong'); tags.set(c, p + ' 答錯'); }
       });
-      if(words.length) lines.push(p + ' 上次測驗（' + new Date(rec.at).toLocaleDateString() + '）答錯 ' + words.length + ' 個：' + words.join('、'));
+      else redWords.forEach(w => { const c = cards.find(x => wordOf(x) === w); c.classList.add('wrong'); tags.set(c, (tags.get(c) ? tags.get(c).replace(' 答錯', '') + '、' : '') + p + ' 答錯'); });
+      if(m >= n){
+        if(!parent) grid.classList.add('all-mastered');
+        rows.push('<div class="vp-row vp-done"><b>' + esc(p) + '</b>：🎉 ' + n + ' 個字全部答對！這個單元不用再背了。</div>');
+        return;
+      }
+      rows.push('<div class="vp-row"><b>' + esc(p) + '</b>：答對率 <b>' + pct + '%</b>（答對 ' + m + ' / ' + n + ' 個字），' +
+        '<span class="vp-red">還有 ' + redWords.length + ' 個紅字要複習</span>' + (n - m - redWords.length ? '，' + (n - m - redWords.length) + ' 個還沒考到' : '') +
+        '<div class="vp-bar"><i style="width:' + pct + '%"></i></div>' +
+        (redWords.length ? '<div class="vp-words">要複習：' + redWords.map(esc).join('、') + '</div>' : '') +
+        '<div class="vp-tip">複習紅色的字後，再按「📝 單元測驗」——只會考還沒答對的字。（' + new Date(rec.at).toLocaleDateString() + ' 測驗）</div></div>');
     });
-    if(!lines.length) return;
-    by.forEach((ps, card) => { card.classList.add('wrong'); card.setAttribute('data-wrong-by', ps.join('、') + ' 答錯'); });
-    const note = document.createElement('div');
-    note.id = 'vcWrongNote';
-    note.className = 'vc-wrong-note';
-    note.innerHTML = '🔴 紅框的字是上次測驗答錯的字，再多聽、多唸幾次！<br>' + lines.map(l => l.replace(/[&<>]/g, '')).join('<br>');
-    grid.parentNode.insertBefore(note, grid);
+    tags.forEach((t, c) => c.setAttribute('data-tag', t));
+    const box = document.createElement('div');
+    box.id = 'vcProgress';
+    box.className = 'vc-progress';
+    box.innerHTML = '<div class="vp-title">📊 我的學習進度</div>' + rows.join('');
+    grid.parentNode.insertBefore(box, grid);
   }
-  markWrong();
-  window.addEventListener('pageshow', markWrong);
+  showProgress();
+  window.addEventListener('pageshow', showProgress);
 
   document.addEventListener('click', e => {
     const say = e.target.closest('.vc-say');
