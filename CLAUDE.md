@@ -16,8 +16,16 @@
 2. 昨天（11-03 晚上）在家做 Unit 3–12 時，**`tools/vocab_gen/w2000_u03.py`～`w2000_u12.py` 和 `build_vocab.py` 的 `UNITS` 修改沒有 Push**。Pull 後把這些檔 commit、Push；`build_vocab.py` 的 `UNITS` 要包含 **u01～u16**（公司做的 `w2000_u13.py`～`w2000_u16.py` 已在 repo 裡）。公司這邊 `build_vocab.py` 只改了快取版本字串（`vocab.css?v=20261104c` 等），合併時保留這些新版本號。
 3. 合併後可以重新跑一次 `python tools/vocab_gen/build_vocab.py` 確認 16 個單元都能產生（語音 mp3 已存在會跳過，不必重錄）。
 4. 下一個單字單元是 **Unit 17 Places & locations**（課本第 1 份 PDF 第 56 頁起）。
-5. 之前就有的：把 `points.js` 複製回 english-quiz-plan 的主檔（見下方待辦）。
+5. 之前就有的：把 `points.js` 複製回 english-quiz-plan 的主檔（見下方待辦）。**11-04 points.js 又改了（Cloudflare 登入），複製最新版。**
+6. Cloudflare 登入（見下一節「登入改成 Cloudflare Access＋Google 帳號」）：使用者照首頁 repo `CLOUDFLARE-SETUP.md` 設後台；第二階段要改 plan repo 的 Code.gs（加 `cfUser_`）。
 
+## 登入改成 Cloudflare Access＋Google 帳號（2026-11-04 規劃，程式已做好、等使用者設定後台）
+
+- 使用者選定：學習網站跟股票網站一樣用 Cloudflare 保護（但兩邊完全分開），BRANDEN、MELISSA 用自己的 Google 帳號、家長用自己的 Gmail 登入，不再「選名字＋4 位數 PIN」。
+- 6 個 repo 由首頁 repo（jenlin2002.github.io）的 GitHub Actions「部署到 Cloudflare Pages」合成一個網站（Pages 專案 `learn`，路徑和 GitHub Pages 一樣），`functions/api/me.js` 用 Access 憑證＋`USER_MAP`（Cloudflare 變數，email 不放 repo）回傳登入者名字。
+- `points.js`（各站副本內容相同）：在 Cloudflare 網址打開時問 `/api/me`，自動設定 `quizStudentName`、不出現「你是誰？」關卡；第一階段每台裝置第一次只問一次自己的 PIN；第二階段（Code.gs 加 `cfUser_`、Cloudflare 設 `POINTS_SECRET`）點數改走 `/api/points`，不用 PIN。登出會連 Google 登入一起登出。在 jenlin2002.github.io 舊網址一切照舊。
+- 後台設定步驟、測試方法、第二階段 Code.gs 改法都在首頁 repo 的 `CLOUDFLARE-SETUP.md`。密碼、金鑰一律使用者自己在 Cloudflare／GitHub／Google 後台輸入。
+- 之後新做的頁面照舊用相對路徑；子站寫死的 `https://jenlin2002.github.io/` 部署時會自動改成 `/`。Cloudflare Pages 單檔上限 25 MB、整站 20000 個檔（2026-11-04 約 15300 個），大檔自動轉到 GitHub 原始檔。
 ## 使用者與工作方式（四個 repo 共用同一段，2026-10-13）
 
 - 使用者在三個地方用 Claude Code：**家裡電腦、公司電腦**（兩台都有 GitHub Desktop，用它 Pull／Push）、**外出用手機 App（雲端版）**。學習成長網站已經做很久了，不用從頭介紹。
