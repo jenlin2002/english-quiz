@@ -12,6 +12,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8766", "--directory", "E:\\GitHub\\vocab-king"],
       "port": 8766
+    },
+    {
+      "name": "home",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8767", "--directory", "E:\\GitHub\\jenlin2002.github.io"],
+      "port": 8767
     }
   ]
 }
