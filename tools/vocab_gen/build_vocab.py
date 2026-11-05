@@ -16,7 +16,8 @@ from sl import ex, card, row, ul, cards, two, div, note, lead, qas, table, top5,
 sys.path.insert(0, HERE)
 import w2000_u01  # noqa: E402
 import w2000_u02  # noqa: E402
-UNITS = (w2000_u01, w2000_u02)   # 新單元做好後加在這裡
+import w2000_u13, w2000_u14, w2000_u15, w2000_u16  # noqa: E402,E401
+UNITS = (w2000_u01, w2000_u02, w2000_u13, w2000_u14, w2000_u15, w2000_u16)   # 新單元做好後加在這裡（u03–u12 是直接改 HTML 做的，沒有資料檔）
 
 BOOKS = {'w2000': '主題 2000 字', 'wordup': 'WORD UP 單字複習'}   # wordup：只用 WORD UP 的英文字表，內容自編
 E = html.escape
