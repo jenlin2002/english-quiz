@@ -14,6 +14,12 @@
       "port": 8766
     },
     {
+      "name": "exam-bank",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8532", "--directory", "E:\\GitHub\\exam-bank"],
+      "port": 8532
+    },
+    {
       "name": "home",
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8767", "--directory", "E:\\GitHub\\jenlin2002.github.io"],
