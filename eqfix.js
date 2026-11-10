@@ -6,6 +6,7 @@
  *   3. 還有錯題沒訂正完：不能離開這一頁、不能換測驗分頁、不能「重新測驗」；測試帳號 TEST、家長 PARENT 有「🚪 立即離開」。
  *   4. 試算表：第 N 次訂正只送訂正的題目，mode 後加「【第 N 次訂正】」；全部訂正完成另送「【全部訂正完成】補送 1 點」。
  *   5. 暫存：每答一題自動暫存（localStorage eqDraft:頁面:登入者），上方「💾 暫存」；下次打開、切到同一個測驗自動接續到下一題；送出成績後清掉。
+ * 2026-11-10：每題先選答案（可改），按「送出成績」才對答案；答對馬上出現「下一題」，答錯要聽完解說語音才出現「下一題」（gate()）。
  * 頁面的 questions／history／current… 是各頁 <script> 的全域變數，這支在 points.js 後面載入、包住 renderResult／syncResult／switchMode／handleAnswer。 */
 (function () {
   if (typeof renderResult !== 'function' || typeof switchMode !== 'function') return;
@@ -92,7 +93,47 @@
     origReset();
   };
   var origRQ = renderQuestion;
-  renderQuestion = function () { origRQ(); tagFix(); };
+  renderQuestion = function () { origRQ(); tagFix(); gate(); };
+
+  // ---- 先選、按「送出成績」才對答案（2026-11-10 使用者要求）----
+  // 點選項只是選（可以改），按「送出成績」才判對錯；答對馬上出現「下一題」，答錯要聽完解說才出現「下一題」。
+  var gcss = document.createElement('style');
+  gcss.textContent = '.option-btn.fk-picked{border-color:#2f6fb5 !important;background:rgba(47,111,181,.10) !important;box-shadow:0 0 0 2px #2f6fb5 inset;font-weight:700}'
+    + '.next-btn.fk-wait:not(.active){display:none}';
+  document.head.appendChild(gcss);
+  var fkSel = -1;
+  function gate() {
+    var nb = document.getElementById('nextBtn');
+    if (!nb || !card.querySelector('.option-btn')) return;
+    fkSel = -1;
+    nb.dataset.fkStage = 'pick';
+    nb.textContent = '送出成績';
+    nb.classList.remove('active', 'fk-wait');
+  }
+  card.addEventListener('click', function (e) {
+    var nb = document.getElementById('nextBtn');
+    if (!nb || nb.dataset.fkStage !== 'pick') return;
+    var ob = e.target.closest('.option-btn');
+    if (ob) {
+      e.stopImmediatePropagation(); e.stopPropagation();
+      if (ob.disabled) return;
+      card.querySelectorAll('.option-btn').forEach(function (b) { b.classList.remove('fk-picked'); });
+      ob.classList.add('fk-picked');
+      fkSel = parseInt(ob.dataset.i, 10);
+      nb.classList.add('active');
+      return;
+    }
+    if (e.target.closest('#nextBtn')) {
+      e.stopImmediatePropagation(); e.stopPropagation();
+      if (fkSel < 0) return;
+      nb.dataset.fkStage = 'done';
+      nb.classList.remove('active'); nb.classList.add('fk-wait');
+      nb.textContent = current === questions.length - 1 ? '看成績' : '下一題';
+      card.querySelectorAll('.option-btn').forEach(function (b) { b.classList.remove('fk-picked'); });
+      handleAnswer(fkSel);
+    }
+  }, true);
+  gate();   // 頁面載入時第一題已經畫好了
 
   // 還有錯題沒訂正完：不能換測驗分頁、不能離開這一頁
   var origSwitch = switchMode;
