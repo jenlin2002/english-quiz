@@ -18,6 +18,7 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
   const VOCAB = /^Vocab/.test(CFG.label || '');   // 單字區測驗：依登入者的進度出題（見 prepVocab）
+  if(VOCAB && !window.Cards){ const cs = document.createElement('script'); cs.src = '/cards/cards.js?v=20261117a'; document.head.appendChild(cs); }   // 我的字卡：答錯的字自動加入「錯題」
   let V = null;                                    // 單字區：{ key, cards, mastered:Set, wrong:Set, retest }
 
   // 題目攤平成一題一題（每題一個分數）；單字區要先等 prepVocab() 決定這次考哪些題
@@ -63,7 +64,11 @@
     try{
       const html = await (await fetch(CFG.back, { cache:'no-cache' })).text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
-      cards = [...doc.querySelectorAll('.vc-card')].map(c => ({ w: c.querySelector('.vc-word').textContent.trim(), zh: (c.querySelector('.vc-zh') || {}).textContent || '' }));
+      const back = new URL(CFG.back, location.href), tx = (c, s) => { const x = c.querySelector(s); return x ? x.textContent.trim() : ''; };
+      const ab = (u) => u ? new URL(u, back).pathname : '';
+      cards = [...doc.querySelectorAll('.vc-card')].map(c => ({ w: c.querySelector('.vc-word').textContent.trim(), zh: (c.querySelector('.vc-zh') || {}).textContent || '',
+        pos: tx(c, '.vc-pos'), ex: tx(c, '.vc-en'), exzh: tx(c, '.vc-exzh'), img: ab((c.querySelector('.vc-photo') || { getAttribute(){ return ''; } }).getAttribute('src')),
+        audio: ab((c.querySelector('.vc-say:not(.sm)') || { dataset: {} }).dataset.src) }));   // pos、例句、圖片、語音給「我的字卡」用
     }catch(e){}
     if(!cards.length) return;
     const page = new URL(CFG.back, location.href).pathname;
@@ -117,6 +122,14 @@
     badW.forEach(w => { V.mastered.delete(w); V.wrong.add(w); mine[w.toLowerCase()] = 'w'; });
     set('vocabWords:' + V.user, JSON.stringify(mine));
     set(V.key, JSON.stringify({ mastered: [...V.mastered], wrong: [...V.wrong], total: V.cards.length, at: Date.now() }));
+  }
+  // 答錯的字自動加入「我的字卡」的「錯題」分類（/cards/cards.js；只有單字區測驗、有登入時）
+  function addWrongCards(){
+    if(!V || !window.Cards) return;
+    const bad = new Set(); S.firstWrong.forEach(i => (items[i]._words || []).forEach(w => bad.add(w.toLowerCase())));
+    const list = V.cards.filter(c => bad.has(c.w.toLowerCase())).map(c => ({ en: c.w, zh: String(c.zh).trim(), pos: c.pos, ex: c.ex, exzh: c.exzh, img: c.img, audio: c.audio,
+      src: '國中2000字｜' + String(CFG.title || '').replace(/^單字區\s*/, ''), url: new URL(CFG.back, location.href).pathname }));
+    if(list.length) Cards.addWrong(list);
   }
   function vocabInfo(){
     if(!V) return '';
@@ -276,6 +289,7 @@
     grade(all);
     S.firstWrong = all.filter(i => !S.ok[i]);
     saveProgress();   // 單字區：只看第一次作答，答對的字變灰、答錯的字變紅（訂正後也還是紅，下次再考）
+    addWrongCards();
     const right = total - S.firstWrong.length;
     S.phase = S.firstWrong.length ? 'graded' : 'done';
     if(S.phase === 'done') del(draftKey()); else saveDraft();

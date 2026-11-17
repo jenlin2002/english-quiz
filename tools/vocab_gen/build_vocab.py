@@ -75,7 +75,7 @@ CARDS_TPL = '''<!DOCTYPE html>
     <a class="next" href="{tag}-quiz.html"><small>NEXT</small>📝 單元測驗 →</a>
   </div>
 </div>
-<script src="../vocab.js?v=20261104e"></script>
+<script src="../vocab.js?v=20261117a"></script>
 </body>
 </html>
 '''
@@ -243,7 +243,7 @@ QUIZ_TPL = '''<!DOCTYPE html>
 <script>
 window.GQUIZ = {data};
 </script>
-<script src="../../grammar2/gquiz.js?v=20261104e"></script>
+<script src="../../grammar2/gquiz.js?v=20261117a"></script>
 <script src="../../points.js"></script>
 </body>
 </html>
