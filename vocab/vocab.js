@@ -132,4 +132,22 @@
     const peek = e.target.closest('.vc-zh, .vc-exzh, .vc-word, .vc-en');
     if(peek && (grid.classList.contains('hide-zh') || grid.classList.contains('hide-en'))) peek.classList.toggle('peek');
   });
+
+  // ---- 我的字卡（2026-11-17）：每張單字卡加「☆ 存字卡」（首頁 repo 的 /cards/cards.js，要登入、用存摺同一個後端）----
+  const abs = (u) => { try{ return u ? new URL(u, location.href).pathname : ''; }catch(e){ return ''; } };
+  const txt = (el, sel) => { const x = el.querySelector(sel); return x ? x.textContent.trim() : ''; };
+  function addStars(){
+    if(!window.Cards) return;
+    grid.querySelectorAll('.vc-card').forEach(c => {
+      if(c.querySelector('.ck-star')) return;
+      const img = c.querySelector('.vc-photo'), say = c.querySelector('.vc-say:not(.sm)');
+      const card = { en: txt(c, '.vc-word'), zh: txt(c, '.vc-zh'), pos: txt(c, '.vc-pos'), ex: txt(c, '.vc-en'), exzh: txt(c, '.vc-exzh'),
+        img: img ? abs(img.getAttribute('src')) : '', audio: say ? abs(say.dataset.src) : '', src: '國中2000字｜' + document.title.replace(/[｜|].*$/, '').trim(), url: location.pathname };
+      const head = c.querySelector('.vc-head');
+      if(card.en && head) head.insertAdjacentHTML('beforeend', ' ' + Cards.btn(card));
+    });
+  }
+  function need(src, test){ if(test()) return Promise.resolve(); return new Promise(r => { const s = document.createElement('script'); s.src = src; s.onload = s.onerror = r; document.head.appendChild(s); }); }
+  need(new URL('../points.js', document.currentScript ? document.currentScript.src : location.href).href, () => window.Points)
+    .then(() => need('/cards/cards.js?v=20261117a', () => window.Cards)).then(addStars);
 })();

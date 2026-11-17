@@ -45,6 +45,7 @@
     if (!fx || fx.mode !== mode || fx.round === 0) {
       fx = { mode: mode, orig: questions, idx: questions.map(function (q, i) { return i; }), round: 0, first: correctCount + ' / ' + questions.length };
       clearDraft(mode);
+      if (mode === 'vocab' && window.Cards) Cards.addWrong(wrongNow.map(function (i) { return vocabCard(questions[i]); }));   // 答錯的單字自動加入「錯題」字卡
     }
     fx.wrong = wrongNow.map(function (i) { return fx.idx[i]; });
     origResult();
@@ -92,8 +93,19 @@
     fx = null; pending = false; skipped = false;
     origReset();
   };
+  // ---- 我的字卡（2026-11-17）：單字題的單字旁加「☆ 存字卡」；答錯的單字自動加入「錯題」（/cards/cards.js）----
+  function vocabCard(q) {
+    return { en: q.word, zh: String(q.options[q.answer] || '').trim(), ex: q.example || '', exzh: q.exampleZh || '',
+      src: '英文測驗｜' + (typeof WEEK_LABEL !== 'undefined' ? WEEK_LABEL : document.title), url: location.pathname };
+  }
+  function starVocab() {
+    if (mode !== 'vocab' || !window.Cards || current >= questions.length) return;
+    var b = document.getElementById('vocabWordBtn');
+    if (b && !b.parentNode.querySelector('.ck-star')) b.parentNode.insertAdjacentHTML('beforeend', Cards.btn(vocabCard(questions[current]), true));
+  }
+  if (!window.Cards) { var cs = document.createElement('script'); cs.src = '/cards/cards.js?v=20261117a'; cs.onload = starVocab; document.head.appendChild(cs); }
   var origRQ = renderQuestion;
-  renderQuestion = function () { origRQ(); tagFix(); gate(); };
+  renderQuestion = function () { origRQ(); tagFix(); gate(); starVocab(); };
 
   // ---- 先選、按「送出成績」才對答案（2026-11-10 使用者要求）----
   // 點選項只是選（可以改），按「送出成績」才判對錯；答對馬上出現「下一題」，答錯要聽完解說才出現「下一題」。
