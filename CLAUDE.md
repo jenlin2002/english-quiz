@@ -15,7 +15,7 @@
 1. GitHub Desktop：english-quiz、vocab-king 都先 **Pull**。
 2. ✅（2026-11-04 晚上家裡電腦已處理）查過家裡電腦：**`w2000_u03.py`～`w2000_u12.py` 從來不存在**——11-03 晚上那次（在 `H:\2000單字` 開的 Claude）是拿 Unit 2 的 HTML 當模板直接做 u03～u12 的網頁，沒有用 `build_vocab.py`。所以 `UNITS` 現在是 u01、u02、u13～u16（快取版本照公司的 `20261104e`），重跑 `build_vocab.py` 6 個單元都能產生，網頁內容和 repo 一致。家裡另外做的一份 Unit 13 以公司版為準，舊的家裡版備份在家裡電腦 `H:\githubdata\english-quiz-本機備份-20261104`（不在 repo）。**u03～u12 之後若要改，直接改 HTML，或另外補資料檔。**
 3. （已做，見上一項）
-4. 下一個單字單元是 **Unit 17 Places & locations**（課本第 1 份 PDF 第 56 頁起）。**2026-11-18 在公司電腦曾照教育部 2000 字試做 Unit 17（當時 I: 槽沒連上，找不到課本），使用者要求全部退回，改在家裡電腦照課本做**（**家裡電腦的課本在本機 H: 槽**，11-03 就是在 `H:\2000單字` 做 u03～u12，從那裡找；找不到再問使用者。公司電腦的 H: 是 Google 雲端硬碟，不是這個；公司電腦要等 I: 槽連上才讀得到課本）。照片做法：在內建瀏覽器開 Pexels 搜尋頁，用頁面內 `fetch('/search/<關鍵字>/?orientation=landscape')` 一次抓所有字的候選，Python 下載縮圖（`https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&w=400`）拼成對照表逐張看過再挑。
+4. 下一個單字單元是 **Unit 17 Places & locations**（課本第 1 份 PDF 第 56 頁起）。**2026-11-18 在公司電腦曾照教育部 2000 字試做 Unit 17（當時 I: 槽沒連上，找不到課本），使用者要求全部退回，改在家裡電腦照課本做**（**家裡電腦的課本在本機 H: 槽**，11-03 就是在 `H:\2000單字` 做 u03～u12，從那裡找；找不到再問使用者。注意 `H:\2000單字\vocab\`（w2000 資料夾＋index.html，11-04 01:13）是 11-03 那次做網頁的**舊工作副本，不是最新版**，網頁一律以 repo 為準，不要從那裡複製回 repo。公司電腦的 H: 是 Google 雲端硬碟，不是這個；公司電腦要等 I: 槽連上才讀得到課本）。照片做法：在內建瀏覽器開 Pexels 搜尋頁，用頁面內 `fetch('/search/<關鍵字>/?orientation=landscape')` 一次抓所有字的候選，Python 下載縮圖（`https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&w=400`）拼成對照表逐張看過再挑。
 5. 之前就有的：把 `points.js` 複製回 english-quiz-plan 的主檔（見下方待辦）。**11-04 points.js 又改了（Cloudflare 登入），複製最新版。**
 6. Cloudflare 登入（見下一節「登入改成 Cloudflare Access＋Google 帳號」）：使用者照首頁 repo `CLOUDFLARE-SETUP.md` 設後台；第二階段要改 plan repo 的 Code.gs（加 `cfUser_`）。
 
