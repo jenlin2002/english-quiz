@@ -16,8 +16,8 @@ from sl import ex, card, row, ul, cards, two, div, note, lead, qas, table, top5,
 sys.path.insert(0, HERE)
 import w2000_u01  # noqa: E402
 import w2000_u02  # noqa: E402
-import w2000_u13, w2000_u14, w2000_u15, w2000_u16, w2000_u17, w2000_u18, w2000_u19  # noqa: E402,E401
-UNITS = (w2000_u01, w2000_u02, w2000_u13, w2000_u14, w2000_u15, w2000_u16, w2000_u17, w2000_u18, w2000_u19)   # 新單元做好後加在這裡（u03–u12 是直接改 HTML 做的，沒有資料檔）
+import w2000_u13, w2000_u14, w2000_u15, w2000_u16, w2000_u17, w2000_u18, w2000_u19, w2000_u20  # noqa: E402,E401
+UNITS = (w2000_u01, w2000_u02, w2000_u13, w2000_u14, w2000_u15, w2000_u16, w2000_u17, w2000_u18, w2000_u19, w2000_u20)   # 新單元做好後加在這裡（u03–u12 是直接改 HTML 做的，沒有資料檔）
 
 BOOKS = {'w2000': '主題 2000 字', 'wordup': 'WORD UP 單字複習'}   # wordup：只用 WORD UP 的英文字表，內容自編
 E = html.escape
@@ -107,8 +107,17 @@ def card_html(i, w, tag):
             '      <div class="vc-ex"><span class="vc-en">%s</span>'
             '<button class="vc-say sm" type="button" data-src="audio/%s/e-%s.mp3" data-say="%s" aria-label="唸例句">🔊</button>'
             '<span class="vc-exzh">%s</span></div>\n'
-            '    </div>' % (pic, i + 1, E(w['w']), tag, n, E(w['w'], quote=True), E(w['pos']), E(w['zh']), noteh,
-                           E(w['ex']), tag, n, E(w['ex'], quote=True), E(w['exzh'])))
+            '    </div>' % (pic, i + 1, E(w['w']), tag, n, E(say_w(w), quote=True), E(w['pos']), E(w['zh']), noteh,
+                           E(w['ex']), tag, n, E(say_ex(w), quote=True), E(w['exzh'])))
+
+
+def say_w(w):
+    """語音唸的文字：資料檔可用 'say'／'exsay' 指定唸法（例如 R.O.C. 唸成 R O C），沒有就照拼法。"""
+    return w.get('say', w['w'])
+
+
+def say_ex(w):
+    return w.get('exsay', w['ex'])
 
 
 def focus_items(u):
@@ -161,8 +170,8 @@ def pic_grid(grp, tag):
         out.append('<div class="pc">%s<div class="pw">%s %s</div>'
                    '<div class="pz">%s<small>%s</small></div>'
                    '<div class="pe">%s %s<br>%s</div></div>'
-                   % (pic, E(w['w']), btn(w['w']), E(w['zh']), E(w['pos']),
-                      E(w['ex']), btn(_say(E(w['ex']))), E(w['exzh'])))
+                   % (pic, E(w['w']), btn(say_w(w)), E(w['zh']), E(w['pos']),
+                      E(w['ex']), btn(_say(E(say_ex(w)))), E(w['exzh'])))
     return '<div class="pg">%s</div>' % ''.join(out)
 
 
@@ -185,8 +194,9 @@ def slides(u, tag, book_name):
         S.append(section(f['title'], body + (note(E(f['note'])) if f.get('note') else '')))
     step = max(1, len(ws) // 16)
     sample = ws[::step][:16]   # 字多時平均抽 16 個
-    S.append(section('快問快答：中文 → 英文', qas([(w['zh'], w['w']) for w in sample[:8]])))
-    S.append(section('快問快答：英文 → 中文', qas([(w['w'], w['zh']) for w in sample[8:16]])))
+    half = 8 if len(sample) > 8 else (len(sample) + 1) // 2   # 8 個字以下的小單元平分成兩頁，英文 → 中文才不會是空的
+    S.append(section('快問快答：中文 → 英文', qas([(w['zh'], w['w']) for w in sample[:half]])))
+    S.append(section('快問快答：英文 → 中文', qas([(w['w'], w['zh']) for w in sample[half:16]])))
     S.append(section('學完了！接下來', two(card('複習方法', ul([
         '回到「📗 單字卡」，按「遮中文」自己考自己',
         '再按「遮英文」，看中文說出英文',
@@ -269,8 +279,8 @@ def build(mod):
     adir = os.path.join(out, 'audio', tag)
     jobs = []
     for i, w in enumerate(u['words']):
-        jobs.append([w['w'], os.path.join(adir, 'w-%02d.mp3' % (i + 1))])
-        jobs.append([w['ex'], os.path.join(adir, 'e-%02d.mp3' % (i + 1))])
+        jobs.append([say_w(w), os.path.join(adir, 'w-%02d.mp3' % (i + 1))])
+        jobs.append([say_ex(w), os.path.join(adir, 'e-%02d.mp3' % (i + 1))])
     jobs += [[s, os.path.join(adir, 'slide-%02d.mp3' % (i + 1))] for i, s in enumerate(says)]
     return jobs
 
