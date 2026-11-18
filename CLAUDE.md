@@ -1,7 +1,7 @@
 # english-quiz 工作紀錄與說明
 
 這個檔案是給「下一次接手的人」看的（包括在家裡電腦開 Claude Code 時，Claude 會自動讀這個檔案）。
-最後更新：2026-11-18（家裡電腦：單字區新做 Unit 17 地點與位置、Unit 18 交通，見「國中單字分科區」；同一天電腦版讀了 BRANDEN 的 WORD UP 熟悉度＋GEPT 成績，見「WORD UP（已購買的網頁版）整合」一節）。
+最後更新：2026-11-18（家裡電腦：單字區新做 Unit 17 地點與位置、Unit 18 交通、Unit 19 尺寸與測量，見「國中單字分科區」；同一天電腦版讀了 BRANDEN 的 WORD UP 熟悉度＋GEPT 成績，見「WORD UP（已購買的網頁版）整合」一節）。
 
 ## ⭐ 最新進度與回家要做的事（2026-11-04 公司電腦，回家電腦先讀這節）
 
@@ -15,7 +15,7 @@
 1. GitHub Desktop：english-quiz、vocab-king 都先 **Pull**。
 2. ✅（2026-11-04 晚上家裡電腦已處理）查過家裡電腦：**`w2000_u03.py`～`w2000_u12.py` 從來不存在**——11-03 晚上那次（在 `H:\2000單字` 開的 Claude）是拿 Unit 2 的 HTML 當模板直接做 u03～u12 的網頁，沒有用 `build_vocab.py`。所以 `UNITS` 現在是 u01、u02、u13～u16（快取版本照公司的 `20261104e`），重跑 `build_vocab.py` 6 個單元都能產生，網頁內容和 repo 一致。家裡另外做的一份 Unit 13 以公司版為準，舊的家裡版備份在家裡電腦 `H:\githubdata\english-quiz-本機備份-20261104`（不在 repo）。**u03～u12 之後若要改，直接改 HTML，或另外補資料檔。**
 3. （已做，見上一項）
-4. ✅（2026-11-18 家裡電腦已照課本做完 **Unit 17 Places & locations**、**Unit 18 Transportation**，見「國中單字分科區」）下一個是 **Unit 19 Sizes & measurements 尺寸與測量**（印刷頁第 65 頁起）。以下是當時的說明：**2026-11-18 在公司電腦曾照教育部 2000 字試做 Unit 17（當時 I: 槽沒連上，找不到課本），使用者要求全部退回，改在家裡電腦照課本做**（**家裡電腦的課本在本機 H: 槽**，11-03 就是在 `H:\2000單字` 做 u03～u12，從那裡找；找不到再問使用者。注意 `H:\2000單字\vocab\`（w2000 資料夾＋index.html，11-04 01:13）是 11-03 那次做網頁的**舊工作副本，不是最新版**，網頁一律以 repo 為準，不要從那裡複製回 repo。公司電腦的 H: 是 Google 雲端硬碟，不是這個；公司電腦要等 I: 槽連上才讀得到課本）。照片做法：在內建瀏覽器開 Pexels 搜尋頁，用頁面內 `fetch('/search/<關鍵字>/?orientation=landscape')` 一次抓所有字的候選，Python 下載縮圖（`https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&w=400`）拼成對照表逐張看過再挑。
+4. ✅（2026-11-18 家裡電腦已照課本做完 **Unit 17 Places & locations**、**Unit 18 Transportation**、**Unit 19 Sizes & measurements**，見「國中單字分科區」）下一個是 **Unit 20 Countries and areas 國家與區域**（印刷頁第 69 頁起；同一頁下面接著是 Unit 21 Languages）。以下是當時的說明：**2026-11-18 在公司電腦曾照教育部 2000 字試做 Unit 17（當時 I: 槽沒連上，找不到課本），使用者要求全部退回，改在家裡電腦照課本做**（**家裡電腦的課本在本機 H: 槽**，11-03 就是在 `H:\2000單字` 做 u03～u12，從那裡找；找不到再問使用者。注意 `H:\2000單字\vocab\`（w2000 資料夾＋index.html，11-04 01:13）是 11-03 那次做網頁的**舊工作副本，不是最新版**，網頁一律以 repo 為準，不要從那裡複製回 repo。公司電腦的 H: 是 Google 雲端硬碟，不是這個；公司電腦要等 I: 槽連上才讀得到課本）。照片做法：在內建瀏覽器開 Pexels 搜尋頁，用頁面內 `fetch('/search/<關鍵字>/?orientation=landscape')` 一次抓所有字的候選，Python 下載縮圖（`https://images.pexels.com/photos/<id>/pexels-photo-<id>.jpeg?auto=compress&w=400`）拼成對照表逐張看過再挑。
 5. 之前就有的：把 `points.js` 複製回 english-quiz-plan 的主檔（見下方待辦）。**11-04 points.js 又改了（Cloudflare 登入），複製最新版。**
 6. Cloudflare 登入（見下一節「登入改成 Cloudflare Access＋Google 帳號」）：使用者照首頁 repo `CLOUDFLARE-SETUP.md` 設後台；第二階段要改 plan repo 的 Code.gs（加 `cfUser_`）。
 
@@ -161,6 +161,7 @@
 - **Unit 16 School 學校（2026-11-04 公司電腦）**：76 字、測驗 34 題、49 張照片（抽象動詞、名詞用 emoji）、304 個音檔；重點整理科目不可數、不規則動詞 say／speak／teach／understand／write／read、-ies 複數。**`UNITS` 也要加 `w2000_u16`**。課本 Unit 16 實際在 PDF 第 1 份的第 50–53 頁（PDF 索引 49–52）；Unit 17 Places & locations 從第 56 頁起。
 - **Unit 17 Places & locations 地點與位置（2026-11-18 家裡電腦）**：照課本字表 41 字（課本「學用」PDF 印刷頁第 58–59 頁；家裡電腦的課本在 `H:\2000單字\115[翰林]國中英語單字2000活用練習_課本_學用.pdf`，單一檔案，PDF 頁序＝印刷頁碼－1）。測驗 32 題（①②③④複數⑤例句填空⑥用法；登入後還會自動補⑦），沒登入時用正確答案作答得 32/32；31 張照片（here、there、back、front、left、middle、right、south、north、place 用 emoji）、164 個音檔；重點整理：位置片語（in front of、in the middle of…）、東西南北、問路。`build_vocab.py` 的 `UNITS` 已加 `w2000_u17`（產生時仍用一行指令只產生 Unit 17），已重跑 `build_wordup_index.py`。照片對照表是家裡電腦 `H:\2000單字\tools\cand_sheet.py`（`{"字":[id…]}` → 縮圖拼圖）和 `get_photos.py`（下載、裁 4:3、640×480、寫 PHOTO-CREDITS.md），不在 repo。課本 Unit 18 Transportation 交通從印刷頁第 62 頁開始。
 - **Unit 18 Transportation 交通（2026-11-18 家裡電腦）**：照課本字表 27 字（印刷頁第 62–63 頁）。測驗 33 題（①②③④動詞變化⑤例句填空⑥用法），沒登入時用正確答案作答得 33/33；27 張照片（全部有照片）、108 個音檔；重點整理：by bus／on foot／take／ride／drive、drive／fly／ride 等三態、fast／quickly／slowly／soon。做法同 Unit 17（`UNITS` 已加 `w2000_u18`，已重跑 `build_wordup_index.py`）。課本 Unit 19 Sizes & measurements 尺寸與測量從印刷頁第 65 頁開始。
+- **Unit 19 Sizes & measurements 尺寸與測量（2026-11-18 家裡電腦）**：照課本字表 40 字（印刷頁第 65–66 頁；foot、cup、glass、little、light、short 和前面單元重複，這裡用測量／數量的意思）。測驗 33 題，沒登入時用正確答案作答得 33/33；37 張照片（foot、small、height 用 emoji）、160 個音檔；重點整理：長度重量單位與縮寫、相反詞與比較級、a dozen／a pair of／a piece of。做法同 Unit 17（`UNITS` 已加 `w2000_u19`，已重跑 `build_wordup_index.py`）。課本 Unit 20 Countries and areas 國家與區域從印刷頁第 69 頁開始（短單元，同頁接 Unit 21 Languages）。
 - **單字學習進度：紅字複習、答對變灰（2026-11-04 使用者要求，取代同一天早先的「答錯標紅」）**：
   - 每個登入者各自的進度存在這台裝置 localStorage `vocabProgress:<單字卡頁路徑>:<登入者>` = `{mastered:[第一次就答對的字], wrong:[答錯的字], total, at}`（沒有存到雲端）。
   - `gquiz.js`（label 開頭 `Vocab` 的測驗、有登入時）先 fetch 單字卡頁取得全部單字，`wordsOf()` 找出每題考到哪些字（選擇題看正解與單字題目、填空看正解、「swim → (V-ing)」算原形，允許複數／V-ing）。**第一次測驗每個字都要考到**：課本題目沒考到的字自動補「⑦ 其他單字：看中文選英文」（所以大單元第一次題數多，例如 Unit 16 有 81 題）。之後**只出還有沒答對的字的題目**；對不到單字的題目（the／不填）只在第一次出。只看第一次作答：答對的字變 mastered（灰）、答錯變 wrong（紅），訂正後仍是紅，下次再考。全部答對時測驗頁顯示「全部答對、不用再背」，可「清除紀錄、全部重新測驗」。
