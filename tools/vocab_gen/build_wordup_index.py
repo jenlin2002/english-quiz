@@ -67,6 +67,18 @@ page = '''<!DOCTYPE html>
   .az-bar i.n, .az-leg b.n{ background:#7FA3D1; color:#fff; }
   .az-bar i.e, .az-leg b.e{ background:#E9E0C6; color:#7A6E58; }
   .az-leg{ display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; font-size:13px; font-weight:500; }
+  .gp-h{ font-size:20px; margin:22px 0 10px; color:#F6E7B4; }
+  .gp-box{ padding:12px 16px; border-radius:10px; background:#FFF8E6; color:#3A3226; }
+  .gp-name{ font-weight:700; font-size:16px; margin:6px 0; } .gp-name small{ font-weight:400; color:#8A7D62; margin-left:6px; }
+  .gp-scroll{ overflow-x:auto; margin-bottom:10px; }
+  table.gp{ width:100%%; border-collapse:collapse; background:#FFFDF6; min-width:480px; }
+  table.gp td{ padding:7px 10px; border-bottom:1px solid #EFE6CC; vertical-align:top; }
+  table.gp td:first-child{ white-space:nowrap; }
+  table.gp tr.hd td{ background:#F3EBD2; color:#6B5E44; font-size:13px; font-weight:700; }
+  table.gp small{ color:#8A7D62; margin-left:4px; }
+  .gp-parts{ font-size:12px; color:#8A7D62; margin-top:2px; }
+  .gp-good{ color:#2E7D32; } .gp-mid{ color:#B26A00; } .gp-low{ color:#C62828; } .gp-no, .gp-none{ color:#A89C80; }
+  .gp-note{ font-size:12px; color:#8A7D62; }
   .az-leg b{ display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:5px; vertical-align:-1px; }
 </style>
 </head>
@@ -79,9 +91,13 @@ page = '''<!DOCTYPE html>
   以本站測驗結果為準：灰＝本站答對（已會）、紅＝要複習（本站答錯或 WORD UP 標不熟）、藍＝WORD UP 自己標熟記，還要本站考對才算會。</div>
   <div class="unit-btns">%s</div>
   <div class="az-sum" id="azSum">登入後會顯示你的熟悉度。</div>
+  <h2 class="gp-h">📝 GEPT 初級模擬試題成績（WORD UP 10 回）</h2>
+  <div id="gept" class="gp-box">登入後會顯示 GEPT 模擬試題成績。</div>
+  <h2 class="gp-h">🔤 單字 A–Z 對照表</h2>
   <table class="az">%s</table>
-  <div class="footer-note">只使用 WORD UP 的英文字表與孩子的熟悉度紀錄；本站的中文、例句、題目、語音都是自編。</div>
+  <div class="footer-note">只使用 WORD UP 的英文字表、孩子的熟悉度紀錄與模擬試題答對題數；本站的中文、例句、題目、語音都是自編。</div>
 </div>
+<script src="/dict/dict.js?v=20261118a" defer></script>
 <script>
 // 學生看自己的一欄；家長 PARENT／TEST 看 BRANDEN、MELISSA 兩欄
 (async function(){
@@ -112,6 +128,33 @@ page = '''<!DOCTYPE html>
       parts.map(x => '<span><b class="' + x[0] + '"></b>' + x[1] + ' ' + x[2] + ' 個（' + Math.round(x[2] / all.length * 100) + '%%）</span>').join('') + '</div></div>';
   });
   document.getElementById('azSum').innerHTML = sums.join('') + '<small>（共 ' + all.length + ' 個字）</small>';
+
+  // GEPT 模擬試題成績表（gept.json）：每回聽力、閱讀答對題數（各 30 題）
+  let gp = {};
+  try{ gp = await (await fetch('gept.json', { cache:'no-cache' })).json(); }catch(e){}
+  const P = gp.parts || {}, sum = (a, i) => a.reduce((s, x) => s + x[i], 0);
+  const cell = (arr, names) => {
+    const ok = sum(arr, 0), done = sum(arr, 1), tot = sum(arr, 2);
+    if(!done) return '<td class="gp-no">還沒做</td>';
+    const pct = Math.round(ok / done * 100);
+    return '<td><b class="' + (pct >= 80 ? 'gp-good' : pct >= 60 ? 'gp-mid' : 'gp-low') + '">' + ok + ' / ' + done + '</b>' +
+      (done < tot ? '<small>（做了 ' + done + '／' + tot + ' 題）</small>' : '<small>（' + pct + '%%）</small>') +
+      '<div class="gp-parts">' + arr.map((x, i) => x[1] ? (names[i] ? names[i][0] : '') + ' ' + x[0] + '/' + x[1] : '').filter(Boolean).join('．') + '</div></td>';
+  };
+  const tables = people.map(p => {
+    const u = (gp.users || {})[p];
+    if(!u || !u.rounds || !u.rounds.length) return '<div class="gp-name">' + p + '</div><div class="gp-none">還沒有 GEPT 模擬試題紀錄。</div>';
+    const byNo = {}; u.rounds.forEach(r => byNo[r.round] = r);
+    let rows = '';
+    for(let n = 1; n <= 10; n++){
+      const r = byNo[n];
+      if(!r){ rows += '<tr><td>第 ' + n + ' 回</td><td class="gp-no">還沒做</td><td class="gp-no">還沒做</td><td class="gp-no">—</td></tr>'; continue; }
+      rows += '<tr><td>第 ' + n + ' 回</td>' + cell(r.listening, P.listening || []) + cell(r.reading, P.reading || []) + '<td>' + (r.date || '—') + '</td></tr>';
+    }
+    return '<div class="gp-name">' + p + '<small>（' + (u.read || '') + ' 從 WORD UP 讀取）</small></div>' +
+      '<div class="gp-scroll"><table class="gp"><tr class="hd"><td>回次</td><td>聽力（30 題）</td><td>閱讀（30 題）</td><td>作答日期</td></tr>' + rows + '</table></div>';
+  });
+  document.getElementById('gept').innerHTML = tables.join('') + '<div class="gp-note">答對 / 已做題數；括號是答對率。作答日期 WORD UP 沒有顯示時寫「—」。</div>';
 })();
 </script>
 </body>
