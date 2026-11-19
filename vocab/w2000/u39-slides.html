@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>單字區 主題 2000 字 Unit 39 投影片｜Other adjectives 其他形容詞</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.1)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.6) calc(var(--u)*.9);display:flex;flex-direction:column;gap:calc(var(--u)*.2)}
+.pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
+.pc img.pp{width:100%;height:calc(var(--u)*15);object-fit:cover;object-position:50% 35%;border-radius:calc(var(--u)*.6);display:block}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.3);font-weight:700;color:var(--deep);text-align:center}
+.pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
+.pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
+.pc .pe{font-size:calc(var(--u)*1.3);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc img.pp{height:110px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">VOCABULARY UNIT 39 · SLIDES</div>
+    <h1 class="page">Other adjectives 其他形容詞</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">← 單字區目錄</a>
+    <a class="home-link" href="u39.html">📗 單字卡</a>
+    <a class="quiz-link" href="u39-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 39 · VOCABULARY</div><h1 class="big">其他形容詞</h1><div class="en-sub">Other adjectives</div><div class="venn"><span class="c1">66 個單字</span><span class="c2">聽・唸・用</span></div></section>
+<section class="s paper"><h2>本單元單字一覽</h2><p class="lead">常用的形容詞，共 66 個。可以兩兩一組記相反詞：easy ↔ difficult、safe ↔ dangerous、right ↔ wrong、quiet ↔ noisy。</p><div class="chips"><span class="chip">able</span><span class="chip">afraid</span><span class="chip">bright</span><span class="chip">common</span><span class="chip">convenient</span><span class="chip">correct</span><span class="chip">dangerous</span><span class="chip">dark</span><span class="chip">dead</span><span class="chip">dear</span><span class="chip">different</span><span class="chip">difficult</span><span class="chip">dirty</span><span class="chip">easy</span><span class="chip">else</span><span class="chip">enough</span><span class="chip">excellent</span><span class="chip">favorite</span><span class="chip">fine</span><span class="chip">foreign</span><span class="chip">free</span><span class="chip">fresh</span><span class="chip">glad</span><span class="chip">great</span><span class="chip">hard</span><span class="chip">helpful</span><span class="chip">important</span><span class="chip">interesting</span><span class="chip">loud</span><span class="chip">lucky</span><span class="chip">magic</span><span class="chip">main</span><span class="chip">modern</span><span class="chip">national</span><span class="chip">new</span><span class="chip">noisy</span><span class="chip">only</span><span class="chip">other</span><span class="chip">own</span><span class="chip">OK</span><span class="chip">pop</span><span class="chip">popular</span><span class="chip">possible</span><span class="chip">present</span><span class="chip">public</span><span class="chip">quiet</span><span class="chip">ready</span><span class="chip">real</span><span class="chip">right</span><span class="chip">safe</span><span class="chip">same</span><span class="chip">serious</span><span class="chip">sharp</span><span class="chip">simple</span><span class="chip">sorry</span><span class="chip">special</span><span class="chip">strange</span><span class="chip">sure</span><span class="chip">surprised</span><span class="chip">terrible</span><span class="chip">thick</span><span class="chip">tidy</span><span class="chip">true</span><span class="chip">useful</span><span class="chip">wonderful</span><span class="chip">wrong</span></div><div class="note">每個字都有 🔊，先聽發音、跟著唸，再看例句。</div></section>
+<section class="s paper"><h2>單字 1–4</h2><div class="pg"><div class="pc"><div class="pp">💪</div><div class="pw">able <button class="sentence-btn" type="button" data-say="able" aria-label="播放這個句子">🔊</button></div><div class="pz">能夠的<small>adj.</small></div><div class="pe">I won&#x27;t be able to visit you this weekend. <button class="sentence-btn" type="button" data-say="I won&#x27;t be able to visit you this weekend." aria-label="播放這個句子">🔊</button><br>這週末我沒辦法去看你。</div></div><div class="pc"><div class="pp">😨</div><div class="pw">afraid <button class="sentence-btn" type="button" data-say="afraid" aria-label="播放這個句子">🔊</button></div><div class="pz">害怕的<small>adj.</small></div><div class="pe">Don&#x27;t be afraid of making mistakes. <button class="sentence-btn" type="button" data-say="Don&#x27;t be afraid of making mistakes." aria-label="播放這個句子">🔊</button><br>不要怕犯錯。</div></div><div class="pc"><div class="pp">🌟</div><div class="pw">bright <button class="sentence-btn" type="button" data-say="bright" aria-label="播放這個句子">🔊</button></div><div class="pz">明亮的；聰明的<small>adj.</small></div><div class="pe">Her eyes are big and bright. <button class="sentence-btn" type="button" data-say="Her eyes are big and bright." aria-label="播放這個句子">🔊</button><br>她的眼睛又大又亮。</div></div><div class="pc"><div class="pp">👥</div><div class="pw">common <button class="sentence-btn" type="button" data-say="common" aria-label="播放這個句子">🔊</button></div><div class="pz">常見的；普通的<small>adj.</small></div><div class="pe">John is a very common name. <button class="sentence-btn" type="button" data-say="John is a very common name." aria-label="播放這個句子">🔊</button><br>John 是很常見的名字。</div></div></div></section>
+<section class="s paper"><h2>單字 5–8</h2><div class="pg"><div class="pc"><div class="pp">🏪</div><div class="pw">convenient <button class="sentence-btn" type="button" data-say="convenient" aria-label="播放這個句子">🔊</button></div><div class="pz">方便的<small>adj.</small></div><div class="pe">It&#x27;s convenient to shop on the Internet. <button class="sentence-btn" type="button" data-say="It&#x27;s convenient to shop on the Internet." aria-label="播放這個句子">🔊</button><br>在網路上購物很方便。</div></div><div class="pc"><div class="pp">✔️</div><div class="pw">correct <button class="sentence-btn" type="button" data-say="correct" aria-label="播放這個句子">🔊</button></div><div class="pz">正確的<small>adj.</small></div><div class="pe">Is this answer correct? <button class="sentence-btn" type="button" data-say="Is this answer correct?" aria-label="播放這個句子">🔊</button><br>這個答案正確嗎？</div></div><div class="pc"><div class="pp">⚠️</div><div class="pw">dangerous <button class="sentence-btn" type="button" data-say="dangerous" aria-label="播放這個句子">🔊</button></div><div class="pz">危險的<small>adj.</small></div><div class="pe">Playing on the street is dangerous. <button class="sentence-btn" type="button" data-say="Playing on the street is dangerous." aria-label="播放這個句子">🔊</button><br>在街上玩很危險。</div></div><div class="pc"><div class="pp">🌑</div><div class="pw">dark <button class="sentence-btn" type="button" data-say="dark" aria-label="播放這個句子">🔊</button></div><div class="pz">黑暗的；深色的<small>adj.</small></div><div class="pe">It&#x27;s getting dark. <button class="sentence-btn" type="button" data-say="It&#x27;s getting dark." aria-label="播放這個句子">🔊</button><br>天色漸漸暗了。</div></div></div></section>
+<section class="s paper"><h2>單字 9–12</h2><div class="pg"><div class="pc"><div class="pp">🥀</div><div class="pw">dead <button class="sentence-btn" type="button" data-say="dead" aria-label="播放這個句子">🔊</button></div><div class="pz">死的<small>adj.</small></div><div class="pe">The plant is dead. We forgot to water it. <button class="sentence-btn" type="button" data-say="The plant is dead. We forgot to water it." aria-label="播放這個句子">🔊</button><br>這株植物死了，我們忘了澆水。</div></div><div class="pc"><div class="pp">💌</div><div class="pw">dear <button class="sentence-btn" type="button" data-say="dear" aria-label="播放這個句子">🔊</button></div><div class="pz">親愛的<small>adj.</small></div><div class="pe">Dear Amy, how are you? <button class="sentence-btn" type="button" data-say="Dear Amy, how are you?" aria-label="播放這個句子">🔊</button><br>親愛的 Amy，你好嗎？</div></div><div class="pc"><div class="pp">🔀</div><div class="pw">different <button class="sentence-btn" type="button" data-say="different" aria-label="播放這個句子">🔊</button></div><div class="pz">不同的<small>adj.</small></div><div class="pe">My bike is different from yours. <button class="sentence-btn" type="button" data-say="My bike is different from yours." aria-label="播放這個句子">🔊</button><br>我的腳踏車和你的不一樣。</div></div><div class="pc"><div class="pp">🧗</div><div class="pw">difficult <button class="sentence-btn" type="button" data-say="difficult" aria-label="播放這個句子">🔊</button></div><div class="pz">困難的<small>adj.</small></div><div class="pe">Math is a difficult subject for me. <button class="sentence-btn" type="button" data-say="Math is a difficult subject for me." aria-label="播放這個句子">🔊</button><br>數學對我來說是很難的科目。</div></div></div></section>
+<section class="s paper"><h2>單字 13–16</h2><div class="pg"><div class="pc"><div class="pp">🦠</div><div class="pw">dirty <button class="sentence-btn" type="button" data-say="dirty" aria-label="播放這個句子">🔊</button></div><div class="pz">髒的<small>adj.</small></div><div class="pe">This glass is dirty. <button class="sentence-btn" type="button" data-say="This glass is dirty." aria-label="播放這個句子">🔊</button><br>這個玻璃杯髒了。</div></div><div class="pc"><div class="pp">🙂</div><div class="pw">easy <button class="sentence-btn" type="button" data-say="easy" aria-label="播放這個句子">🔊</button></div><div class="pz">容易的<small>adj.</small></div><div class="pe">The test was easy. <button class="sentence-btn" type="button" data-say="The test was easy." aria-label="播放這個句子">🔊</button><br>考試很簡單。</div></div><div class="pc"><div class="pp">➕</div><div class="pw">else <button class="sentence-btn" type="button" data-say="else" aria-label="播放這個句子">🔊</button></div><div class="pz">其他的；另外的<small>adv./adj.</small></div><div class="pe">Do you need anything else? <button class="sentence-btn" type="button" data-say="Do you need anything else?" aria-label="播放這個句子">🔊</button><br>你還需要別的東西嗎？</div></div><div class="pc"><div class="pp">🆗</div><div class="pw">enough <button class="sentence-btn" type="button" data-say="enough" aria-label="播放這個句子">🔊</button></div><div class="pz">足夠的<small>adj.</small></div><div class="pe">We don&#x27;t have enough time. <button class="sentence-btn" type="button" data-say="We don&#x27;t have enough time." aria-label="播放這個句子">🔊</button><br>我們的時間不夠。</div></div></div></section>
+<section class="s paper"><h2>單字 17–20</h2><div class="pg"><div class="pc"><div class="pp">🌟</div><div class="pw">excellent <button class="sentence-btn" type="button" data-say="excellent" aria-label="播放這個句子">🔊</button></div><div class="pz">優秀的；很棒的<small>adj.</small></div><div class="pe">You did an excellent job! <button class="sentence-btn" type="button" data-say="You did an excellent job!" aria-label="播放這個句子">🔊</button><br>你做得非常好！</div></div><div class="pc"><div class="pp">❤️</div><div class="pw">favorite <button class="sentence-btn" type="button" data-say="favorite" aria-label="播放這個句子">🔊</button></div><div class="pz">最喜愛的<small>adj.</small></div><div class="pe">Blue is my favorite color. <button class="sentence-btn" type="button" data-say="Blue is my favorite color." aria-label="播放這個句子">🔊</button><br>藍色是我最喜歡的顏色。</div></div><div class="pc"><div class="pp">🌤️</div><div class="pw">fine <button class="sentence-btn" type="button" data-say="fine" aria-label="播放這個句子">🔊</button></div><div class="pz">好的；晴朗的<small>adj.</small></div><div class="pe">The weather is fine today. <button class="sentence-btn" type="button" data-say="The weather is fine today." aria-label="播放這個句子">🔊</button><br>今天天氣很好。</div></div><div class="pc"><div class="pp">🌏</div><div class="pw">foreign <button class="sentence-btn" type="button" data-say="foreign" aria-label="播放這個句子">🔊</button></div><div class="pz">外國的<small>adj.</small></div><div class="pe">Can you speak any foreign languages? <button class="sentence-btn" type="button" data-say="Can you speak any foreign languages?" aria-label="播放這個句子">🔊</button><br>你會說任何外語嗎？</div></div></div></section>
+<section class="s paper"><h2>單字 21–24</h2><div class="pg"><div class="pc"><div class="pp">🆓</div><div class="pw">free <button class="sentence-btn" type="button" data-say="free" aria-label="播放這個句子">🔊</button></div><div class="pz">空閒的；免費的<small>adj.</small></div><div class="pe">What do you do in your free time? <button class="sentence-btn" type="button" data-say="What do you do in your free time?" aria-label="播放這個句子">🔊</button><br>你空閒時間做什麼？</div></div><div class="pc"><div class="pp">🥬</div><div class="pw">fresh <button class="sentence-btn" type="button" data-say="fresh" aria-label="播放這個句子">🔊</button></div><div class="pz">新鮮的<small>adj.</small></div><div class="pe">The fish is very fresh. <button class="sentence-btn" type="button" data-say="The fish is very fresh." aria-label="播放這個句子">🔊</button><br>這魚很新鮮。</div></div><div class="pc"><div class="pp">😄</div><div class="pw">glad <button class="sentence-btn" type="button" data-say="glad" aria-label="播放這個句子">🔊</button></div><div class="pz">高興的<small>adj.</small></div><div class="pe">I&#x27;m glad to see you. <button class="sentence-btn" type="button" data-say="I&#x27;m glad to see you." aria-label="播放這個句子">🔊</button><br>我很高興見到你。</div></div><div class="pc"><div class="pp">👍</div><div class="pw">great <button class="sentence-btn" type="button" data-say="great" aria-label="播放這個句子">🔊</button></div><div class="pz">很棒的；偉大的<small>adj.</small></div><div class="pe">That&#x27;s a great idea! <button class="sentence-btn" type="button" data-say="That&#x27;s a great idea!" aria-label="播放這個句子">🔊</button><br>那是個好主意！</div></div></div></section>
+<section class="s paper"><h2>單字 25–28</h2><div class="pg"><div class="pc"><div class="pp">🔨</div><div class="pw">hard <button class="sentence-btn" type="button" data-say="hard" aria-label="播放這個句子">🔊</button></div><div class="pz">困難的；努力的；硬的<small>adj.</small></div><div class="pe">Mr. Li is a hard worker. <button class="sentence-btn" type="button" data-say="Mr. Li is a hard worker." aria-label="播放這個句子">🔊</button><br>李先生是個努力的工作者。</div></div><div class="pc"><div class="pp">🤝</div><div class="pw">helpful <button class="sentence-btn" type="button" data-say="helpful" aria-label="播放這個句子">🔊</button></div><div class="pz">有幫助的<small>adj.</small></div><div class="pe">Thank you. You were very helpful. <button class="sentence-btn" type="button" data-say="Thank you. You were very helpful." aria-label="播放這個句子">🔊</button><br>謝謝你，你幫了大忙。</div></div><div class="pc"><div class="pp">❗</div><div class="pw">important <button class="sentence-btn" type="button" data-say="important" aria-label="播放這個句子">🔊</button></div><div class="pz">重要的<small>adj.</small></div><div class="pe">English is an important language. <button class="sentence-btn" type="button" data-say="English is an important language." aria-label="播放這個句子">🔊</button><br>英文是很重要的語言。</div></div><div class="pc"><div class="pp">🤩</div><div class="pw">interesting <button class="sentence-btn" type="button" data-say="interesting" aria-label="播放這個句子">🔊</button></div><div class="pz">有趣的<small>adj.</small></div><div class="pe">This book is very interesting. <button class="sentence-btn" type="button" data-say="This book is very interesting." aria-label="播放這個句子">🔊</button><br>這本書很有趣。</div></div></div></section>
+<section class="s paper"><h2>單字 29–32</h2><div class="pg"><div class="pc"><div class="pp">📢</div><div class="pw">loud <button class="sentence-btn" type="button" data-say="loud" aria-label="播放這個句子">🔊</button></div><div class="pz">大聲的<small>adj.</small></div><div class="pe">The music is too loud. <button class="sentence-btn" type="button" data-say="The music is too loud." aria-label="播放這個句子">🔊</button><br>音樂太大聲了。</div></div><div class="pc"><div class="pp">🍀</div><div class="pw">lucky <button class="sentence-btn" type="button" data-say="lucky" aria-label="播放這個句子">🔊</button></div><div class="pz">幸運的<small>adj.</small></div><div class="pe">You are lucky to have such good friends. <button class="sentence-btn" type="button" data-say="You are lucky to have such good friends." aria-label="播放這個句子">🔊</button><br>你真幸運，有這麼好的朋友。</div></div><div class="pc"><div class="pp">🪄</div><div class="pw">magic <button class="sentence-btn" type="button" data-say="magic" aria-label="播放這個句子">🔊</button></div><div class="pz">神奇的；魔術的<small>adj.</small></div><div class="pe">Harry Potter has magic power. <button class="sentence-btn" type="button" data-say="Harry Potter has magic power." aria-label="播放這個句子">🔊</button><br>哈利波特有神奇的力量。</div></div><div class="pc"><div class="pp">🎯</div><div class="pw">main <button class="sentence-btn" type="button" data-say="main" aria-label="播放這個句子">🔊</button></div><div class="pz">主要的<small>adj.</small></div><div class="pe">What is the main idea of this story? <button class="sentence-btn" type="button" data-say="What is the main idea of this story?" aria-label="播放這個句子">🔊</button><br>這個故事的主旨是什麼？</div></div></div></section>
+<section class="s paper"><h2>單字 33–36</h2><div class="pg"><div class="pc"><div class="pp">🏙️</div><div class="pw">modern <button class="sentence-btn" type="button" data-say="modern" aria-label="播放這個句子">🔊</button></div><div class="pz">現代的；摩登的<small>adj.</small></div><div class="pe">We live in a modern city. <button class="sentence-btn" type="button" data-say="We live in a modern city." aria-label="播放這個句子">🔊</button><br>我們住在一個現代化的城市。</div></div><div class="pc"><div class="pp">🏞️</div><div class="pw">national <button class="sentence-btn" type="button" data-say="national" aria-label="播放這個句子">🔊</button></div><div class="pz">國家的；國立的<small>adj.</small></div><div class="pe">Yushan National Park is very beautiful. <button class="sentence-btn" type="button" data-say="Yushan National Park is very beautiful." aria-label="播放這個句子">🔊</button><br>玉山國家公園很漂亮。</div></div><div class="pc"><div class="pp">🆕</div><div class="pw">new <button class="sentence-btn" type="button" data-say="new" aria-label="播放這個句子">🔊</button></div><div class="pz">新的<small>adj.</small></div><div class="pe">My new classmate comes from Ilan. <button class="sentence-btn" type="button" data-say="My new classmate comes from Ilan." aria-label="播放這個句子">🔊</button><br>我的新同學來自宜蘭。</div></div><div class="pc"><div class="pp">🔊</div><div class="pw">noisy <button class="sentence-btn" type="button" data-say="noisy" aria-label="播放這個句子">🔊</button></div><div class="pz">吵鬧的<small>adj.</small></div><div class="pe">The classroom is noisy during breaks. <button class="sentence-btn" type="button" data-say="The classroom is noisy during breaks." aria-label="播放這個句子">🔊</button><br>下課時教室很吵。</div></div></div></section>
+<section class="s paper"><h2>單字 37–40</h2><div class="pg"><div class="pc"><div class="pp">1️⃣</div><div class="pw">only <button class="sentence-btn" type="button" data-say="only" aria-label="播放這個句子">🔊</button></div><div class="pz">唯一的；只<small>adj./adv.</small></div><div class="pe">She is the only girl in her family. <button class="sentence-btn" type="button" data-say="She is the only girl in her family." aria-label="播放這個句子">🔊</button><br>她是家裡唯一的女孩。</div></div><div class="pc"><div class="pp">👖</div><div class="pw">other <button class="sentence-btn" type="button" data-say="other" aria-label="播放這個句子">🔊</button></div><div class="pz">其他的<small>adj.</small></div><div class="pe">Can I try on the other jeans? <button class="sentence-btn" type="button" data-say="Can I try on the other jeans?" aria-label="播放這個句子">🔊</button><br>我可以試穿其他的牛仔褲嗎？</div></div><div class="pc"><div class="pp">🏠</div><div class="pw">own <button class="sentence-btn" type="button" data-say="own" aria-label="播放這個句子">🔊</button></div><div class="pz">自己的<small>adj.</small></div><div class="pe">I want my own room. <button class="sentence-btn" type="button" data-say="I want my own room." aria-label="播放這個句子">🔊</button><br>我想要自己的房間。</div></div><div class="pc"><div class="pp">👌</div><div class="pw">OK <button class="sentence-btn" type="button" data-say="OK" aria-label="播放這個句子">🔊</button></div><div class="pz">好的；可以的<small>adj./adv.</small></div><div class="pe">Are you OK? <button class="sentence-btn" type="button" data-say="Are you OK?" aria-label="播放這個句子">🔊</button><br>你還好嗎？</div></div></div></section>
+<section class="s paper"><h2>單字 41–44</h2><div class="pg"><div class="pc"><div class="pp">🎤</div><div class="pw">pop <button class="sentence-btn" type="button" data-say="pop" aria-label="播放這個句子">🔊</button></div><div class="pz">流行的<small>adj.</small></div><div class="pe">Many teenagers like Korean pop music. <button class="sentence-btn" type="button" data-say="Many teenagers like Korean pop music." aria-label="播放這個句子">🔊</button><br>很多青少年喜歡韓國流行音樂。</div></div><div class="pc"><div class="pp">🔥</div><div class="pw">popular <button class="sentence-btn" type="button" data-say="popular" aria-label="播放這個句子">🔊</button></div><div class="pz">受歡迎的<small>adj.</small></div><div class="pe">Baseball is a popular sport in Taiwan. <button class="sentence-btn" type="button" data-say="Baseball is a popular sport in Taiwan." aria-label="播放這個句子">🔊</button><br>棒球在臺灣是很受歡迎的運動。</div></div><div class="pc"><div class="pp">🤞</div><div class="pw">possible <button class="sentence-btn" type="button" data-say="possible" aria-label="播放這個句子">🔊</button></div><div class="pz">可能的<small>adj.</small></div><div class="pe">Is it possible to live on Mars? <button class="sentence-btn" type="button" data-say="Is it possible to live on Mars?" aria-label="播放這個句子">🔊</button><br>在火星上生活可能嗎？</div></div><div class="pc"><div class="pp">🙋</div><div class="pw">present <button class="sentence-btn" type="button" data-say="present" aria-label="播放這個句子">🔊</button></div><div class="pz">出席的；現在的<small>adj.</small></div><div class="pe">Everyone is present today. <button class="sentence-btn" type="button" data-say="Everyone is present today." aria-label="播放這個句子">🔊</button><br>今天大家都到了。</div></div></div></section>
+<section class="s paper"><h2>單字 45–48</h2><div class="pg"><div class="pc"><div class="pp">🏛️</div><div class="pw">public <button class="sentence-btn" type="button" data-say="public" aria-label="播放這個句子">🔊</button></div><div class="pz">公共的<small>adj.</small></div><div class="pe">Don&#x27;t smoke in public places. <button class="sentence-btn" type="button" data-say="Don&#x27;t smoke in public places." aria-label="播放這個句子">🔊</button><br>不要在公共場所抽菸。</div></div><div class="pc"><div class="pp">🤫</div><div class="pw">quiet <button class="sentence-btn" type="button" data-say="quiet" aria-label="播放這個句子">🔊</button></div><div class="pz">安靜的<small>adj.</small></div><div class="pe">Please be quiet in the library. <button class="sentence-btn" type="button" data-say="Please be quiet in the library." aria-label="播放這個句子">🔊</button><br>在圖書館請保持安靜。</div></div><div class="pc"><div class="pp">🏁</div><div class="pw">ready <button class="sentence-btn" type="button" data-say="ready" aria-label="播放這個句子">🔊</button></div><div class="pz">準備好的<small>adj.</small></div><div class="pe">Are you ready to go? <button class="sentence-btn" type="button" data-say="Are you ready to go?" aria-label="播放這個句子">🔊</button><br>你準備好要出發了嗎？</div></div><div class="pc"><div class="pp">💯</div><div class="pw">real <button class="sentence-btn" type="button" data-say="real" aria-label="播放這個句子">🔊</button></div><div class="pz">真實的<small>adj.</small></div><div class="pe">The story is a real one. <button class="sentence-btn" type="button" data-say="The story is a real one." aria-label="播放這個句子">🔊</button><br>這是個真實的故事。</div></div></div></section>
+<section class="s paper"><h2>單字 49–52</h2><div class="pg"><div class="pc"><div class="pp">✅</div><div class="pw">right <button class="sentence-btn" type="button" data-say="right" aria-label="播放這個句子">🔊</button></div><div class="pz">正確的；右邊的<small>adj.</small></div><div class="pe">Your answer is right. <button class="sentence-btn" type="button" data-say="Your answer is right." aria-label="播放這個句子">🔊</button><br>你的答案是對的。</div></div><div class="pc"><div class="pp">🦺</div><div class="pw">safe <button class="sentence-btn" type="button" data-say="safe" aria-label="播放這個句子">🔊</button></div><div class="pz">安全的<small>adj.</small></div><div class="pe">It&#x27;s not safe to swim here. <button class="sentence-btn" type="button" data-say="It&#x27;s not safe to swim here." aria-label="播放這個句子">🔊</button><br>在這裡游泳不安全。</div></div><div class="pc"><div class="pp">🟰</div><div class="pw">same <button class="sentence-btn" type="button" data-say="same" aria-label="播放這個句子">🔊</button></div><div class="pz">相同的<small>adj.</small></div><div class="pe">My watch is the same as yours. <button class="sentence-btn" type="button" data-say="My watch is the same as yours." aria-label="播放這個句子">🔊</button><br>我的手錶和你的一樣。</div></div><div class="pc"><div class="pp">😐</div><div class="pw">serious <button class="sentence-btn" type="button" data-say="serious" aria-label="播放這個句子">🔊</button></div><div class="pz">嚴重的；認真的<small>adj.</small></div><div class="pe">Air pollution is a serious problem. <button class="sentence-btn" type="button" data-say="Air pollution is a serious problem." aria-label="播放這個句子">🔊</button><br>空氣污染是很嚴重的問題。</div></div></div></section>
+<section class="s paper"><h2>單字 53–56</h2><div class="pg"><div class="pc"><div class="pp">🔪</div><div class="pw">sharp <button class="sentence-btn" type="button" data-say="sharp" aria-label="播放這個句子">🔊</button></div><div class="pz">尖的；鋒利的<small>adj.</small></div><div class="pe">Be careful. The knife is very sharp. <button class="sentence-btn" type="button" data-say="Be careful. The knife is very sharp." aria-label="播放這個句子">🔊</button><br>小心，這把刀很利。</div></div><div class="pc"><div class="pp">⚪</div><div class="pw">simple <button class="sentence-btn" type="button" data-say="simple" aria-label="播放這個句子">🔊</button></div><div class="pz">簡單的；樸素的<small>adj.</small></div><div class="pe">The rules of the game are simple. <button class="sentence-btn" type="button" data-say="The rules of the game are simple." aria-label="播放這個句子">🔊</button><br>這個遊戲的規則很簡單。</div></div><div class="pc"><div class="pp">🙇</div><div class="pw">sorry <button class="sentence-btn" type="button" data-say="sorry" aria-label="播放這個句子">🔊</button></div><div class="pz">抱歉的；遺憾的<small>adj.</small></div><div class="pe">I&#x27;m sorry I&#x27;m late. <button class="sentence-btn" type="button" data-say="I&#x27;m sorry I&#x27;m late." aria-label="播放這個句子">🔊</button><br>抱歉我遲到了。</div></div><div class="pc"><div class="pp">✨</div><div class="pw">special <button class="sentence-btn" type="button" data-say="special" aria-label="播放這個句子">🔊</button></div><div class="pz">特別的<small>adj.</small></div><div class="pe">Today is a special day for me. <button class="sentence-btn" type="button" data-say="Today is a special day for me." aria-label="播放這個句子">🔊</button><br>今天對我來說是特別的一天。</div></div></div></section>
+<section class="s paper"><h2>單字 57–60</h2><div class="pg"><div class="pc"><div class="pp">👽</div><div class="pw">strange <button class="sentence-btn" type="button" data-say="strange" aria-label="播放這個句子">🔊</button></div><div class="pz">奇怪的；陌生的<small>adj.</small></div><div class="pe">I heard a strange noise last night. <button class="sentence-btn" type="button" data-say="I heard a strange noise last night." aria-label="播放這個句子">🔊</button><br>我昨晚聽到奇怪的聲音。</div></div><div class="pc"><div class="pp">👌</div><div class="pw">sure <button class="sentence-btn" type="button" data-say="sure" aria-label="播放這個句子">🔊</button></div><div class="pz">確定的<small>adj.</small></div><div class="pe">Are you sure? <button class="sentence-btn" type="button" data-say="Are you sure?" aria-label="播放這個句子">🔊</button><br>你確定嗎？</div></div><div class="pc"><div class="pp">😮</div><div class="pw">surprised <button class="sentence-btn" type="button" data-say="surprised" aria-label="播放這個句子">🔊</button></div><div class="pz">驚訝的<small>adj.</small></div><div class="pe">I was surprised at the news. <button class="sentence-btn" type="button" data-say="I was surprised at the news." aria-label="播放這個句子">🔊</button><br>我對這個消息感到驚訝。</div></div><div class="pc"><div class="pp">😫</div><div class="pw">terrible <button class="sentence-btn" type="button" data-say="terrible" aria-label="播放這個句子">🔊</button></div><div class="pz">可怕的；糟糕的<small>adj.</small></div><div class="pe">The food was terrible. <button class="sentence-btn" type="button" data-say="The food was terrible." aria-label="播放這個句子">🔊</button><br>那食物很難吃。</div></div></div></section>
+<section class="s paper"><h2>單字 61–64</h2><div class="pg"><div class="pc"><div class="pp">📚</div><div class="pw">thick <button class="sentence-btn" type="button" data-say="thick" aria-label="播放這個句子">🔊</button></div><div class="pz">厚的<small>adj.</small></div><div class="pe">This dictionary is very thick. <button class="sentence-btn" type="button" data-say="This dictionary is very thick." aria-label="播放這個句子">🔊</button><br>這本字典很厚。</div></div><div class="pc"><div class="pp">🧺</div><div class="pw">tidy <button class="sentence-btn" type="button" data-say="tidy" aria-label="播放這個句子">🔊</button></div><div class="pz">整齊的<small>adj.</small></div><div class="pe">Keep your room tidy. <button class="sentence-btn" type="button" data-say="Keep your room tidy." aria-label="播放這個句子">🔊</button><br>保持你的房間整齊。</div></div><div class="pc"><div class="pp">💫</div><div class="pw">true <button class="sentence-btn" type="button" data-say="true" aria-label="播放這個句子">🔊</button></div><div class="pz">真的；真實的<small>adj.</small></div><div class="pe">I hope your dream comes true. <button class="sentence-btn" type="button" data-say="I hope your dream comes true." aria-label="播放這個句子">🔊</button><br>希望你的夢想成真。</div></div><div class="pc"><div class="pp">🛠️</div><div class="pw">useful <button class="sentence-btn" type="button" data-say="useful" aria-label="播放這個句子">🔊</button></div><div class="pz">有用的<small>adj.</small></div><div class="pe">Cellphones are very useful. <button class="sentence-btn" type="button" data-say="Cellphones are very useful." aria-label="播放這個句子">🔊</button><br>手機很有用。</div></div></div></section>
+<section class="s paper"><h2>單字 65–66</h2><div class="pg"><div class="pc"><div class="pp">🌈</div><div class="pw">wonderful <button class="sentence-btn" type="button" data-say="wonderful" aria-label="播放這個句子">🔊</button></div><div class="pz">美好的；極好的<small>adj.</small></div><div class="pe">What a wonderful day! <button class="sentence-btn" type="button" data-say="What a wonderful day!" aria-label="播放這個句子">🔊</button><br>多麼美好的一天！</div></div><div class="pc"><div class="pp">❌</div><div class="pw">wrong <button class="sentence-btn" type="button" data-say="wrong" aria-label="播放這個句子">🔊</button></div><div class="pz">錯誤的<small>adj.</small></div><div class="pe">Sorry, you have the wrong number. <button class="sentence-btn" type="button" data-say="Sorry, you have the wrong number." aria-label="播放這個句子">🔊</button><br>抱歉，你打錯電話了。</div></div></div></section>
+<section class="s paper"><h2>相反詞</h2><table class="t"><thead><tr><th>形容詞</th><th>相反</th></tr></thead><tbody><tr><td>easy 容易的</td><td>difficult／hard 困難的</td></tr><tr><td>safe 安全的</td><td>dangerous 危險的</td></tr><tr><td>right／correct 正確的</td><td>wrong 錯誤的</td></tr><tr><td>quiet 安靜的</td><td>noisy／loud 吵的</td></tr><tr><td>dirty 髒的</td><td>clean 乾淨的</td></tr><tr><td>thick 厚的</td><td>thin 薄的</td></tr><tr><td>bright 明亮的</td><td>dark 黑暗的</td></tr><tr><td>present 出席的</td><td>absent 缺席的</td></tr><tr><td>possible 可能的</td><td>impossible 不可能的</td></tr><tr><td>useful 有用的</td><td>useless 沒用的</td></tr></tbody></table></section>
+<section class="s paper"><h2>常用句型</h2><table class="t"><thead><tr><th>句型</th><th>意思</th><th>例句</th></tr></thead><tbody><tr><td>be afraid of</td><td>害怕</td><td>I&#x27;m afraid of dogs.</td></tr><tr><td>be different from</td><td>和…不同</td><td>Tea is different from coffee.</td></tr><tr><td>be the same as</td><td>和…一樣</td><td>My bag is the same as yours.</td></tr><tr><td>be able to V</td><td>能夠</td><td>I&#x27;m able to swim.</td></tr><tr><td>be ready to V</td><td>準備好</td><td>I&#x27;m ready to go.</td></tr><tr><td>be surprised at</td><td>對…驚訝</td><td>We were surprised at the news.</td></tr><tr><td>be popular with</td><td>受…歡迎</td><td>He is popular with girls.</td></tr></tbody></table></section>
+<section class="s paper"><h2>enough 和 else 的位置</h2><table class="t"><thead><tr><th>用法</th><th>例句</th></tr></thead><tbody><tr><td>enough + 名詞</td><td>enough money 足夠的錢</td></tr><tr><td>形容詞 + enough</td><td>old enough 年紀夠大</td></tr><tr><td>something／anything／who／what + else</td><td>anything else、who else</td></tr></tbody></table></section>
+<section class="s paper"><h2>快問快答：中文 → 英文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">能夠的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>able</span></div><div class="qa"><span class="n">2</span><span class="q">方便的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>convenient</span></div><div class="qa"><span class="n">3</span><span class="q">死的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>dead</span></div><div class="qa"><span class="n">4</span><span class="q">髒的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>dirty</span></div><div class="qa"><span class="n">5</span><span class="q">優秀的；很棒的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>excellent</span></div><div class="qa"><span class="n">6</span><span class="q">空閒的；免費的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>free</span></div><div class="qa"><span class="n">7</span><span class="q">困難的；努力的；硬的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>hard</span></div><div class="qa"><span class="n">8</span><span class="q">大聲的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>loud</span></div></div></section>
+<section class="s paper"><h2>快問快答：英文 → 中文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">modern</span><button class="rv" type="button">看答案</button><span class="ans" hidden>現代的；摩登的</span></div><div class="qa"><span class="n">2</span><span class="q">only</span><button class="rv" type="button">看答案</button><span class="ans" hidden>唯一的；只</span></div><div class="qa"><span class="n">3</span><span class="q">pop</span><button class="rv" type="button">看答案</button><span class="ans" hidden>流行的</span></div><div class="qa"><span class="n">4</span><span class="q">public</span><button class="rv" type="button">看答案</button><span class="ans" hidden>公共的</span></div><div class="qa"><span class="n">5</span><span class="q">right</span><button class="rv" type="button">看答案</button><span class="ans" hidden>正確的；右邊的</span></div><div class="qa"><span class="n">6</span><span class="q">sharp</span><button class="rv" type="button">看答案</button><span class="ans" hidden>尖的；鋒利的</span></div><div class="qa"><span class="n">7</span><span class="q">strange</span><button class="rv" type="button">看答案</button><span class="ans" hidden>奇怪的；陌生的</span></div><div class="qa"><span class="n">8</span><span class="q">thick</span><button class="rv" type="button">看答案</button><span class="ans" hidden>厚的</span></div></div></section>
+<section class="s paper"><h2>學完了！接下來</h2><div class="two"><div class="card g"><h3>複習方法</h3><div class="sub">review</div><ul class="b"><li>回到「📗 單字卡」，按「遮中文」自己考自己</li><li>再按「遮英文」，看中文說出英文</li><li>每個例句跟著 🔊 唸一次</li></ul></div><div class="card o"><h3>準備好了</h3><ul class="b"><li>按右上角「📝 前往測驗」</li><li>測驗錯的題目要訂正到全對</li><li>訂正完成補送 1 點</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio('audio/u39/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+<script src="/dict/dict.js?v=20261118a" defer></script>
+</body>
+</html>
