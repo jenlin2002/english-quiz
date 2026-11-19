@@ -14,6 +14,7 @@ sys.path.insert(0, C2)
 from sl import ex, card, row, ul, cards, two, div, note, lead, qas, table, top5, section  # noqa: E402
 
 sys.path.insert(0, HERE)
+import link_slide_audio  # noqa: E402
 import w2000_u01  # noqa: E402
 import w2000_u02  # noqa: E402
 import w2000_u13, w2000_u14, w2000_u15, w2000_u16, w2000_u17, w2000_u18, w2000_u19, w2000_u20, w2000_u21  # noqa: E402,E401
@@ -274,9 +275,12 @@ def build(mod):
     book_name = BOOKS[book]
     fmt = dict(book=book_name, bookup=book_name, no=no, en=E(u['en']), zh=E(u['zh']), intro=E(u['intro']), tag=tag,
                n=len(u['words']))
-    write(os.path.join(out, tag + '.html'), CARDS_TPL.format(
-        cards='\n'.join(card_html(i, w, tag) for i, w in enumerate(u['words'])), focus=focus_html(u), **fmt))
+    cards_page = CARDS_TPL.format(
+        cards='\n'.join(card_html(i, w, tag) for i, w in enumerate(u['words'])), focus=focus_html(u), **fmt)
+    write(os.path.join(out, tag + '.html'), cards_page)
     page, says = slides(u, tag, book_name)
+    # 投影片和單字卡唸一樣的句子就直接用單字卡的音檔（省檔案數，見 link_slide_audio.py），其餘才錄 slide-NN
+    page, keep = link_slide_audio.link(page, link_slide_audio.card_map(cards_page))
     write(os.path.join(out, tag + '-slides.html'), page)
     data = {'label': 'Vocab %s U%d' % (book.upper(), no), 'title': '單字區 %s Unit %d %s' % (book_name, no, u['zh']),
             'back': tag + '.html', 'sections': quiz}
@@ -286,7 +290,7 @@ def build(mod):
     for i, w in enumerate(u['words']):
         jobs.append([say_w(w), os.path.join(adir, 'w-%02d.mp3' % (i + 1))])
         jobs.append([say_ex(w), os.path.join(adir, 'e-%02d.mp3' % (i + 1))])
-    jobs += [[s, os.path.join(adir, 'slide-%02d.mp3' % (i + 1))] for i, s in enumerate(says)]
+    jobs += [[s, os.path.join(adir, 'slide-%02d.mp3' % i)] for i, s in keep]
     return jobs
 
 

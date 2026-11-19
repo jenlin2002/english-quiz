@@ -1,7 +1,7 @@
 # english-quiz 工作紀錄與說明
 
 這個檔案是給「下一次接手的人」看的（包括在家裡電腦開 Claude Code 時，Claude 會自動讀這個檔案）。
-最後更新：2026-11-19（公司電腦：單字區新做 Unit 21 語言、22 節日、23 職業、24 天氣與大自然、25 地理名詞、26 動物與昆蟲、27 冠詞與限定詞、28 代名詞、29 疑問詞、30 be 動詞與助動詞、31～40 介系詞到副詞＝主題 2000 字全部完成）；2026-11-18（家裡電腦：單字區新做 Unit 17 地點與位置、Unit 18 交通、Unit 19 尺寸與測量、Unit 20 國家與區域，見「國中單字分科區」；同一天電腦版讀了 BRANDEN 的 WORD UP 熟悉度＋GEPT 成績，見「WORD UP（已購買的網頁版）整合」一節）。
+最後更新：2026-11-20（單字區投影片改用單字卡的音檔、刪掉 2722 個重複的 slide 音檔，網站檔案數回到 Cloudflare 上限以下；u21～u40 音檔也放大音量，見「國中單字分科區」的「投影片音檔共用」）；2026-11-19（公司電腦：單字區新做 Unit 21 語言、22 節日、23 職業、24 天氣與大自然、25 地理名詞、26 動物與昆蟲、27 冠詞與限定詞、28 代名詞、29 疑問詞、30 be 動詞與助動詞、31～40 介系詞到副詞＝主題 2000 字全部完成）；2026-11-18（家裡電腦：單字區新做 Unit 17 地點與位置、Unit 18 交通、Unit 19 尺寸與測量、Unit 20 國家與區域，見「國中單字分科區」；同一天電腦版讀了 BRANDEN 的 WORD UP 熟悉度＋GEPT 成績，見「WORD UP（已購買的網頁版）整合」一節）。
 
 ## ⭐ 最新進度與回家要做的事（2026-11-04 公司電腦，回家電腦先讀這節）
 
@@ -27,7 +27,7 @@
 - 6 個 repo 由首頁 repo（jenlin2002.github.io）的 GitHub Actions「部署到 Cloudflare Pages」合成一個網站（Pages 專案 `bmlearn`，網址 **https://bmlearn.pages.dev**，路徑和 GitHub Pages 一樣；2026-11-05 從 learn-6td.pages.dev 改名，舊網址和 jenlin2002.github.io 都轉到這裡，後台步驟在首頁 repo `CLOUDFLARE-SETUP.md` 第七節），`functions/api/me.js` 用 Access 憑證＋`USER_MAP`（Cloudflare 變數，email 不放 repo）回傳登入者名字。
 - `points.js`（各站副本內容相同）：在 Cloudflare 網址打開時問 `/api/me`，自動設定 `quizStudentName`、不出現「你是誰？」關卡；第一階段每台裝置第一次只問一次自己的 PIN；第二階段（Code.gs 加 `cfUser_`、Cloudflare 設 `POINTS_SECRET`）點數改走 `/api/points`，不用 PIN。登出會連 Google 登入一起登出。在 jenlin2002.github.io 舊網址一切照舊。
 - 後台設定步驟、測試方法、第二階段 Code.gs 改法都在首頁 repo 的 `CLOUDFLARE-SETUP.md`。密碼、金鑰一律使用者自己在 Cloudflare／GitHub／Google 後台輸入。
-- 之後新做的頁面照舊用相對路徑；子站寫死的 `https://jenlin2002.github.io/` 部署時會自動改成 `/`。Cloudflare Pages 單檔上限 25 MB、整站 20000 個檔（2026-11-04 約 15300 個），大檔（>24 MB）部署時自動改由 `/api/big` 轉給登入的人（2026-11-05 起；要有 `REPOS_TOKEN`，repo 改 Private 也能讀；金鑰到期要重做，見首頁 repo `CLOUDFLARE-SETUP.md` 第八節）。寫頁面照舊連原本的相對路徑，不用改。
+- 之後新做的頁面照舊用相對路徑；子站寫死的 `https://jenlin2002.github.io/` 部署時會自動改成 `/`。Cloudflare Pages 單檔上限 25 MB、整站 20000 個檔（2026-11-04 約 15300 個；2026-11-20 一度到約 20035 個、超過上限，單字區投影片改共用音檔後約 17300 個。**新增大量音檔前先估總數**，六個 repo 去掉 tools／.git 後的檔案數加起來），大檔（>24 MB）部署時自動改由 `/api/big` 轉給登入的人（2026-11-05 起；要有 `REPOS_TOKEN`，repo 改 Private 也能讀；金鑰到期要重做，見首頁 repo `CLOUDFLARE-SETUP.md` 第八節）。寫頁面照舊連原本的相對路徑，不用改。
 ## 使用者與工作方式（四個 repo 共用同一段，2026-10-13）
 
 - 使用者在三個地方用 Claude Code：**家裡電腦、公司電腦**（兩台都有 GitHub Desktop，用它 Pull／Push）、**外出用手機 App（雲端版）**。學習成長網站已經做很久了，不用從頭介紹。
@@ -187,6 +187,8 @@
   - **⚠️ 測試事故（2026-11-19）**：用正確答案自動作答 u31～u40 測驗時，內建瀏覽器的 localhost:8765 **已經用 MELISSA 登入**（有她的點數憑證），結果 10 份測驗以 MELISSA 的名義全對送出——**試算表多了 10 筆 Vocab W2000 U31～U40 的成績，點數存摺也幫 MELISSA 記了點（當天上限 50 點＋連續紅利）**，要由家長到試算表刪掉這 10 筆、在存摺扣回點數。本機（localhost）的 vocabProgress／vocabWords 已清掉。**以後自動測驗前先確認沒有登入**（`quizStudentName` 是空的，或改用沒登入過的網址），有登入就不要按送出。
   - u31～u38 測驗在送出前確認全對；u39、u40 只用程式檢查題目資料（答案位置、空格數），沒有在瀏覽器作答。
   - 單字區主題 2000 字 40 個單元全部完成；之後可做 LaLa Word 18 單元（一字多義・易混淆・字首字尾，見本節開頭）。
+- **投影片音檔共用（2026-11-20）**：網站總檔案數超過 Cloudflare Pages 20000 個上限（部署會失敗），原因是單字區投影片每個 🔊 都有自己的 `slide-NN.mp3`，內容和單字卡的 `w-NN`／`e-NN` 一模一樣。新增 `tools/vocab_gen/link_slide_audio.py`：投影片按鈕加 `data-src` 指到單字卡音檔，播放程式有 `data-src` 就用它（沒有才用 slide-NN）；`--delete` 刪掉不再用的 slide 音檔。已處理 42 個投影片頁（含 u03～u12、WORD UP u01～u02），刪掉 2722 個檔，只剩 u01 的 slide-37～40（two children 等複數唸法）。`build_vocab.py` 產生投影片時也會自動連，`audio_jobs` 只錄沒有對應的 slide 句子。同一天也跑了 `boost_audio.py`，u21～u40 的 1205 個檔放大音量（和 u01～u20 一致）。
+- **網站沒更新時**：Cloudflare 部署由首頁 repo 的 Actions 每 15 分鐘檢查，但 GitHub 的定時工作常常延遲好幾小時（2026-11-19 16:45 之後就沒跑）；急的話到首頁 repo GitHub → Actions →「部署到 Cloudflare Pages」→ Run workflow 手動跑。
 - **單字學習進度：紅字複習、答對變灰（2026-11-04 使用者要求，取代同一天早先的「答錯標紅」）**：
   - 每個登入者各自的進度存在這台裝置 localStorage `vocabProgress:<單字卡頁路徑>:<登入者>` = `{mastered:[第一次就答對的字], wrong:[答錯的字], total, at}`（沒有存到雲端）。
   - `gquiz.js`（label 開頭 `Vocab` 的測驗、有登入時）先 fetch 單字卡頁取得全部單字，`wordsOf()` 找出每題考到哪些字（選擇題看正解與單字題目、填空看正解、「swim → (V-ing)」算原形，允許複數／V-ing）。**第一次測驗每個字都要考到**：課本題目沒考到的字自動補「⑦ 其他單字：看中文選英文」（所以大單元第一次題數多，例如 Unit 16 有 81 題）。之後**只出還有沒答對的字的題目**；對不到單字的題目（the／不填）只在第一次出。只看第一次作答：答對的字變 mastered（灰）、答錯變 wrong（紅），訂正後仍是紅，下次再考。全部答對時測驗頁顯示「全部答對、不用再背」，可「清除紀錄、全部重新測驗」。
