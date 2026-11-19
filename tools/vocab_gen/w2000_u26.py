@@ -1,0 +1,120 @@
+# 主題 2000 字 Unit 26：Animals & insects 動物與昆蟲（字表依課本單元；詞性、中文、例句、題目為本站自編）
+def W(w, pos, zh, note, ex, exzh, pic, exsay=None):
+    d = {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+    if exsay:
+        d['exsay'] = exsay
+    return d
+
+UNIT = {
+  'book': 'w2000', 'no': 26, 'en': 'Animals & insects', 'zh': '動物與昆蟲',
+  'intro': '農場、森林、動物園裡的動物，還有小昆蟲，共 38 個字。注意特別的複數：mouse → mice、goose → geese、sheep、fish 單複數同形。',
+  'words': [
+    W('animal', 'n.', '動物', '', 'There are many animals on the farm.', '農場上有很多動物。', '🐾'),
+    W('bear', 'n.', '熊', 'teddy bear 泰迪熊', 'The bear is looking for food in the forest.', '那隻熊在森林裡找食物。', '🐻'),
+    W('cat', 'n.', '貓', '', 'My cat likes to sleep in the sun.', '我的貓喜歡在陽光下睡覺。', '🐱'),
+    W('chicken', 'n.', '雞；雞肉', '雞肉不可數', 'Grandma keeps some chickens in the yard.', '奶奶在院子裡養了幾隻雞。', '🐔'),
+    W('cow', 'n.', '母牛；乳牛', '', 'We get milk from cows.', '我們從乳牛身上得到牛奶。', '🐄'),
+    W('dog', 'n.', '狗', '', 'Our dog barks when someone is at the door.', '有人在門口時，我們的狗會叫。', '🐶'),
+    W('duck', 'n.', '鴨子；鴨肉', '', 'Some ducks are swimming in the pond.', '有幾隻鴨子在池塘裡游泳。', '🦆'),
+    W('elephant', 'n.', '大象', 'an elephant（母音開頭用 an）', 'An elephant has a long nose.', '大象有長長的鼻子。', '🐘'),
+    W('fox', 'n.', '狐狸', '複數 foxes', 'The fox runs very fast.', '狐狸跑得很快。', '🦊'),
+    W('frog', 'n.', '青蛙', '', 'A frog is sitting on the leaf.', '一隻青蛙坐在葉子上。', '🐸'),
+    W('goat', 'n.', '山羊', 'sheep 是綿羊', 'The goats are eating grass on the hill.', '山羊在小山上吃草。', '🐐'),
+    W('goose', 'n.', '鵝；鵝肉', '複數 geese', 'The goose is swimming on the lake.', '那隻鵝在湖上游。', '🪿'),
+    W('hen', 'n.', '母雞', '公雞 rooster', 'The hen lays an egg every day.', '那隻母雞每天下一顆蛋。', '🐔'),
+    W('horse', 'n.', '馬', 'ride a horse 騎馬', 'Can you ride a horse?', '你會騎馬嗎？', '🐴'),
+    W('lion', 'n.', '獅子', '', 'The lion is the king of animals.', '獅子是萬獸之王。', '🦁'),
+    W('monkey', 'n.', '猴子', '複數 monkeys', 'The monkey is eating a banana.', '猴子正在吃香蕉。', '🐒'),
+    W('mouse', 'n.', '老鼠；（電腦）滑鼠', '複數 mice', 'The cat is chasing a mouse.', '貓正在追一隻老鼠。', '🐭'),
+    W('pet', 'n.', '寵物', 'keep a pet 養寵物', 'Do you have any pets at home?', '你家裡有養寵物嗎？', '🐕'),
+    W('pig', 'n.', '豬', '', 'The pigs are playing in the mud.', '豬在泥巴裡玩。', '🐷'),
+    W('puppy', 'n.', '小狗', '複數 puppies', 'Our dog just had three puppies.', '我們的狗剛生了三隻小狗。', '🐶'),
+    W('rabbit', 'n.', '兔子', '', 'The rabbit has long ears.', '兔子有長長的耳朵。', '🐰'),
+    W('rat', 'n.', '老鼠（比 mouse 大）', '', 'A rat is looking for food in the trash.', '一隻老鼠在垃圾裡找食物。', '🐀'),
+    W('sheep', 'n.', '綿羊', '單複數同形：one sheep, two sheep', 'There are many sheep on the farm.', '農場上有很多綿羊。', '🐑'),
+    W('tiger', 'n.', '老虎', '', 'The tiger is taking care of its baby.', '老虎正在照顧牠的寶寶。', '🐯'),
+    W('zebra', 'n.', '斑馬', '', 'Zebras have black and white stripes.', '斑馬身上有黑白條紋。', '🦓'),
+    W('insect', 'n.', '昆蟲', '昆蟲有六隻腳', 'An insect has six legs.', '昆蟲有六隻腳。', '🐞'),
+    W('ant', 'n.', '螞蟻', 'an ant', 'The ants are carrying food home.', '螞蟻正把食物搬回家。', '🐜'),
+    W('bat', 'n.', '蝙蝠；球棒', 'baseball bat 棒球棒', 'Bats sleep in the day and fly at night.', '蝙蝠白天睡覺、晚上飛。', '🦇'),
+    W('bee', 'n.', '蜜蜂', 'busy as a bee 像蜜蜂一樣忙', 'A bee is flying from flower to flower.', '一隻蜜蜂在花朵間飛來飛去。', '🐝'),
+    W('bird', 'n.', '鳥', '', 'The bird is singing in the tree.', '鳥在樹上唱歌。', '🐦'),
+    W('bug', 'n.', '小蟲', '', 'There is a bug on my arm!', '我的手臂上有一隻小蟲！', '🐞'),
+    W('butterfly', 'n.', '蝴蝶', '複數 butterflies', 'The butterfly has beautiful wings.', '這隻蝴蝶有美麗的翅膀。', '🦋'),
+    W('snake', 'n.', '蛇', '', 'Be careful! There is a snake in the grass.', '小心！草裡有一條蛇。', '🐍'),
+    W('spider', 'n.', '蜘蛛', 'spider web 蜘蛛網', 'The spider is making a web.', '蜘蛛正在結網。', '🕷️'),
+    W('fish', 'n./v.', '魚；釣魚', '單複數同形；go fishing 去釣魚', 'There are many fish in the pond.', '池塘裡有很多魚。', '🐟'),
+    W('turtle', 'n.', '烏龜；海龜', '', 'The turtle moves very slowly.', '烏龜移動得很慢。', '🐢'),
+    W('bite', 'v./n.', '咬；一口', '三態 bite／bit／bitten', 'Take a bite of this apple.', '咬一口這顆蘋果。', '🍎'),
+    W('tail', 'n.', '尾巴', '', 'The dog is wagging its tail.', '狗正在搖尾巴。', '🐕'),
+  ],
+  'focus': [
+    {'title': '特別的複數', 'head': ('單數', '複數', '說明'), 'rows': [
+      ('mouse', 'mice', '不規則變化'),
+      ('goose', 'geese', 'oo → ee'),
+      ('sheep', 'sheep', '單複數同形'),
+      ('fish', 'fish', '單複數同形（不同種類的魚才用 fishes）'),
+      ('fox', 'foxes', '-x 加 -es'),
+      ('puppy／butterfly', 'puppies／butterflies', '子音＋y → ies'),
+      ('monkey', 'monkeys', '母音＋y → 直接加 s'),
+    ], 'note': 'two mice、three geese、many sheep、a lot of fish。'},
+    {'title': '動物和牠的叫聲、寶寶', 'head': ('動物', '叫聲', '寶寶'), 'rows': [
+      ('dog 狗', 'bark 汪汪叫', 'puppy 小狗'),
+      ('cat 貓', 'meow 喵喵叫', 'kitten 小貓'),
+      ('cow 牛', 'moo 哞哞叫', 'calf 小牛'),
+      ('duck 鴨', 'quack 呱呱叫', 'duckling 小鴨'),
+      ('hen 母雞', 'cluck 咯咯叫', 'chick 小雞'),
+    ], 'note': 'chicken 可以是雞（可數）或雞肉（不可數）：I like chicken. 我喜歡吃雞肉。'},
+    {'title': '和動物有關的常用說法', 'head': ('說法', '意思', ''), 'rows': [
+      ('busy as a bee', '非常忙碌', ''),
+      ('eat like a bird', '吃得很少', ''),
+      ('keep a pet', '養寵物', ''),
+      ('take a bite', '咬一口', ''),
+      ('wag its tail', '搖尾巴', ''),
+    ], 'note': 'bite 三態：bite／bit／bitten。The dog bit my leg. 狗咬了我的腳。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '大象', 'opts': ['elephant', 'eagle', 'zebra', 'tiger'], 'answer': 0, 'exp': 'elephant 大象。'},
+    {'type': 'mc', 'q': '山羊', 'opts': ['sheep', 'goat', 'goose', 'cow'], 'answer': 1, 'exp': 'goat 山羊；sheep 是綿羊。'},
+    {'type': 'mc', 'q': '蝴蝶', 'opts': ['bee', 'bug', 'butterfly', 'bird'], 'answer': 2, 'exp': 'butterfly 蝴蝶。'},
+    {'type': 'mc', 'q': '螞蟻', 'opts': ['aunt', 'ant', 'and', 'bat'], 'answer': 1, 'exp': 'ant 螞蟻（和 aunt 阿姨發音相近）。'},
+    {'type': 'mc', 'q': '尾巴', 'opts': ['tell', 'tall', 'tail', 'toe'], 'answer': 2, 'exp': 'tail 尾巴。'},
+  ]},
+  {'title': '② 看英文選中文', 'items': [
+    {'type': 'mc', 'q': 'turtle', 'opts': ['青蛙', '烏龜', '蛇', '兔子'], 'answer': 1, 'exp': 'turtle 烏龜。'},
+    {'type': 'mc', 'q': 'hen', 'opts': ['母雞', '鵝', '鴨子', '公雞'], 'answer': 0, 'exp': 'hen 母雞。'},
+    {'type': 'mc', 'q': 'spider', 'opts': ['昆蟲', '蝙蝠', '蜘蛛', '螞蟻'], 'answer': 2, 'exp': 'spider 蜘蛛。'},
+    {'type': 'mc', 'q': 'puppy', 'opts': ['寵物', '小貓', '豬', '小狗'], 'answer': 3, 'exp': 'puppy 小狗。'},
+  ]},
+  {'title': '③ 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '猴子（m＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['monkey']], 'exp': 'monkey。'},
+    {'q': '兔子（r＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['rabbit']], 'exp': 'rabbit，中間兩個 b。'},
+    {'q': '昆蟲（i＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['insect']], 'exp': 'insect。'},
+    {'q': '獅子（l＿＿＿，4 個字母）：{0}', 'blanks': [['lion']], 'exp': 'lion。'},
+  ]},
+  {'title': '④ 複數：寫出正確的複數形', 'items': [
+    {'q': 'one mouse → two {0}', 'blanks': [['mice']], 'exp': 'mouse → mice。'},
+    {'q': 'one goose → three {0}', 'blanks': [['geese']], 'exp': 'goose → geese。'},
+    {'q': 'one sheep → many {0}', 'blanks': [['sheep']], 'exp': 'sheep 單複數同形。'},
+    {'q': 'one fox → two {0}', 'blanks': [['foxes']], 'exp': '-x 結尾加 -es。'},
+    {'q': 'one butterfly → five {0}', 'blanks': [['butterflies']], 'exp': '子音＋y → 去 y 加 ies。'},
+  ]},
+  {'title': '⑤ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'We get milk from {0}. （乳牛，複數）', 'blanks': [['cows']], 'exp': 'cow → cows。'},
+    {'q': 'The {0} are playing in the mud. （豬，複數）', 'blanks': [['pigs']], 'exp': 'pig → pigs。'},
+    {'q': 'A {0} is flying from flower to flower. （蜜蜂）', 'blanks': [['bee']], 'exp': 'bee 蜜蜂。'},
+    {'q': 'Be careful! There is a {0} in the grass. （蛇）', 'blanks': [['snake']], 'exp': 'snake 蛇。'},
+    {'q': 'Do you have any {0} at home? （寵物，複數）', 'blanks': [['pets']], 'exp': 'any 後面接複數 pets。'},
+  ]},
+  {'title': '⑥ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'I saw ______ elephant at the zoo.', 'opts': ['a', 'an', 'two', 'some'], 'answer': 1, 'exp': 'elephant 母音開頭，用 an。'},
+    {'type': 'mc', 'q': 'Bats sleep in the day and fly at ______.', 'opts': ['morning', 'noon', 'night', 'afternoon'], 'answer': 2, 'exp': '蝙蝠晚上飛：at night。'},
+    {'type': 'mc', 'q': 'The dog ______ my leg yesterday.', 'opts': ['bite', 'bit', 'bites', 'biting'], 'answer': 1, 'exp': 'yesterday 用過去式 bit。'},
+    {'type': 'mc', 'q': 'A ______ is bigger than a mouse.', 'opts': ['rat', 'bug', 'ant', 'bee'], 'answer': 0, 'exp': 'rat 是比較大的老鼠。'},
+    {'type': 'mc', 'q': 'There are a lot of ______ in the river.', 'opts': ['fishs', 'fishes', 'fish', 'a fish'], 'answer': 2, 'exp': 'fish 單複數同形。'},
+    {'type': 'mc', 'q': 'The dog is happy. It is wagging its ______.', 'opts': ['tail', 'tale', 'tell', 'toe'], 'answer': 0, 'exp': 'wag its tail 搖尾巴。'},
+  ]},
+]
