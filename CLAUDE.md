@@ -1,7 +1,7 @@
 # english-quiz 工作紀錄與說明
 
 這個檔案是給「下一次接手的人」看的（包括在家裡電腦開 Claude Code 時，Claude 會自動讀這個檔案）。
-最後更新：2026-11-18（家裡電腦：單字區新做 Unit 17 地點與位置、Unit 18 交通、Unit 19 尺寸與測量、Unit 20 國家與區域，見「國中單字分科區」；同一天電腦版讀了 BRANDEN 的 WORD UP 熟悉度＋GEPT 成績，見「WORD UP（已購買的網頁版）整合」一節）。
+最後更新：2026-11-19（公司電腦：單字區新做 Unit 21 語言、22 節日、23 職業、24 天氣與大自然、25 地理名詞、26 動物與昆蟲、27 冠詞與限定詞、28 代名詞、29 疑問詞、30 be 動詞與助動詞、31～40 介系詞到副詞＝主題 2000 字全部完成）；2026-11-18（家裡電腦：單字區新做 Unit 17 地點與位置、Unit 18 交通、Unit 19 尺寸與測量、Unit 20 國家與區域，見「國中單字分科區」；同一天電腦版讀了 BRANDEN 的 WORD UP 熟悉度＋GEPT 成績，見「WORD UP（已購買的網頁版）整合」一節）。
 
 ## ⭐ 最新進度與回家要做的事（2026-11-04 公司電腦，回家電腦先讀這節）
 
@@ -166,6 +166,27 @@
   - `build_vocab.py` 新增兩個功能（舊單元的輸出不變，重跑 u01、u02、u13～u19 內容都相同；git 只會因為換行符號顯示 M，`git checkout` 掉就好）：① 資料檔的字可以加 `'say'`／`'exsay'` 指定語音唸法（R.O.C. 唸成「R O C」，畫面上照樣顯示 R.O.C.）；② 8 個字以下的小單元，投影片快問快答平分成兩頁（原本是前 8 個字一頁、9～16 個字一頁，7 個字的單元「英文 → 中文」會是空的）。
   - 課本 Unit 21 Languages 只有 Chinese、English 兩個字（印刷頁第 69 頁下半）；Unit 22 從第 70 頁起，做之前先轉圖確認。
 - **單字區音檔放大音量（2026-11-18 家裡電腦，使用者反映「點單字聲音太小」）**：Kokoro 錄出來平均約 -22 dB（一般影音約 -14～-16 dB）。新增 `tools/vocab_gen/boost_audio.py`（numpy＋soundfile，不用 ffmpeg）：目標平均 -16 dB、最大音量不超過 -1 dB（不破音），差不到 0.5 dB 的檔跳過，所以重跑不會越來越大聲。已處理 `vocab/*/audio/` 全部 2996 個檔（主題 2000 字 u01～u20、WORD UP u01～u02），平均放大 +5 dB。**以後新錄的單元，`tts_mp3.py` 錄完要接著跑 `python tools/vocab_gen/boost_audio.py vocab/w2000/audio/uNN`**。文法區、美式生活館等其他地方的音檔也一樣偏小聲（約 -22 dB），還沒處理（使用者只要求單字區）。
+- **Unit 21 Languages 語言（2026-11-19 公司電腦，I: 槽已接上）**：照課本字表 2 字（Chinese、English）。測驗 16 題，沒登入時用正確答案作答得 16/16；2 張照片（毛筆與中文字、拼出 ENGLISH 的字母珠）、8 個音檔；重點整理：Chinese／English 當語言、人、形容詞，語言不可數、in English，國家／人／語言對照。`UNITS` 已加 `w2000_u21`，已重跑 `build_wordup_index.py`。
+  - **公司電腦的課本**：`I:\興雅\英文\115二上翰林\115[翰林]國中英語單字2000活用練習_課本_學用.pdf`（208 頁，單一檔案，PDF 頁序＝印刷頁碼－1，和家裡那份一樣）；用 PyMuPDF 轉圖看。
+- **Unit 22～25（2026-11-19 公司電腦）**：照課本字表做，例句、中文、題目自編；四份測驗沒登入時用正確答案作答都全對；`UNITS` 已加 `w2000_u22`～`u25`，已重跑 `build_wordup_index.py`。
+  - **Unit 22 Holidays & festivals 節日與慶典**（印刷頁第 70 頁）：7 字（Christmas、Easter、Halloween、festival、holiday、vacation、celebrate）。測驗 22 題 22/22；7 張照片、28 個音檔；重點整理：常見節日（含春節、元宵、端午、中秋）、holiday／vacation／festival、celebrate 變化。
+  - **Unit 23 Occupations 職業**（第 72–73 頁）：30 字。測驗 31 題 31/31；30 張照片、120 個音檔；重點整理：-er／-or／-man／-ess 造字、特別的複數（-men、housewives、secretaries）、問職業、job 可數／work 不可數。cook 前面出現過，這裡是「廚師」。
+  - **Unit 24 Weather & nature 天氣與大自然**（第 76–77 頁）：29 字。測驗 28 題 28/28；29 張照片、116 個音檔；重點整理：名詞＋y（sunny 多一個 n）、問天氣、相反詞、blow／shine 三態。cold、cool、hot 前面出現過，這裡是天氣的意思。
+  - **Unit 25 Geographical terms 地理名詞**（第 80 頁）：12 字（area、bank、beach、hill、island、lake、mountain、pond、pool、river、sea、spring）。測驗 22 題 22/22；12 張照片、48 個音檔；重點整理：比大小（hill／mountain、pond／lake）、臺灣地名、on／in／by。bank、beach、pool、spring 前面出現過，這裡是河岸、泉水等意思；mountain 的例句用 `exsay` 讓 Mt. 唸成 Mount。
+  - 照片挑選：每個字 4 張候選拼成對照表逐張看，不選有槍、法官假髮、太暗或恐怖的；工具（cand／sheet／pick 腳本）放在 scratchpad，不在 repo，做法同 Unit 17 的說明。
+- **Unit 26～30（2026-11-19 公司電腦，同一天接著做）**：照課本字表做；五份測驗沒登入時用正確答案作答都全對；`UNITS` 已加 `w2000_u26`～`u30`，已重跑 `build_wordup_index.py`。
+  - **Unit 26 Animals & insects 動物與昆蟲**（印刷頁第 82–84 頁）：38 字。測驗 29 題 29/29；38 張照片、152 個音檔；重點整理：特別的複數（mice、geese、sheep、fish）、叫聲與寶寶、bite 三態。
+  - **Unit 27 Articles & determiners 冠詞與限定詞**（第 87 頁）：14 字（a、every、the、this、that、these、those、my、our、your、his、her、its、their）。字 `a` 用 `say='a, an'`。測驗 24 題 24/24；56 個音檔。
+  - **Unit 28 Pronouns & reflexives 代名詞與反身代名詞**（第 88–89 頁）：21 字（all … something）；課本的人稱代名詞表放在重點整理。測驗 25 題 25/25；84 個音檔。
+  - **Unit 29 Wh-words 疑問詞**（第 91 頁）：9 字。測驗 19 題 19/19；36 個音檔；重點整理：問什麼答什麼、how 家族、間接問句。
+  - **Unit 30 Be & auxiliaries be 動詞與助動詞**（第 92 頁）：22 字。測驗 24 題 24/24；88 個音檔；重點整理：be 動詞配主詞、do／have 變化、助動詞＋原形。
+  - Unit 27～30 是功能詞，沒有適合的照片，全部用 emoji（沒有 img 資料夾）。
+- **Unit 31～40（2026-11-19 公司電腦，同一天接著做）＝主題 2000 字 40 個單元的 u01、u02、u13～u40 都有資料檔了**（u03～u12 仍是直接改 HTML）。照課本字表做，例句、中文、題目自編；`UNITS` 已加 `w2000_u31`～`u40`。
+  - 31 Prepositions 介系詞（印刷頁第 94–96 頁）38 字；32 Conjunctions 連接詞（第 98 頁）12 字；33 Interjections 感嘆詞（第 98 頁下半）4 字；34 Other nouns 其他名詞（第 100–104 頁）**111 字**，41 張照片；35 Other verbs (1)（第 107–108 頁）33 字，4 張照片；36 Other verbs (2)（第 111–112 頁）37 字，17 張照片；37 Other verbs (3)（第 115–116 頁）38 字，16 張照片；38 Other verbs (4)（第 119–121 頁）54 字，10 張照片；39 Other adjectives 其他形容詞（第 124–126 頁）66 字；40 Other adverbs 其他副詞（第 129–130 頁）36 字。功能詞、抽象名詞、形容詞、副詞用 emoji。
+  - 課本重複收的字（like、since、than、that、check、treat、correct、other、own…）照課本保留，各單元用該單元的意思。
+  - **⚠️ 測試事故（2026-11-19）**：用正確答案自動作答 u31～u40 測驗時，內建瀏覽器的 localhost:8765 **已經用 MELISSA 登入**（有她的點數憑證），結果 10 份測驗以 MELISSA 的名義全對送出——**試算表多了 10 筆 Vocab W2000 U31～U40 的成績，點數存摺也幫 MELISSA 記了點（當天上限 50 點＋連續紅利）**，要由家長到試算表刪掉這 10 筆、在存摺扣回點數。本機（localhost）的 vocabProgress／vocabWords 已清掉。**以後自動測驗前先確認沒有登入**（`quizStudentName` 是空的，或改用沒登入過的網址），有登入就不要按送出。
+  - u31～u38 測驗在送出前確認全對；u39、u40 只用程式檢查題目資料（答案位置、空格數），沒有在瀏覽器作答。
+  - 單字區主題 2000 字 40 個單元全部完成；之後可做 LaLa Word 18 單元（一字多義・易混淆・字首字尾，見本節開頭）。
 - **單字學習進度：紅字複習、答對變灰（2026-11-04 使用者要求，取代同一天早先的「答錯標紅」）**：
   - 每個登入者各自的進度存在這台裝置 localStorage `vocabProgress:<單字卡頁路徑>:<登入者>` = `{mastered:[第一次就答對的字], wrong:[答錯的字], total, at}`（沒有存到雲端）。
   - `gquiz.js`（label 開頭 `Vocab` 的測驗、有登入時）先 fetch 單字卡頁取得全部單字，`wordsOf()` 找出每題考到哪些字（選擇題看正解與單字題目、填空看正解、「swim → (V-ing)」算原形，允許複數／V-ing）。**第一次測驗每個字都要考到**：課本題目沒考到的字自動補「⑦ 其他單字：看中文選英文」（所以大單元第一次題數多，例如 Unit 16 有 81 題）。之後**只出還有沒答對的字的題目**；對不到單字的題目（the／不填）只在第一次出。只看第一次作答：答對的字變 mastered（灰）、答錯變 wrong（紅），訂正後仍是紅，下次再考。全部答對時測驗頁顯示「全部答對、不用再背」，可「清除紀錄、全部重新測驗」。
