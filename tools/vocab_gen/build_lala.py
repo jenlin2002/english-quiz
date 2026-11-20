@@ -15,9 +15,10 @@ sys.path.insert(0, HERE)
 import build_vocab as BV  # noqa: E402
 import link_slide_audio  # noqa: E402
 from sl import btn, note, lead, qas, table, section, two, card, ul  # noqa: E402
-import lala_u01  # noqa: E402
+import importlib  # noqa: E402
 
-UNITS = (lala_u01,)   # 新單元做好後加在這裡
+# 新單元：做好 lala_uNN.py 就會自動加進來（照檔名順序）
+UNITS = tuple(importlib.import_module(n[:-3]) for n in sorted(os.listdir(HERE)) if re.fullmatch(r'lala_u\d\d\.py', n))
 BV.BOOKS['lala'] = 'LaLa Word 一字多義'
 E = html.escape
 
@@ -176,7 +177,8 @@ def build(mod):
             m = re.search(r'<b>([A-Za-z]+)</b>', it.get('q', ''))
             if m and 'w' not in it:
                 word = m.group(1).lower()
-                it['w'] = next((w['w'] for w in u['words'] if word.startswith(w['w'].lower())), word)
+                it['w'] = next((w['w'] for w in u['words'] if word.startswith(w['w'].lower())
+                                or (w['w'].endswith('y') and word.startswith(w['w'].lower()[:-1] + 'i'))), word)
     data = {'label': 'Vocab LALA U%d' % no, 'title': '單字區 %s Unit %d %s' % (BV.BOOKS['lala'], no, u['zh']),
             'back': tag + '.html', 'sections': quiz}
     qpage = BV.QUIZ_TPL.format(data=json.dumps(data, ensure_ascii=False, indent=1), **fmt)
@@ -194,7 +196,10 @@ def build(mod):
 
 if __name__ == '__main__':
     jobs = []
+    only = set(int(a) for a in sys.argv[1:])   # 例：python build_lala.py 2 3 → 只產生 Unit 2、3
     for m in UNITS:
+        if only and m.UNIT['no'] not in only:
+            continue
         j = build(m)
         print('LaLa Word Unit %d：%d 個音檔' % (m.UNIT['no'], len(j)))
         jobs += j
