@@ -22,11 +22,15 @@
     done = done || function(){};
     const card = btn.closest('.vc-card');
     btn.classList.add('playing'); if(card) card.classList.add('playing');
-    const fin = () => { btn.classList.remove('playing'); if(card) card.classList.remove('playing'); done(); };
+    let over = false;
+    const fin = () => { if(over) return; over = true; btn.classList.remove('playing'); if(card) card.classList.remove('playing'); done(); };
     const a = new Audio(btn.dataset.src);
     let fell = false;
     const fb = () => { if(fell) return; fell = true; speak(btn.dataset.say, fin); };
     a.addEventListener('ended', fin);
+    // 合併音檔（all.mp3#t=開始,結束）：播到結束時間就停（有的瀏覽器不會自己停在 #t 的結尾）
+    const clip = /#t=[\d.]+,([\d.]+)/.exec(btn.dataset.src || '');
+    if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); fin(); } }); }
     a.addEventListener('error', fb);
     const p = a.play(); if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
     cur = a;
