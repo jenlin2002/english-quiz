@@ -65,7 +65,7 @@
       const html = await (await fetch(CFG.back, { cache:'no-cache' })).text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const back = new URL(CFG.back, location.href), tx = (c, s) => { const x = c.querySelector(s); return x ? x.textContent.trim() : ''; };
-      const ab = (u) => u ? new URL(u, back).pathname : '';
+      const ab = (u) => { if(!u) return ''; const x = new URL(u, back); return x.pathname + x.hash; };   // hash：合併音檔的 #t=開始,結束
       cards = [...doc.querySelectorAll('.vc-card')].map(c => ({ w: c.querySelector('.vc-word').textContent.trim(), zh: (c.querySelector('.vc-zh') || {}).textContent || '',
         pos: tx(c, '.vc-pos'), ex: tx(c, '.vc-en'), exzh: tx(c, '.vc-exzh'), img: ab((c.querySelector('.vc-photo') || { getAttribute(){ return ''; } }).getAttribute('src')),
         audio: ab((c.querySelector('.vc-say:not(.sm)') || { dataset: {} }).dataset.src) }));   // pos、例句、圖片、語音給「我的字卡」用

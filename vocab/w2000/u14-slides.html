@@ -227,7 +227,7 @@ function play(btn){
   const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
   a.addEventListener('error', fb);
   const clip = /#t=[\d.]+,([\d.]+)/.exec(a.src);
-  if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); btn.classList.remove('playing'); } }); }
+  if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); btn.classList.remove('playing'); } }); a.addEventListener('pause', () => btn.classList.remove('playing')); }
   a.addEventListener('ended', () => btn.classList.remove('playing'));
   btn.classList.add('playing');
   const p = a.play();

@@ -30,7 +30,11 @@
     a.addEventListener('ended', fin);
     // 合併音檔（all.mp3#t=開始,結束）：播到結束時間就停（有的瀏覽器不會自己停在 #t 的結尾）
     const clip = /#t=[\d.]+,([\d.]+)/.exec(btn.dataset.src || '');
-    if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); fin(); } }); }
+    if(clip){
+      const end = +clip[1];
+      a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); fin(); } });
+      a.addEventListener('pause', () => { if(cur === a && a.currentTime >= end - 0.3) fin(); });   // 瀏覽器自己停在 #t 結尾時只會觸發 pause
+    }
     a.addEventListener('error', fb);
     const p = a.play(); if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
     cur = a;
@@ -138,7 +142,7 @@
   });
 
   // ---- 我的字卡（2026-11-17）：每張單字卡加「☆ 存字卡」（首頁 repo 的 /cards/cards.js，要登入、用存摺同一個後端）----
-  const abs = (u) => { try{ return u ? new URL(u, location.href).pathname : ''; }catch(e){ return ''; } };
+  const abs = (u) => { try{ if(!u) return ''; const x = new URL(u, location.href); return x.pathname + x.hash; }catch(e){ return ''; } };   // hash：合併音檔的 #t=開始,結束
   const txt = (el, sel) => { const x = el.querySelector(sel); return x ? x.textContent.trim() : ''; };
   function addStars(){
     if(!window.Cards) return;
