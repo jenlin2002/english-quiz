@@ -1,0 +1,110 @@
+/* 寫作園地：在 grammar2/grammar.css（黑板＋紙張風格）之上加的樣式 */
+h1 .zh{ font-family:'Noto Sans TC', sans-serif; font-size:.6em; color:var(--chalk-yellow); margin-left:6px; }
+.wr-steps{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:-14px 0 8px; position:sticky; top:0; z-index:5; padding:8px 0; background:var(--chalk-bg); }
+.wr-steps a{ color:var(--paper); text-decoration:none; font-size:13px; font-weight:700; border:1.5px solid var(--chalk-line); border-radius:20px; padding:5px 12px; background:var(--chalk-deep); }
+.wr-steps a:hover{ border-color:var(--chalk-yellow); color:var(--chalk-yellow); }
+.wr-tip{ color:var(--ink-soft); font-size:14px; background:var(--paper-2); border-radius:10px; padding:8px 12px; }
+.btn.sm{ font-size:12px; padding:3px 9px; border-radius:8px; }
+
+/* 播放、麥克風 */
+.say, .mic{ font:inherit; border:none; cursor:pointer; border-radius:50%; width:32px; height:32px; flex:none; display:inline-flex; align-items:center; justify-content:center;
+  background:#E5DCC2; font-size:15px; vertical-align:middle; }
+.say:hover, .mic:hover{ background:var(--chalk-yellow); }
+.say.playing{ background:var(--chalk-yellow); box-shadow:0 0 0 3px rgba(232,185,74,.35); }
+.mic{ background:#DDEBE2; }
+.mic.rec{ background:var(--chalk-red); color:#fff; animation:wrPulse 1s infinite; }
+@keyframes wrPulse{ 50%{ box-shadow:0 0 0 6px rgba(217,122,108,.35); } }
+.no-mic .mic{ display:none; }
+.wr-mic-note{ display:none; font-size:12px; color:var(--ink-soft); }
+.no-mic .wr-mic-note{ display:inline; }
+
+/* ① 對話、問題 */
+.wr-dialog{ display:flex; flex-direction:column; gap:6px; margin:12px 0 16px; }
+.wr-line{ display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:10px; background:#FFF; max-width:92%; }
+.wr-line.b{ align-self:flex-end; background:#E8F1EB; }
+.wr-line b{ font-size:12px; color:var(--ink-soft); min-width:34px; }
+.wr-speak, .wr-frames{ margin:8px 0 0 22px; }
+.wr-speak li, .wr-frames li{ margin:12px 0; }
+.wr-q{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:16px; }
+.wr-zh{ color:var(--ink-soft); font-size:13px; margin:2px 0 6px; }
+.wr-ans{ display:flex; gap:8px; align-items:center; }
+.wr-hint{ font-size:12.5px; color:#8A7A4A; margin-top:4px; }
+.wr-in{ font:inherit; font-size:15px; border:none; border-bottom:2px solid var(--chalk-green); background:#FFFDF6; padding:4px 6px; min-width:8em; color:var(--ink); }
+.wr-in.long{ flex:1; min-width:0; border:1.5px solid var(--line); border-radius:8px; padding:7px 10px; }
+.wr-in:focus{ outline:2px solid var(--chalk-yellow); }
+
+/* ② 字詞庫 */
+.wr-words{ display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:10px; margin-top:10px; }
+.wr-word{ background:#FFF; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+.ww-head{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.ww-head .vc-word{ font-size:17px; }
+.ww-head .vc-zh{ color:var(--ink-soft); font-size:13.5px; }
+.ww-ex{ display:flex; gap:6px; align-items:flex-start; margin-top:6px; font-size:14px; }
+.ww-ex .say{ width:26px; height:26px; font-size:12px; }
+.ww-exzh{ color:var(--ink-soft); font-size:12.5px; margin-left:32px; }
+
+/* ③ 句型 */
+.wr-frame{ font-size:16px; line-height:2.1; }
+.wr-frame .wr-in{ width:10em; }
+.wr-ex{ margin-top:6px; display:flex; gap:8px; align-items:center; color:#2F5D46; }
+
+/* ⑤ 寫短文 */
+.wr-level{ margin-bottom:10px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.wr-prompt{ background:var(--chalk-bg); color:var(--paper); border-radius:12px; padding:12px 16px; margin:8px 0; }
+.wp-en{ font-size:18px; font-weight:700; }
+.wp-zh{ color:#C9D6CC; }
+.wp-tip{ color:var(--chalk-yellow); font-size:13.5px; margin-top:4px; }
+.wr-guide{ font-size:14px; margin:10px 0; }
+.wr-guide ol{ margin:4px 0 0 22px; }
+.wr-guide span{ color:var(--ink-soft); font-size:12.5px; }
+.wr-ideas{ font-size:14px; background:#EEF5F0; border-radius:10px; padding:0 12px; margin:8px 0; }
+.wr-ideas:not(:empty){ padding:8px 12px; }
+.wr-ideas ul{ list-style:none; margin:4px 0 0; }
+.wr-ideas li{ margin:4px 0; }
+.wr-editor textarea{ width:100%; font:inherit; font-size:16px; line-height:1.8; border:2px solid var(--line); border-radius:12px; padding:12px; background:#FFFDF6; color:var(--ink); resize:vertical; }
+.wr-editor textarea:focus{ outline:none; border-color:var(--chalk-yellow); }
+.wr-bar{ display:flex; gap:10px; align-items:center; margin-top:6px; font-size:13px; color:var(--ink-soft); }
+.wr-checks{ list-style:none; margin:10px 0; font-size:14px; }
+.wr-checks li{ margin:3px 0; }
+.wr-checks li.no{ color:var(--ng); }
+.wr-checks li.ok{ color:var(--ok); }
+.wr-actions{ margin:12px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.wr-fb{ border-top:2px dashed var(--line); margin-top:10px; padding-top:6px; }
+.wr-fb h3{ font-size:16px; margin:12px 0 6px; }
+.wr-fb .muted{ color:var(--ink-soft); font-size:13.5px; }
+.wr-fb .good{ color:var(--ok); font-weight:700; }
+.wr-gram, .wr-tips{ margin-left:22px; font-size:14.5px; }
+.wr-gram li, .wr-tips li{ margin:8px 0; }
+.wr-gram mark{ background:#F6D3CB; padding:0 2px; border-radius:3px; }
+.wr-gram .tag{ font-size:11.5px; font-weight:700; color:#fff; background:var(--chalk-red); border-radius:4px; padding:0 6px; }
+.wr-gram .msg{ color:var(--ink-soft); font-size:13px; }
+.wr-gram li.fixed{ opacity:.55; }
+.wr-gram.stale{ opacity:.6; }
+.wr-tips s{ color:var(--ng); }
+.wr-tips div{ color:var(--ink-soft); font-size:13.5px; }
+.wr-ok{ background:#E3F1E8; color:#1F5C3C; border-radius:12px; padding:12px 14px; margin:12px 0; font-weight:700; }
+.wr-model .wm{ background:#FFF; border:1px solid var(--line); border-radius:12px; padding:10px 14px; margin:8px 0; }
+.wm-h{ font-weight:700; margin-bottom:4px; display:flex; gap:8px; align-items:center; }
+
+/* 造句練習頁：整句作答，輸入框要夠寬 */
+.wr-quiz input.gq-blank{ width:100%; max-width:36em; display:block; margin-top:6px; }
+
+/* 目錄頁 */
+.wr-how{ margin-left:22px; }
+.wr-how li{ margin:6px 0; }
+.wr-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:14px; margin-top:20px; }
+.wr-unit{ background:var(--paper); color:var(--ink); border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:4px; }
+.wr-unit.soon{ opacity:.55; }
+.wu-no{ font-family:'Space Mono', monospace; font-size:11px; letter-spacing:2px; color:#8A7A4A; font-weight:700; }
+.wu-t{ font-size:19px; font-weight:900; color:var(--chalk-bg); }
+.wu-zh{ font-weight:700; color:var(--ink-soft); }
+.wu-d{ font-size:13px; color:var(--ink-soft); }
+.wu-links{ margin-top:8px; display:flex; gap:6px; flex-wrap:wrap; }
+.wu-st{ font-size:12.5px; color:var(--ok); font-weight:700; }
+.wu-tag{ align-self:flex-start; font-size:12px; background:var(--line); border-radius:6px; padding:1px 8px; margin-top:6px; }
+
+@media (max-width:600px){
+  .part{ padding:18px 14px; }
+  .wr-frame .wr-in{ width:8em; }
+  .wr-line{ max-width:100%; }
+}

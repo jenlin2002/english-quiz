@@ -11,10 +11,11 @@ MD = os.environ.get('KOKORO_DIR', os.path.join(os.path.dirname(os.path.abspath(_
 k = Kokoro(os.path.join(MD, 'kokoro-v1.0.int8.onnx'), os.path.join(MD, 'voices-v1.0.bin'))
 with open(sys.argv[1], encoding='utf-8') as f:
     items = json.load(f)
-for text, out in items:
+for it in items:   # [文字, 輸出檔] 或 [文字, 輸出檔, 聲音]（寫作園地的對話用第二種聲音）
+    text, out = it[0], it[1]
     if os.path.exists(out):
         continue
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    samples, sr = k.create(text, voice='af_heart', speed=0.9, lang='en-us')
+    samples, sr = k.create(text, voice=it[2] if len(it) > 2 else 'af_heart', speed=0.9, lang='en-us')
     sf.write(out, samples, sr, format='MP3', subtype='MPEG_LAYER_III', compression_level=0.7)
     print(os.path.basename(os.path.dirname(out)), os.path.basename(out), flush=True)

@@ -156,6 +156,9 @@ def all_units():
     for f in sorted(glob.glob(os.path.join(REPO, 'grammar2', 'u[0-9][0-9]-slides.html'))):
         tag = os.path.basename(f)[:3]
         jobs.append(('grammar2', [os.path.basename(f)], 'audio/' + tag))
+    for f in sorted(glob.glob(os.path.join(REPO, 'writing', 'u[0-9][0-9].html'))):
+        tag = os.path.basename(f)[:3]
+        jobs.append(('writing', [tag + '.html'], 'audio/' + tag))
     for f in sorted(glob.glob(os.path.join(REPO, 'course2', '*', 'slides.html'))):
         jobs.append((os.path.relpath(os.path.dirname(f), REPO).replace('\\', '/'), ['slides.html'], 'audio'))
     return jobs
