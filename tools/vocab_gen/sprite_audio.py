@@ -150,8 +150,10 @@ def process(base, pages, prefix, delete=False, level=0.6, quiet=False):
 def all_units():
     jobs = []
     for book in ('vocab/w2000', 'vocab/w2000p2', 'vocab/lala', 'vocab/wordup'):
-        for f in sorted(glob.glob(os.path.join(REPO, book, 'u[0-9][0-9].html'))):
-            tag = os.path.basename(f)[:3]
+        for f in sorted(glob.glob(os.path.join(REPO, book, 'u[0-9][0-9]*.html'))):
+            if '-' in os.path.basename(f):
+                continue   # 只取單字卡頁（u34a.html 這種拆頁的也算），slides／quiz 跟著單字卡處理
+            tag = os.path.basename(f)[:-5]
             jobs.append((book, [tag + '.html', tag + '-slides.html'], 'audio/' + tag))
     for f in sorted(glob.glob(os.path.join(REPO, 'grammar2', 'u[0-9][0-9]-slides.html'))):
         tag = os.path.basename(f)[:3]

@@ -271,7 +271,7 @@ def build(mod):
     u, quiz = mod.UNIT, mod.QUIZ
     book, no = u['book'], u['no']
     CUR['book'] = book
-    tag = 'u%02d' % no
+    tag = u.get('tag') or 'u%02d' % no   # 一個課本單元太大時可拆頁：'tag': 'u34b'（PART 2 Unit 34 其他名詞）
     out = os.path.join(REPO, 'vocab', book)
     book_name = BOOKS[book]
     fmt = dict(book=book_name, bookup=book_name, no=no, en=E(u['en']), zh=E(u['zh']), intro=E(u['intro']), tag=tag,
@@ -285,7 +285,7 @@ def build(mod):
     # 投影片和單字卡唸一樣的句子就直接用單字卡的音檔（省檔案數，見 link_slide_audio.py），其餘才錄 slide-NN
     page, keep = link_slide_audio.link(page, link_slide_audio.card_map(cards_page))
     write(os.path.join(out, tag + '-slides.html'), back(page))
-    data = {'label': 'Vocab %s U%d' % (book.upper(), no), 'title': '單字區 %s Unit %d %s' % (book_name, no, u['zh']),
+    data = {'label': 'Vocab %s U%s' % (book.upper(), tag[1:].lstrip('0') if u.get('tag') else no), 'title': '單字區 %s Unit %d %s' % (book_name, no, u['zh']),
             'back': tag + '.html', 'sections': quiz}
     write(os.path.join(out, tag + '-quiz.html'), back(QUIZ_TPL.format(data=json.dumps(data, ensure_ascii=False, indent=1), **fmt)))
     adir = os.path.join(out, 'audio', tag)

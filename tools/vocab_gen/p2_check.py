@@ -6,7 +6,7 @@ sys.path.insert(0, HERE)
 sys.stdout.reconfigure(encoding='utf-8')
 bad = 0
 seen = {}
-for f in sorted(glob.glob(os.path.join(HERE, 'w2000p2_u[0-9][0-9].py'))):
+for f in sorted(glob.glob(os.path.join(HERE, 'w2000p2_u[0-9][0-9]*.py'))):
     m = importlib.import_module(os.path.basename(f)[:-3])
     no = m.UNIT['no']
     ws = [w['w'] for w in m.UNIT['words']]
