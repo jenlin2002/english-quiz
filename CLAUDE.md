@@ -291,3 +291,5 @@
   - **PART 2 全部完成（2026-11-22，使用者看過 Unit 1、2 後說「照這樣繼續做」）**：39 頁、838 字（課本 PART 2 沒有 Unit 7、21、27、29、33；Unit 34 其他名詞 163 字拆成 34-1～34-4〔u34a～u34d〕、Unit 35～38 動詞 133 字照順序分四頁、Unit 39 形容詞 68 字拆成 39-1／39-2〔u39a、u39b〕）。每頁測驗沒登入時用正確答案作答都全對。照片約 520 張（抽象字、動詞、形容詞、副詞多用 emoji）。和 PART 1 或其他單元重複的字（sheet、shrimp、judge、complete、guide、memory 等）照課本保留，意思不同。
   - 工具（都在 tools/vocab_gen/）：`p2kit.py`（`W()` 建字、`auto_quiz()` 自動出「看中文選英文／看英文選中文／拼字」＋手寫的例句填空 `F()`；干擾選項排除同義字）、`build_p2.py u03 u34a …`（產生頁面→錄音→放大→合併 all.mp3→重跑對照表→重寫目錄卡片）、`p2_index.py`（`vocab/index.html` 的 P2-START～P2-END 區塊自動產生，不要手改）、`p2_check.py`（檢查資料檔）。拆頁：資料檔 UNIT 加 `'tag': 'u34a', 'part': 1`；`build_vocab.py`、`sprite_audio.py`、`build_wordup_index.py` 都支援 `uNN[a-z]`。
   - 課本字表讀法：公司電腦 I: 槽 PDF 是掃描圖，用 PyMuPDF 轉圖、左右欄切開逐頁看（Windows OCR 只有中文，英文抓不準，只當參考）。
+
+- 2026-11-22 投影片上一頁鍵修正：第一期「第N週投影片」的上一頁鈕被投影片圖片蓋住（沒有 z-index）、看不到也按不到；其他投影片的箭頭是深灰半透明、在深色投影片上幾乎看不見。所有投影片頁（第一期、course2、grammar2、vocab、english-quiz-plan 的 course2 與 slidekit.py、tools/course2_gen/slides_head.html）在 </head> 前加一段 <style>/* arrow-visible 2026-11-22 */：箭頭改米白底深綠字、z-index:6、停用時 opacity .3。新做投影片沿用 slidekit／slides_head 就會帶到。
