@@ -276,3 +276,8 @@
 - **段考訂正完成補送 1 點（2026-10-18）**：段考題庫錯題全部訂正完成後 `Points.earn({kind:'fix-bonus'})`，後端 `fixBonus_()` 記一筆類型「訂正獎勵」+`CONFIG.FIX_BONUS`（1）點，同一份考卷每天一次、不算每天上限與連續天數；要重新部署 Apps Script 才生效（舊版後端會當成一般賺點、全對每題 2 點＝給 2 點）。
 - 程式在 `points.js`（7 份副本內容一致，主檔在 english-quiz-plan `points/points.js`）與後端 `Code.gs`（`CONFIG.STREAK_BONUS`）。
 - **要先更新 Apps Script 後端（貼新版 Code.gs → 部署新版本）紅利才會開始算**，步驟在 english-quiz-plan `points/README-點數存摺.md` 最後一節。
+
+## 單字卡「全部播放」加暫停／停止（2026-11-22 使用者回報）
+- 問題：按「▶ 全部播放」後停不下來、畫面一直往下捲。
+- `vocab/vocab.js`：播放中畫面下方中間出現控制列（第幾個字／共幾個、⏸ 暫停 ↔ ▶ 繼續、⏹ 停止）；「全部播放」按鈕播放中變「⏹ 停止播放」，再按一次就停；Esc、離開頁面、點單字的 🔊 也會停。暫停後繼續會從暫停的那個字重唸。用 `gen` 計數避免停止後舊的播放回呼又接下一個字。
+- 國中2000字、拉拉、WORD UP 共 62 頁 `vocab.js?v=20261122a`（`build_vocab.py` 模板也改了）。

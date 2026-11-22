@@ -4,12 +4,19 @@
   if(!grid) return;
   let cur = null, queue = [];
   const tts = 'speechSynthesis' in window;
+  // 全部播放的狀態（2026-11-22 使用者：按了全部播放停不下來、畫面一直往下捲 → 加暫停／停止）
+  //   gen：每次停止／暫停就 +1，舊的播放結束回呼看到 gen 變了就不再接下一個字
+  let gen = 0, paused = false, curBtn = null, total = 0, bar = null;
 
-  function stop(){
-    queue = [];
+  function halt(){
     if(cur){ cur.pause(); cur = null; }
     if(tts) speechSynthesis.cancel();
-    document.querySelectorAll('.playing').forEach(e => e.classList.remove('playing'));
+    document.querySelectorAll('.vc-say.playing, .vc-card.playing').forEach(e => e.classList.remove('playing'));
+  }
+  function stop(){
+    gen++; queue = []; paused = false; curBtn = null;
+    halt();
+    showBar(false);
   }
   function speak(text, done){
     if(!tts){ done(); return; }
@@ -40,11 +47,60 @@
     cur = a;
   }
   function next(){
+    if(paused) return;
     const b = queue.shift();
-    if(!b) return;
+    if(!b){ stop(); return; }   // 全部播完：收起控制列
+    curBtn = b;
+    const g = gen;
     b.scrollIntoView({ block:'nearest', behavior:'smooth' });
-    play(b, () => setTimeout(next, 500));
+    play(b, () => { if(g !== gen) return; setTimeout(() => { if(g === gen) next(); }, 500); });
+    showBar(true);
   }
+  function pauseAll(){
+    if(paused || !curBtn) return;
+    paused = true; gen++;
+    queue.unshift(curBtn);   // 繼續時從這個字重新唸
+    halt();
+    showBar(true);
+  }
+  function resumeAll(){
+    if(!paused) return;
+    paused = false;
+    next();
+  }
+
+  // 全部播放時畫面下方中間的控制列：⏸ 暫停／▶ 繼續、⏹ 停止、目前第幾個字
+  function showBar(on){
+    const btns = document.querySelectorAll('[data-play-all]');
+    btns.forEach(b => {
+      if(!b.dataset.label) b.dataset.label = b.textContent;
+      b.textContent = on ? '⏹ 停止播放' : b.dataset.label;
+      b.classList.toggle('on', on);
+    });
+    if(!on){ if(bar) bar.style.display = 'none'; return; }
+    if(!bar){
+      bar = document.createElement('div');
+      bar.id = 'vcPlayBar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9500;'
+        + 'display:flex;align-items:center;gap:8px;padding:8px 10px 8px 16px;border-radius:999px;background:#163026;color:#F7F3E8;'
+        + 'border:2px solid #E8B94A;box-shadow:0 6px 20px rgba(0,0,0,.35);font-family:"Noto Sans TC",sans-serif;font-size:15px;max-width:calc(100vw - 24px);';
+      bar.innerHTML = '<span data-vc-now style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40vw"></span>'
+        + '<button type="button" data-vc-pause style="border:none;border-radius:999px;padding:8px 14px;font-size:15px;font-weight:700;cursor:pointer;background:#E8B94A;color:#24332B;white-space:nowrap"></button>'
+        + '<button type="button" data-vc-stop style="border:none;border-radius:999px;padding:8px 14px;font-size:15px;font-weight:700;cursor:pointer;background:#D97A6C;color:#fff;white-space:nowrap">⏹ 停止</button>';
+      document.body.appendChild(bar);
+      bar.querySelector('[data-vc-pause]').addEventListener('click', () => paused ? resumeAll() : pauseAll());
+      bar.querySelector('[data-vc-stop]').addEventListener('click', stop);
+    }
+    bar.style.display = 'flex';
+    const n = total - queue.length + (paused ? 1 : 0);
+    const card = curBtn && curBtn.closest('.vc-card');
+    const wEl = card && card.querySelector('.vc-word');
+    const word = wEl ? wEl.textContent : '';
+    bar.querySelector('[data-vc-now]').textContent = (paused ? '已暫停 ' : '▶ ') + n + ' / ' + total + (word ? '　' + word.trim() : '');
+    bar.querySelector('[data-vc-pause]').textContent = paused ? '▶ 繼續' : '⏸ 暫停';
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && (curBtn || paused)) stop(); });
+  window.addEventListener('pagehide', stop);
 
   // 每個登入者自己的進度（gquiz.js 記在這台裝置 vocabProgress:<這一頁>:<登入者>）：
   //   答錯、還要複習的字 → 紅色；第一次就答對的字 → 暗灰色（不用再背）；全部答對 → 整個單元變灰。
@@ -132,8 +188,11 @@
       return;
     }
     if(e.target.closest('[data-play-all]')){
+      const wasOn = !!(curBtn || paused);
       stop();
+      if(wasOn) return;   // 播放中再按一次＝停止
       queue = Array.prototype.slice.call(grid.querySelectorAll('.vc-say:not(.sm)'));
+      total = queue.length;
       next();
       return;
     }
