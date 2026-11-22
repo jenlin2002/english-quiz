@@ -34,10 +34,10 @@ window.GQUIZ = {
      "type": "mc",
      "q": "最大的；最大量",
      "opts": [
-      "amount",
+      "meter",
       "maximum",
-      "triangle",
-      "tiny"
+      "extra",
+      "narrow"
      ],
      "answer": 1,
      "exp": "maximum 最大的；最大量。"
@@ -46,60 +46,60 @@ window.GQUIZ = {
      "type": "mc",
      "q": "（一條）麵包",
      "opts": [
-      "loaf",
+      "plus",
       "amount",
-      "rectangle",
-      "meter"
+      "loaf",
+      "kilometer"
      ],
-     "answer": 0,
+     "answer": 2,
      "exp": "loaf （一條）麵包。"
     },
     {
      "type": "mc",
      "q": "測量；措施",
      "opts": [
-      "tiny",
-      "distance",
       "measure",
-      "loaf"
+      "distant",
+      "tiny",
+      "weight"
      ],
-     "answer": 2,
+     "answer": 0,
      "exp": "measure 測量；措施。"
     },
     {
      "type": "mc",
      "q": "極小的",
      "opts": [
-      "kilometer",
-      "narrow",
-      "liter",
-      "tiny"
+      "distance",
+      "plus",
+      "tiny",
+      "narrow"
      ],
-     "answer": 3,
+     "answer": 2,
      "exp": "tiny 極小的。"
     },
     {
      "type": "mc",
      "q": "距離",
      "opts": [
-      "narrow",
+      "meter",
+      "weight",
       "distance",
-      "minus",
-      "measure"
+      "minus"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "distance 距離。"
     },
     {
      "type": "mc",
      "q": "加",
      "opts": [
-      "minus",
-      "distance",
       "plus",
-      "maximum"
+      "tiny",
+      "distant",
+      "loaf"
      ],
-     "answer": 2,
+     "answer": 0,
      "exp": "plus 加。"
     }
    ]
@@ -109,63 +109,63 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "plus",
-     "opts": [
-      "加",
-      "減",
-      "",
-      "額外的"
-     ],
-     "answer": 0,
-     "exp": "plus 加。"
-    },
-    {
-     "type": "mc",
-     "q": "distant",
-     "opts": [
-      "減",
-      "公尺",
-      "公里",
-      "遙遠的"
-     ],
-     "answer": 3,
-     "exp": "distant 遙遠的。"
-    },
-    {
-     "type": "mc",
-     "q": "minus",
+     "q": "narrow",
      "opts": [
       "狹窄的",
+      "公升",
       "公尺",
-      "數量",
-      "減"
+      "公里"
      ],
-     "answer": 3,
-     "exp": "minus 減。"
+     "answer": 0,
+     "exp": "narrow 狹窄的。"
     },
     {
      "type": "mc",
-     "q": "liter",
+     "q": "measure",
      "opts": [
-      "距離",
-      "",
-      "公升",
-      "遙遠的"
+      "加",
+      "長方形",
+      "測量",
+      "公里"
      ],
      "answer": 2,
-     "exp": "liter 公升。"
+     "exp": "measure 測量；措施。"
     },
     {
      "type": "mc",
      "q": "amount",
      "opts": [
-      "三角形",
-      "加",
+      "最大的",
       "數量",
-      "狹窄的"
+      "減",
+      "加"
+     ],
+     "answer": 1,
+     "exp": "amount 數量；總額。"
+    },
+    {
+     "type": "mc",
+     "q": "kilometer",
+     "opts": [
+      "測量",
+      "公里",
+      "",
+      "額外的"
+     ],
+     "answer": 1,
+     "exp": "kilometer 公里。"
+    },
+    {
+     "type": "mc",
+     "q": "rectangle",
+     "opts": [
+      "",
+      "最大的",
+      "長方形",
+      "極小的"
      ],
      "answer": 2,
-     "exp": "amount 數量；總額。"
+     "exp": "rectangle 長方形。"
     }
    ]
   },
@@ -174,22 +174,22 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "狹窄的（n＿＿＿＿＿，6 個字母）：{0}",
+     "q": "測量（m＿＿＿＿＿＿，7 個字母）：{0}",
      "blanks": [
       [
-       "narrow"
+       "measure"
       ]
      ],
-     "exp": "narrow。"
+     "exp": "measure。"
     },
     {
-     "q": "數量（a＿＿＿＿＿，6 個字母）：{0}",
+     "q": "距離（d＿＿＿＿＿＿＿，8 個字母）：{0}",
      "blanks": [
       [
-       "amount"
+       "distance"
       ]
      ],
-     "exp": "amount。"
+     "exp": "distance。"
     },
     {
      "q": "極小的（t＿＿＿，4 個字母）：{0}",
@@ -201,22 +201,22 @@ window.GQUIZ = {
      "exp": "tiny。"
     },
     {
-     "q": "公尺（m＿＿＿＿，5 個字母）：{0}",
+     "q": "重量（w＿＿＿＿＿，6 個字母）：{0}",
      "blanks": [
       [
-       "meter"
+       "weight"
       ]
      ],
-     "exp": "meter。"
+     "exp": "weight。"
     },
     {
-     "q": "公里（k＿＿＿＿＿＿＿＿，9 個字母）：{0}",
+     "q": "加（p＿＿＿，4 個字母）：{0}",
      "blanks": [
       [
-       "kilometer"
+       "plus"
       ]
      ],
-     "exp": "kilometer。"
+     "exp": "plus。"
     }
    ]
   },

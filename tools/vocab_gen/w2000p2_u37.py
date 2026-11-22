@@ -1,0 +1,62 @@
+# 主題 2000 字 PART 2 Unit 37：Other verbs (3) 其他動詞（3）：課本動詞第 67–100 字（印刷頁 179–181）；中文、例句、題目自編
+from p2kit import W, F, auto_quiz
+
+V = 'v.'
+UNIT = {
+  'book': 'w2000p2', 'no': 37, 'en': 'Other verbs (3)', 'zh': '其他動詞（3）',
+  'card': 'argue～increase：avoid、cancel、compare、complain、describe、discover、improve、ignore… 共 34 字',
+  'intro': '其他動詞第三部分，argue 到 increase，共 34 個。注意後面要接 V-ing 的動詞（avoid），以及成對的反義字 increase／decrease、appear／disappear。',
+  'words': [
+    W('argue', V, '爭論；爭吵', 'argue with 人 about 事', 'My brother and I often argue about the TV.', '我和哥哥常為了電視吵架。', '😠'),
+    W('arrange', V, '安排；整理', 'arrangement 安排', 'Mom arranged the flowers in a vase.', '媽媽把花插在花瓶裡。', '💐'),
+    W('assume', V, '以為；假定', '', 'I assumed you already knew.', '我以為你已經知道了。', '🧐'),
+    W('avoid', V, '避免；避開', 'avoid + V-ing', 'Try to avoid eating too much sugar.', '盡量避免吃太多糖。', '🚫'),
+    W('broadcast', V, '廣播；播送', 'broadcast-broadcast-broadcast', 'The game will be broadcast live on TV.', '這場比賽會在電視上現場轉播。', '📡'),
+    W('burst', V, '爆炸；破裂；突然…', 'burst-burst-burst；burst into tears 突然大哭', 'The balloon burst with a loud bang.', '氣球砰的一聲爆了。', '💥'),
+    W('calm', V, '使平靜', 'calm down 冷靜下來；l 不發音', 'Calm down and tell me what happened.', '冷靜下來，告訴我發生了什麼事。', '😌'),
+    W('cancel', V, '取消', '', 'The game was canceled because of the rain.', '比賽因為下雨取消了。', '❌'),
+    W('compare', V, '比較', 'compare A with／to B', 'Don\'t compare yourself with others.', '不要拿自己跟別人比較。', '⚖️'),
+    W('complain', V, '抱怨', 'complain about…', 'He always complains about the food.', '他總是抱怨食物。', '😒'),
+    W('concern', V, '使擔心；關係到', 'be concerned about 擔心…', 'Mom is concerned about my health.', '媽媽很擔心我的健康。', '😟'),
+    W('continue', V, '繼續', 'continue + to V／V-ing', 'Let\'s continue our story tomorrow.', '我們明天繼續講故事吧。', '▶️'),
+    W('create', V, '創造；創作', 'creative 有創意的', 'The artist created a beautiful painting.', '那位畫家創作了一幅美麗的畫。', '🎨'),
+    W('decrease', V, '減少；降低', '↔ increase', 'The number of students is decreasing.', '學生人數正在減少。', '📉'),
+    W('depend', V, '依靠；取決於', 'depend on…；It depends. 看情況', 'Kids depend on their parents.', '小孩依靠父母。', '🤲'),
+    W('describe', V, '描述；形容', 'description 描述', 'Can you describe the man you saw?', '你能描述一下你看到的那個人嗎？', '🗣️'),
+    W('detect', V, '發現；察覺；偵測', 'detective 偵探', 'Dogs can detect smells that people can\'t.', '狗能察覺人聞不到的氣味。', '🐕‍🦺'),
+    W('direct', V, '指揮；指引；導演', 'director 導演；也可當形容詞「直接的」', 'A police officer directed the traffic.', '一位警察在指揮交通。', '👮'),
+    W('disappear', V, '消失', 'dis- + appear；↔ appear', 'The sun disappeared behind the clouds.', '太陽消失在雲後面。', '🫥'),
+    W('discover', V, '發現', 'discovery 發現（名詞）', 'Columbus discovered America in 1492.', '哥倫布在 1492 年發現美洲。', '🧭'),
+    W('discuss', V, '討論', 'discuss + 事（不加 about）', 'Let\'s discuss the plan after class.', '我們下課後討論這個計畫吧。', '💬'),
+    W('emphasize', V, '強調', '', 'The teacher emphasized the importance of reading.', '老師強調閱讀的重要性。', '❗'),
+    W('envy', V, '羨慕；嫉妒', 'envy-envied-envied', 'I envy you. You can travel all over the world.', '我好羨慕你，你可以環遊世界。', '😍'),
+    W('excite', V, '使興奮', 'excited 感到興奮的；exciting 令人興奮的', 'The news excited everyone in the class.', '這個消息讓全班都很興奮。', '🤩'),
+    W('express', V, '表達', 'expression 表達；表情', 'It\'s hard for me to express my feelings.', '要表達我的感受很難。', '💌'),
+    W('fit', V, '適合；（尺寸）合身', 'fit-fit-fit 或 fit-fitted-fitted', 'These shoes don\'t fit me. They\'re too small.', '這雙鞋不合腳，太小了。', '👟'),
+    W('focus', V, '集中；聚焦', 'focus on…', 'Please focus on your homework.', '請專心寫功課。', '🎯'),
+    W('form', V, '形成；組成', '也可當名詞「表格」', 'Let\'s form a circle and hold hands.', '我們圍成一圈手牽手吧。', '⭕'),
+    W('gain', V, '得到；增加', 'gain weight 體重增加', 'He gained five kilos during the holidays.', '他放假期間胖了五公斤。', '📈'),
+    W('handle', V, '處理；應付', '也可當名詞「把手」', 'Can you handle this problem by yourself?', '你能自己處理這個問題嗎？', '🧰'),
+    W('improve', V, '改善；進步', 'improvement 改善', 'Practice will improve your English.', '練習會讓你的英文進步。', '📈'),
+    W('include', V, '包括', '', 'The price includes breakfast.', '這個價錢包含早餐。', '📦'),
+    W('ignore', V, '忽視；不理會', '', 'He ignored me when I said hello.', '我打招呼時他不理我。', '🙈'),
+    W('increase', V, '增加', '↔ decrease', 'The price of eggs has increased.', '雞蛋的價格上漲了。', '⬆️'),
+  ],
+  'focus': [
+    {'title': '意思相反', 'head': ('字', '反義字', ''),
+     'rows': [('increase 增加', 'decrease 減少', ''), ('appear 出現', 'disappear 消失', ''), ('continue 繼續', 'cancel 取消', '')],
+     'note': 'avoid 後面接 V-ing：avoid going out；discuss 後面直接接事情，不加 about。'},
+  ],
+}
+
+QUIZ = auto_quiz(UNIT['words'], seed=37, n_ce=7, n_ec=6, n_sp=6, fill=[
+  F('You should avoid ______ junk food.', ['eating', 'to eat', 'eat', 'ate'], 0, 'avoid + V-ing。'),
+  F('Let\'s ______ the problem together.', ['discuss', 'discuss about', 'discussing about', 'discover'], 0, 'discuss 後面直接接事情。'),
+  F('The concert was ______ because the singer was sick.', ['canceled', 'continued', 'created', 'compared'], 0, '歌手生病 → 取消 canceled。'),
+  F('The magician made the coin ______.', ['disappear', 'discover', 'detect', 'decrease'], 0, '讓硬幣消失 → disappear。'),
+  F('Don\'t ______ me with my sister. We\'re different.', ['compare', 'complain', 'concern', 'continue'], 0, 'compare A with B 比較。'),
+  F('______ down! Everything will be OK.', ['Calm', 'Burst', 'Cancel', 'Argue'], 0, 'calm down 冷靜下來。'),
+  F('He always ______ about the weather.', ['complains', 'compares', 'creates', 'describes'], 0, 'complain about 抱怨。'),
+  F('This jacket doesn\'t ______ me. It\'s too big.', ['fit', 'form', 'gain', 'focus'], 0, '尺寸合不合 → fit。'),
+  F('Please ______ on the road when you are driving.', ['focus', 'ignore', 'envy', 'include'], 0, 'focus on 專心於。'),
+])

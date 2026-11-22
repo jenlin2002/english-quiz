@@ -1,0 +1,65 @@
+# 主題 2000 字 PART 2 Unit 35：Other verbs (1) 其他動詞（1）：課本 Unit 35～38 動詞第 1–33 字（印刷頁 175–177）；中文、例句、題目自編
+# 課本把 Unit 35～38 合在一起共 133 個動詞，網站照順序拆成 Unit 35、36、37、38 四頁。
+from p2kit import W, F, auto_quiz
+
+V = 'v.'
+UNIT = {
+  'book': 'w2000p2', 'no': 35, 'en': 'Other verbs (1)', 'zh': '其他動詞（1）',
+  'card': 'complete～guide：survive、blame、bother、confuse、forgive、realize、remind、chase… 共 33 字',
+  'intro': '其他動詞第一部分，complete 到 guide，共 33 個。注意不規則動詞 forgive-forgave-forgiven、beat-beat-beaten，以及 remind sb. of…（使某人想起…）。',
+  'words': [
+    W('complete', V, '完成', '= finish；也可當形容詞「完整的」', 'Please complete the form and give it to me.', '請把表格填完交給我。', '✅'),
+    W('succeed', V, '成功', 'succeed in + V-ing；success 成功（名詞）', 'She succeeded in passing the test.', '她成功通過了考試。', '🏆'),
+    W('survive', V, '存活；倖存', 'survivor 倖存者', 'Plants can\'t survive without water.', '植物沒有水無法存活。', '🌵'),
+    W('affect', V, '影響', 'effect 影響（名詞）', 'The rain affected our plans for the picnic.', '這場雨影響了我們的野餐計畫。', '🌧️'),
+    W('blame', V, '責怪；歸咎', 'blame sb. for… 因…責怪某人', 'Don\'t blame me. I didn\'t do it.', '別怪我，不是我做的。', '👉'),
+    W('bother', V, '打擾；煩擾', 'Sorry to bother you. 抱歉打擾你', 'Please don\'t bother me. I\'m studying.', '請別打擾我，我在讀書。', '🙉'),
+    W('confuse', V, '使困惑；搞混', 'confused 感到困惑的；confusing 令人困惑的', 'I always confuse the twins.', '我總是把那對雙胞胎搞混。', '😵'),
+    W('consider', V, '考慮；認為', 'consider + V-ing', 'We are considering moving to Taichung.', '我們正在考慮搬到台中。', '🤔'),
+    W('develop', V, '發展；培養', 'development 發展', 'Reading helps you develop your thinking.', '閱讀幫助你發展思考能力。', '🌱'),
+    W('divide', V, '分；劃分', 'divide A into B 把 A 分成 B', 'Mom divided the pizza into eight pieces.', '媽媽把披薩分成八片。', '🍕'),
+    W('doubt', V, '懷疑', 'b 不發音', 'I doubt that he will come today.', '我懷疑他今天會來。', '🤨'),
+    W('ease', V, '減輕；緩和', 'easy 容易的 → ease', 'This medicine will ease your pain.', '這個藥會減輕你的疼痛。', '💊'),
+    W('embarrass', V, '使尷尬；使難為情', 'embarrassed 感到尷尬的；兩個 r 兩個 s', 'Please don\'t embarrass me in front of my friends.', '請不要在我朋友面前讓我難堪。', '😳'),
+    W('forgive', V, '原諒', 'forgive-forgave-forgiven', 'Please forgive me. I\'m really sorry.', '請原諒我，我真的很抱歉。', '🙏'),
+    W('frighten', V, '使驚嚇；嚇唬', 'frightened 受驚嚇的', 'The loud noise frightened the baby.', '那個大聲響嚇到了寶寶。', '😨'),
+    W('gather', V, '收集；聚集', '', 'The students gathered in the hall.', '學生們在禮堂集合。', '👥'),
+    W('imagine', V, '想像', 'imagination 想像力', 'Imagine you are a bird. Where would you fly?', '想像你是一隻鳥，你會飛去哪裡？', '💭'),
+    W('inspire', V, '激勵；啟發', '', 'Her story inspired me to work harder.', '她的故事激勵我更努力。', '✨'),
+    W('realize', V, '了解；領悟；實現', '', 'I didn\'t realize it was so late.', '我沒發現已經這麼晚了。', '💡'),
+    W('regret', V, '後悔；遺憾', 'regret + V-ing 後悔做了…；過去式 regretted', 'I regret not studying harder.', '我後悔沒有更用功。', '😔'),
+    W('remind', V, '提醒；使想起', 'remind sb. of… 使某人想起…；remind sb. to… 提醒某人…', 'Please remind me to call Grandma.', '請提醒我打電話給奶奶。', '📝'),
+    W('bless', V, '祝福；保佑', 'Bless you! （打噴嚏時說）', 'God bless you!', '願上帝保佑你！', '😇'),
+    W('bathe', V, '洗澡；給…洗澡', 'bath 洗澡（名詞）；bathe 讀 [beð]', 'Dad bathes the baby every night.', '爸爸每天晚上幫寶寶洗澡。', '🛁'),
+    W('beat', V, '打；打敗；（心）跳動', 'beat-beat-beaten', 'Our team beat them 3 to 1.', '我們隊以三比一打敗他們。', '🥁'),
+    W('chase', V, '追逐；追趕', '', 'The dog chased the cat around the yard.', '那隻狗在院子裡追著貓跑。', '🐕'),
+    W('control', V, '控制', '過去式 controlled', 'Try to control your temper.', '試著控制你的脾氣。', '🎮'),
+    W('comment', V, '評論；發表意見', 'comment on… 對…發表意見', 'He didn\'t comment on my new haircut.', '他沒對我的新髮型發表意見。', '💬'),
+    W('dial', V, '撥（電話）', 'dial 119 撥打一一九', 'In an emergency, dial 119.', '緊急時撥一一九。', '☎️'),
+    W('deliver', V, '遞送；投遞', 'delivery 遞送', 'The mailman delivers letters every morning.', '郵差每天早上送信。', '📬'),
+    W('elect', V, '選舉；推選', 'election 選舉', 'We elected Amy as our class leader.', '我們選 Amy 當班長。', '🗳️'),
+    W('exist', V, '存在；生存', 'existence 存在', 'Do you think ghosts really exist?', '你覺得鬼真的存在嗎？', '👻'),
+    W('greet', V, '問候；打招呼；迎接', 'greeting 問候', 'The teacher greets every student at the door.', '老師在門口跟每位學生打招呼。', '👋'),
+    W('guide', V, '帶領；引導', 'guide 也可當名詞「導遊」', 'The dog guided the blind man across the street.', '那隻狗帶領盲人過馬路。', '🦮'),
+  ],
+  'focus': [
+    {'title': '容易錯的動詞變化', 'head': ('原形', '過去式', '過去分詞'),
+     'rows': [('forgive', 'forgave', 'forgiven'), ('beat', 'beat', 'beaten'), ('regret', 'regretted', 'regretted'), ('control', 'controlled', 'controlled')],
+     'note': '短母音結尾單子音、重音在後：重複字尾再加 -ed（regretted、controlled）。'},
+    {'title': '-ed 和 -ing', 'head': ('人感到（-ed）', '事物令人（-ing）', ''),
+     'rows': [('confused', 'confusing', ''), ('embarrassed', 'embarrassing', ''), ('frightened', 'frightening', '')],
+     'note': ''},
+  ],
+}
+
+QUIZ = auto_quiz(UNIT['words'], seed=35, n_ce=7, n_ec=6, n_sp=6, fill=[
+  F('This song ______ me of my childhood.', ['reminds', 'realizes', 'regrets', 'blames'], 0, 'remind sb. of… 使某人想起…。'),
+  F('I\'m sorry I broke your cup. Please ______ me.', ['forgive', 'frighten', 'bother', 'blame'], 0, '請原諒我 → forgive。'),
+  F('Our team ______ the other team last night.', ['beat', 'beaten', 'beated', 'beating'], 0, 'beat 的過去式還是 beat。'),
+  F('The teacher\'s explanation ______ me. I still don\'t understand.', ['confused', 'completed', 'developed', 'divided'], 0, '還是不懂 → confused 使困惑。'),
+  F('He ______ in winning the race.', ['succeeded', 'survived', 'existed', 'elected'], 0, 'succeed in + V-ing。'),
+  F('Can you ______ the cake into four pieces?', ['divide', 'deliver', 'dial', 'doubt'], 0, 'divide A into B。'),
+  F('Sorry to ______ you, but where is the bathroom?', ['bother', 'bless', 'beat', 'chase'], 0, 'Sorry to bother you. 抱歉打擾你。'),
+  F('Only three people ______ the plane crash.', ['survived', 'succeeded', 'affected', 'imagined'], 0, '空難中存活 → survived。'),
+  F('We ______ Tom to be our class leader.', ['elected', 'greeted', 'guided', 'gathered'], 0, '選舉 → elected。'),
+])

@@ -34,10 +34,10 @@ window.GQUIZ = {
      "type": "mc",
      "q": "情緒；情感",
      "opts": [
-      "friendship",
-      "honesty",
+      "flag",
+      "edge",
       "emotion",
-      "humor"
+      "income"
      ],
      "answer": 2,
      "exp": "emotion 情緒；情感。"
@@ -46,12 +46,12 @@ window.GQUIZ = {
      "type": "mc",
      "q": "影響",
      "opts": [
-      "hunger",
-      "fear",
-      "fault",
-      "influence"
+      "department",
+      "influence",
+      "emotion",
+      "friendship"
      ],
-     "answer": 3,
+     "answer": 1,
      "exp": "influence 影響。"
     },
     {
@@ -59,9 +59,9 @@ window.GQUIZ = {
      "q": "責任；義務",
      "opts": [
       "duty",
-      "goodness",
-      "discussion",
-      "humor"
+      "department",
+      "hunger",
+      "effort"
      ],
      "answer": 0,
      "exp": "duty 責任；義務。"
@@ -70,9 +70,9 @@ window.GQUIZ = {
      "type": "mc",
      "q": "方向；指示",
      "opts": [
+      "human",
       "discussion",
-      "gun",
-      "emotion",
+      "energy",
       "direction"
      ],
      "answer": 3,
@@ -82,36 +82,36 @@ window.GQUIZ = {
      "type": "mc",
      "q": "旗子",
      "opts": [
-      "duty",
-      "discussion",
-      "decision",
-      "flag"
+      "income",
+      "humor",
+      "flag",
+      "effort"
      ],
-     "answer": 3,
+     "answer": 2,
      "exp": "flag 旗子。"
     },
     {
      "type": "mc",
      "q": "友誼",
      "opts": [
-      "human",
-      "fee",
-      "desire",
-      "friendship"
+      "edge",
+      "friendship",
+      "energy",
+      "fear"
      ],
-     "answer": 3,
+     "answer": 1,
      "exp": "friendship 友誼。"
     },
     {
      "type": "mc",
      "q": "目標；（足球）進球",
      "opts": [
-      "education",
-      "difference",
-      "goodness",
-      "goal"
+      "flight",
+      "goal",
+      "desire",
+      "goodness"
      ],
-     "answer": 3,
+     "answer": 1,
      "exp": "goal 目標；（足球）進球。"
     }
    ]
@@ -121,75 +121,75 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "human",
-     "opts": [
-      "渴望",
-      "情緒",
-      "人類",
-      "錯誤"
-     ],
-     "answer": 2,
-     "exp": "human 人類；人的。"
-    },
-    {
-     "type": "mc",
-     "q": "feeling",
-     "opts": [
-      "人類",
-      "方向",
-      "目標",
-      "感覺"
-     ],
-     "answer": 3,
-     "exp": "feeling 感覺；感情。"
-    },
-    {
-     "type": "mc",
-     "q": "difficulty",
-     "opts": [
-      "不同",
-      "自由",
-      "困難",
-      "部門"
-     ],
-     "answer": 2,
-     "exp": "difficulty 困難。"
-    },
-    {
-     "type": "mc",
      "q": "goal",
      "opts": [
-      "誠實",
-      "教育",
-      "目標",
-      "費用"
+      "善良",
+      "友誼",
+      "精力",
+      "目標"
      ],
-     "answer": 2,
+     "answer": 3,
      "exp": "goal 目標；（足球）進球。"
     },
     {
      "type": "mc",
-     "q": "exit",
+     "q": "decision",
      "opts": [
-      "努力",
-      "事件",
-      "感覺",
-      "出口"
+      "決定",
+      "入口",
+      "重要性",
+      "收入"
      ],
-     "answer": 3,
-     "exp": "exit 出口。"
+     "answer": 0,
+     "exp": "decision 決定。"
     },
     {
      "type": "mc",
      "q": "event",
      "opts": [
-      "錯誤",
-      "情緒",
+      "邊緣",
       "事件",
-      "困難"
+      "理髮",
+      "責任"
+     ],
+     "answer": 1,
+     "exp": "event 事件；活動。"
+    },
+    {
+     "type": "mc",
+     "q": "human",
+     "opts": [
+      "理髮",
+      "事件",
+      "幽默",
+      "人類"
+     ],
+     "answer": 3,
+     "exp": "human 人類；人的。"
+    },
+    {
+     "type": "mc",
+     "q": "government",
+     "opts": [
+      "槍",
+      "政府",
+      "決定",
+      "部門"
+     ],
+     "answer": 1,
+     "exp": "government 政府。"
+    },
+    {
+     "type": "mc",
+     "q": "honesty",
+     "opts": [
+      "困難",
+      "情緒",
+      "誠實",
+      "錯誤"
      ],
      "answer": 2,
-     "exp": "event 事件；活動。"
+     "exp": "honesty 誠實。"
     }
    ]
   },
@@ -198,13 +198,49 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "恐懼（f＿＿＿，4 個字母）：{0}",
+     "q": "討論（d＿＿＿＿＿＿＿＿＿，10 個字母）：{0}",
      "blanks": [
       [
-       "fear"
+       "discussion"
       ]
      ],
-     "exp": "fear。"
+     "exp": "discussion。"
+    },
+    {
+     "q": "部門（d＿＿＿＿＿＿＿＿＿，10 個字母）：{0}",
+     "blanks": [
+      [
+       "department"
+      ]
+     ],
+     "exp": "department。"
+    },
+    {
+     "q": "錯誤（f＿＿＿＿，5 個字母）：{0}",
+     "blanks": [
+      [
+       "fault"
+      ]
+     ],
+     "exp": "fault。"
+    },
+    {
+     "q": "收入（i＿＿＿＿＿，6 個字母）：{0}",
+     "blanks": [
+      [
+       "income"
+      ]
+     ],
+     "exp": "income。"
+    },
+    {
+     "q": "善良（g＿＿＿＿＿＿＿，8 個字母）：{0}",
+     "blanks": [
+      [
+       "goodness"
+      ]
+     ],
+     "exp": "goodness。"
     },
     {
      "q": "辯論（d＿＿＿＿＿，6 個字母）：{0}",
@@ -214,42 +250,6 @@ window.GQUIZ = {
       ]
      ],
      "exp": "debate。"
-    },
-    {
-     "q": "影響（i＿＿＿＿＿＿＿＿，9 個字母）：{0}",
-     "blanks": [
-      [
-       "influence"
-      ]
-     ],
-     "exp": "influence。"
-    },
-    {
-     "q": "情緒（e＿＿＿＿＿＿，7 個字母）：{0}",
-     "blanks": [
-      [
-       "emotion"
-      ]
-     ],
-     "exp": "emotion。"
-    },
-    {
-     "q": "責任（d＿＿＿，4 個字母）：{0}",
-     "blanks": [
-      [
-       "duty"
-      ]
-     ],
-     "exp": "duty。"
-    },
-    {
-     "q": "誠實（h＿＿＿＿＿＿，7 個字母）：{0}",
-     "blanks": [
-      [
-       "honesty"
-      ]
-     ],
-     "exp": "honesty。"
     }
    ]
   },

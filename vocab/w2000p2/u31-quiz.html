@@ -34,12 +34,12 @@ window.GQUIZ = {
      "type": "mc",
      "q": "在…後面",
      "opts": [
-      "upper",
-      "against",
-      "in back of",
-      "beyond"
+      "in front of",
+      "upon",
+      "till",
+      "in back of"
      ],
-     "answer": 2,
+     "answer": 3,
      "exp": "in back of 在…後面。"
     },
     {
@@ -47,9 +47,9 @@ window.GQUIZ = {
      "q": "在…的那一邊；超出",
      "opts": [
       "beyond",
+      "out of",
       "upon",
-      "till",
-      "toward"
+      "in front of"
      ],
      "answer": 0,
      "exp": "beyond 在…的那一邊；超出。"
@@ -58,48 +58,48 @@ window.GQUIZ = {
      "type": "mc",
      "q": "在…前面",
      "opts": [
-      "against",
-      "in front of",
-      "among",
-      "till"
+      "out of",
+      "upper",
+      "in back of",
+      "in front of"
      ],
-     "answer": 1,
+     "answer": 3,
      "exp": "in front of 在…前面。"
     },
     {
      "type": "mc",
      "q": "在…上面",
      "opts": [
-      "upon",
-      "upper",
       "out of",
-      "next to"
+      "against",
+      "in front of",
+      "upon"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "upon 在…上面。"
     },
     {
      "type": "mc",
      "q": "上面的；上部的",
      "opts": [
-      "against",
-      "toward",
       "upper",
-      "next to"
+      "next to",
+      "among",
+      "against"
      ],
-     "answer": 2,
+     "answer": 0,
      "exp": "upper 上面的；上部的。"
     },
     {
      "type": "mc",
      "q": "從…出來；離開",
      "opts": [
-      "in back of",
+      "out of",
+      "toward",
       "upper",
-      "beyond",
-      "out of"
+      "next to"
      ],
-     "answer": 3,
+     "answer": 0,
      "exp": "out of 從…出來；離開。"
     }
    ]
@@ -109,63 +109,63 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "upper",
+     "q": "in front of",
      "opts": [
       "直到",
-      "上面的",
-      "靠著",
-      "在…前面"
+      "在…前面",
+      "從…出來",
+      "靠著"
      ],
      "answer": 1,
+     "exp": "in front of 在…前面。"
+    },
+    {
+     "type": "mc",
+     "q": "till",
+     "opts": [
+      "在…的那一邊",
+      "在…上面",
+      "從…出來",
+      "直到"
+     ],
+     "answer": 3,
+     "exp": "till 直到。"
+    },
+    {
+     "type": "mc",
+     "q": "against",
+     "opts": [
+      "靠著",
+      "在…上面",
+      "朝向",
+      "在…旁邊"
+     ],
+     "answer": 0,
+     "exp": "against 靠著；反對；對抗。"
+    },
+    {
+     "type": "mc",
+     "q": "upper",
+     "opts": [
+      "上面的",
+      "靠著",
+      "從…出來",
+      "在…前面"
+     ],
+     "answer": 0,
      "exp": "upper 上面的；上部的。"
     },
     {
      "type": "mc",
      "q": "in back of",
      "opts": [
-      "直到",
-      "在…後面",
-      "上面的",
-      "朝向"
-     ],
-     "answer": 1,
-     "exp": "in back of 在…後面。"
-    },
-    {
-     "type": "mc",
-     "q": "out of",
-     "opts": [
-      "在…的那一邊",
-      "上面的",
-      "從…出來",
-      "在…前面"
-     ],
-     "answer": 2,
-     "exp": "out of 從…出來；離開。"
-    },
-    {
-     "type": "mc",
-     "q": "beyond",
-     "opts": [
       "靠著",
-      "在…之中",
-      "在…旁邊",
-      "在…的那一邊"
-     ],
-     "answer": 3,
-     "exp": "beyond 在…的那一邊；超出。"
-    },
-    {
-     "type": "mc",
-     "q": "in front of",
-     "opts": [
+      "在…上面",
       "在…後面",
-      "朝向",
-      "在…前面",
-      "在…之中"
+      "直到"
      ],
      "answer": 2,
-     "exp": "in front of 在…前面。"
+     "exp": "in back of 在…後面。"
     }
    ]
   },
@@ -174,13 +174,22 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "在…之中（a＿＿＿＿，5 個字母）：{0}",
+     "q": "直到（t＿＿＿，4 個字母）：{0}",
      "blanks": [
       [
-       "among"
+       "till"
       ]
      ],
-     "exp": "among。"
+     "exp": "till。"
+    },
+    {
+     "q": "在…上面（u＿＿＿，4 個字母）：{0}",
+     "blanks": [
+      [
+       "upon"
+      ]
+     ],
+     "exp": "upon。"
     },
     {
      "q": "在…的那一邊（b＿＿＿＿＿，6 個字母）：{0}",
@@ -192,22 +201,13 @@ window.GQUIZ = {
      "exp": "beyond。"
     },
     {
-     "q": "靠著（a＿＿＿＿＿＿，7 個字母）：{0}",
+     "q": "上面的（u＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "against"
+       "upper"
       ]
      ],
-     "exp": "against。"
-    },
-    {
-     "q": "直到（t＿＿＿，4 個字母）：{0}",
-     "blanks": [
-      [
-       "till"
-      ]
-     ],
-     "exp": "till。"
+     "exp": "upper。"
     }
    ]
   },

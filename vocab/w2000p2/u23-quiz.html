@@ -34,10 +34,10 @@ window.GQUIZ = {
      "type": "mc",
      "q": "雇用；租用",
      "opts": [
-      "assistant",
+      "hunter",
       "hire",
-      "magician",
-      "company"
+      "manager",
+      "artist"
      ],
      "answer": 1,
      "exp": "hire 雇用；租用。"
@@ -46,10 +46,10 @@ window.GQUIZ = {
      "type": "mc",
      "q": "法官；裁判；判斷",
      "opts": [
-      "servant",
+      "artist",
       "judge",
-      "sailor",
-      "diplomat"
+      "magician",
+      "scientist"
      ],
      "answer": 1,
      "exp": "judge 法官；裁判；判斷。"
@@ -58,24 +58,24 @@ window.GQUIZ = {
      "type": "mc",
      "q": "音樂家；樂手",
      "opts": [
-      "priest",
-      "employ",
+      "hunter",
       "musician",
-      "magician"
+      "scientist",
+      "company"
      ],
-     "answer": 2,
+     "answer": 1,
      "exp": "musician 音樂家；樂手。"
     },
     {
      "type": "mc",
      "q": "模特兒；模型",
      "opts": [
-      "priest",
+      "painter",
+      "company",
       "model",
-      "owner",
-      "babysitter"
+      "diplomat"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "model 模特兒；模型。"
     },
     {
@@ -83,9 +83,9 @@ window.GQUIZ = {
      "q": "畫家；油漆工",
      "opts": [
       "painter",
-      "model",
-      "priest",
-      "hire"
+      "barber",
+      "guide",
+      "judge"
      ],
      "answer": 0,
      "exp": "painter 畫家；油漆工。"
@@ -94,24 +94,24 @@ window.GQUIZ = {
      "type": "mc",
      "q": "外交官",
      "opts": [
-      "diplomat",
-      "president",
-      "servant",
-      "magician"
+      "scientist",
+      "cowboy",
+      "assistant",
+      "diplomat"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "diplomat 外交官。"
     },
     {
      "type": "mc",
      "q": "獵人",
      "opts": [
-      "hunter",
-      "barber",
-      "model",
-      "babysitter"
+      "vendor",
+      "scientist",
+      "hire",
+      "hunter"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "hunter 獵人。"
     }
    ]
@@ -123,73 +123,73 @@ window.GQUIZ = {
      "type": "mc",
      "q": "artist",
      "opts": [
-      "科學家",
-      "模特兒",
-      "臨時保母",
-      "藝術家"
+      "音樂家",
+      "藝術家",
+      "雇用",
+      "牛仔"
+     ],
+     "answer": 1,
+     "exp": "artist 藝術家；畫家。"
+    },
+    {
+     "type": "mc",
+     "q": "diplomat",
+     "opts": [
+      "記者",
+      "總統",
+      "獵人",
+      "外交官"
      ],
      "answer": 3,
-     "exp": "artist 藝術家；畫家。"
+     "exp": "diplomat 外交官。"
     },
     {
      "type": "mc",
      "q": "employ",
      "opts": [
       "雇用",
-      "美髮師",
-      "藝術家",
-      "科學家"
+      "法官",
+      "臨時保母",
+      "僕人"
      ],
      "answer": 0,
      "exp": "employ 雇用。"
     },
     {
      "type": "mc",
-     "q": "cowboy",
+     "q": "babysitter",
      "opts": [
-      "公司",
-      "牛仔",
-      "音樂家",
-      "總統"
-     ],
-     "answer": 1,
-     "exp": "cowboy 牛仔。"
-    },
-    {
-     "type": "mc",
-     "q": "vendor",
-     "opts": [
-      "小販",
-      "音樂家",
-      "雇用",
-      "經理"
-     ],
-     "answer": 0,
-     "exp": "vendor 小販。"
-    },
-    {
-     "type": "mc",
-     "q": "hire",
-     "opts": [
-      "獵人",
-      "畫家",
-      "雇用",
-      "模特兒"
-     ],
-     "answer": 2,
-     "exp": "hire 雇用；租用。"
-    },
-    {
-     "type": "mc",
-     "q": "painter",
-     "opts": [
-      "畫家",
-      "導遊",
-      "",
+      "僕人",
+      "外交官",
+      "法官",
       "臨時保母"
      ],
+     "answer": 3,
+     "exp": "babysitter 臨時保母。"
+    },
+    {
+     "type": "mc",
+     "q": "owner",
+     "opts": [
+      "音樂家",
+      "主人",
+      "科學家",
+      "記者"
+     ],
+     "answer": 1,
+     "exp": "owner 主人；擁有者。"
+    },
+    {
+     "type": "mc",
+     "q": "mechanic",
+     "opts": [
+      "技工",
+      "水手",
+      "",
+      "公司"
+     ],
      "answer": 0,
-     "exp": "painter 畫家；油漆工。"
+     "exp": "mechanic 技工；修車師傅。"
     }
    ]
   },
@@ -198,31 +198,13 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "雇用（e＿＿＿＿＿，6 個字母）：{0}",
+     "q": "外交官（d＿＿＿＿＿＿＿，8 個字母）：{0}",
      "blanks": [
       [
-       "employ"
+       "diplomat"
       ]
      ],
-     "exp": "employ。"
-    },
-    {
-     "q": "神父（p＿＿＿＿＿，6 個字母）：{0}",
-     "blanks": [
-      [
-       "priest"
-      ]
-     ],
-     "exp": "priest。"
-    },
-    {
-     "q": "技工（m＿＿＿＿＿＿＿，8 個字母）：{0}",
-     "blanks": [
-      [
-       "mechanic"
-      ]
-     ],
-     "exp": "mechanic。"
+     "exp": "diplomat。"
     },
     {
      "q": "水手（s＿＿＿＿＿，6 個字母）：{0}",
@@ -234,22 +216,40 @@ window.GQUIZ = {
      "exp": "sailor。"
     },
     {
-     "q": "記者（j＿＿＿＿＿＿＿＿＿，10 個字母）：{0}",
+     "q": "模特兒（m＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "journalist"
+       "model"
       ]
      ],
-     "exp": "journalist。"
+     "exp": "model。"
     },
     {
-     "q": "獵人（h＿＿＿＿＿，6 個字母）：{0}",
+     "q": "臨時保母（b＿＿＿＿＿＿＿＿＿，10 個字母）：{0}",
      "blanks": [
       [
-       "hunter"
+       "babysitter"
       ]
      ],
-     "exp": "hunter。"
+     "exp": "babysitter。"
+    },
+    {
+     "q": "科學家（s＿＿＿＿＿＿＿＿，9 個字母）：{0}",
+     "blanks": [
+      [
+       "scientist"
+      ]
+     ],
+     "exp": "scientist。"
+    },
+    {
+     "q": "魔術師（m＿＿＿＿＿＿＿，8 個字母）：{0}",
+     "blanks": [
+      [
+       "magician"
+      ]
+     ],
+     "exp": "magician。"
     }
    ]
   },

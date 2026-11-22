@@ -34,84 +34,84 @@ window.GQUIZ = {
      "type": "mc",
      "q": "蝸牛",
      "opts": [
+      "lamb",
+      "donkey",
       "snail",
-      "dragon",
-      "deer",
-      "bark"
+      "parrot"
      ],
-     "answer": 0,
+     "answer": 2,
      "exp": "snail 蝸牛。"
     },
     {
      "type": "mc",
      "q": "公牛；牛",
      "opts": [
-      "dragon",
+      "snail",
+      "wing",
       "ox",
-      "eagle",
-      "swallow"
+      "wolf"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "ox 公牛；牛。"
     },
     {
      "type": "mc",
      "q": "龍",
      "opts": [
-      "swan",
+      "kangaroo",
+      "worm",
       "dragon",
-      "snail",
-      "crab"
+      "lamb"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "dragon 龍。"
     },
     {
      "type": "mc",
      "q": "翅膀",
      "opts": [
-      "crab",
       "wing",
-      "pigeon",
-      "bark"
+      "dinosaur",
+      "kangaroo",
+      "shrimp"
      ],
-     "answer": 1,
+     "answer": 0,
      "exp": "wing 翅膀。"
     },
     {
      "type": "mc",
      "q": "怪物；妖怪",
      "opts": [
-      "snail",
-      "kitten",
-      "pigeon",
-      "monster"
+      "monster",
+      "cockroach",
+      "kangaroo",
+      "shark"
      ],
-     "answer": 3,
+     "answer": 0,
      "exp": "monster 怪物；妖怪。"
     },
     {
      "type": "mc",
      "q": "（狗）吠叫；樹皮",
      "opts": [
-      "bark",
-      "dinosaur",
-      "donkey",
-      "eagle"
+      "dragon",
+      "wolf",
+      "swan",
+      "bark"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "bark （狗）吠叫；樹皮。"
     },
     {
      "type": "mc",
      "q": "鯊魚",
      "opts": [
-      "pigeon",
-      "dinosaur",
       "shark",
-      "kitten"
+      "swan",
+      "cockroach",
+      "donkey"
      ],
-     "answer": 2,
+     "answer": 0,
      "exp": "shark 鯊魚。"
     }
    ]
@@ -121,23 +121,35 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "cockroach",
+     "q": "panda",
      "opts": [
-      "河馬",
-      "蟑螂",
-      "蚊子",
-      "恐龍"
+      "鴿子",
+      "袋鼠",
+      "貓熊",
+      "蟑螂"
      ],
-     "answer": 1,
-     "exp": "cockroach 蟑螂。"
+     "answer": 2,
+     "exp": "panda 貓熊。"
+    },
+    {
+     "type": "mc",
+     "q": "parrot",
+     "opts": [
+      "燕子",
+      "",
+      "鸚鵡",
+      "鯊魚"
+     ],
+     "answer": 2,
+     "exp": "parrot 鸚鵡。"
     },
     {
      "type": "mc",
      "q": "snail",
      "opts": [
-      "",
-      "海豚",
-      "蚊子",
+      "老鷹",
+      "驢子",
+      "火雞",
       "蝸牛"
      ],
      "answer": 3,
@@ -145,51 +157,39 @@ window.GQUIZ = {
     },
     {
      "type": "mc",
-     "q": "hippo",
+     "q": "deer",
      "opts": [
-      "恐龍",
-      "河馬",
-      "蝸牛",
-      ""
-     ],
-     "answer": 1,
-     "exp": "hippo 河馬。"
-    },
-    {
-     "type": "mc",
-     "q": "koala",
-     "opts": [
-      "袋鼠",
-      "無尾熊",
-      "天鵝",
-      "公牛"
-     ],
-     "answer": 1,
-     "exp": "koala 無尾熊。"
-    },
-    {
-     "type": "mc",
-     "q": "donkey",
-     "opts": [
-      "老鷹",
-      "河馬",
-      "驢子",
-      "翅膀"
+      "小貓",
+      "貓熊",
+      "鹿",
+      "螃蟹"
      ],
      "answer": 2,
-     "exp": "donkey 驢子。"
+     "exp": "deer 鹿。"
     },
     {
      "type": "mc",
-     "q": "shrimp",
+     "q": "pigeon",
      "opts": [
+      "翅膀",
       "蟑螂",
-      "蝦子",
-      "鹿",
+      "鴿子",
+      "恐龍"
+     ],
+     "answer": 2,
+     "exp": "pigeon 鴿子。"
+    },
+    {
+     "type": "mc",
+     "q": "cockroach",
+     "opts": [
+      "狼",
+      "蟑螂",
+      "公牛",
       "鯨魚"
      ],
      "answer": 1,
-     "exp": "shrimp 蝦子。"
+     "exp": "cockroach 蟑螂。"
     }
    ]
   },
@@ -207,6 +207,33 @@ window.GQUIZ = {
      "exp": "deer。"
     },
     {
+     "q": "蚊子（m＿＿＿＿＿＿＿，8 個字母）：{0}",
+     "blanks": [
+      [
+       "mosquito"
+      ]
+     ],
+     "exp": "mosquito。"
+    },
+    {
+     "q": "無尾熊（k＿＿＿＿，5 個字母）：{0}",
+     "blanks": [
+      [
+       "koala"
+      ]
+     ],
+     "exp": "koala。"
+    },
+    {
+     "q": "老鷹（e＿＿＿＿，5 個字母）：{0}",
+     "blanks": [
+      [
+       "eagle"
+      ]
+     ],
+     "exp": "eagle。"
+    },
+    {
      "q": "燕子（s＿＿＿＿＿＿，7 個字母）：{0}",
      "blanks": [
       [
@@ -216,40 +243,13 @@ window.GQUIZ = {
      "exp": "swallow。"
     },
     {
-     "q": "恐龍（d＿＿＿＿＿＿＿，8 個字母）：{0}",
+     "q": "蟑螂（c＿＿＿＿＿＿＿＿，9 個字母）：{0}",
      "blanks": [
       [
-       "dinosaur"
+       "cockroach"
       ]
      ],
-     "exp": "dinosaur。"
-    },
-    {
-     "q": "火雞（t＿＿＿＿＿，6 個字母）：{0}",
-     "blanks": [
-      [
-       "turkey"
-      ]
-     ],
-     "exp": "turkey。"
-    },
-    {
-     "q": "袋鼠（k＿＿＿＿＿＿＿，8 個字母）：{0}",
-     "blanks": [
-      [
-       "kangaroo"
-      ]
-     ],
-     "exp": "kangaroo。"
-    },
-    {
-     "q": "公牛（o＿，2 個字母）：{0}",
-     "blanks": [
-      [
-       "ox"
-      ]
-     ],
-     "exp": "ox。"
+     "exp": "cockroach。"
     }
    ]
   },

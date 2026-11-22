@@ -1,0 +1,66 @@
+# 主題 2000 字 PART 2 Unit 39：Other adjectives 其他形容詞（1）：課本第 1–34 字（印刷頁 183–185）；中文、例句、題目自編
+# 課本 Unit 39 有 68 字，網站拆成 39-1、39-2 兩頁。
+from p2kit import W, F, auto_quiz
+
+A = 'adj.'
+UNIT = {
+  'book': 'w2000p2', 'no': 39, 'part': 1, 'tag': 'u39a', 'en': 'Other adjectives (1)', 'zh': '其他形容詞（1）',
+  'card': 'absent～major：alike、alive、alone、available、crowded、fair、homesick、impossible… 共 34 字',
+  'intro': '其他形容詞第一部分，absent 到 major，共 34 個。a- 開頭的 alike、alive、alone、asleep 只能放在 be 動詞後面，不能放在名詞前面。',
+  'words': [
+    W('absent', A, '缺席的；不在的', 'be absent from…；↔ present', 'Tom was absent from school yesterday.', 'Tom 昨天沒來學校。', '🪑'),
+    W('alike', A, '相像的；相同的', '只放在 be 動詞後；look alike', 'The twins look alike.', '那對雙胞胎長得很像。', '👯'),
+    W('alive', A, '活著的', '只放在 be 動詞後；↔ dead', 'The fish is still alive.', '那條魚還活著。', '🐟'),
+    W('alone', A, '單獨的；獨自的', 'Leave me alone. 讓我靜一靜', 'She lives alone in a small apartment.', '她獨自住在一間小公寓裡。', '🧍'),
+    W('ancient', A, '古代的；古老的', '', 'We visited an ancient temple in Japan.', '我們參觀了日本的一座古老寺廟。', '🏯'),
+    W('asleep', A, '睡著的', 'fall asleep 睡著；↔ awake', 'The baby fell asleep in my arms.', '寶寶在我懷裡睡著了。', '😴'),
+    W('available', A, '可用的；可得到的；有空的', '', 'Is this seat available?', '這個位子有人坐嗎？', '🟢'),
+    W('basic', A, '基本的；基礎的', 'basic English 基礎英文', 'Food and water are basic needs.', '食物和水是基本需求。', '🔤'),
+    W('broad', A, '寬的；廣闊的', '= wide；↔ narrow', 'The river is very broad here.', '這條河在這裡非常寬。', '🏞️'),
+    W('certain', A, '確定的；某一個', 'be certain that… 確定…', 'I\'m certain that he will win.', '我確定他會贏。', '💯'),
+    W('classical', A, '古典的', 'classical music 古典音樂', 'Grandpa loves classical music.', '爺爺喜歡古典音樂。', '🎻'),
+    W('colorful', A, '色彩豐富的；多采多姿的', 'color + -ful', 'The garden is full of colorful flowers.', '花園裡開滿了五顏六色的花。', '🌈'),
+    W('complete', A, '完整的；完成的', '也可當動詞「完成」', 'Is your homework complete?', '你的作業寫完了嗎？', '✅'),
+    W('crowded', A, '擁擠的', 'crowd 人群 → crowded', 'The MRT is very crowded in the morning.', '捷運早上非常擁擠。', '🚇'),
+    W('double', A, '兩倍的；雙人的', 'double room 雙人房', 'I\'d like a double cheeseburger.', '我要一個雙層起司漢堡。', '🍔'),
+    W('electric', A, '電的；電動的', 'electricity 電（名詞）', 'He rides an electric scooter to work.', '他騎電動機車上班。', '🛵'),
+    W('equal', A, '相等的；平等的', 'be equal to…', 'All people are equal.', '人人平等。', '🟰'),
+    W('false', A, '錯的；假的', '↔ true', 'Is this sentence true or false?', '這句話是對還是錯？', '❎'),
+    W('fancy', A, '花俏的；高級的', 'a fancy restaurant 高級餐廳', 'We had dinner at a fancy restaurant.', '我們在一家高級餐廳吃晚餐。', '🎀'),
+    W('fantastic', A, '極好的；很棒的', '= wonderful', 'The fireworks were fantastic!', '煙火太棒了！', '🎆'),
+    W('fair', A, '公平的；公正的', '↔ unfair；It\'s not fair! 不公平！', 'It\'s not fair. He got more cake than me!', '不公平，他的蛋糕比我多！', '⚖️'),
+    W('fashionable', A, '流行的；時髦的', 'fashion 時尚 + -able', 'She always wears fashionable clothes.', '她總是穿得很時髦。', '👠'),
+    W('formal', A, '正式的', '↔ informal／casual', 'You should wear formal clothes to the wedding.', '參加婚禮應該穿正式的衣服。', '🤵'),
+    W('former', A, '從前的；前者的', '↔ latter 後者', 'He is a former baseball player.', '他以前是棒球選手。', '🔙'),
+    W('general', A, '一般的；普遍的；全體的', 'in general 一般來說', 'In general, kids like sweets.', '一般來說，小孩喜歡甜食。', '🌐'),
+    W('homesick', A, '想家的', 'home + sick', 'I felt homesick during my first week at camp.', '參加營隊的第一週我很想家。', '🏠'),
+    W('horrible', A, '可怕的；糟透的', '= terrible', 'What horrible weather!', '天氣真糟！', '😱'),
+    W('impossible', A, '不可能的', 'im- + possible', 'Nothing is impossible if you try hard.', '只要努力，沒有不可能的事。', '🚫'),
+    W('independent', A, '獨立的；自主的', 'in- + dependent；be independent of…', 'My sister is very independent.', '我姊姊很獨立。', '🗽'),
+    W('instant', A, '立即的；即溶的', 'instant noodles 泡麵', 'This app gives you instant answers.', '這個 App 會立刻給你答案。', '⚡'),
+    W('latest', A, '最新的', 'late 的最高級之一', 'Have you seen his latest movie?', '你看過他最新的電影嗎？', '🆕'),
+    W('latter', A, '後者的；後半的', '↔ former 前者', 'I like the latter part of the story better.', '我比較喜歡故事的後半段。', '⏭️'),
+    W('likely', A, '可能的', 'be likely to V 很可能…', 'It\'s likely to rain this afternoon.', '今天下午很可能會下雨。', '🌦️'),
+    W('major', A, '主要的；重大的', '↔ minor', 'Traffic is a major problem in big cities.', '交通是大城市的主要問題。', '⭐'),
+  ],
+  'focus': [
+    {'title': '只放在 be 動詞後面的形容詞', 'head': ('字', '例句', ''),
+     'rows': [('alike', 'They look alike.', ''), ('alive', 'The fish is alive.', ''), ('alone', 'She is alone.', ''), ('asleep', 'The baby is asleep.', '')],
+     'note': '不能說 an asleep baby，要說 a sleeping baby。'},
+    {'title': '反義字', 'head': ('字', '反義', ''),
+     'rows': [('absent', 'present', ''), ('false', 'true', ''), ('formal', 'informal／casual', ''), ('former', 'latter', ''), ('major', 'minor', '')],
+     'note': ''},
+  ],
+}
+
+QUIZ = auto_quiz(UNIT['words'], seed=391, n_ce=7, n_ec=6, n_sp=6, fill=[
+  F('The baby is ______. Please be quiet.', ['asleep', 'alive', 'alone', 'alike'], 0, '寶寶睡著了 → asleep。'),
+  F('Amy was ______ from class because she was sick.', ['absent', 'available', 'ancient', 'alone'], 0, 'be absent from 缺席。'),
+  F('He got more candy than I did. It\'s not ______!', ['fair', 'false', 'formal', 'fancy'], 0, 'It\'s not fair! 不公平。'),
+  F('It\'s ______ to finish this in one hour. It\'s too much work.', ['impossible', 'independent', 'instant', 'likely'], 0, '一小時做不完 → impossible。'),
+  F('The train was so ______ that I couldn\'t find a seat.', ['crowded', 'colorful', 'classical', 'complete'], 0, '找不到位子 → crowded 擁擠的。'),
+  F('I miss my family. I feel ______.', ['homesick', 'horrible', 'general', 'double'], 0, '想家 → homesick。'),
+  F('The two sisters look ______. Many people think they are twins.', ['alike', 'alone', 'alive', 'asleep'], 0, 'look alike 長得像。'),
+  F('Is Mr. Chen ______ now? I need to talk to him.', ['available', 'absent', 'ancient', 'equal'], 0, '有空 → available。'),
+  F('It\'s ______ to rain, so take an umbrella.', ['likely', 'latest', 'latter', 'major'], 0, 'be likely to V 很可能。'),
+])

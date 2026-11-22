@@ -1,0 +1,61 @@
+# 主題 2000 字 PART 2 Unit 38：Other verbs (4) 其他動詞（4）：課本動詞第 101–133 字（印刷頁 181–183）；中文、例句、題目自編
+from p2kit import W, F, auto_quiz
+
+V = 'v.'
+UNIT = {
+  'book': 'w2000p2', 'no': 38, 'en': 'Other verbs (4)', 'zh': '其他動詞（4）',
+  'card': 'indicate～waste：insist、interrupt、invent、obey、promise、refuse、solve、suggest… 共 33 字',
+  'intro': '其他動詞最後一部分，indicate 到 waste，共 33 個。注意 insist on + V-ing、quit + V-ing、refuse + to V，以及 receive（收到）和 refuse（拒絕）。',
+  'words': [
+    W('indicate', V, '指出；表明', '', 'The sign indicates the way to the exit.', '這個標示指出出口的方向。', '👉'),
+    W('insist', V, '堅持', 'insist on + V-ing', 'He insisted on paying for dinner.', '他堅持要付晚餐的錢。', '✊'),
+    W('interrupt', V, '打斷；中斷', '兩個 r', 'Don\'t interrupt me when I\'m talking.', '我在說話時不要打斷我。', '✋'),
+    W('introduce', V, '介紹', 'introduce A to B', 'Let me introduce my friend to you.', '讓我把我朋友介紹給你。', '🤝'),
+    W('invent', V, '發明', 'invention 發明；inventor 發明家', 'Who invented the telephone?', '誰發明了電話？', '💡'),
+    W('judge', V, '判斷；評審', 'Don\'t judge a book by its cover. 不要以貌取人', 'Don\'t judge people by how they look.', '不要以外表評斷別人。', '⚖️'),
+    W('limit', V, '限制', '也可當名詞 speed limit 速限', 'Mom limits my phone time to one hour a day.', '媽媽限制我一天只能用一小時手機。', '⏱️'),
+    W('match', V, '和…相配', '也可當名詞「比賽；火柴」', 'Your shoes match your dress.', '你的鞋子和洋裝很搭。', '👗'),
+    W('obey', V, '服從；遵守', 'obey the rules 遵守規則', 'You must obey the school rules.', '你必須遵守校規。', '📏'),
+    W('omit', V, '省略；遺漏', 'omit-omitted-omitted', 'Don\'t omit any steps.', '不要漏掉任何步驟。', '✂️'),
+    W('pardon', V, '原諒', 'Pardon? 請再說一次？', 'Pardon me, could you say that again?', '不好意思，你可以再說一次嗎？', '🙏'),
+    W('pollute', V, '汙染', 'pollution 汙染（名詞）', 'Factories pollute the river.', '工廠汙染了河川。', '🏭'),
+    W('praise', V, '稱讚；讚美', '', 'The teacher praised me for my good work.', '老師稱讚我做得很好。', '👏'),
+    W('promise', V, '答應；承諾', 'promise to V', 'I promise to clean my room.', '我答應會整理房間。', '🤞'),
+    W('provide', V, '提供', 'provide sb. with sth.', 'The school provides lunch for students.', '學校提供學生午餐。', '🍱'),
+    W('quit', V, '停止；放棄；辭職', 'quit + V-ing；quit-quit-quit', 'My uncle quit smoking last year.', '我叔叔去年戒菸了。', '🚭'),
+    W('receive', V, '收到；接到', 'ei 拼法；receiver 接收者', 'I received a birthday card from Grandma.', '我收到奶奶寄來的生日卡。', '📨'),
+    W('refuse', V, '拒絕', 'refuse + to V', 'He refused to say sorry.', '他拒絕道歉。', '🙅'),
+    W('reject', V, '拒絕；駁回', '比 refuse 更正式', 'The company rejected his plan.', '公司駁回了他的計畫。', '👎'),
+    W('rent', V, '租', 'rent a car 租車；也可當名詞「租金」', 'We rented bikes and rode around the lake.', '我們租了腳踏車繞湖騎。', '🚲'),
+    W('respect', V, '尊重；尊敬', '', 'We should respect older people.', '我們應該尊敬長輩。', '🙇'),
+    W('return', V, '回來；歸還', 'return a book 還書', 'Please return the book by Friday.', '請在星期五前還書。', '↩️'),
+    W('ruin', V, '毀壞；破壞', '', 'The rain ruined our picnic.', '這場雨毀了我們的野餐。', '🌧️'),
+    W('solve', V, '解決；解答', 'solution 解決辦法', 'Can you solve this math problem?', '你會解這題數學嗎？', '🧩'),
+    W('satisfy', V, '使滿意；滿足', 'satisfied 感到滿意的', 'Nothing can satisfy him.', '沒有什麼能讓他滿意。', '😊'),
+    W('search', V, '搜尋；搜查', 'search for 尋找', 'I searched for my keys everywhere.', '我到處找我的鑰匙。', '🔎'),
+    W('seem', V, '似乎；好像', 'seem + 形容詞；seem to V', 'You seem tired today.', '你今天好像很累。', '🤔'),
+    W('select', V, '選擇；挑選', 'selection 選擇', 'Please select one answer.', '請選一個答案。', '☑️'),
+    W('serve', V, '服務；端上（食物）', 'service 服務；server 服務生', 'Dinner is served at six.', '晚餐六點上桌。', '🍽️'),
+    W('suggest', V, '建議', 'suggestion 建議（名詞）', 'I suggest that we take a taxi.', '我建議我們搭計程車。', '💡'),
+    W('support', V, '支持；支撐', '', 'My parents always support me.', '我父母總是支持我。', '🙌'),
+    W('trust', V, '信任；信賴', '', 'I trust you. You won\'t tell anyone.', '我相信你，你不會告訴別人。', '🤝'),
+    W('waste', V, '浪費', 'waste time／money', 'Don\'t waste your money on junk food.', '不要把錢浪費在垃圾食物上。', '🗑️'),
+  ],
+  'focus': [
+    {'title': '後面接什麼', 'head': ('動詞', '用法', ''),
+     'rows': [('insist', 'insist on + V-ing', ''), ('quit', 'quit + V-ing', ''), ('refuse／promise', '+ to V', ''), ('provide', 'provide sb. with sth.', ''), ('introduce', 'introduce A to B', '')],
+     'note': 'receive 的拼法是 ei（c 後面 e 在 i 前面）。'},
+  ],
+}
+
+QUIZ = auto_quiz(UNIT['words'], seed=38, n_ce=7, n_ec=6, n_sp=6, fill=[
+  F('He insisted on ______ me home.', ['driving', 'to drive', 'drive', 'drove'], 0, 'insist on + V-ing。'),
+  F('My dad quit ______ ten years ago.', ['smoking', 'to smoke', 'smoke', 'smoked'], 0, 'quit + V-ing。'),
+  F('She refused ______ my question.', ['to answer', 'answering', 'answer', 'answered'], 0, 'refuse + to V。'),
+  F('Did you ______ my e-mail?', ['receive', 'refuse', 'reject', 'return'], 0, '收到 → receive。'),
+  F('Please don\'t ______ water. Turn off the faucet.', ['waste', 'serve', 'select', 'solve'], 0, '浪費 → waste。'),
+  F('Thomas Edison ______ the light bulb.', ['invented', 'introduced', 'indicated', 'interrupted'], 0, '發明 → invented。'),
+  F('Let me ______ my sister to you. This is Amy.', ['introduce', 'invent', 'insist', 'indicate'], 0, 'introduce A to B 介紹。'),
+  F('You must ______ the traffic rules.', ['obey', 'omit', 'ruin', 'rent'], 0, '遵守 → obey。'),
+  F('I ______ that we go to the beach this weekend.', ['suggest', 'support', 'seem', 'serve'], 0, '我建議 → I suggest…。'),
+])

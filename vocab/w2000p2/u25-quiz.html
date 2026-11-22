@@ -34,12 +34,12 @@ window.GQUIZ = {
      "type": "mc",
      "q": "平原；樸素的；簡單的",
      "opts": [
-      "woods",
       "plain",
-      "forest",
-      "ocean"
+      "stream",
+      "desert",
+      "environment"
      ],
-     "answer": 1,
+     "answer": 0,
      "exp": "plain 平原；樸素的；簡單的。"
     },
     {
@@ -47,9 +47,9 @@ window.GQUIZ = {
      "q": "海洋",
      "opts": [
       "ocean",
-      "plain",
-      "forest",
-      "valley"
+      "valley",
+      "desert",
+      "forest"
      ],
      "answer": 0,
      "exp": "ocean 海洋。"
@@ -58,36 +58,36 @@ window.GQUIZ = {
      "type": "mc",
      "q": "樹林",
      "opts": [
-      "woods",
       "ocean",
-      "coast",
-      "valley"
+      "woods",
+      "environment",
+      "desert"
      ],
-     "answer": 0,
+     "answer": 1,
      "exp": "woods 樹林。"
     },
     {
      "type": "mc",
      "q": "山谷",
      "opts": [
-      "stream",
-      "valley",
-      "desert",
-      "environment"
+      "coast",
+      "environment",
+      "plain",
+      "valley"
      ],
-     "answer": 1,
+     "answer": 3,
      "exp": "valley 山谷。"
     },
     {
      "type": "mc",
      "q": "森林",
      "opts": [
-      "coast",
-      "forest",
-      "ocean",
-      "desert"
+      "plain",
+      "stream",
+      "valley",
+      "forest"
      ],
-     "answer": 1,
+     "answer": 3,
      "exp": "forest 森林。"
     }
    ]
@@ -99,61 +99,61 @@ window.GQUIZ = {
      "type": "mc",
      "q": "desert",
      "opts": [
+      "森林",
+      "沙漠",
       "海洋",
-      "山谷",
-      "樹林",
-      "沙漠"
+      "山谷"
      ],
-     "answer": 3,
+     "answer": 1,
      "exp": "desert 沙漠。"
     },
     {
      "type": "mc",
      "q": "environment",
      "opts": [
-      "環境",
+      "海岸",
+      "平原",
       "沙漠",
-      "森林",
-      "樹林"
+      "環境"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "environment 環境。"
     },
     {
      "type": "mc",
-     "q": "coast",
+     "q": "stream",
      "opts": [
-      "樹林",
-      "海洋",
-      "海岸",
-      "沙漠"
-     ],
-     "answer": 2,
-     "exp": "coast 海岸；海濱。"
-    },
-    {
-     "type": "mc",
-     "q": "valley",
-     "opts": [
+      "平原",
       "小溪",
-      "樹林",
       "山谷",
       "沙漠"
      ],
-     "answer": 2,
-     "exp": "valley 山谷。"
+     "answer": 1,
+     "exp": "stream 小溪；溪流。"
     },
     {
      "type": "mc",
-     "q": "ocean",
+     "q": "woods",
      "opts": [
-      "沙漠",
-      "海洋",
-      "環境",
-      "小溪"
+      "山谷",
+      "小溪",
+      "樹林",
+      "森林"
      ],
-     "answer": 1,
-     "exp": "ocean 海洋。"
+     "answer": 2,
+     "exp": "woods 樹林。"
+    },
+    {
+     "type": "mc",
+     "q": "forest",
+     "opts": [
+      "山谷",
+      "小溪",
+      "森林",
+      "海洋"
+     ],
+     "answer": 2,
+     "exp": "forest 森林。"
     }
    ]
   },
@@ -162,13 +162,13 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "沙漠（d＿＿＿＿＿，6 個字母）：{0}",
+     "q": "海洋（o＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "desert"
+       "ocean"
       ]
      ],
-     "exp": "desert。"
+     "exp": "ocean。"
     },
     {
      "q": "樹林（w＿＿＿＿，5 個字母）：{0}",
@@ -180,31 +180,31 @@ window.GQUIZ = {
      "exp": "woods。"
     },
     {
-     "q": "環境（e＿＿＿＿＿＿＿＿＿＿，11 個字母）：{0}",
+     "q": "海岸（c＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "environment"
+       "coast"
       ]
      ],
-     "exp": "environment。"
+     "exp": "coast。"
     },
     {
-     "q": "平原（p＿＿＿＿，5 個字母）：{0}",
+     "q": "森林（f＿＿＿＿＿，6 個字母）：{0}",
      "blanks": [
       [
-       "plain"
+       "forest"
       ]
      ],
-     "exp": "plain。"
+     "exp": "forest。"
     },
     {
-     "q": "小溪（s＿＿＿＿＿，6 個字母）：{0}",
+     "q": "沙漠（d＿＿＿＿＿，6 個字母）：{0}",
      "blanks": [
       [
-       "stream"
+       "desert"
       ]
      ],
-     "exp": "stream。"
+     "exp": "desert。"
     }
    ]
   },

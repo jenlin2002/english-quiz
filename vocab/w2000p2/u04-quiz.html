@@ -34,12 +34,12 @@ window.GQUIZ = {
      "type": "mc",
      "q": "咳嗽",
      "opts": [
-      "recover",
+      "pale",
+      "throat",
       "cough",
-      "toothache",
-      "cancer"
+      "pain"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "cough 咳嗽。"
     },
     {
@@ -47,7 +47,7 @@ window.GQUIZ = {
      "q": "治療；治好",
      "opts": [
       "cure",
-      "wound",
+      "painful",
       "pale",
       "dizzy"
      ],
@@ -58,46 +58,46 @@ window.GQUIZ = {
      "type": "mc",
      "q": "癌症；（大寫）巨蟹座",
      "opts": [
+      "ill",
       "cancer",
-      "wound",
-      "painful",
-      "cure"
+      "recover",
+      "flu"
      ],
-     "answer": 0,
+     "answer": 1,
      "exp": "cancer 癌症；（大寫）巨蟹座。"
     },
     {
      "type": "mc",
      "q": "牙痛",
      "opts": [
+      "pain",
       "toothache",
-      "cough",
-      "throat",
-      "flu"
+      "cancer",
+      "throat"
      ],
-     "answer": 0,
+     "answer": 1,
      "exp": "toothache 牙痛。"
     },
     {
      "type": "mc",
      "q": "恢復；康復",
      "opts": [
+      "dizzy",
       "recover",
-      "wound",
-      "stomachache",
-      "ill"
+      "ill",
+      "flu"
      ],
-     "answer": 0,
+     "answer": 1,
      "exp": "recover 恢復；康復。"
     },
     {
      "type": "mc",
      "q": "疼痛",
      "opts": [
-      "cough",
-      "wound",
+      "throat",
+      "cancer",
       "pain",
-      "cure"
+      "dizzy"
      ],
      "answer": 2,
      "exp": "pain 疼痛。"
@@ -109,11 +109,35 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
+     "q": "dizzy",
+     "opts": [
+      "傷口",
+      "流行性感冒",
+      "頭暈的",
+      "疼痛的"
+     ],
+     "answer": 2,
+     "exp": "dizzy 頭暈的。"
+    },
+    {
+     "type": "mc",
+     "q": "throat",
+     "opts": [
+      "喉嚨",
+      "治療",
+      "牙痛",
+      "疼痛的"
+     ],
+     "answer": 0,
+     "exp": "throat 喉嚨。"
+    },
+    {
+     "type": "mc",
      "q": "painful",
      "opts": [
-      "咳嗽",
+      "胃痛",
       "恢復",
-      "喉嚨",
+      "生病的",
       "疼痛的"
      ],
      "answer": 3,
@@ -121,51 +145,27 @@ window.GQUIZ = {
     },
     {
      "type": "mc",
-     "q": "ill",
+     "q": "stomachache",
      "opts": [
       "傷口",
-      "生病的",
-      "喉嚨",
-      "蒼白的"
+      "疼痛",
+      "胃痛",
+      "疼痛的"
      ],
-     "answer": 1,
-     "exp": "ill 生病的。"
+     "answer": 2,
+     "exp": "stomachache 胃痛；肚子痛。"
     },
     {
      "type": "mc",
-     "q": "cure",
+     "q": "toothache",
      "opts": [
-      "治療",
+      "牙痛",
       "恢復",
-      "疼痛",
-      "胃痛"
+      "頭暈的",
+      "喉嚨"
      ],
      "answer": 0,
-     "exp": "cure 治療；治好。"
-    },
-    {
-     "type": "mc",
-     "q": "flu",
-     "opts": [
-      "治療",
-      "胃痛",
-      "流行性感冒",
-      "疼痛"
-     ],
-     "answer": 2,
-     "exp": "flu 流行性感冒。"
-    },
-    {
-     "type": "mc",
-     "q": "pain",
-     "opts": [
-      "頭暈的",
-      "癌症",
-      "疼痛",
-      "生病的"
-     ],
-     "answer": 2,
-     "exp": "pain 疼痛。"
+     "exp": "toothache 牙痛。"
     }
    ]
   },
@@ -174,49 +174,49 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "喉嚨（t＿＿＿＿＿，6 個字母）：{0}",
+     "q": "生病的（i＿＿，3 個字母）：{0}",
      "blanks": [
       [
-       "throat"
+       "ill"
       ]
      ],
-     "exp": "throat。"
+     "exp": "ill。"
     },
     {
-     "q": "胃痛（s＿＿＿＿＿＿＿＿＿＿，11 個字母）：{0}",
+     "q": "疼痛的（p＿＿＿＿＿＿，7 個字母）：{0}",
      "blanks": [
       [
-       "stomachache"
+       "painful"
       ]
      ],
-     "exp": "stomachache。"
+     "exp": "painful。"
     },
     {
-     "q": "流行性感冒（f＿＿，3 個字母）：{0}",
+     "q": "傷口（w＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "flu"
+       "wound"
       ]
      ],
-     "exp": "flu。"
+     "exp": "wound。"
     },
     {
-     "q": "蒼白的（p＿＿＿，4 個字母）：{0}",
+     "q": "治療（c＿＿＿，4 個字母）：{0}",
      "blanks": [
       [
-       "pale"
+       "cure"
       ]
      ],
-     "exp": "pale。"
+     "exp": "cure。"
     },
     {
-     "q": "癌症（c＿＿＿＿＿，6 個字母）：{0}",
+     "q": "牙痛（t＿＿＿＿＿＿＿＿，9 個字母）：{0}",
      "blanks": [
       [
-       "cancer"
+       "toothache"
       ]
      ],
-     "exp": "cancer。"
+     "exp": "toothache。"
     }
    ]
   },

@@ -34,57 +34,57 @@ window.GQUIZ = {
      "type": "mc",
      "q": "爆胎；輪胎沒氣",
      "opts": [
-      "train station",
+      "path",
+      "helicopter",
       "flat tire",
-      "wheel",
-      "bus stop"
+      "platform"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "flat tire 爆胎；輪胎沒氣。"
     },
     {
      "type": "mc",
      "q": "地鐵",
      "opts": [
-      "parking lot",
-      "railway",
-      "wheel",
-      "subway"
+      "path",
+      "subway",
+      "airline",
+      "ambulance"
      ],
-     "answer": 3,
+     "answer": 1,
      "exp": "subway 地鐵。"
     },
     {
      "type": "mc",
      "q": "輪子；方向盤",
      "opts": [
-      "MRT",
-      "ambulance",
-      "flat tire",
-      "wheel"
+      "subway",
+      "parking lot",
+      "wheel",
+      "highway"
      ],
-     "answer": 3,
+     "answer": 2,
      "exp": "wheel 輪子；方向盤。"
     },
     {
      "type": "mc",
      "q": "救護車",
      "opts": [
-      "underpass",
       "ambulance",
-      "passenger",
-      "subway"
+      "jeep",
+      "helicopter",
+      "airline"
      ],
-     "answer": 1,
+     "answer": 0,
      "exp": "ambulance 救護車。"
     },
     {
      "type": "mc",
      "q": "停車場",
      "opts": [
-      "tank",
-      "underpass",
       "MRT",
+      "jeep",
+      "overpass",
       "parking lot"
      ],
      "answer": 3,
@@ -94,12 +94,12 @@ window.GQUIZ = {
      "type": "mc",
      "q": "直升機",
      "opts": [
-      "railway",
+      "overpass",
+      "airline",
       "helicopter",
-      "train station",
-      "parking lot"
+      "bus stop"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "helicopter 直升機。"
     }
    ]
@@ -109,63 +109,63 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "wheel",
+     "q": "ambulance",
      "opts": [
-      "輪子",
-      "火車站",
-      "吉普車",
-      "地下道"
+      "救護車",
+      "鐵路",
+      "地鐵",
+      "火車站"
      ],
      "answer": 0,
-     "exp": "wheel 輪子；方向盤。"
+     "exp": "ambulance 救護車。"
     },
     {
      "type": "mc",
-     "q": "jeep",
+     "q": "highway",
      "opts": [
-      "地下道",
+      "公路",
+      "救護車",
+      "直升機",
+      "航空公司"
+     ],
+     "answer": 0,
+     "exp": "highway 公路；高速公路。"
+    },
+    {
+     "type": "mc",
+     "q": "underpass",
+     "opts": [
+      "月台",
       "地鐵",
-      "吉普車",
-      "輪子"
-     ],
-     "answer": 2,
-     "exp": "jeep 吉普車。"
-    },
-    {
-     "type": "mc",
-     "q": "passenger",
-     "opts": [
-      "鐵路",
       "地下道",
-      "乘客",
-      "小路"
+      "停車場"
      ],
      "answer": 2,
-     "exp": "passenger 乘客。"
+     "exp": "underpass 地下道。"
     },
     {
      "type": "mc",
-     "q": "tank",
+     "q": "train station",
      "opts": [
       "坦克",
-      "公路",
-      "公車站",
-      "小路"
+      "輪子",
+      "火車站",
+      "直升機"
      ],
-     "answer": 0,
-     "exp": "tank 坦克；水箱；油箱。"
+     "answer": 2,
+     "exp": "train station 火車站。"
     },
     {
      "type": "mc",
-     "q": "subway",
+     "q": "flat tire",
      "opts": [
-      "公路",
-      "捷運",
-      "航空公司",
-      "地鐵"
+      "直升機",
+      "地下道",
+      "小路",
+      "爆胎"
      ],
      "answer": 3,
-     "exp": "subway 地鐵。"
+     "exp": "flat tire 爆胎；輪胎沒氣。"
     }
    ]
   },
@@ -173,6 +173,15 @@ window.GQUIZ = {
    "title": "③ 拼字：看中文和提示，寫出整個單字",
    "note": "括號裡是第一個字母和字母數。",
    "items": [
+    {
+     "q": "吉普車（j＿＿＿，4 個字母）：{0}",
+     "blanks": [
+      [
+       "jeep"
+      ]
+     ],
+     "exp": "jeep。"
+    },
     {
      "q": "航空公司（a＿＿＿＿＿＿，7 個字母）：{0}",
      "blanks": [
@@ -183,31 +192,22 @@ window.GQUIZ = {
      "exp": "airline。"
     },
     {
-     "q": "坦克（t＿＿＿，4 個字母）：{0}",
+     "q": "救護車（a＿＿＿＿＿＿＿＿，9 個字母）：{0}",
      "blanks": [
       [
-       "tank"
+       "ambulance"
       ]
      ],
-     "exp": "tank。"
+     "exp": "ambulance。"
     },
     {
-     "q": "乘客（p＿＿＿＿＿＿＿＿，9 個字母）：{0}",
+     "q": "公路（h＿＿＿＿＿＿，7 個字母）：{0}",
      "blanks": [
       [
-       "passenger"
+       "highway"
       ]
      ],
-     "exp": "passenger。"
-    },
-    {
-     "q": "捷運（M＿＿，3 個字母）：{0}",
-     "blanks": [
-      [
-       "MRT"
-      ]
-     ],
-     "exp": "MRT。"
+     "exp": "highway。"
     },
     {
      "q": "地下道（u＿＿＿＿＿＿＿＿，9 個字母）：{0}",

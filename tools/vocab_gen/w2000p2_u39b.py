@@ -1,0 +1,62 @@
+# 主題 2000 字 PART 2 Unit 39：Other adjectives 其他形容詞（2）：課本第 35–68 字（印刷頁 185–187）；中文、例句、題目自編
+from p2kit import W, F, auto_quiz
+
+A = 'adj.'
+UNIT = {
+  'book': 'w2000p2', 'no': 39, 'part': 2, 'tag': 'u39b', 'en': 'Other adjectives (2)', 'zh': '其他形容詞（2）',
+  'card': 'marvelous～wild：necessary、perfect、pleasant、precious、rare、responsible、similar、unique… 共 34 字',
+  'intro': '其他形容詞第二部分，marvelous 到 wild，共 34 個。注意成對的 positive／negative、primary／secondary、major／minor，以及 be similar to、be responsible for。',
+  'words': [
+    W('marvelous', A, '令人驚嘆的；非常好的', '= wonderful', 'We had a marvelous time at the beach.', '我們在海灘玩得非常開心。', '🤩'),
+    W('minor', A, '較小的；次要的', '↔ major', 'Don\'t worry. It\'s just a minor problem.', '別擔心，只是個小問題。', '🔹'),
+    W('necessary', A, '必要的；必需的', 'It\'s necessary to V', 'Sleep is necessary for good health.', '睡眠對健康是必要的。', '❗'),
+    W('negative', A, '否定的；負面的', '↔ positive', 'Don\'t be so negative. Things will get better.', '別那麼悲觀，事情會變好的。', '➖'),
+    W('ordinary', A, '普通的；平常的', '↔ special', 'It was just an ordinary day.', '那只是平凡的一天。', '⚪'),
+    W('overseas', A, '海外的；國外的', '也可當副詞 go overseas 出國', 'My cousin is an overseas student in Canada.', '我表姊是在加拿大的留學生。', '✈️'),
+    W('peaceful', A, '和平的；平靜的', 'peace + -ful', 'The village is quiet and peaceful.', '這個村莊安靜又祥和。', '🕊️'),
+    W('perfect', A, '完美的', 'Practice makes perfect. 熟能生巧', 'Practice makes perfect.', '熟能生巧。', '💯'),
+    W('personal', A, '個人的；私人的', 'person + -al', 'This is my personal opinion.', '這是我個人的意見。', '👤'),
+    W('pleasant', A, '令人愉快的', 'please 使高興 → pleasant', 'We had a pleasant walk in the park.', '我們在公園愉快地散了步。', '😊'),
+    W('positive', A, '正面的；積極的；肯定的', '↔ negative', 'Try to stay positive.', '試著保持正面的想法。', '➕'),
+    W('precious', A, '珍貴的；寶貴的', '', 'Time is precious. Don\'t waste it.', '時間很寶貴，別浪費了。', '💎'),
+    W('primary', A, '主要的；初級的', 'primary school 小學（英式）', 'My primary goal is to pass the exam.', '我的主要目標是通過考試。', '1️⃣'),
+    W('private', A, '私人的；私立的', '↔ public 公共的', 'This is a private beach. You can\'t swim here.', '這是私人海灘，你不能在這裡游泳。', '🔒'),
+    W('rare', A, '稀有的；罕見的', '', 'This bird is very rare in Taiwan.', '這種鳥在台灣很稀有。', '🦄'),
+    W('regular', A, '規律的；定期的；一般的', '↔ irregular', 'Regular exercise is good for you.', '規律運動對你有益。', '📆'),
+    W('responsible', A, '負責的；有責任的', 'be responsible for…', 'Who is responsible for cleaning the classroom today?', '今天誰負責打掃教室？', '🧹'),
+    W('secondary', A, '第二的；次要的；中等的', 'secondary school 中學', 'Money is secondary. Health comes first.', '錢是次要的，健康第一。', '2️⃣'),
+    W('silent', A, '安靜的；沉默的', 'silence 安靜（名詞）', 'Please be silent in the library.', '在圖書館請保持安靜。', '🤫'),
+    W('similar', A, '相似的', 'be similar to…', 'My bag is similar to yours.', '我的包包跟你的很像。', '♊'),
+    W('single', A, '單一的；單身的', 'a single room 單人房；not a single… 一個…也沒有', 'There wasn\'t a single cloud in the sky.', '天空中一片雲也沒有。', '☝️'),
+    W('skillful', A, '熟練的；有技巧的', 'skill + -ful', 'She is a skillful dancer.', '她是個舞技熟練的舞者。', '🩰'),
+    W('sleepy', A, '想睡的', 'sleep + y', 'I always feel sleepy after lunch.', '我午餐後總是想睡覺。', '🥱'),
+    W('such', A, '這樣的；如此的', 'such a + 形容詞 + 名詞', 'She is such a kind girl.', '她是個這麼善良的女孩。', '👍'),
+    W('sudden', A, '突然的', 'suddenly 突然地；all of a sudden 突然', 'There was a sudden change in the weather.', '天氣突然變了。', '⚡'),
+    W('super', A, '超級的；極好的', '', 'You did a super job!', '你做得超棒！', '🦸'),
+    W('terrific', A, '極好的；非常棒的', '舊義也可指「可怕的」', 'We had a terrific time at the party.', '我們在派對上玩得超開心。', '🌟'),
+    W('traditional', A, '傳統的', 'tradition 傳統（名詞）', 'Zongzi is a traditional food for the Dragon Boat Festival.', '粽子是端午節的傳統食物。', '🏮'),
+    W('unique', A, '獨特的；獨一無二的', 'u 讀 [ju]，用 a unique', 'Everyone is unique.', '每個人都是獨一無二的。', '🦋'),
+    W('usual', A, '平常的；通常的', 'as usual 像平常一樣', 'He got up at seven, as usual.', '他像平常一樣七點起床。', '🔁'),
+    W('valuable', A, '貴重的；有價值的', 'value + -able', 'Keep your valuable things in a safe place.', '把你的貴重物品放在安全的地方。', '💰'),
+    W('social', A, '社會的；社交的', 'society 社會；social media 社群媒體', 'Many teenagers use social media every day.', '很多青少年每天使用社群媒體。', '📱'),
+    W('whole', A, '全部的；整個的', 'the whole day 一整天', 'I spent the whole day at the beach.', '我在海灘待了一整天。', '🟠'),
+    W('wild', A, '野生的；狂野的', 'wild animals 野生動物', 'You can see wild monkeys in the mountains.', '在山上可以看到野生猴子。', '🐒'),
+  ],
+  'focus': [
+    {'title': '成對的形容詞', 'head': ('字', '相對的字', ''),
+     'rows': [('positive', 'negative', ''), ('primary', 'secondary', ''), ('private', 'public', ''), ('ordinary', 'special', ''), ('regular', 'irregular', '')],
+     'note': 'be similar to 和…相似；be responsible for 對…負責。'},
+  ],
+}
+
+QUIZ = auto_quiz(UNIT['words'], seed=392, n_ce=7, n_ec=6, n_sp=6, fill=[
+  F('Your answer is very ______ to mine.', ['similar', 'single', 'silent', 'social'], 0, 'be similar to 和…相似。'),
+  F('Parents are ______ for their children.', ['responsible', 'regular', 'rare', 'private'], 0, 'be responsible for 對…負責。'),
+  F('He is ______ a funny boy. Everyone likes him.', ['such', 'so', 'very', 'whole'], 0, 'such a + 形容詞 + 名詞。'),
+  F('Pandas are ______ animals. There aren\'t many left.', ['rare', 'regular', 'usual', 'ordinary'], 0, '數量很少 → rare 稀有的。'),
+  F('He came to school late ______ usual.', ['as', 'so', 'such', 'like'], 0, 'as usual 像平常一樣。'),
+  F('Keep ______ thinking, and you will do well.', ['positive', 'negative', 'minor', 'sleepy'], 0, '正面思考 → positive。'),
+  F('There wasn\'t a ______ person in the room. It was empty.', ['single', 'whole', 'unique', 'super'], 0, 'not a single… 一個也沒有。'),
+  F('Family photos are very ______ to me.', ['precious', 'ordinary', 'negative', 'minor'], 0, '珍貴的 → precious。'),
+  F('It\'s not ______ to bring lunch. The school provides it.', ['necessary', 'pleasant', 'perfect', 'personal'], 0, '不必要 → not necessary。'),
+])

@@ -34,36 +34,36 @@ window.GQUIZ = {
      "type": "mc",
      "q": "瀑布",
      "opts": [
-      "international",
-      "buffet",
       "waterfall",
-      "convenience store"
+      "cafeteria",
+      "position",
+      "central"
      ],
-     "answer": 2,
+     "answer": 0,
      "exp": "waterfall 瀑布。"
     },
     {
      "type": "mc",
      "q": "當地的；本地人",
      "opts": [
-      "fast food restaurant",
-      "central",
-      "international",
-      "local"
+      "culture center",
+      "local",
+      "women's room",
+      "fire station"
      ],
-     "answer": 3,
+     "answer": 1,
      "exp": "local 當地的；本地人。"
     },
     {
      "type": "mc",
      "q": "中央的；中心的",
      "opts": [
-      "international",
-      "local",
-      "cafeteria",
-      "central"
+      "movie theater",
+      "village",
+      "central",
+      "culture center"
      ],
-     "answer": 3,
+     "answer": 2,
      "exp": "central 中央的；中心的。"
     },
     {
@@ -71,9 +71,9 @@ window.GQUIZ = {
      "q": "女廁",
      "opts": [
       "women's room",
-      "men's room",
-      "flower shop",
-      "position"
+      "local",
+      "drugstore",
+      "movie theater"
      ],
      "answer": 0,
      "exp": "women's room 女廁。"
@@ -82,24 +82,24 @@ window.GQUIZ = {
      "type": "mc",
      "q": "購物中心；商場",
      "opts": [
-      "flower shop",
-      "mall",
-      "stationery store",
-      "backwards"
+      "convenience store",
+      "fire station",
+      "international",
+      "mall"
      ],
-     "answer": 1,
+     "answer": 3,
      "exp": "mall 購物中心；商場。"
     },
     {
      "type": "mc",
      "q": "消防局；消防隊",
      "opts": [
-      "forward",
       "fire station",
-      "convenience store",
-      "downtown"
+      "village",
+      "mall",
+      "backwards"
      ],
-     "answer": 1,
+     "answer": 0,
      "exp": "fire station 消防局；消防隊。"
     }
    ]
@@ -109,63 +109,63 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "women's room",
-     "opts": [
-      "藥房",
-      "向後",
-      "女廁",
-      "文具店"
-     ],
-     "answer": 2,
-     "exp": "women's room 女廁。"
-    },
-    {
-     "type": "mc",
      "q": "drugstore",
      "opts": [
-      "中央的",
-      "位置",
+      "男廁",
+      "向前",
       "藥房",
-      "文具店"
+      "便利商店"
      ],
      "answer": 2,
      "exp": "drugstore 藥房；藥妝店。"
     },
     {
      "type": "mc",
-     "q": "international",
+     "q": "central",
      "opts": [
-      "自助餐廳",
-      "市中心",
-      "國際的",
-      "購物中心"
+      "向前",
+      "中央的",
+      "藥房",
+      "文具店"
      ],
-     "answer": 2,
-     "exp": "international 國際的。"
+     "answer": 1,
+     "exp": "central 中央的；中心的。"
+    },
+    {
+     "type": "mc",
+     "q": "women's room",
+     "opts": [
+      "向前",
+      "文化中心",
+      "便利商店",
+      "女廁"
+     ],
+     "answer": 3,
+     "exp": "women's room 女廁。"
     },
     {
      "type": "mc",
      "q": "village",
      "opts": [
-      "向前",
+      "消防局",
       "村莊",
-      "便利商店",
-      "向後"
+      "國際的",
+      "位置"
      ],
      "answer": 1,
      "exp": "village 村莊。"
     },
     {
      "type": "mc",
-     "q": "buffet",
+     "q": "backwards",
      "opts": [
-      "自助餐",
-      "便利商店",
-      "女廁",
-      "向後"
+      "當地的",
+      "村莊",
+      "向後",
+      "位置"
      ],
-     "answer": 0,
-     "exp": "buffet 自助餐。"
+     "answer": 2,
+     "exp": "backwards 向後；倒著。"
     }
    ]
   },
@@ -173,33 +173,6 @@ window.GQUIZ = {
    "title": "③ 拼字：看中文和提示，寫出整個單字",
    "note": "括號裡是第一個字母和字母數。",
    "items": [
-    {
-     "q": "自助餐廳（c＿＿＿＿＿＿＿＿，9 個字母）：{0}",
-     "blanks": [
-      [
-       "cafeteria"
-      ]
-     ],
-     "exp": "cafeteria。"
-    },
-    {
-     "q": "向後（b＿＿＿＿＿＿＿＿，9 個字母）：{0}",
-     "blanks": [
-      [
-       "backwards"
-      ]
-     ],
-     "exp": "backwards。"
-    },
-    {
-     "q": "藥房（d＿＿＿＿＿＿＿＿，9 個字母）：{0}",
-     "blanks": [
-      [
-       "drugstore"
-      ]
-     ],
-     "exp": "drugstore。"
-    },
     {
      "q": "瀑布（w＿＿＿＿＿＿＿＿，9 個字母）：{0}",
      "blanks": [
@@ -217,6 +190,33 @@ window.GQUIZ = {
       ]
      ],
      "exp": "downtown。"
+    },
+    {
+     "q": "購物中心（m＿＿＿，4 個字母）：{0}",
+     "blanks": [
+      [
+       "mall"
+      ]
+     ],
+     "exp": "mall。"
+    },
+    {
+     "q": "自助餐廳（c＿＿＿＿＿＿＿＿，9 個字母）：{0}",
+     "blanks": [
+      [
+       "cafeteria"
+      ]
+     ],
+     "exp": "cafeteria。"
+    },
+    {
+     "q": "向後（b＿＿＿＿＿＿＿＿，9 個字母）：{0}",
+     "blanks": [
+      [
+       "backwards"
+      ]
+     ],
+     "exp": "backwards。"
     }
    ]
   },

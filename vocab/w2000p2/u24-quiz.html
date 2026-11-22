@@ -34,9 +34,9 @@ window.GQUIZ = {
      "type": "mc",
      "q": "霧",
      "opts": [
-      "foggy",
-      "degree",
-      "thunder",
+      "humid",
+      "snowman",
+      "air",
       "fog"
      ],
      "answer": 3,
@@ -46,60 +46,60 @@ window.GQUIZ = {
      "type": "mc",
      "q": "暴風雨",
      "opts": [
-      "foggy",
-      "natural",
-      "humid",
-      "storm"
+      "thunder",
+      "snowman",
+      "storm",
+      "stormy"
      ],
-     "answer": 3,
+     "answer": 2,
      "exp": "storm 暴風雨。"
     },
     {
      "type": "mc",
      "q": "雷；雷聲",
      "opts": [
-      "thunder",
-      "fog",
-      "storm",
-      "climate"
+      "climate",
+      "foggy",
+      "degree",
+      "thunder"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "thunder 雷；雷聲。"
     },
     {
      "type": "mc",
      "q": "度數；學位",
      "opts": [
+      "foggy",
       "degree",
-      "natural",
-      "humid",
+      "temperature",
       "air"
      ],
-     "answer": 0,
+     "answer": 1,
      "exp": "degree 度數；學位。"
     },
     {
      "type": "mc",
      "q": "有霧的",
      "opts": [
-      "snowman",
-      "climate",
       "foggy",
-      "natural"
+      "temperature",
+      "degree",
+      "thunder"
      ],
-     "answer": 2,
+     "answer": 0,
      "exp": "foggy 有霧的。"
     },
     {
      "type": "mc",
      "q": "閃電",
      "opts": [
-      "degree",
+      "fog",
+      "freezing",
       "lightning",
-      "snowman",
-      "freezing"
+      "thunder"
      ],
-     "answer": 1,
+     "answer": 2,
      "exp": "lightning 閃電。"
     }
    ]
@@ -109,63 +109,63 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "freezing",
-     "opts": [
-      "雪人",
-      "霧",
-      "極冷的",
-      "雷"
-     ],
-     "answer": 2,
-     "exp": "freezing 極冷的；冰凍的。"
-    },
-    {
-     "type": "mc",
-     "q": "natural",
-     "opts": [
-      "自然的",
-      "溫度",
-      "雷",
-      "暴風雨的"
-     ],
-     "answer": 0,
-     "exp": "natural 自然的；天然的。"
-    },
-    {
-     "type": "mc",
-     "q": "lightning",
+     "q": "fog",
      "opts": [
       "氣候",
       "霧",
-      "閃電",
-      "雪人"
+      "空氣",
+      "度數"
      ],
-     "answer": 2,
-     "exp": "lightning 閃電。"
-    },
-    {
-     "type": "mc",
-     "q": "degree",
-     "opts": [
-      "度數",
-      "雪人",
-      "霧",
-      "溫度"
-     ],
-     "answer": 0,
-     "exp": "degree 度數；學位。"
+     "answer": 1,
+     "exp": "fog 霧。"
     },
     {
      "type": "mc",
      "q": "climate",
      "opts": [
-      "潮濕的",
-      "閃電",
+      "氣候",
+      "極冷的",
       "霧",
-      "氣候"
+      "潮濕的"
+     ],
+     "answer": 0,
+     "exp": "climate 氣候。"
+    },
+    {
+     "type": "mc",
+     "q": "foggy",
+     "opts": [
+      "有霧的",
+      "雪人",
+      "氣候",
+      "閃電"
+     ],
+     "answer": 0,
+     "exp": "foggy 有霧的。"
+    },
+    {
+     "type": "mc",
+     "q": "thunder",
+     "opts": [
+      "有霧的",
+      "空氣",
+      "暴風雨的",
+      "雷"
      ],
      "answer": 3,
-     "exp": "climate 氣候。"
+     "exp": "thunder 雷；雷聲。"
+    },
+    {
+     "type": "mc",
+     "q": "storm",
+     "opts": [
+      "度數",
+      "暴風雨",
+      "有霧的",
+      "雷"
+     ],
+     "answer": 1,
+     "exp": "storm 暴風雨。"
     }
    ]
   },
@@ -183,13 +183,31 @@ window.GQUIZ = {
      "exp": "degree。"
     },
     {
-     "q": "閃電（l＿＿＿＿＿＿＿＿，9 個字母）：{0}",
+     "q": "有霧的（f＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "lightning"
+       "foggy"
       ]
      ],
-     "exp": "lightning。"
+     "exp": "foggy。"
+    },
+    {
+     "q": "暴風雨的（s＿＿＿＿＿，6 個字母）：{0}",
+     "blanks": [
+      [
+       "stormy"
+      ]
+     ],
+     "exp": "stormy。"
+    },
+    {
+     "q": "潮濕的（h＿＿＿＿，5 個字母）：{0}",
+     "blanks": [
+      [
+       "humid"
+      ]
+     ],
+     "exp": "humid。"
     },
     {
      "q": "自然的（n＿＿＿＿＿＿，7 個字母）：{0}",
@@ -199,24 +217,6 @@ window.GQUIZ = {
       ]
      ],
      "exp": "natural。"
-    },
-    {
-     "q": "氣候（c＿＿＿＿＿＿，7 個字母）：{0}",
-     "blanks": [
-      [
-       "climate"
-      ]
-     ],
-     "exp": "climate。"
-    },
-    {
-     "q": "有霧的（f＿＿＿＿，5 個字母）：{0}",
-     "blanks": [
-      [
-       "foggy"
-      ]
-     ],
-     "exp": "foggy。"
     }
    ]
   },

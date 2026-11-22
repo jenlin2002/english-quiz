@@ -36,9 +36,22 @@ def auto_quiz(words, fill=None, seed=1, n_ce=6, n_ec=5, n_sp=5, extra=None):
         o = [p for p in pool if p[0] != w['w'] and p[1] != short(w['zh'])]
         unit = [p for p in o if p[0] in {x['w'] for x in words}]
         return unit if len(unit) >= 3 else o
+
+    def pick3(w):
+        # 三個干擾選項彼此的中文也不能一樣（例如 neither、nor 都是「也不」）
+        cand = others_for(w)[:]
+        rnd.shuffle(cand)
+        out, seen = [], set()
+        for p in cand:
+            if p[1] in seen:
+                continue
+            out.append(p); seen.add(p[1])
+            if len(out) == 3:
+                break
+        return out
     ce = []
     for w in pick[:n_ce]:
-        opts = rnd.sample(others_for(w), 3) + [(w['w'], short(w['zh']))]
+        opts = pick3(w) + [(w['w'], short(w['zh']))]
         rnd.shuffle(opts)
         ce.append({'type': 'mc', 'q': w['zh'], 'opts': [o[0] for o in opts], 'answer': [o[0] for o in opts].index(w['w']),
                    'exp': '%s %s。' % (w['w'], w['zh'])})
@@ -47,7 +60,7 @@ def auto_quiz(words, fill=None, seed=1, n_ce=6, n_ec=5, n_sp=5, extra=None):
     rnd.shuffle(pick)
     ec = []
     for w in pick[:n_ec]:
-        opts = rnd.sample(others_for(w), 3) + [(w['w'], short(w['zh']))]
+        opts = pick3(w) + [(w['w'], short(w['zh']))]
         rnd.shuffle(opts)
         ec.append({'type': 'mc', 'q': w['w'], 'opts': [o[1] for o in opts], 'answer': [o[0] for o in opts].index(w['w']),
                    'exp': '%s %s。' % (w['w'], w['zh'])})

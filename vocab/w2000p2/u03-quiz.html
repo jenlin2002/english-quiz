@@ -34,12 +34,12 @@ window.GQUIZ = {
      "type": "mc",
      "q": "下巴",
      "opts": [
-      "wrist",
-      "chin",
-      "waist",
-      "hip"
+      "thumb",
+      "beard",
+      "ankle",
+      "chin"
      ],
-     "answer": 1,
+     "answer": 3,
      "exp": "chin 下巴。"
     },
     {
@@ -47,9 +47,9 @@ window.GQUIZ = {
      "q": "臀部；屁股（髖部）",
      "opts": [
       "hip",
-      "ankle",
-      "wrist",
-      "waist"
+      "chin",
+      "waist",
+      "skin"
      ],
      "answer": 0,
      "exp": "hip 臀部；屁股（髖部）。"
@@ -58,36 +58,36 @@ window.GQUIZ = {
      "type": "mc",
      "q": "皮膚；（水果的）皮",
      "opts": [
-      "thumb",
-      "skin",
+      "waist",
+      "chin",
       "hip",
-      "wrist"
+      "skin"
      ],
-     "answer": 1,
+     "answer": 3,
      "exp": "skin 皮膚；（水果的）皮。"
     },
     {
      "type": "mc",
      "q": "鬍鬚；山羊鬍",
      "opts": [
-      "beard",
       "wrist",
-      "chin",
-      "ankle"
+      "hip",
+      "waist",
+      "beard"
      ],
-     "answer": 0,
+     "answer": 3,
      "exp": "beard 鬍鬚；山羊鬍。"
     },
     {
      "type": "mc",
      "q": "手腕",
      "opts": [
-      "ankle",
-      "waist",
-      "skin",
-      "wrist"
+      "beard",
+      "chin",
+      "wrist",
+      "hip"
      ],
-     "answer": 3,
+     "answer": 2,
      "exp": "wrist 手腕。"
     }
    ]
@@ -97,51 +97,51 @@ window.GQUIZ = {
    "items": [
     {
      "type": "mc",
-     "q": "waist",
+     "q": "hip",
      "opts": [
       "皮膚",
-      "手腕",
-      "腰",
-      "骨頭"
+      "臀部",
+      "下巴",
+      "舌頭"
      ],
-     "answer": 2,
+     "answer": 1,
+     "exp": "hip 臀部；屁股（髖部）。"
+    },
+    {
+     "type": "mc",
+     "q": "beard",
+     "opts": [
+      "舌頭",
+      "皮膚",
+      "腳踝",
+      "鬍鬚"
+     ],
+     "answer": 3,
+     "exp": "beard 鬍鬚；山羊鬍。"
+    },
+    {
+     "type": "mc",
+     "q": "waist",
+     "opts": [
+      "腳踝",
+      "腰",
+      "皮膚",
+      "臀部"
+     ],
+     "answer": 1,
      "exp": "waist 腰；腰部。"
     },
     {
      "type": "mc",
-     "q": "bone",
+     "q": "chin",
      "opts": [
-      "腰",
-      "骨頭",
-      "皮膚",
-      "腳踝"
-     ],
-     "answer": 1,
-     "exp": "bone 骨頭。"
-    },
-    {
-     "type": "mc",
-     "q": "wrist",
-     "opts": [
-      "臀部",
       "手腕",
-      "腰",
-      "下巴"
-     ],
-     "answer": 1,
-     "exp": "wrist 手腕。"
-    },
-    {
-     "type": "mc",
-     "q": "thumb",
-     "opts": [
-      "骨頭",
       "下巴",
       "鬍鬚",
-      "拇指"
+      "皮膚"
      ],
-     "answer": 3,
-     "exp": "thumb 拇指。"
+     "answer": 1,
+     "exp": "chin 下巴。"
     }
    ]
   },
@@ -150,13 +150,13 @@ window.GQUIZ = {
    "note": "括號裡是第一個字母和字母數。",
    "items": [
     {
-     "q": "舌頭（t＿＿＿＿＿，6 個字母）：{0}",
+     "q": "拇指（t＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
-       "tongue"
+       "thumb"
       ]
      ],
-     "exp": "tongue。"
+     "exp": "thumb。"
     },
     {
      "q": "鬍鬚（b＿＿＿＿，5 個字母）：{0}",
@@ -168,15 +168,6 @@ window.GQUIZ = {
      "exp": "beard。"
     },
     {
-     "q": "下巴（c＿＿＿，4 個字母）：{0}",
-     "blanks": [
-      [
-       "chin"
-      ]
-     ],
-     "exp": "chin。"
-    },
-    {
      "q": "手腕（w＿＿＿＿，5 個字母）：{0}",
      "blanks": [
       [
@@ -186,13 +177,22 @@ window.GQUIZ = {
      "exp": "wrist。"
     },
     {
-     "q": "腰（w＿＿＿＿，5 個字母）：{0}",
+     "q": "臀部（h＿＿，3 個字母）：{0}",
      "blanks": [
       [
-       "waist"
+       "hip"
       ]
      ],
-     "exp": "waist。"
+     "exp": "hip。"
+    },
+    {
+     "q": "骨頭（b＿＿＿，4 個字母）：{0}",
+     "blanks": [
+      [
+       "bone"
+      ]
+     ],
+     "exp": "bone。"
     }
    ]
   },
