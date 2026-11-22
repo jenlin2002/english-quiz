@@ -10,13 +10,14 @@ VOC = os.path.join(REPO, 'vocab')
 E = html.escape
 
 status = json.load(open(os.path.join(VOC, 'wordup', 'status.json'), encoding='utf-8'))
-where = {}   # 小寫單字 → [(單元號, 單元名)]
-for p in sorted(glob.glob(os.path.join(VOC, 'w2000', 'u[0-9][0-9].html'))):
-    s = open(p, encoding='utf-8').read()
-    no = int(re.search(r'u(\d\d)\.html$', p).group(1))
-    title = re.search(r'<h1>(.*?)</h1>', s, re.S).group(1)
-    for w in re.findall(r'<span class="vc-word">(.*?)</span>', s):
-        where.setdefault(html.unescape(w).lower(), []).append((no, html.unescape(re.sub('<.*?>', '', title))))
+where = {}   # 小寫單字 → [(資料夾, 單元號, 單元名)]；w2000＝PART 1（1–1200 字），w2000p2＝PART 2（1201–2000 字）
+for book in ('w2000', 'w2000p2'):
+    for p in sorted(glob.glob(os.path.join(VOC, book, 'u[0-9][0-9].html'))):
+        s = open(p, encoding='utf-8').read()
+        no = int(re.search(r'u(\d\d)\.html$', p).group(1))
+        title = re.search(r'<h1>(.*?)</h1>', s, re.S).group(1)
+        for w in re.findall(r'<span class="vc-word">(.*?)</span>', s):
+            where.setdefault(html.unescape(w).lower(), []).append((book, no, html.unescape(re.sub('<.*?>', '', title))))
 
 rows, units = [], []
 for tag, u in status['units'].items():
@@ -29,7 +30,7 @@ for tag, u in status['units'].items():
     for w in u['words']:
         hits = where.get(w.lower(), [])
         wu = '<a href="%s.html">WORD UP %s</a>' % (tag, E(u['name'])) if built else '<span class="only">WORD UP %s（製作中）</span>' % E(u['name'])
-        ours = '、'.join(['<a href="../w2000/u%02d.html">主題 Unit %d %s</a>' % (no, no, E(t.split('．')[-1])) for no, t in hits] + [wu])
+        ours = '、'.join(['<a href="../%s/u%02d.html">主題%s Unit %d %s</a>' % (bk, no, ' PART 2' if bk == 'w2000p2' else '', no, E(t.split('．')[-1])) for bk, no, t in hits] + [wu])
         word = '<a href="%s.html">%s</a>' % (tag, E(w)) if built else E(w)
         rows.append('<tr data-w="%s"><td class="w">%s</td><td class="lv"></td><td class="lv2"></td><td>%s</td></tr>' % (E(w.lower(), quote=True), word, ours))
 
@@ -84,7 +85,7 @@ page = '''<!DOCTYPE html>
 </head>
 <body>
 <div class="wrap">
-  <div class="top-links"><a class="home-link" href="../index.html">← 單字區目錄</a></div>
+  <div class="top-links"><a class="home-link" href="units.html">← WORD UP 目錄</a></div>
   <div class="eyebrow">VOCABULARY · WORD UP</div>
   <h1>WORD UP 單字 A–Z 對照表</h1>
   <div class="subtitle">孩子在 WORD UP（全民英檢初級單字一本通）背的字，對照到本站「主題 2000 字」的單元。<br>

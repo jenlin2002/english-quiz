@@ -25,7 +25,8 @@ UNITS = (w2000_u01, w2000_u02, w2000_u13, w2000_u14, w2000_u15, w2000_u16, w2000
          w2000_u22, w2000_u23, w2000_u24, w2000_u25, w2000_u26, w2000_u27, w2000_u28, w2000_u29, w2000_u30,
          w2000_u31, w2000_u32, w2000_u33, w2000_u34, w2000_u35, w2000_u36, w2000_u37, w2000_u38, w2000_u39, w2000_u40)   # 新單元做好後加在這裡（u03–u12 是直接改 HTML 做的，沒有資料檔）
 
-BOOKS = {'w2000': '主題 2000 字', 'wordup': 'WORD UP 單字複習'}   # wordup：只用 WORD UP 的英文字表，內容自編
+BOOKS = {'w2000': '主題 2000 字', 'wordup': 'WORD UP 單字複習',   # wordup：只用 WORD UP 的英文字表，內容自編
+         'w2000p2': '主題 2000 字 PART 2'}   # 課本 PART 2「1201～2000 字彙」，一樣照 Unit 1–40 主題；資料檔 w2000p2_uNN.py，頁面在 vocab/w2000p2/（2026-11-22）
 E = html.escape
 
 
@@ -275,16 +276,18 @@ def build(mod):
     book_name = BOOKS[book]
     fmt = dict(book=book_name, bookup=book_name, no=no, en=E(u['en']), zh=E(u['zh']), intro=E(u['intro']), tag=tag,
                n=len(u['words']))
+    # WORD UP 複習區是獨立一區（2026-11-22 使用者要求，從國中2000字目錄搬到 Vocabulary Hub），返回連結指到 WORD UP 目錄 units.html
+    back = (lambda s: s.replace('href="../index.html">', 'href="units.html">').replace('單字區目錄', 'WORD UP 目錄')) if book == 'wordup' else (lambda s: s)
     cards_page = CARDS_TPL.format(
         cards='\n'.join(card_html(i, w, tag) for i, w in enumerate(u['words'])), focus=focus_html(u), **fmt)
-    write(os.path.join(out, tag + '.html'), cards_page)
+    write(os.path.join(out, tag + '.html'), back(cards_page))
     page, says = slides(u, tag, book_name)
     # 投影片和單字卡唸一樣的句子就直接用單字卡的音檔（省檔案數，見 link_slide_audio.py），其餘才錄 slide-NN
     page, keep = link_slide_audio.link(page, link_slide_audio.card_map(cards_page))
-    write(os.path.join(out, tag + '-slides.html'), page)
+    write(os.path.join(out, tag + '-slides.html'), back(page))
     data = {'label': 'Vocab %s U%d' % (book.upper(), no), 'title': '單字區 %s Unit %d %s' % (book_name, no, u['zh']),
             'back': tag + '.html', 'sections': quiz}
-    write(os.path.join(out, tag + '-quiz.html'), QUIZ_TPL.format(data=json.dumps(data, ensure_ascii=False, indent=1), **fmt))
+    write(os.path.join(out, tag + '-quiz.html'), back(QUIZ_TPL.format(data=json.dumps(data, ensure_ascii=False, indent=1), **fmt)))
     adir = os.path.join(out, 'audio', tag)
     jobs = []
     for i, w in enumerate(u['words']):

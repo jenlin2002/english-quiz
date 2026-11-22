@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>單字區 主題 2000 字 PART 2 Unit 2 投影片｜Personal characteristics 個人特徵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.1)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.6) calc(var(--u)*.9);display:flex;flex-direction:column;gap:calc(var(--u)*.2)}
+.pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
+.pc img.pp{width:100%;height:calc(var(--u)*15);object-fit:cover;object-position:50% 35%;border-radius:calc(var(--u)*.6);display:block}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.3);font-weight:700;color:var(--deep);text-align:center}
+.pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
+.pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
+.pc .pe{font-size:calc(var(--u)*1.3);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc img.pp{height:110px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">VOCABULARY UNIT 2 · SLIDES</div>
+    <h1 class="page">Personal characteristics 個人特徵</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">← 單字區目錄</a>
+    <a class="home-link" href="u02.html">📗 單字卡</a>
+    <a class="quiz-link" href="u02-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 2 · VOCABULARY</div><h1 class="big">個人特徵</h1><div class="en-sub">Personal characteristics</div><div class="venn"><span class="c1">41 個單字</span><span class="c2">聽・唸・用</span></div></section>
+<section class="s paper"><h2>本單元單字一覽</h2><p class="lead">進階的形容詞，共 41 個：先是外表（胖瘦、聾啞），再來是個性（聰明、慷慨、自私、害羞……）。注意 dis-／im- 開頭的反義字，和 childish／childlike 的差別。</p><div class="chips"><span class="chip">chubby</span><span class="chip">deaf</span><span class="chip">dumb</span><span class="chip">nice-looking</span><span class="chip">overweight</span><span class="chip">skinny</span><span class="chip">slender</span><span class="chip">underweight</span><span class="chip">active</span><span class="chip">careless</span><span class="chip">childish</span><span class="chip">childlike</span><span class="chip">clever</span><span class="chip">confident</span><span class="chip">considerate</span><span class="chip">cruel</span><span class="chip">curious</span><span class="chip">diligent</span><span class="chip">dishonest</span><span class="chip">evil</span><span class="chip">energetic</span><span class="chip">foolish</span><span class="chip">frank</span><span class="chip">gentle</span><span class="chip">generous</span><span class="chip">greedy</span><span class="chip">humble</span><span class="chip">humorous</span><span class="chip">impolite</span><span class="chip">intelligent</span><span class="chip">jealous</span><span class="chip">naughty</span><span class="chip">nervous</span><span class="chip">patient</span><span class="chip">rude</span><span class="chip">selfish</span><span class="chip">silly</span><span class="chip">sincere</span><span class="chip">sneaky</span><span class="chip">stingy</span><span class="chip">talkative</span></div><div class="note">每個字都有 🔊，先聽發音、跟著唸，再看例句。</div></section>
+<section class="s paper"><h2>單字 1–4</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/chubby.jpg" alt="chubby"><div class="pw">chubby <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=0.00,0.91" data-say="chubby" aria-label="播放這個句子">🔊</button></div><div class="pz">圓胖的；豐滿的<small>adj.</small></div><div class="pe">The baby has chubby cheeks. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=1.36,3.20" data-say="The baby has chubby cheeks." aria-label="播放這個句子">🔊</button><br>那個寶寶的臉頰圓嘟嘟的。</div></div><div class="pc"><div class="pp">🦻</div><div class="pw">deaf <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=3.65,4.54" data-say="deaf" aria-label="播放這個句子">🔊</button></div><div class="pz">聾的；耳聾的<small>adj.</small></div><div class="pe">My grandpa is a little deaf, so please speak loudly. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=4.99,8.36" data-say="My grandpa is a little deaf, so please speak loudly." aria-label="播放這個句子">🔊</button><br>我爺爺有點重聽，請大聲說話。</div></div><div class="pc"><img class="pp" src="img/u02/dumb.jpg" alt="dumb"><div class="pw">dumb <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=8.81,9.73" data-say="dumb" aria-label="播放這個句子">🔊</button></div><div class="pz">啞的；不能說話的<small>adj.</small></div><div class="pe">The boy was born dumb, so he talks in sign language. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=10.18,13.51" data-say="The boy was born dumb, so he talks in sign language." aria-label="播放這個句子">🔊</button><br>那個男孩天生不能說話，所以用手語溝通。</div></div><div class="pc"><img class="pp" src="img/u02/nice-looking.jpg" alt="nice-looking"><div class="pw">nice-looking <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=13.96,15.13" data-say="nice-looking" aria-label="播放這個句子">🔊</button></div><div class="pz">好看的；漂亮的<small>adj.</small></div><div class="pe">Your new bike is really nice-looking. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=15.58,17.80" data-say="Your new bike is really nice-looking." aria-label="播放這個句子">🔊</button><br>你的新腳踏車真好看。</div></div></div></section>
+<section class="s paper"><h2>單字 5–8</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/overweight.jpg" alt="overweight"><div class="pw">overweight <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=18.25,19.41" data-say="overweight" aria-label="播放這個句子">🔊</button></div><div class="pz">過重的<small>adj.</small></div><div class="pe">The doctor said my uncle was overweight and needed exercise. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=19.86,23.83" data-say="The doctor said my uncle was overweight and needed exercise." aria-label="播放這個句子">🔊</button><br>醫生說我叔叔過重，需要運動。</div></div><div class="pc"><img class="pp" src="img/u02/skinny.jpg" alt="skinny"><div class="pw">skinny <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=24.28,25.36" data-say="skinny" aria-label="播放這個句子">🔊</button></div><div class="pz">皮包骨的；極瘦的<small>adj.</small></div><div class="pe">The skinny cat ate all the fish in a minute. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=25.81,28.37" data-say="The skinny cat ate all the fish in a minute." aria-label="播放這個句子">🔊</button><br>那隻很瘦的貓一分鐘就把魚吃光了。</div></div><div class="pc"><img class="pp" src="img/u02/slender.jpg" alt="slender"><div class="pw">slender <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=28.82,29.96" data-say="slender" aria-label="播放這個句子">🔊</button></div><div class="pz">苗條的；纖細的<small>adj.</small></div><div class="pe">The dancer is tall and slender. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=30.41,32.50" data-say="The dancer is tall and slender." aria-label="播放這個句子">🔊</button><br>那位舞者又高又苗條。</div></div><div class="pc"><img class="pp" src="img/u02/underweight.jpg" alt="underweight"><div class="pw">underweight <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=32.95,34.08" data-say="underweight" aria-label="播放這個句子">🔊</button></div><div class="pz">體重太輕的<small>adj.</small></div><div class="pe">The puppy was underweight, so we gave it more food. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=34.53,37.54" data-say="The puppy was underweight, so we gave it more food." aria-label="播放這個句子">🔊</button><br>那隻小狗太輕了，所以我們多餵牠一些。</div></div></div></section>
+<section class="s paper"><h2>單字 9–12</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/active.jpg" alt="active"><div class="pw">active <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=37.99,39.12" data-say="active" aria-label="播放這個句子">🔊</button></div><div class="pz">活躍的；活潑的<small>adj.</small></div><div class="pe">My brother is active in the school band. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=39.57,42.02" data-say="My brother is active in the school band." aria-label="播放這個句子">🔊</button><br>我哥哥在學校樂隊很活躍。</div></div><div class="pc"><img class="pp" src="img/u02/careless.jpg" alt="careless"><div class="pw">careless <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=42.47,43.58" data-say="careless" aria-label="播放這個句子">🔊</button></div><div class="pz">粗心的；草率的<small>adj.</small></div><div class="pe">I made a careless mistake on the math test. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=44.03,46.57" data-say="I made a careless mistake on the math test." aria-label="播放這個句子">🔊</button><br>我數學考試犯了一個粗心的錯。</div></div><div class="pc"><img class="pp" src="img/u02/childish.jpg" alt="childish"><div class="pw">childish <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=47.02,48.20" data-say="childish" aria-label="播放這個句子">🔊</button></div><div class="pz">幼稚的；孩子氣的<small>adj.</small></div><div class="pe">Stop fighting over the toy. Don&#x27;t be so childish! <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=48.65,51.87" data-say="Stop fighting over the toy. Don&#x27;t be so childish!" aria-label="播放這個句子">🔊</button><br>別再搶玩具了，不要那麼幼稚！</div></div><div class="pc"><img class="pp" src="img/u02/childlike.jpg" alt="childlike"><div class="pw">childlike <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=52.32,53.49" data-say="childlike" aria-label="播放這個句子">🔊</button></div><div class="pz">天真的；純真的<small>adj.</small></div><div class="pe">The old painter still has a childlike love of colors. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=53.94,57.27" data-say="The old painter still has a childlike love of colors." aria-label="播放這個句子">🔊</button><br>那位老畫家仍然像孩子一樣熱愛色彩。</div></div></div></section>
+<section class="s paper"><h2>單字 13–16</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/clever.jpg" alt="clever"><div class="pw">clever <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=57.72,58.70" data-say="clever" aria-label="播放這個句子">🔊</button></div><div class="pz">聰明的；靈巧的<small>adj.</small></div><div class="pe">The clever fox found a way to get the grapes. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=59.15,61.86" data-say="The clever fox found a way to get the grapes." aria-label="播放這個句子">🔊</button><br>聰明的狐狸想到辦法拿到葡萄。</div></div><div class="pc"><img class="pp" src="img/u02/confident.jpg" alt="confident"><div class="pw">confident <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=62.31,63.38" data-say="confident" aria-label="播放這個句子">🔊</button></div><div class="pz">有自信的；確信的<small>adj.</small></div><div class="pe">She practiced a lot, so she felt confident about the speech. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=63.83,67.41" data-say="She practiced a lot, so she felt confident about the speech." aria-label="播放這個句子">🔊</button><br>她練習了很多次，所以對演講很有信心。</div></div><div class="pc"><img class="pp" src="img/u02/considerate.jpg" alt="considerate"><div class="pw">considerate <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=67.86,69.00" data-say="considerate" aria-label="播放這個句子">🔊</button></div><div class="pz">體貼的；考慮周到的<small>adj.</small></div><div class="pe">It&#x27;s considerate of you to bring me an umbrella. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=69.45,72.09" data-say="It&#x27;s considerate of you to bring me an umbrella." aria-label="播放這個句子">🔊</button><br>你帶傘給我，真是體貼。</div></div><div class="pc"><img class="pp" src="img/u02/cruel.jpg" alt="cruel"><div class="pw">cruel <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=72.54,73.55" data-say="cruel" aria-label="播放這個句子">🔊</button></div><div class="pz">殘忍的；殘酷的<small>adj.</small></div><div class="pe">It is cruel to keep a big dog in a small cage. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=74.00,76.92" data-say="It is cruel to keep a big dog in a small cage." aria-label="播放這個句子">🔊</button><br>把大狗關在小籠子裡很殘忍。</div></div></div></section>
+<section class="s paper"><h2>單字 17–20</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/curious.jpg" alt="curious"><div class="pw">curious <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=77.37,78.50" data-say="curious" aria-label="播放這個句子">🔊</button></div><div class="pz">好奇的<small>adj.</small></div><div class="pe">The curious kitten looked into every box. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=78.95,81.64" data-say="The curious kitten looked into every box." aria-label="播放這個句子">🔊</button><br>好奇的小貓每個箱子都探頭看。</div></div><div class="pc"><img class="pp" src="img/u02/diligent.jpg" alt="diligent"><div class="pw">diligent <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=82.09,83.20" data-say="diligent" aria-label="播放這個句子">🔊</button></div><div class="pz">勤勉的；勤奮的<small>adj.</small></div><div class="pe">Amy is diligent. She reviews her notes every night. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=83.65,87.21" data-say="Amy is diligent. She reviews her notes every night." aria-label="播放這個句子">🔊</button><br>Amy 很勤奮，每天晚上都複習筆記。</div></div><div class="pc"><div class="pp">🤥</div><div class="pw">dishonest <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=87.66,88.86" data-say="dishonest" aria-label="播放這個句子">🔊</button></div><div class="pz">不誠實的<small>adj.</small></div><div class="pe">The dishonest man lied about the price. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=89.31,91.68" data-say="The dishonest man lied about the price." aria-label="播放這個句子">🔊</button><br>那個不誠實的人在價錢上說謊。</div></div><div class="pc"><img class="pp" src="img/u02/evil.jpg" alt="evil"><div class="pw">evil <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=92.13,93.15" data-say="evil" aria-label="播放這個句子">🔊</button></div><div class="pz">邪惡的；壞的<small>adj.</small></div><div class="pe">In the movie, the evil queen wanted to rule the world. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=93.60,96.74" data-say="In the movie, the evil queen wanted to rule the world." aria-label="播放這個句子">🔊</button><br>電影裡，邪惡的皇后想統治世界。</div></div></div></section>
+<section class="s paper"><h2>單字 21–24</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/energetic.jpg" alt="energetic"><div class="pw">energetic <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=97.19,98.40" data-say="energetic" aria-label="播放這個句子">🔊</button></div><div class="pz">精力旺盛的；精神飽滿的<small>adj.</small></div><div class="pe">The energetic kids played soccer all afternoon. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=98.85,101.78" data-say="The energetic kids played soccer all afternoon." aria-label="播放這個句子">🔊</button><br>那些精力旺盛的孩子踢了一整個下午的足球。</div></div><div class="pc"><img class="pp" src="img/u02/foolish.jpg" alt="foolish"><div class="pw">foolish <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=102.23,103.36" data-say="foolish" aria-label="播放這個句子">🔊</button></div><div class="pz">愚蠢的；傻的<small>adj.</small></div><div class="pe">It was foolish of me to leave my bag on the bus. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=103.81,106.84" data-say="It was foolish of me to leave my bag on the bus." aria-label="播放這個句子">🔊</button><br>我把包包留在公車上，真是太傻了。</div></div><div class="pc"><img class="pp" src="img/u02/frank.jpg" alt="frank"><div class="pw">frank <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=107.29,108.27" data-say="frank" aria-label="播放這個句子">🔊</button></div><div class="pz">坦白的；直率的<small>adj.</small></div><div class="pe">To be frank, I don&#x27;t like this song. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=108.72,110.98" data-say="To be frank, I don&#x27;t like this song." aria-label="播放這個句子">🔊</button><br>坦白說，我不喜歡這首歌。</div></div><div class="pc"><img class="pp" src="img/u02/gentle.jpg" alt="gentle"><div class="pw">gentle <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=111.43,112.54" data-say="gentle" aria-label="播放這個句子">🔊</button></div><div class="pz">溫和的；溫柔的<small>adj.</small></div><div class="pe">Be gentle with the baby rabbit. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=112.99,115.15" data-say="Be gentle with the baby rabbit." aria-label="播放這個句子">🔊</button><br>對小兔子要溫柔一點。</div></div></div></section>
+<section class="s paper"><h2>單字 25–28</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/generous.jpg" alt="generous"><div class="pw">generous <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=115.60,116.75" data-say="generous" aria-label="播放這個句子">🔊</button></div><div class="pz">慷慨的；大方的<small>adj.</small></div><div class="pe">My generous uncle gave each of us a red envelope. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=117.20,120.83" data-say="My generous uncle gave each of us a red envelope." aria-label="播放這個句子">🔊</button><br>我慷慨的叔叔給我們每人一個紅包。</div></div><div class="pc"><img class="pp" src="img/u02/greedy.jpg" alt="greedy"><div class="pw">greedy <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=121.28,122.30" data-say="greedy" aria-label="播放這個句子">🔊</button></div><div class="pz">貪心的；貪吃的<small>adj.</small></div><div class="pe">The greedy boy took all the candy for himself. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=122.75,125.57" data-say="The greedy boy took all the candy for himself." aria-label="播放這個句子">🔊</button><br>那個貪心的男孩把糖果全拿走了。</div></div><div class="pc"><div class="pp">🙇</div><div class="pw">humble <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=126.02,127.02" data-say="humble" aria-label="播放這個句子">🔊</button></div><div class="pz">謙虛的；簡陋的<small>adj.</small></div><div class="pe">The famous singer is still humble and kind. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=127.47,130.05" data-say="The famous singer is still humble and kind." aria-label="播放這個句子">🔊</button><br>那位有名的歌手仍然謙虛又親切。</div></div><div class="pc"><img class="pp" src="img/u02/humorous.jpg" alt="humorous"><div class="pw">humorous <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=130.50,131.66" data-say="humorous" aria-label="播放這個句子">🔊</button></div><div class="pz">幽默的；滑稽的<small>adj.</small></div><div class="pe">Our humorous teacher makes every class fun. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=132.11,134.88" data-say="Our humorous teacher makes every class fun." aria-label="播放這個句子">🔊</button><br>我們幽默的老師讓每堂課都很有趣。</div></div></div></section>
+<section class="s paper"><h2>單字 29–32</h2><div class="pg"><div class="pc"><div class="pp">🙊</div><div class="pw">impolite <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=135.33,136.42" data-say="impolite" aria-label="播放這個句子">🔊</button></div><div class="pz">不禮貌的<small>adj.</small></div><div class="pe">It&#x27;s impolite to talk with your mouth full. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=136.87,139.28" data-say="It&#x27;s impolite to talk with your mouth full." aria-label="播放這個句子">🔊</button><br>嘴裡塞滿食物還講話很不禮貌。</div></div><div class="pc"><img class="pp" src="img/u02/intelligent.jpg" alt="intelligent"><div class="pw">intelligent <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=139.73,140.88" data-say="intelligent" aria-label="播放這個句子">🔊</button></div><div class="pz">聰明的；有才智的<small>adj.</small></div><div class="pe">Dolphins are very intelligent animals. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=141.33,143.98" data-say="Dolphins are very intelligent animals." aria-label="播放這個句子">🔊</button><br>海豚是非常聰明的動物。</div></div><div class="pc"><img class="pp" src="img/u02/jealous.jpg" alt="jealous"><div class="pw">jealous <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=144.43,145.52" data-say="jealous" aria-label="播放這個句子">🔊</button></div><div class="pz">嫉妒的<small>adj.</small></div><div class="pe">Tom was jealous of his brother&#x27;s new phone. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=145.97,148.55" data-say="Tom was jealous of his brother&#x27;s new phone." aria-label="播放這個句子">🔊</button><br>Tom 嫉妒他哥哥的新手機。</div></div><div class="pc"><img class="pp" src="img/u02/naughty.jpg" alt="naughty"><div class="pw">naughty <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=149.00,150.03" data-say="naughty" aria-label="播放這個句子">🔊</button></div><div class="pz">頑皮的；淘氣的<small>adj.</small></div><div class="pe">The naughty puppy chewed my shoes. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=150.48,152.46" data-say="The naughty puppy chewed my shoes." aria-label="播放這個句子">🔊</button><br>那隻頑皮的小狗咬了我的鞋子。</div></div></div></section>
+<section class="s paper"><h2>單字 33–36</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/nervous.jpg" alt="nervous"><div class="pw">nervous <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=152.91,154.02" data-say="nervous" aria-label="播放這個句子">🔊</button></div><div class="pz">緊張的；不安的<small>adj.</small></div><div class="pe">I always feel nervous before a test. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=154.47,156.95" data-say="I always feel nervous before a test." aria-label="播放這個句子">🔊</button><br>我考試前總是很緊張。</div></div><div class="pc"><div class="pp">⏳</div><div class="pw">patient <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=157.40,158.53" data-say="patient" aria-label="播放這個句子">🔊</button></div><div class="pz">有耐心的；（名詞）病人<small>adj.</small></div><div class="pe">Please be patient. The bus will come soon. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=158.98,161.79" data-say="Please be patient. The bus will come soon." aria-label="播放這個句子">🔊</button><br>請耐心一點，公車快來了。</div></div><div class="pc"><img class="pp" src="img/u02/rude.jpg" alt="rude"><div class="pw">rude <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=162.24,163.27" data-say="rude" aria-label="播放這個句子">🔊</button></div><div class="pz">無禮的；粗魯的<small>adj.</small></div><div class="pe">It&#x27;s rude to point at people. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=163.72,165.55" data-say="It&#x27;s rude to point at people." aria-label="播放這個句子">🔊</button><br>用手指著別人很沒禮貌。</div></div><div class="pc"><div class="pp">🙅</div><div class="pw">selfish <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=166.00,167.13" data-say="selfish" aria-label="播放這個句子">🔊</button></div><div class="pz">自私的<small>adj.</small></div><div class="pe">Don&#x27;t be selfish. Share your snacks with your sister. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=167.58,170.76" data-say="Don&#x27;t be selfish. Share your snacks with your sister." aria-label="播放這個句子">🔊</button><br>不要自私，跟妹妹分享零食。</div></div></div></section>
+<section class="s paper"><h2>單字 37–40</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/silly.jpg" alt="silly"><div class="pw">silly <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=171.21,172.22" data-say="silly" aria-label="播放這個句子">🔊</button></div><div class="pz">愚蠢的；糊塗的<small>adj.</small></div><div class="pe">I made a silly face, and everyone laughed. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=172.67,175.36" data-say="I made a silly face, and everyone laughed." aria-label="播放這個句子">🔊</button><br>我扮了個鬼臉，大家都笑了。</div></div><div class="pc"><img class="pp" src="img/u02/sincere.jpg" alt="sincere"><div class="pw">sincere <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=175.81,176.92" data-say="sincere" aria-label="播放這個句子">🔊</button></div><div class="pz">真誠的；衷心的<small>adj.</small></div><div class="pe">Thank you for your sincere help. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=177.37,179.27" data-say="Thank you for your sincere help." aria-label="播放這個句子">🔊</button><br>謝謝你真誠的幫忙。</div></div><div class="pc"><img class="pp" src="img/u02/sneaky.jpg" alt="sneaky"><div class="pw">sneaky <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=179.72,180.85" data-say="sneaky" aria-label="播放這個句子">🔊</button></div><div class="pz">鬼鬼祟祟的；偷偷摸摸的<small>adj.</small></div><div class="pe">The sneaky cat took the fish when no one was looking. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=181.30,184.45" data-say="The sneaky cat took the fish when no one was looking." aria-label="播放這個句子">🔊</button><br>那隻鬼鬼祟祟的貓趁沒人注意偷走了魚。</div></div><div class="pc"><img class="pp" src="img/u02/stingy.jpg" alt="stingy"><div class="pw">stingy <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=184.90,186.01" data-say="stingy" aria-label="播放這個句子">🔊</button></div><div class="pz">吝嗇的；小氣的<small>adj.</small></div><div class="pe">He is so stingy that he never buys anyone a drink. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=186.46,189.77" data-say="He is so stingy that he never buys anyone a drink." aria-label="播放這個句子">🔊</button><br>他小氣到從來不請別人喝飲料。</div></div></div></section>
+<section class="s paper"><h2>單字 41–41</h2><div class="pg"><div class="pc"><img class="pp" src="img/u02/talkative.jpg" alt="talkative"><div class="pw">talkative <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=190.22,191.03" data-say="talkative" aria-label="播放這個句子">🔊</button></div><div class="pz">多話的；愛說話的<small>adj.</small></div><div class="pe">My talkative friend can chat for hours on the phone. <button class="sentence-btn" type="button" data-src="audio/u02/all.mp3#t=191.48,194.96" data-say="My talkative friend can chat for hours on the phone." aria-label="播放這個句子">🔊</button><br>我那個愛講話的朋友可以講好幾個小時的電話。</div></div></div></section>
+<section class="s paper"><h2>加字首變反義字</h2><table class="t"><thead><tr><th>原本</th><th>反義</th></tr></thead><tbody><tr><td>honest 誠實的</td><td>dishonest 不誠實的</td></tr><tr><td>polite 有禮貌的</td><td>impolite 不禮貌的</td></tr><tr><td>patient 有耐心的</td><td>impatient 沒耐心的</td></tr><tr><td>careful 小心的</td><td>careless 粗心的</td></tr></tbody></table><div class="note">dis-、im-、un- 放在前面表示「不」；-less 放在後面表示「沒有」。</div></section>
+<section class="s paper"><h2>容易混淆的字</h2><table class="t"><thead><tr><th>字</th><th>意思</th></tr></thead><tbody><tr><td>childish</td><td>幼稚的（壞的意思）</td></tr><tr><td>childlike</td><td>天真的（好的意思）</td></tr><tr><td>skinny</td><td>極瘦的（不好看）</td></tr><tr><td>slender</td><td>苗條的（稱讚）</td></tr></tbody></table><div class="note">-ish 常帶不好的意思（childish、selfish、foolish）；-like 是「像…一樣」。</div></section>
+<section class="s paper"><h2>意思相反的一對</h2><table class="t"><thead><tr><th>正面</th><th>反面</th></tr></thead><tbody><tr><td>generous 慷慨的</td><td>stingy 吝嗇的</td></tr><tr><td>overweight 過重的</td><td>underweight 過輕的</td></tr><tr><td>humble 謙虛的</td><td>proud 驕傲的</td></tr><tr><td>diligent 勤奮的</td><td>lazy 懶惰的</td></tr></tbody></table></section>
+<section class="s paper"><h2>快問快答：中文 → 英文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">圓胖的；豐滿的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>chubby</span></div><div class="qa"><span class="n">2</span><span class="q">啞的；不能說話的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>dumb</span></div><div class="qa"><span class="n">3</span><span class="q">過重的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>overweight</span></div><div class="qa"><span class="n">4</span><span class="q">苗條的；纖細的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>slender</span></div><div class="qa"><span class="n">5</span><span class="q">活躍的；活潑的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>active</span></div><div class="qa"><span class="n">6</span><span class="q">幼稚的；孩子氣的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>childish</span></div><div class="qa"><span class="n">7</span><span class="q">聰明的；靈巧的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>clever</span></div><div class="qa"><span class="n">8</span><span class="q">體貼的；考慮周到的</span><button class="rv" type="button">看答案</button><span class="ans" hidden>considerate</span></div></div></section>
+<section class="s paper"><h2>快問快答：英文 → 中文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">curious</span><button class="rv" type="button">看答案</button><span class="ans" hidden>好奇的</span></div><div class="qa"><span class="n">2</span><span class="q">dishonest</span><button class="rv" type="button">看答案</button><span class="ans" hidden>不誠實的</span></div><div class="qa"><span class="n">3</span><span class="q">energetic</span><button class="rv" type="button">看答案</button><span class="ans" hidden>精力旺盛的；精神飽滿的</span></div><div class="qa"><span class="n">4</span><span class="q">frank</span><button class="rv" type="button">看答案</button><span class="ans" hidden>坦白的；直率的</span></div><div class="qa"><span class="n">5</span><span class="q">generous</span><button class="rv" type="button">看答案</button><span class="ans" hidden>慷慨的；大方的</span></div><div class="qa"><span class="n">6</span><span class="q">humble</span><button class="rv" type="button">看答案</button><span class="ans" hidden>謙虛的；簡陋的</span></div><div class="qa"><span class="n">7</span><span class="q">impolite</span><button class="rv" type="button">看答案</button><span class="ans" hidden>不禮貌的</span></div><div class="qa"><span class="n">8</span><span class="q">jealous</span><button class="rv" type="button">看答案</button><span class="ans" hidden>嫉妒的</span></div></div></section>
+<section class="s paper"><h2>學完了！接下來</h2><div class="two"><div class="card g"><h3>複習方法</h3><div class="sub">review</div><ul class="b"><li>回到「📗 單字卡」，按「遮中文」自己考自己</li><li>再按「遮英文」，看中文說出英文</li><li>每個例句跟著 🔊 唸一次</li></ul></div><div class="card o"><h3>準備好了</h3><ul class="b"><li>按右上角「📝 前往測驗」</li><li>測驗錯的題目要訂正到全對</li><li>訂正完成補送 1 點</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio(btn.getAttribute('data-src') || 'audio/u02/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  const clip = /#t=[\d.]+,([\d.]+)/.exec(a.src);
+  if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); btn.classList.remove('playing'); } }); a.addEventListener('pause', () => btn.classList.remove('playing')); }
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+<script src="/dict/dict.js?v=20261118a" defer></script>
+</body>
+</html>

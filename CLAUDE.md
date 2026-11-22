@@ -281,3 +281,11 @@
 - 問題：按「▶ 全部播放」後停不下來、畫面一直往下捲。
 - `vocab/vocab.js`：播放中畫面下方中間出現控制列（第幾個字／共幾個、⏸ 暫停 ↔ ▶ 繼續、⏹ 停止）；「全部播放」按鈕播放中變「⏹ 停止播放」，再按一次就停；Esc、離開頁面、點單字的 🔊 也會停。暫停後繼續會從暫停的那個字重唸。用 `gen` 計數避免停止後舊的播放回呼又接下一個字。
 - 國中2000字、拉拉、WORD UP 共 62 頁 `vocab.js?v=20261122a`（`build_vocab.py` 模板也改了）。
+
+## WORD UP 複習區獨立、主題 2000 字 PART 2（2026-11-22 公司電腦）
+- **WORD UP 單字複習搬出單字區目錄**（使用者要求「放到上一層 Vocabulary Hub，成為獨立，不要跟國中2000字放一起」）：新目錄頁 `vocab/wordup/units.html`（對照表＋到 WORD UP 網站＋各複習單元卡片）；首頁 repo `/vocab/` 多一張卡「03 WORD UP 單字複習」；`vocab/index.html` 拿掉 WORD UP 那一區。WORD UP 各頁（uNN、slides、quiz、對照表）的返回連結改成 `units.html`「← WORD UP 目錄」；`build_vocab.py` 產生 book `wordup` 時自動換（`back()`），`build_wordup_index.py` 模板也改了。**之後新做 WORD UP 複習單元，卡片加在 `units.html`。**
+- **主題 2000 字 PART 2**：翰林《單字2000活用練習》其實分兩部分——PART 1「1～1200 字彙」（印刷頁約 4–141，網站原本的 40 單元就是這部分）、PART 2「1201～2000 字彙」（印刷頁 144 起，同樣照 Unit 1–40 主題）。PART 2 原本完全沒做。課本 PDF 在公司電腦 `I:\興雅\英文\115二上翰林\115[翰林]國中英語單字2000活用練習_課本_學用.pdf`（掃描圖檔，PDF 頁序＝印刷頁碼－1）。
+  - 新 book `w2000p2`（`BOOKS['w2000p2'] = '主題 2000 字 PART 2'`），資料檔 `tools/vocab_gen/w2000p2_uNN.py`，頁面在 `vocab/w2000p2/`，測驗 label `Vocab W2000P2 UN`。單字區目錄 `vocab/index.html` 新增「主題 2000 字 PART 2」一區（PART 1 標題改成「PART 1：1～1200 字」）。
+  - 已做 Unit 1 People（16 字：adult…youth，測驗 23 題）、Unit 2 Personal characteristics（41 字：chubby…talkative，測驗 27 題；書上 over-weight／under-weight 用 overweight／underweight）。沒登入時用正確答案作答都全對。照片 51 張（Pexels，`vocab/w2000p2/img/uNN/`，PHOTO-CREDITS.md）；deaf、dishonest、humble、impolite、patient、selfish 用 emoji。音檔已錄、已放大、已合併成 all.mp3（`sprite_audio.py` 的 `--all` 清單加了 `vocab/w2000p2`）。
+  - 產生方式（不動 `UNITS`）：`python -c` 匯入 `build_vocab` 和 `w2000p2_uNN` 後 `B.build(m)`，把回傳的 jobs 存成 json → `tts_mp3.py` → `boost_audio.py vocab/w2000p2/audio/uNN` → `sprite_audio.py vocab/w2000p2 uNN --delete` → `build_wordup_index.py`（對照表也會對到 PART 2）。選照片：內建瀏覽器在 pexels.com 用 fetch 搜尋頁抓候選 id → 下載縮圖拼成對照圖逐張看 → 下載選定的裁 4:3、640×480（腳本在 scratchpad，不在 repo）。
+  - 使用者 2026-11-22 說「先做 PART 2 Unit 1、2 給我看」，等使用者看過再做 Unit 3 以後。PART 2 Unit 3 Parts of body 從印刷頁第 147 頁開始。
