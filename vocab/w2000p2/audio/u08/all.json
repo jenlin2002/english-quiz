@@ -1,0 +1,18 @@
+{
+"audio/u08/w-01.mp3": "audio/u08/all.mp3#t=0.00,0.91",
+"audio/u08/e-01.mp3": "audio/u08/all.mp3#t=1.36,3.13",
+"audio/u08/w-02.mp3": "audio/u08/all.mp3#t=3.58,4.71",
+"audio/u08/e-02.mp3": "audio/u08/all.mp3#t=5.16,8.00",
+"audio/u08/w-03.mp3": "audio/u08/all.mp3#t=8.45,9.58",
+"audio/u08/e-03.mp3": "audio/u08/all.mp3#t=10.03,12.25",
+"audio/u08/w-04.mp3": "audio/u08/all.mp3#t=12.70,14.00",
+"audio/u08/e-04.mp3": "audio/u08/all.mp3#t=14.45,17.06",
+"audio/u08/w-05.mp3": "audio/u08/all.mp3#t=17.51,18.60",
+"audio/u08/e-05.mp3": "audio/u08/all.mp3#t=19.05,21.50",
+"audio/u08/w-06.mp3": "audio/u08/all.mp3#t=21.95,23.17",
+"audio/u08/e-06.mp3": "audio/u08/all.mp3#t=23.62,26.28",
+"audio/u08/w-07.mp3": "audio/u08/all.mp3#t=26.73,27.76",
+"audio/u08/e-07.mp3": "audio/u08/all.mp3#t=28.21,29.83",
+"audio/u08/w-08.mp3": "audio/u08/all.mp3#t=30.28,31.28",
+"audio/u08/e-08.mp3": "audio/u08/all.mp3#t=31.73,34.61"
+}

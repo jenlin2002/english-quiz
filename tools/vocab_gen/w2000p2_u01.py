@@ -5,6 +5,7 @@ def N(w, zh, note, ex, exzh, pic, pos='n.'):
 
 UNIT = {
   'book': 'w2000p2', 'no': 1, 'en': 'People', 'zh': '人物',
+  'card': 'adult、guest、hero／heroine、host／hostess、prince／princess… 共 16 字；男女成對的字',
   'intro': '進階的「人物」名詞，共 16 個：大人、客人、主人、英雄、王子公主……注意男女成對的字（hero／heroine、host／hostess、prince／princess）和不規則複數。',
   'words': [
     N('adult', '成年人；大人', '= grown-up；↔ child', 'Kids under twelve must come with an adult.', '十二歲以下的小孩要有大人陪同。', '🧑'),

@@ -6,6 +6,7 @@ def A(w, zh, note, ex, exzh, pic):
 
 UNIT = {
   'book': 'w2000p2', 'no': 2, 'en': 'Personal characteristics', 'zh': '個人特徵',
+  'card': 'generous、stingy、curious、confident、childish／childlike… 共 41 個形容詞；dis-／im- 反義字',
   'intro': '進階的形容詞，共 41 個：先是外表（胖瘦、聾啞），再來是個性（聰明、慷慨、自私、害羞……）。注意 dis-／im- 開頭的反義字，和 childish／childlike 的差別。',
   'words': [
     # 外表
