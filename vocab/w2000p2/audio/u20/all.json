@@ -1,0 +1,10 @@
+{
+"audio/u20/w-01.mp3": "audio/u20/all.mp3#t=0.00,0.93",
+"audio/u20/e-01.mp3": "audio/u20/all.mp3#t=1.38,3.26",
+"audio/u20/w-02.mp3": "audio/u20/all.mp3#t=3.71,4.82",
+"audio/u20/e-02.mp3": "audio/u20/all.mp3#t=5.27,8.19",
+"audio/u20/w-03.mp3": "audio/u20/all.mp3#t=8.64,9.73",
+"audio/u20/e-03.mp3": "audio/u20/all.mp3#t=10.18,13.02",
+"audio/u20/w-04.mp3": "audio/u20/all.mp3#t=13.47,14.49",
+"audio/u20/e-04.mp3": "audio/u20/all.mp3#t=14.94,17.53"
+}
