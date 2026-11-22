@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>單字區 主題 2000 字 PART 2 Unit 10 投影片｜Food & drink 食物和飲料</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.1)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.6) calc(var(--u)*.9);display:flex;flex-direction:column;gap:calc(var(--u)*.2)}
+.pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
+.pc img.pp{width:100%;height:calc(var(--u)*15);object-fit:cover;object-position:50% 35%;border-radius:calc(var(--u)*.6);display:block}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.3);font-weight:700;color:var(--deep);text-align:center}
+.pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
+.pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
+.pc .pe{font-size:calc(var(--u)*1.3);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc img.pp{height:110px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">VOCABULARY UNIT 10 · SLIDES</div>
+    <h1 class="page">Food & drink 食物和飲料</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="../index.html">← 單字區目錄</a>
+    <a class="home-link" href="u10.html">📗 單字卡</a>
+    <a class="quiz-link" href="u10-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 10 · VOCABULARY</div><h1 class="big">食物和飲料</h1><div class="en-sub">Food & drink</div><div class="venn"><span class="c1">41 個單字</span><span class="c2">聽・唸・用</span></div></section>
+<section class="s paper"><h2>本單元單字一覽</h2><p class="lead">水果、蔬菜、主食、飲料、甜點、調味料和味道，共 41 個。很多食物名詞不可數（seafood、flour、jam），要用 some 或 a piece of。</p><div class="chips"><span class="chip">mango</span><span class="chip">pineapple</span><span class="chip">tangerine</span><span class="chip">cabbage</span><span class="chip">carrot</span><span class="chip">corn</span><span class="chip">lettuce</span><span class="chip">nut</span><span class="chip">onion</span><span class="chip">potato</span><span class="chip">cereal</span><span class="chip">dumpling</span><span class="chip">fast food</span><span class="chip">flour</span><span class="chip">instant noodles</span><span class="chip">seafood</span><span class="chip">shrimp</span><span class="chip">spaghetti</span><span class="chip">tofu</span><span class="chip">brunch</span><span class="chip">supper</span><span class="chip">beer</span><span class="chip">cola</span><span class="chip">liquid</span><span class="chip">milkshake</span><span class="chip">soda</span><span class="chip">soft drink</span><span class="chip">dessert</span><span class="chip">doughnut</span><span class="chip">moon cake</span><span class="chip">ketchup</span><span class="chip">cream</span><span class="chip">jam</span><span class="chip">pepper</span><span class="chip">soy sauce</span><span class="chip">vinegar</span><span class="chip">bitter</span><span class="chip">sour</span><span class="chip">spread</span><span class="chip">diet</span><span class="chip">slice</span></div><div class="note">每個字都有 🔊，先聽發音、跟著唸，再看例句。</div></section>
+<section class="s paper"><h2>單字 1–4</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/mango.jpg" alt="mango"><div class="pw">mango <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=0.00,1.04" data-say="mango" aria-label="播放這個句子">🔊</button></div><div class="pz">芒果<small>n.</small></div><div class="pe">Taiwan mangoes are sweet and juicy. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=1.49,4.01" data-say="Taiwan mangoes are sweet and juicy." aria-label="播放這個句子">🔊</button><br>台灣芒果又甜又多汁。</div></div><div class="pc"><img class="pp" src="img/u10/pineapple.jpg" alt="pineapple"><div class="pw">pineapple <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=4.46,5.59" data-say="pineapple" aria-label="播放這個句子">🔊</button></div><div class="pz">鳳梨<small>n.</small></div><div class="pe">Pineapple cakes are a famous gift from Taiwan. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=6.04,9.05" data-say="Pineapple cakes are a famous gift from Taiwan." aria-label="播放這個句子">🔊</button><br>鳳梨酥是台灣有名的伴手禮。</div></div><div class="pc"><img class="pp" src="img/u10/tangerine.jpg" alt="tangerine"><div class="pw">tangerine <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=9.50,10.73" data-say="tangerine" aria-label="播放這個句子">🔊</button></div><div class="pz">橘子<small>n.</small></div><div class="pe">People give tangerines to friends at Chinese New Year. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=11.18,14.56" data-say="People give tangerines to friends at Chinese New Year." aria-label="播放這個句子">🔊</button><br>過年時大家會送朋友橘子。</div></div><div class="pc"><img class="pp" src="img/u10/cabbage.jpg" alt="cabbage"><div class="pw">cabbage <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=15.01,16.03" data-say="cabbage" aria-label="播放這個句子">🔊</button></div><div class="pz">高麗菜；甘藍菜<small>n.</small></div><div class="pe">Mom makes dumplings with cabbage and pork. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=16.48,19.08" data-say="Mom makes dumplings with cabbage and pork." aria-label="播放這個句子">🔊</button><br>媽媽用高麗菜和豬肉包水餃。</div></div></div></section>
+<section class="s paper"><h2>單字 5–8</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/carrot.jpg" alt="carrot"><div class="pw">carrot <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=19.53,20.52" data-say="carrot" aria-label="播放這個句子">🔊</button></div><div class="pz">胡蘿蔔<small>n.</small></div><div class="pe">Rabbits love to eat carrots. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=20.97,22.87" data-say="Rabbits love to eat carrots." aria-label="播放這個句子">🔊</button><br>兔子喜歡吃胡蘿蔔。</div></div><div class="pc"><img class="pp" src="img/u10/corn.jpg" alt="corn"><div class="pw">corn <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=23.32,24.28" data-say="corn" aria-label="播放這個句子">🔊</button></div><div class="pz">玉米<small>n.</small></div><div class="pe">We had grilled corn at the night market. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=24.73,26.97" data-say="We had grilled corn at the night market." aria-label="播放這個句子">🔊</button><br>我們在夜市吃了烤玉米。</div></div><div class="pc"><img class="pp" src="img/u10/lettuce.jpg" alt="lettuce"><div class="pw">lettuce <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=27.42,28.55" data-say="lettuce" aria-label="播放這個句子">🔊</button></div><div class="pz">萵苣；生菜<small>n.</small></div><div class="pe">Put some lettuce and tomato in the sandwich. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=29.00,31.77" data-say="Put some lettuce and tomato in the sandwich." aria-label="播放這個句子">🔊</button><br>在三明治裡放一些生菜和番茄。</div></div><div class="pc"><img class="pp" src="img/u10/nut.jpg" alt="nut"><div class="pw">nut <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=32.22,33.12" data-say="nut" aria-label="播放這個句子">🔊</button></div><div class="pz">堅果；核果<small>n.</small></div><div class="pe">Squirrels hide nuts for the winter. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=33.57,35.62" data-say="Squirrels hide nuts for the winter." aria-label="播放這個句子">🔊</button><br>松鼠把堅果藏起來過冬。</div></div></div></section>
+<section class="s paper"><h2>單字 9–12</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/onion.jpg" alt="onion"><div class="pw">onion <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=36.07,37.11" data-say="onion" aria-label="播放這個句子">🔊</button></div><div class="pz">洋蔥<small>n.</small></div><div class="pe">Cutting onions makes me cry. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=37.56,39.57" data-say="Cutting onions makes me cry." aria-label="播放這個句子">🔊</button><br>切洋蔥讓我流眼淚。</div></div><div class="pc"><img class="pp" src="img/u10/potato.jpg" alt="potato"><div class="pw">potato <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=40.02,41.19" data-say="potato" aria-label="播放這個句子">🔊</button></div><div class="pz">馬鈴薯<small>n.</small></div><div class="pe">French fries are made from potatoes. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=41.64,44.10" data-say="French fries are made from potatoes." aria-label="播放這個句子">🔊</button><br>薯條是用馬鈴薯做的。</div></div><div class="pc"><img class="pp" src="img/u10/cereal.jpg" alt="cereal"><div class="pw">cereal <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=44.55,45.64" data-say="cereal" aria-label="播放這個句子">🔊</button></div><div class="pz">穀片；穀類<small>n.</small></div><div class="pe">I have a bowl of cereal with milk every morning. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=46.09,48.95" data-say="I have a bowl of cereal with milk every morning." aria-label="播放這個句子">🔊</button><br>我每天早上吃一碗加牛奶的穀片。</div></div><div class="pc"><img class="pp" src="img/u10/dumpling.jpg" alt="dumpling"><div class="pw">dumpling <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=49.40,50.42" data-say="dumpling" aria-label="播放這個句子">🔊</button></div><div class="pz">水餃；餃子；湯圓<small>n.</small></div><div class="pe">We eat rice dumplings at the Dragon Boat Festival. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=50.87,54.22" data-say="We eat rice dumplings at the Dragon Boat Festival." aria-label="播放這個句子">🔊</button><br>我們在端午節吃粽子。</div></div></div></section>
+<section class="s paper"><h2>單字 13–16</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/fast food.jpg" alt="fast food"><div class="pw">fast food <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=54.67,56.01" data-say="fast food" aria-label="播放這個句子">🔊</button></div><div class="pz">速食<small>n.</small></div><div class="pe">Fast food is quick, but it isn&#x27;t healthy. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=56.46,59.09" data-say="Fast food is quick, but it isn&#x27;t healthy." aria-label="播放這個句子">🔊</button><br>速食很快，但不健康。</div></div><div class="pc"><img class="pp" src="img/u10/flour.jpg" alt="flour"><div class="pw">flour <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=59.54,60.59" data-say="flour" aria-label="播放這個句子">🔊</button></div><div class="pz">麵粉<small>n.</small></div><div class="pe">You need flour, eggs, and milk to make a cake. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=61.04,63.96" data-say="You need flour, eggs, and milk to make a cake." aria-label="播放這個句子">🔊</button><br>做蛋糕需要麵粉、蛋和牛奶。</div></div><div class="pc"><img class="pp" src="img/u10/instant noodles.jpg" alt="instant noodles"><div class="pw">instant noodles <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=64.41,65.71" data-say="instant noodles" aria-label="播放這個句子">🔊</button></div><div class="pz">泡麵；速食麵<small>n.</small></div><div class="pe">Instant noodles are ready in three minutes. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=66.16,68.79" data-say="Instant noodles are ready in three minutes." aria-label="播放這個句子">🔊</button><br>泡麵三分鐘就好了。</div></div><div class="pc"><img class="pp" src="img/u10/seafood.jpg" alt="seafood"><div class="pw">seafood <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=69.24,70.39" data-say="seafood" aria-label="播放這個句子">🔊</button></div><div class="pz">海鮮<small>n.</small></div><div class="pe">Penghu is famous for fresh seafood. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=70.84,73.01" data-say="Penghu is famous for fresh seafood." aria-label="播放這個句子">🔊</button><br>澎湖以新鮮海鮮聞名。</div></div></div></section>
+<section class="s paper"><h2>單字 17–20</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/shrimp.jpg" alt="shrimp"><div class="pw">shrimp <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=73.46,74.49" data-say="shrimp" aria-label="播放這個句子">🔊</button></div><div class="pz">蝦子；蝦仁<small>n.</small></div><div class="pe">I&#x27;d like fried rice with shrimp, please. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=74.94,77.44" data-say="I&#x27;d like fried rice with shrimp, please." aria-label="播放這個句子">🔊</button><br>我要一份蝦仁炒飯。</div></div><div class="pc"><img class="pp" src="img/u10/spaghetti.jpg" alt="spaghetti"><div class="pw">spaghetti <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=77.89,79.15" data-say="spaghetti" aria-label="播放這個句子">🔊</button></div><div class="pz">義大利麵<small>n.</small></div><div class="pe">Spaghetti with tomato sauce is my favorite. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=79.60,82.56" data-say="Spaghetti with tomato sauce is my favorite." aria-label="播放這個句子">🔊</button><br>番茄醬汁義大利麵是我的最愛。</div></div><div class="pc"><img class="pp" src="img/u10/tofu.jpg" alt="tofu"><div class="pw">tofu <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=83.01,84.01" data-say="tofu" aria-label="播放這個句子">🔊</button></div><div class="pz">豆腐<small>n.</small></div><div class="pe">Stinky tofu smells bad but tastes good. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=84.46,87.24" data-say="Stinky tofu smells bad but tastes good." aria-label="播放這個句子">🔊</button><br>臭豆腐聞起來臭，吃起來香。</div></div><div class="pc"><img class="pp" src="img/u10/brunch.jpg" alt="brunch"><div class="pw">brunch <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=87.69,88.71" data-say="brunch" aria-label="播放這個句子">🔊</button></div><div class="pz">早午餐<small>n.</small></div><div class="pe">We often have brunch at a café on Sundays. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=89.16,91.85" data-say="We often have brunch at a café on Sundays." aria-label="播放這個句子">🔊</button><br>我們星期天常去咖啡館吃早午餐。</div></div></div></section>
+<section class="s paper"><h2>單字 21–24</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/supper.jpg" alt="supper"><div class="pw">supper <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=92.30,93.22" data-say="supper" aria-label="播放這個句子">🔊</button></div><div class="pz">晚餐；宵夜<small>n.</small></div><div class="pe">We had a light supper before bed. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=93.67,95.68" data-say="We had a light supper before bed." aria-label="播放這個句子">🔊</button><br>我們睡前吃了一頓簡單的晚餐。</div></div><div class="pc"><img class="pp" src="img/u10/beer.jpg" alt="beer"><div class="pw">beer <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=96.13,97.00" data-say="beer" aria-label="播放這個句子">🔊</button></div><div class="pz">啤酒<small>n.</small></div><div class="pe">Dad drinks a glass of beer after work. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=97.45,99.84" data-say="Dad drinks a glass of beer after work." aria-label="播放這個句子">🔊</button><br>爸爸下班後喝一杯啤酒。</div></div><div class="pc"><img class="pp" src="img/u10/cola.jpg" alt="cola"><div class="pw">cola <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=100.29,101.27" data-say="cola" aria-label="播放這個句子">🔊</button></div><div class="pz">可樂<small>n.</small></div><div class="pe">Too much cola is bad for your teeth. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=101.72,103.92" data-say="Too much cola is bad for your teeth." aria-label="播放這個句子">🔊</button><br>喝太多可樂對牙齒不好。</div></div><div class="pc"><img class="pp" src="img/u10/liquid.jpg" alt="liquid"><div class="pw">liquid <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=104.37,105.46" data-say="liquid" aria-label="播放這個句子">🔊</button></div><div class="pz">液體<small>n.</small></div><div class="pe">You can&#x27;t take liquids over 100 ml on a plane. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=105.91,109.45" data-say="You can&#x27;t take liquids over 100 ml on a plane." aria-label="播放這個句子">🔊</button><br>超過 100 毫升的液體不能帶上飛機。</div></div></div></section>
+<section class="s paper"><h2>單字 25–28</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/milkshake.jpg" alt="milkshake"><div class="pw">milkshake <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=109.90,111.12" data-say="milkshake" aria-label="播放這個句子">🔊</button></div><div class="pz">奶昔<small>n.</small></div><div class="pe">I&#x27;ll have a chocolate milkshake, please. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=111.57,113.81" data-say="I&#x27;ll have a chocolate milkshake, please." aria-label="播放這個句子">🔊</button><br>我要一杯巧克力奶昔。</div></div><div class="pc"><img class="pp" src="img/u10/soda.jpg" alt="soda"><div class="pw">soda <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=114.26,115.28" data-say="soda" aria-label="播放這個句子">🔊</button></div><div class="pz">汽水；蘇打水<small>n.</small></div><div class="pe">Would you like some soda with your pizza? <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=115.73,118.00" data-say="Would you like some soda with your pizza?" aria-label="播放這個句子">🔊</button><br>你吃披薩要配汽水嗎？</div></div><div class="pc"><img class="pp" src="img/u10/soft drink.jpg" alt="soft drink"><div class="pw">soft drink <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=118.45,119.71" data-say="soft drink" aria-label="播放這個句子">🔊</button></div><div class="pz">不含酒精的飲料；汽水<small>n.</small></div><div class="pe">Only soft drinks are served at the school party. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=120.16,123.01" data-say="Only soft drinks are served at the school party." aria-label="播放這個句子">🔊</button><br>學校派對只供應不含酒精的飲料。</div></div><div class="pc"><img class="pp" src="img/u10/dessert.jpg" alt="dessert"><div class="pw">dessert <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=123.46,124.53" data-say="dessert" aria-label="播放這個句子">🔊</button></div><div class="pz">甜點<small>n.</small></div><div class="pe">We had ice cream for dessert. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=124.98,126.92" data-say="We had ice cream for dessert." aria-label="播放這個句子">🔊</button><br>我們吃冰淇淋當甜點。</div></div></div></section>
+<section class="s paper"><h2>單字 29–32</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/doughnut.jpg" alt="doughnut"><div class="pw">doughnut <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=127.37,128.40" data-say="doughnut" aria-label="播放這個句子">🔊</button></div><div class="pz">甜甜圈<small>n.</small></div><div class="pe">The police officer bought a doughnut and coffee. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=128.85,131.75" data-say="The police officer bought a doughnut and coffee." aria-label="播放這個句子">🔊</button><br>那位警察買了甜甜圈和咖啡。</div></div><div class="pc"><img class="pp" src="img/u10/moon cake.jpg" alt="moon cake"><div class="pw">moon cake <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=132.20,133.37" data-say="moon cake" aria-label="播放這個句子">🔊</button></div><div class="pz">月餅<small>n.</small></div><div class="pe">We eat moon cakes and watch the moon at the Moon Festival. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=133.82,137.15" data-say="We eat moon cakes and watch the moon at the Moon Festival." aria-label="播放這個句子">🔊</button><br>中秋節我們吃月餅、賞月。</div></div><div class="pc"><img class="pp" src="img/u10/ketchup.jpg" alt="ketchup"><div class="pw">ketchup <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=137.60,138.61" data-say="ketchup" aria-label="播放這個句子">🔊</button></div><div class="pz">番茄醬<small>n.</small></div><div class="pe">Do you want ketchup on your hot dog? <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=139.06,141.23" data-say="Do you want ketchup on your hot dog?" aria-label="播放這個句子">🔊</button><br>你的熱狗要加番茄醬嗎？</div></div><div class="pc"><img class="pp" src="img/u10/cream.jpg" alt="cream"><div class="pw">cream <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=141.68,142.71" data-say="cream" aria-label="播放這個句子">🔊</button></div><div class="pz">奶油；鮮奶油；乳霜<small>n.</small></div><div class="pe">Put some cream on top of the cake. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=143.16,145.16" data-say="Put some cream on top of the cake." aria-label="播放這個句子">🔊</button><br>在蛋糕上面加一些鮮奶油。</div></div></div></section>
+<section class="s paper"><h2>單字 33–36</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/jam.jpg" alt="jam"><div class="pw">jam <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=145.61,146.64" data-say="jam" aria-label="播放這個句子">🔊</button></div><div class="pz">果醬；塞車<small>n.</small></div><div class="pe">I like toast with strawberry jam. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=147.09,149.18" data-say="I like toast with strawberry jam." aria-label="播放這個句子">🔊</button><br>我喜歡吐司抹草莓果醬。</div></div><div class="pc"><img class="pp" src="img/u10/pepper.jpg" alt="pepper"><div class="pw">pepper <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=149.63,150.55" data-say="pepper" aria-label="播放這個句子">🔊</button></div><div class="pz">胡椒；甜椒<small>n.</small></div><div class="pe">Add a little salt and pepper to the soup. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=151.00,153.37" data-say="Add a little salt and pepper to the soup." aria-label="播放這個句子">🔊</button><br>在湯裡加一點鹽和胡椒。</div></div><div class="pc"><img class="pp" src="img/u10/soy sauce.jpg" alt="soy sauce"><div class="pw">soy sauce <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=153.82,154.99" data-say="soy sauce" aria-label="播放這個句子">🔊</button></div><div class="pz">醬油<small>n.</small></div><div class="pe">Dip the dumplings in soy sauce. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=155.44,157.57" data-say="Dip the dumplings in soy sauce." aria-label="播放這個句子">🔊</button><br>水餃沾醬油吃。</div></div><div class="pc"><img class="pp" src="img/u10/vinegar.jpg" alt="vinegar"><div class="pw">vinegar <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=158.02,159.05" data-say="vinegar" aria-label="播放這個句子">🔊</button></div><div class="pz">醋<small>n.</small></div><div class="pe">Vinegar makes the soup a little sour. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=159.50,161.72" data-say="Vinegar makes the soup a little sour." aria-label="播放這個句子">🔊</button><br>醋讓湯有點酸。</div></div></div></section>
+<section class="s paper"><h2>單字 37–40</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/bitter.jpg" alt="bitter"><div class="pw">bitter <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=162.17,163.15" data-say="bitter" aria-label="播放這個句子">🔊</button></div><div class="pz">苦的<small>adj.</small></div><div class="pe">This medicine tastes bitter. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=163.60,165.41" data-say="This medicine tastes bitter." aria-label="播放這個句子">🔊</button><br>這個藥吃起來很苦。</div></div><div class="pc"><img class="pp" src="img/u10/sour.jpg" alt="sour"><div class="pw">sour <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=165.86,166.87" data-say="sour" aria-label="播放這個句子">🔊</button></div><div class="pz">酸的<small>adj.</small></div><div class="pe">Lemons are very sour. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=167.32,168.98" data-say="Lemons are very sour." aria-label="播放這個句子">🔊</button><br>檸檬非常酸。</div></div><div class="pc"><img class="pp" src="img/u10/spread.jpg" alt="spread"><div class="pw">spread <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=169.43,170.48" data-say="spread" aria-label="播放這個句子">🔊</button></div><div class="pz">塗；抹；展開；散布<small>v.</small></div><div class="pe">Spread some butter on the bread. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=170.93,172.87" data-say="Spread some butter on the bread." aria-label="播放這個句子">🔊</button><br>在麵包上塗一些奶油。</div></div><div class="pc"><img class="pp" src="img/u10/diet.jpg" alt="diet"><div class="pw">diet <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=173.32,174.41" data-say="diet" aria-label="播放這個句子">🔊</button></div><div class="pz">飲食；節食<small>n.</small></div><div class="pe">Mom is on a diet, so she doesn&#x27;t eat dessert. <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=174.86,177.78" data-say="Mom is on a diet, so she doesn&#x27;t eat dessert." aria-label="播放這個句子">🔊</button><br>媽媽在節食，所以不吃甜點。</div></div></div></section>
+<section class="s paper"><h2>單字 41–41</h2><div class="pg"><div class="pc"><img class="pp" src="img/u10/slice.jpg" alt="slice"><div class="pw">slice <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=178.23,179.36" data-say="slice" aria-label="播放這個句子">🔊</button></div><div class="pz">片；薄片<small>n.</small></div><div class="pe">Can I have another slice of pizza? <button class="sentence-btn" type="button" data-src="audio/u10/all.mp3#t=179.81,181.97" data-say="Can I have another slice of pizza?" aria-label="播放這個句子">🔊</button><br>我可以再吃一片披薩嗎？</div></div></div></section>
+<section class="s paper"><h2>不可數的食物怎麼數</h2><table class="t"><thead><tr><th>不可數名詞</th><th>單位</th></tr></thead><tbody><tr><td>bread</td><td>a slice of bread</td></tr><tr><td>cereal</td><td>a bowl of cereal</td></tr><tr><td>cola／soda</td><td>a can／glass of cola</td></tr><tr><td>flour</td><td>a bag of flour</td></tr></tbody></table><div class="note">不可數名詞不加 -s，要用 a slice of、a bowl of、a glass of 等單位。</div></section>
+<section class="s paper"><h2>味道</h2><table class="t"><thead><tr><th>味道</th><th>例子</th></tr></thead><tbody><tr><td>sweet 甜</td><td>cake</td></tr><tr><td>sour 酸</td><td>lemon、vinegar</td></tr><tr><td>bitter 苦</td><td>black coffee、medicine</td></tr><tr><td>salty 鹹</td><td>soy sauce</td></tr></tbody></table><div class="note">說「嚐起來…」用 taste + 形容詞：This soup tastes sour.</div></section>
+<section class="s paper"><h2>快問快答：中文 → 英文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">芒果</span><button class="rv" type="button">看答案</button><span class="ans" hidden>mango</span></div><div class="qa"><span class="n">2</span><span class="q">橘子</span><button class="rv" type="button">看答案</button><span class="ans" hidden>tangerine</span></div><div class="qa"><span class="n">3</span><span class="q">胡蘿蔔</span><button class="rv" type="button">看答案</button><span class="ans" hidden>carrot</span></div><div class="qa"><span class="n">4</span><span class="q">萵苣；生菜</span><button class="rv" type="button">看答案</button><span class="ans" hidden>lettuce</span></div><div class="qa"><span class="n">5</span><span class="q">洋蔥</span><button class="rv" type="button">看答案</button><span class="ans" hidden>onion</span></div><div class="qa"><span class="n">6</span><span class="q">穀片；穀類</span><button class="rv" type="button">看答案</button><span class="ans" hidden>cereal</span></div><div class="qa"><span class="n">7</span><span class="q">速食</span><button class="rv" type="button">看答案</button><span class="ans" hidden>fast food</span></div><div class="qa"><span class="n">8</span><span class="q">泡麵；速食麵</span><button class="rv" type="button">看答案</button><span class="ans" hidden>instant noodles</span></div></div></section>
+<section class="s paper"><h2>快問快答：英文 → 中文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">shrimp</span><button class="rv" type="button">看答案</button><span class="ans" hidden>蝦子；蝦仁</span></div><div class="qa"><span class="n">2</span><span class="q">tofu</span><button class="rv" type="button">看答案</button><span class="ans" hidden>豆腐</span></div><div class="qa"><span class="n">3</span><span class="q">supper</span><button class="rv" type="button">看答案</button><span class="ans" hidden>晚餐；宵夜</span></div><div class="qa"><span class="n">4</span><span class="q">cola</span><button class="rv" type="button">看答案</button><span class="ans" hidden>可樂</span></div><div class="qa"><span class="n">5</span><span class="q">milkshake</span><button class="rv" type="button">看答案</button><span class="ans" hidden>奶昔</span></div><div class="qa"><span class="n">6</span><span class="q">soft drink</span><button class="rv" type="button">看答案</button><span class="ans" hidden>不含酒精的飲料；汽水</span></div><div class="qa"><span class="n">7</span><span class="q">doughnut</span><button class="rv" type="button">看答案</button><span class="ans" hidden>甜甜圈</span></div><div class="qa"><span class="n">8</span><span class="q">ketchup</span><button class="rv" type="button">看答案</button><span class="ans" hidden>番茄醬</span></div></div></section>
+<section class="s paper"><h2>學完了！接下來</h2><div class="two"><div class="card g"><h3>複習方法</h3><div class="sub">review</div><ul class="b"><li>回到「📗 單字卡」，按「遮中文」自己考自己</li><li>再按「遮英文」，看中文說出英文</li><li>每個例句跟著 🔊 唸一次</li></ul></div><div class="card o"><h3>準備好了</h3><ul class="b"><li>按右上角「📝 前往測驗」</li><li>測驗錯的題目要訂正到全對</li><li>訂正完成補送 1 點</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio(btn.getAttribute('data-src') || 'audio/u10/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  const clip = /#t=[\d.]+,([\d.]+)/.exec(a.src);
+  if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); btn.classList.remove('playing'); } }); a.addEventListener('pause', () => btn.classList.remove('playing')); }
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+<script src="/dict/dict.js?v=20261118a" defer></script>
+</body>
+</html>
