@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>單字區 WORD UP 單字複習 Unit 5 投影片｜B-II B 開頭（二）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Lato:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chalk-bg:#1B3A2F; --paper:#F7F3E8; --paper-2:#EFE9D8; --chalk-yellow:#E8B94A; --chalk-red:#D97A6C;
+  --chalk-green:#7FB69A; --ink:#2B2B2B; --ink-soft:#5B5B52; --line:#D8D0BA; --deep:#1F5E43; --orange:#B5651D;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--chalk-bg);font-family:'Noto Sans TC',sans-serif;color:var(--paper);min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2A4A3C;flex-wrap:wrap;gap:10px}
+.title-block{display:flex;flex-direction:column;gap:2px}
+.eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--chalk-yellow);font-weight:700}
+h1.page{font-family:'Kalam',cursive;font-size:18px;color:var(--paper)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.home-link{font-size:13px;color:var(--chalk-green);text-decoration:none;padding:8px 14px;border:1px solid #2A4A3C;border-radius:20px;transition:border-color .15s}
+.home-link:hover{border-color:var(--chalk-green)}
+.quiz-link{font-size:13px;color:var(--chalk-bg);background:var(--chalk-yellow);text-decoration:none;padding:8px 16px;border-radius:20px;font-weight:700;transition:opacity .15s}
+.quiz-link:hover{opacity:.85}
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;position:relative;overflow:hidden}
+.slide-frame{--u:1cqw;container-type:inline-size;max-width:100%;max-height:100%;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.4);position:relative}
+.s{position:absolute;inset:0;display:none;padding:calc(var(--u)*3.2) calc(var(--u)*4.6);font-size:calc(var(--u)*1.55);line-height:1.55;overflow:hidden;color:var(--ink)}
+.s.active{display:block}
+.s.paper{background:var(--paper)}
+.s.dark{background:var(--chalk-bg);color:var(--paper)}
+.s h2{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*3);color:var(--ink);margin-bottom:calc(var(--u)*1.6)}
+.title{flex-direction:column;justify-content:center}
+.title.active{display:flex}
+.title .week{font-family:'Space Mono',monospace;font-weight:700;letter-spacing:.2em;color:var(--chalk-yellow);font-size:calc(var(--u)*1.3);margin-bottom:calc(var(--u)*1.6)}
+.title h1.big{font-family:'Noto Serif TC',serif;font-weight:700;font-size:calc(var(--u)*6.2);line-height:1.2;color:var(--paper)}
+.title .en-sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*2);color:#9AA89C;margin-top:calc(var(--u)*1.2)}
+.venn{position:absolute;right:calc(var(--u)*6);bottom:calc(var(--u)*-4);width:calc(var(--u)*34);height:calc(var(--u)*20)}
+.venn span{position:absolute;top:0;width:calc(var(--u)*20);height:calc(var(--u)*20);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*1.5)}
+.venn .c1{left:0;background:rgba(127,182,154,.28);color:var(--chalk-green)}
+.venn .c2{left:calc(var(--u)*12);background:rgba(232,185,74,.25);color:var(--chalk-yellow)}
+.cards{display:grid;gap:calc(var(--u)*1.6)}
+.cards.n1{grid-template-columns:1fr}.cards.n2{grid-template-columns:1fr 1fr}.cards.n3{grid-template-columns:1fr 1fr 1fr}.cards.n4{grid-template-columns:1fr 1fr}
+.card{background:var(--paper-2);border-radius:calc(var(--u)*1.2);padding:calc(var(--u)*1.7) calc(var(--u)*2);min-width:0}
+.card h3{font-family:'Noto Serif TC',serif;font-size:calc(var(--u)*2.2);color:var(--deep);margin-bottom:calc(var(--u)*.2)}
+.card.o h3{color:var(--orange)}
+.card .sub{font-family:'Lato',sans-serif;font-style:italic;font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-bottom:calc(var(--u)*.9)}
+.card .row{margin-bottom:calc(var(--u)*.5);font-size:calc(var(--u)*1.4)}
+.card .row b{display:block;font-size:calc(var(--u)*1.35);color:var(--ink)}
+.ex{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.9) calc(var(--u)*1.3);margin-top:calc(var(--u)*.9)}
+.ex .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.ex .en b{color:var(--deep)}
+.ex .en i{color:var(--orange);font-style:normal;font-weight:700}
+.ex.o .en b{color:var(--orange)}
+.ex .zh{font-style:italic;font-size:calc(var(--u)*1.3);color:var(--ink-soft);margin-top:calc(var(--u)*.2)}
+.sentence-btn{display:inline-flex;vertical-align:middle;margin-left:calc(var(--u)*.6);width:max(22px,calc(var(--u)*2.1));height:max(22px,calc(var(--u)*2.1));border-radius:50%;border:1.5px solid var(--chalk-yellow);background:rgba(27,58,47,.9);color:var(--chalk-yellow);font-size:max(10px,calc(var(--u)*.95));cursor:pointer;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .15s,background .15s}
+.sentence-btn:hover{transform:scale(1.12);background:var(--chalk-yellow);color:var(--chalk-bg)}
+.sentence-btn.playing{background:var(--chalk-yellow);color:var(--chalk-bg);animation:pulse .9s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.25)}50%{box-shadow:0 2px 16px rgba(232,185,74,.85)}}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--u)*.6);margin-bottom:calc(var(--u)*1.4)}
+.chip{background:var(--deep);color:var(--paper);border-radius:999px;padding:calc(var(--u)*.4) calc(var(--u)*1.4);font-weight:700;font-size:calc(var(--u)*1.5)}
+.arrow{color:var(--ink-soft)}
+.note{background:var(--paper-2);border-left:calc(var(--u)*.35) solid var(--chalk-yellow);border-radius:calc(var(--u)*.8);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1.3);font-size:calc(var(--u)*1.45)}
+table.t{width:100%;border-collapse:collapse;font-size:calc(var(--u)*1.45);background:#fff;border-radius:calc(var(--u)*.8);overflow:hidden}
+table.t th{background:var(--deep);color:var(--paper);text-align:left;padding:calc(var(--u)*.8) calc(var(--u)*1.2);font-family:'Noto Sans TC';font-size:calc(var(--u)*1.3)}
+table.t td{padding:calc(var(--u)*.8) calc(var(--u)*1.2);border-bottom:1px solid var(--line);vertical-align:top}
+.qas{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*.7) calc(var(--u)*2)}
+.qa{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.6);align-items:center;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.7) calc(var(--u)*1.1);font-size:calc(var(--u)*1.45)}
+.qa .n{font-family:'Space Mono',monospace;color:var(--orange);font-weight:700}
+.qa .q{flex:1 1 55%;min-width:0}
+.rv{font:inherit;font-weight:700;font-size:calc(var(--u)*1.2);border:1px solid var(--deep);background:transparent;color:var(--deep);border-radius:999px;padding:calc(var(--u)*.2) calc(var(--u)*1);cursor:pointer}
+.rv:hover{background:var(--deep);color:var(--paper)}
+.ans{color:var(--deep);font-weight:700;flex-basis:100%;padding-left:calc(var(--u)*2)}
+.top5{display:grid;gap:calc(var(--u)*.8)}
+.t5{display:flex;gap:calc(var(--u)*1.2);align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*.9);padding:calc(var(--u)*.8) calc(var(--u)*1.3)}
+.t5 .rank{font-family:'Space Mono',monospace;font-weight:700;font-size:calc(var(--u)*2.2);color:var(--orange);line-height:1}
+.t5 .en{font-size:calc(var(--u)*1.7);font-weight:500}
+.t5 .why{font-size:calc(var(--u)*1.3);color:var(--ink-soft)}
+.bad{color:#9C3B2C;text-decoration:line-through}
+.good{color:var(--deep);font-weight:700}
+.tight .card{padding:calc(var(--u)*1) calc(var(--u)*1.5)}
+.tight .card h3{font-size:calc(var(--u)*1.9)}
+.tight .ex{margin-top:calc(var(--u)*.5);padding:calc(var(--u)*.45) calc(var(--u)*1)}
+.tight .ex .en{font-size:calc(var(--u)*1.5)}
+.tight .ex .zh{font-size:calc(var(--u)*1.2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6)}
+.lead{font-size:calc(var(--u)*1.5);color:var(--ink-soft);margin:calc(var(--u)*-.8) 0 calc(var(--u)*1.2)}
+ul.b{margin-left:calc(var(--u)*1.8)}ul.b li{margin-bottom:calc(var(--u)*.4)}
+.wc{border-bottom:.2em solid var(--wc);padding:0 .08em;white-space:nowrap}
+.wc sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--wc);margin-left:.15em;font-weight:700}
+.wc.n{--wc:#1d6fa5}.wc.pr{--wc:#7a4bb0}.wc.v{--wc:#c0392b}.wc.aj{--wc:#1f7a4d}.wc.av{--wc:#b5651d}.wc.pp{--wc:#12847c}.wc.cj{--wc:#b03a76}.wc.it{--wc:#7d7d12}
+.sg{border-bottom:.2em solid var(--sg);padding:0 .08em}
+.sg sub{font-family:'Space Mono',monospace;font-size:.58em;color:var(--sg);margin-left:.15em;font-weight:700}
+.sg.S{--sg:#1f7a4d}.sg.V{--sg:#c0392b}.sg.O{--sg:#b5651d}.sg.C{--sg:#1d6fa5}.sg.IO{--sg:#c98a2b}.sg.DO{--sg:#a0521a}
+.legend{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5) calc(var(--u)*1.2);font-size:calc(var(--u)*1.2);color:var(--ink-soft);margin-top:calc(var(--u)*1)}
+.hl{border-bottom:.28em solid rgba(232,185,74,.8)}
+
+.hl2{border-bottom:.28em solid rgba(127,182,154,.9)}
+.arrow-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:none;background:rgba(0,0,0,.45);color:var(--paper);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;z-index:6}
+.arrow-btn:hover{background:rgba(0,0,0,.7)}
+.arrow-btn:disabled{opacity:.25;cursor:default}
+.arrow-btn.prev{left:24px}.arrow-btn.next{right:24px}
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid #2A4A3C}
+.counter{font-family:'Space Mono',monospace;font-size:14px;color:var(--chalk-green);min-width:70px;text-align:center}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:60vw}
+.dot{width:8px;height:8px;border-radius:50%;background:#3A5648;cursor:pointer;border:none;padding:0;transition:background .15s,transform .15s}
+.dot.active{background:var(--chalk-yellow);transform:scale(1.3)}
+@media (max-width:760px){
+  .arrow-btn{width:38px;height:38px;font-size:16px}.arrow-btn.prev{left:8px}.arrow-btn.next{right:8px}
+  h1.page{font-size:14px}footer{flex-wrap:wrap}
+  .stage{align-items:flex-start;overflow:auto;padding:10px}
+  .slide-frame{--u:2.7vw;aspect-ratio:auto;height:auto;min-height:calc(100vh - 200px);overflow:visible;container-type:normal}
+  .s{position:relative;inset:auto;min-height:calc(100vh - 200px);padding:18px 16px 60px;overflow:visible;font-size:15px}
+  .s h2{font-size:24px}.title h1.big{font-size:34px}.title .en-sub{font-size:16px}.title .week{font-size:12px}
+  .card h3{font-size:19px}.card .sub{font-size:13px}.card .row,.card .row b{font-size:14px}
+  .ex .en{font-size:16px}.ex .zh{font-size:13px}.chip{font-size:14px}.note,table.t,.qa{font-size:14px}table.t th{font-size:13px}
+  .t5 .en{font-size:16px}.t5 .why{font-size:13px}.t5 .rank{font-size:22px}.lead{font-size:14px}.rv{font-size:12px}
+  .cards.n2,.cards.n3,.cards.n4,.two,.qas{grid-template-columns:1fr}
+  .venn{display:none}.arrow-btn{position:fixed}
+  .sentence-btn{width:26px;height:26px;font-size:12px}
+}
+.tl{display:block;width:100%;height:auto;margin:calc(var(--u)*.6) 0 calc(var(--u)*.2)}
+.tl .ax{stroke:var(--ink-soft);stroke-width:2}
+.tl .axh{fill:var(--ink-soft)}
+.tl .nowl{stroke:var(--orange);stroke-width:2;stroke-dasharray:4 3}
+.tl text{font-family:'Noto Sans TC',sans-serif;font-size:11.5px;fill:var(--ink)}
+.tl .mut{fill:var(--ink-soft)}
+.tl .nowt{fill:var(--orange);font-weight:700}
+.tl .dc{fill:var(--orange)} .tl .dp{fill:var(--deep)} .tl .dq{fill:#7a4bb0}
+.tl .tc{fill:var(--orange);font-weight:700} .tl .tp{fill:var(--deep);font-weight:700} .tl .tq{fill:#7a4bb0;font-weight:700}
+.tl .arc{fill:none;stroke:var(--orange);stroke-width:2.5}
+.tl .arcq{fill:none;stroke:#7a4bb0;stroke-width:2.5}
+.tl .arh{fill:var(--orange)} .tl .arhq{fill:#7a4bb0}
+.tl .bc{fill:var(--orange)} .tl .bp{fill:var(--deep)}
+.tl .cap{stroke:var(--deep);stroke-width:3}
+.tl .dash{stroke:var(--orange);stroke-width:3;stroke-dasharray:3 4}
+.tl .dead{stroke:var(--deep);stroke-width:2.5}
+.tl .ck{fill:none;stroke:var(--deep);stroke-width:3}
+
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*1.1)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:calc(var(--u)*1);padding:calc(var(--u)*.6) calc(var(--u)*.9);display:flex;flex-direction:column;gap:calc(var(--u)*.2)}
+.pc .pp{font-size:calc(var(--u)*5);line-height:1.1;text-align:center}
+.pc img.pp{width:100%;height:calc(var(--u)*15);object-fit:cover;object-position:50% 35%;border-radius:calc(var(--u)*.6);display:block}
+.pc .pw{font-family:Georgia,serif;font-size:calc(var(--u)*2.3);font-weight:700;color:var(--deep);text-align:center}
+.pc .pz{font-size:calc(var(--u)*1.35);text-align:center;color:var(--ink)}
+.pc .pz small{color:var(--ink-soft);font-size:.85em;margin-left:.3em}
+.pc .pe{font-size:calc(var(--u)*1.3);color:var(--ink-soft);background:var(--paper-2);border-radius:calc(var(--u)*.6);padding:calc(var(--u)*.4) calc(var(--u)*.7);margin-top:auto}
+@media (max-width:760px){.pg{grid-template-columns:1fr 1fr}.pc .pp{font-size:40px}.pc img.pp{height:110px}.pc .pw{font-size:20px}.pc .pz{font-size:14px}.pc .pe{font-size:13px}}
+</style>
+<style>/* arrow-visible 2026-11-22 */
+.arrow-btn{z-index:6;background:rgba(247,243,232,.92);color:#1B3A2F;box-shadow:0 2px 10px rgba(0,0,0,.45);font-weight:900}
+.arrow-btn:hover{background:#E8B94A;color:#1B3A2F}
+.arrow-btn:disabled{opacity:.3}
+</style>
+</head>
+<body>
+<header>
+  <div class="title-block">
+    <div class="eyebrow">VOCABULARY UNIT 5 · SLIDES</div>
+    <h1 class="page">B-II B 開頭（二）</h1>
+  </div>
+  <div class="nav-actions">
+    <a class="home-link" href="units.html">← WORD UP 目錄</a>
+    <a class="home-link" href="u05.html">📗 單字卡</a>
+    <a class="quiz-link" href="u05-quiz.html">📝 前往測驗</a>
+  </div>
+</header>
+<div class="stage">
+  <button class="arrow-btn prev" id="prevBtn" aria-label="上一頁">‹</button>
+  <div class="slide-frame">
+<section class="s dark title"><div class="week">UNIT 5 · VOCABULARY</div><h1 class="big">B 開頭（二）</h1><div class="en-sub">B-II</div><div class="venn"><span class="c1">34 個單字</span><span class="c2">聽・唸・用</span></div></section>
+<section class="s paper"><h2>本單元單字一覽</h2><p class="lead">WORD UP「B-II」的 34 個字（beat 到 blame）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。</p><div class="chips"><span class="chip">beat</span><span class="chip">beautiful</span><span class="chip">become</span><span class="chip">bed</span><span class="chip">bedroom</span><span class="chip">bee</span><span class="chip">beef</span><span class="chip">beer</span><span class="chip">begin</span><span class="chip">beginner</span><span class="chip">beginning</span><span class="chip">behave</span><span class="chip">belief</span><span class="chip">believe</span><span class="chip">bell</span><span class="chip">belong</span><span class="chip">below</span><span class="chip">belt</span><span class="chip">bench</span><span class="chip">besides</span><span class="chip">best</span><span class="chip">better</span><span class="chip">bicycle</span><span class="chip">big</span><span class="chip">bill</span><span class="chip">biology</span><span class="chip">bird</span><span class="chip">birthday</span><span class="chip">bit</span><span class="chip">bite</span><span class="chip">bitter</span><span class="chip">black</span><span class="chip">blackboard</span><span class="chip">blame</span></div><div class="note">每個字都有 🔊，先聽發音、跟著唸，再看例句。</div></section>
+<section class="s paper"><h2>單字 1–4</h2><div class="pg"><div class="pc"><div class="pp">🥁</div><div class="pw">beat <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=0.00,0.91" data-say="beat" aria-label="播放這個句子">🔊</button></div><div class="pz">打敗；敲打<small>v.</small></div><div class="pe">Our team beat them 3 to 1. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=1.36,3.37" data-say="Our team beat them 3 to 1." aria-label="播放這個句子">🔊</button><br>我們隊以三比一打敗他們。</div></div><div class="pc"><div class="pp">🌅</div><div class="pw">beautiful <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=3.82,4.93" data-say="beautiful" aria-label="播放這個句子">🔊</button></div><div class="pz">美麗的<small>adj.</small></div><div class="pe">What a beautiful sunset! <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=5.38,7.02" data-say="What a beautiful sunset!" aria-label="播放這個句子">🔊</button><br>好美的夕陽！</div></div><div class="pc"><div class="pp">🦋</div><div class="pw">become <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=7.47,8.54" data-say="become" aria-label="播放這個句子">🔊</button></div><div class="pz">變成；成為<small>v.</small></div><div class="pe">She became a teacher last year. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=8.99,11.04" data-say="She became a teacher last year." aria-label="播放這個句子">🔊</button><br>她去年成為老師。</div></div><div class="pc"><div class="pp">🛏️</div><div class="pw">bed <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=11.49,12.23" data-say="bed" aria-label="播放這個句子">🔊</button></div><div class="pz">床<small>n.</small></div><div class="pe">I go to bed at ten. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=12.68,14.18" data-say="I go to bed at ten." aria-label="播放這個句子">🔊</button><br>我十點上床睡覺。</div></div></div></section>
+<section class="s paper"><h2>單字 5–8</h2><div class="pg"><div class="pc"><div class="pp">🛌</div><div class="pw">bedroom <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=14.63,15.72" data-say="bedroom" aria-label="播放這個句子">🔊</button></div><div class="pz">臥室<small>n.</small></div><div class="pe">My bedroom is upstairs. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=16.17,17.94" data-say="My bedroom is upstairs." aria-label="播放這個句子">🔊</button><br>我的臥室在樓上。</div></div><div class="pc"><div class="pp">🐝</div><div class="pw">bee <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=18.39,19.31" data-say="bee" aria-label="播放這個句子">🔊</button></div><div class="pz">蜜蜂<small>n.</small></div><div class="pe">A bee is flying around the flowers. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=19.76,21.97" data-say="A bee is flying around the flowers." aria-label="播放這個句子">🔊</button><br>一隻蜜蜂在花旁邊飛。</div></div><div class="pc"><div class="pp">🥩</div><div class="pw">beef <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=22.42,23.36" data-say="beef" aria-label="播放這個句子">🔊</button></div><div class="pz">牛肉<small>n.</small></div><div class="pe">I&#x27;d like beef noodles, please. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=23.81,25.80" data-say="I&#x27;d like beef noodles, please." aria-label="播放這個句子">🔊</button><br>我要一碗牛肉麵。</div></div><div class="pc"><div class="pp">🍺</div><div class="pw">beer <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=26.25,27.12" data-say="beer" aria-label="播放這個句子">🔊</button></div><div class="pz">啤酒<small>n.</small></div><div class="pe">Dad had a glass of beer with dinner. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=27.57,29.73" data-say="Dad had a glass of beer with dinner." aria-label="播放這個句子">🔊</button><br>爸爸晚餐喝了一杯啤酒。</div></div></div></section>
+<section class="s paper"><h2>單字 9–12</h2><div class="pg"><div class="pc"><div class="pp">🎬</div><div class="pw">begin <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=30.18,31.27" data-say="begin" aria-label="播放這個句子">🔊</button></div><div class="pz">開始<small>v.</small></div><div class="pe">The movie begins at seven. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=31.72,33.55" data-say="The movie begins at seven." aria-label="播放這個句子">🔊</button><br>電影七點開始。</div></div><div class="pc"><div class="pp">🔰</div><div class="pw">beginner <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=34.00,35.05" data-say="beginner" aria-label="播放這個句子">🔊</button></div><div class="pz">初學者<small>n.</small></div><div class="pe">This class is for beginners. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=35.50,37.38" data-say="This class is for beginners." aria-label="播放這個句子">🔊</button><br>這堂課是給初學者上的。</div></div><div class="pc"><div class="pp">🚦</div><div class="pw">beginning <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=37.83,38.94" data-say="beginning" aria-label="播放這個句子">🔊</button></div><div class="pz">開始；開端<small>n.</small></div><div class="pe">We have a test at the beginning of the month. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=39.39,41.84" data-say="We have a test at the beginning of the month." aria-label="播放這個句子">🔊</button><br>月初我們有考試。</div></div><div class="pc"><div class="pp">😇</div><div class="pw">behave <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=42.29,43.40" data-say="behave" aria-label="播放這個句子">🔊</button></div><div class="pz">表現；守規矩<small>v.</small></div><div class="pe">The children behaved well at the party. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=43.85,46.20" data-say="The children behaved well at the party." aria-label="播放這個句子">🔊</button><br>孩子們在派對上很守規矩。</div></div></div></section>
+<section class="s paper"><h2>單字 13–16</h2><div class="pg"><div class="pc"><div class="pp">🕯️</div><div class="pw">belief <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=46.65,47.69" data-say="belief" aria-label="播放這個句子">🔊</button></div><div class="pz">信念；信仰<small>n.</small></div><div class="pe">He has a strong belief in himself. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=48.14,50.24" data-say="He has a strong belief in himself." aria-label="播放這個句子">🔊</button><br>他對自己很有信心。</div></div><div class="pc"><div class="pp">🤞</div><div class="pw">believe <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=50.69,51.73" data-say="believe" aria-label="播放這個句子">🔊</button></div><div class="pz">相信<small>v.</small></div><div class="pe">I can&#x27;t believe it! <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=52.18,53.65" data-say="I can&#x27;t believe it!" aria-label="播放這個句子">🔊</button><br>我真不敢相信！</div></div><div class="pc"><div class="pp">🔔</div><div class="pw">bell <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=54.10,55.00" data-say="bell" aria-label="播放這個句子">🔊</button></div><div class="pz">鈴；鐘<small>n.</small></div><div class="pe">The school bell rang. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=55.45,56.92" data-say="The school bell rang." aria-label="播放這個句子">🔊</button><br>學校的鐘聲響了。</div></div><div class="pc"><div class="pp">🏷️</div><div class="pw">belong <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=57.37,58.42" data-say="belong" aria-label="播放這個句子">🔊</button></div><div class="pz">屬於<small>v.</small></div><div class="pe">This bag belongs to Amy. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=58.87,60.73" data-say="This bag belongs to Amy." aria-label="播放這個句子">🔊</button><br>這個包包是 Amy 的。</div></div></div></section>
+<section class="s paper"><h2>單字 17–20</h2><div class="pg"><div class="pc"><div class="pp">⬇️</div><div class="pw">below <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=61.18,62.16" data-say="below" aria-label="播放這個句子">🔊</button></div><div class="pz">在…下面；低於<small>prep./adv.</small></div><div class="pe">The temperature is below zero. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=62.61,64.89" data-say="The temperature is below zero." aria-label="播放這個句子">🔊</button><br>氣溫在零度以下。</div></div><div class="pc"><div class="pp">🪢</div><div class="pw">belt <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=65.34,66.26" data-say="belt" aria-label="播放這個句子">🔊</button></div><div class="pz">皮帶；安全帶<small>n.</small></div><div class="pe">Fasten your seat belt, please. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=66.71,68.65" data-say="Fasten your seat belt, please." aria-label="播放這個句子">🔊</button><br>請繫好安全帶。</div></div><div class="pc"><div class="pp">🪑</div><div class="pw">bench <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=69.10,70.13" data-say="bench" aria-label="播放這個句子">🔊</button></div><div class="pz">長椅<small>n.</small></div><div class="pe">Let&#x27;s sit on the bench and rest. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=70.58,72.48" data-say="Let&#x27;s sit on the bench and rest." aria-label="播放這個句子">🔊</button><br>我們坐在長椅上休息一下吧。</div></div><div class="pc"><div class="pp">➕</div><div class="pw">besides <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=72.93,74.10" data-say="besides" aria-label="播放這個句子">🔊</button></div><div class="pz">除了…之外（還有）；此外<small>prep./adv.</small></div><div class="pe">Besides English, she speaks Japanese. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=74.55,77.22" data-say="Besides English, she speaks Japanese." aria-label="播放這個句子">🔊</button><br>除了英文，她還會說日文。</div></div></div></section>
+<section class="s paper"><h2>單字 21–24</h2><div class="pg"><div class="pc"><div class="pp">🥇</div><div class="pw">best <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=77.67,78.63" data-say="best" aria-label="播放這個句子">🔊</button></div><div class="pz">最好的；最好地<small>adj./adv.</small></div><div class="pe">You are my best friend. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=79.08,80.68" data-say="You are my best friend." aria-label="播放這個句子">🔊</button><br>你是我最好的朋友。</div></div><div class="pc"><div class="pp">📈</div><div class="pw">better <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=81.13,82.11" data-say="better" aria-label="播放這個句子">🔊</button></div><div class="pz">較好的；更好地<small>adj./adv.</small></div><div class="pe">I feel better today. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=82.56,84.12" data-say="I feel better today." aria-label="播放這個句子">🔊</button><br>我今天覺得好多了。</div></div><div class="pc"><div class="pp">🚲</div><div class="pw">bicycle <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=84.57,85.74" data-say="bicycle" aria-label="播放這個句子">🔊</button></div><div class="pz">腳踏車<small>n.</small></div><div class="pe">I ride my bicycle to school. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=86.19,88.26" data-say="I ride my bicycle to school." aria-label="播放這個句子">🔊</button><br>我騎腳踏車上學。</div></div><div class="pc"><div class="pp">🐘</div><div class="pw">big <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=88.71,89.61" data-say="big" aria-label="播放這個句子">🔊</button></div><div class="pz">大的<small>adj.</small></div><div class="pe">An elephant is bigger than a horse. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=90.06,92.41" data-say="An elephant is bigger than a horse." aria-label="播放這個句子">🔊</button><br>大象比馬大。</div></div></div></section>
+<section class="s paper"><h2>單字 25–28</h2><div class="pg"><div class="pc"><div class="pp">🧾</div><div class="pw">bill <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=92.86,93.77" data-say="bill" aria-label="播放這個句子">🔊</button></div><div class="pz">帳單；鈔票<small>n.</small></div><div class="pe">Can I have the bill, please? <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=94.22,95.95" data-say="Can I have the bill, please?" aria-label="播放這個句子">🔊</button><br>請給我帳單。</div></div><div class="pc"><div class="pp">🧬</div><div class="pw">biology <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=96.40,97.66" data-say="biology" aria-label="播放這個句子">🔊</button></div><div class="pz">生物學<small>n.</small></div><div class="pe">We learn about plants in biology class. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=98.11,100.69" data-say="We learn about plants in biology class." aria-label="播放這個句子">🔊</button><br>我們在生物課學植物。</div></div><div class="pc"><div class="pp">🐦</div><div class="pw">bird <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=101.14,102.02" data-say="bird" aria-label="播放這個句子">🔊</button></div><div class="pz">鳥<small>n.</small></div><div class="pe">The birds are singing in the tree. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=102.47,104.39" data-say="The birds are singing in the tree." aria-label="播放這個句子">🔊</button><br>鳥在樹上唱歌。</div></div><div class="pc"><div class="pp">🎂</div><div class="pw">birthday <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=104.84,105.97" data-say="birthday" aria-label="播放這個句子">🔊</button></div><div class="pz">生日<small>n.</small></div><div class="pe">Happy birthday to you! <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=106.42,107.98" data-say="Happy birthday to you!" aria-label="播放這個句子">🔊</button><br>祝你生日快樂！</div></div></div></section>
+<section class="s paper"><h2>單字 29–32</h2><div class="pg"><div class="pc"><div class="pp">🤏</div><div class="pw">bit <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=108.43,109.33" data-say="bit" aria-label="播放這個句子">🔊</button></div><div class="pz">一點點<small>n.</small></div><div class="pe">I&#x27;m a bit tired. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=109.78,111.14" data-say="I&#x27;m a bit tired." aria-label="播放這個句子">🔊</button><br>我有一點累。</div></div><div class="pc"><div class="pp">🦷</div><div class="pw">bite <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=111.59,112.57" data-say="bite" aria-label="播放這個句子">🔊</button></div><div class="pz">咬；一口<small>v./n.</small></div><div class="pe">Be careful. The dog may bite. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=113.02,115.16" data-say="Be careful. The dog may bite." aria-label="播放這個句子">🔊</button><br>小心，那隻狗可能會咬人。</div></div><div class="pc"><div class="pp">☕</div><div class="pw">bitter <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=115.61,116.59" data-say="bitter" aria-label="播放這個句子">🔊</button></div><div class="pz">苦的<small>adj.</small></div><div class="pe">This medicine tastes bitter. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=117.04,118.85" data-say="This medicine tastes bitter." aria-label="播放這個句子">🔊</button><br>這個藥嚐起來很苦。</div></div><div class="pc"><div class="pp">🐈‍⬛</div><div class="pw">black <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=119.30,120.27" data-say="black" aria-label="播放這個句子">🔊</button></div><div class="pz">黑色的；黑色<small>adj./n.</small></div><div class="pe">She has a black cat. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=120.72,122.23" data-say="She has a black cat." aria-label="播放這個句子">🔊</button><br>她有一隻黑貓。</div></div></div></section>
+<section class="s paper"><h2>單字 33–34</h2><div class="pg"><div class="pc"><div class="pp">🧑‍🏫</div><div class="pw">blackboard <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=122.68,123.47" data-say="blackboard" aria-label="播放這個句子">🔊</button></div><div class="pz">黑板<small>n.</small></div><div class="pe">The teacher wrote on the blackboard. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=123.92,126.03" data-say="The teacher wrote on the blackboard." aria-label="播放這個句子">🔊</button><br>老師在黑板上寫字。</div></div><div class="pc"><div class="pp">👉</div><div class="pw">blame <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=126.48,127.55" data-say="blame" aria-label="播放這個句子">🔊</button></div><div class="pz">責怪<small>v.</small></div><div class="pe">Don&#x27;t blame me for your mistake. <button class="sentence-btn" type="button" data-src="audio/u05/all.mp3#t=128.00,129.84" data-say="Don&#x27;t blame me for your mistake." aria-label="播放這個句子">🔊</button><br>不要把你的錯怪到我身上。</div></div></div></section>
+<section class="s paper"><h2>常考片語</h2><table class="t"><thead><tr><th>說法</th><th>中文</th><th>例子</th></tr></thead><tbody><tr><td>belong to + 人</td><td>屬於某人</td><td>The book belongs to me.</td></tr><tr><td>believe in</td><td>相信有、信任</td><td>Do you believe in ghosts?</td></tr><tr><td>at the beginning of</td><td>在…的開始</td><td>at the beginning of the year</td></tr><tr><td>blame + 人 + for + 事</td><td>因某事責怪某人</td><td>blame him for the mistake</td></tr><tr><td>a bit / a little</td><td>一點點</td><td>a bit cold</td></tr><tr><td>go to bed</td><td>上床睡覺</td><td>go to bed early</td></tr></tbody></table><div class="note">belong 不用進行式：This pen belongs to me.（不說 is belonging）</div></section>
+<section class="s paper"><h2>容易搞混的字</h2><table class="t"><thead><tr><th>字</th><th>用法</th><th>例子</th></tr></thead><tbody><tr><td>besides / except</td><td>除了…還有（包含）／ 除了…以外（不包含）</td><td>Besides Tom, Amy came too. ／ Everyone came except Tom.</td></tr><tr><td>belief / believe</td><td>名詞 ／ 動詞</td><td>my belief ／ I believe you.</td></tr><tr><td>begin / beginner / beginning</td><td>開始 ／ 初學者 ／ 開端</td><td>begin to learn ／ a beginner ／ the beginning</td></tr><tr><td>good-better-best</td><td>好 ／ 較好 ／ 最好</td><td>good ／ better than ／ the best</td></tr><tr><td>bit / bite</td><td>一點點 ／ 咬（過去式也是 bit）</td><td>a bit ／ The dog bit me.</td></tr></tbody></table></section>
+<section class="s paper"><h2>快問快答：中文 → 英文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">打敗；敲打</span><button class="rv" type="button">看答案</button><span class="ans" hidden>beat</span></div><div class="qa"><span class="n">2</span><span class="q">變成；成為</span><button class="rv" type="button">看答案</button><span class="ans" hidden>become</span></div><div class="qa"><span class="n">3</span><span class="q">臥室</span><button class="rv" type="button">看答案</button><span class="ans" hidden>bedroom</span></div><div class="qa"><span class="n">4</span><span class="q">牛肉</span><button class="rv" type="button">看答案</button><span class="ans" hidden>beef</span></div><div class="qa"><span class="n">5</span><span class="q">開始</span><button class="rv" type="button">看答案</button><span class="ans" hidden>begin</span></div><div class="qa"><span class="n">6</span><span class="q">開始；開端</span><button class="rv" type="button">看答案</button><span class="ans" hidden>beginning</span></div><div class="qa"><span class="n">7</span><span class="q">信念；信仰</span><button class="rv" type="button">看答案</button><span class="ans" hidden>belief</span></div><div class="qa"><span class="n">8</span><span class="q">鈴；鐘</span><button class="rv" type="button">看答案</button><span class="ans" hidden>bell</span></div></div></section>
+<section class="s paper"><h2>快問快答：英文 → 中文</h2><div class="qas"><div class="qa"><span class="n">1</span><span class="q">below</span><button class="rv" type="button">看答案</button><span class="ans" hidden>在…下面；低於</span></div><div class="qa"><span class="n">2</span><span class="q">bench</span><button class="rv" type="button">看答案</button><span class="ans" hidden>長椅</span></div><div class="qa"><span class="n">3</span><span class="q">best</span><button class="rv" type="button">看答案</button><span class="ans" hidden>最好的；最好地</span></div><div class="qa"><span class="n">4</span><span class="q">bicycle</span><button class="rv" type="button">看答案</button><span class="ans" hidden>腳踏車</span></div><div class="qa"><span class="n">5</span><span class="q">bill</span><button class="rv" type="button">看答案</button><span class="ans" hidden>帳單；鈔票</span></div><div class="qa"><span class="n">6</span><span class="q">bird</span><button class="rv" type="button">看答案</button><span class="ans" hidden>鳥</span></div><div class="qa"><span class="n">7</span><span class="q">bit</span><button class="rv" type="button">看答案</button><span class="ans" hidden>一點點</span></div><div class="qa"><span class="n">8</span><span class="q">bitter</span><button class="rv" type="button">看答案</button><span class="ans" hidden>苦的</span></div></div></section>
+<section class="s paper"><h2>學完了！接下來</h2><div class="two"><div class="card g"><h3>複習方法</h3><div class="sub">review</div><ul class="b"><li>回到「📗 單字卡」，按「遮中文」自己考自己</li><li>再按「遮英文」，看中文說出英文</li><li>每個例句跟著 🔊 唸一次</li></ul></div><div class="card o"><h3>準備好了</h3><ul class="b"><li>按右上角「📝 前往測驗」</li><li>測驗錯的題目要訂正到全對</li><li>訂正完成補送 1 點</li></ul></div></div></section>
+  </div>
+  <button class="arrow-btn next" id="nextBtn" aria-label="下一頁">›</button>
+</div>
+<footer>
+  <div class="counter" id="counter">1 / 1</div>
+  <div class="dots" id="dots"></div>
+</footer>
+<script>
+const slides = Array.prototype.slice.call(document.querySelectorAll('.s'));
+const counter = document.getElementById('counter'), dotsWrap = document.getElementById('dots');
+const prevBtn = document.getElementById('prevBtn'), nextBtn = document.getElementById('nextBtn');
+let current = 0, curAudio = null;
+const speechSupported = typeof window.speechSynthesis !== 'undefined';
+let cachedVoices = [];
+function refreshVoices(){ if(speechSupported) cachedVoices = window.speechSynthesis.getVoices(); }
+if(speechSupported){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+function pickVoice(){
+  const en = cachedVoices.filter(v => v.lang && v.lang.startsWith('en'));
+  const rank = v => (/natural|neural|online|google/i.test(v.name) ? 4 : 0) + (v.lang === 'en-US' ? 1 : 0);
+  return en.sort((a, b) => rank(b) - rank(a))[0] || null;
+}
+function stopAll(){
+  if(speechSupported) window.speechSynthesis.cancel();
+  if(curAudio){ curAudio.pause(); curAudio = null; }
+  document.querySelectorAll('.sentence-btn').forEach(b => b.classList.remove('playing'));
+}
+function speakTTS(text, btn){
+  if(!speechSupported){ return; }
+  if(!cachedVoices.length) refreshVoices();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.82;
+  const v = pickVoice(); if(v) u.voice = v;
+  btn.classList.add('playing');
+  u.onend = u.onerror = () => btn.classList.remove('playing');
+  window.speechSynthesis.speak(u);
+}
+function play(btn){
+  stopAll();
+  const all = Array.prototype.slice.call(document.querySelectorAll('.sentence-btn'));
+  const idx = all.indexOf(btn) + 1;
+  const a = new Audio(btn.getAttribute('data-src') || 'audio/u05/slide-' + (idx < 10 ? '0' : '') + idx + '.mp3');
+  let fell = false;
+  const fb = () => { if(fell) return; fell = true; speakTTS(btn.getAttribute('data-say'), btn); };
+  a.addEventListener('error', fb);
+  const clip = /#t=[\d.]+,([\d.]+)/.exec(a.src);
+  if(clip){ const end = +clip[1]; a.addEventListener('timeupdate', () => { if(a.currentTime >= end){ a.pause(); btn.classList.remove('playing'); } }); a.addEventListener('pause', () => btn.classList.remove('playing')); }
+  a.addEventListener('ended', () => btn.classList.remove('playing'));
+  btn.classList.add('playing');
+  const p = a.play();
+  if(p && p.catch) p.catch(e => { if(!(e && e.name === 'AbortError')) fb(); });
+  curAudio = a;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.sentence-btn');
+  if(b){ e.stopPropagation(); play(b); return; }
+  const r = e.target.closest('.rv');
+  if(r){ const a = r.nextElementSibling; a.hidden = !a.hidden; r.textContent = a.hidden ? '看答案' : '收起'; }
+});
+function render(){
+  slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  counter.textContent = (current + 1) + ' / ' + slides.length;
+  prevBtn.disabled = current === 0; nextBtn.disabled = current === slides.length - 1;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  stopAll();
+  window.scrollTo(0, 0);
+  try{ history.replaceState(null, '', '#' + (current + 1)); }catch(e){}
+}
+function goTo(i){ if(i < 0 || i >= slides.length) return; current = i; render(); }
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+document.addEventListener('keydown', e => { if(e.key === 'ArrowLeft') goTo(current - 1); if(e.key === 'ArrowRight') goTo(current + 1); });
+let tx = null;
+document.querySelector('.stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.querySelector('.stage').addEventListener('touchend', e => {
+  if(tx === null) return; const dx = e.changedTouches[0].clientX - tx;
+  if(dx > 60) goTo(current - 1); if(dx < -60) goTo(current + 1); tx = null;
+});
+slides.forEach((_, i) => { const b = document.createElement('button'); b.className = 'dot'; b.setAttribute('aria-label', '第 ' + (i + 1) + ' 頁'); b.addEventListener('click', () => goTo(i)); dotsWrap.appendChild(b); });
+const start = parseInt((location.hash || '').replace('#', ''), 10);
+current = isNaN(start) ? 0 : Math.max(0, Math.min(slides.length - 1, start - 1));
+render();
+</script>
+<script src="/dict/dict.js?v=20261118a" defer></script>
+</body>
+</html>

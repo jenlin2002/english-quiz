@@ -293,3 +293,5 @@
   - 課本字表讀法：公司電腦 I: 槽 PDF 是掃描圖，用 PyMuPDF 轉圖、左右欄切開逐頁看（Windows OCR 只有中文，英文抓不準，只當參考）。
 
 - 2026-11-22 投影片上一頁鍵修正：第一期「第N週投影片」的上一頁鈕被投影片圖片蓋住（沒有 z-index）、看不到也按不到；其他投影片的箭頭是深灰半透明、在深色投影片上幾乎看不見。所有投影片頁（第一期、course2、grammar2、vocab、english-quiz-plan 的 course2 與 slidekit.py、tools/course2_gen/slides_head.html）在 </head> 前加一段 <style>/* arrow-visible 2026-11-22 */：箭頭改米白底深綠字、z-index:6、停用時 opacity .3。新做投影片沿用 slidekit／slides_head 就會帶到。
+
+- **WORD UP u03～u05（2026-11-24 公司電腦，含錄音）**：A-III（38 字）、B-I（34 字）、B-II（34 字），資料檔 `tools/vocab_gen/wordup_u03.py`～`u05.py`（中文、例句、題目自編；照片沒找，全部用 emoji）。新增一行指令 `tools/vocab_gen/build_wordup.py u03 u04 u05`（產生頁面→錄音→放大→合併 all.mp3→重跑對照表；要先設 `KOKORO_DIR`，**公司電腦模型在 `C:\Users\jenlin2002\kokoro-models`，可以錄音**）。`units.html` 已加三張卡片。接下來照 A→Z 做 u06（B-III）起。
