@@ -1,0 +1,88 @@
+# WORD UP 複習區 Unit 36（WORD UP「P-III」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 36, 'en': 'P-III', 'zh': 'P 開頭（三）',
+  'intro': 'WORD UP「P-III」的 42 個字（pleasure 到 priest）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('pleasure', 'n.', '樂趣；榮幸', 'It\'s my pleasure. 不客氣', 'Thank you! — It\'s my pleasure.', '謝謝你！——不客氣。', '😊'),
+    W('plus', 'prep.', '加', 'minus 減', 'Two plus three is five.', '二加三等於五。', '➕'),
+    W('pocket', 'n.', '口袋', '', 'He put his hands in his pockets.', '他把手插在口袋裡。', '👖'),
+    W('poem', 'n.', '詩', 'poet 詩人', 'Can you read this poem aloud?', '你可以把這首詩唸出來嗎？', '📜'),
+    W('point', 'n./v.', '點；重點；分數；指', 'point at 指著', 'Don\'t point at people.', '不要用手指著別人。', '👉'),
+    W('poison', 'n.', '毒藥', 'poisonous 有毒的', 'Some mushrooms contain poison.', '有些蘑菇有毒。', '☠️'),
+    W('police', 'n.', '警方', '複數用法 The police are…', 'The police are looking for the thief.', '警方正在找小偷。', '🚓'),
+    W('policeman', 'n.', '警察', '複數 policemen', 'The policeman showed me the way.', '那位警察幫我指路。', '👮'),
+    W('policy', 'n.', '政策', '', 'The school has a no-phone policy.', '學校有禁止手機的規定。', '📋'),
+    W('polite', 'adj.', '有禮貌的', 'impolite 沒禮貌的', 'Be polite to the elders.', '對長輩要有禮貌。', '🙇'),
+    W('pollute', 'v.', '污染', '', 'Factories pollute the river.', '工廠污染了河川。', '🏭'),
+    W('pollution', 'n.', '污染', 'air pollution 空氣污染', 'Air pollution is a big problem.', '空氣污染是個大問題。', '🌫️'),
+    W('pond', 'n.', '池塘', '', 'There are fish in the pond.', '池塘裡有魚。', '🐸'),
+    W('pool', 'n.', '游泳池', '', 'Let\'s go swimming in the pool.', '我們去泳池游泳吧。', '🏊'),
+    W('poor', 'adj.', '貧窮的；可憐的；差的', '', 'The poor dog is hungry.', '那隻可憐的狗餓了。', '🥺'),
+    W('popcorn', 'n.', '爆米花', '', 'We ate popcorn at the movies.', '我們看電影時吃爆米花。', '🍿'),
+    W('popular', 'adj.', '受歡迎的', 'be popular with', 'This game is popular with kids.', '這個遊戲很受小孩歡迎。', '🔥'),
+    W('population', 'n.', '人口', '', 'What is the population of Taipei?', '台北的人口是多少？', '👥'),
+    W('pork', 'n.', '豬肉', '', 'I had braised pork rice for lunch.', '我午餐吃滷肉飯。', '🍖'),
+    W('position', 'n.', '位置；職位', '', 'What position do you play?', '你打什麼位置？', '📍'),
+    W('positive', 'adj.', '正面的；積極的', 'negative 負面的', 'Always think positive.', '要常正面思考。', '👍'),
+    W('possible', 'adj.', '可能的', 'as soon as possible 盡快', 'Please reply as soon as possible.', '請盡快回覆。', '✅'),
+    W('post', 'n./v.', '郵件；張貼', 'post office 郵局', 'She posted a photo online.', '她在網路上貼了一張照片。', '📮'),
+    W('postcard', 'n.', '明信片', '', 'I sent a postcard from Japan.', '我從日本寄了一張明信片。', '🏞️'),
+    W('pot', 'n.', '鍋子；壺', '', 'Mom is cooking soup in a big pot.', '媽媽用大鍋子煮湯。', '🍲'),
+    W('potato', 'n.', '馬鈴薯', '複數 potatoes', 'I like mashed potatoes.', '我喜歡馬鈴薯泥。', '🥔'),
+    W('pound', 'n.', '英鎊；磅', '', 'This book costs ten pounds.', '這本書十英鎊。', '💷'),
+    W('powder', 'n.', '粉末', '', 'Add some milk powder to the water.', '在水裡加些奶粉。', '🧂'),
+    W('power', 'n.', '力量；電力', '', 'The power went out during the storm.', '暴風雨時停電了。', '⚡'),
+    W('powerful', 'adj.', '強大的；有力的', '', 'The typhoon was very powerful.', '那個颱風威力很強。', '💪'),
+    W('practice', 'v./n.', '練習', 'practice + V-ing', 'I practice playing the piano every day.', '我每天練鋼琴。', '🎹'),
+    W('praise', 'v./n.', '稱讚', '', 'The teacher praised my drawing.', '老師稱讚了我的畫。', '👏'),
+    W('pray', 'v.', '祈禱', 'pray for', 'We prayed for good weather.', '我們祈求好天氣。', '🙏'),
+    W('precious', 'adj.', '珍貴的', '', 'Time is precious.', '時間很寶貴。', '💎'),
+    W('prefer', 'v.', '較喜歡', 'prefer A to B；過去式 preferred', 'I prefer tea to coffee.', '比起咖啡我比較喜歡茶。', '⚖️'),
+    W('prepare', 'v.', '準備', 'prepare for 為…準備', 'I\'m preparing for the exam.', '我正在準備考試。', '📚'),
+    W('present', 'n./adj./v.', '禮物；現在；出席的；呈現', '', 'Thank you for the birthday present.', '謝謝你的生日禮物。', '🎁'),
+    W('president', 'n.', '總統；總裁；會長', '', 'The president gave a speech.', '總統發表了演說。', '🎤'),
+    W('press', 'v./n.', '按；壓；新聞界', '', 'Press the button to start.', '按下按鈕開始。', '🔘'),
+    W('pretty', 'adj./adv.', '漂亮的；相當', 'pretty good 相當好', 'Your dress is pretty.', '你的洋裝很漂亮。', '🌸'),
+    W('price', 'n.', '價格', '', 'The price of eggs went up.', '雞蛋的價格漲了。', '🏷️'),
+    W('priest', 'n.', '牧師；神父', '', 'The priest spoke at the church.', '神父在教堂裡講道。', '⛪'),
+  ],
+  'focus': [
+    {'title': '重點整理', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('prefer A to B', '比起 B 較喜歡 A', 'prefer dogs to cats'),
+      ('prepare for', '為…做準備', 'prepare for the test'),
+      ('practice + V-ing', '練習做…', 'practice speaking English'),
+      ('be popular with', '受…歡迎', 'popular with teenagers'),
+      ('as soon as possible', '盡快', 'Call me as soon as possible.'),
+      ('pollute / pollution', '污染（動詞）／ 污染（名詞）', 'water pollution'),
+      ('polite / impolite', '有禮貌 ／ 沒禮貌', 'a polite boy'),
+    ], 'note': 'the police 當複數：The police are coming.；potato → potatoes。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '人口', 'opts': ['pollution', 'population', 'position', 'policy'], 'answer': 1, 'exp': 'population 人口。'},
+    {'type': 'mc', 'q': '珍貴的', 'opts': ['precious', 'pretty', 'positive', 'powerful'], 'answer': 0, 'exp': 'precious 珍貴的。'},
+    {'type': 'mc', 'q': '稱讚', 'opts': ['pray', 'press', 'praise', 'prefer'], 'answer': 2, 'exp': 'praise 稱讚。'},
+    {'type': 'mc', 'q': '毒藥', 'opts': ['powder', 'pocket', 'pound', 'poison'], 'answer': 3, 'exp': 'poison 毒藥。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '有禮貌的（p＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['polite']], 'exp': 'polite。'},
+    {'q': '受歡迎的（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['popular']], 'exp': 'popular。'},
+    {'q': '明信片（p＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['postcard']], 'exp': 'postcard。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'I {0} summer to winter. （較喜歡）', 'blanks': [['prefer']], 'exp': 'prefer A to B。'},
+    {'q': 'We need to {0} for the trip. （準備）', 'blanks': [['prepare']], 'exp': 'prepare for 為…準備。'},
+    {'q': 'Thank you so much! — It\'s my {0}. （榮幸）', 'blanks': [['pleasure']], 'exp': 'It\'s my pleasure. 不客氣。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'The police ______ asking people some questions.', 'opts': ['is', 'are', 'was', 'be'], 'answer': 1, 'exp': 'the police 當複數，用 are。'},
+    {'type': 'mc', 'q': 'You should practice ______ English every day.', 'opts': ['speak', 'to speak', 'speaking', 'spoke'], 'answer': 2, 'exp': 'practice + V-ing。'},
+    {'type': 'mc', 'q': 'Please call me back as soon as ______ .', 'opts': ['possible', 'positive', 'popular', 'polite'], 'answer': 0, 'exp': 'as soon as possible 盡快。'},
+    {'type': 'mc', 'q': 'Cars and factories cause air ______ .', 'opts': ['pollute', 'polluted', 'polite', 'pollution'], 'answer': 3, 'exp': 'air pollution 空氣污染（名詞）。'},
+  ]},
+]

@@ -1,0 +1,90 @@
+# WORD UP 複習區 Unit 12（WORD UP「C-V」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 12, 'en': 'C-V', 'zh': 'C 開頭（五）',
+  'intro': 'WORD UP「C-V」的 38 個字（cotton 到 cute）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('cotton', 'n.', '棉；棉花', '', 'This T-shirt is made of cotton.', '這件 T 恤是棉做的。', '☁️'),
+    W('couch', 'n.', '長沙發', '= sofa', 'Dad fell asleep on the couch.', '爸爸在沙發上睡著了。', '🛋️'),
+    W('cough', 'v./n.', '咳嗽', 'gh 唸 /f/', 'I have a bad cough.', '我咳得很厲害。', '😷'),
+    W('could', 'aux.', '能夠（can 的過去式）；可以…嗎', 'Could you…? 比 Can you…? 客氣', 'Could you open the window, please?', '可以請你打開窗戶嗎？', '🙏'),
+    W('count', 'v.', '數；計算', 'count on 依靠', 'Can you count from one to ten in English?', '你會用英文從一數到十嗎？', '🔢'),
+    W('country', 'n.', '國家；鄉下', '複數 countries；in the country 在鄉下', 'Japan is a beautiful country.', '日本是個美麗的國家。', '🌍'),
+    W('countryside', 'n.', '鄉間', '', 'We spent the weekend in the countryside.', '我們週末在鄉下度過。', '🌾'),
+    W('county', 'n.', '縣', 'Yilan County 宜蘭縣', 'My grandparents live in Yilan County.', '我爺爺奶奶住在宜蘭縣。', '🗾'),
+    W('couple', 'n.', '一對；夫妻', 'a couple of 兩三個', 'The young couple just got married.', '那對年輕夫妻剛結婚。', '💑'),
+    W('courage', 'n.', '勇氣', 'brave 的名詞意思', 'It takes courage to say sorry.', '說對不起需要勇氣。', '🦁'),
+    W('course', 'n.', '課程；路線', 'of course 當然', 'I am taking an English course.', '我在上英文課程。', '📚'),
+    W('court', 'n.', '球場；法院', 'basketball court 籃球場', 'The kids are playing on the basketball court.', '孩子們在籃球場上打球。', '🏀'),
+    W('cousin', 'n.', '堂／表兄弟姊妹', '', 'My cousin is the same age as me.', '我表哥跟我同年。', '🧑‍🤝‍🧑'),
+    W('cover', 'v./n.', '覆蓋；封面', 'be covered with 被…覆蓋', 'The mountain is covered with snow.', '山被雪覆蓋。', '🏔️'),
+    W('cow', 'n.', '母牛；乳牛', '', 'Cows give us milk.', '乳牛提供我們牛奶。', '🐄'),
+    W('crab', 'n.', '螃蟹', '', 'A crab walks sideways.', '螃蟹橫著走。', '🦀'),
+    W('crayon', 'n.', '蠟筆', '', 'My little sister draws with crayons.', '我妹妹用蠟筆畫畫。', '🖍️'),
+    W('crazy', 'adj.', '瘋狂的；著迷的', 'be crazy about 對…著迷', 'He is crazy about baseball.', '他非常迷棒球。', '🤪'),
+    W('cream', 'n.', '奶油；乳霜', 'ice cream 冰淇淋', 'I want strawberry ice cream.', '我要草莓冰淇淋。', '🍦'),
+    W('create', 'v.', '創造', '名詞 creation', 'Artists create beautiful things.', '藝術家創造美的東西。', '✨'),
+    W('crime', 'n.', '罪；犯罪', 'criminal 罪犯', 'Stealing is a crime.', '偷竊是犯罪。', '🚨'),
+    W('crisis', 'n.', '危機', '複數 crises', 'The flood caused a water crisis.', '水災造成用水危機。', '⚠️'),
+    W('cross', 'v./n.', '越過；十字', 'cross the street 過馬路', 'Look both ways before you cross the street.', '過馬路前要左右看。', '🚸'),
+    W('crowd', 'n.', '人群', '', 'There was a big crowd at the concert.', '演唱會上人潮洶湧。', '👥'),
+    W('crowded', 'adj.', '擁擠的', 'be crowded with', 'The MRT is crowded in the morning.', '早上的捷運很擠。', '🚇'),
+    W('cruel', 'adj.', '殘忍的', 'be cruel to + 人／動物', 'Don\'t be cruel to animals.', '不要虐待動物。', '😈'),
+    W('cry', 'v./n.', '哭；叫喊', '過去式 cried', 'The baby cried all night.', '寶寶哭了一整晚。', '😭'),
+    W('culture', 'n.', '文化', '', 'I want to learn about Japanese culture.', '我想了解日本文化。', '🎎'),
+    W('cup', 'n.', '杯子', 'a cup of + 熱飲', 'Would you like a cup of tea?', '你要喝杯茶嗎？', '☕'),
+    W('cure', 'v./n.', '治癒；療法', '', 'Doctors are looking for a cure for the disease.', '醫生在尋找這種病的療法。', '💊'),
+    W('curious', 'adj.', '好奇的', 'be curious about', 'Kids are curious about everything.', '小孩對什麼都好奇。', '🧐'),
+    W('current', 'adj./n.', '目前的；水流', 'current events 時事', 'What is your current address?', '你目前的地址是什麼？', '🌊'),
+    W('curtain', 'n.', '窗簾；布幕', '', 'Please close the curtains.', '請把窗簾拉上。', '🪟'),
+    W('curve', 'n.', '曲線；彎道', '', 'Drive slowly around the curve.', '轉彎處要慢慢開。', '〰️'),
+    W('custom', 'n.', '習俗', 'customs 海關', 'Eating mooncakes is a Moon Festival custom.', '吃月餅是中秋節的習俗。', '🥮'),
+    W('customer', 'n.', '顧客', '', 'The store has many customers today.', '這家店今天客人很多。', '🛒'),
+    W('cut', 'v./n.', '切；剪；割傷', '三態都是 cut', 'I cut my finger with a knife.', '我被刀割到手指。', '✂️'),
+    W('cute', 'adj.', '可愛的', '', 'What a cute puppy!', '好可愛的小狗！', '🐶'),
+  ],
+  'focus': [
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('country / county / countryside', '國家 ／ 縣 ／ 鄉間', 'a big country ／ Yilan County ／ live in the countryside'),
+      ('crowd / crowded', '人群（名詞）／ 擁擠的（形容詞）', 'a big crowd ／ a crowded bus'),
+      ('custom / customer', '習俗 ／ 顧客', 'an old custom ／ a happy customer'),
+      ('course / court', '課程 ／ 球場、法院', 'an English course ／ a tennis court'),
+      ('curious / cruel', '好奇的 ／ 殘忍的', 'a curious cat ／ a cruel man'),
+    ], 'note': ''},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('of course', '當然', 'Of course you can.'),
+      ('be covered with', '被…覆蓋', 'covered with dust'),
+      ('be crazy about', '對…著迷', 'crazy about K-pop'),
+      ('be curious about', '對…好奇', 'curious about space'),
+      ('a couple of', '兩三個、幾個', 'a couple of days'),
+      ('cross the street', '過馬路', 'cross the street carefully'),
+    ], 'note': 'Could you…? 是比 Can you…? 更客氣的請求。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '勇氣', 'opts': ['courage', 'course', 'custom', 'culture'], 'answer': 0, 'exp': 'courage 勇氣。'},
+    {'type': 'mc', 'q': '窗簾', 'opts': ['curve', 'cotton', 'curtain', 'current'], 'answer': 2, 'exp': 'curtain 窗簾。'},
+    {'type': 'mc', 'q': '危機', 'opts': ['crime', 'crisis', 'crowd', 'cross'], 'answer': 1, 'exp': 'crisis 危機。'},
+    {'type': 'mc', 'q': '咳嗽', 'opts': ['couch', 'count', 'cover', 'cough'], 'answer': 3, 'exp': 'cough 咳嗽。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '顧客（c＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['customer']], 'exp': 'customer。'},
+    {'q': '堂／表兄弟姊妹（c＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['cousin']], 'exp': 'cousin。'},
+    {'q': '文化（c＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['culture']], 'exp': 'culture。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'The train is very {0}. There are no seats. （擁擠的）', 'blanks': [['crowded']], 'exp': 'crowded 擁擠的。'},
+    {'q': 'The cat is {0} about the box. （好奇的）', 'blanks': [['curious']], 'exp': 'be curious about 對…好奇。'},
+    {'q': 'The table is {0} with dust. （覆蓋）', 'blanks': [['covered']], 'exp': 'be covered with 被…覆蓋。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': '______ you pass me the salt, please?', 'opts': ['Could', 'Should', 'Must', 'Need'], 'answer': 0, 'exp': 'Could you…? 客氣的請求。'},
+    {'type': 'mc', 'q': 'My brother is crazy ______ video games.', 'opts': ['for', 'with', 'about', 'at'], 'answer': 2, 'exp': 'be crazy about 對…著迷。'},
+    {'type': 'mc', 'q': 'Yesterday I ______ my hand when I was cooking.', 'opts': ['cuts', 'cutted', 'cutting', 'cut'], 'answer': 3, 'exp': 'cut 的過去式還是 cut。'},
+    {'type': 'mc', 'q': 'I\'ll be back in a ______ of days.', 'opts': ['couple', 'course', 'county', 'cover'], 'answer': 0, 'exp': 'a couple of days 兩三天。'},
+  ]},
+]

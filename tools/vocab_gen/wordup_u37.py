@@ -1,0 +1,87 @@
+# WORD UP 複習區 Unit 37（WORD UP「P-IV」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 37, 'en': 'P-IV', 'zh': 'P 開頭（四）',
+  'intro': 'WORD UP「P-IV」的 41 個字（primary 到 puzzle）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('primary', 'adj.', '主要的；初級的', 'primary school 小學', 'My sister is in primary school.', '我妹妹讀小學。', '🏫'),
+    W('prince', 'n.', '王子', '', 'The prince lived in a castle.', '王子住在城堡裡。', '🤴'),
+    W('princess', 'n.', '公主', '', 'The princess has long hair.', '公主有一頭長髮。', '👸'),
+    W('principal', 'n.', '校長', '', 'The principal gave a speech.', '校長致詞。', '👨‍🏫'),
+    W('principle', 'n.', '原則', '和 principal 同音', 'Honesty is my principle.', '誠實是我的原則。', '📏'),
+    W('print', 'v.', '列印；印刷', '', 'Please print this page for me.', '請幫我印這一頁。', '🖨️'),
+    W('printer', 'n.', '印表機', '', 'The printer is out of paper.', '印表機沒紙了。', '🖨️'),
+    W('prison', 'n.', '監獄', '', 'The thief was sent to prison.', '小偷被送進監獄。', '🔒'),
+    W('prisoner', 'n.', '囚犯', '', 'The prisoner escaped.', '囚犯逃走了。', '⛓️'),
+    W('private', 'adj.', '私人的', 'public 公共的', 'This is a private beach.', '這是私人海灘。', '🚫'),
+    W('prize', 'n.', '獎品；獎', 'win first prize 得第一名', 'She won first prize in the contest.', '她在比賽中得了第一名。', '🏆'),
+    W('probably', 'adv.', '大概；很可能', '', 'It will probably rain tonight.', '今晚很可能會下雨。', '🌧️'),
+    W('problem', 'n.', '問題', 'No problem. 沒問題', 'Can you help me? — No problem!', '你可以幫我嗎？——沒問題！', '❓'),
+    W('produce', 'v.', '生產；製造', '', 'This factory produces bikes.', '這家工廠生產腳踏車。', '🏭'),
+    W('product', 'n.', '產品', '', 'This is a new product.', '這是新產品。', '📦'),
+    W('production', 'n.', '生產；產量', '', 'Rice production is high this year.', '今年稻米產量很高。', '📊'),
+    W('professor', 'n.', '教授', '', 'My uncle is a professor at a university.', '我叔叔是大學教授。', '👨‍🎓'),
+    W('program', 'n.', '節目；計畫；程式', '', 'What\'s your favorite TV program?', '你最喜歡哪個電視節目？', '📺'),
+    W('progress', 'n.', '進步', '不可數；make progress 進步', 'You have made great progress.', '你進步很多。', '📈'),
+    W('project', 'n.', '專案；計畫；報告', '', 'We are working on a science project.', '我們在做一份自然科專題。', '🧪'),
+    W('promise', 'v./n.', '承諾；答應', 'keep a promise 守信', 'I promise to come back.', '我答應會回來。', '🤞'),
+    W('pronounce', 'v.', '發音', 'pronunciation 發音（名詞）', 'How do you pronounce this word?', '這個字怎麼唸？', '🗣️'),
+    W('propose', 'v.', '提議；求婚', '', 'He proposed a new plan.', '他提出一個新計畫。', '💍'),
+    W('protect', 'v.', '保護', 'protect A from B', 'Sunglasses protect your eyes from the sun.', '太陽眼鏡保護你的眼睛不被陽光傷害。', '🛡️'),
+    W('protection', 'n.', '保護', '', 'Wear a helmet for protection.', '戴安全帽保護自己。', '⛑️'),
+    W('proud', 'adj.', '驕傲的；自豪的', 'be proud of', 'My parents are proud of me.', '我爸媽以我為榮。', '🥹'),
+    W('prove', 'v.', '證明', '', 'Can you prove it?', '你能證明嗎？', '📋'),
+    W('provide', 'v.', '提供', 'provide + 人 + with + 物', 'The school provides us with lunch.', '學校提供我們午餐。', '🍱'),
+    W('public', 'adj./n.', '公共的；大眾', 'in public 公開地', 'Don\'t shout in public.', '不要在公共場合大叫。', '🏛️'),
+    W('pull', 'v.', '拉', 'push 推', 'Pull the door to open it.', '把門拉開。', '🚪'),
+    W('pump', 'n./v.', '幫浦；打氣', '', 'Use the pump to fill the tire.', '用打氣筒幫輪胎打氣。', '🚲'),
+    W('pumpkin', 'n.', '南瓜', '', 'We made a pumpkin lantern for Halloween.', '我們為萬聖節做了南瓜燈。', '🎃'),
+    W('punish', 'v.', '處罰', 'punishment 處罰（名詞）', 'The teacher punished him for being late.', '老師因為他遲到處罰他。', '⚠️'),
+    W('puppy', 'n.', '小狗', '複數 puppies', 'The puppy is so cute.', '那隻小狗好可愛。', '🐶'),
+    W('purchase', 'v./n.', '購買', '= buy', 'You can purchase tickets online.', '你可以在網路上買票。', '🛒'),
+    W('purple', 'adj./n.', '紫色的', '', 'Grapes are purple.', '葡萄是紫色的。', '🟣'),
+    W('purpose', 'n.', '目的', 'on purpose 故意地', 'He did it on purpose.', '他是故意的。', '🎯'),
+    W('purse', 'n.', '錢包（女用）', '', 'She put her purse in her bag.', '她把錢包放進包包。', '👛'),
+    W('push', 'v.', '推', '', 'Push the button.', '按下按鈕。', '🫸'),
+    W('put', 'v.', '放', '三態都是 put；put on 穿上', 'Put on your coat.', '穿上外套。', '📥'),
+    W('puzzle', 'n.', '謎題；拼圖', '', 'Let\'s do a jigsaw puzzle.', '我們來拼拼圖吧。', '🧩'),
+  ],
+  'focus': [
+    {'title': '重點整理', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('principal / principle', '校長 ／ 原則（同音）', 'the school principal ／ a basic principle'),
+      ('be proud of', '以…為榮', 'proud of my team'),
+      ('provide + 人 + with + 物', '提供某人某物', 'provide us with water'),
+      ('protect A from B', '保護 A 不受 B 傷害', 'protect your skin from the sun'),
+      ('make progress', '進步（不可數）', 'make great progress'),
+      ('on purpose', '故意地', 'break it on purpose'),
+      ('push / pull', '推 ／ 拉', 'push the door ／ pull the rope'),
+    ], 'note': 'put 三態都一樣；put on 穿上、put away 收好。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '校長', 'opts': ['principle', 'principal', 'prince', 'professor'], 'answer': 1, 'exp': 'principal 校長。'},
+    {'type': 'mc', 'q': '目的', 'opts': ['purpose', 'purchase', 'purse', 'puzzle'], 'answer': 0, 'exp': 'purpose 目的。'},
+    {'type': 'mc', 'q': '處罰', 'opts': ['promise', 'propose', 'punish', 'produce'], 'answer': 2, 'exp': 'punish 處罰。'},
+    {'type': 'mc', 'q': '私人的', 'opts': ['public', 'primary', 'proud', 'private'], 'answer': 3, 'exp': 'private 私人的。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '南瓜（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['pumpkin']], 'exp': 'pumpkin。'},
+    {'q': '問題（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['problem']], 'exp': 'problem。'},
+    {'q': '保護（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['protect']], 'exp': 'protect。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'I\'m so {0} of you! （驕傲的）', 'blanks': [['proud']], 'exp': 'be proud of 以…為榮。'},
+    {'q': 'Your English is getting better. You\'ve made great {0}. （進步）', 'blanks': [['progress']], 'exp': 'make progress 進步。'},
+    {'q': 'I didn\'t break it on {0}. It was an accident. （目的）', 'blanks': [['purpose']], 'exp': 'on purpose 故意地。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'The hotel provides guests ______ free breakfast.', 'opts': ['for', 'with', 'to', 'of'], 'answer': 1, 'exp': 'provide + 人 + with + 物。'},
+    {'type': 'mc', 'q': 'I ______ my jacket on the chair yesterday.', 'opts': ['putted', 'puts', 'put', 'putting'], 'answer': 2, 'exp': 'put 的過去式還是 put。'},
+    {'type': 'mc', 'q': 'Wear sunscreen to protect your skin ______ the sun.', 'opts': ['from', 'with', 'at', 'to'], 'answer': 0, 'exp': 'protect A from B。'},
+    {'type': 'mc', 'q': 'He promised ______ me a postcard.', 'opts': ['send', 'sending', 'sent', 'to send'], 'answer': 3, 'exp': 'promise to V 答應做…。'},
+  ]},
+]

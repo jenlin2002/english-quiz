@@ -1,0 +1,90 @@
+# WORD UP 複習區 Unit 14（WORD UP「D-II」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 14, 'en': 'D-II', 'zh': 'D 開頭（二）',
+  'intro': 'WORD UP「D-II」的 38 個字（design 到 document）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('design', 'v./n.', '設計', 'designer 設計師', 'She designed her own dress.', '她自己設計了洋裝。', '📐'),
+    W('desire', 'n./v.', '渴望；慾望', '', 'He has a strong desire to win.', '他非常渴望獲勝。', '🔥'),
+    W('desk', 'n.', '書桌', '', 'My books are on the desk.', '我的書在書桌上。', '🗂️'),
+    W('dessert', 'n.', '甜點', 'desert 沙漠（一個 s）', 'What\'s for dessert?', '甜點吃什麼？', '🍮'),
+    W('determine', 'v.', '決定；下定決心', 'be determined to V 決心要…', 'She is determined to be a doctor.', '她下定決心要當醫生。', '💪'),
+    W('develop', 'v.', '發展；培養', '名詞 development', 'Reading helps develop your mind.', '閱讀幫助發展你的思考。', '🌱'),
+    W('dial', 'v.', '撥（電話）', '', 'Dial 119 in an emergency.', '緊急時撥 119。', '☎️'),
+    W('diamond', 'n.', '鑽石', '', 'The ring has a small diamond.', '那枚戒指有一顆小鑽石。', '💎'),
+    W('diary', 'n.', '日記', 'keep a diary 寫日記', 'I keep a diary in English.', '我用英文寫日記。', '📔'),
+    W('dictionary', 'n.', '字典', 'look up…in the dictionary 查字典', 'Look up the word in the dictionary.', '在字典裡查這個字。', '📕'),
+    W('die', 'v.', '死', 'dying 現在分詞；die of 死於（疾病）', 'The plant died because I forgot to water it.', '那盆植物死了，因為我忘了澆水。', '🪦'),
+    W('diet', 'n.', '飲食；節食', 'be on a diet 在節食', 'Mom is on a diet.', '媽媽在節食。', '🥗'),
+    W('difference', 'n.', '差異', 'make a difference 有影響', 'What\'s the difference between the two pictures?', '這兩張圖有什麼不同？', '🔍'),
+    W('different', 'adj.', '不同的', 'be different from', 'My answer is different from yours.', '我的答案和你的不一樣。', '🔀'),
+    W('difficult', 'adj.', '困難的', '= hard', 'This math problem is difficult.', '這題數學很難。', '🧩'),
+    W('difficulty', 'n.', '困難', 'have difficulty + V-ing', 'I have difficulty remembering names.', '我很難記住名字。', '😣'),
+    W('dig', 'v.', '挖', '三態 dig-dug-dug', 'The dog is digging a hole.', '那隻狗在挖洞。', '⛏️'),
+    W('diligent', 'adj.', '勤勉的；用功的', 'lazy 懶惰的', 'She is a diligent student.', '她是個用功的學生。', '📝'),
+    W('dinner', 'n.', '晚餐', 'have dinner', 'We have dinner at seven.', '我們七點吃晚餐。', '🍽️'),
+    W('dinosaur', 'n.', '恐龍', '', 'Dinosaurs lived millions of years ago.', '恐龍生活在幾百萬年前。', '🦖'),
+    W('diplomat', 'n.', '外交官', '', 'Her father is a diplomat in Japan.', '她爸爸是駐日本的外交官。', '🌐'),
+    W('direct', 'adj./v.', '直接的；指揮；導演', '', 'Is there a direct flight to Paris?', '有直飛巴黎的班機嗎？', '➡️'),
+    W('direction', 'n.', '方向', 'in the…direction', 'Which direction is the station?', '車站在哪個方向？', '🧭'),
+    W('director', 'n.', '導演；主任', '', 'The director made a great movie.', '那位導演拍了一部很棒的電影。', '🎬'),
+    W('dirty', 'adj.', '髒的', 'clean 乾淨的', 'Your shoes are dirty.', '你的鞋子很髒。', '🧦'),
+    W('disappear', 'v.', '消失', 'dis- 表示相反；appear 出現', 'The sun disappeared behind the clouds.', '太陽消失在雲後面。', '🫥'),
+    W('discover', 'v.', '發現', '名詞 discovery', 'Who discovered America?', '誰發現了美洲？', '🔭'),
+    W('discuss', 'v.', '討論', 'discuss + 事（不加 about）', 'Let\'s discuss the plan.', '我們來討論計畫吧。', '💬'),
+    W('discussion', 'n.', '討論', 'have a discussion about', 'We had a discussion about the trip.', '我們討論了旅行的事。', '🗨️'),
+    W('dish', 'n.', '盤子；菜餚', 'do the dishes 洗碗', 'It\'s my turn to do the dishes.', '輪到我洗碗了。', '🍛'),
+    W('dishonest', 'adj.', '不誠實的', 'honest 誠實的；h 不發音', 'It is dishonest to cheat.', '作弊是不誠實的。', '🤥'),
+    W('distance', 'n.', '距離', 'in the distance 在遠處', 'We could see the mountains in the distance.', '我們可以看到遠方的山。', '📏'),
+    W('divide', 'v.', '分；除', 'divide…into… 把…分成…', 'Divide the cake into eight pieces.', '把蛋糕切成八塊。', '➗'),
+    W('division', 'n.', '除法；分配；部門', '', 'We learned division in math class.', '我們數學課學了除法。', '🔪'),
+    W('dizzy', 'adj.', '頭暈的', '', 'I feel dizzy after the ride.', '坐完遊樂設施我覺得頭暈。', '😵‍💫'),
+    W('do', 'v./aux.', '做；助動詞', '三態 do-did-done；does 第三人稱', 'Did you do your homework?', '你寫功課了嗎？', '🛠️'),
+    W('doctor', 'n.', '醫生', 'see a doctor 看醫生', 'You should see a doctor.', '你應該去看醫生。', '🩺'),
+    W('document', 'n.', '文件', '', 'Please sign this document.', '請在這份文件上簽名。', '📄'),
+  ],
+  'focus': [
+    {'title': '一家人和容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('different / difference', '不同的（形容詞）／ 差異（名詞）', 'be different from ／ the difference between A and B'),
+      ('difficult / difficulty', '困難的（形容詞）／ 困難（名詞）', 'a difficult test ／ have difficulty'),
+      ('discuss / discussion', '討論（動詞）／ 討論（名詞）', 'discuss the plan ／ have a discussion'),
+      ('direct / direction / director', '直接的 ／ 方向 ／ 導演', 'a direct flight ／ the wrong direction ／ a movie director'),
+      ('dessert / desert', '甜點（兩個 s）／ 沙漠（一個 s）', 'ice cream for dessert ／ the Sahara Desert'),
+    ], 'note': ''},
+    {'title': '常考句型', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('have difficulty + V-ing', '做…有困難', 'have difficulty sleeping'),
+      ('be different from', '和…不同', 'Cats are different from dogs.'),
+      ('discuss + 事', '討論某事（不加 about）', 'discuss the problem'),
+      ('divide A into B', '把 A 分成 B', 'divide the class into four groups'),
+      ('do the dishes', '洗碗', 'do the dishes after dinner'),
+      ('be on a diet', '節食中', 'I\'m on a diet.'),
+    ], 'note': 'dis- 放在字前面表示「相反、不」：disappear 消失、dishonest 不誠實的。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '勤勉的', 'opts': ['different', 'diligent', 'dishonest', 'difficult'], 'answer': 1, 'exp': 'diligent 勤勉的。'},
+    {'type': 'mc', 'q': '外交官', 'opts': ['director', 'dentist', 'diplomat', 'doctor'], 'answer': 2, 'exp': 'diplomat 外交官。'},
+    {'type': 'mc', 'q': '甜點', 'opts': ['dessert', 'desert', 'desire', 'design'], 'answer': 0, 'exp': 'dessert 甜點（兩個 s）。'},
+    {'type': 'mc', 'q': '距離', 'opts': ['direction', 'division', 'difference', 'distance'], 'answer': 3, 'exp': 'distance 距離。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '字典（d＿＿＿＿＿＿＿＿＿，10 個字母）：{0}', 'blanks': [['dictionary']], 'exp': 'dictionary。'},
+    {'q': '恐龍（d＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['dinosaur']], 'exp': 'dinosaur。'},
+    {'q': '發現（d＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['discover']], 'exp': 'discover。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'The magician made the rabbit {0}. （消失）', 'blanks': [['disappear']], 'exp': 'make + 受詞 + 原形：disappear。'},
+    {'q': 'I feel {0}. I need to sit down. （頭暈的）', 'blanks': [['dizzy']], 'exp': 'dizzy 頭暈的。'},
+    {'q': 'The kids {0} a big hole in the sand yesterday. （挖，過去式）', 'blanks': [['dug']], 'exp': 'dig 的過去式 dug。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'I have difficulty ______ English words.', 'opts': ['spell', 'to spell', 'spelling', 'spelled'], 'answer': 2, 'exp': 'have difficulty + V-ing。'},
+    {'type': 'mc', 'q': 'Let\'s ______ the problem after class.', 'opts': ['discuss', 'discuss about', 'discussion', 'discussing about'], 'answer': 0, 'exp': 'discuss + 事，不加 about。'},
+    {'type': 'mc', 'q': 'Your bag is different ______ mine.', 'opts': ['with', 'than', 'to', 'from'], 'answer': 3, 'exp': 'be different from。'},
+    {'type': 'mc', 'q': 'The teacher divided us ______ five groups.', 'opts': ['to', 'into', 'in', 'with'], 'answer': 1, 'exp': 'divide A into B。'},
+  ]},
+]

@@ -1,0 +1,88 @@
+# WORD UP 複習區 Unit 24（WORD UP「H-II」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 24, 'en': 'H-II', 'zh': 'H 開頭（二）',
+  'intro': 'WORD UP「H-II」的 42 個字（hip 到 husband）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('hip', 'n.', '臀部；屁股', '', 'She put her hands on her hips.', '她雙手插腰。', '🍑'),
+    W('hippopotamus', 'n.', '河馬', '= hippo', 'A hippopotamus can stay under water for minutes.', '河馬可以在水裡待好幾分鐘。', '🦛'),
+    W('hire', 'v.', '雇用；租用', '= employ', 'The store hired two new workers.', '那家店雇了兩個新員工。', '🤝'),
+    W('history', 'n.', '歷史', '', 'I am interested in Taiwanese history.', '我對台灣歷史有興趣。', '📜'),
+    W('hit', 'v.', '打；撞', '三態都是 hit', 'The ball hit the window.', '球打到窗戶。', '🏏'),
+    W('hobby', 'n.', '嗜好', '複數 hobbies', 'My hobby is drawing.', '我的嗜好是畫畫。', '🎨'),
+    W('hold', 'v.', '握著；舉辦', '三態 hold-held-held；hold on 等一下', 'Hold on, please.', '請稍等。', '✊'),
+    W('hole', 'n.', '洞', '', 'There is a hole in my sock.', '我的襪子破了一個洞。', '🕳️'),
+    W('holiday', 'n.', '假日；節日', 'on holiday 度假中', 'We went to Kenting during the holiday.', '假期我們去了墾丁。', '🏖️'),
+    W('home', 'n./adv.', '家；在家', 'go home（不加 to）', 'It\'s time to go home.', '該回家了。', '🏠'),
+    W('homesick', 'adj.', '想家的', '', 'She felt homesick when she studied abroad.', '她出國讀書時很想家。', '🥺'),
+    W('homework', 'n.', '功課；家庭作業', '不可數', 'I have a lot of homework today.', '我今天有很多功課。', '📝'),
+    W('honest', 'adj.', '誠實的', 'h 不發音，前面用 an', 'He is an honest boy.', '他是個誠實的男孩。', '😇'),
+    W('honesty', 'n.', '誠實', 'Honesty is the best policy. 誠實為上策', 'Honesty is the best policy.', '誠實為上策。', '🤍'),
+    W('honey', 'n.', '蜂蜜；親愛的', '', 'Bees make honey.', '蜜蜂會釀蜂蜜。', '🍯'),
+    W('Hong Kong', 'n.', '香港', '', 'We went shopping in Hong Kong.', '我們去香港購物。', '🏙️'),
+    W('hop', 'v.', '單腳跳；跳躍', '過去式 hopped', 'The rabbit hopped away.', '兔子跳走了。', '🐇'),
+    W('hope', 'v./n.', '希望', 'hope + to V／that…', 'I hope to see you soon.', '希望很快見到你。', '🌈'),
+    W('horrible', 'adj.', '可怕的；糟透的', '', 'The weather is horrible today.', '今天天氣糟透了。', '😱'),
+    W('horse', 'n.', '馬', 'ride a horse 騎馬', 'Have you ever ridden a horse?', '你騎過馬嗎？', '🐎'),
+    W('hospital', 'n.', '醫院', 'in (the) hospital 住院', 'Grandpa is in the hospital.', '爺爺在住院。', '🏥'),
+    W('host', 'n./v.', '主人；主持人；主辦', 'guest 客人', 'Who will host the party?', '誰要主辦派對？', '🎤'),
+    W('hot', 'adj.', '熱的；辣的', '比較級 hotter', 'It\'s hot in summer.', '夏天很熱。', '🥵'),
+    W('hotel', 'n.', '飯店；旅館', '', 'We stayed at a hotel near the beach.', '我們住在海邊的一家飯店。', '🏨'),
+    W('hour', 'n.', '小時', 'h 不發音，前面用 an', 'I waited for an hour.', '我等了一個小時。', '⏰'),
+    W('house', 'n.', '房子', '', 'They live in a big house.', '他們住在一棟大房子裡。', '🏡'),
+    W('how', 'adv.', '如何；多麼', 'How about…? …怎麼樣', 'How about going to the park?', '去公園怎麼樣？', '❓'),
+    W('Hualien', 'n.', '花蓮', '', 'Hualien is famous for Taroko Gorge.', '花蓮以太魯閣峽谷聞名。', '⛰️'),
+    W('huge', 'adj.', '巨大的', '= very big', 'An elephant is huge.', '大象很巨大。', '🐘'),
+    W('human', 'adj./n.', '人類的；人', 'human being 人類', 'Dogs are humans\' best friends.', '狗是人類最好的朋友。', '🧑'),
+    W('humble', 'adj.', '謙虛的', '', 'He is famous but humble.', '他很有名但很謙虛。', '🙇'),
+    W('humid', 'adj.', '潮濕的', '', 'Taiwan is hot and humid in summer.', '台灣夏天又熱又濕。', '💦'),
+    W('humor', 'n.', '幽默', 'a sense of humor 幽默感', 'Our teacher has a good sense of humor.', '我們老師很有幽默感。', '😆'),
+    W('humorous', 'adj.', '幽默的', '', 'He told a humorous story.', '他說了一個幽默的故事。', '🤡'),
+    W('hundred', 'n.', '百', 'two hundred（不加 s）；hundreds of 數以百計', 'There are two hundred students in our grade.', '我們年級有兩百個學生。', '💯'),
+    W('hunger', 'n.', '飢餓', '', 'Many people die of hunger.', '很多人死於飢餓。', '🍽️'),
+    W('hungry', 'adj.', '飢餓的', '', 'I\'m hungry. Let\'s eat.', '我餓了，我們吃飯吧。', '😋'),
+    W('hunt', 'v.', '打獵；搜尋', '', 'Lions hunt at night.', '獅子在晚上狩獵。', '🏹'),
+    W('hunter', 'n.', '獵人', '', 'The hunter walked into the forest.', '獵人走進森林。', '🎯'),
+    W('hurry', 'v./n.', '趕快；匆忙', 'Hurry up! 快點；in a hurry 匆忙', 'Hurry up, or we\'ll be late.', '快點，不然我們會遲到。', '🏃'),
+    W('hurt', 'v.', '使受傷；疼痛', '三態都是 hurt', 'My leg hurts.', '我的腳很痛。', '🤕'),
+    W('husband', 'n.', '丈夫', 'wife 妻子', 'Her husband is a cook.', '她的丈夫是廚師。', '🤵'),
+  ],
+  'focus': [
+    {'title': '重點整理', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('honest / hour（h 不發音）', '前面用 an', 'an honest man ／ an hour'),
+      ('humor / humorous', '幽默（名詞）／ 幽默的（形容詞）', 'a sense of humor ／ a humorous story'),
+      ('hunger / hungry', '飢餓（名詞）／ 餓的（形容詞）', 'die of hunger ／ I\'m hungry.'),
+      ('hope to V / hope that…', '希望…', 'I hope to win. ／ I hope that you win.'),
+      ('go home', '回家（不加 to）', 'go home after school'),
+      ('Hurry up! / in a hurry', '快點 ／ 匆忙', 'He left in a hurry.'),
+      ('two hundred / hundreds of', '兩百 ／ 數以百計的', 'hundreds of people'),
+    ], 'note': 'hit、hurt 三態都一樣；hold 的過去式 held。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '謙虛的', 'opts': ['humid', 'humble', 'huge', 'human'], 'answer': 1, 'exp': 'humble 謙虛的。'},
+    {'type': 'mc', 'q': '想家的', 'opts': ['homesick', 'homework', 'horrible', 'hungry'], 'answer': 0, 'exp': 'homesick 想家的。'},
+    {'type': 'mc', 'q': '雇用', 'opts': ['hide', 'hunt', 'hire', 'hope'], 'answer': 2, 'exp': 'hire 雇用。'},
+    {'type': 'mc', 'q': '潮濕的', 'opts': ['hot', 'hungry', 'honest', 'humid'], 'answer': 3, 'exp': 'humid 潮濕的。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '醫院（h＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['hospital']], 'exp': 'hospital。'},
+    {'q': '假日（h＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['holiday']], 'exp': 'holiday。'},
+    {'q': '丈夫（h＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['husband']], 'exp': 'husband。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'My teacher has a great sense of {0}. （幽默）', 'blanks': [['humor']], 'exp': 'a sense of humor 幽默感。'},
+    {'q': 'The school {0} a sports day last Friday. （舉辦，過去式）', 'blanks': [['held']], 'exp': 'hold 的過去式 held。'},
+    {'q': '{0} up! The bus is coming. （趕快）', 'blanks': [['Hurry', 'hurry']], 'exp': 'Hurry up! 快點。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'It took me ______ hour to finish my homework.', 'opts': ['a', 'an', 'the', 'one of'], 'answer': 1, 'exp': 'hour 的 h 不發音，用 an。'},
+    {'type': 'mc', 'q': 'Let\'s go ______ now. It\'s late.', 'opts': ['to home', 'home', 'at home', 'the home'], 'answer': 1, 'exp': 'go home 不加 to。'},
+    {'type': 'mc', 'q': '______ about having pizza for dinner?', 'opts': ['How', 'What time', 'Who', 'Where'], 'answer': 0, 'exp': 'How about…? …怎麼樣？'},
+    {'type': 'mc', 'q': '______ of people came to see the fireworks.', 'opts': ['Hundred', 'Two hundreds', 'Hundred of', 'Hundreds'], 'answer': 3, 'exp': 'hundreds of 數以百計的。'},
+  ]},
+]

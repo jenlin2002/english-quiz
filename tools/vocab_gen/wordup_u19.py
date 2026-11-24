@@ -1,0 +1,91 @@
+# WORD UP 複習區 Unit 19（WORD UP「F-II」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 19, 'en': 'F-II', 'zh': 'F 開頭（二）',
+  'intro': 'WORD UP「F-II」的 38 個字（figure 到 force）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('figure', 'n./v.', '數字；人物；身材；想出', 'figure out 想出、弄懂', 'I can\'t figure out this math problem.', '我想不出這題數學。', '🔢'),
+    W('fill', 'v.', '裝滿；填', 'fill A with B；fill in 填寫', 'Fill the bottle with water.', '把瓶子裝滿水。', '🫗'),
+    W('film', 'n.', '電影；底片', '= movie', 'We watched a film last night.', '我們昨晚看了一部電影。', '🎞️'),
+    W('final', 'adj./n.', '最後的；決賽', 'final exam 期末考', 'Our team got into the final.', '我們隊進入決賽。', '🏆'),
+    W('finally', 'adv.', '最後；終於', '', 'Finally, we arrived at the top.', '我們終於到了山頂。', '🏁'),
+    W('find', 'v.', '找到；發現', '三態 find-found-found；find out 查出', 'I can\'t find my keys.', '我找不到鑰匙。', '🔍'),
+    W('fine', 'adj./n.', '好的；晴朗的；罰款', '', 'I\'m fine, thank you.', '我很好，謝謝。', '👌'),
+    W('finger', 'n.', '手指', 'toe 腳趾', 'I cut my finger.', '我割到手指了。', '☝️'),
+    W('finish', 'v.', '完成', 'finish + V-ing', 'Have you finished your homework?', '你寫完功課了嗎？', '✅'),
+    W('fire', 'n./v.', '火；火災；開除', 'on fire 著火', 'The house is on fire!', '那棟房子著火了！', '🔥'),
+    W('firm', 'adj./n.', '堅定的；穩固的；公司', '', 'The table is firm.', '這張桌子很穩。', '🧱'),
+    W('first', 'adj./adv.', '第一；首先', 'at first 起初；first of all 首先', 'At first, I didn\'t like him.', '起初我不喜歡他。', '🥇'),
+    W('fish', 'n./v.', '魚；釣魚', '複數通常也是 fish；go fishing', 'Dad likes to go fishing.', '爸爸喜歡去釣魚。', '🎣'),
+    W('fisherman', 'n.', '漁夫', '複數 fishermen', 'The fisherman caught a big fish.', '漁夫釣到一條大魚。', '🛶'),
+    W('fit', 'v./adj.', '合身；健康的', 'keep fit 保持健康', 'These shoes don\'t fit me.', '這雙鞋我穿不合。', '👟'),
+    W('five', 'n.', '五', 'fifth 第五', 'I have five fingers on each hand.', '我每隻手有五根手指。', '🖐️'),
+    W('fix', 'v.', '修理', '= repair', 'Dad fixed my bike.', '爸爸修好了我的腳踏車。', '🔧'),
+    W('flag', 'n.', '旗子', '', 'The flag is waving in the wind.', '旗子在風中飄揚。', '🚩'),
+    W('flashlight', 'n.', '手電筒', '', 'Bring a flashlight when you go camping.', '去露營要帶手電筒。', '🔦'),
+    W('flat', 'adj./n.', '平的；（英）公寓', 'a flat tire 爆胎', 'The car has a flat tire.', '車子爆胎了。', '➖'),
+    W('flight', 'n.', '航班；飛行', '', 'Our flight leaves at 8 a.m.', '我們的班機早上八點起飛。', '✈️'),
+    W('floor', 'n.', '地板；樓層', 'on the third floor 在三樓', 'Our classroom is on the third floor.', '我們教室在三樓。', '🏢'),
+    W('flour', 'n.', '麵粉', '和 flower 同音', 'We need flour to make bread.', '做麵包需要麵粉。', '🌾'),
+    W('flow', 'v./n.', '流動；水流', '', 'The river flows into the sea.', '河流入大海。', '🌊'),
+    W('flower', 'n.', '花', '', 'She gave her mom some flowers.', '她送媽媽一些花。', '🌷'),
+    W('flu', 'n.', '流行性感冒', 'have the flu', 'I have the flu.', '我得了流感。', '🤧'),
+    W('flute', 'n.', '長笛', 'play the flute', 'She plays the flute in the school band.', '她在學校樂隊吹長笛。', '🪈'),
+    W('fly', 'v./n.', '飛；蒼蠅', '三態 fly-flew-flown', 'Birds fly south in winter.', '鳥冬天往南飛。', '🪰'),
+    W('focus', 'v./n.', '集中；焦點', 'focus on 專注於', 'Focus on your work.', '專心做你的事。', '🎯'),
+    W('fog', 'n.', '霧', 'foggy 有霧的', 'There is thick fog this morning.', '今天早上起了濃霧。', '🌫️'),
+    W('follow', 'v.', '跟隨；遵守', 'follow the rules 遵守規則', 'Please follow me.', '請跟我來。', '👣'),
+    W('following', 'adj.', '接下來的', 'the following day 隔天', 'Answer the following questions.', '回答下列問題。', '⬇️'),
+    W('food', 'n.', '食物', '', 'Japanese food is delicious.', '日本料理很好吃。', '🍱'),
+    W('fool', 'n./v.', '傻瓜；愚弄', 'April Fool\'s Day 愚人節', 'Don\'t be a fool.', '別傻了。', '🤡'),
+    W('foolish', 'adj.', '愚蠢的', '= stupid', 'It was foolish of me to believe him.', '我真笨，竟然相信他。', '🙃'),
+    W('foot', 'n.', '腳；英尺', '複數 feet；on foot 走路', 'I go to school on foot.', '我走路上學。', '🦶'),
+    W('football', 'n.', '足球；美式足球', '', 'They are playing football in the park.', '他們在公園踢足球。', '🏈'),
+    W('force', 'n./v.', '力量；強迫', 'force + 人 + to V', 'Don\'t force him to eat.', '不要逼他吃。', '💥'),
+  ],
+  'focus': [
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('flour / flower', '麵粉 ／ 花（同音）', 'a bag of flour ／ a red flower'),
+      ('final / finally', '最後的 ／ 終於', 'the final game ／ We finally won.'),
+      ('follow / following', '跟隨 ／ 接下來的', 'follow me ／ the following day'),
+      ('fool / foolish', '傻瓜 ／ 愚蠢的', 'You fool! ／ a foolish idea'),
+      ('flight / fight', '航班 ／ 打架', 'a long flight ／ a big fight'),
+      ('find / found', '找到（過去式 found）', 'I found my keys.'),
+    ], 'note': 'foot 的複數是 feet；fisherman 的複數是 fishermen。'},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('figure out', '想出、弄懂', 'figure out the answer'),
+      ('fill in / fill A with B', '填寫 ／ 用 B 裝滿 A', 'fill in the form ／ fill the cup with tea'),
+      ('finish + V-ing', '做完…', 'finish reading the book'),
+      ('focus on', '專注於', 'focus on the lesson'),
+      ('on foot', '走路', 'go home on foot'),
+      ('at first / first of all', '起初 ／ 首先', 'At first I was scared.'),
+    ], 'note': ''},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '手電筒', 'opts': ['flashlight', 'flight', 'flag', 'flute'], 'answer': 0, 'exp': 'flashlight 手電筒。'},
+    {'type': 'mc', 'q': '麵粉', 'opts': ['flower', 'floor', 'flour', 'flow'], 'answer': 2, 'exp': 'flour 麵粉。'},
+    {'type': 'mc', 'q': '漁夫', 'opts': ['farmer', 'fisherman', 'fellow', 'fool'], 'answer': 1, 'exp': 'fisherman 漁夫。'},
+    {'type': 'mc', 'q': '霧', 'opts': ['flu', 'fire', 'fly', 'fog'], 'answer': 3, 'exp': 'fog 霧。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '手指（f＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['finger']], 'exp': 'finger。'},
+    {'q': '終於（f＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['finally']], 'exp': 'finally（兩個 l）。'},
+    {'q': '足球（f＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['football']], 'exp': 'football。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'I {0} my lost dog in the park yesterday. （找到，過去式）', 'blanks': [['found']], 'exp': 'find 的過去式 found。'},
+    {'q': 'The baby has small hands and small {0}. （腳，複數）', 'blanks': [['feet']], 'exp': 'foot 的複數 feet。'},
+    {'q': 'Please {0} on the screen. （專注）', 'blanks': [['focus']], 'exp': 'focus on 專注於。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'Have you finished ______ the room?', 'opts': ['clean', 'to clean', 'cleaned', 'cleaning'], 'answer': 3, 'exp': 'finish + V-ing。'},
+    {'type': 'mc', 'q': 'My classroom is ______ the second floor.', 'opts': ['in', 'at', 'on', 'to'], 'answer': 2, 'exp': '在幾樓用 on。'},
+    {'type': 'mc', 'q': 'I walk to school. I go to school ______ .', 'opts': ['on foot', 'by foot', 'with foot', 'on feet'], 'answer': 0, 'exp': 'on foot 走路。'},
+    {'type': 'mc', 'q': 'Can you help me ______ out how to use this app?', 'opts': ['find', 'figure', 'fill', 'fix'], 'answer': 1, 'exp': 'figure out 弄懂。'},
+  ]},
+]

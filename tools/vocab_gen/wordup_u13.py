@@ -1,0 +1,90 @@
+# WORD UP 複習區 Unit 13（WORD UP「D-I」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 13, 'en': 'D-I', 'zh': 'D 開頭（一）',
+  'intro': 'WORD UP「D-I」的 38 個字（dad 到 desert）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('dad', 'n.', '爸爸', '= daddy', 'My dad cooks dinner on Sundays.', '我爸爸星期天煮晚餐。', '👨'),
+    W('daily', 'adj./adv.', '每天的；每天', 'daily life 日常生活', 'Exercise is part of my daily life.', '運動是我日常生活的一部分。', '📆'),
+    W('damage', 'v./n.', '損害', '', 'The typhoon damaged many houses.', '颱風毀損了很多房子。', '🌪️'),
+    W('dance', 'v./n.', '跳舞；舞蹈', 'dancer 舞者', 'Let\'s dance together!', '我們一起跳舞吧！', '💃'),
+    W('danger', 'n.', '危險', 'in danger 處於危險中', 'The tiger is in danger of dying out.', '老虎面臨滅絕的危險。', '☠️'),
+    W('dangerous', 'adj.', '危險的', '', 'It is dangerous to swim here.', '在這裡游泳很危險。', '⚠️'),
+    W('dark', 'adj.', '黑暗的；深色的', 'get dark 天黑', 'It gets dark early in winter.', '冬天天黑得早。', '🌑'),
+    W('data', 'n.', '資料；數據', '', 'We collected data for our science project.', '我們為自然科專題收集資料。', '📊'),
+    W('date', 'n.', '日期；約會', 'What\'s the date today? 今天幾月幾日', 'What\'s the date today?', '今天幾月幾日？', '📅'),
+    W('daughter', 'n.', '女兒', 'son 兒子；gh 不發音', 'They have two daughters.', '他們有兩個女兒。', '👧'),
+    W('dawn', 'n.', '黎明', 'at dawn 在黎明時', 'The farmers get up at dawn.', '農夫們天一亮就起床。', '🌄'),
+    W('day', 'n.', '天；白天', 'one day 有一天', 'Have a nice day!', '祝你有美好的一天！', '☀️'),
+    W('dead', 'adj.', '死的', 'die 死（動詞）、death 死亡（名詞）', 'The flowers are dead.', '花都枯死了。', '🥀'),
+    W('deaf', 'adj.', '聾的', '', 'The old man is a little deaf.', '那位老先生有點重聽。', '🧏'),
+    W('deal', 'n./v.', '交易；處理', 'deal with 處理；a great deal of 大量', 'I don\'t know how to deal with this problem.', '我不知道怎麼處理這個問題。', '🤝'),
+    W('dear', 'adj.', '親愛的', '信的開頭 Dear…', 'Dear Mom, I miss you.', '親愛的媽媽，我想你。', '💌'),
+    W('death', 'n.', '死亡', '', 'His death made everyone sad.', '他的死讓大家很難過。', '🕊️'),
+    W('debate', 'n./v.', '辯論', '', 'Our class won the English debate.', '我們班贏了英文辯論比賽。', '🎤'),
+    W('debt', 'n.', '債務', 'b 不發音；in debt 欠債', 'He is in debt.', '他欠了債。', '💸'),
+    W('December', 'n.', '十二月', '', 'Christmas is in December.', '聖誕節在十二月。', '❄️'),
+    W('decide', 'v.', '決定', 'decide to V', 'I decided to study harder.', '我決定更用功。', '🎯'),
+    W('decision', 'n.', '決定', 'make a decision', 'It was a hard decision.', '那是個困難的決定。', '🔀'),
+    W('decorate', 'v.', '裝飾', '', 'We decorated the classroom for Christmas.', '我們為聖誕節布置教室。', '🎄'),
+    W('decrease', 'v./n.', '減少', 'increase 增加', 'The number of babies is decreasing.', '嬰兒的數量在減少。', '📉'),
+    W('deep', 'adj.', '深的', 'depth 深度', 'The lake is very deep.', '這個湖很深。', '🌊'),
+    W('deer', 'n.', '鹿', '單複數同形', 'We saw some deer in the forest.', '我們在森林裡看到幾隻鹿。', '🦌'),
+    W('degree', 'n.', '度數；學位', '', 'It is 30 degrees today.', '今天 30 度。', '🌡️'),
+    W('delay', 'v./n.', '延誤；延期', '', 'Our flight was delayed for two hours.', '我們的班機延誤了兩小時。', '⏳'),
+    W('delicious', 'adj.', '美味的', '', 'This beef noodle soup is delicious.', '這碗牛肉麵很好吃。', '😋'),
+    W('deliver', 'v.', '遞送', 'delivery 遞送（名詞）', 'The mailman delivers letters every day.', '郵差每天送信。', '📬'),
+    W('democracy', 'n.', '民主', '', 'Taiwan is a democracy.', '台灣是民主國家。', '🗳️'),
+    W('democratic', 'adj.', '民主的', '', 'We live in a democratic country.', '我們住在民主國家。', '🏛️'),
+    W('dentist', 'n.', '牙醫', 'go to the dentist 看牙醫', 'I go to the dentist twice a year.', '我一年看兩次牙醫。', '🦷'),
+    W('deny', 'v.', '否認', '過去式 denied；deny + V-ing', 'He denied breaking the window.', '他否認打破窗戶。', '🙅'),
+    W('department store', 'n.', '百貨公司', '', 'Mom bought a coat at the department store.', '媽媽在百貨公司買了一件外套。', '🏬'),
+    W('depend', 'v.', '依靠；取決於', 'depend on；It depends. 看情況', 'It depends on the weather.', '要看天氣而定。', '🤲'),
+    W('describe', 'v.', '描述', '名詞 description', 'Can you describe the man you saw?', '你可以描述你看到的那個人嗎？', '🗣️'),
+    W('desert', 'n.', '沙漠', 'dessert 甜點（兩個 s）', 'Camels live in the desert.', '駱駝住在沙漠。', '🏜️'),
+  ],
+  'focus': [
+    {'title': '一家人的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('die / dead / death', '死（動詞）／ 死的（形容詞）／ 死亡（名詞）', 'die young ／ a dead tree ／ after his death'),
+      ('danger / dangerous', '危險（名詞）／ 危險的（形容詞）', 'in danger ／ a dangerous road'),
+      ('decide / decision', '決定（動詞）／ 決定（名詞）', 'decide to go ／ make a decision'),
+      ('democracy / democratic', '民主（名詞）／ 民主的（形容詞）', 'a democracy ／ a democratic country'),
+      ('decrease / increase', '減少 ／ 增加', 'decrease by 10% ／ increase quickly'),
+    ], 'note': ''},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('deal with', '處理', 'deal with the problem'),
+      ('depend on', '依靠、取決於', 'It depends on you.'),
+      ('decide to V', '決定做…', 'decide to join the club'),
+      ('deny + V-ing', '否認做過…', 'deny taking the money'),
+      ('be in danger', '處於危險中', 'The bird is in danger.'),
+      ('go to the dentist', '去看牙醫', 'go to the dentist tomorrow'),
+    ], 'note': 'desert（沙漠，一個 s）和 dessert（甜點，兩個 s）很常考：甜點吃越多越好，所以 s 有兩個。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '延誤', 'opts': ['deliver', 'delay', 'deny', 'deal'], 'answer': 1, 'exp': 'delay 延誤。'},
+    {'type': 'mc', 'q': '沙漠', 'opts': ['desert', 'dessert', 'degree', 'debate'], 'answer': 0, 'exp': 'desert 沙漠（一個 s）。'},
+    {'type': 'mc', 'q': '裝飾', 'opts': ['decide', 'describe', 'decorate', 'decrease'], 'answer': 2, 'exp': 'decorate 裝飾。'},
+    {'type': 'mc', 'q': '黎明', 'opts': ['date', 'day', 'dark', 'dawn'], 'answer': 3, 'exp': 'dawn 黎明。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '美味的（d＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['delicious']], 'exp': 'delicious。'},
+    {'q': '女兒（d＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['daughter']], 'exp': 'daughter（gh 不發音）。'},
+    {'q': '牙醫（d＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['dentist']], 'exp': 'dentist。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'Swimming in the river is {0}. （危險的）', 'blanks': [['dangerous']], 'exp': 'be 動詞後接形容詞 dangerous。'},
+    {'q': 'We have to make a {0} now. （決定）', 'blanks': [['decision']], 'exp': 'make a decision 做決定。'},
+    {'q': 'Can you {0} your new house to me? （描述）', 'blanks': [['describe']], 'exp': 'describe 描述。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'Our trip depends ______ the weather.', 'opts': ['in', 'at', 'on', 'with'], 'answer': 2, 'exp': 'depend on 取決於。'},
+    {'type': 'mc', 'q': 'The boy denied ______ the cake.', 'opts': ['eat', 'eating', 'to eat', 'ate'], 'answer': 1, 'exp': 'deny + V-ing。'},
+    {'type': 'mc', 'q': 'The old tree is ______ . It has no leaves.', 'opts': ['die', 'death', 'died', 'dead'], 'answer': 3, 'exp': 'be + 形容詞 dead。'},
+    {'type': 'mc', 'q': 'How do you ______ with angry customers?', 'opts': ['deal', 'delay', 'deliver', 'depend'], 'answer': 0, 'exp': 'deal with 處理。'},
+  ]},
+]

@@ -1,0 +1,91 @@
+# WORD UP 複習區 Unit 20（WORD UP「F-III」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 20, 'en': 'F-III', 'zh': 'F 開頭（三）',
+  'intro': 'WORD UP「F-III」的 38 個字（foreign 到 future）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('foreign', 'adj.', '外國的', 'g 不發音', 'Can you speak any foreign languages?', '你會說任何外語嗎？', '🌐'),
+    W('foreigner', 'n.', '外國人', '', 'Many foreigners visit Taipei 101.', '很多外國人參觀台北 101。', '🧳'),
+    W('forest', 'n.', '森林', '', 'Many animals live in the forest.', '很多動物住在森林裡。', '🌲'),
+    W('forget', 'v.', '忘記', '三態 forget-forgot-forgotten', 'Don\'t forget to bring your book.', '別忘了帶書。', '🤦'),
+    W('forgive', 'v.', '原諒', '三態 forgive-forgave-forgiven', 'Please forgive me.', '請原諒我。', '🕊️'),
+    W('fork', 'n.', '叉子', '', 'Eat the cake with a fork.', '用叉子吃蛋糕。', '🍴'),
+    W('form', 'n./v.', '表格；形式；形成', 'fill in the form 填表', 'Please fill in this form.', '請填寫這張表格。', '📋'),
+    W('formal', 'adj.', '正式的', 'informal 非正式的', 'You should wear formal clothes to the party.', '去派對你應該穿正式服裝。', '🤵'),
+    W('former', 'adj.', '以前的；前者', 'latter 後者', 'He is a former teacher.', '他以前是老師。', '⏮️'),
+    W('forty', 'n.', '四十', '注意：沒有 u（four 有 u）', 'My mom is forty years old.', '我媽媽四十歲。', '4️⃣'),
+    W('forward', 'adv.', '向前', 'look forward to + V-ing 期待', 'I look forward to seeing you.', '我期待見到你。', '⏩'),
+    W('four', 'n.', '四', 'fourth 第四', 'A dog has four legs.', '狗有四條腿。', '🐾'),
+    W('fourteen', 'n.', '十四', '', 'My brother is fourteen.', '我哥哥十四歲。', '🔢'),
+    W('fox', 'n.', '狐狸', '複數 foxes', 'The fox is clever.', '狐狸很聰明。', '🦊'),
+    W('France', 'n.', '法國', '', 'Paris is in France.', '巴黎在法國。', '🇫🇷'),
+    W('frank', 'adj.', '坦白的', 'to be frank 坦白說', 'To be frank, I don\'t agree.', '坦白說，我不同意。', '🗣️'),
+    W('free', 'adj.', '自由的；免費的；有空的', 'for free 免費', 'Are you free tonight?', '你今晚有空嗎？', '🆓'),
+    W('freedom', 'n.', '自由', '', 'Everyone wants freedom.', '每個人都想要自由。', '🗽'),
+    W('freezer', 'n.', '冷凍庫', 'freeze 結冰', 'Put the ice cream in the freezer.', '把冰淇淋放進冷凍庫。', '🧊'),
+    W('French', 'adj./n.', '法國的；法文', 'French fries 薯條', 'I want some French fries.', '我想要一些薯條。', '🍟'),
+    W('fresh', 'adj.', '新鮮的', '', 'These vegetables are fresh.', '這些蔬菜很新鮮。', '🥬'),
+    W('Friday', 'n.', '星期五', '', 'Thank God it\'s Friday!', '感謝老天，星期五了！', '🎉'),
+    W('friend', 'n.', '朋友', 'make friends with 和…交朋友', 'I want to make friends with her.', '我想和她交朋友。', '🧑‍🤝‍🧑'),
+    W('friendly', 'adj.', '友善的', '-ly 結尾但是形容詞', 'The people here are very friendly.', '這裡的人很友善。', '😊'),
+    W('friendship', 'n.', '友誼', '', 'Our friendship is very important to me.', '我們的友誼對我很重要。', '🤝'),
+    W('frighten', 'v.', '使害怕', 'frightened 害怕的', 'The loud noise frightened the baby.', '巨大的聲響嚇到了寶寶。', '😱'),
+    W('Frisbee', 'n.', '飛盤', '', 'Let\'s play Frisbee on the grass.', '我們在草地上玩飛盤吧。', '🥏'),
+    W('frog', 'n.', '青蛙', '', 'A frog jumped into the pond.', '一隻青蛙跳進池塘。', '🐸'),
+    W('front', 'n./adj.', '前面', 'in front of 在…前面', 'There is a tree in front of my house.', '我家前面有一棵樹。', '🔝'),
+    W('fruit', 'n.', '水果', '', 'Eat more fruit and vegetables.', '多吃蔬菜水果。', '🍎'),
+    W('fry', 'v.', '油炸；煎', '過去式 fried；fried chicken 炸雞', 'Mom fried some eggs for breakfast.', '媽媽早餐煎了幾顆蛋。', '🍳'),
+    W('full', 'adj.', '滿的；飽的', 'be full of 充滿', 'I\'m full. I can\'t eat any more.', '我飽了，吃不下了。', '🈵'),
+    W('fun', 'n./adj.', '樂趣；有趣的', 'have fun 玩得開心', 'Have fun at the party!', '派對玩得開心！', '🎈'),
+    W('function', 'n.', '功能', '', 'This phone has many functions.', '這支手機有很多功能。', '⚙️'),
+    W('funny', 'adj.', '好笑的', 'fun 有趣（樂趣）／ funny 好笑', 'The joke is really funny.', '這個笑話真好笑。', '😂'),
+    W('furniture', 'n.', '家具', '不可數；a piece of furniture', 'We bought some new furniture.', '我們買了一些新家具。', '🪑'),
+    W('further', 'adj./adv.', '更進一步的；更遠', 'far 的比較級之一', 'For further information, call us.', '想知道更多資訊，請打給我們。', '➡️'),
+    W('future', 'n.', '未來', 'in the future 將來', 'What do you want to be in the future?', '你將來想做什麼？', '🔮'),
+  ],
+  'focus': [
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('fun / funny', '有趣（好玩）／ 好笑', 'The trip was fun. ／ The clown is funny.'),
+      ('four / fourteen / forty', '四 ／ 十四 ／ 四十（沒有 u）', 'four ／ fourteen ／ forty'),
+      ('friend / friendly / friendship', '朋友 ／ 友善的 ／ 友誼', 'a good friend ／ a friendly dog ／ true friendship'),
+      ('foreign / foreigner', '外國的 ／ 外國人', 'a foreign country ／ a foreigner'),
+      ('forget / forgive', '忘記 ／ 原諒', 'forget his name ／ forgive me'),
+      ('formal / former', '正式的 ／ 以前的', 'a formal letter ／ my former school'),
+    ], 'note': 'furniture 不可數，不能加 s：some furniture ／ a piece of furniture。'},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('in front of', '在…前面', 'in front of the school'),
+      ('look forward to + V-ing', '期待做…', 'look forward to meeting you'),
+      ('have fun', '玩得開心', 'We had a lot of fun.'),
+      ('be full of', '充滿', 'The box is full of toys.'),
+      ('make friends with', '和…交朋友', 'make friends with new classmates'),
+      ('forget to V / forget V-ing', '忘記要做 ／ 忘記做過', 'forget to lock the door ／ forget locking it'),
+    ], 'note': ''},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '家具', 'opts': ['function', 'furniture', 'future', 'further'], 'answer': 1, 'exp': 'furniture 家具。'},
+    {'type': 'mc', 'q': '冷凍庫', 'opts': ['freedom', 'freezer', 'French', 'fresh'], 'answer': 1, 'exp': 'freezer 冷凍庫。'},
+    {'type': 'mc', 'q': '原諒', 'opts': ['forgive', 'forget', 'form', 'frighten'], 'answer': 0, 'exp': 'forgive 原諒。'},
+    {'type': 'mc', 'q': '坦白的', 'opts': ['formal', 'former', 'free', 'frank'], 'answer': 3, 'exp': 'frank 坦白的。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '四十（f＿＿＿＿，5 個字母）：{0}', 'blanks': [['forty']], 'exp': 'forty（沒有 u）。'},
+    {'q': '友誼（f＿＿＿＿＿＿＿＿＿，10 個字母）：{0}', 'blanks': [['friendship']], 'exp': 'friendship。'},
+    {'q': '外國人（f＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['foreigner']], 'exp': 'foreigner（g 不發音）。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'I {0} my umbrella at school yesterday. （忘記，過去式）', 'blanks': [['forgot']], 'exp': 'forget 的過去式 forgot。'},
+    {'q': 'There is a bus stop in {0} of the bank. （前面）', 'blanks': [['front']], 'exp': 'in front of 在…前面。'},
+    {'q': 'The movie was so {0} that we laughed a lot. （好笑的）', 'blanks': [['funny']], 'exp': '好笑用 funny。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'I\'m looking forward to ______ my grandparents.', 'opts': ['visit', 'visiting', 'visited', 'visits'], 'answer': 1, 'exp': 'look forward to + V-ing（to 是介系詞）。'},
+    {'type': 'mc', 'q': 'We bought two pieces of ______ .', 'opts': ['furnitures', 'furniture', 'a furniture', 'furnitured'], 'answer': 1, 'exp': 'furniture 不可數。'},
+    {'type': 'mc', 'q': 'Did you have ______ at the beach?', 'opts': ['funny', 'fun', 'a fun', 'funs'], 'answer': 1, 'exp': 'have fun 玩得開心。'},
+    {'type': 'mc', 'q': 'The bottle is ______ of water.', 'opts': ['fill', 'free', 'full', 'fresh'], 'answer': 2, 'exp': 'be full of 充滿。'},
+  ]},
+]

@@ -1,0 +1,88 @@
+# WORD UP 複習區 Unit 34（WORD UP「P-I」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 34, 'en': 'P-I', 'zh': 'P 開頭（一）',
+  'intro': 'WORD UP「P-I」的 42 個字（pack 到 people）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('pack', 'v./n.', '打包；一包', 'a pack of 一包', 'Did you pack your bag?', '你打包好行李了嗎？', '🎒'),
+    W('package', 'n.', '包裹', '', 'A package came for you today.', '今天有你的包裹。', '📦'),
+    W('page', 'n.', '頁', 'on page 10 在第 10 頁', 'Open your book to page 20.', '把書翻到第 20 頁。', '📄'),
+    W('pain', 'n.', '疼痛', '', 'I have a pain in my back.', '我背痛。', '🤕'),
+    W('painful', 'adj.', '痛苦的；疼痛的', '', 'The shot was painful.', '打針好痛。', '💉'),
+    W('paint', 'v./n.', '油漆；畫（顏料）', 'draw 用筆畫線條', 'They painted the wall blue.', '他們把牆漆成藍色。', '🖌️'),
+    W('painter', 'n.', '畫家；油漆工', '', 'Van Gogh was a famous painter.', '梵谷是有名的畫家。', '👨‍🎨'),
+    W('painting', 'n.', '畫作', '', 'This painting is very old.', '這幅畫非常古老。', '🖼️'),
+    W('pair', 'n.', '一雙；一對', 'a pair of shoes', 'I need a new pair of shoes.', '我需要一雙新鞋。', '👟'),
+    W('pajamas', 'n.', '睡衣', '一定用複數', 'Put on your pajamas.', '穿上睡衣。', '🛌'),
+    W('pale', 'adj.', '蒼白的', '', 'You look pale. Are you OK?', '你臉色好蒼白，還好嗎？', '😶'),
+    W('pan', 'n.', '平底鍋', '', 'Fry the egg in a pan.', '用平底鍋煎蛋。', '🍳'),
+    W('panda', 'n.', '貓熊', '', 'Pandas eat bamboo.', '貓熊吃竹子。', '🐼'),
+    W('pants', 'n.', '褲子', '一定用複數；a pair of pants', 'These pants are too long.', '這條褲子太長了。', '👖'),
+    W('papaya', 'n.', '木瓜', '', 'Papaya milk is popular in Taiwan.', '木瓜牛奶在台灣很受歡迎。', '🥭'),
+    W('paper', 'n.', '紙；報紙；報告', '紙不可數：a piece of paper', 'Give me a piece of paper.', '給我一張紙。', '📃'),
+    W('pardon', 'n./v.', '原諒；再說一次', 'Pardon? 請再說一次', 'Pardon? I didn\'t hear you.', '什麼？我沒聽到。', '🙏'),
+    W('parent', 'n.', '父或母', 'parents 父母', 'My parents are both teachers.', '我爸媽都是老師。', '👪'),
+    W('Paris', 'n.', '巴黎', '', 'The Eiffel Tower is in Paris.', '艾菲爾鐵塔在巴黎。', '🗼'),
+    W('park', 'n./v.', '公園；停車', '', 'You can\'t park here.', '你不能在這裡停車。', '🅿️'),
+    W('parrot', 'n.', '鸚鵡', '', 'The parrot can say "Hello."', '那隻鸚鵡會說「哈囉」。', '🦜'),
+    W('part', 'n.', '部分', 'take part in 參加', 'I took part in the singing contest.', '我參加了歌唱比賽。', '🧩'),
+    W('particular', 'adj.', '特別的；特定的', 'in particular 尤其', 'I like fruit, mangoes in particular.', '我喜歡水果，尤其是芒果。', '🔎'),
+    W('partner', 'n.', '夥伴；搭檔', '', 'Find a partner and practice.', '找個搭檔一起練習。', '🤝'),
+    W('party', 'n.', '派對', 'have a party', 'We\'ll have a party on Saturday.', '我們星期六要開派對。', '🎉'),
+    W('pass', 'v.', '經過；通過；傳遞', 'pass the test 考試及格', 'Please pass me the salt.', '請把鹽遞給我。', '🧂'),
+    W('passenger', 'n.', '乘客', '', 'The bus has thirty passengers.', '公車上有三十位乘客。', '🧳'),
+    W('past', 'n./prep.', '過去；經過', 'half past six 六點半', 'It\'s half past six.', '現在六點半。', '⏪'),
+    W('paste', 'n./v.', '漿糊；貼上', 'copy and paste 複製貼上', 'Copy and paste the text.', '把文字複製貼上。', '📋'),
+    W('path', 'n.', '小徑', '', 'Follow the path to the lake.', '沿著小徑走到湖邊。', '🛤️'),
+    W('patient', 'adj./n.', '有耐心的；病人', 'be patient with', 'Be patient with your little brother.', '對弟弟要有耐心。', '🧘'),
+    W('pattern', 'n.', '圖案；模式', '', 'I like the pattern on your shirt.', '我喜歡你襯衫上的圖案。', '🔷'),
+    W('pause', 'n./v.', '暫停', '', 'Pause the video for a minute.', '把影片暫停一下。', '⏸️'),
+    W('pay', 'v.', '付錢', '三態 pay-paid-paid；pay for 付…的錢', 'I paid 100 dollars for the book.', '我花了一百元買這本書。', '💳'),
+    W('PE', 'n.', '體育（課）', '= physical education', 'We have PE on Tuesday.', '我們星期二有體育課。', '🏃'),
+    W('peace', 'n.', '和平', '', 'Everyone wants peace.', '每個人都想要和平。', '☮️'),
+    W('peaceful', 'adj.', '和平的；寧靜的', '', 'The village is quiet and peaceful.', '這個村莊安靜又寧靜。', '🕊️'),
+    W('peach', 'n.', '桃子', '', 'This peach is sweet and juicy.', '這顆桃子又甜又多汁。', '🍑'),
+    W('pear', 'n.', '梨子', '', 'Would you like a pear?', '你要吃梨子嗎？', '🍐'),
+    W('pen', 'n.', '筆', '', 'May I borrow your pen?', '我可以借你的筆嗎？', '🖊️'),
+    W('pencil', 'n.', '鉛筆', '', 'Write your answers in pencil.', '用鉛筆寫答案。', '✏️'),
+    W('people', 'n.', '人們', 'person 的複數', 'Many people like to go hiking.', '很多人喜歡健行。', '👥'),
+  ],
+  'focus': [
+    {'title': '重點整理', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('take part in', '參加', 'take part in the race'),
+      ('pay for / pay + 錢 + for', '付…的錢', 'pay 50 dollars for lunch'),
+      ('a pair of + 複數名詞', '一雙、一條', 'a pair of pants ／ a pair of glasses'),
+      ('pants / pajamas', '一定用複數', 'My pants are new.'),
+      ('pain / painful', '疼痛（名詞）／ 痛苦的（形容詞）', 'a lot of pain ／ a painful shot'),
+      ('paint / draw', '用顏料畫 ／ 用筆畫線', 'paint a picture ／ draw a line'),
+      ('half past + 幾點', '幾點半', 'half past seven'),
+    ], 'note': 'people 已經是複數，不能說 peoples（指「人們」時）。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '乘客', 'opts': ['partner', 'passenger', 'painter', 'parent'], 'answer': 1, 'exp': 'passenger 乘客。'},
+    {'type': 'mc', 'q': '蒼白的', 'opts': ['pale', 'past', 'path', 'paste'], 'answer': 0, 'exp': 'pale 蒼白的。'},
+    {'type': 'mc', 'q': '圖案', 'opts': ['pattern', 'pause', 'package', 'painting'], 'answer': 0, 'exp': 'pattern 圖案。'},
+    {'type': 'mc', 'q': '鸚鵡', 'opts': ['panda', 'peach', 'pear', 'parrot'], 'answer': 3, 'exp': 'parrot 鸚鵡。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '睡衣（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['pajamas']], 'exp': 'pajamas。'},
+    {'q': '包裹（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['package']], 'exp': 'package。'},
+    {'q': '有耐心的（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['patient']], 'exp': 'patient。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'Dad {0} 500 dollars for the shoes. （付錢，過去式）', 'blanks': [['paid']], 'exp': 'pay 的過去式 paid。'},
+    {'q': 'All the students took {0} in the sports day. （部分）', 'blanks': [['part']], 'exp': 'take part in 參加。'},
+    {'q': 'I bought a {0} of socks. （一雙）', 'blanks': [['pair']], 'exp': 'a pair of 一雙。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'My new pants ______ too tight.', 'opts': ['is', 'are', 'was', 'be'], 'answer': 1, 'exp': 'pants 是複數，用 are。'},
+    {'type': 'mc', 'q': 'Could you ______ me the salt, please?', 'opts': ['pay', 'pack', 'pass', 'park'], 'answer': 2, 'exp': 'pass me the salt 把鹽遞給我。'},
+    {'type': 'mc', 'q': 'There were a lot of ______ at the concert.', 'opts': ['people', 'peoples', 'person', 'a person'], 'answer': 0, 'exp': '人們 people。'},
+    {'type': 'mc', 'q': 'The movie starts at half ______ seven.', 'opts': ['to', 'of', 'at', 'past'], 'answer': 3, 'exp': 'half past seven 七點半。'},
+  ]},
+]

@@ -1,0 +1,92 @@
+# WORD UP 複習區 Unit 18（WORD UP「F-I」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 18, 'en': 'F-I', 'zh': 'F 開頭（一）',
+  'intro': 'WORD UP「F-I」的 39 個字（face 到 fight）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('face', 'n./v.', '臉；面對', 'face the problem 面對問題', 'Wash your face before bed.', '睡前洗臉。', '🙂'),
+    W('fact', 'n.', '事實', 'in fact 事實上', 'In fact, I don\'t like coffee.', '事實上，我不喜歡咖啡。', '📌'),
+    W('factory', 'n.', '工廠', '複數 factories', 'My uncle works in a car factory.', '我叔叔在汽車工廠工作。', '🏭'),
+    W('fail', 'v.', '失敗；不及格', 'fail the test 考試不及格', 'Don\'t give up if you fail.', '失敗了也不要放棄。', '📉'),
+    W('failure', 'n.', '失敗', 'success 成功', 'Failure is the mother of success.', '失敗為成功之母。', '💔'),
+    W('fair', 'adj./n.', '公平的；博覽會', 'unfair 不公平的', 'It\'s not fair!', '這不公平！', '⚖️'),
+    W('fall', 'v./n.', '落下；跌倒；秋天', '三態 fall-fell-fallen', 'Leaves fall in autumn.', '秋天葉子會掉落。', '🍂'),
+    W('false', 'adj.', '錯的；假的', 'true 對的', 'Is this sentence true or false?', '這個句子是對還是錯？', '❎'),
+    W('family', 'n.', '家庭；家人', '複數 families', 'There are four people in my family.', '我家有四個人。', '👨‍👩‍👧‍👦'),
+    W('famous', 'adj.', '有名的', 'be famous for 以…聞名', 'Tainan is famous for its food.', '台南以美食聞名。', '🌟'),
+    W('fan', 'n.', '電扇；粉絲', 'a big fan of 超迷…', 'I\'m a big fan of this singer.', '我超迷這個歌手。', '🪭'),
+    W('fancy', 'adj.', '花俏的；高級的', '', 'We had dinner at a fancy restaurant.', '我們在一家高級餐廳吃晚餐。', '🎀'),
+    W('fantastic', 'adj.', '極好的', '= wonderful', 'The show was fantastic!', '那場表演太棒了！', '🤩'),
+    W('far', 'adj./adv.', '遠的；遠地', 'far from 離…很遠', 'My school is not far from my home.', '我學校離家不遠。', '🛣️'),
+    W('farm', 'n.', '農場', 'on a farm', 'My grandparents live on a farm.', '我爺爺奶奶住在農場。', '🚜'),
+    W('farmer', 'n.', '農夫', '', 'The farmer grows rice and vegetables.', '那位農夫種稻米和蔬菜。', '👨‍🌾'),
+    W('fashionable', 'adj.', '時髦的', 'fashion 時尚', 'She always wears fashionable clothes.', '她總是穿時髦的衣服。', '👠'),
+    W('fast', 'adj./adv.', '快的；快地', 'fast 當副詞不加 -ly', 'He runs very fast.', '他跑得很快。', '⚡'),
+    W('fat', 'adj.', '胖的；肥的', '比較級 fatter', 'My cat is getting fat.', '我的貓越來越胖了。', '🐷'),
+    W('father', 'n.', '父親', '= dad', 'My father is a police officer.', '我爸爸是警察。', '👨'),
+    W('faucet', 'n.', '水龍頭', '', 'Turn off the faucet when you brush your teeth.', '刷牙時要關水龍頭。', '🚰'),
+    W('fault', 'n.', '過錯；責任', 'It\'s my fault. 是我的錯', 'It\'s not your fault.', '這不是你的錯。', '🙇'),
+    W('favor', 'n.', '幫忙；恩惠', 'do me a favor 幫我一個忙', 'Can you do me a favor?', '你可以幫我一個忙嗎？', '🤝'),
+    W('favorite', 'adj./n.', '最喜歡的', '', 'Pizza is my favorite food.', '披薩是我最喜歡的食物。', '❤️'),
+    W('fear', 'n./v.', '害怕；恐懼', '', 'She has a fear of dogs.', '她怕狗。', '😨'),
+    W('February', 'n.', '二月', '', 'Valentine\'s Day is in February.', '情人節在二月。', '💝'),
+    W('fee', 'n.', '費用', 'school fees 學費', 'The entrance fee is 50 dollars.', '入場費是 50 元。', '🎟️'),
+    W('feed', 'v.', '餵', '三態 feed-fed-fed', 'Don\'t forget to feed the fish.', '別忘了餵魚。', '🐟'),
+    W('feel', 'v.', '感覺', '三態 feel-felt-felt；feel + 形容詞', 'I feel tired today.', '我今天覺得很累。', '🤒'),
+    W('fellow', 'n./adj.', '傢伙；同伴的', 'fellow students 同學們', 'He is a nice fellow.', '他是個好人。', '🧑'),
+    W('female', 'adj./n.', '女性的；雌性', 'male 男性的', 'The female lion is hunting.', '母獅子正在狩獵。', '♀️'),
+    W('fence', 'n.', '籬笆；圍牆', '', 'The dog jumped over the fence.', '狗跳過了籬笆。', '🪵'),
+    W('festival', 'n.', '節日；慶典', 'Moon Festival 中秋節', 'The Moon Festival is my favorite festival.', '中秋節是我最喜歡的節日。', '🏮'),
+    W('fever', 'n.', '發燒', 'have a fever', 'I have a fever and a headache.', '我發燒又頭痛。', '🌡️'),
+    W('few', 'adj./pron.', '很少的；一些', '接可數名詞；a few 一些、few 很少', 'I have a few friends in Japan.', '我在日本有幾個朋友。', '🤏'),
+    W('field', 'n.', '田野；運動場；領域', '', 'The cows are eating grass in the field.', '牛在田野吃草。', '🌾'),
+    W('fifteen', 'n.', '十五', '', 'I am fifteen years old.', '我十五歲。', '1️⃣'),
+    W('fifty', 'n.', '五十', 'fifth 第五', 'There are fifty students in the hall.', '禮堂裡有五十個學生。', '5️⃣'),
+    W('fight', 'v./n.', '打架；戰鬥', '三態 fight-fought-fought', 'The two boys had a fight.', '那兩個男孩打了一架。', '🥊'),
+  ],
+  'focus': [
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('fail / failure', '失敗（動詞）／ 失敗（名詞）', 'fail the exam ／ a big failure'),
+      ('few / a few', '很少（幾乎沒有）／ 一些', 'Few people came. ／ A few people came.'),
+      ('fair / fare', '公平的、博覽會 ／ 車資', 'a fair game ／ the bus fare'),
+      ('fee / fare', '費用（學費、入場費）／ 車資', 'school fees ／ taxi fare'),
+      ('female / male', '女性的 ／ 男性的', 'a female doctor ／ a male nurse'),
+      ('feel / fall', '感覺（felt）／ 落下（fell）', 'I felt sick. ／ I fell down.'),
+    ], 'note': 'few 接可數名詞；little 接不可數名詞：a few books ／ a little water。'},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('in fact', '事實上', 'In fact, he is right.'),
+      ('be famous for', '以…聞名', 'famous for its night markets'),
+      ('do + 人 + a favor', '幫某人一個忙', 'Could you do me a favor?'),
+      ('far from', '離…很遠', 'far from the city'),
+      ('have a fever', '發燒', 'She has a high fever.'),
+      ('feel + 形容詞', '覺得…', 'feel happy ／ feel sick'),
+    ], 'note': ''},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '水龍頭', 'opts': ['faucet', 'fault', 'favor', 'fence'], 'answer': 0, 'exp': 'faucet 水龍頭。'},
+    {'type': 'mc', 'q': '時髦的', 'opts': ['fantastic', 'fancy', 'fashionable', 'famous'], 'answer': 2, 'exp': 'fashionable 時髦的。'},
+    {'type': 'mc', 'q': '工廠', 'opts': ['farm', 'factory', 'family', 'field'], 'answer': 1, 'exp': 'factory 工廠。'},
+    {'type': 'mc', 'q': '女性的；雌性', 'opts': ['fellow', 'fever', 'festival', 'female'], 'answer': 3, 'exp': 'female 女性的。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '二月（F＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['February', 'february']], 'exp': 'February（第一個 r 常被漏掉）。'},
+    {'q': '最喜歡的（f＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['favorite']], 'exp': 'favorite。'},
+    {'q': '節日（f＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['festival']], 'exp': 'festival。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'Taiwan is {0} for bubble tea. （有名的）', 'blanks': [['famous']], 'exp': 'be famous for 以…聞名。'},
+    {'q': 'I {0} down and hurt my knee yesterday. （跌倒，過去式）', 'blanks': [['fell']], 'exp': 'fall 的過去式 fell。'},
+    {'q': 'Grandma {0} the chickens every morning. （餵，現在式）', 'blanks': [['feeds']], 'exp': '主詞 Grandma，feed 加 s。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'There are only a ______ cookies left.', 'opts': ['little', 'few', 'lot', 'much'], 'answer': 1, 'exp': 'cookies 可數，用 a few。'},
+    {'type': 'mc', 'q': 'Could you do me a ______ ?', 'opts': ['fact', 'fault', 'favor', 'fear'], 'answer': 2, 'exp': 'do me a favor 幫我一個忙。'},
+    {'type': 'mc', 'q': 'I ______ sick last night, so I went to bed early.', 'opts': ['felt', 'fell', 'feel', 'fall'], 'answer': 0, 'exp': 'feel 的過去式 felt。'},
+    {'type': 'mc', 'q': 'Don\'t blame him. It\'s my ______ .', 'opts': ['favor', 'fact', 'fee', 'fault'], 'answer': 3, 'exp': 'It\'s my fault. 是我的錯。'},
+  ]},
+]

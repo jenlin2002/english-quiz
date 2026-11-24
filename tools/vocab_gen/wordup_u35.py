@@ -1,0 +1,87 @@
+# WORD UP 複習區 Unit 35（WORD UP「P-II」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 35, 'en': 'P-II', 'zh': 'P 開頭（二）',
+  'intro': 'WORD UP「P-II」的 41 個字（pepper 到 pleased）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('pepper', 'n.', '胡椒；辣椒', '', 'Add some salt and pepper.', '加點鹽和胡椒。', '🌶️'),
+    W('perfect', 'adj.', '完美的', '', 'Nobody is perfect.', '沒有人是完美的。', '💯'),
+    W('perhaps', 'adv.', '也許', '= maybe', 'Perhaps he is busy.', '也許他很忙。', '🤔'),
+    W('period', 'n.', '期間；一段時間；句點', '', 'We had a long period of rain.', '我們經歷了很長一段雨季。', '⏳'),
+    W('person', 'n.', '人', '複數 people', 'She is a kind person.', '她是個善良的人。', '🧍'),
+    W('personal', 'adj.', '個人的；私人的', '', 'This is my personal diary.', '這是我的私人日記。', '🔐'),
+    W('pet', 'n.', '寵物', 'keep a pet 養寵物', 'Do you have any pets?', '你有養寵物嗎？', '🐹'),
+    W('Philippines', 'n.', '菲律賓', 'the Philippines', 'Manila is in the Philippines.', '馬尼拉在菲律賓。', '🇵🇭'),
+    W('phone', 'n./v.', '電話；打電話', '', 'Can I use your phone?', '我可以用你的電話嗎？', '📱'),
+    W('photo', 'n.', '照片', '= photograph；複數 photos', 'Let\'s take a photo together.', '我們一起拍張照吧。', '📸'),
+    W('photograph', 'n.', '照片', '', 'This photograph was taken in 1990.', '這張照片是 1990 年拍的。', '🖼️'),
+    W('photographer', 'n.', '攝影師', '', 'The photographer took pictures of the wedding.', '攝影師拍了婚禮的照片。', '📷'),
+    W('physics', 'n.', '物理', '單數', 'Physics is hard but interesting.', '物理很難但很有趣。', '⚛️'),
+    W('pick', 'v.', '挑選；摘', 'pick up 撿起、接人', 'Mom will pick me up after school.', '媽媽放學會來接我。', '🫴'),
+    W('picnic', 'n.', '野餐', 'have a picnic', 'Let\'s have a picnic in the park.', '我們去公園野餐吧。', '🧺'),
+    W('picture', 'n.', '圖片；照片', 'take a picture 拍照', 'Draw a picture of your family.', '畫一張你家人的圖。', '🖼️'),
+    W('pie', 'n.', '派', '', 'Grandma baked an apple pie.', '奶奶烤了一個蘋果派。', '🥧'),
+    W('piece', 'n.', '一片；一塊', 'a piece of + 不可數名詞', 'Can I have a piece of cake?', '我可以吃一塊蛋糕嗎？', '🍰'),
+    W('pig', 'n.', '豬', '', 'The pig is rolling in the mud.', '豬在泥巴裡打滾。', '🐷'),
+    W('pigeon', 'n.', '鴿子', '', 'Pigeons are walking in the square.', '鴿子在廣場上走來走去。', '🕊️'),
+    W('pile', 'n.', '一堆', 'a pile of', 'There is a pile of books on the desk.', '桌上有一堆書。', '📚'),
+    W('pillow', 'n.', '枕頭', '', 'I need a soft pillow.', '我需要一個軟枕頭。', '🛏️'),
+    W('pin', 'n.', '別針；大頭針', '', 'She wore a pin on her coat.', '她外套上別了一個胸針。', '📌'),
+    W('pineapple', 'n.', '鳳梨', '', 'Pineapple cakes are famous in Taiwan.', '鳳梨酥在台灣很有名。', '🍍'),
+    W('pink', 'adj./n.', '粉紅色的', '', 'She has a pink bag.', '她有一個粉紅色包包。', '🩷'),
+    W('pipe', 'n.', '管子；煙斗', '', 'Water runs through the pipe.', '水流過管子。', '🪈'),
+    W('pizza', 'n.', '披薩', '', 'Let\'s order a pizza.', '我們點個披薩吧。', '🍕'),
+    W('place', 'n./v.', '地方；放置', 'take place 舉行、發生', 'The concert will take place in the park.', '音樂會將在公園舉行。', '📍'),
+    W('plain', 'adj./n.', '簡單的；樸素的；平原', '', 'She wore a plain white T-shirt.', '她穿一件素色白 T 恤。', '⬜'),
+    W('plan', 'n./v.', '計畫', '過去式 planned；plan to V', 'What are your plans for the weekend?', '你週末有什麼計畫？', '🗓️'),
+    W('plane', 'n.', '飛機', 'by plane', 'We went to Japan by plane.', '我們搭飛機去日本。', '✈️'),
+    W('planet', 'n.', '行星', '', 'Earth is our planet.', '地球是我們的星球。', '🪐'),
+    W('plant', 'n./v.', '植物；種植', '', 'Water the plants every day.', '每天幫植物澆水。', '🪴'),
+    W('plate', 'n.', '盤子', '', 'Put the food on the plate.', '把食物放在盤子上。', '🍽️'),
+    W('platform', 'n.', '月台；平台', '', 'The train is at Platform 2.', '火車在第二月台。', '🚉'),
+    W('play', 'v./n.', '玩；演奏；戲劇', 'play + 球類／play the + 樂器', 'Let\'s play basketball.', '我們去打籃球吧。', '🎲'),
+    W('player', 'n.', '選手；播放器', '', 'He is the best player on the team.', '他是隊上最好的球員。', '🏅'),
+    W('playground', 'n.', '遊樂場；操場', '', 'The kids are on the playground.', '孩子們在操場上。', '🛝'),
+    W('pleasant', 'adj.', '令人愉快的', '', 'We had a pleasant trip.', '我們的旅行很愉快。', '😊'),
+    W('please', 'adv./v.', '請；使高興', '', 'Please be quiet.', '請安靜。', '🙏'),
+    W('pleased', 'adj.', '（人）高興的；滿意的', 'be pleased with', 'Mom was pleased with my grades.', '媽媽對我的成績很滿意。', '😌'),
+  ],
+  'focus': [
+    {'title': '重點整理', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('pick up', '撿起；接（人）', 'pick up the trash ／ pick me up'),
+      ('take place', '舉行；發生', 'The game takes place on Friday.'),
+      ('a piece of / a pile of', '一片 ／ 一堆', 'a piece of paper ／ a pile of clothes'),
+      ('plan to V', '計畫做…', 'plan to travel'),
+      ('pleasant / pleased', '令人愉快的 ／ 人感到高興的', 'a pleasant day ／ I\'m pleased.'),
+      ('plane / planet / plant', '飛機 ／ 行星 ／ 植物', 'by plane ／ the planet ／ a plant'),
+      ('have a picnic', '野餐', 'have a picnic by the river'),
+    ], 'note': 'person 的複數是 people；physics 雖然有 s，但當單數用。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '攝影師', 'opts': ['photograph', 'photographer', 'physics', 'player'], 'answer': 1, 'exp': 'photographer 攝影師。'},
+    {'type': 'mc', 'q': '月台', 'opts': ['platform', 'planet', 'plate', 'playground'], 'answer': 0, 'exp': 'platform 月台。'},
+    {'type': 'mc', 'q': '枕頭', 'opts': ['pile', 'pipe', 'pillow', 'pigeon'], 'answer': 2, 'exp': 'pillow 枕頭。'},
+    {'type': 'mc', 'q': '個人的', 'opts': ['perfect', 'person', 'period', 'personal'], 'answer': 3, 'exp': 'personal 個人的。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '鳳梨（p＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['pineapple']], 'exp': 'pineapple。'},
+    {'q': '野餐（p＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['picnic']], 'exp': 'picnic。'},
+    {'q': '完美的（p＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['perfect']], 'exp': 'perfect。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'Dad will {0} me up at the station. （接）', 'blanks': [['pick']], 'exp': 'pick up 接人。'},
+    {'q': 'The teacher was {0} with our work. （滿意的）', 'blanks': [['pleased']], 'exp': 'be pleased with 對…滿意。'},
+    {'q': 'Can I have a {0} of paper? （一張）', 'blanks': [['piece']], 'exp': 'a piece of paper 一張紙。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'We are planning ______ to Kenting this summer.', 'opts': ['go', 'to go', 'going', 'went'], 'answer': 1, 'exp': 'plan to V 計畫做…。'},
+    {'type': 'mc', 'q': 'The school fair will take ______ next Saturday.', 'opts': ['part', 'care', 'place', 'pictures'], 'answer': 2, 'exp': 'take place 舉行。'},
+    {'type': 'mc', 'q': 'It was a ______ afternoon. The sun was warm.', 'opts': ['pleasant', 'pleased', 'please', 'pleasure'], 'answer': 0, 'exp': '令人愉快的 pleasant。'},
+    {'type': 'mc', 'q': 'Mars is a ______ .', 'opts': ['plane', 'plant', 'plate', 'planet'], 'answer': 3, 'exp': '火星是行星 planet。'},
+  ]},
+]
