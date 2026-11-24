@@ -1,0 +1,90 @@
+# WORD UP 複習區 Unit 8（WORD UP「C-I」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 8, 'en': 'C-I', 'zh': 'C 開頭（一）',
+  'intro': 'WORD UP「C-I」的 38 個字（cabbage 到 cause）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('cabbage', 'n.', '高麗菜', '', 'Grandma grows cabbage in her garden.', '奶奶在菜園種高麗菜。', '🥬'),
+    W('cabinet', 'n.', '櫥櫃', '', 'The cups are in the kitchen cabinet.', '杯子在廚房的櫥櫃裡。', '🗄️'),
+    W('cable', 'n.', '電纜；纜線', 'cable car 纜車', 'We took a cable car up the mountain.', '我們搭纜車上山。', '🚡'),
+    W('cafeteria', 'n.', '自助餐廳；學生餐廳', '', 'We eat lunch in the school cafeteria.', '我們在學校餐廳吃午餐。', '🍱'),
+    W('cage', 'n.', '籠子', '', 'The bird is singing in its cage.', '那隻鳥在籠子裡唱歌。', '🐦'),
+    W('cake', 'n.', '蛋糕', 'a piece of cake 小事一樁', 'This test is a piece of cake.', '這個考試很簡單。', '🍰'),
+    W('calendar', 'n.', '日曆', '', 'Mark the date on the calendar.', '把日期標在日曆上。', '📅'),
+    W('call', 'v./n.', '打電話；叫；稱呼', 'call + 人 + 名字', 'Please call me Ben.', '請叫我 Ben。', '📞'),
+    W('calm', 'adj./v.', '冷靜的；使平靜', 'calm down 冷靜下來；l 不發音', 'Calm down and listen to me.', '冷靜下來聽我說。', '😌'),
+    W('camera', 'n.', '相機', '', 'Don\'t forget to bring your camera.', '別忘了帶相機。', '📷'),
+    W('camp', 'n./v.', '營地；露營', 'go camping 去露營', 'We went camping by the lake.', '我們去湖邊露營。', '🏕️'),
+    W('campus', 'n.', '校園', 'on campus 在校園裡', 'The college has a beautiful campus.', '那所大學有漂亮的校園。', '🏫'),
+    W('can', 'aux./n.', '能夠；罐頭', 'can + 原形動詞', 'Can you swim?', '你會游泳嗎？', '🥫'),
+    W('Canada', 'n.', '加拿大', '', 'Canada is very cold in winter.', '加拿大冬天很冷。', '🇨🇦'),
+    W('Canadian', 'adj./n.', '加拿大的；加拿大人', '', 'My pen pal is Canadian.', '我的筆友是加拿大人。', '🍁'),
+    W('cancel', 'v.', '取消', '', 'The game was canceled because of the rain.', '比賽因為下雨取消了。', '❌'),
+    W('cancer', 'n.', '癌症', '', 'Smoking can cause cancer.', '抽菸會導致癌症。', '🎗️'),
+    W('candle', 'n.', '蠟燭', '', 'There are twelve candles on the cake.', '蛋糕上有十二根蠟燭。', '🕯️'),
+    W('candy', 'n.', '糖果', '複數 candies', 'Too much candy is bad for your teeth.', '吃太多糖果對牙齒不好。', '🍬'),
+    W('cap', 'n.', '（無邊／有帽舌的）帽子', 'hat 有邊的帽子', 'He wears a baseball cap.', '他戴棒球帽。', '🧢'),
+    W('captain', 'n.', '隊長；船長；機長', '', 'Who is the captain of your team?', '誰是你們隊的隊長？', '👨‍✈️'),
+    W('car', 'n.', '汽車', 'by car 開車、搭車', 'We went to Taichung by car.', '我們開車去台中。', '🚗'),
+    W('card', 'n.', '卡片', 'birthday card 生日卡', 'I made a card for Mom.', '我做了一張卡片給媽媽。', '💌'),
+    W('care', 'v./n.', '在乎；照顧', 'take care of 照顧／care about 在乎', 'I don\'t care what others think.', '我不在乎別人怎麼想。', '🤗'),
+    W('career', 'n.', '職業；生涯', '', 'She wants a career in science.', '她想從事科學方面的工作。', '🧑‍🔬'),
+    W('careful', 'adj.', '小心的', 'be careful with + 東西', 'Be careful! The floor is wet.', '小心！地板是濕的。', '⚠️'),
+    W('careless', 'adj.', '粗心的', '', 'I made a careless mistake on the test.', '我考試時犯了粗心的錯。', '🙈'),
+    W('carpet', 'n.', '地毯', '', 'The cat is sleeping on the carpet.', '貓在地毯上睡覺。', '🟥'),
+    W('carrot', 'n.', '紅蘿蔔', '', 'Rabbits like carrots.', '兔子喜歡紅蘿蔔。', '🥕'),
+    W('carry', 'v.', '攜帶；搬', '過去式 carried', 'Can you help me carry this box?', '你可以幫我搬這個箱子嗎？', '🏋️'),
+    W('cartoon', 'n.', '卡通；漫畫', '', 'My little sister loves cartoons.', '我妹妹很愛看卡通。', '📺'),
+    W('case', 'n.', '情況；案件；盒子', 'in case of 萬一', 'In that case, we will stay home.', '那樣的話，我們就待在家。', '💼'),
+    W('cash', 'n.', '現金', 'pay in cash 付現', 'Can I pay in cash?', '我可以付現金嗎？', '💵'),
+    W('cassette', 'n.', '卡帶；錄音帶', '', 'Grandpa still listens to cassettes.', '爺爺還在聽卡帶。', '📼'),
+    W('castle', 'n.', '城堡', 't 不發音', 'The princess lives in a castle.', '公主住在城堡裡。', '🏰'),
+    W('cat', 'n.', '貓', '', 'Our cat likes to sleep in the sun.', '我們的貓喜歡曬太陽睡覺。', '🐈'),
+    W('catch', 'v.', '抓住；趕上；感染', '三態 catch-caught-caught', 'Hurry up! We can still catch the bus.', '快點！我們還趕得上公車。', '🧤'),
+    W('cause', 'v./n.', '造成；原因', 'cause + 結果', 'Heavy rain caused the flood.', '大雨造成了水災。', '🌧️'),
+  ],
+  'focus': [
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('take care of', '照顧', 'take care of my little brother'),
+      ('care about', '在乎、關心', 'care about the earth'),
+      ('calm down', '冷靜下來', 'Calm down, please.'),
+      ('go camping', '去露營', 'go camping in the mountains'),
+      ('pay in cash', '付現金', 'pay in cash at the store'),
+      ('a piece of cake', '小事一樁、很簡單', 'The quiz was a piece of cake.'),
+    ], 'note': 'catch a cold 感冒；catch the bus 趕上公車。'},
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('careful / careless', '小心的 ／ 粗心的', 'a careful driver ／ a careless mistake'),
+      ('cap / hat', '有帽舌或無邊的帽子 ／ 有一圈帽緣的帽子', 'a baseball cap ／ a sun hat'),
+      ('Canada / Canadian', '加拿大 ／ 加拿大的、加拿大人', 'live in Canada ／ a Canadian'),
+      ('cancel / cancer', '取消 ／ 癌症', 'cancel the trip ／ fight cancer'),
+      ('cable / cabinet', '纜線 ／ 櫥櫃', 'a cable car ／ a kitchen cabinet'),
+    ], 'note': ''},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '日曆', 'opts': ['camera', 'calendar', 'cabinet', 'career'], 'answer': 1, 'exp': 'calendar 日曆。'},
+    {'type': 'mc', 'q': '取消', 'opts': ['cancer', 'candle', 'cancel', 'castle'], 'answer': 2, 'exp': 'cancel 取消。'},
+    {'type': 'mc', 'q': '校園', 'opts': ['campus', 'camp', 'cartoon', 'carpet'], 'answer': 0, 'exp': 'campus 校園。'},
+    {'type': 'mc', 'q': '高麗菜', 'opts': ['carrot', 'cake', 'candy', 'cabbage'], 'answer': 3, 'exp': 'cabbage 高麗菜。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '城堡（c＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['castle']], 'exp': 'castle（t 不發音）。'},
+    {'q': '隊長（c＿＿＿＿＿＿，7 個字母）：{0}', 'blanks': [['captain']], 'exp': 'captain。'},
+    {'q': '粗心的（c＿＿＿＿＿＿＿，8 個字母）：{0}', 'blanks': [['careless']], 'exp': 'careless。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'The police {0} the thief last night. （抓住，過去式）', 'blanks': [['caught']], 'exp': 'catch 的過去式 caught。'},
+    {'q': 'Please {0} down. Everything will be OK. （冷靜）', 'blanks': [['calm']], 'exp': 'calm down 冷靜下來。'},
+    {'q': 'Who will take {0} of your dog during the trip? （照顧）', 'blanks': [['care']], 'exp': 'take care of 照顧。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'Be ______ when you cross the street.', 'opts': ['careless', 'careful', 'carefully', 'care'], 'answer': 1, 'exp': 'Be + 形容詞：be careful 小心。'},
+    {'type': 'mc', 'q': 'The typhoon ______ a lot of damage.', 'opts': ['carried', 'canceled', 'caused', 'called'], 'answer': 2, 'exp': 'cause damage 造成損害。'},
+    {'type': 'mc', 'q': 'We are going ______ this weekend.', 'opts': ['camp', 'to camp', 'camps', 'camping'], 'answer': 3, 'exp': 'go camping 去露營。'},
+    {'type': 'mc', 'q': 'Do you want to pay by card or ______ cash?', 'opts': ['in', 'on', 'at', 'by'], 'answer': 0, 'exp': 'pay in cash 付現。'},
+  ]},
+]

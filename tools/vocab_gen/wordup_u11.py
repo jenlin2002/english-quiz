@@ -1,0 +1,90 @@
+# WORD UP 複習區 Unit 11（WORD UP「C-IV」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 11, 'en': 'C-IV', 'zh': 'C 開頭（四）',
+  'intro': 'WORD UP「C-IV」的 38 個字（collection 到 cost）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('collection', 'n.', '收藏品；收集', 'collect 的名詞', 'He has a large collection of comics.', '他收藏了很多漫畫。', '🗃️'),
+    W('college', 'n.', '大學；學院', 'go to college 上大學', 'My sister is in college now.', '我姊姊現在讀大學。', '🎓'),
+    W('color', 'n.', '顏色', 'What color…? 什麼顏色', 'What color is your bag?', '你的包包是什麼顏色？', '🌈'),
+    W('colorful', 'adj.', '色彩鮮豔的', '', 'The garden is full of colorful flowers.', '花園裡都是五顏六色的花。', '🎨'),
+    W('comb', 'n./v.', '梳子；梳', 'b 不發音', 'Comb your hair before you go out.', '出門前梳一下頭髮。', '🪮'),
+    W('come', 'v.', '來', '三態 come-came-come', 'Come here, please.', '請過來。', '👋'),
+    W('comfortable', 'adj.', '舒服的', 'uncomfortable 不舒服的', 'This sofa is very comfortable.', '這張沙發很舒服。', '🛋️'),
+    W('command', 'n./v.', '命令；指揮', '', 'The dog follows my commands.', '那隻狗會聽我的指令。', '🫡'),
+    W('comment', 'n./v.', '評論；意見', 'make a comment on…', 'Please leave a comment below.', '請在下面留言。', '💬'),
+    W('common', 'adj.', '常見的；共同的', 'have…in common 有共同點', 'Chen is a common last name in Taiwan.', '陳是台灣常見的姓。', '👥'),
+    W('company', 'n.', '公司；陪伴', '', 'My dad works for a big company.', '我爸爸在一家大公司上班。', '🏢'),
+    W('compare', 'v.', '比較', 'compare A with B', 'Don\'t compare yourself with others.', '不要拿自己跟別人比。', '⚖️'),
+    W('complain', 'v.', '抱怨', 'complain about + 事', 'Stop complaining about the food.', '不要再抱怨食物了。', '😒'),
+    W('complete', 'v./adj.', '完成；完整的', '', 'Please complete the form.', '請填完這張表格。', '✅'),
+    W('computer', 'n.', '電腦', '', 'I use the computer to do my homework.', '我用電腦寫功課。', '💻'),
+    W('concern', 'n./v.', '關心；擔心；與…有關', 'be concerned about 擔心', 'Thank you for your concern.', '謝謝你的關心。', '🫶'),
+    W('confident', 'adj.', '有自信的', 'be confident of／about', 'She is confident about the test.', '她對考試很有信心。', '😎'),
+    W('confirm', 'v.', '確認', '', 'Please call to confirm your order.', '請打電話確認你的訂單。', '📞'),
+    W('conflict', 'n.', '衝突', '', 'They solved the conflict by talking.', '他們透過談話解決了衝突。', '⚡'),
+    W('Confucius', 'n.', '孔子', 'Teachers\' Day 教師節是孔子誕辰', 'Confucius was a great teacher.', '孔子是一位偉大的老師。', '📜'),
+    W('confuse', 'v.', '使困惑', 'confused 感到困惑的', 'The question confused me.', '這個問題把我搞糊塗了。', '😵'),
+    W('congratulation', 'n.', '恭喜', '常用複數 Congratulations!', 'Congratulations on your new job!', '恭喜你找到新工作！', '🎊'),
+    W('consider', 'v.', '考慮；認為', 'consider + V-ing', 'I\'m considering learning Japanese.', '我在考慮學日文。', '🤔'),
+    W('contact', 'v./n.', '聯絡；接觸', 'contact + 人（不加 with）', 'Please contact me by email.', '請用電子郵件跟我聯絡。', '📧'),
+    W('contain', 'v.', '包含；裝有', '', 'This drink contains a lot of sugar.', '這杯飲料含很多糖。', '🫙'),
+    W('continue', 'v.', '繼續', 'continue + to V／V-ing', 'Let\'s continue our lesson.', '我們繼續上課吧。', '▶️'),
+    W('contract', 'n.', '合約', 'sign a contract 簽約', 'The player signed a new contract.', '那位球員簽了新合約。', '📄'),
+    W('control', 'v./n.', '控制', '過去式 controlled；remote control 遙控器', 'Try to control your temper.', '試著控制你的脾氣。', '🎮'),
+    W('convenient', 'adj.', '方便的', 'convenience store 便利商店', 'Is Friday convenient for you?', '星期五你方便嗎？', '🏪'),
+    W('conversation', 'n.', '對話；談話', 'have a conversation with + 人', 'I had a long conversation with my teacher.', '我和老師談了很久。', '🗨️'),
+    W('cook', 'v./n.', '煮；廚師', 'cooker 是爐具，不是廚師', 'My dad is a good cook.', '我爸爸很會做菜。', '🧑‍🍳'),
+    W('cookie', 'n.', '餅乾', '', 'Grandma baked some cookies for us.', '奶奶幫我們烤了一些餅乾。', '🍪'),
+    W('cool', 'adj.', '涼爽的；很酷的', '', 'It\'s cool in autumn.', '秋天很涼爽。', '😎'),
+    W('copy', 'v./n.', '抄寫；複製；一本／一份', '過去式 copied', 'Don\'t copy your classmate\'s homework.', '不要抄同學的作業。', '📑'),
+    W('corn', 'n.', '玉米', '', 'We had grilled corn at the night market.', '我們在夜市吃了烤玉米。', '🌽'),
+    W('corner', 'n.', '角落；轉角', 'at the corner 在轉角', 'The store is at the corner of the street.', '那家店在街角。', '📐'),
+    W('correct', 'adj./v.', '正確的；改正', '= right', 'Your answer is correct.', '你的答案是對的。', '✔️'),
+    W('cost', 'v./n.', '花費；費用', '三態都是 cost；物 + cost + 人 + 錢', 'The book cost me 300 dollars.', '這本書花了我 300 元。', '💲'),
+  ],
+  'focus': [
+    {'title': '常考句型', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('物 + cost + (人) + 錢', '某物花了（某人）多少錢', 'The shoes cost (me) 900 dollars.'),
+      ('compare A with B', '拿 A 和 B 比較', 'compare this bag with that one'),
+      ('complain about', '抱怨…', 'complain about the noise'),
+      ('Congratulations on…', '恭喜…', 'Congratulations on winning!'),
+      ('consider + V-ing', '考慮做…', 'consider moving'),
+      ('have a conversation with', '和…談話', 'have a conversation with Tom'),
+    ], 'note': 'cost 的主詞是「東西」；spend 的主詞是「人」：I spent 300 dollars on the book.'},
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('collect / collection', '收集（動詞）／ 收藏品（名詞）', 'collect stamps ／ a stamp collection'),
+      ('confuse / confused / confusing', '使困惑 ／ 人感到困惑 ／ 事情令人困惑', 'I\'m confused. ／ The map is confusing.'),
+      ('cook / cooker', '廚師、煮 ／ 爐具', 'a good cook ／ a rice cooker'),
+      ('comfortable / convenient', '舒服的 ／ 方便的', 'a comfortable bed ／ a convenient store'),
+      ('college / company', '大學 ／ 公司', 'go to college ／ work for a company'),
+    ], 'note': ''},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '抱怨', 'opts': ['compare', 'complain', 'complete', 'contain'], 'answer': 1, 'exp': 'complain 抱怨。'},
+    {'type': 'mc', 'q': '方便的', 'opts': ['comfortable', 'confident', 'convenient', 'common'], 'answer': 2, 'exp': 'convenient 方便的。'},
+    {'type': 'mc', 'q': '衝突', 'opts': ['conflict', 'contract', 'contact', 'control'], 'answer': 0, 'exp': 'conflict 衝突。'},
+    {'type': 'mc', 'q': '確認', 'opts': ['confuse', 'consider', 'continue', 'confirm'], 'answer': 3, 'exp': 'confirm 確認。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '舒服的（c＿＿＿＿＿＿＿＿＿＿，11 個字母）：{0}', 'blanks': [['comfortable']], 'exp': 'comfortable。'},
+    {'q': '對話（c＿＿＿＿＿＿＿＿＿＿＿，12 個字母）：{0}', 'blanks': [['conversation']], 'exp': 'conversation。'},
+    {'q': '轉角（c＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['corner']], 'exp': 'corner。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': '{0} on winning the first prize! （恭喜）', 'blanks': [['Congratulations', 'congratulations']], 'exp': 'Congratulations on… 恭喜…。'},
+    {'q': 'This T-shirt {0} me 250 dollars last week. （花費，過去式）', 'blanks': [['cost']], 'exp': 'cost 的過去式還是 cost。'},
+    {'q': 'Please {0} me if you have any questions. （聯絡）', 'blanks': [['contact']], 'exp': 'contact + 人，不加 with。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'The math question was so ______ that nobody could answer it.', 'opts': ['confused', 'confusing', 'confuse', 'confident'], 'answer': 1, 'exp': '事情令人困惑用 confusing。'},
+    {'type': 'mc', 'q': 'My uncle is considering ______ a new car.', 'opts': ['buy', 'to buy', 'buying', 'bought'], 'answer': 2, 'exp': 'consider + V-ing。'},
+    {'type': 'mc', 'q': 'Don\'t ______ your grades with your brother\'s.', 'opts': ['compare', 'complain', 'complete', 'contain'], 'answer': 0, 'exp': 'compare A with B 比較。'},
+    {'type': 'mc', 'q': 'Amy and Joy have a lot in ______ . They both love music.', 'opts': ['comment', 'company', 'control', 'common'], 'answer': 3, 'exp': 'have…in common 有共同點。'},
+  ]},
+]

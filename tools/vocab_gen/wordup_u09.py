@@ -1,0 +1,90 @@
+# WORD UP 複習區 Unit 9（WORD UP「C-II」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 9, 'en': 'C-II', 'zh': 'C 開頭（二）',
+  'intro': 'WORD UP「C-II」的 38 個字（CD 到 China）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('CD', 'n.', '光碟；CD', '= compact disc', 'Dad still keeps his old CDs.', '爸爸還留著他的舊 CD。', '💿'),
+    W('ceiling', 'n.', '天花板', 'floor 地板', 'There is a fan on the ceiling.', '天花板上有一台電扇。', '🏠'),
+    W('celebrate', 'v.', '慶祝', '名詞 celebration', 'We celebrated Grandma\'s birthday at home.', '我們在家幫奶奶慶生。', '🎉'),
+    W('cell phone', 'n.', '手機', '= mobile phone', 'Please turn off your cell phone in class.', '上課請關手機。', '📱'),
+    W('cent', 'n.', '分（貨幣單位）', '100 cents = 1 dollar', 'This pencil costs fifty cents.', '這枝鉛筆五毛錢。', '🪙'),
+    W('center', 'n.', '中心', 'in the center of', 'There is a fountain in the center of the park.', '公園中央有一座噴水池。', '🎯'),
+    W('centimeter', 'n.', '公分', '縮寫 cm', 'The ruler is thirty centimeters long.', '這把尺三十公分長。', '📏'),
+    W('central', 'adj.', '中央的；主要的', 'center 的形容詞', 'Taichung is in central Taiwan.', '台中在台灣中部。', '📍'),
+    W('century', 'n.', '世紀；一百年', '複數 centuries', 'This temple is over a century old.', '這座廟有一百多年歷史。', '🏛️'),
+    W('cereal', 'n.', '穀片；穀類', '', 'I eat cereal with milk for breakfast.', '我早餐吃穀片加牛奶。', '🥣'),
+    W('certain', 'adj.', '確定的；某個', 'be certain that… 確定…', 'Are you certain about the answer?', '你確定答案嗎？', '✔️'),
+    W('certainly', 'adv.', '當然；確實', '= of course', 'Can you help me? — Certainly!', '你能幫我嗎？——當然！', '👌'),
+    W('chair', 'n.', '椅子', '', 'Please sit on the chair.', '請坐在椅子上。', '🪑'),
+    W('chairman', 'n.', '主席；董事長', '', 'The chairman opened the meeting.', '主席宣布會議開始。', '🧑‍⚖️'),
+    W('chalk', 'n.', '粉筆', '不可數；a piece of chalk；l 不發音', 'The teacher needs a piece of chalk.', '老師需要一支粉筆。', '🖍️'),
+    W('chance', 'n.', '機會', 'have a chance to V', 'Give me another chance, please.', '請再給我一次機會。', '🍀'),
+    W('change', 'v./n.', '改變；零錢', 'Keep the change. 不用找了', 'You have changed a lot.', '你變了好多。', '🔄'),
+    W('channel', 'n.', '頻道', '', 'Which channel is the game on?', '比賽在哪一台？', '📺'),
+    W('chapter', 'n.', '（書的）章', '', 'Please read Chapter 3 tonight.', '今晚請讀第三章。', '📖'),
+    W('character', 'n.', '角色；性格；（中文）字', '', 'Who is your favorite character in the movie?', '電影裡你最喜歡哪個角色？', '🦸'),
+    W('charge', 'v./n.', '收費；充電；費用', 'free of charge 免費', 'I need to charge my phone.', '我需要幫手機充電。', '🔌'),
+    W('chart', 'n.', '圖表', '', 'Look at the chart on page 10.', '看第 10 頁的圖表。', '📊'),
+    W('chase', 'v.', '追趕', '', 'The dog chased the cat up the tree.', '狗把貓追到樹上。', '🏃'),
+    W('cheap', 'adj.', '便宜的', 'expensive 貴的', 'These shoes are cheap but nice.', '這雙鞋便宜又好看。', '🏷️'),
+    W('cheat', 'v.', '作弊；欺騙', 'cheat on a test 考試作弊', 'Never cheat on a test.', '考試絕對不要作弊。', '🙊'),
+    W('check', 'v./n.', '檢查；支票；帳單', 'check the answers 檢查答案', 'Check your answers before you hand in the test.', '交卷前檢查你的答案。', '☑️'),
+    W('cheer', 'v.', '歡呼；鼓勵', 'cheer up 振作起來', 'Cheer up! You can do better next time.', '振作起來！下次可以做得更好。', '📣'),
+    W('cheese', 'n.', '起司', '不可數', 'I like cheese on my pizza.', '我喜歡披薩上有起司。', '🧀'),
+    W('chemical', 'adj./n.', '化學的；化學物質', '', 'Don\'t touch those chemicals.', '不要碰那些化學藥品。', '🧪'),
+    W('chess', 'n.', '西洋棋', 'play chess', 'Grandpa taught me to play chess.', '爺爺教我下西洋棋。', '♟️'),
+    W('chicken', 'n.', '雞；雞肉', '', 'We had fried chicken for dinner.', '我們晚餐吃炸雞。', '🍗'),
+    W('chief', 'adj./n.', '主要的；首領', '', 'The chief cook is very busy.', '主廚很忙。', '👨‍🍳'),
+    W('child', 'n.', '小孩', '複數 children', 'Every child loves stories.', '每個小孩都喜歡故事。', '🧒'),
+    W('childhood', 'n.', '童年', '', 'I had a happy childhood.', '我有個快樂的童年。', '🧸'),
+    W('childish', 'adj.', '幼稚的', '負面', 'Stop being so childish!', '別那麼幼稚！', '😝'),
+    W('childlike', 'adj.', '天真的；像孩子般的', '正面', 'Grandpa has a childlike smile.', '爺爺有像孩子般天真的笑容。', '😊'),
+    W('chin', 'n.', '下巴', '', 'He rested his chin on his hand.', '他用手托著下巴。', '🤔'),
+    W('China', 'n.', '中國', 'china 小寫是瓷器', 'The Great Wall is in China.', '長城在中國。', '🧱'),
+  ],
+  'focus': [
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('childish / childlike', '幼稚的（負面）／ 天真的（正面）', 'childish behavior ／ a childlike heart'),
+      ('cheap / expensive', '便宜的 ／ 貴的', 'a cheap toy ／ an expensive car'),
+      ('center / central', '中心（名詞）／ 中央的（形容詞）', 'the center of the city ／ central Taiwan'),
+      ('certain / certainly', '確定的（形容詞）／ 當然（副詞）', 'I\'m certain. ／ Certainly!'),
+      ('cheat / cheer', '作弊 ／ 歡呼', 'cheat on a test ／ cheer for the team'),
+    ], 'note': ''},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('cheer up', '振作起來', 'Cheer up!'),
+      ('cheer for + 人／隊', '替…加油', 'cheer for our team'),
+      ('have a chance to V', '有機會做…', 'have a chance to travel'),
+      ('in the center of', '在…的中央', 'in the center of the room'),
+      ('free of charge', '免費', 'The museum is free of charge.'),
+      ('a piece of chalk', '一支粉筆', 'two pieces of chalk'),
+    ], 'note': 'child 的複數是 children，不是 childs。'},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '天花板', 'opts': ['chapter', 'ceiling', 'channel', 'chalk'], 'answer': 1, 'exp': 'ceiling 天花板。'},
+    {'type': 'mc', 'q': '童年', 'opts': ['childish', 'childlike', 'childhood', 'children'], 'answer': 2, 'exp': 'childhood 童年。'},
+    {'type': 'mc', 'q': '世紀', 'opts': ['century', 'center', 'central', 'certain'], 'answer': 0, 'exp': 'century 世紀。'},
+    {'type': 'mc', 'q': '追趕', 'opts': ['charge', 'check', 'cheat', 'chase'], 'answer': 3, 'exp': 'chase 追趕。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '慶祝（c＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['celebrate']], 'exp': 'celebrate。'},
+    {'q': '角色（c＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['character']], 'exp': 'character。'},
+    {'q': '機會（c＿＿＿＿＿，6 個字母）：{0}', 'blanks': [['chance']], 'exp': 'chance。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'Don\'t be sad. {0} up! （振作）', 'blanks': [['Cheer', 'cheer']], 'exp': 'cheer up 振作起來。'},
+    {'q': 'My phone is dead. I need to {0} it. （充電）', 'blanks': [['charge']], 'exp': 'charge 充電。'},
+    {'q': 'There are three {0} in the family. （小孩，複數）', 'blanks': [['children']], 'exp': 'child 的複數 children。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'Stop crying for candy. Don\'t be so ______ .', 'opts': ['childlike', 'childish', 'childhood', 'cheerful'], 'answer': 1, 'exp': '責備人幼稚用 childish（負面）。'},
+    {'type': 'mc', 'q': 'Can I use your pen? — ______ . Here you are.', 'opts': ['Certainly', 'Certain', 'Cheap', 'Central'], 'answer': 0, 'exp': 'Certainly. 當然可以。'},
+    {'type': 'mc', 'q': 'This bag is too expensive. Do you have a ______ one?', 'opts': ['cheaper', 'cheap', 'cheapest', 'more cheap'], 'answer': 0, 'exp': '比較：便宜一點的用 cheaper。'},
+    {'type': 'mc', 'q': 'Everyone cheered ______ the players.', 'opts': ['to', 'at', 'with', 'for'], 'answer': 3, 'exp': 'cheer for 替…加油。'},
+  ]},
+]

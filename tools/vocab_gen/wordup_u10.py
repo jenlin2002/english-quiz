@@ -1,0 +1,91 @@
+# WORD UP 複習區 Unit 10（WORD UP「C-III」的字）：只用 WORD UP 的英文字表；中文、例句、題目為本站自編
+def W(w, pos, zh, note, ex, exzh, pic):
+    return {'w': w, 'pic': pic, 'pos': pos, 'zh': zh, 'note': note, 'ex': ex, 'exzh': exzh}
+
+UNIT = {
+  'book': 'wordup', 'no': 10, 'en': 'C-III', 'zh': 'C 開頭（三）',
+  'intro': 'WORD UP「C-III」的 38 個字（Chinese 到 collect）。紅色＝要複習，藍色標籤＝WORD UP 標熟記、還要在這裡考對。',
+  'words': [
+    W('Chinese', 'adj./n.', '中國的；中文；華人', '', 'Chinese is not easy to learn.', '中文不容易學。', '🀄'),
+    W('chocolate', 'n.', '巧克力', '', 'I love hot chocolate in winter.', '我冬天很愛喝熱可可。', '🍫'),
+    W('choice', 'n.', '選擇', 'choose 的名詞；make a choice', 'You have to make a choice.', '你必須做個選擇。', '🔀'),
+    W('choose', 'v.', '選擇', '三態 choose-chose-chosen', 'Choose one color you like.', '選一個你喜歡的顏色。', '👆'),
+    W('chopstick', 'n.', '筷子', '通常用複數 chopsticks；a pair of chopsticks', 'Can you use chopsticks?', '你會用筷子嗎？', '🥢'),
+    W('Christmas', 'n.', '聖誕節', 't 不發音', 'Merry Christmas!', '聖誕快樂！', '🎄'),
+    W('chubby', 'adj.', '胖嘟嘟的', '可愛的胖', 'The baby has chubby cheeks.', '寶寶的臉頰胖嘟嘟的。', '🐹'),
+    W('church', 'n.', '教堂', '', 'They go to church on Sundays.', '他們星期天去教堂。', '⛪'),
+    W('circle', 'n./v.', '圓圈；圈起來', '', 'Circle the right answer.', '把正確答案圈起來。', '⭕'),
+    W('citizen', 'n.', '公民；市民', '', 'Good citizens obey the law.', '好公民會守法。', '🧑‍🤝‍🧑'),
+    W('city', 'n.', '城市', '複數 cities', 'Taipei is a busy city.', '台北是個繁忙的城市。', '🏙️'),
+    W('claim', 'v./n.', '聲稱；索取', 'claim + that…', 'He claimed that he saw a ghost.', '他聲稱他看到鬼。', '🗣️'),
+    W('clap', 'v.', '拍手', '過去式 clapped', 'Everyone clapped for the singer.', '大家為歌手鼓掌。', '👏'),
+    W('class', 'n.', '班級；課', '複數 classes', 'We have six classes today.', '我們今天有六堂課。', '🏫'),
+    W('classic', 'adj./n.', '經典的；經典作品', '', 'This movie is a classic.', '這部電影是經典。', '🎞️'),
+    W('classical', 'adj.', '古典的', 'classical music 古典音樂', 'Mom likes classical music.', '媽媽喜歡古典音樂。', '🎻'),
+    W('classmate', 'n.', '同學', '', 'Amy is my classmate.', 'Amy 是我的同學。', '👫'),
+    W('clean', 'adj./v.', '乾淨的；打掃', 'clean up 打掃乾淨', 'Please clean your room.', '請打掃你的房間。', '🧹'),
+    W('clear', 'adj./v.', '清楚的；晴朗的；清除', '', 'The sky is clear today.', '今天天空很晴朗。', '🔍'),
+    W('clerk', 'n.', '店員；職員', '', 'The clerk helped me find the book.', '店員幫我找到那本書。', '🧑‍💼'),
+    W('clever', 'adj.', '聰明的', '= smart', 'What a clever idea!', '好聰明的主意！', '🦊'),
+    W('climate', 'n.', '氣候', 'weather 天氣（短期）', 'Taiwan has a warm climate.', '台灣氣候溫暖。', '🌡️'),
+    W('climb', 'v.', '爬', 'b 不發音；climb a mountain 爬山', 'We climbed Yangmingshan last weekend.', '我們上週末去爬陽明山。', '🧗'),
+    W('clock', 'n.', '時鐘', 'watch 手錶', 'The clock on the wall is slow.', '牆上的時鐘慢了。', '🕰️'),
+    W('close', 'v./adj.', '關閉；接近的；親近的', '動詞唸 /kloʊz/，形容詞唸 /kloʊs/', 'Please close the door.', '請關門。', '🚪'),
+    W('closet', 'n.', '衣櫥', '', 'Hang your coat in the closet.', '把外套掛進衣櫥。', '🚪'),
+    W('clothes', 'n.', '衣服', '一定用複數', 'I need some new clothes.', '我需要一些新衣服。', '👕'),
+    W('cloudy', 'adj.', '多雲的；陰天的', 'cloud 雲', 'It is cloudy today.', '今天是陰天。', '☁️'),
+    W('club', 'n.', '社團；俱樂部', 'join a club 參加社團', 'I joined the music club.', '我參加了音樂社。', '🎵'),
+    W('coach', 'n.', '教練', '', 'Our coach is strict but kind.', '我們的教練嚴格但很好。', '🧑‍🏫'),
+    W('coast', 'n.', '海岸', 'on the coast', 'We drove along the east coast.', '我們沿著東海岸開車。', '🏝️'),
+    W('coat', 'n.', '外套；大衣', '', 'Put on your coat. It\'s cold.', '穿上外套，天氣很冷。', '🧥'),
+    W('cockroach', 'n.', '蟑螂', '', 'My sister screamed when she saw a cockroach.', '我妹妹看到蟑螂時尖叫了。', '🪳'),
+    W('coffee', 'n.', '咖啡', '不可數；a cup of coffee', 'Dad drinks a cup of coffee every morning.', '爸爸每天早上喝一杯咖啡。', '☕'),
+    W('coin', 'n.', '硬幣', '', 'I put a coin into the machine.', '我把一枚硬幣投進機器。', '🪙'),
+    W('Coke', 'n.', '可樂', '= Coca-Cola', 'Can I have a Coke, please?', '可以給我一杯可樂嗎？', '🥤'),
+    W('cold', 'adj./n.', '冷的；感冒', 'catch a cold 感冒', 'I caught a cold yesterday.', '我昨天感冒了。', '🤧'),
+    W('collect', 'v.', '收集', '名詞 collection', 'My brother collects stamps.', '我哥哥收集郵票。', '📮'),
+  ],
+  'focus': [
+    {'title': '容易搞混的字', 'head': ('字', '用法', '例子'), 'rows': [
+      ('choose / choice', '選擇（動詞）／ 選擇（名詞）', 'choose a book ／ make a choice'),
+      ('classic / classical', '經典的 ／ 古典的（音樂、文學）', 'a classic movie ／ classical music'),
+      ('climate / weather', '氣候（長期）／ 天氣（今天）', 'a warm climate ／ nice weather'),
+      ('clothes / cloth', '衣服（複數）／ 布', 'new clothes ／ a piece of cloth'),
+      ('clock / watch', '時鐘 ／ 手錶', 'a wall clock ／ a watch on my wrist'),
+      ('coat / coast', '外套 ／ 海岸', 'wear a coat ／ on the coast'),
+    ], 'note': 'close 當動詞（關）唸 /kloʊz/，當形容詞（近的）唸 /kloʊs/：a close friend。'},
+    {'title': '常考片語', 'head': ('說法', '中文', '例子'), 'rows': [
+      ('make a choice', '做選擇', 'It\'s hard to make a choice.'),
+      ('catch a cold', '感冒', 'Wear a coat, or you\'ll catch a cold.'),
+      ('clean up', '打掃乾淨', 'clean up the classroom'),
+      ('join a club', '參加社團', 'join the basketball club'),
+      ('a pair of chopsticks', '一雙筷子', 'two pairs of chopsticks'),
+      ('be close to', '靠近、親近', 'My home is close to the school.'),
+    ], 'note': ''},
+  ],
+}
+
+QUIZ = [
+  {'title': '① 看中文選英文', 'items': [
+    {'type': 'mc', 'q': '氣候', 'opts': ['climb', 'climate', 'clever', 'clear'], 'answer': 1, 'exp': 'climate 氣候。'},
+    {'type': 'mc', 'q': '店員', 'opts': ['clerk', 'clock', 'club', 'coach'], 'answer': 0, 'exp': 'clerk 店員。'},
+    {'type': 'mc', 'q': '蟑螂', 'opts': ['coast', 'coffee', 'cockroach', 'collect'], 'answer': 2, 'exp': 'cockroach 蟑螂。'},
+    {'type': 'mc', 'q': '公民', 'opts': ['city', 'circle', 'church', 'citizen'], 'answer': 3, 'exp': 'citizen 公民。'},
+  ]},
+  {'title': '② 拼字：看中文和提示，寫出整個單字', 'note': '括號裡是第一個字母和字母數。', 'items': [
+    {'q': '同學（c＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['classmate']], 'exp': 'classmate。'},
+    {'q': '聖誕節（C＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['Christmas', 'christmas']], 'exp': 'Christmas（t 不發音）。'},
+    {'q': '巧克力（c＿＿＿＿＿＿＿＿，9 個字母）：{0}', 'blanks': [['chocolate']], 'exp': 'chocolate。'},
+  ]},
+  {'title': '③ 例句填空：寫出正確的單字', 'note': '每題括號裡有中文提示。', 'items': [
+    {'q': 'Please {0} the correct answer with a pen. （圈起來）', 'blanks': [['circle']], 'exp': 'circle 圈起來。'},
+    {'q': 'Wear more clothes, or you will catch a {0}. （感冒）', 'blanks': [['cold']], 'exp': 'catch a cold 感冒。'},
+    {'q': 'My cousin likes to {0} coins from different countries. （收集）', 'blanks': [['collect']], 'exp': 'collect 收集。'},
+  ]},
+  {'title': '④ 用法：選出最合適的答案', 'items': [
+    {'type': 'mc', 'q': 'I can\'t decide. It\'s a hard ______ .', 'opts': ['choose', 'chose', 'choice', 'chosen'], 'answer': 2, 'exp': 'a hard choice：冠詞後接名詞 choice。'},
+    {'type': 'mc', 'q': 'Beethoven wrote a lot of ______ music.', 'opts': ['classic', 'classical', 'class', 'classmate'], 'answer': 1, 'exp': '古典音樂 classical music。'},
+    {'type': 'mc', 'q': 'My ______ are all dirty. I need to wash them.', 'opts': ['clothes', 'cloth', 'closet', 'coat'], 'answer': 0, 'exp': 'clothes 衣服，用複數 are。'},
+    {'type': 'mc', 'q': 'Amy and I are ______ friends. We tell each other everything.', 'opts': ['clean', 'clear', 'clever', 'close'], 'answer': 3, 'exp': 'close friends 好朋友、親近的朋友。'},
+  ]},
+]
