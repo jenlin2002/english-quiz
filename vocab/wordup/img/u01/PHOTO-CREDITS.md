@@ -23,3 +23,7 @@
 | aim.jpg | https://www.pexels.com/photo/6540689/ | archery target on grass field |
 
 授權細節以 Pexels 官網 (https://www.pexels.com/license/) 為準。
+| accident.jpg | https://www.pexels.com/photo/28443036/ |
+| activity.jpg | https://www.pexels.com/photo/33738065/ |
+| actress.jpg | https://www.pexels.com/photo/3062539/ | actress being filmed by a camera crew |
+| adult.jpg | https://www.pexels.com/photo/2379004/ |

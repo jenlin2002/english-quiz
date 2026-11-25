@@ -28,3 +28,7 @@
 | apartment.jpg | https://www.pexels.com/photo/18153132/ | apartments with balconies |
 
 授權細節以 Pexels 官網 (https://www.pexels.com/license/) 為準。
+| all.jpg | https://www.pexels.com/photo/8423044/ | children raising hands in class |
+| amount.jpg | https://www.pexels.com/photo/189405/ |
+| angry.jpg | https://www.pexels.com/photo/grumpy-black-girl-near-wall-7114746/ |
+| answer.jpg | https://www.pexels.com/photo/12716111/ | students raising hands |
