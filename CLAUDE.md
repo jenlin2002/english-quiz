@@ -242,7 +242,8 @@
 - 產生：資料檔 `tools/listening_gen/lt_bNN.py`（中級 `lt_mNN.py`、中高級 `lt_hNN.py`，`level` 填 b／m／h）→ `python tools/listening_gen/build_listening.py [b01 …]`，**錄音、放大音量、接成 all.mp3 都在這支程式裡**（要設 `KOKORO_DIR`；每句錄音快取在 `%LOCALAPPDATA%\listening_tts`，不在 repo）。聲音：女 af_heart、男 am_michael、題號／唸題目 am_fenrir、廣播 af_bella。頁面直接寫 `data-t="開始,結束"`，不用再跑 sprite_audio.py。
 - 作答／送出／訂正／補點／暫存用 `grammar2/gquiz.js`（label `Listening B01`、mode「聽力測驗」）。gquiz.js 新增兩個可選設定：`links`（做完後的連結）、`mode`（送出時的模式名稱），舊頁面不受影響。Part 1、2 選項作答時不印出來（CSS `:has(.lt-hideopts)` 把文字藏起來只顯示 (A)(B)(C)），對完答案才顯示原文；每句 🔊 重聽、「🐢 慢速」0.75 倍。訂正時不限次數。
 - 播放：`lt.js` 先把整個 all.mp3 下載成 blob 再跳到 `#t` 播放（Python http.server 不支援 Range，直接設 currentTime 會從頭播）；真的開始播放才算一次，iPad 擋自動播放時按鈕顯示「再按一次」。
-- 下一步：使用者看過初級 2 回後 → 初級補到 10 回 → 中級 → 中高級（`PLANNED` 每級 10 回）。
+- 2026-11-25 使用者看過、已 Push 初級第 1、2 回（網站上看得到），接著說「繼續做初級第 3 到 10 回」：**初級 10 回全部完成**（b03～b10 各 20 題＋聽寫 12 句，32 張新照片）。各回主題：3 早上天氣教室、4 運動交通週末、5 興趣公園海邊、6 音樂食物搭車、7 寵物餐廳遊戲、8 電話功課出遊、9 健康看醫生動物、10 家事拍照學校生活。8 回都在 127.0.0.1（沒登入）用正確答案作答 20/20，照片和音檔都載入得到，測試紀錄已清掉。**b03～b10 還沒 commit**。
+- 下一步：中級（`lt_m01.py`…，高中程度，對話／獨白加長、每段 2～3 題）→ 中高級（`PLANNED` 每級 10 回）。
 
 ## 我的字卡（2026-11-17 使用者要求，手機雲端版）
 
