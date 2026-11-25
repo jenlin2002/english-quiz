@@ -1,0 +1,65 @@
+/* 聽力訓練（listening/）：搭配 grammar2/grammar.css */
+.lt-rules ul{ margin:0 0 8px 20px; }
+.lt-speed{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:14px; color:var(--ink-soft); margin:6px 0; }
+.lt-speed button{ border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+.lt-speed button.on{ background:var(--chalk-bg); color:#fff; border-color:var(--chalk-bg); font-weight:700; }
+
+.lt-play{ border:0; background:var(--chalk-bg); color:#fff; border-radius:999px; padding:8px 16px; font:inherit; font-weight:700; cursor:pointer; }
+.lt-play.playing{ background:#C9952B; }
+.lt-play.loading, .lt-say.loading{ opacity:.6; cursor:progress; }
+.lt-play.used{ background:#B9C2BB; }
+.lt-cue{ font-size:13.5px; color:var(--ink-soft); margin-left:6px; }
+.lt-qtext{ margin-top:10px; font-weight:700; font-size:16.5px; }
+.lt-photo{ display:block; width:100%; max-width:520px; aspect-ratio:4/3; object-fit:cover; border-radius:10px; margin-top:10px; }
+.lt-sr{ display:none; }
+
+/* 第一、二部分：作答時選項不印出來，只顯示 (A)(B)(C)；對完答案才顯示句子 */
+.gq-item:not(.done):has(.lt-hideopts) .q-opt{ font-size:0; text-align:center; }
+.gq-item:not(.done):has(.lt-hideopts) .q-opt::after{ font-size:17px; font-weight:700; }
+.gq-item:not(.done):has(.lt-hideopts) .q-opt[data-k="0"]::after{ content:'(A)'; }
+.gq-item:not(.done):has(.lt-hideopts) .q-opt[data-k="1"]::after{ content:'(B)'; }
+.gq-item:not(.done):has(.lt-hideopts) .q-opt[data-k="2"]::after{ content:'(C)'; }
+.gq-item:not(.done):has(.lt-hideopts) .q-opt[data-k="3"]::after{ content:'(D)'; }
+.gq-item:has(.lt-hideopts) .q-opts{ grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); }
+
+/* 原文 */
+.lt-tr{ margin-top:8px; }
+.lt-trh{ font-weight:900; margin-bottom:4px; }
+.lt-line{ display:flex; align-items:baseline; gap:6px; flex-wrap:wrap; padding:3px 0; }
+.lt-line .en{ font-weight:500; }
+.lt-line .zh{ color:var(--ink-soft); font-size:13.5px; }
+.lt-line.ok .en{ color:var(--ok); font-weight:700; }
+.lt-tag{ min-width:1.6em; }
+.lt-say{ border:1px solid var(--line); background:#fff; border-radius:8px; padding:1px 6px; cursor:pointer; font-size:14px; }
+.lt-say.playing{ background:#FFF2CC; border-color:#C9952B; }
+.lt-opzh{ font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
+.lt-tip{ margin-top:6px; }
+
+/* 目錄 */
+.lt-how{ margin-left:22px; }
+.lt-who{ font-size:14px; font-weight:500; color:var(--ink-soft); margin-left:6px; }
+.lt-ldesc{ color:var(--ink-soft); font-size:14px; }
+.lt-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:10px; margin-top:10px; }
+.lt-card{ border:1px solid var(--line); background:#fff; border-radius:12px; padding:12px; }
+.lt-card.soon{ opacity:.55; }
+.lc-no{ font-family:'Space Mono',monospace; font-size:12px; color:#C9952B; font-weight:700; }
+.lc-t{ font-weight:900; font-size:17px; }
+.lc-d{ font-size:13px; color:var(--ink-soft); margin:2px 0 8px; }
+.lc-links{ display:flex; gap:6px; flex-wrap:wrap; }
+.lc-st{ font-size:12.5px; color:var(--ok); margin-top:6px; }
+.lc-tag{ display:inline-block; font-size:12px; background:#EEE; border-radius:999px; padding:2px 8px; margin-top:6px; }
+
+/* 聽寫 */
+.lt-dict{ margin-left:22px; }
+.lt-dict li{ margin:10px 0; }
+.ld-row{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+.ld-play{ padding:6px 10px; }
+.ld-in{ flex:1; min-width:200px; font:inherit; padding:7px 10px; border:1px solid var(--line); border-radius:8px; }
+.ld-res{ margin-top:6px; font-size:14.5px; }
+.ld-ans .ok{ color:var(--ok); font-weight:700; }
+.ld-ans .ng{ color:var(--ng); font-weight:700; text-decoration:underline; }
+.ld-zh{ color:var(--ink-soft); font-size:13.5px; }
+.ld-all{ color:var(--ok); }
+.lt-dict li.perfect .ld-in{ border-color:var(--ok); background:#E3F2E8; }
+.ld-sum{ margin-top:10px; font-weight:700; }
+@media (max-width:600px){ .ld-in{ min-width:0; width:100%; } }

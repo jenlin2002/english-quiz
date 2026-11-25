@@ -245,6 +245,7 @@
         '<br><span class="gq-rv-a">正解：' + esc(rightAns(items[i])) + '</span><br><span class="gq-rv-e">' + items[i].exp + '</span></div>').join('') + '</div>';
   }
   function doneLinks(){
+    if(CFG.links) return '<div class="gq-links">' + CFG.links + ' <button class="btn" data-act="restart">↺ 重新測驗</button></div>';   // 頁面自訂（聽力訓練）
     if(VOCAB) return '<div class="gq-links"><a class="btn" href="' + (CFG.back || 'index.html') + '">← 回單字卡（看紅色的字）</a> <a class="btn" href="../index.html">單字區目錄</a> <button class="btn" data-act="restart">↺ ' + (V ? '再考還沒答對的字' : '重新測驗') + '</button></div>';
     return '<div class="gq-links"><a class="btn" href="' + (CFG.back || 'index.html') + '">← 回單元講解</a> <a class="btn" href="index.html">國中文法目錄</a> <button class="btn" data-act="restart">↺ 重新測驗</button></div>';
   }
@@ -295,7 +296,7 @@
     if(S.phase === 'done') del(draftKey()); else saveDraft();
     render();
     scrollTo(0, root.offsetTop - 20);
-    const mode = !VOCAB ? '文法單元測驗' : (V && V.retest ? '單字複習測驗（只考沒答對的字）' : '單字測驗');
+    const mode = CFG.mode ? CFG.mode : !VOCAB ? '文法單元測驗' : (V && V.retest ? '單字複習測驗（只考沒答對的字）' : '單字測驗');
     if(window.Points) Points.earn({ name: who(), label: CFG.label, mode: mode, correct: right, total: total });
     sync(mode, right, total, details(all));
   }

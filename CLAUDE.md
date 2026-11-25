@@ -234,6 +234,16 @@
 - 規劃中的主題（目錄上「製作中」）：我的家人、學校的一天、我最喜歡的食物、生日派對、去買東西、問路、臺灣的節日、一次旅行、我的夢想、寫邀請卡、寫道歉卡片（`build_writing.py` 的 `PLANNED`）。
 - 家長看作文：目前在測驗試算表看；之後可考慮做「家長評語」回寫給孩子（要改 Apps Script）。
 
+## 聽力訓練 `listening/`（2026-11-25 公司電腦，使用者要求「跟多益聽力訓練類似，分初中高」）
+
+- 使用者定案分級：**初級**＝國小高年級～國中（先給兩個孩子用，多益聽力約 150–250 分、0.85 倍語速、作答時每題可聽 2 次）、**中級**＝高中（約 250–350 分、0.95 倍、聽 1 次）、**中高級**＝高中進階、大學、社會人士、家長（約 350–450 分、1.0 倍、聽 1 次、混英國／澳洲腔）。每回 20 題：Part 1 看照片 4、Part 2 問答 8、Part 3 對話 4、Part 4 獨白 4（初級每題 3 個選項、對話／獨白各 1 題；中級以上照之前規劃加長、2～3 題）。題目全部自編，不用多益真題。
+- 已做：**初級第 1、2 回**（`b01`、`b02`），各 20 題＋聽寫 12 句。本機在 127.0.0.1（沒登入）用正確答案作答過：第 1 回故意錯 2 題測訂正流程、第 2 回 20/20，沒有回傳成績。**還沒給使用者預覽確認、還沒 commit**（使用者要先在本機看過）。
+- 檔案：`listening/index.html`（目錄，三級、還沒做的回標「製作中」，卡片顯示這台裝置第一次的成績 `ltScore:<登入者>`）、`bNN.html`（測驗）、`bNN-dict.html`（聽寫，自我練習不計點）、`lt.js`（播放、每題聽幾次、重聽速度、聽寫比對）、`listening.css`、`img/`（Part 1 照片，Pexels，800×600，`PHOTO-CREDITS.md`）、`audio/bNN/all.mp3`（每回一個檔）。首頁 repo `index.html` 加了「Listening Hub｜聽力訓練」卡片。
+- 產生：資料檔 `tools/listening_gen/lt_bNN.py`（中級 `lt_mNN.py`、中高級 `lt_hNN.py`，`level` 填 b／m／h）→ `python tools/listening_gen/build_listening.py [b01 …]`，**錄音、放大音量、接成 all.mp3 都在這支程式裡**（要設 `KOKORO_DIR`；每句錄音快取在 `%LOCALAPPDATA%\listening_tts`，不在 repo）。聲音：女 af_heart、男 am_michael、題號／唸題目 am_fenrir、廣播 af_bella。頁面直接寫 `data-t="開始,結束"`，不用再跑 sprite_audio.py。
+- 作答／送出／訂正／補點／暫存用 `grammar2/gquiz.js`（label `Listening B01`、mode「聽力測驗」）。gquiz.js 新增兩個可選設定：`links`（做完後的連結）、`mode`（送出時的模式名稱），舊頁面不受影響。Part 1、2 選項作答時不印出來（CSS `:has(.lt-hideopts)` 把文字藏起來只顯示 (A)(B)(C)），對完答案才顯示原文；每句 🔊 重聽、「🐢 慢速」0.75 倍。訂正時不限次數。
+- 播放：`lt.js` 先把整個 all.mp3 下載成 blob 再跳到 `#t` 播放（Python http.server 不支援 Range，直接設 currentTime 會從頭播）；真的開始播放才算一次，iPad 擋自動播放時按鈕顯示「再按一次」。
+- 下一步：使用者看過初級 2 回後 → 初級補到 10 回 → 中級 → 中高級（`PLANNED` 每級 10 回）。
+
 ## 我的字卡（2026-11-17 使用者要求，手機雲端版）
 
 - 登入者可以把單字／句子存成字卡、自己分類；字卡存在點數存摺同一份 Google 試算表的「字卡」「字卡分類」分頁（每人一份，手機、平板、電腦同步）。後端是 english-quiz-plan `points/Code.gs` 的 `cardlist／cardsave／carddel／cardmove／cardstatus／deckadd／deckrename／deckdel`（用存摺的登入憑證；同一人同一個英文只存一張；答錯再加入時「錯次」+1）。**要重新部署 Apps Script 才能用**，沒部署前按 ☆ 會提示「後端還沒更新」。
