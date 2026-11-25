@@ -29,6 +29,7 @@
     <a href="#both">both／either／neither</a>
     <a href="#partial">部分否定</a>
     <a href="#quantity">數量代名詞</a>
+    <a class="supp" href="#agree" style="border-color:#C9952B">＋主詞動詞一致</a>
     <a href="#table">句型整理表</a>
     <a href="#errors">常見錯誤</a>
     <a href="#practice-part">練習題</a>
@@ -173,6 +174,28 @@
     <div class="ex"><span class="en"><span class="key">Every</span> student <span class="key">has</span> a locker.</span><span class="zh">every 後面直接接單數名詞，不能說 every of。</span></div>
   </section>
 
+  <!-- ===== 進階補充：主詞與動詞一致 ===== -->
+  <section class="part supp" id="agree" style="border-top:4px solid #C9952B">
+    <div class="part-no">進階補充 · 第二期 Week 18</div>
+    <h2>主詞與動詞一致</h2>
+    <p>動詞要跟著<b>真正的主詞</b>變單複數。下面是最容易弄錯的情況：</p>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <tr><th>情況</th><th>動詞</th><th>例句</th></tr>
+        <tr><td class="h">each / every / everyone / everything / nobody</td><td>單數</td><td><span class="en">Everyone <b>is</b> here. / Each of the students <b>has</b> a book.</span></td></tr>
+        <tr><td class="h">A and B</td><td>複數</td><td><span class="en">Tom and Amy <b>are</b> classmates.</span></td></tr>
+        <tr><td class="h">A as well as B／A with B／A along with B</td><td>跟 A</td><td><span class="en">The teacher, with her students, <b>is</b> coming.</span></td></tr>
+        <tr><td class="h">either A or B／neither A nor B／not only A but also B</td><td>跟 B（靠近動詞的）</td><td><span class="en">Neither you nor <b>he is</b> wrong.</span></td></tr>
+        <tr><td class="h">a number of ＋ 複數名詞（許多）</td><td>複數</td><td><span class="en">A number of students <b>are</b> absent.</span></td></tr>
+        <tr><td class="h">the number of ＋ 複數名詞（……的數目）</td><td>單數</td><td><span class="en">The number of students <b>is</b> 30.</span></td></tr>
+        <tr><td class="h">V-ing／to V 當主詞</td><td>單數</td><td><span class="en">Reading comics <b>is</b> fun.</span></td></tr>
+        <tr><td class="h">時間、金錢、距離當一個整體</td><td>單數</td><td><span class="en">Ten dollars <b>is</b> enough.</span></td></tr>
+        <tr><td class="h">There is／There are</td><td>跟後面的名詞</td><td><span class="en">There <b>are</b> two cats and a dog.</span></td></tr>
+      </table>
+    </div>
+    <div class="tip"><b>解題訣竅：</b>先把主詞後面的介系詞片語、關係子句蓋起來再判斷：<span class="en">The box <s>of apples</s> <b>is</b> heavy.</span>（主詞是 box）</div>
+  </section>
+
   <!-- ===== 句型整理表 ===== -->
   <section class="part" id="table">
     <div class="part-no">SUMMARY</div>
@@ -257,7 +280,13 @@ window.PRACTICE = [
   { level:'★★★ 挑戰', q:'I invited Ken and Leo, but ______ of them came. I was sad.', opts:['both','either','neither','none'], answer:2,
     exp:'兩個人都沒來 → neither。三個以上才用 none。' },
   { level:'★★★ 挑戰', q:'Mr. Lin is ______.', opts:['a my friend','my a friend','a friend of me','a friend of mine'], answer:3,
-    exp:'雙重所有格：a + 名詞 + of + 所有代名詞 → a friend of mine。' }
+    exp:'雙重所有格：a + 名詞 + of + 所有代名詞 → a friend of mine。' },
+  { level:'★★★ 進階補充', q:'Each of the students ______ a laptop.', opts:['have', 'has', 'are having', 'were'], answer:1,
+    exp:'Each of ＋ 複數名詞 → 主詞是 each（單數）→ has。' },
+  { level:'★★★ 進階補充', q:'A number of people ______ waiting outside.', opts:['is', 'are', 'was', 'has'], answer:1,
+    exp:'a number of（許多）＋ 複數名詞 → 複數動詞 are。' },
+  { level:'★★★ 進階補充', q:'Neither my parents nor my brother ______ coffee.', opts:['drink', 'drinks', 'are drinking', 'have drunk'], answer:1,
+    exp:'neither A nor B → 動詞跟 B（my brother 單數）→ drinks。' }
 ];
 </script>
 <script src="grammar.js?v=20261102"></script>

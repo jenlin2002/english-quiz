@@ -30,6 +30,8 @@
     <a href="#what">what</a>
     <a href="#comma">限定與非限定</a>
     <a href="#where">where／when</a>
+    <a class="supp" href="#reduce" style="border-color:#C9952B">＋縮減子句</a>
+    <a class="supp" href="#whoever" style="border-color:#C9952B">＋複合關係詞</a>
     <a href="#table">句型整理表</a>
     <a href="#errors">常見錯誤</a>
     <a href="#practice-part">練習題</a>
@@ -156,6 +158,37 @@
     <span class="en">This is the park <b>where</b> I play.</span>（play 不需要受詞）／ <span class="en">This is the park <b>which</b> I visited.</span>（visited 缺受詞）</div>
   </section>
 
+  <!-- ===== 進階補充：縮減子句（省略關係代名詞） ===== -->
+  <section class="part supp" id="reduce" style="border-top:4px solid #C9952B">
+    <div class="part-no">進階補充 · 第二期 Week 12</div>
+    <h2>縮減子句（省略關係代名詞）</h2>
+    <h3>① 關代當受詞可以省略</h3>
+    <div class="ex"><span class="en">The book (<span class="key">that</span>) I bought yesterday is interesting.</span><span class="zh">我昨天買的書很有趣。（that 是 bought 的受詞，可省略）</span></div>
+    <h3>② 關代 ＋ be 動詞一起省略</h3>
+    <div class="ex"><span class="en">The girl <s>who is</s> <span class="key">talking</span> with Tom is my sister.</span><span class="zh">正在跟湯姆說話的女孩是我妹妹。（主動 → V-ing）</span></div>
+    <div class="ex"><span class="en">The car <s>which was</s> <span class="key">made</span> in Japan is expensive.</span><span class="zh">日本製的那輛車很貴。（被動 → p.p.）</span></div>
+    <h3>③ 主格關代 ＋ 一般動詞 → 改成 V-ing</h3>
+    <div class="ex"><span class="en">Students <s>who want</s> → <span class="key">wanting</span> to join the club should sign up.</span><span class="zh">想參加社團的學生要登記。</span></div>
+    <div class="tip"><b>注意：</b>關代當<b>主詞</b>時不能單獨省略：<span class="en">✗ The boy plays the piano is Ken.</span> → <span class="en">✓ The boy who plays (= playing) the piano is Ken.</span></div>
+  </section>
+
+  <!-- ===== 進階補充：複合關係詞：whoever、whatever… ===== -->
+  <section class="part supp" id="whoever" style="border-top:4px solid #C9952B">
+    <div class="part-no">進階補充 · 第二期 Week 12</div>
+    <h2>複合關係詞：whoever、whatever…</h2>
+    <p>複合關係詞＝先行詞＋關係代名詞，自己就包含了「人／東西」，所以前面不用再放名詞。</p>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <tr><th>複合關係詞</th><th>等於</th><th>例句</th></tr>
+        <tr><td class="h">what</td><td>the thing(s) that</td><td><span class="en"><b>What</b> he said is true.</span>（他說的話是真的）</td></tr>
+        <tr><td class="h">whoever</td><td>anyone who（任何……的人）</td><td><span class="en"><b>Whoever</b> comes first will get a prize.</span></td></tr>
+        <tr><td class="h">whatever</td><td>anything that（任何……的東西）</td><td><span class="en">You can eat <b>whatever</b> you like.</span></td></tr>
+        <tr><td class="h">whichever</td><td>any one that（……的任何一個）</td><td><span class="en">Take <b>whichever</b> you want.</span></td></tr>
+      </table>
+    </div>
+    <div class="tip"><b>另一個意思「無論」：</b><span class="en">Whatever happens, I will help you.</span> = No matter what happens…（無論發生什麼事）</div>
+  </section>
+
   <!-- ===== 句型整理表 ===== -->
   <section class="part" id="table">
     <div class="part-no">SUMMARY</div>
@@ -237,7 +270,13 @@ window.PRACTICE = [
   { level:'★★★ 挑戰', q:'Which sentence is correct?', opts:['The cake which I made it is sweet.','The man who you met him is my uncle.','The phone that I bought is cheap.','The girl which won is Amy.'], answer:2,
     exp:'The phone that I bought is cheap ✓。其他：多了 it、him；人要用 who。' },
   { level:'★★★ 挑戰', q:'The house ______ we lived ten years ago is gone.', opts:['which','in which','in that','what'], answer:1,
-    exp:'lived in the house → in which（＝ where）；介系詞後面不能用 that。' }
+    exp:'lived in the house → in which（＝ where）；介系詞後面不能用 that。' },
+  { level:'★★★ 進階補充', q:'The man ______ next to Amy is her uncle.', opts:['sit', 'sitting', 'sat', 'is sitting'], answer:1,
+    exp:'who is sitting → 省略 who is → sitting（縮減子句，主動用 V-ing）。' },
+  { level:'★★★ 進階補充', q:'______ finishes first will win a prize.', opts:['Who', 'Whoever', 'Whatever', 'Which'], answer:1,
+    exp:'Whoever ＝ anyone who（任何……的人）。' },
+  { level:'★★★ 進階補充', q:'You can choose ______ you like from the menu.', opts:['whoever', 'whatever', 'who', 'whom'], answer:1,
+    exp:'whatever ＝ anything that（任何……的東西）。' }
 ];
 </script>
 <script src="grammar.js?v=20261102"></script>
