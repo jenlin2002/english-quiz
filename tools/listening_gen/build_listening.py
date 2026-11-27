@@ -30,7 +30,7 @@ LEVELS = {
     'h': {'name': '中高級', 'en': 'UPPER-INTERMEDIATE', 'who': '高中進階、大學、社會人士', 'speed': 1.0, 'plays': 1,
           'toeic': '多益聽力約 350–450 分', 'desc': '多益常考職場字彙，正常到稍快，混入英國腔、澳洲腔，每題聽 1 次。'},
 }
-VOICE = {'W': 'af_heart', 'M': 'am_michael', 'N': 'am_fenrir', 'A': 'af_bella'}   # 女、男、題號旁白、廣播
+VOICE = {'W': 'af_heart', 'M': 'am_michael', 'N': 'am_fenrir', 'A': 'af_bella', 'BW': 'bf_emma', 'BM': 'bm_george'}   # 女、男、題號旁白、廣播
 LET = 'ABCD'
 UNITS = {n[3:-3]: n[:-3] for n in sorted(os.listdir(HERE)) if re.fullmatch(r'lt_[bmh]\d\d\.py', n)}
 
@@ -110,8 +110,8 @@ def build_unit(m):
     for it in u['p1']:
         n += 1; a = number(n); segs = []
         for k, (en, zh) in enumerate(it['opts']):
-            l = tr.add(LET[k] + '.', 'M'); tr.gap(0.25)
-            s = tr.add(en, 'M'); segs.append([l[0], s[1]]); tr.gap(1.0)
+            l = tr.add(LET[k] + '.', it.get('v', 'M')); tr.gap(0.25)
+            s = tr.add(en, it.get('v', 'M')); segs.append([l[0], s[1]]); tr.gap(1.0)
             if k == it['answer']:
                 dict_items.append({'t': T(s), 'en': en, 'zh': zh})
         tr.gap(0.8)
@@ -129,12 +129,13 @@ def build_unit(m):
     items = []
     for it in u['p2']:
         n += 1; a = number(n)
-        qs = tr.add(it['q'][0], 'W'); tr.gap(1.0)
+        qv, av = it.get('v', ('W', 'M'))      # 中高級可用 'v': ('BW', 'M') 之類換成英國腔（問句、回答）
+        qs = tr.add(it['q'][0], qv); tr.gap(1.0)
         dict_items.append({'t': T(qs), 'en': it['q'][0], 'zh': it['q'][1]})
         segs = []
         for k, (en, zh) in enumerate(it['opts']):
-            l = tr.add(LET[k] + '.', 'M'); tr.gap(0.25)
-            s = tr.add(en, 'M'); segs.append([l[0], s[1]]); tr.gap(1.0)
+            l = tr.add(LET[k] + '.', av); tr.gap(0.25)
+            s = tr.add(en, av); segs.append([l[0], s[1]]); tr.gap(1.0)
         tr.gap(0.8)
         q = '<span class="lt-hideopts"></span><span class="lt-sr">[問答]</span>%s <span class="lt-cue">聽問句，選出最適當的回答</span>' % play_btn('q%d' % n, [a[0], segs[-1][1]])
         exp = '<div class="lt-tr"><div class="lt-trh">📝 聽力原文</div>' + line(qs, it['q'][0], it['q'][1], '問') + ''.join(
@@ -154,7 +155,7 @@ def build_unit(m):
         qs = tr.add(it['q'][0], 'N'); tr.gap(1.5)
         q = '%s <span class="lt-cue">聽對話，回答問題</span><div class="lt-qtext">%s</div>' % (play_btn('q%d' % n, [a[0], qs[1]]), E(it['q'][0]))
         exp = '<div class="lt-tr"><div class="lt-trh">📝 對話原文</div>' + ''.join(
-            line(s, en, zh, '👩' if who == 'W' else '👨') for s, (who, en, zh) in zip(segs, it['lines'])) + \
+            line(s, en, zh, '👩' if who in ('W', 'BW') else '👨') for s, (who, en, zh) in zip(segs, it['lines'])) + \
             line(qs, it['q'][0], it['q'][1], '問') + \
             '<div class="lt-opzh">選項：' + '　'.join('(%s) %s' % (LET[k], E(zh)) for k, (_, zh) in enumerate(it['opts'])) + '</div>' + \
             '<div class="lt-tip">💡 %s</div></div>' % E(it['tip'])
@@ -166,7 +167,7 @@ def build_unit(m):
     items = []
     for it in u['p4']:
         n += 1; a = number(n); segs = []
-        voice = 'A' if it['voice'] == 'W' else 'M'
+        voice = {'W': 'A', 'M': 'M'}.get(it['voice'], it['voice'])
         for en, zh in it['lines']:
             segs.append(tr.add(en, voice)); tr.gap(0.35)
         tr.gap(0.5)
