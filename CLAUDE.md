@@ -233,7 +233,9 @@
 - 送出：存到測驗同一份試算表（`week` = `Writing UN`、`mode` = `寫作短文 ★／★★`，details 第一筆是整篇作文，另有字數、剩下的文法提醒、AI 建議），`Points.earn`（correct = 通過的檢查數＋文法零錯誤 1，total = 檢查數＋1）；送出後看兩級範文（🔊）。草稿存這台裝置 `wr:<頁面>:<登入者>`。沒登入只顯示範文、不送出。
 - 產生：內容在 `tools/writing_gen/wr_uNN.py`（UNIT：dialog／speak／words（含比對用 regex）／frames／write（prompt、引導問題、兩級範文）＋QUIZ），`python tools/writing_gen/build_writing.py` 產生頁面與錄音清單 → `tts_mp3.py tools/writing_gen/audio_jobs.json`（清單第 3 欄可指定聲音，對話第二人用 `am_michael`）→ `boost_audio.py writing/audio/uNN` → `sprite_audio.py writing uNN.html audio/uNN --delete`（`--all` 也包含寫作園地）。
 - 已做：Unit 1 My Weekend 我的週末、Unit 2 My Pet 我的寵物（各 48 段語音、合併成 all.mp3）。兩份造句練習在 127.0.0.1（沒登入）用正確答案作答 15/15；短文的自動檢查、LanguageTool、套用修改、送出（沒登入）都在瀏覽器測過；手機寬度沒有超出。**Workers AI 那一段還沒實測**（要部署＋家長開綁定後，在 bmlearn 登入測）。
-- 規劃中的主題（目錄上「製作中」）：我的家人、學校的一天、我最喜歡的食物、生日派對、去買東西、問路、臺灣的節日、一次旅行、我的夢想、寫邀請卡、寫道歉卡片（`build_writing.py` 的 `PLANNED`）。
+- 2026-11-28 使用者說「寫作也請繼續和完成」：**Unit 3～13 全部完成**（我的家人、學校的一天、我最喜歡的食物、生日派對、去買東西、問路、臺灣的節日、一次旅行、我的夢想、寫邀請卡、寫道歉卡片），格式同 Unit 1、2（對話 8 句、說說看 4 題、字詞 14、句型 6、造句 15 題、兩級範文），每個主題 48 段語音合併成 all.mp3。`PLANNED` 已做的會自動從「製作中」拿掉（目錄比對 UNIT 的 `en`），現在全部 13 個都做完。
+- 卡片主題（Unit 12、13）資料檔加 `'card': True` → 頁面 `WRITING.card`：「句尾要有句點」的檢查允許最後是署名（Love, Amy／Your friend, Ben…），`writing.js` 版本改成 `20261128a`（**Unit 1、2 頁面沒重新產生**，因為重跑會把 sprite 改過的音檔路徑蓋回去；它們還是載 `?v=20261121a`，行為一樣）。
+- 驗證：11 份造句練習在 127.0.0.1（沒登入）用每題最後一個可接受答案作答都 15/15；每篇範文都用頁面同樣的規則檢查過（★ 30 字／2 詞、★★ 50 字／3 詞／連接詞），字詞例句都對得到自己的比對 regex。
 - 家長看作文：目前在測驗試算表看；之後可考慮做「家長評語」回寫給孩子（要改 Apps Script）。
 
 ## 聽力訓練 `listening/`（2026-11-25 公司電腦，使用者要求「跟多益聽力訓練類似，分初中高」）

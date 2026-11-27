@@ -1,394 +1,2158 @@
 [
 [
-"Hi, Ben! How was your weekend?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-01.mp3"
+"Is this a picture of your family?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-01.mp3"
 ],
 [
-"It was great! I went hiking with my dad on Saturday.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-02.mp3",
+"Yes. There are five people in my family.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-02.mp3",
 "am_michael"
 ],
 [
-"Wow! Where did you go?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-03.mp3"
+"Who is the tall man?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-03.mp3"
 ],
 [
-"We went to Yangmingshan. The view was beautiful.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-04.mp3",
+"That's my dad. He is a bus driver. He is funny and kind.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-04.mp3",
 "am_michael"
 ],
 [
-"That sounds fun. What did you do on Sunday?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-05.mp3"
+"And the woman next to him?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-05.mp3"
 ],
 [
-"I stayed home and played video games with my sister. How about you?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-06.mp3",
+"That's my mom. She works at a bank. She is a great cook, too.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-06.mp3",
 "am_michael"
 ],
 [
-"I helped my mom clean the house, and then we ate hot pot for dinner.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-07.mp3"
+"What do you do together on weekends?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-07.mp3"
 ],
 [
-"Yum! That sounds like a nice weekend.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\d-08.mp3",
+"We usually go hiking or visit my grandparents in Tainan.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\d-08.mp3",
 "am_michael"
 ],
 [
-"What do you usually do on Saturday morning?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\q-01.mp3"
+"How many people are there in your family?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\q-01.mp3"
 ],
 [
-"Who do you usually spend your weekend with?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\q-02.mp3"
+"Who are they?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\q-02.mp3"
 ],
 [
-"What did you do last Sunday?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\q-03.mp3"
+"What does your dad or mom do?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\q-03.mp3"
 ],
 [
-"How did you feel? Why?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\q-04.mp3"
+"What do you do together?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\q-04.mp3"
 ],
 [
-"weekend",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-01.mp3"
+"family",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-01.mp3"
 ],
 [
-"What are you going to do this weekend?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-01.mp3"
+"I love my family very much.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-01.mp3"
 ],
 [
-"usually",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-02.mp3"
+"parents",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-02.mp3"
 ],
 [
-"I usually get up at nine on Sundays.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-02.mp3"
+"My parents both work in Taipei.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-02.mp3"
 ],
 [
-"sleep late",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-03.mp3"
+"grandparents",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-03.mp3"
 ],
 [
-"I like to sleep late on Saturdays.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-03.mp3"
+"I visit my grandparents every month.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-03.mp3"
 ],
 [
-"go hiking",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-04.mp3"
+"older brother",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-04.mp3"
 ],
 [
-"We went hiking in the mountains.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-04.mp3"
+"My older brother is in high school.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-04.mp3"
 ],
 [
-"go shopping",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-05.mp3"
+"only child",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-05.mp3"
 ],
 [
-"Mom and I went shopping at the mall.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-05.mp3"
+"I am an only child.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-05.mp3"
 ],
 [
-"visit my grandparents",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-06.mp3"
+"kind",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-06.mp3"
 ],
 [
-"I visit my grandparents every Sunday.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-06.mp3"
+"My grandma is kind to everyone.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-06.mp3"
 ],
 [
-"play video games",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-07.mp3"
+"funny",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-07.mp3"
 ],
 [
-"My brother played video games all afternoon.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-07.mp3"
+"My uncle is very funny.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-07.mp3"
 ],
 [
-"watch a movie",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-08.mp3"
+"hard-working",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-08.mp3"
 ],
 [
-"We watched a funny movie at home.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-08.mp3"
+"My mom is hard-working.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-08.mp3"
 ],
 [
-"clean my room",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-09.mp3"
+"look like",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-09.mp3"
 ],
 [
-"I cleaned my room on Saturday morning.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-09.mp3"
+"I look like my dad.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-09.mp3"
 ],
 [
-"do my homework",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-10.mp3"
+"be good at",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-10.mp3"
 ],
 [
-"I did my homework before dinner.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-10.mp3"
+"My sister is good at drawing.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-10.mp3"
 ],
 [
-"take a walk",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-11.mp3"
+"work as",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-11.mp3"
 ],
 [
-"After dinner, we took a walk in the park.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-11.mp3"
+"My aunt works as a teacher.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-11.mp3"
 ],
 [
-"eat out",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-12.mp3"
+"spend time with",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-12.mp3"
 ],
 [
-"We ate out at a noodle shop.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-12.mp3"
-],
-[
-"relaxing",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-13.mp3"
-],
-[
-"It was a relaxing weekend.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-13.mp3"
-],
-[
-"tired",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\w-14.mp3"
-],
-[
-"I was tired after the long hike.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\e-14.mp3"
-],
-[
-"On Saturday morning, I usually sleep late.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\f-01.mp3"
-],
-[
-"I like weekends because I don't have to go to school.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\f-02.mp3"
-],
-[
-"Last Sunday, I went shopping with my mom.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\f-03.mp3"
-],
-[
-"First, I did my homework. Then, I watched a movie.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\f-04.mp3"
-],
-[
-"It was a busy day, but I felt happy.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\f-05.mp3"
-],
-[
-"Next weekend, I want to visit my grandparents.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\f-06.mp3"
-],
-[
-"Last weekend was fun. On Saturday, I slept late and did my homework. On Sunday, I went shopping with my mom. We ate noodles for lunch. I was tired, but I felt happy.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\m-1.mp3"
-],
-[
-"My last weekend was busy but relaxing. On Saturday morning, I got up early and went hiking with my dad. The air in the mountains was fresh, and the view was beautiful. In the afternoon, I cleaned my room and did my homework. On Sunday, I visited my grandparents. Grandma cooked a big lunch for us. I was a little tired, but I really enjoyed my weekend because I spent time with my family.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u01\\m-2.mp3"
-],
-[
-"Is that your dog in the photo?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-01.mp3"
-],
-[
-"Yes! His name is Lucky. He is three years old.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-02.mp3",
-"am_michael"
-],
-[
-"He's so cute! What does he like to do?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-03.mp3"
-],
-[
-"He loves to run in the park and catch balls.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-04.mp3",
-"am_michael"
-],
-[
-"Who takes care of him?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-05.mp3"
-],
-[
-"I feed him every morning, and my brother walks him after dinner.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-06.mp3",
-"am_michael"
-],
-[
-"I want a pet, too. Maybe a cat.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-07.mp3"
-],
-[
-"Cats are great! They are quiet and clean.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\d-08.mp3",
-"am_michael"
-],
-[
-"Do you have a pet? What is it?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\q-01.mp3"
-],
-[
-"What does it look like?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\q-02.mp3"
-],
-[
-"What does it like to do?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\q-03.mp3"
-],
-[
-"How do you take care of it?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\q-04.mp3"
-],
-[
-"pet",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-01.mp3"
-],
-[
-"Do you have a pet at home?",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-01.mp3"
-],
-[
-"cute",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-02.mp3"
-],
-[
-"The little rabbit is so cute.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-02.mp3"
-],
-[
-"fluffy",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-03.mp3"
-],
-[
-"My cat has fluffy white fur.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-03.mp3"
-],
-[
-"tail",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-04.mp3"
-],
-[
-"The dog is wagging its tail.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-04.mp3"
-],
-[
-"feed",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-05.mp3"
-],
-[
-"I feed my fish twice a day.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-05.mp3"
-],
-[
-"walk the dog",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-06.mp3"
-],
-[
-"Dad walks the dog after dinner.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-06.mp3"
+"I like to spend time with my family.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-12.mp3"
 ],
 [
 "take care of",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-07.mp3"
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-13.mp3"
 ],
 [
-"I take care of my hamster every day.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-07.mp3"
+"My grandpa takes care of me after school.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-13.mp3"
 ],
 [
-"play with",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-08.mp3"
+"get along with",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\w-14.mp3"
 ],
 [
-"My cat likes to play with a ball.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-08.mp3"
+"I get along well with my sister.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\e-14.mp3"
 ],
 [
-"smart",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-09.mp3"
+"There are four people in my family.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\f-01.mp3"
 ],
 [
-"Parrots are smart birds.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-09.mp3"
+"My mom is a nurse.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\f-02.mp3"
 ],
 [
-"friendly",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-10.mp3"
+"She is kind and hard-working.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\f-03.mp3"
 ],
 [
-"Our dog is friendly to everyone.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-10.mp3"
+"I look like my dad.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\f-04.mp3"
 ],
 [
-"noisy",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-11.mp3"
+"My sister is good at singing.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\f-05.mp3"
 ],
 [
-"The puppy is noisy at night.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-11.mp3"
+"On weekends, we often go to the night market.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\f-06.mp3"
 ],
 [
-"give a bath",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-12.mp3"
+"There are four people in my family. My dad is a bus driver, and my mom is a nurse. My sister is good at drawing. On weekends, we often go to the park. I love my family.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\m-1.mp3"
 ],
 [
-"We give our dog a bath every Sunday.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-12.mp3"
+"There are five people in my family: my parents, my grandma, my little brother, and me. My dad works as an engineer. He is tall and funny. My mom is a teacher, and she is very hard-working. My grandma takes care of us after school, and she cooks delicious food. I get along well with my brother, but sometimes we fight over the TV. On Sundays, we usually eat lunch together. I feel lucky because my family always helps me.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u03\\m-2.mp3"
 ],
 [
-"vet",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-13.mp3"
+"What time do you get to school every day?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-01.mp3"
 ],
 [
-"We took our cat to the vet.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-13.mp3"
+"At seven thirty. My first class starts at eight.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-02.mp3",
+"am_michael"
 ],
 [
-"best friend",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\w-14.mp3"
+"What's your favorite class?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-03.mp3"
 ],
 [
-"My dog is my best friend.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\e-14.mp3"
+"P.E.! We play basketball on Tuesdays. What about you?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-04.mp3",
+"am_michael"
 ],
 [
-"I have a cat. Its name is Mimi.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\f-01.mp3"
+"I like art. I'm not good at math, though.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-05.mp3"
 ],
 [
-"It is small and fluffy.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\f-02.mp3"
+"What do you do at lunchtime?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-06.mp3",
+"am_michael"
 ],
 [
-"It has big eyes and a short tail.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\f-03.mp3"
+"I eat lunch with my classmates, and then I take a short nap.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-07.mp3"
 ],
 [
-"It likes to sleep on my bed.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\f-04.mp3"
+"Me too. After school, I go to the library to do my homework.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\d-08.mp3",
+"am_michael"
 ],
 [
-"Every day, I feed it and play with it.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\f-05.mp3"
+"What time do you get to school?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\q-01.mp3"
 ],
 [
-"My pet is like my best friend because it always makes me happy.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\f-06.mp3"
+"What is your favorite subject? Why?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\q-02.mp3"
 ],
 [
-"I have a dog. His name is Lucky. He is brown and very cute. He likes to run and catch balls. I feed him every morning. I love Lucky very much.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\m-1.mp3"
+"What do you do at lunchtime?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\q-03.mp3"
 ],
 [
-"I don't have a pet now, but I really want a cat. I want a white cat with fluffy fur and big blue eyes. Cats are quiet and clean, so they are good pets for my family. If I have a cat, I will feed it every day and play with it after school. I will also take it to the vet when it is sick. I think a cat can be my best friend because it will always stay with me.",
-"E:\\GitHub\\english-quiz\\writing\\audio/u02\\m-2.mp3"
+"What do you do after school?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\q-04.mp3"
+],
+[
+"get to school",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-01.mp3"
+],
+[
+"I get to school at seven thirty.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-01.mp3"
+],
+[
+"class",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-02.mp3"
+],
+[
+"We have seven classes a day.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-02.mp3"
+],
+[
+"subject",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-03.mp3"
+],
+[
+"Science is my favorite subject.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-03.mp3"
+],
+[
+"classmate",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-04.mp3"
+],
+[
+"My classmates are friendly.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-04.mp3"
+],
+[
+"break",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-05.mp3"
+],
+[
+"We play ball during the break.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-05.mp3"
+],
+[
+"lunchtime",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-06.mp3"
+],
+[
+"At lunchtime, I eat with my friends.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-06.mp3"
+],
+[
+"take a nap",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-07.mp3"
+],
+[
+"We take a nap after lunch.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-07.mp3"
+],
+[
+"P.E. class",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-08.mp3"
+],
+[
+"We run a lot in P.E. class.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-08.mp3"
+],
+[
+"homework",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-09.mp3"
+],
+[
+"I do my homework after dinner.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-09.mp3"
+],
+[
+"quiz",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-10.mp3"
+],
+[
+"We have an English quiz today.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-10.mp3"
+],
+[
+"clean the classroom",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-11.mp3"
+],
+[
+"We clean the classroom at four.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-11.mp3"
+],
+[
+"club",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-12.mp3"
+],
+[
+"I am in the science club.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-12.mp3"
+],
+[
+"first then ",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-13.mp3"
+],
+[
+"First, I wash my hands. Then, I eat lunch.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-13.mp3"
+],
+[
+"after school",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\w-14.mp3"
+],
+[
+"I go to cram school after school.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\e-14.mp3"
+],
+[
+"I get to school at seven thirty.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\f-01.mp3"
+],
+[
+"My first class is math.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\f-02.mp3"
+],
+[
+"My favorite subject is science because I like doing experiments.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\f-03.mp3"
+],
+[
+"During the break, I chat with my friends.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\f-04.mp3"
+],
+[
+"After lunch, we take a nap.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\f-05.mp3"
+],
+[
+"After school, I go to the library.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\f-06.mp3"
+],
+[
+"I get to school at seven thirty. My first class is English. My favorite subject is P.E. At lunchtime, I eat with my classmates. After school, I do my homework. I like my school.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\m-1.mp3"
+],
+[
+"My school day starts early. I get to school at seven twenty and clean the classroom with my classmates. First, we have math and Chinese. Then, during the break, I play ball with my friends. My favorite subject is science because our teacher lets us do experiments. After lunch, we take a short nap, so I feel awake in the afternoon. After school, I go to the art club. It is a busy day, but I always have fun.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u04\\m-2.mp3"
+],
+[
+"What's your favorite food?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-01.mp3"
+],
+[
+"Beef noodles! My grandpa makes the best beef noodles.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-02.mp3",
+"am_michael"
+],
+[
+"What does it taste like?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-03.mp3"
+],
+[
+"The soup is rich and a little spicy, and the beef is soft.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-04.mp3",
+"am_michael"
+],
+[
+"Sounds delicious. How often do you eat it?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-05.mp3"
+],
+[
+"About once a week. What about you?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-06.mp3",
+"am_michael"
+],
+[
+"I love mango shaved ice. It's sweet and cold.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-07.mp3"
+],
+[
+"That's perfect for hot summer days!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\d-08.mp3",
+"am_michael"
+],
+[
+"What is your favorite food?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\q-01.mp3"
+],
+[
+"What does it taste like?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\q-02.mp3"
+],
+[
+"Where and with whom do you eat it?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\q-03.mp3"
+],
+[
+"Why do you like it?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\q-04.mp3"
+],
+[
+"favorite",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-01.mp3"
+],
+[
+"Dumplings are my favorite food.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-01.mp3"
+],
+[
+"delicious",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-02.mp3"
+],
+[
+"This cake is delicious.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-02.mp3"
+],
+[
+"taste",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-03.mp3"
+],
+[
+"The soup tastes a little salty.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-03.mp3"
+],
+[
+"sweet",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-04.mp3"
+],
+[
+"Bubble tea is too sweet for me.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-04.mp3"
+],
+[
+"spicy",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-05.mp3"
+],
+[
+"I can't eat spicy food.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-05.mp3"
+],
+[
+"sour",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-06.mp3"
+],
+[
+"Lemons are sour.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-06.mp3"
+],
+[
+"salty",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-07.mp3"
+],
+[
+"The fries are salty.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-07.mp3"
+],
+[
+"smell",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-08.mp3"
+],
+[
+"The bread smells good.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-08.mp3"
+],
+[
+"night market",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-09.mp3"
+],
+[
+"We eat fried chicken at the night market.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-09.mp3"
+],
+[
+"restaurant",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-10.mp3"
+],
+[
+"There is a good noodle restaurant near my home.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-10.mp3"
+],
+[
+"cook",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-11.mp3"
+],
+[
+"My dad cooks dinner on Sundays.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-11.mp3"
+],
+[
+"healthy",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-12.mp3"
+],
+[
+"Vegetables are healthy.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-12.mp3"
+],
+[
+"be full",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-13.mp3"
+],
+[
+"I can't eat any more. I'm full.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-13.mp3"
+],
+[
+"once a week",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\w-14.mp3"
+],
+[
+"I eat hot pot once a week.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\e-14.mp3"
+],
+[
+"My favorite food is beef noodles.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\f-01.mp3"
+],
+[
+"It tastes sweet and sour.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\f-02.mp3"
+],
+[
+"I usually eat it at the night market with my friends.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\f-03.mp3"
+],
+[
+"I eat it about once a week.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\f-04.mp3"
+],
+[
+"I like it because it reminds me of my grandma.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\f-05.mp3"
+],
+[
+"If you come to Taiwan, you should try stinky tofu.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\f-06.mp3"
+],
+[
+"My favorite food is fried chicken. It is hot and salty. I eat it at the night market with my friends. I eat it about once a month. It is delicious!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\m-1.mp3"
+],
+[
+"My favorite food is my mom's beef noodle soup. The soup smells wonderful, and the beef is soft and a little spicy. My mom cooks it every Sunday, so the whole family eats together. I usually eat two bowls because it is so delicious. After dinner, I am always full and happy. It is not very healthy to eat too much, but I can't stop. If you come to my house, you should try it!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u05\\m-2.mp3"
+],
+[
+"How was your birthday party last Saturday?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-01.mp3"
+],
+[
+"It was great! We had it at a pizza restaurant.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-02.mp3",
+"am_michael"
+],
+[
+"Who came?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-03.mp3"
+],
+[
+"Eight of my friends and my cousins. We played games and sang songs.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-04.mp3",
+"am_michael"
+],
+[
+"Did you get any nice presents?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-05.mp3"
+],
+[
+"Yes! My parents gave me a new basketball, and my friends gave me some comic books.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-06.mp3",
+"am_michael"
+],
+[
+"What kind of cake did you have?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-07.mp3"
+],
+[
+"A chocolate cake with thirteen candles. I made a wish and blew them out.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\d-08.mp3",
+"am_michael"
+],
+[
+"When is your birthday?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\q-01.mp3"
+],
+[
+"How did you celebrate your last birthday?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\q-02.mp3"
+],
+[
+"What presents did you get?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\q-03.mp3"
+],
+[
+"What did you wish for?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\q-04.mp3"
+],
+[
+"birthday party",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-01.mp3"
+],
+[
+"I went to Amy's birthday party.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-01.mp3"
+],
+[
+"celebrate",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-02.mp3"
+],
+[
+"We celebrated at home.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-02.mp3"
+],
+[
+"invite",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-03.mp3"
+],
+[
+"She invited ten friends.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-03.mp3"
+],
+[
+"guest",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-04.mp3"
+],
+[
+"The guests arrived at six.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-04.mp3"
+],
+[
+"present",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-05.mp3"
+],
+[
+"I got a lot of presents.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-05.mp3"
+],
+[
+"candle",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-06.mp3"
+],
+[
+"There were twelve candles on the cake.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-06.mp3"
+],
+[
+"make a wish",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-07.mp3"
+],
+[
+"Close your eyes and make a wish.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-07.mp3"
+],
+[
+"blow out",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-08.mp3"
+],
+[
+"He blew out the candles.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-08.mp3"
+],
+[
+"decorate",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-09.mp3"
+],
+[
+"We decorated the room with balloons.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-09.mp3"
+],
+[
+"balloon",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-10.mp3"
+],
+[
+"There were colorful balloons everywhere.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-10.mp3"
+],
+[
+"surprise",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-11.mp3"
+],
+[
+"The party was a surprise for my mom.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-11.mp3"
+],
+[
+"have fun",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-12.mp3"
+],
+[
+"Everyone had fun at the party.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-12.mp3"
+],
+[
+"sing",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-13.mp3"
+],
+[
+"We sang \"Happy Birthday\" together.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-13.mp3"
+],
+[
+"wrap",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\w-14.mp3"
+],
+[
+"I wrapped the present in red paper.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\e-14.mp3"
+],
+[
+"Last Sunday, I went to my cousin's birthday party.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\f-01.mp3"
+],
+[
+"The party was at her house.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\f-02.mp3"
+],
+[
+"We played games and ate pizza.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\f-03.mp3"
+],
+[
+"I gave her a storybook.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\f-04.mp3"
+],
+[
+"The cake was big and full of strawberries.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\f-05.mp3"
+],
+[
+"It was a happy day because all my friends were there.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\f-06.mp3"
+],
+[
+"Last Saturday, I went to Amy's birthday party. The party was at her house. We ate cake and played games. I gave her a book. We had a lot of fun.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\m-1.mp3"
+],
+[
+"Last month, my family had a surprise party for my mom's fortieth birthday. My sister and I decorated the living room with balloons while Mom was at work. We also invited her best friends. When she opened the door, everyone shouted, \"Surprise!\" She was so happy that she almost cried. After dinner, she made a wish and blew out the candles. I gave her a card that I made myself. It was the best party ever.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u06\\m-2.mp3"
+],
+[
+"Excuse me. How much is this T-shirt?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-01.mp3"
+],
+[
+"It's three hundred dollars. It's on sale today.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-02.mp3",
+"am_michael"
+],
+[
+"Do you have it in a smaller size?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-03.mp3"
+],
+[
+"Yes, here you are. The fitting room is over there.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-04.mp3",
+"am_michael"
+],
+[
+"Thanks. Hmm, it fits well. Do you have it in blue?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-05.mp3"
+],
+[
+"Sorry, we only have white and black.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-06.mp3",
+"am_michael"
+],
+[
+"OK, I'll take the black one. Can I pay by card?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-07.mp3"
+],
+[
+"Sure. Here's your receipt. Have a nice day!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\d-08.mp3",
+"am_michael"
+],
+[
+"Where do you usually go shopping?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\q-01.mp3"
+],
+[
+"What did you buy last time?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\q-02.mp3"
+],
+[
+"How much was it?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\q-03.mp3"
+],
+[
+"Do you like shopping? Why?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\q-04.mp3"
+],
+[
+"go shopping",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-01.mp3"
+],
+[
+"We go shopping on Saturdays.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-01.mp3"
+],
+[
+"How much",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-02.mp3"
+],
+[
+"How much is this cap?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-02.mp3"
+],
+[
+"cost",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-03.mp3"
+],
+[
+"The shoes cost one thousand dollars.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-03.mp3"
+],
+[
+"price",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-04.mp3"
+],
+[
+"The price is too high.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-04.mp3"
+],
+[
+"cheap",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-05.mp3"
+],
+[
+"This bag is cheap.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-05.mp3"
+],
+[
+"expensive",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-06.mp3"
+],
+[
+"That phone is too expensive.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-06.mp3"
+],
+[
+"on sale",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-07.mp3"
+],
+[
+"Everything is on sale today.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-07.mp3"
+],
+[
+"size",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-08.mp3"
+],
+[
+"Do you have a larger size?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-08.mp3"
+],
+[
+"try on",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-09.mp3"
+],
+[
+"Can I try on these jeans?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-09.mp3"
+],
+[
+"fit",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-10.mp3"
+],
+[
+"The jacket fits me well.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-10.mp3"
+],
+[
+"pay",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-11.mp3"
+],
+[
+"I paid in cash.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-11.mp3"
+],
+[
+"buy",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-12.mp3"
+],
+[
+"I bought a gift for my mom.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-12.mp3"
+],
+[
+"spend",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-13.mp3"
+],
+[
+"I spent five hundred dollars.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-13.mp3"
+],
+[
+"department store",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\w-14.mp3"
+],
+[
+"The department store is crowded.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\e-14.mp3"
+],
+[
+"Last Sunday, I went shopping at the mall.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\f-01.mp3"
+],
+[
+"I went with my mom and sister.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\f-02.mp3"
+],
+[
+"I wanted to buy a new pair of sneakers.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\f-03.mp3"
+],
+[
+"It cost nine hundred dollars.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\f-04.mp3"
+],
+[
+"It was on sale, so I bought two.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\f-05.mp3"
+],
+[
+"I spent one thousand two hundred dollars in total.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\f-06.mp3"
+],
+[
+"Last Saturday, I went shopping with my mom. We went to the night market. I bought a cap. It cost two hundred dollars. It was cheap, and I like it.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\m-1.mp3"
+],
+[
+"Last weekend, I went to the department store with my sister to buy new sneakers. There were many nice shoes, but most of them were too expensive. Finally, we found a pair that was on sale. I tried them on, and they fit me well. They cost only nine hundred dollars, so I paid with my own money. I also spent one hundred dollars on bubble tea. I was tired, but I was happy with my new shoes.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u07\\m-2.mp3"
+],
+[
+"Excuse me. Could you tell me how to get to the library?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-01.mp3"
+],
+[
+"Sure. Go straight down this street for two blocks.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-02.mp3",
+"am_michael"
+],
+[
+"Two blocks. And then?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-03.mp3"
+],
+[
+"Turn left at the traffic light. The library is on your right.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-04.mp3",
+"am_michael"
+],
+[
+"Is it far from here?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-05.mp3"
+],
+[
+"No, it's only about five minutes on foot.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-06.mp3",
+"am_michael"
+],
+[
+"Is it next to the post office?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-07.mp3"
+],
+[
+"Yes, it's between the post office and a small park. You can't miss it.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\d-08.mp3",
+"am_michael"
+],
+[
+"How do you get to school?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\q-01.mp3"
+],
+[
+"What is near your home?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\q-02.mp3"
+],
+[
+"How do you get from your home to the nearest store?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\q-03.mp3"
+],
+[
+"Did you ever get lost? What did you do?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\q-04.mp3"
+],
+[
+"go straight",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-01.mp3"
+],
+[
+"Go straight for two blocks.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-01.mp3"
+],
+[
+"turn left / right",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-02.mp3"
+],
+[
+"Turn right at the bank.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-02.mp3"
+],
+[
+"block",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-03.mp3"
+],
+[
+"The park is three blocks away.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-03.mp3"
+],
+[
+"corner",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-04.mp3"
+],
+[
+"There is a bakery on the corner.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-04.mp3"
+],
+[
+"traffic light",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-05.mp3"
+],
+[
+"Stop at the traffic light.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-05.mp3"
+],
+[
+"cross",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-06.mp3"
+],
+[
+"Cross the street carefully.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-06.mp3"
+],
+[
+"next to",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-07.mp3"
+],
+[
+"The bank is next to the hospital.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-07.mp3"
+],
+[
+"between and ",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-08.mp3"
+],
+[
+"The shop is between the bank and the school.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-08.mp3"
+],
+[
+"across from",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-09.mp3"
+],
+[
+"The MRT station is across from the mall.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-09.mp3"
+],
+[
+"on foot",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-10.mp3"
+],
+[
+"It takes ten minutes on foot.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-10.mp3"
+],
+[
+"far from",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-11.mp3"
+],
+[
+"My school isn't far from my home.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-11.mp3"
+],
+[
+"get lost",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-12.mp3"
+],
+[
+"I got lost in the city.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-12.mp3"
+],
+[
+"map",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-13.mp3"
+],
+[
+"Let's check the map on my phone.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-13.mp3"
+],
+[
+"How do I get to ?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\w-14.mp3"
+],
+[
+"How do I get to the train station?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\e-14.mp3"
+],
+[
+"Excuse me. How do I get to the night market?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\f-01.mp3"
+],
+[
+"Go straight for two blocks.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\f-02.mp3"
+],
+[
+"Turn left at the convenience store.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\f-03.mp3"
+],
+[
+"It is across from the bank.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\f-04.mp3"
+],
+[
+"It takes about ten minutes on foot.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\f-05.mp3"
+],
+[
+"If you get lost, you can ask a police officer.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\f-06.mp3"
+],
+[
+"There is a good bookstore near my school. Go out of the school and turn right. Go straight for two blocks. The bookstore is next to the bank. It takes five minutes on foot.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\m-1.mp3"
+],
+[
+"If you like bubble tea, you should visit Happy Tea near my school. When you leave the school gate, turn left and go straight until you see a traffic light. Cross the street and turn right. The shop is on the corner, between a bakery and a bookstore. It is not far from the school, and it only takes about eight minutes on foot. If you get lost, just check the map on your phone or call me.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u08\\m-2.mp3"
+],
+[
+"What's the most important holiday in Taiwan?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-01.mp3"
+],
+[
+"Chinese New Year. It's usually in January or February.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-02.mp3",
+"am_michael"
+],
+[
+"What do people do?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-03.mp3"
+],
+[
+"Families get together and eat a big dinner on New Year's Eve.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-04.mp3",
+"am_michael"
+],
+[
+"Do children get presents?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-05.mp3"
+],
+[
+"We get red envelopes with money inside. That's my favorite part!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-06.mp3",
+"am_michael"
+],
+[
+"What other holidays do you have?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-07.mp3"
+],
+[
+"The Moon Festival. We eat mooncakes and have barbecues with our neighbors.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\d-08.mp3",
+"am_michael"
+],
+[
+"What is your favorite holiday?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\q-01.mp3"
+],
+[
+"When is it?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\q-02.mp3"
+],
+[
+"What do people eat?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\q-03.mp3"
+],
+[
+"What does your family do?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\q-04.mp3"
+],
+[
+"holiday",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-01.mp3"
+],
+[
+"Chinese New Year is a long holiday.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-01.mp3"
+],
+[
+"festival",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-02.mp3"
+],
+[
+"The Lantern Festival is very beautiful.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-02.mp3"
+],
+[
+"Chinese New Year",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-03.mp3"
+],
+[
+"We clean the house before Chinese New Year.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-03.mp3"
+],
+[
+"New Year's Eve",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-04.mp3"
+],
+[
+"We eat a big dinner on New Year's Eve.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-04.mp3"
+],
+[
+"red envelope",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-05.mp3"
+],
+[
+"Grandma gave me a red envelope.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-05.mp3"
+],
+[
+"lantern",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-06.mp3"
+],
+[
+"Children carry lanterns at night.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-06.mp3"
+],
+[
+"mooncake",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-07.mp3"
+],
+[
+"Mooncakes are sweet and heavy.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-07.mp3"
+],
+[
+"rice dumpling",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-08.mp3"
+],
+[
+"We eat rice dumplings at the Dragon Boat Festival.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-08.mp3"
+],
+[
+"dragon boat race",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-09.mp3"
+],
+[
+"We watched a dragon boat race.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-09.mp3"
+],
+[
+"get together",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-10.mp3"
+],
+[
+"Families get together for dinner.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-10.mp3"
+],
+[
+"fireworks",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-11.mp3"
+],
+[
+"The fireworks were amazing.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-11.mp3"
+],
+[
+"tradition",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-12.mp3"
+],
+[
+"It is a Taiwanese tradition.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-12.mp3"
+],
+[
+"wish",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-13.mp3"
+],
+[
+"We wish everyone good luck.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-13.mp3"
+],
+[
+"barbecue",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\w-14.mp3"
+],
+[
+"We have a barbecue at the Moon Festival.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\e-14.mp3"
+],
+[
+"My favorite holiday is the Moon Festival.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\f-01.mp3"
+],
+[
+"It is in September or October.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\f-02.mp3"
+],
+[
+"On this holiday, people look at the moon.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\f-03.mp3"
+],
+[
+"We eat rice dumplings because it is a tradition.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\f-04.mp3"
+],
+[
+"My family usually has a barbecue with our neighbors.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\f-05.mp3"
+],
+[
+"I like this holiday because I can see all my cousins.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\f-06.mp3"
+],
+[
+"My favorite holiday is Chinese New Year. It is in January or February. My family gets together and eats a big dinner. I get red envelopes. I love this holiday.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\m-1.mp3"
+],
+[
+"The Dragon Boat Festival is a traditional holiday in Taiwan. It is usually in June. On this day, people eat rice dumplings and watch dragon boat races on the river. My grandma makes rice dumplings with pork and mushrooms, and they are delicious. Last year, my family went to Yilan to watch a race, and the boats were very fast. I like this holiday because the weather is hot, so it is a good time for a short trip.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u09\\m-2.mp3"
+],
+[
+"Where did you go during summer vacation?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-01.mp3"
+],
+[
+"I went to Hualien with my family. We took the train.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-02.mp3",
+"am_michael"
+],
+[
+"How long did you stay there?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-03.mp3"
+],
+[
+"Three days. We stayed at a hotel near the beach.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-04.mp3",
+"am_michael"
+],
+[
+"What did you do?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-05.mp3"
+],
+[
+"We visited Taroko Gorge and rode bikes along the coast.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-06.mp3",
+"am_michael"
+],
+[
+"Sounds amazing! Did anything special happen?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-07.mp3"
+],
+[
+"Yes! We saw dolphins on a boat trip. I took lots of pictures.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\d-08.mp3",
+"am_michael"
+],
+[
+"Where did you go on your last trip?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\q-01.mp3"
+],
+[
+"Who did you go with, and how did you get there?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\q-02.mp3"
+],
+[
+"What did you see or do there?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\q-03.mp3"
+],
+[
+"What was the best part?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\q-04.mp3"
+],
+[
+"trip",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-01.mp3"
+],
+[
+"We took a trip to Tainan.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-01.mp3"
+],
+[
+"take the train",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-02.mp3"
+],
+[
+"We took the train to Taitung.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-02.mp3"
+],
+[
+"stay at",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-03.mp3"
+],
+[
+"We stayed at a hotel by the sea.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-03.mp3"
+],
+[
+"visit",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-04.mp3"
+],
+[
+"We visited an old temple.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-04.mp3"
+],
+[
+"scenery",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-05.mp3"
+],
+[
+"The scenery was beautiful.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-05.mp3"
+],
+[
+"take pictures",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-06.mp3"
+],
+[
+"I took pictures of the mountains.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-06.mp3"
+],
+[
+"souvenir",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-07.mp3"
+],
+[
+"I bought a souvenir for my friend.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-07.mp3"
+],
+[
+"local food",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-08.mp3"
+],
+[
+"We tried some local food.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-08.mp3"
+],
+[
+"famous",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-09.mp3"
+],
+[
+"This beach is famous for its sunset.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-09.mp3"
+],
+[
+"excited",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-10.mp3"
+],
+[
+"I was excited before the trip.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-10.mp3"
+],
+[
+"tired",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-11.mp3"
+],
+[
+"We were tired but happy.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-11.mp3"
+],
+[
+"unforgettable",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-12.mp3"
+],
+[
+"It was an unforgettable trip.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-12.mp3"
+],
+[
+"first then finally",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-13.mp3"
+],
+[
+"First, we went to the beach. Finally, we went home.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-13.mp3"
+],
+[
+"weather",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\w-14.mp3"
+],
+[
+"The weather was sunny every day.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\e-14.mp3"
+],
+[
+"Last summer, I went to Hualien with my family.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\f-01.mp3"
+],
+[
+"We got there by train.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\f-02.mp3"
+],
+[
+"We stayed at a hotel for three days.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\f-03.mp3"
+],
+[
+"First, we visited a temple. Then, we ate local food.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\f-04.mp3"
+],
+[
+"The best part was the boat trip.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\f-05.mp3"
+],
+[
+"I hope I can go there again next year.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\f-06.mp3"
+],
+[
+"Last summer, I went to Kenting with my family. We got there by car. We swam in the sea and ate local food. The weather was sunny. It was a fun trip.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\m-1.mp3"
+],
+[
+"Last winter vacation, I took a trip to Japan with my parents. We stayed in Osaka for five days. First, we visited a famous castle and took a lot of pictures. Then, we went to a big market and tried local food. The best part was a day at a theme park, but we waited in line for a long time. Every night we were tired, but we were also excited about the next day. I bought some souvenirs for my classmates. I hope I can go back again someday.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u10\\m-2.mp3"
+],
+[
+"What do you want to be in the future?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-01.mp3"
+],
+[
+"I want to be a game designer.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-02.mp3",
+"am_michael"
+],
+[
+"Why?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-03.mp3"
+],
+[
+"Because I love games, and I want to make people happy.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-04.mp3",
+"am_michael"
+],
+[
+"What are you doing now to reach your dream?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-05.mp3"
+],
+[
+"I'm learning to code, and I draw characters in my free time.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-06.mp3",
+"am_michael"
+],
+[
+"That's cool. My dream is to be a doctor and help sick children.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-07.mp3"
+],
+[
+"You're good at science, so I'm sure you can do it!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\d-08.mp3",
+"am_michael"
+],
+[
+"What do you want to be in the future?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\q-01.mp3"
+],
+[
+"Why do you want to do that?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\q-02.mp3"
+],
+[
+"What do you need to learn?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\q-03.mp3"
+],
+[
+"What are you doing now for your dream?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\q-04.mp3"
+],
+[
+"dream",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-01.mp3"
+],
+[
+"My dream is to travel around the world.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-01.mp3"
+],
+[
+"future",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-02.mp3"
+],
+[
+"I want to be a pilot in the future.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-02.mp3"
+],
+[
+"want to be",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-03.mp3"
+],
+[
+"She wants to be a singer.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-03.mp3"
+],
+[
+"hope",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-04.mp3"
+],
+[
+"I hope to live by the sea.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-04.mp3"
+],
+[
+"job",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-05.mp3"
+],
+[
+"Being a nurse is a hard job.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-05.mp3"
+],
+[
+"help people",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-06.mp3"
+],
+[
+"Doctors help people every day.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-06.mp3"
+],
+[
+"practice",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-07.mp3"
+],
+[
+"I practice the piano every day.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-07.mp3"
+],
+[
+"study hard",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-08.mp3"
+],
+[
+"I need to study hard.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-08.mp3"
+],
+[
+"skill",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-09.mp3"
+],
+[
+"Drawing is an important skill for designers.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-09.mp3"
+],
+[
+"reach my dream",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-10.mp3"
+],
+[
+"I will work hard to reach my dream.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-10.mp3"
+],
+[
+"interested in",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-11.mp3"
+],
+[
+"I am interested in animals.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-11.mp3"
+],
+[
+"someday",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-12.mp3"
+],
+[
+"Someday I will open my own café.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-12.mp3"
+],
+[
+"give up",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-13.mp3"
+],
+[
+"Never give up on your dream.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-13.mp3"
+],
+[
+"because",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\w-14.mp3"
+],
+[
+"I want to be a vet because I love animals.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\e-14.mp3"
+],
+[
+"My dream is to be a vet.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\f-01.mp3"
+],
+[
+"I want to be a chef because I love cooking.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\f-02.mp3"
+],
+[
+"I am interested in computers.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\f-03.mp3"
+],
+[
+"To reach my dream, I need to study science.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\f-04.mp3"
+],
+[
+"Now, I practice drawing every day.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\f-05.mp3"
+],
+[
+"Someday, I will open my own animal hospital.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\f-06.mp3"
+],
+[
+"My dream is to be a vet. I love animals, and I want to help them. I need to study hard. Now, I read books about animals every day. I hope my dream comes true.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\m-1.mp3"
+],
+[
+"My dream is to become a pilot. When I was little, I took a plane to Japan, and I was interested in flying from that day. Pilots can see the world from the sky and visit many countries. To reach my dream, I need to be healthy, study science, and speak good English. So now I run every morning and practice English with this website. It will not be easy, but I will never give up. Someday, I will fly a big plane.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u11\\m-2.mp3"
+],
+[
+"I'm having a barbecue party next Saturday. Would you like to come?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-01.mp3"
+],
+[
+"I'd love to! What time does it start?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-02.mp3",
+"am_michael"
+],
+[
+"At five in the afternoon. It's in my backyard.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-03.mp3"
+],
+[
+"Should I bring anything?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-04.mp3",
+"am_michael"
+],
+[
+"You can bring some drinks or snacks if you want.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-05.mp3"
+],
+[
+"Sure. Can I bring my little sister?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-06.mp3",
+"am_michael"
+],
+[
+"Of course! Please tell me by Wednesday, so I can buy enough food.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-07.mp3"
+],
+[
+"OK. Thanks for inviting me!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\d-08.mp3",
+"am_michael"
+],
+[
+"What event do you want to invite friends to?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\q-01.mp3"
+],
+[
+"When and where is it?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\q-02.mp3"
+],
+[
+"What should your friends bring?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\q-03.mp3"
+],
+[
+"How should they answer you?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\q-04.mp3"
+],
+[
+"invite",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-01.mp3"
+],
+[
+"I want to invite you to my party.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-01.mp3"
+],
+[
+"Would you like to ?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-02.mp3"
+],
+[
+"Would you like to come to my concert?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-02.mp3"
+],
+[
+"Please come to ",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-03.mp3"
+],
+[
+"Please come to my birthday party.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-03.mp3"
+],
+[
+"date",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-04.mp3"
+],
+[
+"Date: Saturday, May 10",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-04.mp3"
+],
+[
+"time",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-05.mp3"
+],
+[
+"Time: 2:00 p.m. to 5:00 p.m.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-05.mp3"
+],
+[
+"place",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-06.mp3"
+],
+[
+"Place: My home, 25 Park Road",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-06.mp3"
+],
+[
+"bring",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-07.mp3"
+],
+[
+"Please bring your swimsuit.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-07.mp3"
+],
+[
+"celebrate",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-08.mp3"
+],
+[
+"Let's celebrate together!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-08.mp3"
+],
+[
+"let me know",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-09.mp3"
+],
+[
+"Please let me know if you can come.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-09.mp3"
+],
+[
+"by (+ 日期)",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-10.mp3"
+],
+[
+"Please reply by Friday.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-10.mp3"
+],
+[
+"see you there",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-11.mp3"
+],
+[
+"See you there!",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-11.mp3"
+],
+[
+"fun",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-12.mp3"
+],
+[
+"It will be a lot of fun.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-12.mp3"
+],
+[
+"dress up",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-13.mp3"
+],
+[
+"Please dress up as a movie character.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-13.mp3"
+],
+[
+"Dear ",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\w-14.mp3"
+],
+[
+"Dear Amy,",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\e-14.mp3"
+],
+[
+"Dear Tom,",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\f-01.mp3"
+],
+[
+"I am having a pool party on Sunday, July 20.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\f-02.mp3"
+],
+[
+"Would you like to come?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\f-03.mp3"
+],
+[
+"It will be at my home from two to five p.m.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\f-04.mp3"
+],
+[
+"Please bring a swimsuit and a towel.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\f-05.mp3"
+],
+[
+"Please let me know by Wednesday.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\f-06.mp3"
+],
+[
+"Dear Tom, I am having a birthday party on Saturday. It will be at my home at three p.m. Would you like to come? Please let me know by Friday. Your friend, Ben",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\m-1.mp3"
+],
+[
+"Dear Lisa, Our class is going to have a Christmas party, and I want to invite you! It will be in our classroom on Friday, December 20, from four to six p.m. We will play games, sing songs, and exchange presents, so please bring a small gift that costs less than two hundred dollars. You can also dress up in red or green. Please let me know by Monday so I can prepare enough food. I hope you can come! Love, Amy",
+"E:\\GitHub\\english-quiz\\writing\\audio/u12\\m-2.mp3"
+],
+[
+"Ben, you look upset. What's wrong?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-01.mp3"
+],
+[
+"I borrowed my friend Leo's comic book, and I spilled juice on it.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-02.mp3",
+"am_michael"
+],
+[
+"Oh no. Did you tell him?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-03.mp3"
+],
+[
+"Not yet. I feel terrible. I don't know what to say.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-04.mp3",
+"am_michael"
+],
+[
+"Why don't you write him a card? Say sorry and explain what happened.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-05.mp3"
+],
+[
+"Good idea. I can also buy him a new one with my pocket money.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-06.mp3",
+"am_michael"
+],
+[
+"That's a great way to fix it. He'll understand.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-07.mp3"
+],
+[
+"Thanks, Amy. I'll be more careful next time.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\d-08.mp3",
+"am_michael"
+],
+[
+"When did you last say sorry to someone?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\q-01.mp3"
+],
+[
+"What happened?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\q-02.mp3"
+],
+[
+"How did the other person feel?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\q-03.mp3"
+],
+[
+"What did you do to make it better?",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\q-04.mp3"
+],
+[
+"I'm sorry",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-01.mp3"
+],
+[
+"I'm sorry for being late.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-01.mp3"
+],
+[
+"mistake",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-02.mp3"
+],
+[
+"It was my mistake.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-02.mp3"
+],
+[
+"break",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-03.mp3"
+],
+[
+"I broke your cup by accident.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-03.mp3"
+],
+[
+"forget",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-04.mp3"
+],
+[
+"I forgot your birthday.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-04.mp3"
+],
+[
+"by accident",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-05.mp3"
+],
+[
+"I stepped on your foot by accident.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-05.mp3"
+],
+[
+"upset",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-06.mp3"
+],
+[
+"You were upset, and I understand.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-06.mp3"
+],
+[
+"feel terrible",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-07.mp3"
+],
+[
+"I feel terrible about it.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-07.mp3"
+],
+[
+"should have",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-08.mp3"
+],
+[
+"I should have told you the truth.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-08.mp3"
+],
+[
+"promise",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-09.mp3"
+],
+[
+"I promise it won't happen again.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-09.mp3"
+],
+[
+"careful",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-10.mp3"
+],
+[
+"I will be more careful.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-10.mp3"
+],
+[
+"make it up to you",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-11.mp3"
+],
+[
+"Let me make it up to you.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-11.mp3"
+],
+[
+"forgive",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-12.mp3"
+],
+[
+"I hope you can forgive me.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-12.mp3"
+],
+[
+"friendship",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-13.mp3"
+],
+[
+"Our friendship is important to me.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-13.mp3"
+],
+[
+"next time",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\w-14.mp3"
+],
+[
+"Next time, I will ask first.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\e-14.mp3"
+],
+[
+"Dear Leo,",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\f-01.mp3"
+],
+[
+"I'm really sorry for spilling juice on your comic book.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\f-02.mp3"
+],
+[
+"I didn't mean to make you upset.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\f-03.mp3"
+],
+[
+"I should have been more careful.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\f-04.mp3"
+],
+[
+"To make it up to you, I will buy you a new one.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\f-05.mp3"
+],
+[
+"I promise I will be more careful next time.",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\f-06.mp3"
+],
+[
+"Dear Mom, I'm sorry I forgot to clean my room. I know you were upset. I will clean it right after school today. I promise I will remember next time. Love, Amy",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\m-1.mp3"
+],
+[
+"Dear Leo, I'm really sorry about your comic book. When I was reading it at lunch, I spilled orange juice on it by accident. I know it was your favorite book, and I feel terrible. I should have been more careful. To make it up to you, I am going to buy you a new one this weekend with my pocket money. Our friendship is very important to me, so I hope you can forgive me. Next time, I will keep drinks away from books. Your friend, Ben",
+"E:\\GitHub\\english-quiz\\writing\\audio/u13\\m-2.mp3"
 ]
 ]

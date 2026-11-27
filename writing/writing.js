@@ -159,7 +159,9 @@
     const out = [
       { ok: n >= L.min, t: '字數 ' + n + ' / ' + L.min + ' 字以上' },
       { ok: !!t && badCap === 0, t: '句子開頭大寫、I 要大寫' + (badCap ? '（還有 ' + badCap + ' 處）' : '') },
-      { ok: /[.!?]["')]?$/.test(t), t: '句子結尾要有句點（. ! ?）' },
+      // 卡片（邀請卡、道歉卡）最後可以是署名，例如 Love, Amy／Your friend, Ben（2026-11-28）
+      { ok: /[.!?]["')]?$/.test(CFG.card ? t.replace(/([.!?])\s*(love|your (best )?friend|best wishes|yours|sincerely|from|cheers|thanks|take care)\b[^.!?]{0,30}$/i, '$1') : t),
+        t: '句子結尾要有句點（. ! ?）' + (CFG.card ? '，最後可以署名（Love, 名字）' : '') },
       { ok: used.length >= L.words, t: '用到字詞庫的字 ' + used.length + ' / ' + L.words + ' 個' + (used.length ? '：' + used.join('、') : '') },
     ];
     if(L.link) out.push({ ok: LINKS.test(t), t: '用到連接詞（because、so、but、when、after、then…）' });

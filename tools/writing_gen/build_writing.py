@@ -15,7 +15,7 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 OUT = os.path.join(REPO, 'writing')
 sys.path.insert(0, HERE)
 E = html.escape
-V = '20261121a'          # writing.js／writing.css 的快取版本（改了要一起改）
+V = '20261128a'          # writing.js／writing.css 的快取版本（改了要一起改）
 GQ = '20261120a'         # gquiz.js 的快取版本（和英文測驗系統其他頁面一致）
 VOICE_B = 'am_michael'   # 對話第二個人的聲音
 UNITS = [importlib.import_module(n[:-3]) for n in sorted(os.listdir(HERE)) if re.fullmatch(r'wr_u\d\d\.py', n)]
@@ -114,7 +114,7 @@ def unit_page(m, jobs):
     cfg = {'unit': no, 'label': 'Writing U%d' % no, 'title': '寫作園地 Unit %d %s' % (no, u['zh']), 'topic': u['en'],
            'prompt': w['prompt'], 'zh': w['zh'], 'tense': u['tense'], 'qs': w['qs'], 'targets': targets,
            'speakQs': [q for q, _, _ in u['speak']], 'frames': [f for f, _, _ in u['frames']],
-           'model': {'1': w['model'][1], '2': w['model'][2]}}
+           'model': {'1': w['model'][1], '2': w['model'][2]}, 'card': bool(u.get('card'))}
     h += '<script>window.WRITING = %s;</script>\n' % json.dumps(cfg, ensure_ascii=False, indent=0)
     h += '<script src="writing.js?v=%s"></script>\n<script src="../points.js"></script>\n</body>\n</html>\n' % V
     open(os.path.join(OUT, tag + '.html'), 'w', encoding='utf-8', newline='\n').write(h)
@@ -175,7 +175,8 @@ def index_page():
         h += ('    <div class="wr-unit"><div class="wu-no">UNIT %d</div><div class="wu-t">%s</div><div class="wu-zh">%s</div><div class="wu-d">%s</div>'
               '<div class="wu-links"><a class="btn alt" href="%s.html">開始</a> <a class="btn" href="%s-quiz.html">造句練習</a></div>'
               '<div class="wu-st" data-unit="%s"></div></div>\n') % (u['no'], E(u['en']), E(u['zh']), E(u['intro']), tag, tag, tag)
-    for i, (en, zh) in enumerate(PLANNED, len(UNITS) + 1):
+    done = {m.UNIT['en'] for m in UNITS}
+    for i, (en, zh) in enumerate([p for p in PLANNED if p[0] not in done], len(UNITS) + 1):
         h += '    <div class="wr-unit soon"><div class="wu-no">UNIT %d</div><div class="wu-t">%s</div><div class="wu-zh">%s</div><span class="wu-tag">製作中</span></div>\n' % (i, E(en), E(zh))
     h += '''  </div>
 </div>
