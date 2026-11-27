@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聽力訓練｜中級 第 4 回</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261125a">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · INTERMEDIATE · TEST 4</div>
+  <h1>中級 <span class="zh">第 4 回｜上課、逛街購物、住旅館、整理房子</span></h1>
+  <div class="subtitle">多益聽力題型・20 題・多益聽力約 250–350 分</div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一題按 <b>▶ 播放</b>，作答時每題最多聽 <b>1 次</b>。第一、二部分的選項不印出來，要用聽的。</li>
+      <li>全部作答才能送出；送出後看 <b>聽力原文＋中文</b>，每一句都能按 🔊 重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+</div>
+<script>
+window.LT = {"audio": "audio/m04/all.mp3", "plays": 1};
+window.GQUIZ = {
+ "label": "Listening M04",
+ "title": "聽力訓練 中級 第 4 回",
+ "back": "index.html",
+ "mode": "聽力測驗",
+ "links": "<a class=\"btn\" href=\"m04-dict.html\">✍️ 聽寫練習</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "Part 1　看照片選描述（4 題）",
+   "note": "按「▶ 播放」會聽到 A、B、C、D 四個句子（不印出來），選出最符合照片的句子。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[看照片 m04p1]</span><button type=\"button\" class=\"lt-play\" data-id=\"q1\" data-t=\"0.45,17.72\">▶ 播放</button><img class=\"lt-photo\" src=\"img/m04p1.jpg\" alt=\"照片 1\">",
+     "opts": [
+      "A woman is erasing a whiteboard.",
+      "A woman is opening a door.",
+      "A woman is hanging a picture on the wall.",
+      "A woman is writing on a whiteboard."
+     ],
+     "answer": 3,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"1.84,5.20\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">A woman is erasing a whiteboard.</span><span class=\"zh\">一名女子正在擦白板。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"6.03,9.12\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">A woman is opening a door.</span><span class=\"zh\">一名女子正在開門。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"9.95,13.51\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">A woman is hanging a picture on the wall.</span><span class=\"zh\">一名女子正在牆上掛畫。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"14.34,17.72\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">D.</b><span class=\"en\">A woman is writing on a whiteboard.</span><span class=\"zh\">一名女子正在白板上寫字。</span></div><div class=\"lt-tip\">💡 她舉手拿著筆在白板上寫 → writing on a whiteboard。erase＝擦掉。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[看照片 m04p2]</span><button type=\"button\" class=\"lt-play\" data-id=\"q2\" data-t=\"19.35,37.35\">▶ 播放</button><img class=\"lt-photo\" src=\"img/m04p2.jpg\" alt=\"照片 2\">",
+     "opts": [
+      "A woman is holding a shopping bag.",
+      "A woman is trying on a scarf in a store.",
+      "A woman is watering some plants.",
+      "A woman is sitting at an outdoor table."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"20.87,24.23\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">A woman is holding a shopping bag.</span><span class=\"zh\">一名女子正提著購物袋。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"25.06,28.79\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">A woman is trying on a scarf in a store.</span><span class=\"zh\">一名女子正在店裡試戴圍巾。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"29.62,32.83\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">A woman is watering some plants.</span><span class=\"zh\">一名女子正在幫植物澆水。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"33.66,37.35\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">D.</b><span class=\"en\">A woman is sitting at an outdoor table.</span><span class=\"zh\">一名女子正坐在戶外的桌子旁。</span></div><div class=\"lt-tip\">💡 她站在街上提著購物袋。她已經圍著圍巾，但不是在店裡試戴（try on）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[看照片 m04p3]</span><button type=\"button\" class=\"lt-play\" data-id=\"q3\" data-t=\"38.98,56.70\">▶ 播放</button><img class=\"lt-photo\" src=\"img/m04p3.jpg\" alt=\"照片 3\">",
+     "opts": [
+      "A man is carrying a suitcase upstairs.",
+      "Two people are shaking hands.",
+      "A woman is standing at a front desk.",
+      "A man is hanging up a picture."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"40.50,44.33\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">A man is carrying a suitcase upstairs.</span><span class=\"zh\">一名男子正把行李箱搬上樓。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"45.16,48.39\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">Two people are shaking hands.</span><span class=\"zh\">兩個人正在握手。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"49.22,52.63\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">A woman is standing at a front desk.</span><span class=\"zh\">一名女子正站在櫃檯前。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"53.46,56.70\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">D.</b><span class=\"en\">A man is hanging up a picture.</span><span class=\"zh\">一名男子正在掛畫。</span></div><div class=\"lt-tip\">💡 女子站在旅館櫃檯（front desk）前，對面是穿西裝的櫃檯人員。牆上的畫本來就掛著。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[看照片 m04p4]</span><button type=\"button\" class=\"lt-play\" data-id=\"q4\" data-t=\"58.33,75.24\">▶ 播放</button><img class=\"lt-photo\" src=\"img/m04p4.jpg\" alt=\"照片 4\">",
+     "opts": [
+      "A man is climbing a ladder.",
+      "A man is reaching up to the wall.",
+      "A man is lying on the floor.",
+      "A man is hanging a curtain."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"59.78,62.93\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">A man is climbing a ladder.</span><span class=\"zh\">一名男子正在爬梯子。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"63.76,67.13\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">A man is reaching up to the wall.</span><span class=\"zh\">一名男子正伸手碰牆壁高處。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"67.96,71.28\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">A man is lying on the floor.</span><span class=\"zh\">一名男子正躺在地上。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"72.11,75.24\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">D.</b><span class=\"en\">A man is hanging a curtain.</span><span class=\"zh\">一名男子正在掛窗簾。</span></div><div class=\"lt-tip\">💡 reach up＝把手往上伸。照片裡沒有梯子，他站在地上伸手。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "Part 2　問答（8 題）",
+   "note": "先聽到一個問句，再聽到 A、B、C 三個回答（都不印出來），選出最適當的回答。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q5\" data-t=\"76.87,91.24\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "It was due yesterday.",
+      "I'm at home now.",
+      "Sure. Which part is unclear?"
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"78.34,80.26\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Can you explain the homework again?</span><span class=\"zh\">你可以再解釋一次作業嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"81.09,83.94\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">It was due yesterday.</span><span class=\"zh\">昨天就該交了。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"84.77,87.35\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">I&#x27;m at home now.</span><span class=\"zh\">我現在在家。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"88.18,91.24\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">Sure. Which part is unclear?</span><span class=\"zh\">好啊，哪一部分不清楚？</span></div><div class=\"lt-tip\">💡 請求解釋 → Sure＋反問哪裡不懂。homework 跟 home 只是聲音像。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q6\" data-t=\"92.87,107.44\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "Let me check in the back.",
+      "They're on sale.",
+      "Yes, they came yesterday."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"94.37,96.84\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Do these jeans come in a larger size?</span><span class=\"zh\">這條牛仔褲有大一點的尺寸嗎？</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"97.67,100.48\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">Let me check in the back.</span><span class=\"zh\">我去後面倉庫看看。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"101.31,103.80\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">They&#x27;re on sale.</span><span class=\"zh\">它們在特價。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"104.63,107.44\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">Yes, they came yesterday.</span><span class=\"zh\">是的，它們昨天來的。</span></div><div class=\"lt-tip\">💡 店員「去後面看看」是很常見的回答。come in a size＝有某個尺寸。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q7\" data-t=\"109.07,122.68\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "Room 508.",
+      "Eleven a.m.",
+      "I checked it twice."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"110.54,112.14\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">What time is check-out?</span><span class=\"zh\">退房是幾點？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"112.97,115.78\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">Room 508.</span><span class=\"zh\">508 號房。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"116.61,119.19\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">Eleven a.m.</span><span class=\"zh\">早上十一點。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"120.02,122.68\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">I checked it twice.</span><span class=\"zh\">我檢查兩次了。</span></div><div class=\"lt-tip\">💡 What time → eleven a.m.。check-out＝退房，check-in＝入住。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q8\" data-t=\"124.31,138.30\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "Because it was blue.",
+      "Two cans of paint.",
+      "I'd prefer something lighter."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"125.72,127.64\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Why don&#x27;t we paint the bedroom blue?</span><span class=\"zh\">我們何不把臥室漆成藍色？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"128.47,130.91\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">Because it was blue.</span><span class=\"zh\">因為它（以前）是藍色的。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"131.74,134.43\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">Two cans of paint.</span><span class=\"zh\">兩罐油漆。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"135.26,138.30\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">I&#x27;d prefer something lighter.</span><span class=\"zh\">我比較想要淺一點的。</span></div><div class=\"lt-tip\">💡 Why don&#x27;t we…? 是提議，不是問原因 → 用「我比較想要…」回應。Because 是陷阱。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q9\" data-t=\"139.93,154.90\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "I'm still working on the last page.",
+      "The science lab is upstairs.",
+      "It reported rain."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"141.38,143.45\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Have you finished your science report?</span><span class=\"zh\">你的自然報告寫完了嗎？</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"144.28,147.52\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">I&#x27;m still working on the last page.</span><span class=\"zh\">我還在寫最後一頁。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"148.35,151.46\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">The science lab is upstairs.</span><span class=\"zh\">自然教室在樓上。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"152.29,154.90\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">It reported rain.</span><span class=\"zh\">它報導會下雨。</span></div><div class=\"lt-tip\">💡 還沒寫完 → still working on…。report 換了意思來騙你。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q10\" data-t=\"156.53,171.59\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "At seven thirty.",
+      "Yes, it's served on the first floor.",
+      "A double room, please."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"157.97,160.35\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Is breakfast included in the room rate?</span><span class=\"zh\">房價有含早餐嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"161.18,163.76\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">At seven thirty.</span><span class=\"zh\">七點半。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"164.59,168.04\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">Yes, it&#x27;s served on the first floor.</span><span class=\"zh\">有，在一樓供應。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"168.87,171.59\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">A double room, please.</span><span class=\"zh\">請給我一間雙人房。</span></div><div class=\"lt-tip\">💡 included＝包含。回答「有，在一樓」最合理。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q11\" data-t=\"173.22,187.85\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "I paid by card.",
+      "It closes at ten.",
+      "Probably the one near the station."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"174.68,176.77\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Which store has the best prices?</span><span class=\"zh\">哪家店最便宜？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"177.60,180.32\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">I paid by card.</span><span class=\"zh\">我刷卡付的。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"181.15,183.81\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">It closes at ten.</span><span class=\"zh\">它十點關門。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"184.64,187.85\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">Probably the one near the station.</span><span class=\"zh\">大概是車站附近那家。</span></div><div class=\"lt-tip\">💡 Which store → the one near the station。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<span class=\"lt-hideopts\"></span><span class=\"lt-sr\">[問答]</span><button type=\"button\" class=\"lt-play\" data-id=\"q12\" data-t=\"189.48,204.65\">▶ 播放</button> <span class=\"lt-cue\">聽問句，選出最適當的回答</span>",
+     "opts": [
+      "Good, I need more time to review.",
+      "It was a hard test.",
+      "He moved last year."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 聽力原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"190.96,193.24\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">The teacher moved the test to Friday.</span><span class=\"zh\">老師把考試改到星期五了。</span></div><div class=\"lt-line ok\"><button type=\"button\" class=\"lt-say\" data-t=\"194.07,197.43\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">A.</b><span class=\"en\">Good, I need more time to review.</span><span class=\"zh\">太好了，我需要更多時間複習。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"198.26,201.07\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">B.</b><span class=\"en\">It was a hard test.</span><span class=\"zh\">那考試很難。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"201.90,204.65\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">C.</b><span class=\"en\">He moved last year.</span><span class=\"zh\">他去年搬家了。</span></div><div class=\"lt-tip\">💡 聽到消息 → 表達反應。He moved last year 的 move 是「搬家」。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "Part 3　簡短對話（4 題）",
+   "note": "聽一段對話，回答畫面上的問題（問題也會唸出來）。👩＝女生、👨＝男生。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q13\" data-t=\"206.28,225.51\">▶ 播放</button> <span class=\"lt-cue\">聽對話，回答問題</span><div class=\"lt-qtext\">What will the woman probably do next?</div>",
+     "opts": [
+      "Take a quiz.",
+      "Read Chapter Six.",
+      "Talk to Mr. Lin again.",
+      "Ask a classmate for notes."
+     ],
+     "answer": 3,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 對話原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"207.88,212.47\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">Mr. Lin, I was absent yesterday. Did I miss anything important?</span><span class=\"zh\">林老師，我昨天請假，有錯過什麼重要的嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"212.80,216.62\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">We started Chapter Five, and there&#x27;s a quiz on Monday.</span><span class=\"zh\">我們開始上第五章，星期一有小考。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"216.95,219.40\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">Oh no. Can I borrow someone&#x27;s notes?</span><span class=\"zh\">糟了，我可以借別人的筆記嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"219.73,222.76\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">Ask Jenny. She takes very good notes.</span><span class=\"zh\">去問 Jenny，她的筆記做得很好。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"223.49,225.51\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">What will the woman probably do next?</span><span class=\"zh\">女子接下來可能會做什麼？</span></div><div class=\"lt-opzh\">選項：(A) 考小考。　(B) 讀第六章。　(C) 再找林老師談。　(D) 跟同學借筆記。</div><div class=\"lt-tip\">💡 Ask Jenny → 跟同學借筆記。absent＝缺席。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q14\" data-t=\"226.84,244.78\">▶ 播放</button> <span class=\"lt-cue\">聽對話，回答問題</span><div class=\"lt-qtext\">What is the man&#x27;s problem?</div>",
+     "opts": [
+      "The jacket doesn't fit.",
+      "He lost his receipt.",
+      "The jacket is damaged.",
+      "The color is wrong."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 對話原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"228.49,231.77\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">I&#x27;d like to return this jacket. It&#x27;s too small.</span><span class=\"zh\">我想退這件外套，它太小了。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"232.10,233.62\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">Do you have the receipt?</span><span class=\"zh\">你有收據嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"233.95,237.15\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">Yes, here it is. I bought it last Saturday.</span><span class=\"zh\">有，在這裡。我上週六買的。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"237.48,242.51\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">OK. Would you like a refund, or would you like to exchange it for a bigger size?</span><span class=\"zh\">好的。你要退錢，還是換大一號？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"243.24,244.78\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">What is the man&#x27;s problem?</span><span class=\"zh\">男子的問題是什麼？</span></div><div class=\"lt-opzh\">選項：(A) 外套不合身。　(B) 他弄丟收據。　(C) 外套有破損。　(D) 顏色不對。</div><div class=\"lt-tip\">💡 too small → doesn&#x27;t fit（不合身）。fit＝尺寸合。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q15\" data-t=\"246.11,264.59\">▶ 播放</button> <span class=\"lt-cue\">聽對話，回答問題</span><div class=\"lt-qtext\">How long will the woman stay?</div>",
+     "opts": [
+      "One night.",
+      "Two nights.",
+      "Five nights.",
+      "A week."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 對話原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"247.75,251.08\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">Good evening. I have a reservation under the name Chen.</span><span class=\"zh\">晚安，我有用陳的名字訂房。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"251.41,255.03\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">Yes, Ms. Chen. A single room for two nights.</span><span class=\"zh\">是的，陳小姐，單人房住兩晚。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"255.36,258.59\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">That&#x27;s right. Is there a place nearby where I can get dinner?</span><span class=\"zh\">沒錯。附近有可以吃晚餐的地方嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"258.92,262.29\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">There&#x27;s a night market just five minutes&#x27; walk from here.</span><span class=\"zh\">走路五分鐘就有一個夜市。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"263.02,264.59\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">How long will the woman stay?</span><span class=\"zh\">女子要住多久？</span></div><div class=\"lt-opzh\">選項：(A) 一晚。　(B) 兩晚。　(C) 五晚。　(D) 一週。</div><div class=\"lt-tip\">💡 a single room for two nights → 兩晚。five 是走路幾分鐘。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q16\" data-t=\"265.92,282.51\">▶ 播放</button> <span class=\"lt-cue\">聽對話，回答問題</span><div class=\"lt-qtext\">Who most likely is the woman?</div>",
+     "opts": [
+      "A furniture seller.",
+      "The man's sister.",
+      "A painter.",
+      "A real estate agent."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 對話原文</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"267.57,270.38\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">How long will it take to paint the living room?</span><span class=\"zh\">油漆客廳要多久？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"270.71,274.08\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">About two days. But you&#x27;ll need to move the furniture first.</span><span class=\"zh\">大概兩天，但你們要先把家具移開。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"274.41,277.66\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👨</b><span class=\"en\">No problem. My brother can help me tomorrow.</span><span class=\"zh\">沒問題，我哥明天可以幫我。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"277.99,280.10\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">👩</b><span class=\"en\">Great. Then we&#x27;ll start on Thursday.</span><span class=\"zh\">太好了，那我們星期四開工。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"280.83,282.51\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Who most likely is the woman?</span><span class=\"zh\">女子最可能是誰？</span></div><div class=\"lt-opzh\">選項：(A) 家具店店員。　(B) 男子的姊妹。　(C) 油漆工人。　(D) 房仲。</div><div class=\"lt-tip\">💡 她估工期、說「我們星期四開工」→ 油漆工人。身分題要找工作內容。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "Part 4　簡短獨白（4 題）",
+   "note": "聽一段廣播、留言或說明，回答畫面上的問題（問題也會唸出來）。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q17\" data-t=\"283.84,299.74\">▶ 播放</button> <span class=\"lt-cue\">老師宣布｜Teacher announcement</span><div class=\"lt-qtext\">What should students do by Monday?</div>",
+     "opts": [
+      "Send their slides.",
+      "Give their presentations.",
+      "Choose a group.",
+      "Buy a textbook."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 原文（老師宣布）</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"285.57,287.73\" title=\"重聽這一句\">🔊</button> <span class=\"en\">OK, everyone, listen up.</span><span class=\"zh\">好，大家注意聽。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"287.91,291.36\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Your English presentations will start next Wednesday.</span><span class=\"zh\">你們的英文報告下週三開始。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"291.54,293.76\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Each group will have five minutes.</span><span class=\"zh\">每組有五分鐘。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"293.94,297.18\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Please email me your slides by Monday night.</span><span class=\"zh\">請在星期一晚上前把投影片寄給我。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"297.86,299.74\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">What should students do by Monday?</span><span class=\"zh\">學生星期一前要做什麼？</span></div><div class=\"lt-opzh\">選項：(A) 寄投影片。　(B) 上台報告。　(C) 分組。　(D) 買課本。</div><div class=\"lt-tip\">💡 email me your slides by Monday → send their slides。報告是下週三。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q18\" data-t=\"301.07,317.93\">▶ 播放</button> <span class=\"lt-cue\">百貨公司廣播｜Department store</span><div class=\"lt-qtext\">Where can shoppers find the sale?</div>",
+     "opts": [
+      "On the first floor.",
+      "On the fifth floor.",
+      "On the third floor.",
+      "In the café."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 原文（百貨公司廣播）</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"302.63,304.29\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Good afternoon, shoppers.</span><span class=\"zh\">各位顧客午安。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"304.47,309.08\" title=\"重聽這一句\">🔊</button> <span class=\"en\">For the next hour only, all shoes on the third floor are thirty percent off.</span><span class=\"zh\">接下來一小時，三樓所有鞋子打七折。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"309.26,313.53\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Also, don&#x27;t forget that our café on the fifth floor is now open.</span><span class=\"zh\">另外，別忘了五樓的咖啡廳現在開幕了。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"313.71,315.37\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Thank you for shopping with us.</span><span class=\"zh\">感謝您的光臨。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"316.05,317.93\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">Where can shoppers find the sale?</span><span class=\"zh\">特價在哪裡？</span></div><div class=\"lt-opzh\">選項：(A) 一樓。　(B) 五樓。　(C) 三樓。　(D) 咖啡廳。</div><div class=\"lt-tip\">💡 thirty percent off＝打七折（減 30%），不是打三折。鞋子在三樓。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q19\" data-t=\"319.26,338.12\">▶ 播放</button> <span class=\"lt-cue\">旅館說明｜Hotel information</span><div class=\"lt-qtext\">How can guests get help?</div>",
+     "opts": [
+      "By going to the second floor.",
+      "By sending an email.",
+      "By using an app.",
+      "By calling from their room."
+     ],
+     "answer": 3,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 原文（旅館說明）</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"320.92,322.99\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Welcome to the Harbor View Hotel.</span><span class=\"zh\">歡迎來到港景飯店。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"323.17,328.16\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Breakfast is served from six thirty to ten in the restaurant on the second floor.</span><span class=\"zh\">早餐六點半到十點在二樓餐廳供應。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"328.34,332.14\" title=\"重聽這一句\">🔊</button> <span class=\"en\">The swimming pool on the roof is open until nine p.m.</span><span class=\"zh\">頂樓游泳池開放到晚上九點。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"332.32,335.97\" title=\"重聽這一句\">🔊</button> <span class=\"en\">If you need anything, just dial zero from your room phone.</span><span class=\"zh\">有任何需要，用房間電話撥 0 就可以。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"336.65,338.12\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">How can guests get help?</span><span class=\"zh\">房客要怎麼找人幫忙？</span></div><div class=\"lt-opzh\">選項：(A) 到二樓。　(B) 寄電子郵件。　(C) 用 App。　(D) 從房間打電話。</div><div class=\"lt-tip\">💡 dial zero from your room phone → 用房間電話撥 0。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<button type=\"button\" class=\"lt-play\" data-id=\"q20\" data-t=\"339.45,356.88\">▶ 播放</button> <span class=\"lt-cue\">大樓公告｜Building notice</span><div class=\"lt-qtext\">What are residents asked to do?</div>",
+     "opts": [
+      "Paint their doors.",
+      "Keep the hallways clear.",
+      "Use the stairs.",
+      "Move to another floor."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 原文（大樓公告）</div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"341.07,343.67\" title=\"重聽這一句\">🔊</button> <span class=\"en\">This is a message for all residents.</span><span class=\"zh\">這是給所有住戶的通知。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"343.85,347.82\" title=\"重聽這一句\">🔊</button> <span class=\"en\">The hallways on floors three to six will be painted next week.</span><span class=\"zh\">三到六樓的走廊下週要油漆。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"348.00,351.18\" title=\"重聽這一句\">🔊</button> <span class=\"en\">Please do not leave shoes or bikes in the hallways.</span><span class=\"zh\">請不要把鞋子或腳踏車放在走廊。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"351.36,354.52\" title=\"重聽這一句\">🔊</button> <span class=\"en\">We are sorry for any trouble this may cause.</span><span class=\"zh\">造成不便，敬請見諒。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"lt-say\" data-t=\"355.20,356.88\" title=\"重聽這一句\">🔊</button> <b class=\"lt-tag\">問</b><span class=\"en\">What are residents asked to do?</span><span class=\"zh\">住戶被要求做什麼？</span></div><div class=\"lt-opzh\">選項：(A) 油漆自己的門。　(B) 保持走廊淨空。　(C) 走樓梯。　(D) 搬到別的樓層。</div><div class=\"lt-tip\">💡 do not leave shoes or bikes in the hallways → keep the hallways clear。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>

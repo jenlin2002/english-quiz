@@ -122,7 +122,8 @@ def build_unit(m):
             '<div class="lt-tip">💡 %s</div></div>' % E(it['tip'])
         items.append({'type': 'mc', 'q': q, 'opts': [en for en, _ in it['opts']], 'answer': it['answer'], 'exp': exp})
     secs.append({'title': 'Part 1　看照片選描述（%d 題）' % len(items),
-                 'note': '按「▶ 播放」會聽到 A、B、C 三個句子（不印出來），選出最符合照片的句子。', 'items': items})
+                 'note': '按「▶ 播放」會聽到 %s句子（不印出來），選出最符合照片的句子。' % (
+                     'A、B、C、D 四個' if len(u['p1'][0]['opts']) == 4 else 'A、B、C 三個'), 'items': items})
 
     # 第二部分 問答
     items = []
