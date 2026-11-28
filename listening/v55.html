@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜點一杯客製咖啡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V55</div>
+  <h1>影片聽力 <span class="zh">點一杯客製咖啡</span></h1>
+  <div class="subtitle">Ordering a Custom Coffee・真人原速・初級・2 段 7 題・約 1 分鐘影片</div>
+  <section class="part">
+    <p>Mia 在咖啡店點一杯「客製」的拿鐵：換成燕麥奶、糖減半、加濃縮、少冰、焦糖另外放。<br>注意聽每一個「要改的地方」。每段可以聽 3 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「MJ英文 / MJ English」頻道 <a href="https://www.youtube.com/watch?v=UqZVh-dgYvQ" target="_blank" rel="noopener">點一杯客製咖啡</a>（影片從 0:14 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>3 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從對話裡挑的 4 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="A instead of B" data-pos="phr." data-zh="要 A，不要 B" data-ex="Can I have tea instead of coffee?" data-exzh="我可以喝茶不要咖啡嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="A instead of B" title="發音">🔊</button> <b class="vw-en">A instead of B</b> <span class="vw-zh">要 A，不要 B</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="17,25" title="回到影片聽原句（0:17）">🎬</button> <b class="lt-tag">Mia</b> <span class="en">Can I get a medium latte, but with oat milk instead of regular?</span><span class="zh">可以給我中杯拿鐵，換成燕麥奶嗎？</span></div><div class="vp-note">💡 點餐換東西很好用。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can I have tea instead of coffee?" title="唸例句">🔊</button> Can I have tea instead of coffee?<span class="zh">我可以喝茶不要咖啡嗎？</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Rice instead of noodles, please." title="唸例句">🔊</button> Rice instead of noodles, please.<span class="zh">我要飯，不要麵。</span></div></li><li class="vw-item vp-item" data-en="easy on ... / light on ..." data-pos="phr." data-zh="…少放一點" data-ex="Easy on the salt, please." data-exzh="鹽少一點，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="easy on ... / light on ..." title="發音">🔊</button> <b class="vw-en">easy on ... / light on ...</b> <span class="vw-zh">…少放一點</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="35,40" title="回到影片聽原句（0:35）">🎬</button> <b class="lt-tag">Mia</b> <span class="en">Oh, and easy on the ice if that’s okay.</span><span class="zh">可以的話少冰。</span></div><div class="vp-note">💡 相反是 extra（多一點）。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Easy on the salt, please." title="唸例句">🔊</button> Easy on the salt, please.<span class="zh">鹽少一點，謝謝。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Light ice, please." title="唸例句">🔊</button> Light ice, please.<span class="zh">少冰，謝謝。</span></div></li><li class="vw-item vp-item" data-en="I’m good." data-pos="phr." data-zh="不用了；這樣就好。" data-ex="Do you want more water? — I’m good, thanks." data-exzh="還要水嗎？——不用了，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="I’m good." title="發音">🔊</button> <b class="vw-en">I’m good.</b> <span class="vw-zh">不用了；這樣就好。</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="50,55" title="回到影片聽原句（0:50）">🎬</button> <b class="lt-tag">Mia</b> <span class="en">I’m good, thanks.</span><span class="zh">不用，謝謝。</span></div><div class="vp-note">💡 別人問你還要什麼時，可以用來客氣地拒絕。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Do you want more water? — I’m good, thanks." title="唸例句">🔊</button> Do you want more water? — I’m good, thanks.<span class="zh">還要水嗎？——不用了，謝謝。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Anything else? — No, I’m good." title="唸例句">🔊</button> Anything else? — No, I’m good.<span class="zh">還要別的嗎？——不用了。</span></div></li><li class="vw-item vp-item" data-en="Can I get a name for the order?" data-pos="phr." data-zh="請問訂單的名字？" data-ex="Can I get a name? — It’s Ben." data-exzh="請問名字？——Ben。"><div class="vw-head"><button type="button" class="vw-say" data-say="Can I get a name for the order?" title="發音">🔊</button> <b class="vw-en">Can I get a name for the order?</b> <span class="vw-zh">請問訂單的名字？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="57,60" title="回到影片聽原句（0:57）">🎬</button> <b class="lt-tag">Worker</b> <span class="en">Can I get a name for the order?</span><span class="zh">請問大名？</span></div><div class="vp-note">💡 咖啡店常問，回答 It’s ＋名字。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can I get a name? — It’s Ben." title="唸例句">🔊</button> Can I get a name? — It’s Ben.<span class="zh">請問名字？——Ben。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Name for the order? — Lily, L-I-L-Y." title="唸例句">🔊</button> Name for the order? — Lily, L-I-L-Y.<span class="zh">訂單名字？——Lily，L-I-L-Y。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="latte" data-pos="n." data-zh="拿鐵" data-ex="I’ll have a hot latte." data-exzh="我要一杯熱拿鐵。"><div class="vw-head"><button type="button" class="vw-say" data-say="latte" title="發音">🔊</button> <b class="vw-en">latte</b> <span class="vw-pos">n.</span> <span class="vw-zh">拿鐵</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’ll have a hot latte." title="唸例句">🔊</button> I’ll have a hot latte.<span class="zh">我要一杯熱拿鐵。</span></div></li><li class="vw-item" data-en="medium" data-pos="adj." data-zh="中的；中杯" data-ex="A medium cup, please." data-exzh="中杯，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="medium" title="發音">🔊</button> <b class="vw-en">medium</b> <span class="vw-pos">adj.</span> <span class="vw-zh">中的；中杯</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="A medium cup, please." title="唸例句">🔊</button> A medium cup, please.<span class="zh">中杯，謝謝。</span></div></li><li class="vw-item" data-en="oat milk" data-pos="n." data-zh="燕麥奶" data-ex="Oat milk is sweet." data-exzh="燕麥奶甜甜的。"><div class="vw-head"><button type="button" class="vw-say" data-say="oat milk" title="發音">🔊</button> <b class="vw-en">oat milk</b> <span class="vw-pos">n.</span> <span class="vw-zh">燕麥奶</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Oat milk is sweet." title="唸例句">🔊</button> Oat milk is sweet.<span class="zh">燕麥奶甜甜的。</span></div></li><li class="vw-item" data-en="sugar" data-pos="n." data-zh="糖" data-ex="No sugar, please." data-exzh="請不要加糖。"><div class="vw-head"><button type="button" class="vw-say" data-say="sugar" title="發音">🔊</button> <b class="vw-en">sugar</b> <span class="vw-pos">n.</span> <span class="vw-zh">糖</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="No sugar, please." title="唸例句">🔊</button> No sugar, please.<span class="zh">請不要加糖。</span></div></li><li class="vw-item" data-en="extra" data-pos="adj." data-zh="額外的" data-ex="Can I have extra cheese?" data-exzh="可以多加起司嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="extra" title="發音">🔊</button> <b class="vw-en">extra</b> <span class="vw-pos">adj.</span> <span class="vw-zh">額外的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can I have extra cheese?" title="唸例句">🔊</button> Can I have extra cheese?<span class="zh">可以多加起司嗎？</span></div></li><li class="vw-item" data-en="iced" data-pos="adj." data-zh="冰的" data-ex="I want iced tea." data-exzh="我要冰茶。"><div class="vw-head"><button type="button" class="vw-say" data-say="iced" title="發音">🔊</button> <b class="vw-en">iced</b> <span class="vw-pos">adj.</span> <span class="vw-zh">冰的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I want iced tea." title="唸例句">🔊</button> I want iced tea.<span class="zh">我要冰茶。</span></div></li><li class="vw-item" data-en="ice" data-pos="n." data-zh="冰塊" data-ex="Less ice, please." data-exzh="少冰，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="ice" title="發音">🔊</button> <b class="vw-en">ice</b> <span class="vw-pos">n.</span> <span class="vw-zh">冰塊</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Less ice, please." title="唸例句">🔊</button> Less ice, please.<span class="zh">少冰，謝謝。</span></div></li><li class="vw-item" data-en="caramel" data-pos="n." data-zh="焦糖" data-ex="I love caramel popcorn." data-exzh="我愛焦糖爆米花。"><div class="vw-head"><button type="button" class="vw-say" data-say="caramel" title="發音">🔊</button> <b class="vw-en">caramel</b> <span class="vw-pos">n.</span> <span class="vw-zh">焦糖</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I love caramel popcorn." title="唸例句">🔊</button> I love caramel popcorn.<span class="zh">我愛焦糖爆米花。</span></div></li><li class="vw-item" data-en="wait" data-pos="n./v." data-zh="等待" data-ex="The wait is ten minutes." data-exzh="要等十分鐘。"><div class="vw-head"><button type="button" class="vw-say" data-say="wait" title="發音">🔊</button> <b class="vw-en">wait</b> <span class="vw-pos">n./v.</span> <span class="vw-zh">等待</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The wait is ten minutes." title="唸例句">🔊</button> The wait is ten minutes.<span class="zh">要等十分鐘。</span></div></li><li class="vw-item" data-en="order" data-pos="n." data-zh="訂單；點的餐" data-ex="Your order is ready." data-exzh="你點的餐好了。"><div class="vw-head"><button type="button" class="vw-say" data-say="order" title="發音">🔊</button> <b class="vw-en">order</b> <span class="vw-pos">n.</span> <span class="vw-zh">訂單；點的餐</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Your order is ready." title="唸例句">🔊</button> Your order is ready.<span class="zh">你點的餐好了。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "UqZVh-dgYvQ", "start": 14, "plays": 3, "title": "點一杯客製咖啡"};
+window.GQUIZ = {
+ "label": "Listening V55",
+ "title": "影片聽力 點一杯客製咖啡",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=UqZVh-dgYvQ\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　換牛奶、減糖（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"14,35\">▶ 播放這一段</button><br>注意聽：點什麼、多大杯、換成什麼奶、糖怎麼調、還加了什麼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What size and drink does Mia order?</div><div class=\"lt-opzh\">Mia 點了什麼、多大杯？</div>",
+     "opts": [
+      "A small mocha.",
+      "A medium latte.",
+      "A large tea."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"14,25\" title=\"重聽這一句（影片 0:14）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Hi there. What can I get started for you? — Hi. Can I get a medium latte, but with oat milk instead of regular?</span><span class=\"zh\">嗨，要點什麼呢？——嗨，可以給我一杯中杯拿鐵，但是換成燕麥奶嗎？</span></div><div class=\"lt-opzh\">選項：(A) 小杯摩卡。　(B) 中杯拿鐵。　(C) 大杯茶。</div><div class=\"lt-tip\">💡 medium＝中杯；latte＝拿鐵。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What kind of milk does Mia want?</div><div class=\"lt-opzh\">Mia 要什麼奶？</div>",
+     "opts": [
+      "Regular milk.",
+      "Oat milk.",
+      "No milk."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"17,25\" title=\"重聽這一句（影片 0:17）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">… with oat milk instead of regular? — Sure thing. Oat milk latte, medium.</span><span class=\"zh\">……換成燕麥奶，不要一般牛奶？——好的，燕麥奶拿鐵，中杯。</span></div><div class=\"lt-opzh\">選項：(A) 一般牛奶。　(B) 燕麥奶。　(C) 不要奶。</div><div class=\"lt-tip\">💡 oat＝燕麥；instead of＝取代、而不是。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What changes does Mia make next?</div><div class=\"lt-opzh\">Mia 接著又改了什麼？</div>",
+     "opts": [
+      "Half the sugar and an extra shot.",
+      "More sugar and no coffee.",
+      "Extra cream and chocolate."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"25,35\" title=\"重聽這一句（影片 0:25）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Anything else? — Could you make it half the sugar and add an extra shot, please? — You got it. Extra shot. Light on the sugar.</span><span class=\"zh\">還有嗎？——可以糖減半，再多加一份濃縮嗎？——沒問題，多一份濃縮、少糖。</span></div><div class=\"lt-opzh\">選項：(A) 糖減半、多加一份濃縮。　(B) 多糖、不要咖啡。　(C) 多加奶油和巧克力。</div><div class=\"lt-tip\">💡 shot＝一份濃縮咖啡；extra＝額外的；light on＝少放。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　冰的、外帶、名字（4 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"32,66\">▶ 播放這一段</button><br>注意聽：熱的還是冰的、冰塊怎麼調、內用或外帶、焦糖放哪、要等多久、名字怎麼拼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Does Mia want it hot or iced?</div><div class=\"lt-opzh\">Mia 要熱的還是冰的？</div>",
+     "opts": [
+      "Hot, with no ice.",
+      "Iced, with light ice.",
+      "Iced, with extra ice."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"32,44\" title=\"重聽這一句（影片 0:32）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Hot or iced? — Iced, please. Oh, and easy on the ice if that’s okay. — No problem. Light ice means more drink anyway.</span><span class=\"zh\">熱的還是冰的？——冰的。喔，可以的話少冰。——沒問題，少冰反而喝得比較多。</span></div><div class=\"lt-opzh\">選項：(A) 熱的，不加冰。　(B) 冰的，少冰。　(C) 冰的，多冰。</div><div class=\"lt-tip\">💡 easy on the ice＝少冰（easy on＝少放一點）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where does Mia want the caramel?</div><div class=\"lt-opzh\">Mia 要焦糖放在哪裡？</div>",
+     "opts": [
+      "Inside the drink.",
+      "On the side.",
+      "No caramel."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"40,50\" title=\"重聽這一句（影片 0:40）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">For here or to go? — To go, thanks. Can I also get the caramel drizzle on the side instead of inside? — Caramel on the side. Got it.</span><span class=\"zh\">內用還是外帶？——外帶，謝謝。焦糖淋醬可以另外放，不要加進去嗎？——焦糖另外放，好的。</span></div><div class=\"lt-opzh\">選項：(A) 加在飲料裡。　(B) 另外放。　(C) 不要焦糖。</div><div class=\"lt-tip\">💡 to go＝外帶；drizzle＝淋醬；on the side＝另外放。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How long is the wait?</div><div class=\"lt-opzh\">要等多久？</div>",
+     "opts": [
+      "About 5 minutes.",
+      "About 15 minutes.",
+      "No wait."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"50,60\" title=\"重聽這一句（影片 0:50）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Anything to eat with that? — I’m good, thanks. How long’s the wait? — About 5 minutes. Can I get a name for the order?</span><span class=\"zh\">要配點吃的嗎？——不用，謝謝。要等多久？——大約 5 分鐘。請問大名？</span></div><div class=\"lt-opzh\">選項：(A) 大約 5 分鐘。　(B) 大約 15 分鐘。　(C) 不用等。</div><div class=\"lt-tip\">💡 I’m good.＝不用了、這樣就好（不是「我很好」）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What name is the order under?</div><div class=\"lt-opzh\">訂單用什麼名字？</div>",
+     "opts": [
+      "Mia.",
+      "Maya.",
+      "Amy."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"57,66\" title=\"重聽這一句（影片 0:57）\">🔊</button> <b class=\"lt-tag\">Mia</b><span class=\"en\">It’s Mia. M-I-A. Thanks so much.</span><span class=\"zh\">我叫 Mia，M-I-A。非常謝謝。</span></div><div class=\"lt-opzh\">選項：(A) Mia。　(B) Maya。　(C) Amy。</div><div class=\"lt-tip\">💡 店員在杯子上寫名字，做好了會叫名字。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>
