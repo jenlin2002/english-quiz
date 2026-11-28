@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜聊聊日常生活</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V05</div>
+  <h1>影片聽力 <span class="zh">聊聊日常生活</span></h1>
+  <div class="subtitle">Daily Life &amp; Hobbies・真人原速・初級・3 段 15 題・約 7 分鐘影片</div>
+  <section class="part">
+    <p>兩個人第一次見面，用最簡單的英文互相認識：從哪裡來、住在哪裡、幾點起床、做什麼工作、喜歡吃什麼、週末做什麼，最後約好明天一起去公園。<br>講得很慢、句子很短，一問一答。先看題目（有中文），再按 ▶ 播放；每段可以聽 3 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「Daily English」頻道 <a href="https://www.youtube.com/watch?v=hP6iaz-3m5k" target="_blank" rel="noopener">聊聊日常生活</a>（影片從 0:00 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>3 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從對話裡挑的 4 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="Nice to meet you." data-pos="phr." data-zh="很高興認識你。" data-ex="Hi, I’m Amy. Nice to meet you." data-exzh="嗨，我是 Amy，很高興認識你。"><div class="vw-head"><button type="button" class="vw-say" data-say="Nice to meet you." title="發音">🔊</button> <b class="vw-en">Nice to meet you.</b> <span class="vw-zh">很高興認識你。</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="16,24" title="回到影片聽原句（0:16）">🎬</button> <b class="lt-tag"></b> <span class="en">I’m Sofia. Nice to meet you, Ethan. — Nice to meet you too, Sofia.</span><span class="zh">我是 Sofia，很高興認識你，Ethan。——我也很高興認識你，Sofia。</span></div><div class="vp-note">💡 第一次見面說；對方回 <b>Nice to meet you, too.</b></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Hi, I’m Amy. Nice to meet you." title="唸例句">🔊</button> Hi, I’m Amy. Nice to meet you.<span class="zh">嗨，我是 Amy，很高興認識你。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Nice to meet you, too." title="唸例句">🔊</button> Nice to meet you, too.<span class="zh">我也很高興認識你。</span></div></li><li class="vw-item vp-item" data-en="What about you?" data-pos="phr." data-zh="你呢？" data-ex="I like apples. What about you?" data-exzh="我喜歡蘋果，你呢？"><div class="vw-head"><button type="button" class="vw-say" data-say="What about you?" title="發音">🔊</button> <b class="vw-en">What about you?</b> <span class="vw-zh">你呢？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="27,31" title="回到影片聽原句（0:27）">🎬</button> <b class="lt-tag"></b> <span class="en">I’m from the United States. What about you?</span><span class="zh">我從美國來，你呢？</span></div><div class="vp-note">💡 回答完別人的問題，再把問題丟回去，聊天就不會斷。也可以說 <b>How about you?</b></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I like apples. What about you?" title="唸例句">🔊</button> I like apples. What about you?<span class="zh">我喜歡蘋果，你呢？</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’m twelve. How about you?" title="唸例句">🔊</button> I’m twelve. How about you?<span class="zh">我 12 歲，你呢？</span></div></li><li class="vw-item vp-item" data-en="What do you do (for work)?" data-pos="phr." data-zh="你做什麼工作？" data-ex="What does your mom do? — She’s a nurse." data-exzh="你媽媽做什麼工作？——她是護理師。"><div class="vw-head"><button type="button" class="vw-say" data-say="What do you do (for work)?" title="發音">🔊</button> <b class="vw-en">What do you do (for work)?</b> <span class="vw-zh">你做什麼工作？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="148,151" title="回到影片聽原句（2:28）">🎬</button> <b class="lt-tag"></b> <span class="en">What do you do for work?</span><span class="zh">你做什麼工作？</span></div><div class="vp-note">💡 問職業。回答：<b>I’m a teacher.</b>／<b>I work in an office.</b></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What does your mom do? — She’s a nurse." title="唸例句">🔊</button> What does your mom do? — She’s a nurse.<span class="zh">你媽媽做什麼工作？——她是護理師。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I work in a hospital." title="唸例句">🔊</button> I work in a hospital.<span class="zh">我在醫院工作。</span></div></li><li class="vw-item vp-item" data-en="Can I come with you?" data-pos="phr." data-zh="我可以跟你一起去嗎？" data-ex="I’m going to the library. — Can I come with you?" data-exzh="我要去圖書館。——我可以一起去嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="Can I come with you?" title="發音">🔊</button> <b class="vw-en">Can I come with you?</b> <span class="vw-zh">我可以跟你一起去嗎？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="418,421" title="回到影片聽原句（6:58）">🎬</button> <b class="lt-tag"></b> <span class="en">Can I come with you? — Of course.</span><span class="zh">我可以跟你去嗎？——當然。</span></div><div class="vp-note">💡 想加入別人的計畫時說。答應：<b>Of course.</b>／<b>Sure.</b></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’m going to the library. — Can I come with you?" title="唸例句">🔊</button> I’m going to the library. — Can I come with you?<span class="zh">我要去圖書館。——我可以一起去嗎？</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Sure! Let’s go together." title="唸例句">🔊</button> Sure! Let’s go together.<span class="zh">好啊！一起去吧。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="wake up" data-pos="phr." data-zh="醒來；起床" data-ex="I wake up at six every day." data-exzh="我每天六點起床。"><div class="vw-head"><button type="button" class="vw-say" data-say="wake up" title="發音">🔊</button> <b class="vw-en">wake up</b> <span class="vw-pos">phr.</span> <span class="vw-zh">醒來；起床</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I wake up at six every day." title="唸例句">🔊</button> I wake up at six every day.<span class="zh">我每天六點起床。</span></div></li><li class="vw-item" data-en="usually" data-pos="adv." data-zh="通常" data-ex="I usually walk to school." data-exzh="我通常走路上學。"><div class="vw-head"><button type="button" class="vw-say" data-say="usually" title="發音">🔊</button> <b class="vw-en">usually</b> <span class="vw-pos">adv.</span> <span class="vw-zh">通常</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I usually walk to school." title="唸例句">🔊</button> I usually walk to school.<span class="zh">我通常走路上學。</span></div></li><li class="vw-item" data-en="prefer" data-pos="v." data-zh="比較喜歡" data-ex="I prefer juice to soda." data-exzh="比起汽水，我比較喜歡果汁。"><div class="vw-head"><button type="button" class="vw-say" data-say="prefer" title="發音">🔊</button> <b class="vw-en">prefer</b> <span class="vw-pos">v.</span> <span class="vw-zh">比較喜歡</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I prefer juice to soda." title="唸例句">🔊</button> I prefer juice to soda.<span class="zh">比起汽水，我比較喜歡果汁。</span></div></li><li class="vw-item" data-en="office" data-pos="n." data-zh="辦公室" data-ex="My dad works in a big office." data-exzh="我爸爸在一間大辦公室上班。"><div class="vw-head"><button type="button" class="vw-say" data-say="office" title="發音">🔊</button> <b class="vw-en">office</b> <span class="vw-pos">n.</span> <span class="vw-zh">辦公室</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My dad works in a big office." title="唸例句">🔊</button> My dad works in a big office.<span class="zh">我爸爸在一間大辦公室上班。</span></div></li><li class="vw-item" data-en="favorite" data-pos="adj." data-zh="最喜歡的" data-ex="Blue is my favorite color." data-exzh="藍色是我最喜歡的顏色。"><div class="vw-head"><button type="button" class="vw-say" data-say="favorite" title="發音">🔊</button> <b class="vw-en">favorite</b> <span class="vw-pos">adj.</span> <span class="vw-zh">最喜歡的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Blue is my favorite color." title="唸例句">🔊</button> Blue is my favorite color.<span class="zh">藍色是我最喜歡的顏色。</span></div></li><li class="vw-item" data-en="free time" data-pos="n." data-zh="空閒時間" data-ex="What do you do in your free time?" data-exzh="你空閒時間做什麼？"><div class="vw-head"><button type="button" class="vw-say" data-say="free time" title="發音">🔊</button> <b class="vw-en">free time</b> <span class="vw-pos">n.</span> <span class="vw-zh">空閒時間</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What do you do in your free time?" title="唸例句">🔊</button> What do you do in your free time?<span class="zh">你空閒時間做什麼？</span></div></li><li class="vw-item" data-en="calm" data-pos="adj." data-zh="平靜的；輕柔的" data-ex="I like calm music before bed." data-exzh="睡前我喜歡聽輕柔的音樂。"><div class="vw-head"><button type="button" class="vw-say" data-say="calm" title="發音">🔊</button> <b class="vw-en">calm</b> <span class="vw-pos">adj.</span> <span class="vw-zh">平靜的；輕柔的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I like calm music before bed." title="唸例句">🔊</button> I like calm music before bed.<span class="zh">睡前我喜歡聽輕柔的音樂。</span></div></li><li class="vw-item" data-en="younger" data-pos="adj." data-zh="比較年輕的（younger sister 妹妹）" data-ex="My younger brother is eight." data-exzh="我弟弟八歲。"><div class="vw-head"><button type="button" class="vw-say" data-say="younger" title="發音">🔊</button> <b class="vw-en">younger</b> <span class="vw-pos">adj.</span> <span class="vw-zh">比較年輕的（younger sister 妹妹）</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My younger brother is eight." title="唸例句">🔊</button> My younger brother is eight.<span class="zh">我弟弟八歲。</span></div></li><li class="vw-item" data-en="alone" data-pos="adv." data-zh="獨自" data-ex="My grandpa lives alone." data-exzh="我爺爺一個人住。"><div class="vw-head"><button type="button" class="vw-say" data-say="alone" title="發音">🔊</button> <b class="vw-en">alone</b> <span class="vw-pos">adv.</span> <span class="vw-zh">獨自</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My grandpa lives alone." title="唸例句">🔊</button> My grandpa lives alone.<span class="zh">我爺爺一個人住。</span></div></li><li class="vw-item" data-en="friendly" data-pos="adj." data-zh="友善的" data-ex="Our new neighbor is very friendly." data-exzh="我們的新鄰居很友善。"><div class="vw-head"><button type="button" class="vw-say" data-say="friendly" title="發音">🔊</button> <b class="vw-en">friendly</b> <span class="vw-pos">adj.</span> <span class="vw-zh">友善的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Our new neighbor is very friendly." title="唸例句">🔊</button> Our new neighbor is very friendly.<span class="zh">我們的新鄰居很友善。</span></div></li><li class="vw-item" data-en="plan" data-pos="n." data-zh="計畫" data-ex="Do you have any plans for the weekend?" data-exzh="你週末有什麼計畫嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="plan" title="發音">🔊</button> <b class="vw-en">plan</b> <span class="vw-pos">n.</span> <span class="vw-zh">計畫</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Do you have any plans for the weekend?" title="唸例句">🔊</button> Do you have any plans for the weekend?<span class="zh">你週末有什麼計畫嗎？</span></div></li><li class="vw-item" data-en="entrance" data-pos="n." data-zh="入口" data-ex="Let’s meet at the school entrance." data-exzh="我們在學校門口碰面吧。"><div class="vw-head"><button type="button" class="vw-say" data-say="entrance" title="發音">🔊</button> <b class="vw-en">entrance</b> <span class="vw-pos">n.</span> <span class="vw-zh">入口</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Let’s meet at the school entrance." title="唸例句">🔊</button> Let’s meet at the school entrance.<span class="zh">我們在學校門口碰面吧。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "hP6iaz-3m5k", "start": 0, "plays": 3, "title": "聊聊日常生活"};
+window.GQUIZ = {
+ "label": "Listening V05",
+ "title": "影片聽力 聊聊日常生活",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=hP6iaz-3m5k\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　認識新朋友、早上做什麼（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"0,128\">▶ 播放這一段</button><br>注意聽：從哪裡來、住哪個城市、幾點起床、早餐吃什麼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where are the two speakers from?</div><div class=\"lt-opzh\">兩個人是從哪裡來的？</div>",
+     "opts": [
+      "The United States.",
+      "England.",
+      "Canada."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"24,29\" title=\"重聽這一句（影片 0:24）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Where are you from? — I’m from the United States. What about you?</span><span class=\"zh\">你從哪裡來？——我從美國來，你呢？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"31,34\" title=\"重聽這一句（影片 0:31）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">I’m from the United States too.</span><span class=\"zh\">我也是從美國來的。</span></div><div class=\"lt-opzh\">選項：(A) 美國。　(B) 英國。　(C) 加拿大。</div><div class=\"lt-tip\">💡 Where are you from?＝你從哪裡來？too＝也。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Which city is talked about?</div><div class=\"lt-opzh\">對話裡提到哪個城市？</div>",
+     "opts": [
+      "Los Angeles.",
+      "New York.",
+      "Chicago."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"37,42\" title=\"重聽這一句（影片 0:37）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What city do you live in? — I live in New York.</span><span class=\"zh\">你住在哪個城市？——我住在紐約。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"46,50\" title=\"重聽這一句（影片 0:46）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Yes, I do. It’s a beautiful city.</span><span class=\"zh\">喜歡，那是個很美的城市。</span></div><div class=\"lt-opzh\">選項：(A) 洛杉磯。　(B) 紐約。　(C) 芝加哥。</div><div class=\"lt-tip\">💡 live in ＋ 城市＝住在…。另一個人住在 a small town（安靜的小鎮）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">One speaker is a morning person. What time does this person wake up?</div><div class=\"lt-opzh\">其中一個人是「早起的人」，幾點起床？</div>",
+     "opts": [
+      "At 6:30.",
+      "At 7:00.",
+      "At 7:30."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"71,77\" title=\"重聽這一句（影片 1:11）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What time do you wake up every morning? — I usually wake up at 7. What about you?</span><span class=\"zh\">你每天早上幾點起床？——我通常 7 點起床，你呢？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"79,88\" title=\"重聽這一句（影片 1:19）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">I wake up at 6:30. — Wow, that’s early. Are you a morning person? — Yes, I am. I love mornings.</span><span class=\"zh\">我 6 點半起床。——哇，好早。你是早起的人嗎？——是啊，我愛早上。</span></div><div class=\"lt-opzh\">選項：(A) 6 點半。　(B) 7 點。　(C) 7 點半。</div><div class=\"lt-tip\">💡 7 點是另一個人。a morning person＝喜歡早起的人。six thirty＝6:30。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Which breakfast is NOT talked about?</div><div class=\"lt-opzh\">哪一種早餐對話裡「沒有」提到？</div>",
+     "opts": [
+      "Eggs and bread.",
+      "Toast and coffee.",
+      "Rice and soup."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"106,112\" title=\"重聽這一句（影片 1:46）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What do you usually eat? — I eat eggs and bread. And you?</span><span class=\"zh\">你通常吃什麼？——我吃蛋和麵包，你呢？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"112,117\" title=\"重聽這一句（影片 1:52）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">I usually eat toast and drink coffee.</span><span class=\"zh\">我通常吃吐司、喝咖啡。</span></div><div class=\"lt-opzh\">選項：(A) 蛋和麵包。　(B) 吐司和咖啡。　(C) 飯和湯。</div><div class=\"lt-tip\">💡 NOT 題：A、B 都有說，只有 C 沒說。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">One speaker doesn’t drink coffee in the morning. What does this person drink?</div><div class=\"lt-opzh\">其中一個人早上不喝咖啡，喝什麼？</div>",
+     "opts": [
+      "Milk.",
+      "Juice.",
+      "Tea."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"117,124\" title=\"重聽這一句（影片 1:57）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you like coffee? — Yes, I love coffee. I drink it every morning.</span><span class=\"zh\">你喜歡咖啡嗎？——喜歡，我每天早上都喝。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"124,128\" title=\"重聽這一句（影片 2:04）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">I prefer tea. I drink tea with breakfast.</span><span class=\"zh\">我比較喜歡茶，早餐配茶。</span></div><div class=\"lt-opzh\">選項：(A) 牛奶。　(B) 果汁。　(C) 茶。</div><div class=\"lt-tip\">💡 prefer＝比較喜歡。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　工作、吃的、興趣（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"128,298\">▶ 播放這一段</button><br>注意聽：怎麼去上班、做什麼工作、幾點上下班、喜歡吃什麼、做什麼運動。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How do the two speakers get to work?</div><div class=\"lt-opzh\">兩個人怎麼去上班？</div>",
+     "opts": [
+      "By bus and by car.",
+      "By bike and by train.",
+      "On foot and by taxi."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"136,143\" title=\"重聽這一句（影片 2:16）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you walk to work? — No, I take the bus. How do you go to work?</span><span class=\"zh\">你走路上班嗎？——不是，我搭公車。你怎麼上班？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"143,148\" title=\"重聽這一句（影片 2:23）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">I go by car. My office is near my house.</span><span class=\"zh\">我開車，我的辦公室離家很近。</span></div><div class=\"lt-opzh\">選項：(A) 搭公車和開車。　(B) 騎腳踏車和搭火車。　(C) 走路和搭計程車。</div><div class=\"lt-tip\">💡 take the bus＝搭公車；by car＝開車。walk 是問句裡的，答案是 No。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is one speaker’s job?</div><div class=\"lt-opzh\">其中一個人做什麼工作？</div>",
+     "opts": [
+      "A doctor.",
+      "A teacher.",
+      "A cook."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"148,157\" title=\"重聽這一句（影片 2:28）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What do you do for work? — I work in an office. What about you? — I’m a teacher.</span><span class=\"zh\">你做什麼工作？——我在辦公室上班，你呢？——我是老師。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"159,167\" title=\"重聽這一句（影片 2:39）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you like your job? — Yes. I love my job. I like helping people.</span><span class=\"zh\">你喜歡你的工作嗎？——喜歡，我喜歡幫助別人。</span></div><div class=\"lt-opzh\">選項：(A) 醫生。　(B) 老師。　(C) 廚師。</div><div class=\"lt-tip\">💡 What do you do (for work)?＝你做什麼工作？另一個人在 office（辦公室）上班。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">When does work start and finish?</div><div class=\"lt-opzh\">幾點上班、幾點下班？</div>",
+     "opts": [
+      "From 8 to 4.",
+      "From 9 to 5.",
+      "From 10 to 6."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"167,176\" title=\"重聽這一句（影片 2:47）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What time do you start work? — I start at 9 in the morning.</span><span class=\"zh\">你幾點開始上班？——早上 9 點。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"173,179\" title=\"重聽這一句（影片 2:53）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What time do you finish? — I finish at 5 in the afternoon.</span><span class=\"zh\">幾點下班？——下午 5 點。</span></div><div class=\"lt-opzh\">選項：(A) 8 點到 4 點。　(B) 9 點到 5 點。　(C) 10 點到 6 點。</div><div class=\"lt-tip\">💡 start＝開始；finish＝結束。8 點是第 1 段出門的時間（leave home at 8）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What are the speakers’ favorite foods?</div><div class=\"lt-opzh\">兩個人最喜歡的食物是什麼？</div>",
+     "opts": [
+      "Pasta and pizza.",
+      "Chicken and rice.",
+      "Burgers and fries."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"203,210\" title=\"重聽這一句（影片 3:23）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What’s your favorite food? — I love pasta. What about you?</span><span class=\"zh\">你最喜歡吃什麼？——我愛義大利麵，你呢？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"210,218\" title=\"重聽這一句（影片 3:30）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">My favorite food is pizza. — Do you eat pizza every week? — No, not every week. Sometimes on Fridays.</span><span class=\"zh\">我最喜歡披薩。——每個星期都吃嗎？——沒有，有時候星期五吃。</span></div><div class=\"lt-opzh\">選項：(A) 義大利麵和披薩。　(B) 雞肉和飯。　(C) 漢堡和薯條。</div><div class=\"lt-tip\">💡 B 是午餐常吃的（lunch），C 是週末去餐廳點的，都不是 favorite（最喜歡的）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">When does one speaker go swimming?</div><div class=\"lt-opzh\">其中一個人什麼時候去游泳？</div>",
+     "opts": [
+      "Every day.",
+      "Every Saturday.",
+      "Every Sunday."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"266,276\" title=\"重聽這一句（影片 4:26）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you like sports? — Yes, I like soccer and swimming. — Can you swim? — Yes, I can. I swim every Saturday.</span><span class=\"zh\">你喜歡運動嗎？——喜歡，我喜歡足球和游泳。——你會游泳嗎？——會，我每個星期六游泳。</span></div><div class=\"lt-opzh\">選項：(A) 每天。　(B) 每個星期六。　(C) 每個星期日。</div><div class=\"lt-tip\">💡 every Saturday＝每個星期六。另一個人喜歡 walking in the park，一週走 3 次。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　家人、寵物、明天的約（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"298,444\">▶ 播放這一段</button><br>注意聽：有幾個兄弟姊妹、養什麼寵物、明天要去哪裡、幾點、在哪裡碰面。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">One speaker has a big family. How many brothers and sisters?</div><div class=\"lt-opzh\">其中一個人家裡人很多，有幾個兄弟姊妹？</div>",
+     "opts": [
+      "One brother and two sisters.",
+      "Two brothers and one sister.",
+      "Two brothers and two sisters."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"298,307\" title=\"重聽這一句（影片 4:58）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you have a big family? — Yes, I do. I have 2 brothers and 1 sister.</span><span class=\"zh\">你家人很多嗎？——是啊，我有 2 個兄弟、1 個姊妹。</span></div><div class=\"lt-opzh\">選項：(A) 1 個兄弟、2 個姊妹。　(B) 2 個兄弟、1 個姊妹。　(C) 2 個兄弟、2 個姊妹。</div><div class=\"lt-tip\">💡 另一個人只有 1 younger sister（一個妹妹），20 歲。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What pet is talked about?</div><div class=\"lt-opzh\">對話裡提到什麼寵物？</div>",
+     "opts": [
+      "A small dog named Max.",
+      "A big cat named Max.",
+      "A small bird named Mia."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"344,355\" title=\"重聽這一句（影片 5:44）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you have any pets? — Yes, I have a small dog. — What’s your dog’s name? — His name is Max.</span><span class=\"zh\">你有養寵物嗎？——有，我有一隻小狗。——牠叫什麼名字？——牠叫 Max。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"355,358\" title=\"重聽這一句（影片 5:55）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">He’s very friendly.</span><span class=\"zh\">牠很友善。</span></div><div class=\"lt-opzh\">選項：(A) 一隻叫 Max 的小狗。　(B) 一隻叫 Max 的大貓。　(C) 一隻叫 Mia 的小鳥。</div><div class=\"lt-tip\">💡 pet＝寵物；friendly＝友善的。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How often does one speaker visit their parents?</div><div class=\"lt-opzh\">其中一個人多久去看一次爸媽？</div>",
+     "opts": [
+      "Every Sunday.",
+      "Every Saturday.",
+      "Once a month."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"335,342\" title=\"重聽這一句（影片 5:35）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you see your parents often? — Yes, I visit them every Sunday.</span><span class=\"zh\">你常去看爸媽嗎？——常，我每個星期日去看他們。</span></div><div class=\"lt-opzh\">選項：(A) 每個星期日。　(B) 每個星期六。　(C) 一個月一次。</div><div class=\"lt-tip\">💡 visit＝拜訪、去看。星期六是第 2 段游泳的日子。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where is one speaker going tomorrow, and at what time?</div><div class=\"lt-opzh\">其中一個人明天要去哪裡？幾點？</div>",
+     "opts": [
+      "To the gym at 9.",
+      "To the park at 10.",
+      "To a restaurant at 12."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"404,415\" title=\"重聽這一句（影片 6:44）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you have any plans for tomorrow? — Yes, I’m going to the park. — Really? What time are you going?</span><span class=\"zh\">你明天有什麼計畫嗎？——有，我要去公園。——真的嗎？幾點去？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"415,418\" title=\"重聽這一句（影片 6:55）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">At 10 in the morning.</span><span class=\"zh\">早上 10 點。</span></div><div class=\"lt-opzh\">選項：(A) 9 點去健身房。　(B) 10 點去公園。　(C) 12 點去餐廳。</div><div class=\"lt-tip\">💡 plans＝計畫。I’m going to the park.＝我要去公園。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where will the two speakers meet?</div><div class=\"lt-opzh\">兩個人要在哪裡碰面？</div>",
+     "opts": [
+      "At the bus stop.",
+      "At the park entrance.",
+      "At the coffee shop."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"418,424\" title=\"重聽這一句（影片 6:58）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Can I come with you? — Of course. That would be great.</span><span class=\"zh\">我可以跟你去嗎？——當然，那太好了。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"425,432\" title=\"重聽這一句（影片 7:05）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Should we meet at the park entrance? — Yes, let’s meet at 10.</span><span class=\"zh\">我們在公園入口碰面好嗎？——好，10 點見。</span></div><div class=\"lt-opzh\">選項：(A) 公車站。　(B) 公園入口。　(C) 咖啡店。</div><div class=\"lt-tip\">💡 entrance＝入口。Let’s meet at …＝我們在…碰面吧。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>

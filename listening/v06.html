@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜我的一天</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V06</div>
+  <h1>影片聽力 <span class="zh">我的一天</span></h1>
+  <div class="subtitle">My Daily Routine・真人原速・初級・3 段 15 題・約 12 分鐘影片</div>
+  <section class="part">
+    <p>Sofia 帶我們看在家的一天：6 點起床、整理床、刷牙洗臉、換衣服、做早餐、打掃客廳、看書看電視、出門散步、做午餐，晚上換睡衣上床。<br>一個人慢慢說，每句都是「我現在在做什麼」，用到很多每天都會用的動詞片語（make the bed、put on、turn off…）。每段可以聽 3 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「Daily English」頻道 <a href="https://www.youtube.com/watch?v=1Om2NXnLgxU" target="_blank" rel="noopener">我的一天</a>（影片從 0:04 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>3 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從影片裡挑的 5 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="make the bed" data-pos="phr." data-zh="整理床鋪" data-ex="Please make your bed before school." data-exzh="上學前請把床整理好。"><div class="vw-head"><button type="button" class="vw-say" data-say="make the bed" title="發音">🔊</button> <b class="vw-en">make the bed</b> <span class="vw-zh">整理床鋪</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="53,56" title="回到影片聽原句（0:53）">🎬</button> <b class="lt-tag">Sofia</b> <span class="en">I need to make my bed.</span><span class="zh">我要整理床。</span></div><div class="vp-note">💡 make 在這裡是「整理好」，不是「做」一張床。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Please make your bed before school." title="唸例句">🔊</button> Please make your bed before school.<span class="zh">上學前請把床整理好。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I make my bed every morning." title="唸例句">🔊</button> I make my bed every morning.<span class="zh">我每天早上整理床鋪。</span></div></li><li class="vw-item vp-item" data-en="put on / take off" data-pos="phr." data-zh="穿上／脫掉" data-ex="Put on your coat. It’s cold." data-exzh="穿上外套，很冷。"><div class="vw-head"><button type="button" class="vw-say" data-say="put on / take off" title="發音">🔊</button> <b class="vw-en">put on / take off</b> <span class="vw-zh">穿上／脫掉</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="195,199" title="回到影片聽原句（3:15）">🎬</button> <b class="lt-tag">Sofia</b> <span class="en">First, I put on my shirt. Then I put on my jeans.</span><span class="zh">先穿上襯衫，再穿上牛仔褲。</span></div><div class="vp-note">💡 衣服、鞋子、帽子都可以用。回家時 <b>take off my shoes</b>（脫鞋）。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Put on your coat. It’s cold." title="唸例句">🔊</button> Put on your coat. It’s cold.<span class="zh">穿上外套，很冷。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Take off your shoes, please." title="唸例句">🔊</button> Take off your shoes, please.<span class="zh">請脫鞋。</span></div></li><li class="vw-item vp-item" data-en="turn on / turn off" data-pos="phr." data-zh="打開／關掉（電器、燈、水）" data-ex="Turn off the light, please." data-exzh="請關燈。"><div class="vw-head"><button type="button" class="vw-say" data-say="turn on / turn off" title="發音">🔊</button> <b class="vw-en">turn on / turn off</b> <span class="vw-zh">打開／關掉（電器、燈、水）</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="469,471" title="回到影片聽原句（7:49）">🎬</button> <b class="lt-tag">Sofia</b> <span class="en">I turn off the TV.</span><span class="zh">我關掉電視。</span></div><div class="vp-note">💡 開關電器、燈、水龍頭都用 turn on／turn off。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Turn off the light, please." title="唸例句">🔊</button> Turn off the light, please.<span class="zh">請關燈。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can you turn on the fan?" title="唸例句">🔊</button> Can you turn on the fan?<span class="zh">你可以開電扇嗎？</span></div></li><li class="vw-item vp-item" data-en="It’s time to ..." data-pos="phr." data-zh="該…了" data-ex="It’s time to go to school." data-exzh="該上學了。"><div class="vw-head"><button type="button" class="vw-say" data-say="It’s time to ..." title="發音">🔊</button> <b class="vw-en">It’s time to ...</b> <span class="vw-zh">該…了</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="29,36" title="回到影片聽原句（0:29）">🎬</button> <b class="lt-tag">Sofia</b> <span class="en">I open my eyes and look at the clock. It’s time to get up.</span><span class="zh">我睜開眼睛看時鐘，該起床了。</span></div><div class="vp-note">💡 It’s time to ＋ 原形動詞；也可以說 It’s time for ＋ 名詞（It’s time for lunch.）。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="It’s time to go to school." title="唸例句">🔊</button> It’s time to go to school.<span class="zh">該上學了。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="It’s time for bed." title="唸例句">🔊</button> It’s time for bed.<span class="zh">該睡覺了。</span></div></li><li class="vw-item vp-item" data-en="go for a walk" data-pos="phr." data-zh="去散步" data-ex="Let’s go for a walk after dinner." data-exzh="晚餐後去散步吧。"><div class="vw-head"><button type="button" class="vw-say" data-say="go for a walk" title="發音">🔊</button> <b class="vw-en">go for a walk</b> <span class="vw-zh">去散步</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="519,526" title="回到影片聽原句（8:39）">🎬</button> <b class="lt-tag">Sofia</b> <span class="en">I go for a walk.</span><span class="zh">我去散步。</span></div><div class="vp-note">💡 也可以說 take a walk。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Let’s go for a walk after dinner." title="唸例句">🔊</button> Let’s go for a walk after dinner.<span class="zh">晚餐後去散步吧。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My grandma takes a walk every morning." title="唸例句">🔊</button> My grandma takes a walk every morning.<span class="zh">我奶奶每天早上散步。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="daily routine" data-pos="n." data-zh="每天的例行生活" data-ex="Reading is part of my daily routine." data-exzh="閱讀是我每天的例行公事。"><div class="vw-head"><button type="button" class="vw-say" data-say="daily routine" title="發音">🔊</button> <b class="vw-en">daily routine</b> <span class="vw-pos">n.</span> <span class="vw-zh">每天的例行生活</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Reading is part of my daily routine." title="唸例句">🔊</button> Reading is part of my daily routine.<span class="zh">閱讀是我每天的例行公事。</span></div></li><li class="vw-item" data-en="blanket" data-pos="n." data-zh="毯子" data-ex="The blanket is warm and soft." data-exzh="這條毯子又暖又軟。"><div class="vw-head"><button type="button" class="vw-say" data-say="blanket" title="發音">🔊</button> <b class="vw-en">blanket</b> <span class="vw-pos">n.</span> <span class="vw-zh">毯子</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The blanket is warm and soft." title="唸例句">🔊</button> The blanket is warm and soft.<span class="zh">這條毯子又暖又軟。</span></div></li><li class="vw-item" data-en="pillow" data-pos="n." data-zh="枕頭；抱枕" data-ex="I need a new pillow." data-exzh="我需要一個新枕頭。"><div class="vw-head"><button type="button" class="vw-say" data-say="pillow" title="發音">🔊</button> <b class="vw-en">pillow</b> <span class="vw-pos">n.</span> <span class="vw-zh">枕頭；抱枕</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I need a new pillow." title="唸例句">🔊</button> I need a new pillow.<span class="zh">我需要一個新枕頭。</span></div></li><li class="vw-item" data-en="curtain" data-pos="n." data-zh="窗簾" data-ex="Close the curtains at night." data-exzh="晚上把窗簾拉上。"><div class="vw-head"><button type="button" class="vw-say" data-say="curtain" title="發音">🔊</button> <b class="vw-en">curtain</b> <span class="vw-pos">n.</span> <span class="vw-zh">窗簾</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Close the curtains at night." title="唸例句">🔊</button> Close the curtains at night.<span class="zh">晚上把窗簾拉上。</span></div></li><li class="vw-item" data-en="toothbrush" data-pos="n." data-zh="牙刷" data-ex="My toothbrush is blue." data-exzh="我的牙刷是藍色的。"><div class="vw-head"><button type="button" class="vw-say" data-say="toothbrush" title="發音">🔊</button> <b class="vw-en">toothbrush</b> <span class="vw-pos">n.</span> <span class="vw-zh">牙刷</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My toothbrush is blue." title="唸例句">🔊</button> My toothbrush is blue.<span class="zh">我的牙刷是藍色的。</span></div></li><li class="vw-item" data-en="towel" data-pos="n." data-zh="毛巾" data-ex="Dry your hands with a towel." data-exzh="用毛巾把手擦乾。"><div class="vw-head"><button type="button" class="vw-say" data-say="towel" title="發音">🔊</button> <b class="vw-en">towel</b> <span class="vw-pos">n.</span> <span class="vw-zh">毛巾</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Dry your hands with a towel." title="唸例句">🔊</button> Dry your hands with a towel.<span class="zh">用毛巾把手擦乾。</span></div></li><li class="vw-item" data-en="messy" data-pos="adj." data-zh="亂七八糟的" data-ex="My room is messy." data-exzh="我的房間很亂。"><div class="vw-head"><button type="button" class="vw-say" data-say="messy" title="發音">🔊</button> <b class="vw-en">messy</b> <span class="vw-pos">adj.</span> <span class="vw-zh">亂七八糟的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My room is messy." title="唸例句">🔊</button> My room is messy.<span class="zh">我的房間很亂。</span></div></li><li class="vw-item" data-en="wardrobe" data-pos="n." data-zh="衣櫃" data-ex="Hang your coat in the wardrobe." data-exzh="把外套掛進衣櫃。"><div class="vw-head"><button type="button" class="vw-say" data-say="wardrobe" title="發音">🔊</button> <b class="vw-en">wardrobe</b> <span class="vw-pos">n.</span> <span class="vw-zh">衣櫃</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Hang your coat in the wardrobe." title="唸例句">🔊</button> Hang your coat in the wardrobe.<span class="zh">把外套掛進衣櫃。</span></div></li><li class="vw-item" data-en="fridge" data-pos="n." data-zh="冰箱" data-ex="The milk is in the fridge." data-exzh="牛奶在冰箱裡。"><div class="vw-head"><button type="button" class="vw-say" data-say="fridge" title="發音">🔊</button> <b class="vw-en">fridge</b> <span class="vw-pos">n.</span> <span class="vw-zh">冰箱</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The milk is in the fridge." title="唸例句">🔊</button> The milk is in the fridge.<span class="zh">牛奶在冰箱裡。</span></div></li><li class="vw-item" data-en="dishes" data-pos="n." data-zh="碗盤" data-ex="It’s my turn to wash the dishes." data-exzh="輪到我洗碗了。"><div class="vw-head"><button type="button" class="vw-say" data-say="dishes" title="發音">🔊</button> <b class="vw-en">dishes</b> <span class="vw-pos">n.</span> <span class="vw-zh">碗盤</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="It’s my turn to wash the dishes." title="唸例句">🔊</button> It’s my turn to wash the dishes.<span class="zh">輪到我洗碗了。</span></div></li><li class="vw-item" data-en="shelf" data-pos="n." data-zh="架子；書架" data-ex="Put the books back on the shelf." data-exzh="把書放回書架。"><div class="vw-head"><button type="button" class="vw-say" data-say="shelf" title="發音">🔊</button> <b class="vw-en">shelf</b> <span class="vw-pos">n.</span> <span class="vw-zh">架子；書架</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Put the books back on the shelf." title="唸例句">🔊</button> Put the books back on the shelf.<span class="zh">把書放回書架。</span></div></li><li class="vw-item" data-en="bench" data-pos="n." data-zh="長椅" data-ex="We sat on a bench in the park." data-exzh="我們坐在公園的長椅上。"><div class="vw-head"><button type="button" class="vw-say" data-say="bench" title="發音">🔊</button> <b class="vw-en">bench</b> <span class="vw-pos">n.</span> <span class="vw-zh">長椅</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="We sat on a bench in the park." title="唸例句">🔊</button> We sat on a bench in the park.<span class="zh">我們坐在公園的長椅上。</span></div></li><li class="vw-item" data-en="pajamas" data-pos="n." data-zh="睡衣" data-ex="I put on my pajamas after my bath." data-exzh="我洗完澡換上睡衣。"><div class="vw-head"><button type="button" class="vw-say" data-say="pajamas" title="發音">🔊</button> <b class="vw-en">pajamas</b> <span class="vw-pos">n.</span> <span class="vw-zh">睡衣</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I put on my pajamas after my bath." title="唸例句">🔊</button> I put on my pajamas after my bath.<span class="zh">我洗完澡換上睡衣。</span></div></li><li class="vw-item" data-en="comfortable" data-pos="adj." data-zh="舒服的" data-ex="These shoes are very comfortable." data-exzh="這雙鞋很舒服。"><div class="vw-head"><button type="button" class="vw-say" data-say="comfortable" title="發音">🔊</button> <b class="vw-en">comfortable</b> <span class="vw-pos">adj.</span> <span class="vw-zh">舒服的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="These shoes are very comfortable." title="唸例句">🔊</button> These shoes are very comfortable.<span class="zh">這雙鞋很舒服。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "1Om2NXnLgxU", "start": 4, "plays": 3, "title": "我的一天"};
+window.GQUIZ = {
+ "label": "Listening V06",
+ "title": "影片聽力 我的一天",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=1Om2NXnLgxU\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　早上起床（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"4,237\">▶ 播放這一段</button><br>注意聽：幾點起床、地上有什麼、為什麼開窗簾、穿什麼、鞋子在哪裡。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What time does Sofia wake up?</div><div class=\"lt-opzh\">Sofia 幾點起床？</div>",
+     "opts": [
+      "At 6 o’clock.",
+      "At 7 o’clock.",
+      "At 8 o’clock."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"24,29\" title=\"重聽這一句（影片 0:24）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Good morning! Oh, it’s 6 o’clock. I wake up early every day.</span><span class=\"zh\">早安！喔，6 點了。我每天都很早起。</span></div><div class=\"lt-opzh\">選項：(A) 6 點。　(B) 7 點。　(C) 8 點。</div><div class=\"lt-tip\">💡 wake up early＝很早起床。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is on the floor?</div><div class=\"lt-opzh\">地上有什麼？</div>",
+     "opts": [
+      "A book.",
+      "A blanket.",
+      "Shoes."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"46,53\" title=\"重聽這一句（影片 0:46）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">My blanket is on the floor, and my pillow is not in the right place.</span><span class=\"zh\">我的毯子掉在地上，枕頭也不在對的位置。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"53,59\" title=\"重聽這一句（影片 0:53）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I need to make my bed. First, I pick up my blanket.</span><span class=\"zh\">我要整理床。先把毯子撿起來。</span></div><div class=\"lt-opzh\">選項：(A) 書。　(B) 毯子。　(C) 鞋子。</div><div class=\"lt-tip\">💡 blanket＝毯子；pillow＝枕頭；make the bed＝整理床鋪。鞋子是後面找到的，在床底下。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Why does Sofia open the curtains?</div><div class=\"lt-opzh\">Sofia 為什麼打開窗簾？</div>",
+     "opts": [
+      "It is too hot.",
+      "It is a little dark, and Sofia wants some sunlight.",
+      "Sofia wants to see the rain."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"73,84\" title=\"重聽這一句（影片 1:13）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Oh, it’s a little dark in here; I want some sunlight. I open the curtains.</span><span class=\"zh\">喔，這裡有點暗，我想要一點陽光。我打開窗簾。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"84,91\" title=\"重聽這一句（影片 1:24）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Look, the sun is shining. It’s a beautiful morning.</span><span class=\"zh\">你看，太陽出來了，真是美好的早晨。</span></div><div class=\"lt-opzh\">選項：(A) 太熱了。　(B) 有點暗，想要陽光。　(C) 想看下雨。</div><div class=\"lt-tip\">💡 dark＝暗的；sunlight＝陽光；curtains＝窗簾。外面是晴天，不是下雨。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sofia wear today?</div><div class=\"lt-opzh\">Sofia 今天穿什麼？</div>",
+     "opts": [
+      "A blue shirt and jeans.",
+      "A red dress.",
+      "A white T-shirt and shorts."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"176,182\" title=\"重聽這一句（影片 2:56）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I see a blue shirt. Oh, I like this one. And I have my favorite jeans.</span><span class=\"zh\">我看到一件藍色襯衫，我喜歡這件。還有我最喜歡的牛仔褲。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"195,199\" title=\"重聽這一句（影片 3:15）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">First, I put on my shirt. Then I put on my jeans.</span><span class=\"zh\">先穿上襯衫，再穿上牛仔褲。</span></div><div class=\"lt-opzh\">選項：(A) 藍色襯衫和牛仔褲。　(B) 紅色洋裝。　(C) 白 T 恤和短褲。</div><div class=\"lt-tip\">💡 put on＝穿上；jeans＝牛仔褲；wardrobe＝衣櫃。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where are Sofia’s shoes?</div><div class=\"lt-opzh\">Sofia 的鞋子在哪裡？</div>",
+     "opts": [
+      "Next to the door.",
+      "On the bed.",
+      "Under the bed."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"203,214\" title=\"重聽這一句（影片 3:23）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Now, where are my shoes? Oh, they’re under the bed.</span><span class=\"zh\">我的鞋子在哪裡？喔，在床底下。</span></div><div class=\"lt-opzh\">選項：(A) 門旁邊。　(B) 床上。　(C) 床底下。</div><div class=\"lt-tip\">💡 under＝在…下面。A「門旁邊」是第 3 段包包的位置；B 是 Sofia 把衣服放在床上。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　早餐、打掃、休息（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"237,476\">▶ 播放這一段</button><br>注意聽：早餐吃什麼、吃完做什麼、書放哪裡、幫什麼澆水、看什麼節目。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sofia have for breakfast?</div><div class=\"lt-opzh\">Sofia 早餐吃什麼？</div>",
+     "opts": [
+      "Rice and vegetables.",
+      "Bread, an egg and milk.",
+      "Toast and coffee."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"242,249\" title=\"重聽這一句（影片 4:02）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Every morning I make something to eat. Today I want bread and eggs. And maybe some milk.</span><span class=\"zh\">每天早上我都做點東西吃。今天想吃麵包和蛋，也許再來點牛奶。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"316,323\" title=\"重聽這一句（影片 5:16）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I eat my bread and my egg. Mmm, it’s good. Then I drink my milk.</span><span class=\"zh\">我吃麵包和蛋，嗯，好吃。然後喝牛奶。</span></div><div class=\"lt-opzh\">選項：(A) 飯和青菜。　(B) 麵包、一顆蛋和牛奶。　(C) 吐司和咖啡。</div><div class=\"lt-tip\">💡 A 是第 3 段的午餐。fridge＝冰箱；pan＝平底鍋；stove＝爐子。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sofia do after breakfast?</div><div class=\"lt-opzh\">Sofia 吃完早餐做什麼？</div>",
+     "opts": [
+      "Washes the dishes.",
+      "Goes back to bed.",
+      "Calls a friend."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"328,338\" title=\"重聽這一句（影片 5:28）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Okay, I’m finished. Now I have some dirty dishes. I can’t leave them here. I wash the dishes.</span><span class=\"zh\">好，吃完了。現在有一些髒碗盤，不能放著不管，我來洗碗。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"342,347\" title=\"重聽這一句（影片 5:42）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I wash them with water and soap. … The kitchen is clean again.</span><span class=\"zh\">用水和肥皂洗……廚房又乾淨了。</span></div><div class=\"lt-opzh\">選項：(A) 洗碗。　(B) 回床上睡覺。　(C) 打電話給朋友。</div><div class=\"lt-tip\">💡 dirty dishes＝髒碗盤；wash the dishes＝洗碗；soap＝肥皂。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where does Sofia put the book?</div><div class=\"lt-opzh\">Sofia 把書放在哪裡？</div>",
+     "opts": [
+      "On the sofa.",
+      "On the shelf.",
+      "In a bag."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"363,367\" title=\"重聽這一句（影片 6:03）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">There are some pillows on the floor. And my book is on the table.</span><span class=\"zh\">地上有幾個抱枕，我的書在桌上。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"371,381\" title=\"重聽這一句（影片 6:11）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">First, I pick up the pillows. I put them on the sofa. Then I take my book. I put it on the shelf.</span><span class=\"zh\">先撿起抱枕放到沙發上，再把書放到書架上。</span></div><div class=\"lt-opzh\">選項：(A) 沙發上。　(B) 書架上。　(C) 包包裡。</div><div class=\"lt-tip\">💡 抱枕放沙發、書放 shelf（書架）。put … in their places＝物歸原位。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sofia almost forget?</div><div class=\"lt-opzh\">Sofia 差點忘了什麼？</div>",
+     "opts": [
+      "To water the plant.",
+      "To feed the cat.",
+      "To close the window."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"392,402\" title=\"重聽這一句（影片 6:32）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Oh, my plant needs some water. I almost forgot. I water my plant.</span><span class=\"zh\">喔，我的植物需要水，我差點忘了。我幫植物澆水。</span></div><div class=\"lt-opzh\">選項：(A) 幫植物澆水。　(B) 餵貓。　(C) 關窗戶。</div><div class=\"lt-tip\">💡 water 當動詞＝澆水；almost forgot＝差點忘了。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What kind of TV show does Sofia watch?</div><div class=\"lt-opzh\">Sofia 看什麼樣的電視節目？</div>",
+     "opts": [
+      "A scary show.",
+      "A funny show.",
+      "A cooking show."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"452,462\" title=\"重聽這一句（影片 7:32）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I turn on the TV. I sit back and watch a show. It’s a funny show. I laugh a little.</span><span class=\"zh\">我打開電視，靠著坐、看節目。是個好笑的節目，我笑了一下。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"463,469\" title=\"重聽這一句（影片 7:43）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">But I don’t watch TV all day. I have other things to do.</span><span class=\"zh\">但我不會整天看電視，我還有別的事要做。</span></div><div class=\"lt-opzh\">選項：(A) 恐怖的節目。　(B) 好笑的節目。　(C) 烹飪節目。</div><div class=\"lt-tip\">💡 turn on／turn off＝打開／關掉（電器）。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　散步、午餐、睡覺（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"476,746\">▶ 播放這一段</button><br>注意聽：包包在哪裡、去哪裡散步、坐在哪裡、午餐吃什麼、睡前做什麼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where is Sofia’s bag?</div><div class=\"lt-opzh\">Sofia 的包包在哪裡？</div>",
+     "opts": [
+      "Under the bed.",
+      "Next to the door.",
+      "On the kitchen table."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"484,494\" title=\"重聽這一句（影片 8:04）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">First, I need my bag. Where did I put it? Oh, it’s next to the door.</span><span class=\"zh\">先拿包包。我放哪裡了？喔，在門旁邊。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"496,499\" title=\"重聽這一句（影片 8:16）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Now I need my keys. They’re on the little table.</span><span class=\"zh\">還要鑰匙，在小桌子上。</span></div><div class=\"lt-opzh\">選項：(A) 床底下。　(B) 門旁邊。　(C) 廚房桌上。</div><div class=\"lt-tip\">💡 next to＝在…旁邊。鑰匙在 little table（小桌子）上。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where does Sofia go for a walk?</div><div class=\"lt-opzh\">Sofia 去哪裡散步？</div>",
+     "opts": [
+      "To a small park near home.",
+      "To the beach.",
+      "To the supermarket."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"519,537\" title=\"重聽這一句（影片 8:39）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I go for a walk. … There is a small park near my home. I like going there. Let’s walk to the park.</span><span class=\"zh\">我去散步……我家附近有個小公園，我喜歡去那裡。我們走去公園吧。</span></div><div class=\"lt-opzh\">選項：(A) 家附近的小公園。　(B) 海邊。　(C) 超市。</div><div class=\"lt-tip\">💡 go for a walk＝去散步；near my home＝在我家附近。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where does Sofia sit in the park?</div><div class=\"lt-opzh\">Sofia 在公園坐在哪裡？</div>",
+     "opts": [
+      "On the grass.",
+      "On a bench under a tree.",
+      "On a swing."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"541,548\" title=\"重聽這一句（影片 9:01）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Look at those beautiful trees. I can hear the birds. I find a bench under a tree. I sit on the bench.</span><span class=\"zh\">看那些漂亮的樹，我聽到鳥叫。我找到樹下的長椅，坐下來。</span></div><div class=\"lt-opzh\">選項：(A) 草地上。　(B) 樹下的長椅上。　(C) 鞦韆上。</div><div class=\"lt-tip\">💡 bench＝長椅；under a tree＝在樹下。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sofia make for lunch?</div><div class=\"lt-opzh\">Sofia 午餐做什麼？</div>",
+     "opts": [
+      "Bread and eggs.",
+      "Noodles and soup.",
+      "Rice and vegetables."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"606,614\" title=\"重聽這一句（影片 10:06）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">Now I need to make lunch. I don’t want anything difficult today. I have some rice and vegetables.</span><span class=\"zh\">現在要做午餐。今天不想做太難的，我有一些飯和青菜。</span></div><div class=\"lt-opzh\">選項：(A) 麵包和蛋。　(B) 麵和湯。　(C) 飯和青菜。</div><div class=\"lt-tip\">💡 A 是早餐。difficult＝困難的；vegetables＝蔬菜。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sofia do before bed?</div><div class=\"lt-opzh\">Sofia 睡前做什麼？</div>",
+     "opts": [
+      "Reads a book.",
+      "Brushes teeth.",
+      "Takes a walk."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"682,689\" title=\"重聽這一句（影片 11:22）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I put on my pajamas. They are soft and comfortable.</span><span class=\"zh\">我換上睡衣，又軟又舒服。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"703,709\" title=\"重聽這一句（影片 11:43）\">🔊</button> <b class=\"lt-tag\">Sofia</b><span class=\"en\">I brush my teeth before bed. Then I wash my face. Okay, I’m ready to sleep.</span><span class=\"zh\">睡前我刷牙，然後洗臉。好，可以睡了。</span></div><div class=\"lt-opzh\">選項：(A) 看書。　(B) 刷牙。　(C) 散步。</div><div class=\"lt-tip\">💡 before bed＝睡前；pajamas＝睡衣。看書是白天在客廳做的。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>
