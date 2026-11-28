@@ -49,6 +49,28 @@
 .lc-st{ font-size:12.5px; color:var(--ok); margin-top:6px; }
 .lc-tag{ display:inline-block; font-size:12px; background:#EEE; border-radius:999px; padding:2px 8px; margin-top:6px; }
 
+/* 影片聽力（vNN.html，vt.js） */
+.vt-play{ border:0; background:var(--chalk-bg); color:#fff; border-radius:999px; padding:8px 16px; font:inherit; font-weight:700; cursor:pointer; margin-bottom:6px; }
+.vt-play.playing{ background:#C9952B; }
+.vt-play.used{ background:#B9C2BB; }
+.vt-say, .vw-say{ border:1px solid var(--line); background:#fff; border-radius:8px; padding:1px 6px; cursor:pointer; font-size:14px; }
+.vt-say.playing{ background:#FFF2CC; border-color:#C9952B; }
+.vt-box{ margin:0 0 14px; }
+.vt-frame{ position:relative; width:100%; max-width:560px; aspect-ratio:16/9; border-radius:10px; overflow:hidden; background:#000; }
+.vt-frame iframe, .vt-frame #vtPlayer{ position:absolute; inset:0; width:100%; height:100%; }
+.vt-cover{ position:absolute; inset:0; background:#2F3E36; color:#fff; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:700; font-size:18px; pointer-events:none; }
+.vt-cover[hidden]{ display:none; }
+.vt-cover small{ font-weight:400; font-size:13px; opacity:.8; }
+.vt-bar{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin-top:6px; }
+.vt-status{ font-size:13.5px; color:var(--ink-soft); font-family:'Space Mono',monospace; }
+.vt-src{ font-size:12.5px; color:var(--ink-soft); margin-top:4px; }
+.vt-words{ margin-left:22px; }
+.vt-words li{ margin:8px 0; }
+.vw-en{ font-size:17px; }
+.vw-pos{ color:#C9952B; font-size:13px; }
+.vw-ex{ font-size:14.5px; margin-top:2px; }
+.vw-ex .zh{ color:var(--ink-soft); font-size:13.5px; margin-left:6px; }
+
 /* 聽寫 */
 .lt-dict{ margin-left:22px; }
 .lt-dict li{ margin:10px 0; }
