@@ -273,6 +273,7 @@
     - 沒用的：18073 How To Wake Up Better（BuzzFeed，有粗話和性的內容）、421 The Power of Habit（和 v19、v21 主題重複）、27026 卡路里、39527 為何喜歡狗（上傳者不是原頻道）、48479 似曾相識。
     - 代名詞：影片自己用 he 稱呼的人（Timothy Doner、Cornelius、H.M.、球賽那個人）題目照用；影片沒說的（旁白、Richard St. John、Jobs）一律用名字或 the speaker。
     - 20 部都在 127.0.0.1（沒登入）用正確答案作答全對、分段播放從正確秒數開始、片語送出後打開；目錄影片聽力區三組各 11／11／12 張。**音畫對齊只確認了跳到的秒數，沒有逐段聽**。
+  - **學習進度對照表**（首頁 repo `progress/`）：聽力 Hub 多了「影片・初級／中級／中高級」三組（2026-11-28 使用者發現沒更新）。`tools/progress/build_catalog.py` 會掃 `listening/vNN.html`，依副標「真人原速・程度・」分組。**新做影片後要到首頁 repo 重跑 `python tools/progress/build_catalog.py` 再 Push 首頁 repo。**
   - 選片：MJ英文頻道很多是政治、聽證會、辯論；給孩子用優先選演講、訪談、生活類（候選：LISA 紀錄片訪談 nxcQPnOHsKs、白宮火雞特赦 o6lf62FXvOA、深偽影片作證 0uFgn-BLNSI）。
 
 ## 我的字卡（2026-11-17 使用者要求，手機雲端版）
