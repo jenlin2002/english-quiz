@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0;background:#000">
+<div id="p"></div>
+<script>
+const q=new URLSearchParams(location.search);
+var tag=document.createElement('script');tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);
+var player;
+function onYouTubeIframeAPIReady(){player=new YT.Player('p',{width:window.innerWidth,height:window.innerWidth*9/16,videoId:q.get('id'),playerVars:{start:+q.get('t')||0,autoplay:1,mute:1,controls:0},events:{onReady:e=>{e.target.mute();e.target.playVideo();setTimeout(()=>e.target.pauseVideo(),2500);}}});}
+window.go=function(t){player.seekTo(t,true);player.playVideo();setTimeout(()=>player.pauseVideo(),1500);};
+</script>
