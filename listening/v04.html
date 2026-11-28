@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜在咖啡店點餐</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V04</div>
+  <h1>影片聽力 <span class="zh">在咖啡店點餐</span></h1>
+  <div class="subtitle">Ordering at a Café・真人原速・初級・3 段 15 題・約 2 分鐘影片</div>
+  <section class="part">
+    <p>三段在咖啡店的對話：第一位客人點咖啡外帶、第二位點茶和餅乾、第三位用集點卡的點數結帳。<br>每句都很短、講得清楚，用到的是出國點餐一定會聽到的句子：<i>What would you like? Here or to go? Anything else?</i><br>先看題目（有中文），再按 ▶ 播放；每段可以聽 3 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「English Panda」頻道 <a href="https://www.youtube.com/watch?v=2VeQTuSSiI0" target="_blank" rel="noopener">在咖啡店點餐</a>（影片從 0:13 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>3 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從對話裡挑的 6 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="What would you like?" data-pos="phr." data-zh="您要點什麼？／您想要什麼？" data-ex="What would you like to drink? — I’d like some milk, please." data-exzh="你想喝什麼？——我要牛奶，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="What would you like?" title="發音">🔊</button> <b class="vw-en">What would you like?</b> <span class="vw-zh">您要點什麼？／您想要什麼？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="14,16" title="回到影片聽原句（0:14）">🎬</button> <b class="lt-tag">店員</b> <span class="en">Hi. What would you like?</span><span class="zh">嗨，您想要點什麼？</span></div><div class="vp-note">💡 店員最常說的一句。回答用 <b>I would like …, please.</b>（I’d like…）或 <b>Can I have …?</b></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What would you like to drink? — I’d like some milk, please." title="唸例句">🔊</button> What would you like to drink? — I’d like some milk, please.<span class="zh">你想喝什麼？——我要牛奶，謝謝。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can I have a hamburger, please?" title="唸例句">🔊</button> Can I have a hamburger, please?<span class="zh">可以給我一個漢堡嗎？</span></div></li><li class="vw-item vp-item" data-en="here or to go" data-pos="phr." data-zh="內用還是外帶" data-ex="For here or to go? — To go, please." data-exzh="內用還是外帶？——外帶，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="here or to go" title="發音">🔊</button> <b class="vw-en">here or to go</b> <span class="vw-zh">內用還是外帶</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="18,21" title="回到影片聽原句（0:18）">🎬</button> <b class="lt-tag">店員</b> <span class="en">Will you have it here or to go?</span><span class="zh">內用還是外帶？</span></div><div class="vp-note">💡 回答：<b>For here, please.</b>（內用）／<b>To go, please.</b>（外帶）。英國常說 take away。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="For here or to go? — To go, please." title="唸例句">🔊</button> For here or to go? — To go, please.<span class="zh">內用還是外帶？——外帶，謝謝。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’ll eat it here." title="唸例句">🔊</button> I’ll eat it here.<span class="zh">我在這裡吃。</span></div></li><li class="vw-item vp-item" data-en="Would you like anything else?" data-pos="phr." data-zh="還需要別的嗎？" data-ex="Anything else? — No, that’s all. Thank you." data-exzh="還需要別的嗎？——不用了，就這樣，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="Would you like anything else?" title="發音">🔊</button> <b class="vw-en">Would you like anything else?</b> <span class="vw-zh">還需要別的嗎？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="38,42" title="回到影片聽原句（0:38）">🎬</button> <b class="lt-tag">店員</b> <span class="en">Here you go. Would you like anything else?</span><span class="zh">這是您的。還需要什麼嗎？</span></div><div class="vp-note">💡 不用了說 <b>No, thanks.</b>／<b>That’s all.</b>；還要就說 Yes, can I have …?</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Anything else? — No, that’s all. Thank you." title="唸例句">🔊</button> Anything else? — No, that’s all. Thank you.<span class="zh">還需要別的嗎？——不用了，就這樣，謝謝。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Would you like anything else? — Yes, a bottle of water, please." title="唸例句">🔊</button> Would you like anything else? — Yes, a bottle of water, please.<span class="zh">還需要什麼嗎？——要，一瓶水，謝謝。</span></div></li><li class="vw-item vp-item" data-en="be out of ..." data-pos="phr." data-zh="…用完了、賣完了" data-ex="We are out of milk. Can you buy some?" data-exzh="牛奶喝完了，你可以去買嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="be out of ..." title="發音">🔊</button> <b class="vw-en">be out of ...</b> <span class="vw-zh">…用完了、賣完了</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="73,77" title="回到影片聽原句（1:13）">🎬</button> <b class="lt-tag">店員</b> <span class="en">Sorry, we are out of sandwiches at the moment.</span><span class="zh">抱歉，我們現在三明治賣完了。</span></div><div class="vp-note">💡 out of 後面接東西。We’re out of milk.＝牛奶沒了。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="We are out of milk. Can you buy some?" title="唸例句">🔊</button> We are out of milk. Can you buy some?<span class="zh">牛奶喝完了，你可以去買嗎？</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Sorry, we’re out of chocolate ice cream." title="唸例句">🔊</button> Sorry, we’re out of chocolate ice cream.<span class="zh">抱歉，巧克力冰淇淋賣完了。</span></div></li><li class="vw-item vp-item" data-en="Can I pay with card?" data-pos="phr." data-zh="可以刷卡嗎？" data-ex="Can I pay by card? — Sorry, cash only." data-exzh="可以刷卡嗎？——抱歉，只收現金。"><div class="vw-head"><button type="button" class="vw-say" data-say="Can I pay with card?" title="發音">🔊</button> <b class="vw-en">Can I pay with card?</b> <span class="vw-zh">可以刷卡嗎？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="93,96" title="回到影片聽原句（1:33）">🎬</button> <b class="lt-tag">客人</b> <span class="en">Thank you! Can I pay with card?</span><span class="zh">謝謝！可以刷卡嗎？</span></div><div class="vp-note">💡 也常說 Can I pay by card?；付現金是 pay in cash。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can I pay by card? — Sorry, cash only." title="唸例句">🔊</button> Can I pay by card? — Sorry, cash only.<span class="zh">可以刷卡嗎？——抱歉，只收現金。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’ll pay in cash." title="唸例句">🔊</button> I’ll pay in cash.<span class="zh">我付現金。</span></div></li><li class="vw-item vp-item" data-en="That will be ... dollars." data-pos="phr." data-zh="這樣是…元／總共…元" data-ex="That will be twelve dollars, please." data-exzh="總共 12 元。"><div class="vw-head"><button type="button" class="vw-say" data-say="That will be ... dollars." title="發音">🔊</button> <b class="vw-en">That will be ... dollars.</b> <span class="vw-zh">這樣是…元／總共…元</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="44,46" title="回到影片聽原句（0:44）">🎬</button> <b class="lt-tag">店員</b> <span class="en">That will be four dollars.</span><span class="zh">這樣是 4 元。</span></div><div class="vp-note">💡 結帳時店員告訴你多少錢。也會說 Your total is … ／ That’s … dollars.</div><div class="vw-ex"><button type="button" class="vw-say" data-say="That will be twelve dollars, please." title="唸例句">🔊</button> That will be twelve dollars, please.<span class="zh">總共 12 元。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Your total is fifty dollars." title="唸例句">🔊</button> Your total is fifty dollars.<span class="zh">您的總金額是 50 元。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="customer" data-pos="n." data-zh="顧客、客人" data-ex="The customer asked for a bag." data-exzh="客人要了一個袋子。"><div class="vw-head"><button type="button" class="vw-say" data-say="customer" title="發音">🔊</button> <b class="vw-en">customer</b> <span class="vw-pos">n.</span> <span class="vw-zh">顧客、客人</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The customer asked for a bag." title="唸例句">🔊</button> The customer asked for a bag.<span class="zh">客人要了一個袋子。</span></div></li><li class="vw-item" data-en="order" data-pos="v./n." data-zh="點（餐）；點的東西" data-ex="I want to order a pizza." data-exzh="我想點一個披薩。"><div class="vw-head"><button type="button" class="vw-say" data-say="order" title="發音">🔊</button> <b class="vw-en">order</b> <span class="vw-pos">v./n.</span> <span class="vw-zh">點（餐）；點的東西</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I want to order a pizza." title="唸例句">🔊</button> I want to order a pizza.<span class="zh">我想點一個披薩。</span></div></li><li class="vw-item" data-en="kind" data-pos="n." data-zh="種類" data-ex="What kind of music do you like?" data-exzh="你喜歡哪一種音樂？"><div class="vw-head"><button type="button" class="vw-say" data-say="kind" title="發音">🔊</button> <b class="vw-en">kind</b> <span class="vw-pos">n.</span> <span class="vw-zh">種類</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What kind of music do you like?" title="唸例句">🔊</button> What kind of music do you like?<span class="zh">你喜歡哪一種音樂？</span></div></li><li class="vw-item" data-en="size" data-pos="n." data-zh="尺寸；大小" data-ex="What size are your shoes?" data-exzh="你的鞋子穿幾號？"><div class="vw-head"><button type="button" class="vw-say" data-say="size" title="發音">🔊</button> <b class="vw-en">size</b> <span class="vw-pos">n.</span> <span class="vw-zh">尺寸；大小</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What size are your shoes?" title="唸例句">🔊</button> What size are your shoes?<span class="zh">你的鞋子穿幾號？</span></div></li><li class="vw-item" data-en="medium" data-pos="adj." data-zh="中等的；中杯的" data-ex="I’d like a medium cola." data-exzh="我要一杯中杯可樂。"><div class="vw-head"><button type="button" class="vw-say" data-say="medium" title="發音">🔊</button> <b class="vw-en">medium</b> <span class="vw-pos">adj.</span> <span class="vw-zh">中等的；中杯的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’d like a medium cola." title="唸例句">🔊</button> I’d like a medium cola.<span class="zh">我要一杯中杯可樂。</span></div></li><li class="vw-item" data-en="sugar" data-pos="n." data-zh="糖" data-ex="No sugar in my tea, please." data-exzh="我的茶不要加糖，謝謝。"><div class="vw-head"><button type="button" class="vw-say" data-say="sugar" title="發音">🔊</button> <b class="vw-en">sugar</b> <span class="vw-pos">n.</span> <span class="vw-zh">糖</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="No sugar in my tea, please." title="唸例句">🔊</button> No sugar in my tea, please.<span class="zh">我的茶不要加糖，謝謝。</span></div></li><li class="vw-item" data-en="cream" data-pos="n." data-zh="奶油；（咖啡用的）奶精" data-ex="Do you want cream in your coffee?" data-exzh="你的咖啡要加奶精嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="cream" title="發音">🔊</button> <b class="vw-en">cream</b> <span class="vw-pos">n.</span> <span class="vw-zh">奶油；（咖啡用的）奶精</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Do you want cream in your coffee?" title="唸例句">🔊</button> Do you want cream in your coffee?<span class="zh">你的咖啡要加奶精嗎？</span></div></li><li class="vw-item" data-en="else" data-pos="adv." data-zh="其他的；另外的" data-ex="Do you need anything else?" data-exzh="你還需要別的嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="else" title="發音">🔊</button> <b class="vw-en">else</b> <span class="vw-pos">adv.</span> <span class="vw-zh">其他的；另外的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Do you need anything else?" title="唸例句">🔊</button> Do you need anything else?<span class="zh">你還需要別的嗎？</span></div></li><li class="vw-item" data-en="sandwich" data-pos="n." data-zh="三明治" data-ex="I made a ham sandwich for lunch." data-exzh="我做了火腿三明治當午餐。"><div class="vw-head"><button type="button" class="vw-say" data-say="sandwich" title="發音">🔊</button> <b class="vw-en">sandwich</b> <span class="vw-pos">n.</span> <span class="vw-zh">三明治</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I made a ham sandwich for lunch." title="唸例句">🔊</button> I made a ham sandwich for lunch.<span class="zh">我做了火腿三明治當午餐。</span></div></li><li class="vw-item" data-en="cookie" data-pos="n." data-zh="餅乾" data-ex="Grandma baked cookies for us." data-exzh="奶奶為我們烤了餅乾。"><div class="vw-head"><button type="button" class="vw-say" data-say="cookie" title="發音">🔊</button> <b class="vw-en">cookie</b> <span class="vw-pos">n.</span> <span class="vw-zh">餅乾</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Grandma baked cookies for us." title="唸例句">🔊</button> Grandma baked cookies for us.<span class="zh">奶奶為我們烤了餅乾。</span></div></li><li class="vw-item" data-en="card" data-pos="n." data-zh="卡片；信用卡" data-ex="Dad paid with his card." data-exzh="爸爸刷卡付錢。"><div class="vw-head"><button type="button" class="vw-say" data-say="card" title="發音">🔊</button> <b class="vw-en">card</b> <span class="vw-pos">n.</span> <span class="vw-zh">卡片；信用卡</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Dad paid with his card." title="唸例句">🔊</button> Dad paid with his card.<span class="zh">爸爸刷卡付錢。</span></div></li><li class="vw-item" data-en="receipt" data-pos="n." data-zh="收據；發票" data-ex="Keep the receipt in case you need it." data-exzh="收據留著，說不定會用到。"><div class="vw-head"><button type="button" class="vw-say" data-say="receipt" title="發音">🔊</button> <b class="vw-en">receipt</b> <span class="vw-pos">n.</span> <span class="vw-zh">收據；發票</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Keep the receipt in case you need it." title="唸例句">🔊</button> Keep the receipt in case you need it.<span class="zh">收據留著，說不定會用到。</span></div></li><li class="vw-item" data-en="bill" data-pos="n." data-zh="帳單" data-ex="We asked for the bill after dinner." data-exzh="吃完晚餐我們請店家拿帳單來。"><div class="vw-head"><button type="button" class="vw-say" data-say="bill" title="發音">🔊</button> <b class="vw-en">bill</b> <span class="vw-pos">n.</span> <span class="vw-zh">帳單</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="We asked for the bill after dinner." title="唸例句">🔊</button> We asked for the bill after dinner.<span class="zh">吃完晚餐我們請店家拿帳單來。</span></div></li><li class="vw-item" data-en="total" data-pos="n." data-zh="總數；總金額" data-ex="The total is one hundred dollars." data-exzh="總共一百元。"><div class="vw-head"><button type="button" class="vw-say" data-say="total" title="發音">🔊</button> <b class="vw-en">total</b> <span class="vw-pos">n.</span> <span class="vw-zh">總數；總金額</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The total is one hundred dollars." title="唸例句">🔊</button> The total is one hundred dollars.<span class="zh">總共一百元。</span></div></li><li class="vw-item" data-en="loyalty card" data-pos="n." data-zh="集點卡；會員卡" data-ex="I get a free drink with my loyalty card." data-exzh="我用集點卡換到一杯免費飲料。"><div class="vw-head"><button type="button" class="vw-say" data-say="loyalty card" title="發音">🔊</button> <b class="vw-en">loyalty card</b> <span class="vw-pos">n.</span> <span class="vw-zh">集點卡；會員卡</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I get a free drink with my loyalty card." title="唸例句">🔊</button> I get a free drink with my loyalty card.<span class="zh">我用集點卡換到一杯免費飲料。</span></div></li><li class="vw-item" data-en="point" data-pos="n." data-zh="點數；分數" data-ex="You get one point for every dollar." data-exzh="每花一元得一點。"><div class="vw-head"><button type="button" class="vw-say" data-say="point" title="發音">🔊</button> <b class="vw-en">point</b> <span class="vw-pos">n.</span> <span class="vw-zh">點數；分數</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="You get one point for every dollar." title="唸例句">🔊</button> You get one point for every dollar.<span class="zh">每花一元得一點。</span></div></li><li class="vw-item" data-en="expire" data-pos="v." data-zh="到期；過期" data-ex="My library card expires next month." data-exzh="我的借書證下個月到期。"><div class="vw-head"><button type="button" class="vw-say" data-say="expire" title="發音">🔊</button> <b class="vw-en">expire</b> <span class="vw-pos">v.</span> <span class="vw-zh">到期；過期</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My library card expires next month." title="唸例句">🔊</button> My library card expires next month.<span class="zh">我的借書證下個月到期。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "2VeQTuSSiI0", "start": 13, "plays": 3, "title": "在咖啡店點餐"};
+window.GQUIZ = {
+ "label": "Listening V04",
+ "title": "影片聽力 在咖啡店點餐",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=2VeQTuSSiI0\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　點一杯咖啡（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"13,51\">▶ 播放這一段</button><br>客人走進咖啡店點飲料。注意聽：點什麼、內用還是外帶、多大杯、多少錢。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does the customer want?</div><div class=\"lt-opzh\">客人想要什麼？</div>",
+     "opts": [
+      "A cup of tea.",
+      "A coffee.",
+      "A glass of juice."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"14,16\" title=\"重聽這一句（影片 0:14）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Hi. What would you like?</span><span class=\"zh\">嗨，您想要點什麼？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"16,18\" title=\"重聽這一句（影片 0:16）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">I would like a coffee, please!</span><span class=\"zh\">我要一杯咖啡，謝謝！</span></div><div class=\"lt-opzh\">選項：(A) 一杯茶。　(B) 一杯咖啡。　(C) 一杯果汁。</div><div class=\"lt-tip\">💡 What would you like?＝您要點什麼？（很有禮貌的問法）。I would like … ＝我想要…。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Will the customer drink it in the café?</div><div class=\"lt-opzh\">客人要在店裡喝嗎？</div>",
+     "opts": [
+      "Yes, here.",
+      "No, to go.",
+      "The customer doesn’t say."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"18,21\" title=\"重聽這一句（影片 0:18）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Will you have it here or to go?</span><span class=\"zh\">內用還是外帶？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"21,23\" title=\"重聽這一句（影片 0:21）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Could I have it to go?</span><span class=\"zh\">可以外帶嗎？</span></div><div class=\"lt-opzh\">選項：(A) 是，在這裡喝。　(B) 不，要外帶。　(C) 客人沒說。</div><div class=\"lt-tip\">💡 here＝內用（在這裡吃喝）；to go＝外帶。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What kind of coffee does the customer order?</div><div class=\"lt-opzh\">客人點哪一種咖啡？</div>",
+     "opts": [
+      "Dark roast.",
+      "Iced coffee.",
+      "Light roast."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"23,26\" title=\"重聽這一句（影片 0:23）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">OK. What kind of coffee would you like?</span><span class=\"zh\">好的，您要哪一種咖啡？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"26,27\" title=\"重聽這一句（影片 0:26）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Dark roast, please!</span><span class=\"zh\">深焙，謝謝！</span></div><div class=\"lt-opzh\">選項：(A) 深焙。　(B) 冰咖啡。　(C) 淺焙。</div><div class=\"lt-tip\">💡 dark＝深色的；roast＝烘焙。What kind of …?＝哪一種…？</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What size does the customer want?</div><div class=\"lt-opzh\">客人要多大杯？</div>",
+     "opts": [
+      "Small.",
+      "Medium.",
+      "Large."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"27,30\" title=\"重聽這一句（影片 0:27）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">And what size would you like?</span><span class=\"zh\">要多大杯？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"30,32\" title=\"重聽這一句（影片 0:30）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Can I have a medium?</span><span class=\"zh\">可以給我中杯嗎？</span></div><div class=\"lt-opzh\">選項：(A) 小杯。　(B) 中杯。　(C) 大杯。</div><div class=\"lt-tip\">💡 small 小、medium 中、large 大。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How much is the coffee?</div><div class=\"lt-opzh\">咖啡多少錢？</div>",
+     "opts": [
+      "Four dollars.",
+      "Fourteen dollars.",
+      "Forty dollars."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"38,42\" title=\"重聽這一句（影片 0:38）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Here you go. Would you like anything else?</span><span class=\"zh\">這是您的咖啡。還需要什麼嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"43,46\" title=\"重聽這一句（影片 0:43）\">🔊</button> <b class=\"lt-tag\">客人／店員</b><span class=\"en\">No, thanks! — That will be four dollars.</span><span class=\"zh\">不用了，謝謝！——這樣是 4 元。</span></div><div class=\"lt-opzh\">選項：(A) 4 元。　(B) 14 元。　(C) 40 元。</div><div class=\"lt-tip\">💡 four（4）、fourteen（14，重音在後）、forty（40，重音在前）。That will be …＝總共是…。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　茶和餅乾（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"53,109\">▶ 播放這一段</button><br>第二位客人想喝茶，也想吃點東西。注意聽：想吃的東西有沒有？怎麼付錢？",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What drink does the customer order?</div><div class=\"lt-opzh\">客人點了什麼飲料？</div>",
+     "opts": [
+      "Black tea.",
+      "Milk tea.",
+      "Green tea."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"56,61\" title=\"重聽這一句（影片 0:56）\">🔊</button> <b class=\"lt-tag\">客人／店員</b><span class=\"en\">Do you have tea? — Yes, we have many kinds of tea.</span><span class=\"zh\">你們有茶嗎？——有，我們有很多種茶。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"61,63\" title=\"重聽這一句（影片 1:01）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">I will have green tea, please!</span><span class=\"zh\">我要綠茶，謝謝！</span></div><div class=\"lt-opzh\">選項：(A) 紅茶。　(B) 奶茶。　(C) 綠茶。</div><div class=\"lt-tip\">💡 英文的「紅茶」是 black tea（不是 red tea）。I will have …＝我要…（點餐常用）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Will this customer drink it in the café?</div><div class=\"lt-opzh\">這位客人要在店裡喝嗎？</div>",
+     "opts": [
+      "Yes, here.",
+      "No, to go.",
+      "The customer will take it home."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"63,68\" title=\"重聽這一句（影片 1:03）\">🔊</button> <b class=\"lt-tag\">店員／客人</b><span class=\"en\">Will you have it here or to go? — I will have it here, please!</span><span class=\"zh\">內用還是外帶？——內用，謝謝！</span></div><div class=\"lt-opzh\">選項：(A) 是，在這裡喝。　(B) 不，要外帶。　(C) 要帶回家。</div><div class=\"lt-tip\">💡 跟第 1 段的客人不一樣：這位是 here（內用）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Why can’t the customer get a sandwich?</div><div class=\"lt-opzh\">客人為什麼買不到三明治？</div>",
+     "opts": [
+      "The café doesn’t sell food.",
+      "The sandwiches are sold out right now.",
+      "The customer doesn’t have enough money."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"71,73\" title=\"重聽這一句（影片 1:11）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Do you have sandwiches?</span><span class=\"zh\">你們有三明治嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"73,77\" title=\"重聽這一句（影片 1:13）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Sorry, we are out of sandwiches at the moment.</span><span class=\"zh\">抱歉，我們現在三明治賣完了。</span></div><div class=\"lt-opzh\">選項：(A) 店裡不賣吃的。　(B) 三明治現在賣完了。　(C) 客人錢不夠。</div><div class=\"lt-tip\">💡 be out of …＝…用完了、賣完了。at the moment＝現在。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does the customer get to eat?</div><div class=\"lt-opzh\">客人買了什麼吃的？</div>",
+     "opts": [
+      "Cookies.",
+      "Cake.",
+      "A sandwich."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"77,81\" title=\"重聽這一句（影片 1:17）\">🔊</button> <b class=\"lt-tag\">客人／店員</b><span class=\"en\">That’s fine! Do you have cookies? — Yes, we do!</span><span class=\"zh\">沒關係！有餅乾嗎？——有！</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"81,84\" title=\"重聽這一句（影片 1:21）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Can I have cookies to take away, please?</span><span class=\"zh\">餅乾可以讓我帶走嗎？</span></div><div class=\"lt-opzh\">選項：(A) 餅乾。　(B) 蛋糕。　(C) 三明治。</div><div class=\"lt-tip\">💡 三明治賣完了，所以改買餅乾。to take away＝帶走（和 to go 意思一樣）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How does the customer pay?</div><div class=\"lt-opzh\">客人怎麼付錢？</div>",
+     "opts": [
+      "With cash.",
+      "With a card.",
+      "With points."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"91,96\" title=\"重聽這一句（影片 1:31）\">🔊</button> <b class=\"lt-tag\">店員／客人</b><span class=\"en\">That will be ten dollars. — Thank you! Can I pay with card?</span><span class=\"zh\">這樣是 10 元。——謝謝！可以刷卡嗎？</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"96,97\" title=\"重聽這一句（影片 1:36）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Yes, you can.</span><span class=\"zh\">可以。</span></div><div class=\"lt-opzh\">選項：(A) 付現金。　(B) 刷卡。　(C) 用點數。</div><div class=\"lt-tip\">💡 pay with card＝刷卡；pay in cash＝付現金。C 是第 3 段客人的付法。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　用點數結帳（5 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"119,154\">▶ 播放這一段</button><br>第三位客人吃完要結帳。用什麼付？店員提醒什麼？",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does the customer ask for?</div><div class=\"lt-opzh\">客人要什麼？</div>",
+     "opts": [
+      "The menu.",
+      "The bill.",
+      "Some water."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"120,123\" title=\"重聽這一句（影片 2:00）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Hi. Can I have our bill, please?</span><span class=\"zh\">嗨，可以給我們帳單嗎？</span></div><div class=\"lt-opzh\">選項：(A) 菜單。　(B) 帳單。　(C) 一些水。</div><div class=\"lt-tip\">💡 bill＝帳單（吃完要結帳時說）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How much is the total?</div><div class=\"lt-opzh\">總共多少錢？</div>",
+     "opts": [
+      "Eight dollars.",
+      "Eighteen dollars.",
+      "Eighty dollars."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"123,127\" title=\"重聽這一句（影片 2:03）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Yes, for sure. Your total is eight dollars.</span><span class=\"zh\">好的，總共是 8 元。</span></div><div class=\"lt-opzh\">選項：(A) 8 元。　(B) 18 元。　(C) 80 元。</div><div class=\"lt-tip\">💡 total＝總數、總金額。eight（8）、eighteen（18）、eighty（80）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How does the customer pay today?</div><div class=\"lt-opzh\">客人今天用什麼付錢？</div>",
+     "opts": [
+      "With loyalty card points.",
+      "With cash.",
+      "A friend pays."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"127,131\" title=\"重聽這一句（影片 2:07）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">Thank you. I will use my loyalty card points today.</span><span class=\"zh\">謝謝，我今天要用集點卡的點數。</span></div><div class=\"lt-opzh\">選項：(A) 用集點卡的點數。　(B) 付現金。　(C) 朋友幫忙付。</div><div class=\"lt-tip\">💡 loyalty card＝集點卡、會員卡；points＝點數。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">When will the customer’s points expire?</div><div class=\"lt-opzh\">客人的點數什麼時候到期？</div>",
+     "opts": [
+      "Tomorrow.",
+      "At the end of the week.",
+      "At the end of the month."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"138,143\" title=\"重聽這一句（影片 2:18）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">You’re right, I should. I have to use some points before they expire.</span><span class=\"zh\">你說得對，我是該用。我得在點數過期前用掉一些。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"143,147\" title=\"重聽這一句（影片 2:23）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">Don’t forget. Your points expire at the end of the month.</span><span class=\"zh\">別忘了，你的點數月底到期。</span></div><div class=\"lt-opzh\">選項：(A) 明天。　(B) 這個星期結束時。　(C) 這個月底。</div><div class=\"lt-tip\">💡 expire＝到期、過期。at the end of the month＝月底。A 是客人下次要來的時間（下一題）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">When will the customer come back?</div><div class=\"lt-opzh\">客人什麼時候會再來？</div>",
+     "opts": [
+      "Tomorrow.",
+      "Next week.",
+      "Next month."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"148,150\" title=\"重聽這一句（影片 2:28）\">🔊</button> <b class=\"lt-tag\">客人</b><span class=\"en\">I will see you tomorrow then. Thank you very much!</span><span class=\"zh\">那我們明天見，非常謝謝你！</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"150,153\" title=\"重聽這一句（影片 2:30）\">🔊</button> <b class=\"lt-tag\">店員</b><span class=\"en\">You’re welcome! See you!</span><span class=\"zh\">不客氣，再見！</span></div><div class=\"lt-opzh\">選項：(A) 明天。　(B) 下星期。　(C) 下個月。</div><div class=\"lt-tip\">💡 I will see you tomorrow.＝明天見（表示明天會再來）。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>

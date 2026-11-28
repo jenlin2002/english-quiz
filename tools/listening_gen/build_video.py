@@ -25,10 +25,13 @@ def build(v):
         t0, t1 = seg['t']
         items = []
         for it in seg['items']:
-            exp = ('<div class="lt-tr"><div class="lt-trh">📝 影片原文（依自動字幕整理）</div>' +
+            exp = ('<div class="lt-tr"><div class="lt-trh">📝 影片原文（%s）</div>' % v.get('src_note', '依自動字幕整理') +
                    ''.join(line_html(*ln) for ln in it['lines']) +
-                   '<div class="lt-opzh">選項：%s</div><div class="lt-tip">💡 %s</div></div>') % (E(it['optzh']), it['tip'])
-            items.append({'type': 'mc', 'q': '<div class="lt-qtext">%s</div>' % E(it['q']),
+                   '<div class="lt-opzh">選項：%s</div><div class="lt-tip">💡 %s</div></div>' % (E(it['optzh']), it['tip']))
+            q = it['q']  # 初級可寫成 (英文, 中文)，題目下面多一行中文
+            qh = ('<div class="lt-qtext">%s</div><div class="lt-opzh">%s</div>' % (E(q[0]), E(q[1])) if isinstance(q, tuple)
+                  else '<div class="lt-qtext">%s</div>' % E(q))
+            items.append({'type': 'mc', 'q': qh,
                           'opts': [E(o) for o in it['opts']], 'answer': it['answer'], 'exp': exp})
         note = ('<button type="button" class="vt-play" data-id="s%d" data-t="%d,%d">▶ 播放這一段</button><br>%s'
                 % (si + 1, t0, t1, E(seg['note'])))
@@ -65,11 +68,11 @@ def build(v):
     <h2>🔑 重點片語</h2>
     <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
     <div class="vt-after-body">
-    <p class="lt-ldesc">影片最後整理的 %d 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <p class="lt-ldesc">%s %d 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
     <ol class="vt-words vt-phr">%s</ol>
     </div>
   </section>
-''' % (len(v['phrases']), phrases)) if phrases else ''
+''' % (v.get('phr_src', '影片最後整理的'), len(v['phrases']), phrases)) if phrases else ''
     total = v['segments'][-1]['t'][1] - v['segments'][0]['t'][0]
     page = '''<!DOCTYPE html>
 <html lang="zh-Hant">
