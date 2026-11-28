@@ -3,6 +3,16 @@
 .lt-speed{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:14px; color:var(--ink-soft); margin:6px 0; }
 .lt-speed button{ border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
 .lt-speed button.on{ background:var(--chalk-bg); color:#fff; border-color:var(--chalk-bg); font-weight:700; }
+/* 遮中文／遮英文（vt.js） */
+.vt-hide{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:14px; color:var(--ink-soft); margin:6px 0; }
+.vt-hide button{ border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px; font:inherit; cursor:pointer; }
+.vt-hide button.on{ background:var(--chalk-bg); color:#fff; border-color:var(--chalk-bg); font-weight:700; }
+.vt-hide small{ font-size:12.5px; }
+.vt-hzh .lt-opzh, .vt-hzh .zh, .vt-hzh .vw-zh,
+.vt-hen .lt-line .en, .vt-hen .vp-quote .en, .vt-hen .vw-ex .en, .vt-hen .vw-en{
+  color:transparent !important; background:#e5e7eb; border-radius:4px; cursor:pointer; user-select:none; transition:color .15s; }
+.vt-hzh h1 .zh{ color:inherit !important; background:none; cursor:auto; user-select:auto; }
+.vt-hzh .vt-peek, .vt-hen .vt-peek{ color:inherit !important; background:#fef3c7; }
 
 .lt-play{ border:0; background:var(--chalk-bg); color:#fff; border-radius:999px; padding:8px 16px; font:inherit; font-weight:700; cursor:pointer; }
 .lt-play.playing{ background:#C9952B; }

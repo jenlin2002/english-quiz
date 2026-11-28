@@ -123,6 +123,34 @@
     if(gq) new MutationObserver(unlock).observe(gq, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
   }
 
+  // ---- 遮中文／遮英文（原文、片語、單字表；遮住的字點一下可以偷看。題目和選項的英文不遮） ----
+  document.querySelectorAll('.vw-ex').forEach(ex => [...ex.childNodes].forEach(n => {
+    if(n.nodeType === 3 && n.textContent.trim()){ const sp = document.createElement('span'); sp.className = 'en'; sp.textContent = n.textContent; n.replaceWith(sp); }
+  }));
+  const hide = { zh: get('vtHideZh') === '1', en: get('vtHideEn') === '1' };
+  const hideBar = () => '<div class="vt-hide">自我練習：<button type="button" data-hide="zh">🙈 遮中文</button><button type="button" data-hide="en">🙈 遮英文</button><small>遮住的字點一下可以偷看</small></div>';
+  const speed = document.querySelector('.lt-speed');
+  if(speed) speed.insertAdjacentHTML('afterend', hideBar());
+  document.querySelectorAll('.vt-words').forEach(ol => ol.insertAdjacentHTML('beforebegin', hideBar()));
+  function applyHide(){
+    document.body.classList.toggle('vt-hzh', hide.zh);
+    document.body.classList.toggle('vt-hen', hide.en);
+    document.querySelectorAll('.vt-hide button').forEach(b => {
+      const on = hide[b.dataset.hide];
+      b.classList.toggle('on', on);
+      b.textContent = (on ? '👀 顯示' : '🙈 遮') + (b.dataset.hide === 'zh' ? '中文' : '英文');
+    });
+    document.querySelectorAll('.vt-peek').forEach(el => el.classList.remove('vt-peek'));
+  }
+  applyHide();
+  document.addEventListener('click', e => {
+    const hb = e.target.closest('.vt-hide button');
+    if(hb){ const k = hb.dataset.hide; hide[k] = !hide[k]; set(k === 'zh' ? 'vtHideZh' : 'vtHideEn', hide[k] ? '1' : '0'); applyHide(); return; }
+    if(!hide.zh && !hide.en) return;
+    const m = e.target.closest('.vt-hzh .lt-opzh, .vt-hzh .zh, .vt-hzh .vw-zh, .vt-hen .lt-line .en, .vt-hen .vp-quote .en, .vt-hen .vw-ex .en, .vt-hen .vw-en');
+    if(m && !m.closest('h1')) m.classList.toggle('vt-peek');
+  });
+
   // ---- 單字表：存字卡（有 /cards/cards.js 時） ----
   function cardBtns(){
     if(!window.Cards || !Cards.btn) return;
