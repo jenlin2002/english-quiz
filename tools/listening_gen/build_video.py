@@ -71,7 +71,7 @@ def build(v):
   <div class="vt-box">
       <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
       <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
-      <div class="vt-src">影片來源：YouTube「%(channel)s」頻道 <a href="https://www.youtube.com/watch?v=%(yt)s" target="_blank" rel="noopener">%(title)s</a>（記者會從 %(start)s 開始）</div>
+      <div class="vt-src">影片來源：YouTube「%(channel)s」頻道 <a href="https://www.youtube.com/watch?v=%(yt)s" target="_blank" rel="noopener">%(title)s</a>（%(kind)s從 %(start)s 開始）</div>
   </div>
   <section class="part lt-rules">
     <ul>
@@ -84,7 +84,7 @@ def build(v):
   <section class="part lt-quiz"><div id="gquiz"></div></section>
   <section class="part">
     <h2>📖 重點單字</h2>
-    <p class="lt-ldesc">記者會裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <p class="lt-ldesc">%(kind)s裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
     <ol class="vt-words">%(words)s</ol>
   </section>
 </div>
@@ -100,7 +100,7 @@ window.GQUIZ = %(gq)s;
 </html>
 ''' % {'title': E(v['title']), 'VID': vid.upper(), 'en': E(v['en']), 'level': E(v['level']), 'nseg': len(secs), 'n': n,
        'mins': round(total / 60), 'about': v['about'], 'channel': E(v['channel']), 'yt': v['yt'], 'start': fmt(v['start']),
-       'plays': v['plays'], 'words': words,
+       'plays': v['plays'], 'words': words, 'kind': E(v.get('kind', '記者會')),
        'vt': json.dumps({'video': v['yt'], 'start': v['start'], 'plays': v['plays'], 'title': v['title']}, ensure_ascii=False),
        'gq': json.dumps(gq, ensure_ascii=False, indent=1)}
     out = os.path.join(ROOT, 'listening', vid + '.html')

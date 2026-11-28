@@ -253,7 +253,9 @@
 - **影片聽力（2026-11-28 試做，使用者要求用 YouTube「MJ英文」頻道的影片做聽力，放在 Listening Hub 底下、不另開首頁方塊）**：目錄 `listening/index.html` 最下面一區「🎬 影片聽力」。第 1 部 `v01.html`＝Artemis II 太空人返航記者會（影片 GFJBqJDTHUU 的 1:31–12:58，5 段×4 題＝20 題＋20 個重點單字）。2026-11-28 使用者看過、已上線（commit「PU1」）。預設遮住畫面（YouTube 播放器規定不鼓勵遮住播放器，已告知使用者，使用者沒有要改）；真人原速比中高級 1～10 回難。
   - 做法：影片用 YouTube IFrame API 播（`listening/vt.js`，**不下載影片、不錄音**），每段按鈕 `data-t="開始秒,結束秒"` 播到結尾自動停；作答時每段可聽 2 次（`VT.plays`），送出後每句 🔊 跳回影片那一句。影片畫面有燒進去的中英字幕，所以預設用色塊遮住畫面（「👀 顯示畫面」可切換，記在 `vtCover`）。作答／訂正／計點用 `gquiz.js`（label `Listening V01`、mode「影片聽力」）；`lt.js` 也載入，負責重聽速度和目錄成績。
   - 題目、選項、中文、提示、單字例句都自編；「影片原文」只摘題目需要的短句。轉錄稿讀法：內建瀏覽器開影片頁 → 說明欄「顯示轉錄稿」→ 讀 `transcript-segment-view-model`（直接 fetch 字幕檔會回空白）。**YouTube 頁會自動播放，讀完要把影片暫停或關掉分頁**（2026-11-28 使用者聽到聲音找不到來源）。
-  - 產生：資料檔 `tools/listening_gen/lt_vNN.py`（VIDEO dict）→ `python tools/listening_gen/build_video.py vNN`。
+  - 產生：資料檔 `tools/listening_gen/lt_vNN.py`（VIDEO dict）→ `python tools/listening_gen/build_video.py vNN`。VIDEO 可加 `'kind'`（預設「記者會」，用在「影片來源…從幾分開始」和單字表說明）。
+  - 第 2 部 `v02.html`（2026-11-28，使用者說「繼續」）＝PSY 在牛津大學談〈江南 Style〉（影片 nQt4JumaRe4 的 1:21–11:52，`kind: '演講'`，5 段×4 題＋20 個單字），非母語英文、比較慢，目錄標「中級～中高級」。在 127.0.0.1（沒登入）用正確答案作答 20/20，分段播放、逐句重聽都試過，測試紀錄已清掉。影片後半（11:53 以後）是頻道自己的片語教學，不出題。
+  - 選片：MJ英文頻道很多是政治、聽證會、辯論；給孩子用優先選演講、訪談、生活類（候選：LISA 紀錄片訪談 nxcQPnOHsKs、白宮火雞特赦 o6lf62FXvOA、深偽影片作證 0uFgn-BLNSI）。
 
 ## 我的字卡（2026-11-17 使用者要求，手機雲端版）
 
