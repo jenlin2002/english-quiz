@@ -112,6 +112,17 @@
   const gq = document.getElementById('gquiz');
   if(gq){ new MutationObserver(relabel).observe(gq, { childList: true }); relabel(); }
 
+  // ---- 重點片語（原句就是題目）：送出成績（有題目已對完答案）後才打開 ----
+  const after = document.querySelectorAll('.vt-after');
+  function unlock(){
+    const open = !gq || !!gq.querySelector('.gq-item.done');
+    after.forEach(s => s.classList.toggle('locked', !open));
+  }
+  if(after.length){
+    unlock();
+    if(gq) new MutationObserver(unlock).observe(gq, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+  }
+
   // ---- 單字表：存字卡（有 /cards/cards.js 時） ----
   function cardBtns(){
     if(!window.Cards || !Cards.btn) return;

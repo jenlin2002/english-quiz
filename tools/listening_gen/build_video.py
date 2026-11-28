@@ -39,12 +39,37 @@ def build(v):
           'links': '<a class="btn" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener">▶ 到 YouTube 看完整影片</a> '
                    '<a class="btn" href="index.html">聽力訓練目錄</a>' % v['yt'],
           'sections': secs}
+    picked = set(v.get('picked', []))
     words = ''.join(
         ('<li class="vw-item" data-en="%s" data-pos="%s" data-zh="%s" data-ex="%s" data-exzh="%s"><div class="vw-head">'
-         '<button type="button" class="vw-say" data-say="%s" title="發音">🔊</button> <b class="vw-en">%s</b> '
+         '<button type="button" class="vw-say" data-say="%s" title="發音">🔊</button> <b class="vw-en">%s</b>%s '
          '<span class="vw-pos">%s</span> <span class="vw-zh">%s</span></div>'
          '<div class="vw-ex"><button type="button" class="vw-say" data-say="%s" title="唸例句">🔊</button> %s<span class="zh">%s</span></div></li>')
-        % (E(w), E(p), E(z), E(ex), E(exz), E(w), E(w), E(p), E(z), E(ex), E(ex), E(exz)) for w, p, z, ex, exz in v['words'])
+        % (E(w), E(p), E(z), E(ex), E(exz), E(w), E(w), ' <span class="vw-pick" title="影片最後整理的精選字">⭐</span>' if w in picked else '',
+           E(p), E(z), E(ex), E(ex), E(exz)) for w, p, z, ex, exz in v['words'])
+    npick = sum(1 for w in v['words'] if w[0] in picked)
+    # 重點片語：影片最後整理的片語；原句可跳回影片聽，說明、例句自編
+    phrases = ''
+    for ph in v.get('phrases', []):
+        t0, t1, who, qen, qzh = ph['quote']
+        exs = ''.join('<div class="vw-ex"><button type="button" class="vw-say" data-say="%s" title="唸例句">🔊</button> %s<span class="zh">%s</span></div>'
+                      % (E(a), E(a), E(b)) for a, b in ph['ex'])
+        phrases += ('<li class="vw-item vp-item" data-en="%s" data-pos="phr." data-zh="%s" data-ex="%s" data-exzh="%s"><div class="vw-head">'
+                    '<button type="button" class="vw-say" data-say="%s" title="發音">🔊</button> <b class="vw-en">%s</b> <span class="vw-zh">%s</span></div>'
+                    '<div class="vp-quote"><button type="button" class="vt-say" data-t="%d,%d" title="回到影片聽原句（%s）">🎬</button> '
+                    '<b class="lt-tag">%s</b> <span class="en">%s</span><span class="zh">%s</span></div>'
+                    '<div class="vp-note">💡 %s</div>%s</li>') % (
+            E(ph['p']), E(ph['zh']), E(ph['ex'][0][0]), E(ph['ex'][0][1]), E(ph['p']), E(ph['p']), E(ph['zh']),
+            t0, t1, fmt(t0), E(who), E(qen), E(qzh), ph['note'], exs)
+    phr_sec = ('''  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">影片最後整理的 %d 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr">%s</ol>
+    </div>
+  </section>
+''' % (len(v['phrases']), phrases)) if phrases else ''
     total = v['segments'][-1]['t'][1] - v['segments'][0]['t'][0]
     page = '''<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -55,7 +80,7 @@ def build(v):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
-<link rel="stylesheet" href="listening.css?v=20261128a">
+<link rel="stylesheet" href="listening.css?v=20261128b">
 </head>
 <body>
 <div class="wrap">
@@ -82,9 +107,9 @@ def build(v):
     <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
   </section>
   <section class="part lt-quiz"><div id="gquiz"></div></section>
-  <section class="part">
+%(phr)s  <section class="part">
     <h2>📖 重點單字</h2>
-    <p class="lt-ldesc">%(kind)s裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <p class="lt-ldesc">%(kind)s裡出現的字%(pick)s。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
     <ol class="vt-words">%(words)s</ol>
   </section>
 </div>
@@ -93,14 +118,15 @@ window.VT = %(vt)s;
 window.GQUIZ = %(gq)s;
 </script>
 <script src="lt.js?v=20261125a"></script>
-<script src="vt.js?v=20261128a"></script>
+<script src="vt.js?v=20261128b"></script>
 <script src="../grammar2/gquiz.js?v=20261125a"></script>
 <script src="../points.js"></script>
 </body>
 </html>
 ''' % {'title': E(v['title']), 'VID': vid.upper(), 'en': E(v['en']), 'level': E(v['level']), 'nseg': len(secs), 'n': n,
        'mins': round(total / 60), 'about': v['about'], 'channel': E(v['channel']), 'yt': v['yt'], 'start': fmt(v['start']),
-       'plays': v['plays'], 'words': words, 'kind': E(v.get('kind', '記者會')),
+       'plays': v['plays'], 'words': words, 'kind': E(v.get('kind', '記者會')), 'phr': phr_sec,
+       'pick': '（⭐＝影片最後整理的 %d 個精選字）' % npick if npick else '',
        'vt': json.dumps({'video': v['yt'], 'start': v['start'], 'plays': v['plays'], 'title': v['title']}, ensure_ascii=False),
        'gq': json.dumps(gq, ensure_ascii=False, indent=1)}
     out = os.path.join(ROOT, 'listening', vid + '.html')

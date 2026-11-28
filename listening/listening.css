@@ -70,6 +70,14 @@
 .vw-pos{ color:#C9952B; font-size:13px; }
 .vw-ex{ font-size:14.5px; margin-top:2px; }
 .vw-ex .zh{ color:var(--ink-soft); font-size:13.5px; margin-left:6px; }
+.vw-pick{ font-size:13px; }
+.vt-phr li{ margin:12px 0; }
+.vp-quote{ margin-top:4px; padding:4px 8px; background:#F4F1E8; border-radius:8px; font-size:14.5px; }
+.vp-quote .zh{ color:var(--ink-soft); font-size:13.5px; margin-left:6px; }
+.vp-note{ font-size:14px; margin-top:4px; }
+.vt-lockmsg{ display:none; color:var(--ink-soft); }
+.vt-after.locked .vt-lockmsg{ display:block; }
+.vt-after.locked .vt-after-body{ display:none; }
 
 /* 聽寫 */
 .lt-dict{ margin-left:22px; }
