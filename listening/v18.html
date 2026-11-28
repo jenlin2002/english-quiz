@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜怎麼做好筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V18</div>
+  <h1>影片聽力 <span class="zh">怎麼做好筆記</span></h1>
+  <div class="subtitle">How to Take Great Notes・真人原速・中級・3 段 10 題・約 4 分鐘影片</div>
+  <section class="part">
+    <p>老師一秒講 2～3 個字，學生一秒只抄得了三分之一個字，想全部抄下來一定跟不上。這支動畫告訴你：做筆記的目的是在課堂上就學會，然後給你三個步驟：寫結論不寫事實、用不同顏色的筆、下課後花 10 分鐘整理。<br>旁白講得很快，數字也多。每段可以聽 2 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「watchwellcast」頻道 <a href="https://www.youtube.com/watch?v=UAhRf3U50lM" target="_blank" rel="noopener">怎麼做好筆記</a>（影片從 0:02 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>2 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從影片裡挑的 3 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="take notes" data-pos="phr." data-zh="做筆記" data-ex="Take notes during the lesson." data-exzh="上課時要做筆記。"><div class="vw-head"><button type="button" class="vw-say" data-say="take notes" title="發音">🔊</button> <b class="vw-en">take notes</b> <span class="vw-zh">做筆記</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="2,6" title="回到影片聽原句（0:02）">🎬</button> <b class="lt-tag"></b> <span class="en">The average student takes notes at a rate of one-third of a word per second.</span><span class="zh">一般學生做筆記的速度是每秒三分之一個字。</span></div><div class="vp-note">💡 note-taking＝做筆記（名詞）。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Take notes during the lesson." title="唸例句">🔊</button> Take notes during the lesson.<span class="zh">上課時要做筆記。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can I borrow your notes?" title="唸例句">🔊</button> Can I borrow your notes?<span class="zh">可以借我你的筆記嗎？</span></div></li><li class="vw-item vp-item" data-en="fall behind" data-pos="phr." data-zh="落後、跟不上" data-ex="I was sick and fell behind in math." data-exzh="我生病，數學跟不上了。"><div class="vw-head"><button type="button" class="vw-say" data-say="fall behind" title="發音">🔊</button> <b class="vw-en">fall behind</b> <span class="vw-zh">落後、跟不上</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="11,19" title="回到影片聽原句（0:11）">🎬</button> <b class="lt-tag"></b> <span class="en">You’re going to fall seriously behind.</span><span class="zh">你會嚴重落後。</span></div><div class="vp-note">💡 相反是 keep up（跟上）。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="I was sick and fell behind in math." title="唸例句">🔊</button> I was sick and fell behind in math.<span class="zh">我生病，數學跟不上了。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Walk faster, or you’ll fall behind." title="唸例句">🔊</button> Walk faster, or you’ll fall behind.<span class="zh">走快點，不然會落後。</span></div></li><li class="vw-item vp-item" data-en="copy down" data-pos="phr." data-zh="抄下來" data-ex="Copy down the homework from the board." data-exzh="把黑板上的功課抄下來。"><div class="vw-head"><button type="button" class="vw-say" data-say="copy down" title="發音">🔊</button> <b class="vw-en">copy down</b> <span class="vw-zh">抄下來</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="11,19" title="回到影片聽原句（0:11）">🎬</button> <b class="lt-tag"></b> <span class="en">If you’re trying to copy down everything your teacher is saying …</span><span class="zh">如果你想把老師說的全部抄下來……</span></div><div class="vp-note">💡 write down／note down 也是「寫下來」。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Copy down the homework from the board." title="唸例句">🔊</button> Copy down the homework from the board.<span class="zh">把黑板上的功課抄下來。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Write down your name here." title="唸例句">🔊</button> Write down your name here.<span class="zh">在這裡寫下你的名字。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="average" data-pos="adj." data-zh="一般的；平均的" data-ex="The average class has thirty students." data-exzh="一般的班級有三十個學生。"><div class="vw-head"><button type="button" class="vw-say" data-say="average" title="發音">🔊</button> <b class="vw-en">average</b> <span class="vw-pos">adj.</span> <span class="vw-zh">一般的；平均的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The average class has thirty students." title="唸例句">🔊</button> The average class has thirty students.<span class="zh">一般的班級有三十個學生。</span></div></li><li class="vw-item" data-en="skill" data-pos="n." data-zh="技能" data-ex="Cooking is a useful skill." data-exzh="煮飯是有用的技能。"><div class="vw-head"><button type="button" class="vw-say" data-say="skill" title="發音">🔊</button> <b class="vw-en">skill</b> <span class="vw-pos">n.</span> <span class="vw-zh">技能</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Cooking is a useful skill." title="唸例句">🔊</button> Cooking is a useful skill.<span class="zh">煮飯是有用的技能。</span></div></li><li class="vw-item" data-en="obvious" data-pos="adj." data-zh="明顯的" data-ex="The answer is obvious." data-exzh="答案很明顯。"><div class="vw-head"><button type="button" class="vw-say" data-say="obvious" title="發音">🔊</button> <b class="vw-en">obvious</b> <span class="vw-pos">adj.</span> <span class="vw-zh">明顯的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The answer is obvious." title="唸例句">🔊</button> The answer is obvious.<span class="zh">答案很明顯。</span></div></li><li class="vw-item" data-en="inefficient" data-pos="adj." data-zh="沒效率的" data-ex="This way is slow and inefficient." data-exzh="這方法又慢又沒效率。"><div class="vw-head"><button type="button" class="vw-say" data-say="inefficient" title="發音">🔊</button> <b class="vw-en">inefficient</b> <span class="vw-pos">adj.</span> <span class="vw-zh">沒效率的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="This way is slow and inefficient." title="唸例句">🔊</button> This way is slow and inefficient.<span class="zh">這方法又慢又沒效率。</span></div></li><li class="vw-item" data-en="concept" data-pos="n." data-zh="觀念；概念" data-ex="This concept is hard to understand." data-exzh="這個觀念很難懂。"><div class="vw-head"><button type="button" class="vw-say" data-say="concept" title="發音">🔊</button> <b class="vw-en">concept</b> <span class="vw-pos">n.</span> <span class="vw-zh">觀念；概念</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="This concept is hard to understand." title="唸例句">🔊</button> This concept is hard to understand.<span class="zh">這個觀念很難懂。</span></div></li><li class="vw-item" data-en="conclusion" data-pos="n." data-zh="結論" data-ex="What is your conclusion?" data-exzh="你的結論是什麼？"><div class="vw-head"><button type="button" class="vw-say" data-say="conclusion" title="發音">🔊</button> <b class="vw-en">conclusion</b> <span class="vw-pos">n.</span> <span class="vw-zh">結論</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What is your conclusion?" title="唸例句">🔊</button> What is your conclusion?<span class="zh">你的結論是什麼？</span></div></li><li class="vw-item" data-en="definition" data-pos="n." data-zh="定義" data-ex="Look up the definition in a dictionary." data-exzh="在字典查定義。"><div class="vw-head"><button type="button" class="vw-say" data-say="definition" title="發音">🔊</button> <b class="vw-en">definition</b> <span class="vw-pos">n.</span> <span class="vw-zh">定義</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Look up the definition in a dictionary." title="唸例句">🔊</button> Look up the definition in a dictionary.<span class="zh">在字典查定義。</span></div></li><li class="vw-item" data-en="organize" data-pos="v." data-zh="整理；組織" data-ex="Organize your desk before you study." data-exzh="讀書前先整理桌子。"><div class="vw-head"><button type="button" class="vw-say" data-say="organize" title="發音">🔊</button> <b class="vw-en">organize</b> <span class="vw-pos">v.</span> <span class="vw-zh">整理；組織</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Organize your desk before you study." title="唸例句">🔊</button> Organize your desk before you study.<span class="zh">讀書前先整理桌子。</span></div></li><li class="vw-item" data-en="comprehension" data-pos="n." data-zh="理解（力）" data-ex="This is a reading comprehension test." data-exzh="這是閱讀理解測驗。"><div class="vw-head"><button type="button" class="vw-say" data-say="comprehension" title="發音">🔊</button> <b class="vw-en">comprehension</b> <span class="vw-pos">n.</span> <span class="vw-zh">理解（力）</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="This is a reading comprehension test." title="唸例句">🔊</button> This is a reading comprehension test.<span class="zh">這是閱讀理解測驗。</span></div></li><li class="vw-item" data-en="recap" data-pos="v./n." data-zh="重點回顧" data-ex="Let’s recap what we learned today." data-exzh="我們來回顧今天學了什麼。"><div class="vw-head"><button type="button" class="vw-say" data-say="recap" title="發音">🔊</button> <b class="vw-en">recap</b> <span class="vw-pos">v./n.</span> <span class="vw-zh">重點回顧</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Let’s recap what we learned today." title="唸例句">🔊</button> Let’s recap what we learned today.<span class="zh">我們來回顧今天學了什麼。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "UAhRf3U50lM", "start": 2, "plays": 2, "title": "怎麼做好筆記"};
+window.GQUIZ = {
+ "label": "Listening V18",
+ "title": "影片聽力 怎麼做好筆記",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=UAhRf3U50lM\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　為什麼抄不完？（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"2,66\">▶ 播放這一段</button><br>注意聽：學生和老師的速度、做筆記可能影響什麼、做筆記的人記得多幾倍。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How fast does the average teacher speak?</div><div class=\"lt-opzh\">一般老師講話多快？</div>",
+     "opts": [
+      "One-third of a word per second.",
+      "About 2 to 3 words per second.",
+      "About 10 words per second.",
+      "One word per minute."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"2,11\" title=\"重聽這一句（影片 0:02）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">The average student takes notes at a rate of one-third of a word per second. The average teacher speaks about 2 to 3 words per second.</span><span class=\"zh\">一般學生做筆記的速度是每秒三分之一個字；一般老師講話每秒約 2～3 個字。</span></div><div class=\"lt-opzh\">選項：(A) 每秒三分之一個字。　(B) 每秒約 2～3 個字。　(C) 每秒約 10 個字。　(D) 每分鐘一個字。</div><div class=\"lt-tip\">💡 A 是學生抄寫的速度。at a rate of＝以…的速度。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What happens if you try to copy down everything the teacher says?</div><div class=\"lt-opzh\">想把老師說的全部抄下來會怎樣？</div>",
+     "opts": [
+      "You will get the best grade.",
+      "You will fall seriously behind.",
+      "The teacher will slow down.",
+      "You will finish early."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"11,19\" title=\"重聽這一句（影片 0:11）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Bottom line: if you’re trying to copy down everything your teacher is saying …, you’re going to fall seriously behind.</span><span class=\"zh\">結論是：如果你想把老師說的全部抄下來……你會嚴重落後。</span></div><div class=\"lt-opzh\">選項：(A) 拿最好的成績。　(B) 會嚴重跟不上。　(C) 老師會講慢一點。　(D) 會提早抄完。</div><div class=\"lt-tip\">💡 bottom line＝結論、重點；fall behind＝落後、跟不上。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">In the 1970 study, how much more likely were note-takers to remember facts a week later?</div><div class=\"lt-opzh\">1970 年的研究中，做筆記的學生一週後記得事實的機會多幾倍？</div>",
+     "opts": [
+      "2 times.",
+      "3 times.",
+      "7 times.",
+      "10 times."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"55,66\" title=\"重聽這一句（影片 0:55）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">A 1970 study … found that students were 7 times more likely to remember facts 1 week after hearing them if they took notes.</span><span class=\"zh\">1970 年的研究發現，有做筆記的學生，一週後記得內容的機會是 7 倍。</span></div><div class=\"lt-opzh\">選項：(A) 2 倍。　(B) 3 倍。　(C) 7 倍。　(D) 10 倍。</div><div class=\"lt-tip\">💡 7 times more likely＝可能性是 7 倍。10 是後面說「只錄到十分之一」。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　邊抄邊學（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"66,135\">▶ 播放這一段</button><br>注意聽：為什麼一般的抄法沒效率、筆記應該扮演什麼角色。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Why is copying everything an inefficient way to take notes?</div><div class=\"lt-opzh\">為什麼全部照抄是沒效率的做筆記方法？</div>",
+     "opts": [
+      "Because pens run out of ink.",
+      "Because you are not actually learning anything.",
+      "Because teachers don’t like it.",
+      "Because it takes too much paper."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"84,92\" title=\"重聽這一句（影片 1:24）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Well, this is an incredibly inefficient way to take notes. Why? You’re not actually learning anything.</span><span class=\"zh\">這是非常沒效率的做筆記方式。為什麼？因為你其實什麼都沒學到。</span></div><div class=\"lt-opzh\">選項：(A) 筆會沒水。　(B) 因為你其實沒在學。　(C) 老師不喜歡。　(D) 太浪費紙。</div><div class=\"lt-tip\">💡 inefficient＝沒效率的；actually＝其實。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">The video says a note-taker who copies everything is like a human what?</div><div class=\"lt-opzh\">影片說只會照抄的人像一台什麼？</div>",
+     "opts": [
+      "Camera.",
+      "Computer.",
+      "Audio recorder.",
+      "Printer."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"92,104\" title=\"重聽這一句（影片 1:32）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">You’re simply acting as a human audio recorder—a recorder, by the way, that only picks up 1 out of every 10 words.</span><span class=\"zh\">你只是一台人肉錄音機——而且是十個字只錄得到一個的那種。</span></div><div class=\"lt-opzh\">選項：(A) 相機。　(B) 電腦。　(C) 錄音機。　(D) 印表機。</div><div class=\"lt-tip\">💡 audio recorder＝錄音機；1 out of every 10＝十個中一個。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What should note-taking help you do?</div><div class=\"lt-opzh\">做筆記應該幫你做到什麼？</div>",
+     "opts": [
+      "Understand the ideas before you leave the classroom.",
+      "Copy faster than your classmates.",
+      "Sleep in class.",
+      "Finish homework at school."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"104,117\" title=\"重聽這一句（影片 1:44）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Note-taking should actually act as a form of learning … so that when you leave the classroom, you already understand the concepts.</span><span class=\"zh\">做筆記應該是一種學習……讓你離開教室時就已經懂了這些觀念。</span></div><div class=\"lt-opzh\">選項：(A) 離開教室前就懂了觀念。　(B) 抄得比同學快。　(C) 上課睡覺。　(D) 在學校寫完功課。</div><div class=\"lt-tip\">💡 concept＝觀念；so that＝好讓。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　三步驟做筆記（4 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"135,264\">▶ 播放這一段</button><br>注意聽：第一步寫什麼、問題用什麼顏色、下課後花多久、怎麼檢查自己懂不懂。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is Step 1?</div><div class=\"lt-opzh\">第一步是什麼？</div>",
+     "opts": [
+      "Write down every fact.",
+      "Don’t write down facts; write down conclusions.",
+      "Draw pictures only.",
+      "Record the lesson on your phone."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"135,147\" title=\"重聽這一句（影片 2:15）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Step 1: don’t write down facts. Write down conclusions. Don’t worry about capturing every single thing your teacher is saying. Spend more time listening …</span><span class=\"zh\">第一步：不要寫事實，寫結論。不用擔心抓住老師說的每一句話，多花時間聽……</span></div><div class=\"lt-opzh\">選項：(A) 寫下每個事實。　(B) 不寫事實，寫結論。　(C) 只畫圖。　(D) 用手機錄音。</div><div class=\"lt-tip\">💡 conclusion＝結論；capture＝抓住。筆記寫成「老師的問題＋你的答案」。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">In Step 2, what color should you use for questions?</div><div class=\"lt-opzh\">第二步裡，問題要用什麼顏色寫？</div>",
+     "opts": [
+      "Red.",
+      "Blue.",
+      "Green.",
+      "Black."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"184,202\" title=\"重聽這一句（影片 3:04）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Step 2: use colored pens. … Write questions in red and definitions in blue, conclusions in green.</span><span class=\"zh\">第二步：用彩色筆……問題用紅色、定義用藍色、結論用綠色。</span></div><div class=\"lt-opzh\">選項：(A) 紅色。　(B) 藍色。　(C) 綠色。　(D) 黑色。</div><div class=\"lt-tip\">💡 definition＝定義。藍色是定義、綠色是結論。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How long should you spend organizing your notes after class?</div><div class=\"lt-opzh\">下課後應該花多久整理筆記？</div>",
+     "opts": [
+      "At least 1 minute.",
+      "At least 10 minutes.",
+      "At least 1 hour.",
+      "All night."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"202,210\" title=\"重聽這一句（影片 3:22）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Step 3: review your notes. Don’t relearn them. Spend at least 10 minutes organizing your notes after class.</span><span class=\"zh\">第三步：複習筆記，不是重學。下課後至少花 10 分鐘整理筆記。</span></div><div class=\"lt-opzh\">選項：(A) 至少 1 分鐘。　(B) 至少 10 分鐘。　(C) 至少 1 小時。　(D) 整個晚上。</div><div class=\"lt-tip\">💡 organize＝整理；at least＝至少。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How can you test whether you really understand the material?</div><div class=\"lt-opzh\">怎麼檢查自己是不是真的懂了？</div>",
+     "opts": [
+      "Read it again ten times.",
+      "Teach it to a classmate.",
+      "Ask the teacher for the answers.",
+      "Copy a friend’s notes."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"210,219\" title=\"重聽這一句（影片 3:30）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">If you want to test your comprehension, try teaching the material to a classmate. This will be a great marker to see if you’ve actually learned anything.</span><span class=\"zh\">想檢查自己懂不懂，試著教同學，這是看自己有沒有學會的好方法。</span></div><div class=\"lt-opzh\">選項：(A) 再讀十遍。　(B) 教給同學聽。　(C) 跟老師要答案。　(D) 抄朋友的筆記。</div><div class=\"lt-tip\">💡 comprehension＝理解；marker＝指標。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>

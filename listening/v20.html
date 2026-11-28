@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜學新語言的 7 個方法</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V20</div>
+  <h1>影片聽力 <span class="zh">學新語言的 7 個方法</span></h1>
+  <div class="subtitle">7 Tips to Learn a New Language・真人原速・中級・3 段 9 題・約 4 分鐘影片</div>
+  <section class="part">
+    <p>想學一種新語言？這支動畫介紹 7 種方法：直接出國生活、沉浸在語言環境裡、用聯想記單字、邊寫邊大聲唸、跟著耳機跟讀、用免費 App，還有在網路上找學伴互相教。<br>你現在做的「聽力＋跟讀」就是其中兩個方法！每段可以聽 2 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「Sprouts」頻道 <a href="https://www.youtube.com/watch?v=FYlzJc8aaC0" target="_blank" rel="noopener">學新語言的 7 個方法</a>（影片從 0:00 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>2 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從影片裡挑的 3 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="nothing but ..." data-pos="phr." data-zh="只有…；除了…什麼都沒有" data-ex="He eats nothing but rice." data-exzh="他只吃飯。"><div class="vw-head"><button type="button" class="vw-say" data-say="nothing but ..." title="發音">🔊</button> <b class="vw-en">nothing but ...</b> <span class="vw-zh">只有…；除了…什麼都沒有</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="10,17" title="回到影片聽原句（0:10）">🎬</button> <b class="lt-tag"></b> <span class="en">Go to the place where they speak nothing but the language that you want to learn.</span><span class="zh">去一個只講你想學的語言的地方。</span></div><div class="vp-note">💡 ＝only，語氣更強。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="He eats nothing but rice." title="唸例句">🔊</button> He eats nothing but rice.<span class="zh">他只吃飯。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I heard nothing but rain." title="唸例句">🔊</button> I heard nothing but rain.<span class="zh">我只聽到雨聲。</span></div></li><li class="vw-item vp-item" data-en="out loud / aloud" data-pos="phr." data-zh="大聲地（唸出來）" data-ex="Read the sentence out loud." data-exzh="把句子大聲唸出來。"><div class="vw-head"><button type="button" class="vw-say" data-say="out loud / aloud" title="發音">🔊</button> <b class="vw-en">out loud / aloud</b> <span class="vw-zh">大聲地（唸出來）</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="100,105" title="回到影片聽原句（1:40）">🎬</button> <b class="lt-tag"></b> <span class="en">Students write the language while simultaneously speaking it out loud.</span><span class="zh">學生一邊寫，一邊同時大聲唸出來。</span></div><div class="vp-note">💡 read aloud＝朗讀。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Read the sentence out loud." title="唸例句">🔊</button> Read the sentence out loud.<span class="zh">把句子大聲唸出來。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The teacher read the story aloud." title="唸例句">🔊</button> The teacher read the story aloud.<span class="zh">老師朗讀了這個故事。</span></div></li><li class="vw-item vp-item" data-en="pay attention to ..." data-pos="phr." data-zh="注意…" data-ex="Pay attention to the teacher." data-exzh="注意聽老師說。"><div class="vw-head"><button type="button" class="vw-say" data-say="pay attention to ..." title="發音">🔊</button> <b class="vw-en">pay attention to ...</b> <span class="vw-zh">注意…</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="117,128" title="回到影片聽原句（1:57）">🎬</button> <b class="lt-tag"></b> <span class="en">Force yourself to slow down and pay attention to detail.</span><span class="zh">逼自己慢下來、注意細節。</span></div><div class="vp-note">💡 to 是介系詞，後面接名詞或 V-ing。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Pay attention to the teacher." title="唸例句">🔊</button> Pay attention to the teacher.<span class="zh">注意聽老師說。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Pay attention to your spelling." title="唸例句">🔊</button> Pay attention to your spelling.<span class="zh">注意你的拼字。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="language" data-pos="n." data-zh="語言" data-ex="How many languages can you speak?" data-exzh="你會說幾種語言？"><div class="vw-head"><button type="button" class="vw-say" data-say="language" title="發音">🔊</button> <b class="vw-en">language</b> <span class="vw-pos">n.</span> <span class="vw-zh">語言</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="How many languages can you speak?" title="唸例句">🔊</button> How many languages can you speak?<span class="zh">你會說幾種語言？</span></div></li><li class="vw-item" data-en="immersion" data-pos="n." data-zh="沉浸（式學習）" data-ex="Immersion is a fast way to learn." data-exzh="沉浸式學習很快。"><div class="vw-head"><button type="button" class="vw-say" data-say="immersion" title="發音">🔊</button> <b class="vw-en">immersion</b> <span class="vw-pos">n.</span> <span class="vw-zh">沉浸（式學習）</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Immersion is a fast way to learn." title="唸例句">🔊</button> Immersion is a fast way to learn.<span class="zh">沉浸式學習很快。</span></div></li><li class="vw-item" data-en="context" data-pos="n." data-zh="上下文；情境" data-ex="Guess the word from the context." data-exzh="從上下文猜字義。"><div class="vw-head"><button type="button" class="vw-say" data-say="context" title="發音">🔊</button> <b class="vw-en">context</b> <span class="vw-pos">n.</span> <span class="vw-zh">上下文；情境</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Guess the word from the context." title="唸例句">🔊</button> Guess the word from the context.<span class="zh">從上下文猜字義。</span></div></li><li class="vw-item" data-en="vocabulary" data-pos="n." data-zh="字彙" data-ex="Reading helps build your vocabulary." data-exzh="閱讀幫你增加字彙。"><div class="vw-head"><button type="button" class="vw-say" data-say="vocabulary" title="發音">🔊</button> <b class="vw-en">vocabulary</b> <span class="vw-pos">n.</span> <span class="vw-zh">字彙</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Reading helps build your vocabulary." title="唸例句">🔊</button> Reading helps build your vocabulary.<span class="zh">閱讀幫你增加字彙。</span></div></li><li class="vw-item" data-en="association" data-pos="n." data-zh="聯想；關聯" data-ex="Make an association with a picture." data-exzh="跟一張圖做聯想。"><div class="vw-head"><button type="button" class="vw-say" data-say="association" title="發音">🔊</button> <b class="vw-en">association</b> <span class="vw-pos">n.</span> <span class="vw-zh">聯想；關聯</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Make an association with a picture." title="唸例句">🔊</button> Make an association with a picture.<span class="zh">跟一張圖做聯想。</span></div></li><li class="vw-item" data-en="purpose" data-pos="n." data-zh="目的" data-ex="What is the purpose of this trip?" data-exzh="這次旅行的目的是什麼？"><div class="vw-head"><button type="button" class="vw-say" data-say="purpose" title="發音">🔊</button> <b class="vw-en">purpose</b> <span class="vw-pos">n.</span> <span class="vw-zh">目的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What is the purpose of this trip?" title="唸例句">🔊</button> What is the purpose of this trip?<span class="zh">這次旅行的目的是什麼？</span></div></li><li class="vw-item" data-en="detail" data-pos="n." data-zh="細節" data-ex="Check every detail." data-exzh="檢查每個細節。"><div class="vw-head"><button type="button" class="vw-say" data-say="detail" title="發音">🔊</button> <b class="vw-en">detail</b> <span class="vw-pos">n.</span> <span class="vw-zh">細節</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Check every detail." title="唸例句">🔊</button> Check every detail.<span class="zh">檢查每個細節。</span></div></li><li class="vw-item" data-en="effective" data-pos="adj." data-zh="有效的" data-ex="This medicine is very effective." data-exzh="這藥很有效。"><div class="vw-head"><button type="button" class="vw-say" data-say="effective" title="發音">🔊</button> <b class="vw-en">effective</b> <span class="vw-pos">adj.</span> <span class="vw-zh">有效的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="This medicine is very effective." title="唸例句">🔊</button> This medicine is very effective.<span class="zh">這藥很有效。</span></div></li><li class="vw-item" data-en="pronunciation" data-pos="n." data-zh="發音" data-ex="Your pronunciation is very clear." data-exzh="你的發音很清楚。"><div class="vw-head"><button type="button" class="vw-say" data-say="pronunciation" title="發音">🔊</button> <b class="vw-en">pronunciation</b> <span class="vw-pos">n.</span> <span class="vw-zh">發音</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Your pronunciation is very clear." title="唸例句">🔊</button> Your pronunciation is very clear.<span class="zh">你的發音很清楚。</span></div></li><li class="vw-item" data-en="recommend" data-pos="v." data-zh="推薦；建議" data-ex="I recommend this book." data-exzh="我推薦這本書。"><div class="vw-head"><button type="button" class="vw-say" data-say="recommend" title="發音">🔊</button> <b class="vw-en">recommend</b> <span class="vw-pos">v.</span> <span class="vw-zh">推薦；建議</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I recommend this book." title="唸例句">🔊</button> I recommend this book.<span class="zh">我推薦這本書。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "FYlzJc8aaC0", "start": 0, "plays": 2, "title": "學新語言的 7 個方法"};
+window.GQUIZ = {
+ "label": "Listening V20",
+ "title": "影片聽力 學新語言的 7 個方法",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=FYlzJc8aaC0\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　出國、沉浸、記憶術（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"0,93\">▶ 播放這一段</button><br>注意聽：出國要住多久、在披薩店學義大利文是哪一種方法、記憶術怎麼幫你記單字。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">For the first tip, how long should you live in the other country?</div><div class=\"lt-opzh\">第一個方法，要在國外住多久？</div>",
+     "opts": [
+      "One or two weeks.",
+      "Six to twelve months.",
+      "Five years.",
+      "One summer."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"10,20\" title=\"重聽這一句（影片 0:10）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Leave the comfort of your home, and go to the place where they speak nothing but the language that you want to learn. Then live there for the next six to twelve months.</span><span class=\"zh\">離開舒適的家，到只講你想學的語言的地方，然後在那裡住 6 到 12 個月。</span></div><div class=\"lt-opzh\">選項：(A) 一、兩個星期。　(B) 6～12 個月。　(C) 5 年。　(D) 一個暑假。</div><div class=\"lt-tip\">💡 nothing but＝只有；comfort＝舒適。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Learning Italian in a pizzeria is an example of what?</div><div class=\"lt-opzh\">在披薩店學義大利文是哪一種方法的例子？</div>",
+     "opts": [
+      "Immersion.",
+      "Mnemonics.",
+      "Shadowing.",
+      "Scriptorium."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"32,51\" title=\"重聽這一句（影片 0:32）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Immersion, or when you learn a new language through exposure and context. So, for example, if you are learning Italian, do so in a pizzeria. You can try to read the menu or … order in Italian.</span><span class=\"zh\">沉浸法就是透過接觸和情境學語言。例如學義大利文，就在披薩店學：試著看菜單，甚至用義大利文點餐。</span></div><div class=\"lt-opzh\">選項：(A) 沉浸法。　(B) 記憶術。　(C) 跟讀。　(D) 抄寫朗讀法。</div><div class=\"lt-tip\">💡 immersion＝沉浸；exposure＝接觸；context＝情境。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How do mnemonics help you learn new words?</div><div class=\"lt-opzh\">記憶術怎麼幫你學新字？</div>",
+     "opts": [
+      "By creating an association that is easy to remember.",
+      "By writing each word 100 times.",
+      "By sleeping with a book.",
+      "By listening to music."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"57,68\" title=\"重聽這一句（影片 0:57）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Mnemonics, is a method to learn new vocabulary by creating an association that makes it easy to remember.</span><span class=\"zh\">記憶術是用建立聯想的方式學單字，讓它容易記住。</span></div><div class=\"lt-opzh\">選項：(A) 建立好記的聯想。　(B) 每個字寫 100 次。　(C) 抱著書睡覺。　(D) 聽音樂。</div><div class=\"lt-tip\">💡 association＝聯想；mnemonics 的第一個 m 不發音。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　邊寫邊唸、跟讀（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"93,153\">▶ 播放這一段</button><br>注意聽：Scriptorium 要怎麼做、為什麼這樣做、跟讀時要一邊做什麼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">In the Scriptorium exercise, what do students do?</div><div class=\"lt-opzh\">Scriptorium 練習要學生做什麼？</div>",
+     "opts": [
+      "Write the language while speaking it out loud.",
+      "Draw pictures of new words.",
+      "Watch movies without subtitles.",
+      "Sing songs."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"96,117\" title=\"重聽這一句（影片 1:36）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Scriptorium is an exercise in writing. Students write the language while simultaneously speaking it out loud. … first read it out loud; second, say each word aloud again as you write it; and third, read the sentence aloud again …</span><span class=\"zh\">抄寫朗讀法是寫作練習：學生一邊寫、一邊同時大聲唸。先唸一次句子，寫的時候每個字再唸一次，寫完再唸一次整句。</span></div><div class=\"lt-opzh\">選項：(A) 邊寫邊大聲唸出來。　(B) 把新字畫成圖。　(C) 看沒有字幕的電影。　(D) 唱歌。</div><div class=\"lt-tip\">💡 simultaneously＝同時；out loud＝大聲地。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is the purpose of the Scriptorium exercise?</div><div class=\"lt-opzh\">抄寫朗讀法的目的是什麼？</div>",
+     "opts": [
+      "To write faster.",
+      "To slow down and pay attention to detail.",
+      "To make beautiful handwriting.",
+      "To save paper."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"117,128\" title=\"重聽這一句（影片 1:57）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">The purpose of this exercise is to force yourself to slow down and pay attention to detail, and then review unknown words and refresh your grammar.</span><span class=\"zh\">這練習的目的是逼自己慢下來、注意細節，再複習不懂的字、溫習文法。</span></div><div class=\"lt-opzh\">選項：(A) 寫得更快。　(B) 放慢速度、注意細節。　(C) 寫出漂亮的字。　(D) 省紙。</div><div class=\"lt-tip\">💡 purpose＝目的；pay attention to＝注意；detail＝細節。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Alexander Arguelles suggest doing while shadowing?</div><div class=\"lt-opzh\">Alexander Arguelles 建議跟讀時一邊做什麼？</div>",
+     "opts": [
+      "Lying in bed.",
+      "Walking quickly.",
+      "Eating a snack.",
+      "Watching TV."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"131,153\" title=\"重聽這一句（影片 2:11）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Shadowing is used to learn vocabulary. You listen to new words through headphones and try to repeat … Alexander Arguelles, who speaks 50 languages, suggests that you do it while walking swiftly to maximise alertness and blood flow!</span><span class=\"zh\">跟讀是用來學單字：戴耳機聽新字並跟著複誦……會說 50 種語言的 Alexander Arguelles 建議邊快走邊做，讓頭腦更清醒、血液循環更好！</span></div><div class=\"lt-opzh\">選項：(A) 躺在床上。　(B) 快步走。　(C) 吃點心。　(D) 看電視。</div><div class=\"lt-tip\">💡 swiftly＝快速地；alertness＝清醒、警覺。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　App、找學伴（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"153,214\">▶ 播放這一段</button><br>注意聽：哪個 App 完全免費、Quizlet 用來做什麼、Timothy Doner 幾歲會幾種語言。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Which app teaches many languages entirely for free?</div><div class=\"lt-opzh\">哪個 App 完全免費教很多語言？</div>",
+     "opts": [
+      "Quizlet.",
+      "DuoLingo.",
+      "Skype.",
+      "YouTube."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"157,176\" title=\"重聽這一句（影片 2:37）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">DuoLingo, for example, teaches many languages entirely for free. It’s fun and effective as they make you practice reading, writing, listening and speaking.</span><span class=\"zh\">例如 DuoLingo 完全免費教很多語言，有趣又有效，讓你練讀、寫、聽、說。</span></div><div class=\"lt-opzh\">選項：(A) Quizlet。　(B) DuoLingo。　(C) Skype。　(D) YouTube。</div><div class=\"lt-tip\">💡 entirely＝完全地；effective＝有效的。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is Quizlet good for?</div><div class=\"lt-opzh\">Quizlet 適合用來做什麼？</div>",
+     "opts": [
+      "Studying vocabulary with audio flashcards.",
+      "Talking to people around the world.",
+      "Watching movies.",
+      "Writing essays."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"176,189\" title=\"重聽這一句（影片 2:56）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Quizlet is a great tool to study vocabulary. It allows you to explore audio-supported flashcards, so you can learn new words and get the pronunciation right.</span><span class=\"zh\">Quizlet 是背單字的好工具，有附聲音的字卡，可以學新字、把發音唸對。</span></div><div class=\"lt-opzh\">選項：(A) 用有聲字卡背單字。　(B) 和全世界的人聊天。　(C) 看電影。　(D) 寫作文。</div><div class=\"lt-tip\">💡 flashcard＝字卡；pronunciation＝發音。B 是最後一個方法（Skype 找學伴）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is true about Timothy Doner?</div><div class=\"lt-opzh\">關於 Timothy Doner，哪一項正確？</div>",
+     "opts": [
+      "He speaks 50 languages.",
+      "He speaks 20 languages and is not even 18.",
+      "He made the DuoLingo app.",
+      "He lives in Italy."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"192,214\" title=\"重聽這一句（影片 3:12）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">… do what popular YouTuber Timothy Doner, aka Polyglot Pal, recommends. Connect with people from around the world to teach and learn from each other via Skype. … he already speaks 20 languages and he’s not even 18.</span><span class=\"zh\">……照 YouTuber Timothy Doner 的建議：用 Skype 和全世界的人互相教、互相學……他已經會 20 種語言，還不到 18 歲。</span></div><div class=\"lt-opzh\">選項：(A) 會 50 種語言。　(B) 會 20 種語言，還不到 18 歲。　(C) 做了 DuoLingo。　(D) 住在義大利。</div><div class=\"lt-tip\">💡 50 種語言的是 Alexander Arguelles。polyglot＝會多種語言的人。（影片用 he 稱呼他。）</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>

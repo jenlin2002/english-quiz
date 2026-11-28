@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜記憶怎麼形成，又怎麼消失？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V29</div>
+  <h1>影片聽力 <span class="zh">記憶怎麼形成，又怎麼消失？</span></h1>
+  <div class="subtitle">How Memories Form and How We Lose Them・真人原速・中高級・3 段 9 題・約 4 分鐘影片</div>
+  <section class="part">
+    <p>為什麼你記得某些事很清楚，卻想不起三週前午餐吃什麼？這支 TED-Ed 動畫說明記憶怎麼在大腦裡形成，再介紹幾個會偷走記憶的「小偷」，最後告訴你怎麼保護記憶。<br>神經科學名詞多（neuron、synapse、hippocampus），數字也不少。每段可以聽 2 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「TED-Ed」頻道 <a href="https://www.youtube.com/watch?v=yOgAbKJGrTA" target="_blank" rel="noopener">記憶怎麼形成，又怎麼消失？</a>（影片從 0:06 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>2 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從影片裡挑的 3 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="in the first place" data-pos="phr." data-zh="最初、一開始" data-ex="How did you meet in the first place?" data-exzh="你們一開始是怎麼認識的？"><div class="vw-head"><button type="button" class="vw-say" data-say="in the first place" title="發音">🔊</button> <b class="vw-en">in the first place</b> <span class="vw-zh">最初、一開始</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="26,29" title="回到影片聽原句（0:26）">🎬</button> <b class="lt-tag"></b> <span class="en">Let’s look at how memories form in the first place.</span><span class="zh">我們先來看記憶一開始是怎麼形成的。</span></div><div class="vp-note">💡 也常用來追問原因：Why did you go there in the first place?（你當初幹嘛去那裡？）</div><div class="vw-ex"><button type="button" class="vw-say" data-say="How did you meet in the first place?" title="唸例句">🔊</button> How did you meet in the first place?<span class="zh">你們一開始是怎麼認識的？</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I didn’t want to come in the first place." title="唸例句">🔊</button> I didn’t want to come in the first place.<span class="zh">我一開始就不想來。</span></div></li><li class="vw-item vp-item" data-en="use it or lose it" data-pos="phr." data-zh="不用就會失去（用進廢退）" data-ex="Keep practicing English. Use it or lose it!" data-exzh="持續練英文，不用就會忘！"><div class="vw-head"><button type="button" class="vw-say" data-say="use it or lose it" title="發音">🔊</button> <b class="vw-en">use it or lose it</b> <span class="vw-zh">不用就會失去（用進廢退）</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="214,218" title="回到影片聽原句（3:34）">🎬</button> <b class="lt-tag"></b> <span class="en">Just like muscle strength, we have to use our brain or risk losing it.</span><span class="zh">就像肌肉的力量，大腦也要用，不然就有失去的風險。</span></div><div class="vp-note">💡 常說 Use it or lose it.，適用在語言、運動、技能。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Keep practicing English. Use it or lose it!" title="唸例句">🔊</button> Keep practicing English. Use it or lose it!<span class="zh">持續練英文，不用就會忘！</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="My piano skills got worse. Use it or lose it." title="唸例句">🔊</button> My piano skills got worse. Use it or lose it.<span class="zh">我的鋼琴退步了，真是用進廢退。</span></div></li><li class="vw-item vp-item" data-en="don’t despair" data-pos="phr." data-zh="別灰心、別絕望" data-ex="You failed once, but don’t despair." data-exzh="你失敗了一次，但別灰心。"><div class="vw-head"><button type="button" class="vw-say" data-say="don’t despair" title="發音">🔊</button> <b class="vw-en">don’t despair</b> <span class="vw-zh">別灰心、別絕望</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="218,220" title="回到影片聽原句（3:38）">🎬</button> <b class="lt-tag"></b> <span class="en">But don’t despair.</span><span class="zh">但別灰心。</span></div><div class="vp-note">💡 比 don’t worry 更正式、語氣更重。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="You failed once, but don’t despair." title="唸例句">🔊</button> You failed once, but don’t despair.<span class="zh">你失敗了一次，但別灰心。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t despair. Help is coming." title="唸例句">🔊</button> Don’t despair. Help is coming.<span class="zh">別絕望，救援要來了。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="vivid" data-pos="adj." data-zh="鮮明的" data-ex="I have a vivid memory of my first day at school." data-exzh="我對上學第一天記得很清楚。"><div class="vw-head"><button type="button" class="vw-say" data-say="vivid" title="發音">🔊</button> <b class="vw-en">vivid</b> <span class="vw-pos">adj.</span> <span class="vw-zh">鮮明的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I have a vivid memory of my first day at school." title="唸例句">🔊</button> I have a vivid memory of my first day at school.<span class="zh">我對上學第一天記得很清楚。</span></div></li><li class="vw-item" data-en="fade" data-pos="v." data-zh="褪去；漸漸消失" data-ex="The colors of the photo have faded." data-exzh="照片的顏色褪了。"><div class="vw-head"><button type="button" class="vw-say" data-say="fade" title="發音">🔊</button> <b class="vw-en">fade</b> <span class="vw-pos">v.</span> <span class="vw-zh">褪去；漸漸消失</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The colors of the photo have faded." title="唸例句">🔊</button> The colors of the photo have faded.<span class="zh">照片的顏色褪了。</span></div></li><li class="vw-item" data-en="neuron" data-pos="n." data-zh="神經元" data-ex="Neurons send messages in the brain." data-exzh="神經元在大腦裡傳遞訊息。"><div class="vw-head"><button type="button" class="vw-say" data-say="neuron" title="發音">🔊</button> <b class="vw-en">neuron</b> <span class="vw-pos">n.</span> <span class="vw-zh">神經元</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Neurons send messages in the brain." title="唸例句">🔊</button> Neurons send messages in the brain.<span class="zh">神經元在大腦裡傳遞訊息。</span></div></li><li class="vw-item" data-en="efficiency" data-pos="n." data-zh="效率" data-ex="The new machine improves efficiency." data-exzh="新機器提高了效率。"><div class="vw-head"><button type="button" class="vw-say" data-say="efficiency" title="發音">🔊</button> <b class="vw-en">efficiency</b> <span class="vw-pos">n.</span> <span class="vw-zh">效率</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The new machine improves efficiency." title="唸例句">🔊</button> The new machine improves efficiency.<span class="zh">新機器提高了效率。</span></div></li><li class="vw-item" data-en="retrieve" data-pos="v." data-zh="取回；提取" data-ex="I can’t retrieve the file." data-exzh="我找不回那個檔案。"><div class="vw-head"><button type="button" class="vw-say" data-say="retrieve" title="發音">🔊</button> <b class="vw-en">retrieve</b> <span class="vw-pos">v.</span> <span class="vw-zh">取回；提取</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I can’t retrieve the file." title="唸例句">🔊</button> I can’t retrieve the file.<span class="zh">我找不回那個檔案。</span></div></li><li class="vw-item" data-en="decade" data-pos="n." data-zh="十年" data-ex="The city changed a lot in a decade." data-exzh="這城市十年來變了很多。"><div class="vw-head"><button type="button" class="vw-say" data-say="decade" title="發音">🔊</button> <b class="vw-en">decade</b> <span class="vw-pos">n.</span> <span class="vw-zh">十年</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The city changed a lot in a decade." title="唸例句">🔊</button> The city changed a lot in a decade.<span class="zh">這城市十年來變了很多。</span></div></li><li class="vw-item" data-en="chronic" data-pos="adj." data-zh="長期的；慢性的" data-ex="Chronic stress is bad for health." data-exzh="長期壓力有害健康。"><div class="vw-head"><button type="button" class="vw-say" data-say="chronic" title="發音">🔊</button> <b class="vw-en">chronic</b> <span class="vw-pos">adj.</span> <span class="vw-zh">長期的；慢性的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Chronic stress is bad for health." title="唸例句">🔊</button> Chronic stress is bad for health.<span class="zh">長期壓力有害健康。</span></div></li><li class="vw-item" data-en="culprit" data-pos="n." data-zh="元兇" data-ex="Sugar is the culprit of my toothache." data-exzh="糖是我牙痛的元兇。"><div class="vw-head"><button type="button" class="vw-say" data-say="culprit" title="發音">🔊</button> <b class="vw-en">culprit</b> <span class="vw-pos">n.</span> <span class="vw-zh">元兇</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Sugar is the culprit of my toothache." title="唸例句">🔊</button> Sugar is the culprit of my toothache.<span class="zh">糖是我牙痛的元兇。</span></div></li><li class="vw-item" data-en="isolation" data-pos="n." data-zh="孤立；隔離" data-ex="Isolation can make people sad." data-exzh="孤立會讓人難過。"><div class="vw-head"><button type="button" class="vw-say" data-say="isolation" title="發音">🔊</button> <b class="vw-en">isolation</b> <span class="vw-pos">n.</span> <span class="vw-zh">孤立；隔離</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Isolation can make people sad." title="唸例句">🔊</button> Isolation can make people sad.<span class="zh">孤立會讓人難過。</span></div></li><li class="vw-item" data-en="intact" data-pos="adj." data-zh="完整的" data-ex="The old vase is still intact." data-exzh="那個舊花瓶還很完整。"><div class="vw-head"><button type="button" class="vw-say" data-say="intact" title="發音">🔊</button> <b class="vw-en">intact</b> <span class="vw-pos">adj.</span> <span class="vw-zh">完整的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The old vase is still intact." title="唸例句">🔊</button> The old vase is still intact.<span class="zh">那個舊花瓶還很完整。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "yOgAbKJGrTA", "start": 6, "plays": 2, "title": "記憶怎麼形成，又怎麼消失？"};
+window.GQUIZ = {
+ "label": "Listening V29",
+ "title": "影片聽力 記憶怎麼形成，又怎麼消失？",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=yOgAbKJGrTA\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　記憶怎麼形成（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"6,79\">▶ 播放這一段</button><br>注意聽：短期記憶能保留多久、接著經過哪裡、兩個神經元一直溝通會怎樣。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How long is information available in short-term memory?</div>",
+     "opts": [
+      "A few hours.",
+      "A few seconds to a couple of minutes.",
+      "About three weeks.",
+      "Forever."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"40,47\" title=\"重聽這一句（影片 0:40）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Information first lands in short-term memory, where it’s available from anywhere from a few seconds to a couple of minutes.</span><span class=\"zh\">資訊先進入短期記憶，在那裡能保留幾秒到幾分鐘。</span></div><div class=\"lt-opzh\">選項：(A) 幾小時。　(B) 幾秒到幾分鐘。　(C) 大約三週。　(D) 永遠。</div><div class=\"lt-tip\">💡 a couple of＝兩三個。three weeks 是開頭「三週前的午餐」。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where does information go to become long-term memory?</div>",
+     "opts": [
+      "Through areas such as the hippocampus.",
+      "Through the heart.",
+      "Through the eyes.",
+      "Through the stomach."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"47,55\" title=\"重聽這一句（影片 0:47）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">It’s then transferred to long-term memory through areas such as the hippocampus, and finally to several storage regions across the brain.</span><span class=\"zh\">接著經過海馬迴等區域轉到長期記憶，最後存到大腦各處的儲存區。</span></div><div class=\"lt-opzh\">選項：(A) 經過海馬迴等區域。　(B) 經過心臟。　(C) 經過眼睛。　(D) 經過胃。</div><div class=\"lt-tip\">💡 transfer＝轉移；storage＝儲存。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What happens if two neurons communicate repeatedly?</div>",
+     "opts": [
+      "They stop working.",
+      "Their communication becomes more efficient.",
+      "They forget each other.",
+      "They become one neuron."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"63,79\" title=\"重聽這一句（影片 1:03）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">If two neurons communicate repeatedly, a remarkable thing happens: The efficiency of communication between them increases. This process, called long term potentiation, is considered to be a mechanism by which memories are stored long-term.</span><span class=\"zh\">如果兩個神經元一直溝通，神奇的事發生了：它們之間的溝通效率提高。這叫「長期增益作用」，被認為是長期儲存記憶的機制。</span></div><div class=\"lt-opzh\">選項：(A) 停止運作。　(B) 溝通變得更有效率。　(C) 互相遺忘。　(D) 合成一個神經元。</div><div class=\"lt-tip\">💡 efficiency＝效率；mechanism＝機制；repeatedly＝反覆地。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　年齡和壓力（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"79,168\">▶ 播放這一段</button><br>注意聽：海馬迴每十年少多少神經元、什麼時候記憶編碼最強、長期壓力會怎樣。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How many neurons does the hippocampus lose every decade?</div>",
+     "opts": [
+      "1%.",
+      "5%.",
+      "20%.",
+      "80%."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"95,110\" title=\"重聽這一句（影片 1:35）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">The hippocampus loses 5% of its neurons every decade, for a total loss of 20% by the time you’re 80 years old …</span><span class=\"zh\">海馬迴每十年失去 5% 的神經元，到 80 歲時總共少了 20%……</span></div><div class=\"lt-opzh\">選項：(A) 1%。　(B) 5%。　(C) 20%。　(D) 80%。</div><div class=\"lt-tip\">💡 decade＝十年。20% 是總共、80 是年齡。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">When are memories encoded most strongly?</div>",
+     "opts": [
+      "When we are tired.",
+      "When we pay attention and the information is meaningful to us.",
+      "When we are multitasking.",
+      "When we are asleep."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"118,126\" title=\"重聽這一句（影片 1:58）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Memories are encoded most strongly when we’re paying attention, when we’re deeply engaged, and when information is meaningful to us.</span><span class=\"zh\">當我們專心、深度投入、而且資訊對我們有意義時，記憶編碼最強。</span></div><div class=\"lt-opzh\">選項：(A) 累的時候。　(B) 專心、而且資訊對我們有意義的時候。　(C) 一心多用的時候。　(D) 睡著的時候。</div><div class=\"lt-tip\">💡 encode＝編碼（存進大腦）；engaged＝投入的；meaningful＝有意義的。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What can chronic stress do to the brain?</div>",
+     "opts": [
+      "Grow new brain cells.",
+      "Cause a loss of brain cells and stop new ones from forming.",
+      "Make memories stronger.",
+      "Nothing at all."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"135,145\" title=\"重聽這一句（影片 2:15）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Another leading cause of memory problems is chronic stress. When we’re constantly overloaded with work and personal responsibilities, our bodies are on hyper-alert.</span><span class=\"zh\">另一個造成記憶問題的主因是長期壓力。當我們一直被工作和個人責任壓得喘不過氣，身體就處在高度警戒。</span></div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"156,168\" title=\"重聽這一句（影片 2:36）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">With chronic stress, our bodies become flooded with these chemicals, resulting in a loss of brain cells and an inability to form new ones …</span><span class=\"zh\">長期壓力下，身體充滿這些化學物質，結果腦細胞流失、也無法長出新的……</span></div><div class=\"lt-opzh\">選項：(A) 長出新腦細胞。　(B) 造成腦細胞流失，也無法長出新的。　(C) 讓記憶更強。　(D) 沒有影響。</div><div class=\"lt-tip\">💡 chronic＝長期的；overloaded＝超載的；inability＝無法。短期壓力能讓人更警覺，長期就有害。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　憂鬱、孤立、怎麼保護記憶（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"168,244\">▶ 播放這一段</button><br>注意聽：憂鬱的人記憶問題多多少、社交多的老人有什麼不同、三個保護記憶的方法。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How much more likely are depressed people to develop memory problems?</div>",
+     "opts": [
+      "4% more likely.",
+      "14% more likely.",
+      "40% more likely.",
+      "Four times more likely."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"168,175\" title=\"重聽這一句（影片 2:48）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Depression is another culprit. People who are depressed are 40% more likely to develop memory problems.</span><span class=\"zh\">憂鬱是另一個元兇：憂鬱的人出現記憶問題的機率高 40%。</span></div><div class=\"lt-opzh\">選項：(A) 多 4%。　(B) 多 14%。　(C) 多 40%。　(D) 四倍。</div><div class=\"lt-tip\">💡 culprit＝元兇；depressed＝憂鬱的。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">In the Harvard study, what was true of older people with high social integration?</div>",
+     "opts": [
+      "Their memory declined faster.",
+      "Their memory declined more slowly.",
+      "They slept more.",
+      "They had no memory problems at all."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"194,214\" title=\"重聽這一句（影片 3:14）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Isolation … is another memory thief. A study … found that older people with high levels of social integration had a slower rate of memory decline over a six-year period. … experts suspect that social interaction gives our brain a mental workout.</span><span class=\"zh\">孤立也是記憶小偷。一項研究發現，社交活動多的老人，六年間記憶衰退得比較慢……專家推測，與人互動能讓大腦做心智運動。</span></div><div class=\"lt-opzh\">選項：(A) 記憶衰退得比較快。　(B) 記憶衰退得比較慢。　(C) 睡比較多。　(D) 完全沒有記憶問題。</div><div class=\"lt-tip\">💡 isolation＝孤立；decline＝衰退；interaction＝互動。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Which is NOT one of the ways to protect your memory?</div>",
+     "opts": [
+      "Keep physically active.",
+      "Eat well.",
+      "Learn something challenging, like a new language.",
+      "Spend more time alone."
+     ],
+     "answer": 3,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"218,244\" title=\"重聽這一句（影片 3:38）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">But don’t despair. … Make sure you keep physically active. … And eat well. … And finally, give your brain a workout. Exposing your brain to challenges like learning a new language is one of the best defenses for keeping your memories intact.</span><span class=\"zh\">但別灰心……要多活動身體……吃得好……最後，讓大腦運動：讓大腦接受挑戰，例如學新語言，是保持記憶完整最好的防禦之一。</span></div><div class=\"lt-opzh\">選項：(A) 多活動身體。　(B) 吃得好。　(C) 學有挑戰的事，例如新語言。　(D) 多花時間獨處。</div><div class=\"lt-tip\">💡 NOT 題：D 剛好相反（孤立是記憶小偷）。despair＝絕望；intact＝完整的。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>
