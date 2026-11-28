@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜過美國海關</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V72</div>
+  <h1>影片聽力 <span class="zh">過美國海關</span></h1>
+  <div class="subtitle">Going Through U.S. Customs・真人原速・初級・2 段 6 題・約 1 分鐘影片</div>
+  <section class="part">
+    <p>一位從臺北來的旅客到洛杉磯入境，移民官一個一個問：來的目的、待多久、住哪裡、做什麼工作、有沒有回程票。<br>注意聽每個問題和回答，特別是數字和地點。每段可以聽 3 次。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「MJ英文 / MJ English」頻道 <a href="https://www.youtube.com/watch?v=2d89F3i0nFE" target="_blank" rel="noopener">過美國海關</a>（影片從 0:14 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>3 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">本站從對話裡挑的 3 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="What’s the purpose of your visit?" data-pos="phr." data-zh="你來的目的是什麼？" data-ex="I’m here on vacation." data-exzh="我是來度假的。"><div class="vw-head"><button type="button" class="vw-say" data-say="What’s the purpose of your visit?" title="發音">🔊</button> <b class="vw-en">What’s the purpose of your visit?</b> <span class="vw-zh">你來的目的是什麼？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="16,19" title="回到影片聽原句（0:16）">🎬</button> <b class="lt-tag">Officer</b> <span class="en">Passport, please. What’s the purpose of your visit?</span><span class="zh">請給我護照。你來的目的是什麼？</span></div><div class="vp-note">💡 入境最常被問。回答：I’m here for tourism / on vacation / for business.</div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’m here on vacation." title="唸例句">🔊</button> I’m here on vacation.<span class="zh">我是來度假的。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’m here to visit my family." title="唸例句">🔊</button> I’m here to visit my family.<span class="zh">我來探望家人。</span></div></li><li class="vw-item vp-item" data-en="What do you do (for work)?" data-pos="phr." data-zh="你做什麼工作？" data-ex="What do you do? — I’m a nurse." data-exzh="你做什麼工作？——我是護理師。"><div class="vw-head"><button type="button" class="vw-say" data-say="What do you do (for work)?" title="發音">🔊</button> <b class="vw-en">What do you do (for work)?</b> <span class="vw-zh">你做什麼工作？</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="41,45" title="回到影片聽原句（0:41）">🎬</button> <b class="lt-tag">Officer</b> <span class="en">What do you do for work?</span><span class="zh">你做什麼工作？</span></div><div class="vp-note">💡 學生可以回答 I’m a student.</div><div class="vw-ex"><button type="button" class="vw-say" data-say="What do you do? — I’m a nurse." title="唸例句">🔊</button> What do you do? — I’m a nurse.<span class="zh">你做什麼工作？——我是護理師。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I’m a junior high student." title="唸例句">🔊</button> I’m a junior high student.<span class="zh">我是國中生。</span></div></li><li class="vw-item vp-item" data-en="Nothing to declare." data-pos="phr." data-zh="沒有東西要申報。" data-ex="Anything to declare? — Nothing to declare." data-exzh="有東西要申報嗎？——沒有。"><div class="vw-head"><button type="button" class="vw-say" data-say="Nothing to declare." title="發音">🔊</button> <b class="vw-en">Nothing to declare.</b> <span class="vw-zh">沒有東西要申報。</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="60,63" title="回到影片聽原句（1:00）">🎬</button> <b class="lt-tag">Traveler</b> <span class="en">Nothing to declare, just personal belongings.</span><span class="zh">沒有，只有個人物品。</span></div><div class="vp-note">💡 過海關時的標準回答。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Anything to declare? — Nothing to declare." title="唸例句">🔊</button> Anything to declare? — Nothing to declare.<span class="zh">有東西要申報嗎？——沒有。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I have some food to declare." title="唸例句">🔊</button> I have some food to declare.<span class="zh">我有一些食物要申報。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">影片裡出現的字。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="passport" data-pos="n." data-zh="護照" data-ex="Don’t forget your passport." data-exzh="別忘了你的護照。"><div class="vw-head"><button type="button" class="vw-say" data-say="passport" title="發音">🔊</button> <b class="vw-en">passport</b> <span class="vw-pos">n.</span> <span class="vw-zh">護照</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t forget your passport." title="唸例句">🔊</button> Don’t forget your passport.<span class="zh">別忘了你的護照。</span></div></li><li class="vw-item" data-en="purpose" data-pos="n." data-zh="目的" data-ex="What’s the purpose of this trip?" data-exzh="這趟旅行的目的是什麼？"><div class="vw-head"><button type="button" class="vw-say" data-say="purpose" title="發音">🔊</button> <b class="vw-en">purpose</b> <span class="vw-pos">n.</span> <span class="vw-zh">目的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What’s the purpose of this trip?" title="唸例句">🔊</button> What’s the purpose of this trip?<span class="zh">這趟旅行的目的是什麼？</span></div></li><li class="vw-item" data-en="vacation" data-pos="n." data-zh="假期" data-ex="We went on vacation to Japan." data-exzh="我們去日本度假。"><div class="vw-head"><button type="button" class="vw-say" data-say="vacation" title="發音">🔊</button> <b class="vw-en">vacation</b> <span class="vw-pos">n.</span> <span class="vw-zh">假期</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="We went on vacation to Japan." title="唸例句">🔊</button> We went on vacation to Japan.<span class="zh">我們去日本度假。</span></div></li><li class="vw-item" data-en="camera" data-pos="n." data-zh="相機；鏡頭" data-ex="Smile at the camera." data-exzh="對鏡頭笑一個。"><div class="vw-head"><button type="button" class="vw-say" data-say="camera" title="發音">🔊</button> <b class="vw-en">camera</b> <span class="vw-pos">n.</span> <span class="vw-zh">相機；鏡頭</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Smile at the camera." title="唸例句">🔊</button> Smile at the camera.<span class="zh">對鏡頭笑一個。</span></div></li><li class="vw-item" data-en="ticket" data-pos="n." data-zh="票" data-ex="Show me your ticket." data-exzh="給我看你的票。"><div class="vw-head"><button type="button" class="vw-say" data-say="ticket" title="發音">🔊</button> <b class="vw-en">ticket</b> <span class="vw-pos">n.</span> <span class="vw-zh">票</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Show me your ticket." title="唸例句">🔊</button> Show me your ticket.<span class="zh">給我看你的票。</span></div></li><li class="vw-item" data-en="declare" data-pos="v." data-zh="申報；宣布" data-ex="You must declare fruit at customs." data-exzh="水果要在海關申報。"><div class="vw-head"><button type="button" class="vw-say" data-say="declare" title="發音">🔊</button> <b class="vw-en">declare</b> <span class="vw-pos">v.</span> <span class="vw-zh">申報；宣布</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="You must declare fruit at customs." title="唸例句">🔊</button> You must declare fruit at customs.<span class="zh">水果要在海關申報。</span></div></li><li class="vw-item" data-en="customs" data-pos="n." data-zh="海關" data-ex="We went through customs quickly." data-exzh="我們很快通過海關。"><div class="vw-head"><button type="button" class="vw-say" data-say="customs" title="發音">🔊</button> <b class="vw-en">customs</b> <span class="vw-pos">n.</span> <span class="vw-zh">海關</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="We went through customs quickly." title="唸例句">🔊</button> We went through customs quickly.<span class="zh">我們很快通過海關。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "2d89F3i0nFE", "start": 14, "plays": 3, "title": "過美國海關"};
+window.GQUIZ = {
+ "label": "Listening V72",
+ "title": "影片聽力 過美國海關",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=2d89F3i0nFE\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　來做什麼？（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"14,37\">▶ 播放這一段</button><br>注意聽：旅客來的目的、待多久、住在哪裡。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What is the purpose of the visit?</div><div class=\"lt-opzh\">旅客來美國的目的是什麼？</div>",
+     "opts": [
+      "Tourism — a vacation.",
+      "Work.",
+      "School."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"16,24\" title=\"重聽這一句（影片 0:16）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Passport, please. What’s the purpose of your visit? — I’m here for tourism. I’m on vacation — sightseeing and some shopping.</span><span class=\"zh\">請給我護照。你來的目的是什麼？——觀光，我是來度假的，看看景點、買點東西。</span></div><div class=\"lt-opzh\">選項：(A) 觀光——度假。　(B) 工作。　(C) 念書。</div><div class=\"lt-tip\">💡 purpose＝目的；tourism＝觀光；sightseeing＝觀光、看景點。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How long is the traveler staying?</div><div class=\"lt-opzh\">旅客要待多久？</div>",
+     "opts": [
+      "About 2 weeks.",
+      "About 2 months.",
+      "About 20 days."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"22,28\" title=\"重聽這一句（影片 0:22）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">How long are you staying? — For about 2 weeks. I leave on the 20th.</span><span class=\"zh\">你要待多久？——大約兩個禮拜，20 號離開。</span></div><div class=\"lt-opzh\">選項：(A) 大約 2 週。　(B) 大約 2 個月。　(C) 大約 20 天。</div><div class=\"lt-tip\">💡 the 20th 是離開的日期，不是天數。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Where is the traveler staying?</div><div class=\"lt-opzh\">旅客住在哪裡？</div>",
+     "opts": [
+      "At a hotel in downtown LA.",
+      "At a friend’s house.",
+      "At the airport."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"28,37\" title=\"重聽這一句（影片 0:28）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Where are you staying? — At the Marriott in downtown LA. I have a booking confirmation here.</span><span class=\"zh\">你住哪裡？——洛杉磯市中心的萬豪飯店，我有訂房確認單。</span></div><div class=\"lt-opzh\">選項：(A) 洛杉磯市中心的飯店。　(B) 朋友家。　(C) 機場。</div><div class=\"lt-tip\">💡 booking confirmation＝訂房確認。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　工作、回程票、申報（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"33,70\">▶ 播放這一段</button><br>注意聽：移民官叫旅客做什麼、旅客做什麼工作、回程票在哪裡、有沒有東西要申報。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does the officer ask the traveler to do?</div><div class=\"lt-opzh\">移民官叫旅客做什麼？</div>",
+     "opts": [
+      "Look at the camera and put four fingers on the scanner.",
+      "Open the suitcase.",
+      "Sing a song."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"33,41\" title=\"重聽這一句（影片 0:33）\">🔊</button> <b class=\"lt-tag\">Officer</b><span class=\"en\">Please look directly at the camera. Good. Now, place your four fingers flat on the scanner.</span><span class=\"zh\">請直視鏡頭。好，現在四根手指平放在掃描器上。</span></div><div class=\"lt-opzh\">選項：(A) 看鏡頭，四根手指放在掃描器上。　(B) 打開行李箱。　(C) 唱首歌。</div><div class=\"lt-tip\">💡 directly＝直接地；scanner＝掃描器（按指紋）。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does the traveler do for work?</div><div class=\"lt-opzh\">旅客做什麼工作？</div>",
+     "opts": [
+      "A marketing manager in Taipei.",
+      "A teacher in Taichung.",
+      "A doctor in LA."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"41,50\" title=\"重聽這一句（影片 0:41）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">What do you do for work? — I’m a marketing manager. I work for a company in Taipei.</span><span class=\"zh\">你做什麼工作？——我是行銷經理，在臺北一家公司上班。</span></div><div class=\"lt-opzh\">選項：(A) 在臺北當行銷經理。　(B) 在臺中當老師。　(C) 在洛杉磯當醫生。</div><div class=\"lt-tip\">💡 What do you do?＝你做什麼工作？</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Does the traveler have anything to declare?</div><div class=\"lt-opzh\">旅客有東西要申報嗎？</div>",
+     "opts": [
+      "No, just personal belongings.",
+      "Yes, a lot of food.",
+      "Yes, a lot of money."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（本站摘錄整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"56,68\" title=\"重聽這一句（影片 0:56）\">🔊</button> <b class=\"lt-tag\"></b><span class=\"en\">Do you have anything to declare at customs? — Nothing to declare, just personal belongings. — Welcome to the United States. Enjoy your stay.</span><span class=\"zh\">海關有東西要申報嗎？——沒有，只有個人物品。——歡迎來到美國，祝你玩得愉快。</span></div><div class=\"lt-opzh\">選項：(A) 沒有，只有個人物品。　(B) 有，很多食物。　(C) 有，很多錢。</div><div class=\"lt-tip\">💡 declare＝申報；customs＝海關；belongings＝隨身物品。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>

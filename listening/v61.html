@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影片聽力｜你分得出 AI 假影片嗎？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../grammar2/grammar.css?v=20261102">
+<link rel="stylesheet" href="listening.css?v=20261128b">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-links">
+    <a class="home-link" href="index.html">← 聽力訓練目錄</a>
+  </div>
+  <div class="eyebrow">LISTENING · VIDEO · V61</div>
+  <h1>影片聽力 <span class="zh">你分得出 AI 假影片嗎？</span></h1>
+  <div class="subtitle">Sean Astin Testifies on AI Deepfakes・真人原速・中高級・5 段 14 題・約 11 分鐘影片</div>
+  <section class="part">
+    <p>演《魔戒》山姆的演員 <b>Sean Astin</b> 現在是美國演員工會主席。他到美國眾議院作證，談 AI「深偽」（deepfake）影片：有人可以讓你看起來說了你從沒說過的話。他自己就被朋友的假影片騙過。<br>作證的部分用字很正式（consent、identity、reputation），後面回答問題時比較口語。</p>
+  </section>
+  <div class="vt-box">
+      <div class="vt-frame"><div id="vtPlayer"></div><div class="vt-cover" id="vtCover"><div>🎧 只用聽的<br><small>影片畫面有中英字幕，作答時先遮住</small></div></div></div>
+      <div class="vt-bar"><button type="button" class="btn" id="vtCoverBtn">👀 顯示畫面</button> <button type="button" class="btn" id="vtStop">⏹ 停止</button> <span id="vtStatus" class="vt-status"></span></div>
+      <div class="vt-src">影片來源：YouTube「MJ英文 / MJ English」頻道 <a href="https://www.youtube.com/watch?v=0uFgn-BLNSI" target="_blank" rel="noopener">你分得出 AI 假影片嗎？</a>（聽證會從 0:26 開始）</div>
+  </div>
+  <section class="part lt-rules">
+    <ul>
+      <li>每一段按 <b>▶ 播放這一段</b>，影片會自己停在那一段的結尾。作答時每段最多聽 <b>2 次</b>，可以先看題目再聽。</li>
+      <li>全部作答才能送出；送出後看 <b>影片原文＋中文</b>，每一句都能按 🔊 回到影片那裡重聽，也可以改成慢速。</li>
+      <li>錯的題目要訂正（訂正時可以一直重聽），全部訂正完再補送 1 點。</li>
+    </ul>
+    <div class="lt-speed">重聽速度：<button type="button" data-rate="1">一般</button><button type="button" data-rate="0.75">🐢 慢速</button></div>
+  </section>
+  <section class="part lt-quiz"><div id="gquiz"></div></section>
+  <section class="part vt-after">
+    <h2>🔑 重點片語</h2>
+    <p class="vt-lockmsg">🔒 這些片語就是題目裡的句子，<b>送出成績</b>後才會打開。</p>
+    <div class="vt-after-body">
+    <p class="lt-ldesc">影片最後整理的 4 個片語。🎬 回到影片聽原句；說明和例句是本站自編，🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words vt-phr"><li class="vw-item vp-item" data-en="in my line of work" data-pos="phr." data-zh="在我這一行" data-ex="In my line of work, you meet a lot of people." data-exzh="在我這行會遇到很多人。"><div class="vw-head"><button type="button" class="vw-say" data-say="in my line of work" title="發音">🔊</button> <b class="vw-en">in my line of work</b> <span class="vw-zh">在我這一行</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="229,237" title="回到影片聽原句（3:49）">🎬</button> <b class="lt-tag">Sean Astin</b> <span class="en">In my line of work, we deal with emotions.</span><span class="zh">在我這一行，我們處理的是情感。</span></div><div class="vp-note">💡 line of work＝工作的種類。比 in my job field 自然，比 in my industry 親切。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="In my line of work, you meet a lot of people." title="唸例句">🔊</button> In my line of work, you meet a lot of people.<span class="zh">在我這行會遇到很多人。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="What line of work are you in?" title="唸例句">🔊</button> What line of work are you in?<span class="zh">你是做哪一行的？</span></div></li><li class="vw-item vp-item" data-en="That’s not who she is." data-pos="phr." data-zh="她不是那種人。" data-ex="He didn’t take it. That’s not who he is." data-exzh="不是他拿的，他不是那種人。"><div class="vw-head"><button type="button" class="vw-say" data-say="That’s not who she is." title="發音">🔊</button> <b class="vw-en">That’s not who she is.</b> <span class="vw-zh">她不是那種人。</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="288,295" title="回到影片聽原句（4:48）">🎬</button> <b class="lt-tag">Sean Astin</b> <span class="en">He would never say that. That’s not who she is.</span><span class="zh">他絕不會說那種話。她不是那種人。</span></div><div class="vp-note">💡 講自己：That’s not who I am.（我不是那種人）。替朋友說話很好用。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="He didn’t take it. That’s not who he is." title="唸例句">🔊</button> He didn’t take it. That’s not who he is.<span class="zh">不是他拿的，他不是那種人。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I won’t lie for you. That’s not who I am." title="唸例句">🔊</button> I won’t lie for you. That’s not who I am.<span class="zh">我不會幫你說謊，我不是那種人。</span></div></li><li class="vw-item vp-item" data-en="fall for ..." data-pos="phr." data-zh="被（假東西）騙；信以為真" data-ex="Don’t fall for that email. It’s a scam." data-exzh="別被那封信騙了，是詐騙。"><div class="vw-head"><button type="button" class="vw-say" data-say="fall for ..." title="發音">🔊</button> <b class="vw-en">fall for ...</b> <span class="vw-zh">被（假東西）騙；信以為真</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="487,494" title="回到影片聽原句（8:07）">🎬</button> <b class="lt-tag">Wife</b> <span class="en">I can’t believe you fell for that fake.</span><span class="zh">真不敢相信你會被那個假影片騙。</span></div><div class="vp-note">💡 比 be cheated 自然：cheat 常指被騙錢或作弊。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t fall for that email. It’s a scam." title="唸例句">🔊</button> Don’t fall for that email. It’s a scam.<span class="zh">別被那封信騙了，是詐騙。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I can’t believe I fell for that joke." title="唸例句">🔊</button> I can’t believe I fell for that joke.<span class="zh">真不敢相信我竟然上當了。</span></div></li><li class="vw-item vp-item" data-en="tell the difference" data-pos="phr." data-zh="分辨出差別" data-ex="I can’t tell the difference between Coke and Pepsi." data-exzh="我分不出可口可樂和百事可樂。"><div class="vw-head"><button type="button" class="vw-say" data-say="tell the difference" title="發音">🔊</button> <b class="vw-en">tell the difference</b> <span class="vw-zh">分辨出差別</span></div><div class="vp-quote"><button type="button" class="vt-say" data-t="494,501" title="回到影片聽原句（8:14）">🎬</button> <b class="lt-tag">Sean Astin</b> <span class="en">I couldn’t tell the difference between him and this creation.</span><span class="zh">我分不出他本人和這個做出來的東西。</span></div><div class="vp-note">💡 這裡的 tell 是「分辨、看得出來」，不是「說」。</div><div class="vw-ex"><button type="button" class="vw-say" data-say="I can’t tell the difference between Coke and Pepsi." title="唸例句">🔊</button> I can’t tell the difference between Coke and Pepsi.<span class="zh">我分不出可口可樂和百事可樂。</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Is it real or AI? I honestly can’t tell." title="唸例句">🔊</button> Is it real or AI? I honestly can’t tell.<span class="zh">是真的還是 AI？我真的看不出來。</span></div></li></ol>
+    </div>
+  </section>
+  <section class="part">
+    <h2>📖 重點單字</h2>
+    <p class="lt-ldesc">聽證會裡出現的字（⭐＝影片最後整理的 20 個精選字）。中文、例句是本站自編；🔊 用這台裝置的語音唸。</p>
+    <ol class="vt-words"><li class="vw-item" data-en="viral" data-pos="adj." data-zh="爆紅的；（像病毒般）擴散的" data-ex="The cat video went viral." data-exzh="那支貓咪影片爆紅了。"><div class="vw-head"><button type="button" class="vw-say" data-say="viral" title="發音">🔊</button> <b class="vw-en">viral</b> <span class="vw-pos">adj.</span> <span class="vw-zh">爆紅的；（像病毒般）擴散的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The cat video went viral." title="唸例句">🔊</button> The cat video went viral.<span class="zh">那支貓咪影片爆紅了。</span></div></li><li class="vw-item" data-en="union" data-pos="n." data-zh="工會；聯盟" data-ex="Workers joined the union." data-exzh="工人加入了工會。"><div class="vw-head"><button type="button" class="vw-say" data-say="union" title="發音">🔊</button> <b class="vw-en">union</b> <span class="vw-pos">n.</span> <span class="vw-zh">工會；聯盟</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Workers joined the union." title="唸例句">🔊</button> Workers joined the union.<span class="zh">工人加入了工會。</span></div></li><li class="vw-item" data-en="testify" data-pos="v." data-zh="作證" data-ex="She testified in court." data-exzh="她在法庭上作證。"><div class="vw-head"><button type="button" class="vw-say" data-say="testify" title="發音">🔊</button> <b class="vw-en">testify</b> <span class="vw-pos">v.</span> <span class="vw-zh">作證</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="She testified in court." title="唸例句">🔊</button> She testified in court.<span class="zh">她在法庭上作證。</span></div></li><li class="vw-item" data-en="hearing" data-pos="n." data-zh="聽證會" data-ex="The hearing lasted two hours." data-exzh="聽證會開了兩個小時。"><div class="vw-head"><button type="button" class="vw-say" data-say="hearing" title="發音">🔊</button> <b class="vw-en">hearing</b> <span class="vw-pos">n.</span> <span class="vw-zh">聽證會</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The hearing lasted two hours." title="唸例句">🔊</button> The hearing lasted two hours.<span class="zh">聽證會開了兩個小時。</span></div></li><li class="vw-item" data-en="represent" data-pos="v." data-zh="代表" data-ex="She represents our class." data-exzh="她代表我們班。"><div class="vw-head"><button type="button" class="vw-say" data-say="represent" title="發音">🔊</button> <b class="vw-en">represent</b> <span class="vw-pos">v.</span> <span class="vw-zh">代表</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="She represents our class." title="唸例句">🔊</button> She represents our class.<span class="zh">她代表我們班。</span></div></li><li class="vw-item" data-en="replica" data-pos="n." data-zh="複製品" data-ex="This is a replica of the famous painting." data-exzh="這是那幅名畫的複製品。"><div class="vw-head"><button type="button" class="vw-say" data-say="replica" title="發音">🔊</button> <b class="vw-en">replica</b> <span class="vw-pos">n.</span> <span class="vw-zh">複製品</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="This is a replica of the famous painting." title="唸例句">🔊</button> This is a replica of the famous painting.<span class="zh">這是那幅名畫的複製品。</span></div></li><li class="vw-item" data-en="artificial intelligence" data-pos="n." data-zh="人工智慧（AI）" data-ex="Artificial intelligence can write stories." data-exzh="人工智慧會寫故事。"><div class="vw-head"><button type="button" class="vw-say" data-say="artificial intelligence" title="發音">🔊</button> <b class="vw-en">artificial intelligence</b> <span class="vw-pos">n.</span> <span class="vw-zh">人工智慧（AI）</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Artificial intelligence can write stories." title="唸例句">🔊</button> Artificial intelligence can write stories.<span class="zh">人工智慧會寫故事。</span></div></li><li class="vw-item" data-en="terror" data-pos="n." data-zh="恐懼" data-ex="She screamed in terror." data-exzh="她嚇得尖叫。"><div class="vw-head"><button type="button" class="vw-say" data-say="terror" title="發音">🔊</button> <b class="vw-en">terror</b> <span class="vw-pos">n.</span> <span class="vw-zh">恐懼</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="She screamed in terror." title="唸例句">🔊</button> She screamed in terror.<span class="zh">她嚇得尖叫。</span></div></li><li class="vw-item" data-en="reputation" data-pos="n." data-zh="名聲" data-ex="The shop has a good reputation." data-exzh="這家店口碑很好。"><div class="vw-head"><button type="button" class="vw-say" data-say="reputation" title="發音">🔊</button> <b class="vw-en">reputation</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">名聲</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The shop has a good reputation." title="唸例句">🔊</button> The shop has a good reputation.<span class="zh">這家店口碑很好。</span></div></li><li class="vw-item" data-en="deepfake" data-pos="n." data-zh="深偽（AI 假造的影片）" data-ex="That video is a deepfake." data-exzh="那支影片是深偽的。"><div class="vw-head"><button type="button" class="vw-say" data-say="deepfake" title="發音">🔊</button> <b class="vw-en">deepfake</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">深偽（AI 假造的影片）</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="That video is a deepfake." title="唸例句">🔊</button> That video is a deepfake.<span class="zh">那支影片是深偽的。</span></div></li><li class="vw-item" data-en="scroll" data-pos="v." data-zh="（螢幕上）滑動" data-ex="He scrolled through his phone." data-exzh="他一直滑手機。"><div class="vw-head"><button type="button" class="vw-say" data-say="scroll" title="發音">🔊</button> <b class="vw-en">scroll</b> <span class="vw-pos">v.</span> <span class="vw-zh">（螢幕上）滑動</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="He scrolled through his phone." title="唸例句">🔊</button> He scrolled through his phone.<span class="zh">他一直滑手機。</span></div></li><li class="vw-item" data-en="progress" data-pos="n." data-zh="進步" data-ex="Science makes progress every year." data-exzh="科學每年都在進步。"><div class="vw-head"><button type="button" class="vw-say" data-say="progress" title="發音">🔊</button> <b class="vw-en">progress</b> <span class="vw-pos">n.</span> <span class="vw-zh">進步</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Science makes progress every year." title="唸例句">🔊</button> Science makes progress every year.<span class="zh">科學每年都在進步。</span></div></li><li class="vw-item" data-en="identity" data-pos="n." data-zh="身分" data-ex="Keep your identity safe online." data-exzh="在網路上要保護好你的身分。"><div class="vw-head"><button type="button" class="vw-say" data-say="identity" title="發音">🔊</button> <b class="vw-en">identity</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">身分</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Keep your identity safe online." title="唸例句">🔊</button> Keep your identity safe online.<span class="zh">在網路上要保護好你的身分。</span></div></li><li class="vw-item" data-en="consent" data-pos="n." data-zh="同意" data-ex="Don’t post my photo without my consent." data-exzh="沒經過我同意不要貼我的照片。"><div class="vw-head"><button type="button" class="vw-say" data-say="consent" title="發音">🔊</button> <b class="vw-en">consent</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">同意</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t post my photo without my consent." title="唸例句">🔊</button> Don’t post my photo without my consent.<span class="zh">沒經過我同意不要貼我的照片。</span></div></li><li class="vw-item" data-en="fake" data-pos="n./adj." data-zh="假的東西；假的" data-ex="This bag is a fake." data-exzh="這個包包是假貨。"><div class="vw-head"><button type="button" class="vw-say" data-say="fake" title="發音">🔊</button> <b class="vw-en">fake</b> <span class="vw-pos">n./adj.</span> <span class="vw-zh">假的東西；假的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="This bag is a fake." title="唸例句">🔊</button> This bag is a fake.<span class="zh">這個包包是假貨。</span></div></li><li class="vw-item" data-en="likeness" data-pos="n." data-zh="長相；肖像" data-ex="The statue is a good likeness of him." data-exzh="這座雕像很像他本人。"><div class="vw-head"><button type="button" class="vw-say" data-say="likeness" title="發音">🔊</button> <b class="vw-en">likeness</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">長相；肖像</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The statue is a good likeness of him." title="唸例句">🔊</button> The statue is a good likeness of him.<span class="zh">這座雕像很像他本人。</span></div></li><li class="vw-item" data-en="take ... down" data-pos="phr." data-zh="（把影片、貼文）撤下" data-ex="Please take that photo down." data-exzh="請把那張照片撤下來。"><div class="vw-head"><button type="button" class="vw-say" data-say="take ... down" title="發音">🔊</button> <b class="vw-en">take ... down</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">phr.</span> <span class="vw-zh">（把影片、貼文）撤下</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Please take that photo down." title="唸例句">🔊</button> Please take that photo down.<span class="zh">請把那張照片撤下來。</span></div></li><li class="vw-item" data-en="digital replica" data-pos="n." data-zh="數位複製人" data-ex="A digital replica can copy your voice." data-exzh="數位複製人可以模仿你的聲音。"><div class="vw-head"><button type="button" class="vw-say" data-say="digital replica" title="發音">🔊</button> <b class="vw-en">digital replica</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">數位複製人</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="A digital replica can copy your voice." title="唸例句">🔊</button> A digital replica can copy your voice.<span class="zh">數位複製人可以模仿你的聲音。</span></div></li><li class="vw-item" data-en="intellectual property" data-pos="n." data-zh="智慧財產權" data-ex="Songs are intellectual property." data-exzh="歌曲屬於智慧財產。"><div class="vw-head"><button type="button" class="vw-say" data-say="intellectual property" title="發音">🔊</button> <b class="vw-en">intellectual property</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">智慧財產權</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Songs are intellectual property." title="唸例句">🔊</button> Songs are intellectual property.<span class="zh">歌曲屬於智慧財產。</span></div></li><li class="vw-item" data-en="abuse" data-pos="n./v." data-zh="濫用；欺負" data-ex="Don’t abuse your power." data-exzh="不要濫用你的權力。"><div class="vw-head"><button type="button" class="vw-say" data-say="abuse" title="發音">🔊</button> <b class="vw-en">abuse</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n./v.</span> <span class="vw-zh">濫用；欺負</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t abuse your power." title="唸例句">🔊</button> Don’t abuse your power.<span class="zh">不要濫用你的權力。</span></div></li><li class="vw-item" data-en="First Amendment" data-pos="n." data-zh="美國憲法第一修正案（言論自由）" data-ex="The First Amendment protects free speech." data-exzh="第一修正案保障言論自由。"><div class="vw-head"><button type="button" class="vw-say" data-say="First Amendment" title="發音">🔊</button> <b class="vw-en">First Amendment</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">美國憲法第一修正案（言論自由）</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="The First Amendment protects free speech." title="唸例句">🔊</button> The First Amendment protects free speech.<span class="zh">第一修正案保障言論自由。</span></div></li><li class="vw-item" data-en="distinguished" data-pos="adj." data-zh="傑出的；有名望的" data-ex="We have a distinguished guest today." data-exzh="今天有一位貴賓。"><div class="vw-head"><button type="button" class="vw-say" data-say="distinguished" title="發音">🔊</button> <b class="vw-en">distinguished</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">adj.</span> <span class="vw-zh">傑出的；有名望的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="We have a distinguished guest today." title="唸例句">🔊</button> We have a distinguished guest today.<span class="zh">今天有一位貴賓。</span></div></li><li class="vw-item" data-en="by the way" data-pos="phr." data-zh="順便一提" data-ex="By the way, I like your shoes." data-exzh="順便說一下，我喜歡你的鞋子。"><div class="vw-head"><button type="button" class="vw-say" data-say="by the way" title="發音">🔊</button> <b class="vw-en">by the way</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">phr.</span> <span class="vw-zh">順便一提</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="By the way, I like your shoes." title="唸例句">🔊</button> By the way, I like your shoes.<span class="zh">順便說一下，我喜歡你的鞋子。</span></div></li><li class="vw-item" data-en="exploit" data-pos="v." data-zh="利用；剝削" data-ex="Don’t exploit other people." data-exzh="不要利用別人。"><div class="vw-head"><button type="button" class="vw-say" data-say="exploit" title="發音">🔊</button> <b class="vw-en">exploit</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">v.</span> <span class="vw-zh">利用；剝削</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t exploit other people." title="唸例句">🔊</button> Don’t exploit other people.<span class="zh">不要利用別人。</span></div></li><li class="vw-item" data-en="prompt" data-pos="v./n." data-zh="（對 AI）下指令；提示" data-ex="Type a prompt to make a picture." data-exzh="輸入指令來產生圖片。"><div class="vw-head"><button type="button" class="vw-say" data-say="prompt" title="發音">🔊</button> <b class="vw-en">prompt</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">v./n.</span> <span class="vw-zh">（對 AI）下指令；提示</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Type a prompt to make a picture." title="唸例句">🔊</button> Type a prompt to make a picture.<span class="zh">輸入指令來產生圖片。</span></div></li><li class="vw-item" data-en="can’t tell the difference" data-pos="phr." data-zh="分不出差別" data-ex="I can’t tell the difference between the twins." data-exzh="我分不出那對雙胞胎。"><div class="vw-head"><button type="button" class="vw-say" data-say="can’t tell the difference" title="發音">🔊</button> <b class="vw-en">can’t tell the difference</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">phr.</span> <span class="vw-zh">分不出差別</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="I can’t tell the difference between the twins." title="唸例句">🔊</button> I can’t tell the difference between the twins.<span class="zh">我分不出那對雙胞胎。</span></div></li><li class="vw-item" data-en="upset" data-pos="adj." data-zh="難過的；激動的" data-ex="She was upset about the test." data-exzh="她為了考試很難過。"><div class="vw-head"><button type="button" class="vw-say" data-say="upset" title="發音">🔊</button> <b class="vw-en">upset</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">adj.</span> <span class="vw-zh">難過的；激動的</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="She was upset about the test." title="唸例句">🔊</button> She was upset about the test.<span class="zh">她為了考試很難過。</span></div></li><li class="vw-item" data-en="work out" data-pos="phr." data-zh="解決；搞定" data-ex="Don’t worry, it will work out." data-exzh="別擔心，會沒事的。"><div class="vw-head"><button type="button" class="vw-say" data-say="work out" title="發音">🔊</button> <b class="vw-en">work out</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">phr.</span> <span class="vw-zh">解決；搞定</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Don’t worry, it will work out." title="唸例句">🔊</button> Don’t worry, it will work out.<span class="zh">別擔心，會沒事的。</span></div></li><li class="vw-item" data-en="outlier" data-pos="n." data-zh="例外；極少數" data-ex="That score is an outlier." data-exzh="那個分數是個例外。"><div class="vw-head"><button type="button" class="vw-say" data-say="outlier" title="發音">🔊</button> <b class="vw-en">outlier</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n.</span> <span class="vw-zh">例外；極少數</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="That score is an outlier." title="唸例句">🔊</button> That score is an outlier.<span class="zh">那個分數是個例外。</span></div></li><li class="vw-item" data-en="paraphrase" data-pos="n./v." data-zh="改寫；換句話說" data-ex="Can you paraphrase that sentence?" data-exzh="你可以換句話說那一句嗎？"><div class="vw-head"><button type="button" class="vw-say" data-say="paraphrase" title="發音">🔊</button> <b class="vw-en">paraphrase</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">n./v.</span> <span class="vw-zh">改寫；換句話說</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Can you paraphrase that sentence?" title="唸例句">🔊</button> Can you paraphrase that sentence?<span class="zh">你可以換句話說那一句嗎？</span></div></li><li class="vw-item" data-en="indulge" data-pos="v." data-zh="（好心）順著、遷就" data-ex="Indulge me for a minute." data-exzh="請順著我一下。"><div class="vw-head"><button type="button" class="vw-say" data-say="indulge" title="發音">🔊</button> <b class="vw-en">indulge</b> <span class="vw-pick" title="影片最後整理的精選字">⭐</span> <span class="vw-pos">v.</span> <span class="vw-zh">（好心）順著、遷就</span></div><div class="vw-ex"><button type="button" class="vw-say" data-say="Indulge me for a minute." title="唸例句">🔊</button> Indulge me for a minute.<span class="zh">請順著我一下。</span></div></li></ol>
+  </section>
+</div>
+<script>
+window.VT = {"video": "0uFgn-BLNSI", "start": 26, "plays": 2, "title": "你分得出 AI 假影片嗎？"};
+window.GQUIZ = {
+ "label": "Listening V61",
+ "title": "影片聽力 你分得出 AI 假影片嗎？",
+ "back": "index.html",
+ "mode": "影片聽力",
+ "links": "<a class=\"btn\" href=\"https://www.youtube.com/watch?v=0uFgn-BLNSI\" target=\"_blank\" rel=\"noopener\">▶ 到 YouTube 看完整影片</a> <a class=\"btn\" href=\"index.html\">聽力訓練目錄</a>",
+ "sections": [
+  {
+   "title": "第 1 段　山姆來國會了（2 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s1\" data-t=\"26,75\">▶ 播放這一段</button><br>MJ 先介紹這位證人是誰、他主張什麼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">Who is Sean Astin?</div>",
+     "opts": [
+      "A lawmaker from California.",
+      "Sam from The Lord of the Rings, who now leads the actors’ union.",
+      "A YouTube engineer.",
+      "A news reporter."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"26,45\" title=\"重聽這一句（影片 0:26）\">🔊</button> <b class=\"lt-tag\">MJ</b><span class=\"en\">What if a video of you went viral and it wasn’t really you? This is Sean Astin. Yes, Sam from The Lord of the Rings. He now leads the actors’ union, and this year he testified at a House hearing on AI fakes.</span><span class=\"zh\">如果有一支你的影片爆紅，但那根本不是你呢？這是 Sean Astin，對，就是《魔戒》的山姆。他現在帶領演員工會，今年到眾議院聽證會談 AI 假影片。</span></div><div class=\"lt-opzh\">選項：(A) 加州的議員。　(B) 演《魔戒》山姆的演員，現在帶領演員工會。　(C) YouTube 工程師。　(D) 新聞記者。</div><div class=\"lt-tip\">💡 go viral＝爆紅；union＝工會；testify＝作證；hearing＝聽證會。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Sean Astin believe?</div>",
+     "opts": [
+      "AI should be banned.",
+      "Your face and your voice should belong to you.",
+      "Actors should use AI more.",
+      "Movies should be free."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"40,50\" title=\"重聽這一句（影片 0:40）\">🔊</button> <b class=\"lt-tag\">MJ</b><span class=\"en\">He says your face and your voice should belong to you. And lawmakers ask him, “So what should Congress do?”</span><span class=\"zh\">他說你的臉和聲音應該屬於你自己。議員問他：「那國會該怎麼做？」</span></div><div class=\"lt-opzh\">選項：(A) AI 應該禁止。　(B) 你的臉和聲音應該屬於你自己。　(C) 演員應該多用 AI。　(D) 電影應該免費。</div><div class=\"lt-tip\">💡 belong to＝屬於；lawmaker＝立法者、議員。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 2 段　開始作證（2 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s2\" data-t=\"75,176\">▶ 播放這一段</button><br>主席介紹 Astin 演過的作品，接著 Astin 說他代表多少人、今天要談什麼。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How many union performers and media professionals does Astin represent?</div>",
+     "opts": [
+      "16,000.",
+      "60,000.",
+      "160,000.",
+      "1.6 million."
+     ],
+     "answer": 2,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"154,169\" title=\"重聽這一句（影片 2:34）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">The issues therein matter to the livelihoods of the 160,000 union performers and media professionals I represent as president of SAG-AFTRA.</span><span class=\"zh\">這些議題關係到我身為演員工會主席所代表的 16 萬名表演者和媒體工作者的生計。</span></div><div class=\"lt-opzh\">選項：(A) 1 萬 6 千人。　(B) 6 萬人。　(C) 16 萬人。　(D) 160 萬人。</div><div class=\"lt-tip\">💡 one hundred sixty thousand＝16 萬；livelihood＝生計；represent＝代表。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Astin want to talk about today?</div>",
+     "opts": [
+      "Digital copies of people’s voices and faces made without permission.",
+      "How to make better movies.",
+      "Music prices.",
+      "His new TV show."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"169,176\" title=\"重聽這一句（影片 2:49）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">Today, I’d like to speak about the abuse of non-consensual digital replicas of our voices and likenesses.</span><span class=\"zh\">今天我想談沒經過同意、用我們的聲音和長相做出的數位複製品被濫用的問題。</span></div><div class=\"lt-opzh\">選項：(A) 沒經過同意就做出的聲音和長相的數位複製。　(B) 怎麼拍更好的電影。　(C) 音樂價格。　(D) 他的新影集。</div><div class=\"lt-tip\">💡 non-consensual＝沒經過同意的；replica＝複製品；likeness＝長相。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 3 段　「她不是那種人」（4 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s3\" data-t=\"176,300\">▶ 播放這一段</button><br>Astin 說人類幾千年來靠什麼認出彼此？AI 改變了什麼？如果你被做成假影片，家人會怎麼想？",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">For all of human history, what did seeing someone’s face mean?</div>",
+     "opts": [
+      "You knew it was really them.",
+      "You could take their photo.",
+      "You had to say hello.",
+      "Nothing special."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"176,198\" title=\"重聽這一句（影片 2:56）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">For all of human history, if someone saw your face, they knew it was you. If they heard your voice, they knew you had spoken. For thousands of years, that simple connection was enough.</span><span class=\"zh\">整個人類歷史，別人看到你的臉，就知道是你；聽到你的聲音，就知道是你說的。幾千年來，這個簡單的連結就夠了。</span></div><div class=\"lt-opzh\">選項：(A) 你知道那真的是他。　(B) 你可以拍他的照片。　(C) 你得打招呼。　(D) 沒什麼特別的。</div><div class=\"lt-tip\">💡 connection＝連結；thousands of years＝幾千年。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What can AI do today, according to Astin?</div>",
+     "opts": [
+      "Make you appear to say something you never said.",
+      "Help actors remember lines.",
+      "Make movies shorter.",
+      "Translate every language perfectly."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"198,213\" title=\"重聽這一句（影片 3:18）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">Artificial intelligence has begun to intervene and break that ancient connection. Today, someone can realistically make you appear to say something you never said …</span><span class=\"zh\">人工智慧開始介入、打破這個古老的連結。今天，有人可以逼真地讓你看起來說了你從沒說過的話……</span></div><div class=\"lt-opzh\">選項：(A) 讓你看起來說了你從沒說過的話。　(B) 幫演員記台詞。　(C) 讓電影變短。　(D) 完美翻譯所有語言。</div><div class=\"lt-tip\">💡 realistically＝逼真地；appear to＝看起來…。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">How does a performer feel when finding a fake video of themselves?</div>",
+     "opts": [
+      "It’s a moment of terror.",
+      "It’s funny.",
+      "It’s boring.",
+      "They feel proud."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"257,280\" title=\"重聽這一句（影片 4:17）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">Now, imagine a performer waking up one morning to discover on their phone a version of themselves that never was … it’s a moment of terror. Who is seeing it? Will anyone ever hire them again?</span><span class=\"zh\">想像一位演員有天早上醒來，在手機上看到一個從不存在的自己……那是恐怖的一刻。誰看到了？以後還會有人請他們嗎？</span></div><div class=\"lt-opzh\">選項：(A) 是恐怖的一刻。　(B) 很好笑。　(C) 很無聊。　(D) 很驕傲。</div><div class=\"lt-tip\">💡 terror＝恐懼；hire＝雇用。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What might the performer’s family say?</div>",
+     "opts": [
+      "“He would never say that. That’s not who she is.”",
+      "“Make another video.”",
+      "“We knew it all along.”",
+      "“Let’s watch it again.”"
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"281,295\" title=\"重聽這一句（影片 4:41）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">Even their family may hesitate for a moment, but they can reach for something deeper. He would never say that. That’s not who she is.</span><span class=\"zh\">就連家人也可能遲疑一下，但他們能找到更深的東西：他絕不會說那種話，她不是那種人。</span></div><div class=\"lt-opzh\">選項：(A)「他絕不會說那種話。她不是那種人。」　(B)「再做一支影片。」　(C)「我們早就知道。」　(D)「再看一次。」</div><div class=\"lt-tip\">💡 hesitate＝猶豫。he、she 交替用，是指任何一位演員。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 4 段　身分是無價的（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s4\" data-t=\"300,430\">▶ 播放這一段</button><br>深偽影片的傷害有多快？Astin 說每個美國人都擁有什麼無價的東西？",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does the public usually do with a deepfake, according to Astin?</div>",
+     "opts": [
+      "They just keep scrolling.",
+      "They always check the truth.",
+      "They report it to the police.",
+      "They never see it."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"305,320\" title=\"重聽這一句（影片 5:05）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">In the world of deepfakes, the damage is done instantly and without mercy. The public has no obligation to discover the truth about someone. They just keep scrolling.</span><span class=\"zh\">在深偽的世界，傷害是立刻的、毫不留情的。大眾沒有義務去查清楚真相，他們就繼續滑。</span></div><div class=\"lt-opzh\">選項：(A) 繼續滑下去。　(B) 一定會查證。　(C) 報警。　(D) 根本看不到。</div><div class=\"lt-tip\">💡 instantly＝立刻；scroll＝（在手機上）滑。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Astin say about progress?</div>",
+     "opts": [
+      "We should stop it.",
+      "We don’t want to stop it — we need to civilize it.",
+      "It’s always bad.",
+      "Only actors should decide."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"330,383\" title=\"重聽這一句（影片 5:30）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">Technology is not our enemy. … We don’t want to stop progress. We need to civilize it.</span><span class=\"zh\">科技不是我們的敵人……我們不是要阻止進步，而是要讓它文明。</span></div><div class=\"lt-opzh\">選項：(A) 應該阻止進步。　(B) 不是要阻止，而是要讓它變得文明、有規範。　(C) 進步一定不好。　(D) 只有演員能決定。</div><div class=\"lt-tip\">💡 enemy＝敵人；civilize＝使文明、加上規範。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does every American possess that is of immeasurable value?</div>",
+     "opts": [
+      "A home.",
+      "Their identity.",
+      "Money.",
+      "A phone."
+     ],
+     "answer": 1,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"383,398\" title=\"重聽這一句（影片 6:23）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">Many Americans may never own a home or accumulate significant financial wealth. But every American does possess something of immeasurable value: their identity.</span><span class=\"zh\">很多美國人可能一輩子買不起房、存不了多少錢，但每個美國人都擁有無價的東西：自己的身分。</span></div><div class=\"lt-opzh\">選項：(A) 房子。　(B) 自己的身分。　(C) 錢。　(D) 手機。</div><div class=\"lt-tip\">💡 immeasurable＝無法衡量的；identity＝身分。A、C 是他說「可能沒有」的。</div></div>"
+    }
+   ]
+  },
+  {
+   "title": "第 5 段　被朋友的假影片騙了（3 題）",
+   "note": "<button type=\"button\" class=\"vt-play\" data-id=\"s5\" data-t=\"431,700\">▶ 播放這一段</button><br>Astin 回答議員的問題，說了自己被騙的故事，也談到他的三個女兒。",
+   "items": [
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What happened when Astin called his friend about the upsetting video?</div>",
+     "opts": [
+      "The friend said it wasn’t him — the video was fake.",
+      "The friend was very sad.",
+      "The friend didn’t answer.",
+      "The friend made the video."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"466,494\" title=\"重聽這一句（影片 7:46）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">I called him up and I said, “Hey man, are you okay?” And he goes, “Yeah, what are you talking about?” … And his wife walks in and says, “I can’t believe you fell for that fake.”</span><span class=\"zh\">我打給他說：「嘿，你還好嗎？」他說：「好啊，你在說什麼？」……他太太走進來說：「真不敢相信你會被那個假影片騙。」</span></div><div class=\"lt-opzh\">選項：(A) 朋友說那不是他——影片是假的。　(B) 朋友很難過。　(C) 朋友沒接電話。　(D) 影片是朋友自己做的。</div><div class=\"lt-tip\">💡 fall for＝被騙、信以為真。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">When Astin looked at the video again, what did he notice?</div>",
+     "opts": [
+      "He couldn’t tell the difference between his friend and the fake.",
+      "It was obviously fake.",
+      "The voice was wrong.",
+      "The video was very old."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"494,501\" title=\"重聽這一句（影片 8:14）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">I went back and looked at it … I couldn’t tell the difference between him and this creation.</span><span class=\"zh\">我回頭再看……我分不出他本人和這個做出來的東西有什麼差別。</span></div><div class=\"lt-opzh\">選項：(A) 他分不出朋友本人和假影片的差別。　(B) 很明顯是假的。　(C) 聲音不對。　(D) 影片很舊。</div><div class=\"lt-tip\">💡 tell the difference＝分辨差別。</div></div>"
+    },
+    {
+     "type": "mc",
+     "q": "<div class=\"lt-qtext\">What does Astin want his daughters to be able to do?</div>",
+     "opts": [
+      "Ask YouTube to take down a deepfake of them.",
+      "Make their own deepfakes.",
+      "Become actors.",
+      "Stop using phones."
+     ],
+     "answer": 0,
+     "exp": "<div class=\"lt-tr\"><div class=\"lt-trh\">📝 影片原文（依自動字幕整理）</div><div class=\"lt-line\"><button type=\"button\" class=\"vt-say\" data-t=\"661,690\" title=\"重聽這一句（影片 11:01）\">🔊</button> <b class=\"lt-tag\">Sean Astin</b><span class=\"en\">They’re 29, 23, and 20, and if somebody deepfakes them and there’s nothing I can do about it, it’s so horrible. So the idea that you guys could pass a law that says I can go to YouTube and say, please take this down, or my daughters on their own behalf can say, please take this down …</span><span class=\"zh\">她們 29、23、20 歲，如果有人做她們的假影片而我無能為力，那太可怕了。所以如果你們能通過一條法律，讓我能去跟 YouTube 說請撤下，或我女兒自己能說請撤下……</span></div><div class=\"lt-opzh\">選項：(A) 能請 YouTube 把她們的假影片撤下。　(B) 自己做假影片。　(C) 當演員。　(D) 不用手機。</div><div class=\"lt-tip\">💡 take down＝撤下（影片）；pass a law＝通過法律。</div></div>"
+    }
+   ]
+  }
+ ]
+};
+</script>
+<script src="lt.js?v=20261125a"></script>
+<script src="vt.js?v=20261128b"></script>
+<script src="../grammar2/gquiz.js?v=20261125a"></script>
+<script src="../points.js"></script>
+</body>
+</html>
